@@ -255,5 +255,22 @@
           </table>
   </table>
 
+  <strong><span class="show_paper_citations" data="hW23VKIAAAAJ:qjMakFHDy7sC"></span></strong></p>
+
+  <script>
+    window.onload = function () {
+        var gsDataBaseUrl = 'https://raw.githubusercontent.com/yuhangzang/yuhangzang.github.io/'
+        $.getJSON(gsDataBaseUrl + "google-scholar-stats/gs_data.json", function (data) {
+            var citationEles = document.getElementsByClassName('show_paper_citations')
+            Array.prototype.forEach.call(citationEles, element => {
+                var paperId = element.getAttribute('data')
+                var numCitations = data['publications'][paperId]['num_citations']
+                element.innerHTML = numCitations;
+            });
+        });
+    }
+</script>
+
 </body>
+
 </html>
