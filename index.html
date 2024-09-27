@@ -19,7 +19,7 @@
 
 <nav style="width:110%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
 
-  <table>
+<table>
     <h2 style="padding:2.5%">
         <a href="./index.html">Homepage</a> &nbsp;&nbsp;&middot;&nbsp;&nbsp;
         <a href="./research.html">Publications</a> &nbsp;&nbsp;&middot;&nbsp;&nbsp;
@@ -80,17 +80,14 @@
           </table>
 
           <table width="110%" align="center" border="0" cellspacing="0" cellpadding="20">
-            <tbody>
-              <tr>
-                <td>
-                  <heading>News</heading>
-                </td>
-              </tr>
-            </tbody>
+          <heading style="padding:20px;width:110%;vertical-align:middle">News</heading>
           </table>
-          <table width="110%" align="center" border="0" cellpadding="20">
-            <tbody>
+
+          <table width="110%" align="center" border="0" cellspacing="0" cellpadding="20">
+            <tbody><div class="scrollable">
               <ul>
+                <li>[09/2024] <a href="https://arxiv.org/pdf/2407.01523">MMLongbench-Doc</a> <font color="#e86e14">(Spotlight)</font>, <a href="https://arxiv.org/pdf/2406.04325">ShareGPT4Video</a> and <a href="https://arxiv.org/pdf/2406.11833">MMDU</a> were accepted by NeurIPS 2024 DB Track.
+                <li>[09/2024] <a href="https://arxiv.org/pdf/2404.06512">InternLM-XC2-4khd</a>, <a href="https://www.arxiv.org/pdf/2405.16009">VideoStreaming</a> and <a href="https://arxiv.org/pdf/2403.20330">MMStar</a> were accepted by NeurIPS 2024.
                 <li>[08/2024] <a href="https://arxiv.org/abs/2407.11691">VLMEvalKit</a> was accepted by ACM MM 2024 Open Source Software Competition.
                 <li>[07/2024] <a href="https://arxiv.org/abs/2403.15378">Long-CLIP</a> and <a href="https://arxiv.org/abs/2405.12218">MVSGaussian</a> was accepted by ECCV 2024.
                 <li>[02/2024] <a href="https://arxiv.org/abs/2312.03818">Alpha-CLIP</a> was accepted by CVPR 2024.
@@ -98,9 +95,9 @@
                 <li>[01/2024] My Apple internship project, O-GEN, was accepted by ICLR 2024.
                 <li>[06/2023] I joined <img src="./imgs/apple.svg" style="height: 15px; margin-bottom: 0px;"></img> <a href="https://www.apple.com" style="color:black">Apple </a><a href="https://machinelearning.apple.com/" style="color:#c2c0bf">(AI/ML)</a> as a research intern.
                 <li>[12/2022] <a href="https://arxiv.org/abs/2305.14813">CascadeMatch</a> was accepted by IJCV.
-                <li>[07/2022] <a href="https://arxiv.org/abs/2203.11876">OV-DETR</a> was accepted by ECCV 2022.
+                <li>[07/2022] <a href="https://arxiv.org/abs/2203.11876">OV-DETR</a> was accepted by ECCV 2022 <font color="#e86e14">(Oral)</font>.
               </ul>
-            </tbody>
+            </div></tbody>
           </table>
 
           <table
@@ -393,6 +390,15 @@
             </tbody>
           </table>
   </table>
+
+  <style>
+    .scrollable {
+        width: 110%;
+        height: 150px;
+        overflow-y: scroll;
+        padding: 10px;
+    }
+  </style>
 
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
   <script>
