@@ -141,3 +141,48 @@
 	display:flex;
 	flex-wrap:wrap
 }
+
+  .indented-link {
+    /* Make space on the left for the bullet */
+    padding-left: 1.5em; /* Adjust as needed - this reserves space */
+    /* Add vertical spacing from the line above */
+    margin-top: 5px;
+    /* Establish positioning context for the ::before pseudo-element */
+    position: relative;
+    /* Ensure it behaves like a block for proper layout */
+    display: block;
+  }
+
+  .indented-link::before {
+    content: "-"; /* The bullet character */
+    /* Position the bullet absolutely within the parent's padding */
+    position: absolute;
+    left: 0.2em; /* Position from the left edge of the parent. Adjust for exact alignment. */
+    top: 0;   /* Align with the top of the text line. May need slight adjustment (e.g., 0.1em) depending on font/line-height. */
+    width: 1em; /* Define a width for the bullet container */
+    text-align: center; /* Center the bullet within its space */
+    /* Ensure bullet color matches default text or specify */
+    color: black; /* Or inherit */
+  }
+
+  .indented {
+    /* Make space on the left for the bullet */
+    padding-left: 1.5em; /* Adjust as needed - this reserves space */
+    /* Add vertical spacing from the line above */
+    margin-top: 5px;
+    /* Establish positioning context for the ::before pseudo-element */
+    position: relative;
+    /* Ensure it behaves like a block for proper layout */
+    display: block;
+  }
+
+  .indented::before {
+    /* Position the bullet absolutely within the parent's padding */
+    position: absolute;
+    left: 0.2em; /* Position from the left edge of the parent. Adjust for exact alignment. */
+    top: 0;   /* Align with the top of the text line. May need slight adjustment (e.g., 0.1em) depending on font/line-height. */
+    width: 1em; /* Define a width for the bullet container */
+    text-align: center; /* Center the bullet within its space */
+    /* Ensure bullet color matches default text or specify */
+    color: black; /* Or inherit */
+  }
