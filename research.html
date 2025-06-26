@@ -1,0 +1,1330 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Meta tags for search engines to crawl -->
+<meta name="robots" content="index, follow">
+<meta name="description" content="Yuhang Zang's academic website">
+<meta name="keywords" content="Yuhang Zang; Zang Yuhang; Computer Vision; Machine Learning; Deep Learning;">
+<meta name="author" content="Yuhang Zang">
+<link rel="author" href="yuhangzang.github.io">
+<title>Yuhang Zang - Publications</title>
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link id="theme-style" rel="stylesheet" href="./main.css">
+</head>
+
+<nav class="main-nav">
+  <div class="nav-container">
+    <div class="nav-brand">
+      <a href="./index.html" class="brand-link">Yuhang Zang</a>
+    </div>
+    
+    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+    
+    <div class="nav-menu" id="nav-menu">
+      <a href="./index.html" class="nav-link">Home</a>
+      <a href="./research.html" class="nav-link">Publications</a>
+      <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
+        <span class="theme-icon">🌙</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<body>
+  <main>
+
+        <div class="papers-section">
+            <heading>Publications <a href="./index.html#papers-container" class="full-list-link"><i class="fa fa-star"></i> Selected List</a> <a href="https://scholar.google.com/citations?user=hW23VKIAAAAJ&hl=en" class="scholar-link" target="_blank"><i class="fa fa-graduation-cap"></i> Scholar</a></heading>
+            
+            <div class="sort-controls">
+              <button class="sort-btn active" onclick="sortPapers('date')">Show by Date</button>
+              <button class="sort-btn" onclick="sortPapers('topic')">Show by Topic</button>
+              <button class="sort-btn" onclick="sortPapers('venue')">Show by Venue</button>
+            </div>
+            
+            <div class="navigation-compact">
+              <div class="nav-line">
+                <span class="nav-label">Dates:</span>
+                <a href="#" class="date-link" onclick="jumpToYear('2025'); return false;">2025</a>,
+                <a href="#" class="date-link" onclick="jumpToYear('2024'); return false;">2024</a>,
+                <a href="#" class="date-link" onclick="jumpToYear('2023'); return false;">2023</a>,
+                <a href="#" class="date-link" onclick="jumpToYear('2022'); return false;">2022</a>,
+                <a href="#" class="date-link" onclick="jumpToYear('2021'); return false;">2021</a>,
+                <a href="#" class="date-link" onclick="jumpToYear('2020'); return false;">2020</a>,
+                <a href="#" class="date-link" onclick="jumpToYear('2019'); return false;">2019</a>
+              </div>
+              <div class="nav-line">
+                <span class="nav-label">Topics:</span>
+                <a href="#" class="topic-link" onclick="jumpToTopic('Reinforcement Learning from Human Feedback'); return false;">Reinforcement Learning from Human Feedback</a>,
+                <a href="#" class="topic-link" onclick="jumpToTopic('Multimodal Large Language Models'); return false;">Multimodal Large Language Models</a>,
+                <a href="#" class="topic-link" onclick="jumpToTopic('Vision-Language Models'); return false;">Vision-Language Models</a>,
+                <a href="#" class="topic-link" onclick="jumpToTopic('Image Understanding'); return false;">Image Understanding</a>,
+                <a href="#" class="topic-link" onclick="jumpToTopic('AIGC'); return false;">AIGC</a>
+              </div>
+              <div class="nav-line">
+                <span class="nav-label">Venues:</span>
+                <a href="#" class="venue-link" onclick="jumpToVenue('ICML'); return false;">ICML</a>,
+                <a href="#" class="venue-link" onclick="jumpToVenue('NeurIPS'); return false;">NeurIPS</a>,
+                <a href="#" class="venue-link" onclick="jumpToVenue('ICLR'); return false;">ICLR</a>,
+                <a href="#" class="venue-link" onclick="jumpToVenue('ACL'); return false;">ACL</a>,
+                <a href="#" class="venue-link" onclick="jumpToVenue('IJCV'); return false;">IJCV</a>,
+                <a href="#" class="venue-link" onclick="jumpToVenue('CVPR'); return false;">CVPR</a>,
+                <a href="#" class="venue-link" onclick="jumpToVenue('ICCV'); return false;">ICCV</a>,
+                <a href="#" class="venue-link" onclick="jumpToVenue('ECCV'); return false;">ECCV</a>,
+                <a href="#" class="venue-link" onclick="jumpToVenue('AAAI'); return false;">AAAI</a>,
+                <a href="#" class="venue-link" onclick="jumpToVenue('ACM MM'); return false;">ACM MM</a>,
+                <a href="#" class="venue-link" onclick="jumpToVenue('arXiv'); return false;">arXiv</a>,
+                <a href="#" class="venue-link" onclick="jumpToVenue('Thesis'); return false;">Thesis</a>
+              </div>
+              
+              <div class="author-legend">
+                <div class="legend-item">
+                  <span class="legend-symbol"><i class="fa fa-star"></i></span>
+                  <span class="legend-description">Equal contribution</span>
+                </div>
+                <div class="legend-item">
+                  <span class="legend-symbol corresponding"><i class="fa fa-envelope"></i></span>
+                  <span class="legend-description">Corresponding author</span>
+                </div>
+              </div>
+            </div>
+            
+            <div id="papers-container">
+
+          <div class="paper-card" data-year="2025" data-topic="Reinforcement Learning from Human Feedback" data-venue="ICCV">
+            <div class="paper-content">
+              <papertitle>Visual-RFT: Visual Reinforcement Fine-Tuning</papertitle>
+                      <div class="author-names">Ziyu Liu<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Zeyi Sun<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, <span class="author-highlight">Yuhang Zang</span><span class="author-annotation corresponding"><i class="fa fa-envelope"></i></span>, Xiaoyi Dong, Yuhang Cao, Haodong Duan, Dahua Lin, Jiaqi Wang<span class="author-annotation corresponding"><i class="fa fa-envelope"></i></span></div>
+                      <div class="paper-venue">IEEE International Conference on Computer Vision (<b>ICCV</b>), 2025</div>
+                      <div class="paper-badges">
+                        <a href="https://arxiv.org/abs/2503.01785" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2503.01785</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:O3NaXMp0MMsC" target="_blank" class="citations-btn">
+                          <i class="fa fa-quote-left"></i>
+                          <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:O3NaXMp0MMsC">0</span>
+                        </a>
+                        <a href="https://github.com/Liuziyu77/Visual-RFT" class="github-btn" target="_blank" data-repo="Liuziyu77/Visual-RFT">
+                          <i class="fa fa-star"></i>
+                          <span class="star-count">0</span>
+                        </a>
+                        <a href="https://huggingface.co/collections/laolao77/virft-datasets-67bc271b6f2833eccc0651df" class="huggingface-btn dataset"><span class="hf-emoji">🤗</span>Dataset
+                        </a>
+                      </div>
+            </div>
+          </div>
+
+          <div class="paper-card" data-year="2025" data-topic="Multimodal Large Language Models" data-venue="ICCV">
+            <div class="paper-content">
+              <papertitle>MM-IFEngine: Towards Multimodal Instruction Following</papertitle>
+                      <div class="author-names">Shengyuan Ding<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Shenxi Wu<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Xiangyu Zhao, <span class="author-highlight">Yuhang Zang</span><span class="author-annotation corresponding"><i class="fa fa-envelope"></i></span>, Haodong Duan, Xiaoyi Dong, Pan Zhang, Yuhang Cao, Dahua Lin, Jiaqi Wang<span class="author-annotation corresponding"><i class="fa fa-envelope"></i></span></div>
+                      <div class="paper-venue">IEEE International Conference on Computer Vision (<b>ICCV</b>), 2025</div>
+                      <div class="paper-badges">
+                        <a href="https://arxiv.org/pdf/2504.07957" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2504.07957</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:RYcK_YlVTxYC" target="_blank" class="citations-btn">
+                          <i class="fa fa-quote-left"></i>
+                          <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:RYcK_YlVTxYC">0</span>
+                        </a>
+                        <a href="https://github.com/SYuan03/MM-IFEngine" class="github-btn" target="_blank" data-repo="SYuan03/MM-IFEngine">
+                          <i class="fa fa-star"></i>
+                          <span class="star-count">0</span>
+                        </a>
+                        <a href="https://huggingface.co/datasets/ChrisDing1105/MMIF-23k" class="huggingface-btn dataset"><span class="hf-emoji">🤗</span>Dataset
+                        </a>
+                      </div>
+            </div>
+          </div>
+
+          <div class="paper-card" data-year="2025" data-topic="AIGC" data-venue="ICCV">
+            <div class="paper-content">
+              <papertitle>X-Prompt: Generalizable Auto-Regressive Visual Learning with In-Context Prompting
+</papertitle>
+                      <div class="author-names">Zeyi Sun, Ziyang Chu, Pan Zhang, Tong Wu, Xiaoyi Dong, <span class="author-highlight">Yuhang Zang</span>, Yuanjun Xiong, Dahua Lin, Jiaqi Wang</div>
+                      <div class="paper-venue">IEEE International Conference on Computer Vision (<b>ICCV</b>), 2025</div>
+                      <div class="paper-badges">
+                        <a href="https://arxiv.org/pdf/2412.01824" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2412.01824</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:7PzlFSSx8tAC" target="_blank" class="citations-btn">
+                          <i class="fa fa-quote-left"></i>
+                          <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:7PzlFSSx8tAC">0</span>
+                        </a>
+                        <a href="https://github.com/SunzeY/X-Prompt" class="github-btn" target="_blank" data-repo="SunzeY/X-Prompt">
+                          <i class="fa fa-star"></i>
+                          <span class="star-count">0</span>
+                        </a>
+                      </div>
+            </div>
+          </div>
+
+          <div class="paper-card" data-year="2025" data-topic="AIGC" data-venue="ICCV">
+            <div class="paper-content">
+              <papertitle>Bootstrap3D: Improving Multi-view Diffusion Model with Synthetic Data</papertitle>
+                      <div class="author-names">Zeyi Sun, Tong Wu, Pan Zhang, <span class="author-highlight">Yuhang Zang</span>, Xiaoyi Dong, Yuanjun Xiong, Dahua Lin, Jiaqi Wang</div>
+                      <div class="paper-venue">IEEE International Conference on Computer Vision (<b>ICCV</b>), 2025</div>
+                      <div class="paper-badges">
+                        <a href="https://arxiv.org/pdf/2406.00093" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2406.00093</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:MXK_kJrjxJIC" target="_blank" class="citations-btn">
+                          <i class="fa fa-quote-left"></i>
+                          <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:MXK_kJrjxJIC">0</span>
+                        </a>
+                        <a href="https://github.com/SunzeY/Bootstrap3D" class="github-btn" target="_blank" data-repo="SunzeY/Bootstrap3D">
+                          <i class="fa fa-star"></i>
+                          <span class="star-count">0</span>
+                        </a>
+                      </div>
+            </div>
+          </div>
+
+          <div class="paper-card" data-year="2025" data-topic="AIGC" data-venue="ICCV">
+            <div class="paper-content">
+              <papertitle>Light-A-Video: Training-free Video Relighting via Progressive Light Fusion</papertitle>
+                      <div class="author-names">Yujie Zhou<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Jiazi Bu<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Pengyang Ling, Pan Zhang, Tong Wu, Qidong Huang, Jinsong Li, Xiaoyi Dong, <span class="author-highlight">Yuhang Zang</span>, Yuhang Cao, Anyi Rao, Jiaqi Wang, Li Niu</div>
+                      <div class="paper-venue">IEEE International Conference on Computer Vision (<b>ICCV</b>), 2025</div>
+                      <div class="paper-badges">
+                        <a href="https://arxiv.org/pdf/2502.08590" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2502.08590</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:maZDTaKrznsC" target="_blank" class="citations-btn">
+                          <i class="fa fa-quote-left"></i>
+                          <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:maZDTaKrznsC">0</span>
+                        </a>
+                        <a href="https://github.com/bcmi/Light-A-Video" class="github-btn" target="_blank" data-repo="bcmi/Light-A-Video">
+                          <i class="fa fa-star"></i>
+                          <span class="star-count">0</span>
+                        </a>
+                      </div>
+            </div>
+          </div>
+
+          <div class="paper-card" data-year="2025" data-topic="Multimodal Large Language Models" data-venue="ICCV">
+            <div class="paper-content">
+              <papertitle>Deciphering Cross-Modal Alignment in Large Vision-Language Models with Modality Integration Rate</papertitle>
+                      <div class="author-names">Qidong Huang, Xiaoyi Dong, Pan Zhang, <span class="author-highlight">Yuhang Zang</span>, Yuhang Cao, Jiaqi Wang, Dahua Lin, Weiming Zhang, Nenghai Yu</div>
+                      <div class="paper-venue">IEEE International Conference on Computer Vision (<b>ICCV</b>), 2025</div>
+                      <div class="paper-badges">
+                        <a href="https://arxiv.org/pdf/2410.07167" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2410.07167</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:4DMP91E08xMC" target="_blank" class="citations-btn">
+                          <i class="fa fa-quote-left"></i>
+                          <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:4DMP91E08xMC">0</span>
+                        </a>
+                        <a href="https://github.com/shikiw/Modality-Integration-Rate" class="github-btn" target="_blank" data-repo="shikiw/Modality-Integration-Rate">
+                          <i class="fa fa-star"></i>
+                          <span class="star-count">0</span>
+                        </a>
+                      </div>
+            </div>
+          </div>
+
+          <div class="paper-card" data-year="2025" data-topic="Multimodal Large Language Models" data-venue="ICCV">
+            <div class="paper-content">
+              <papertitle>SAM2Long: Enhancing SAM 2 for Long Video Segmentation with a Training-Free Memory Tree</papertitle>
+                      <div class="author-names">Shuangrui Ding, Rui Qian, Xiaoyi Dong, Pan Zhang, <span class="author-highlight">Yuhang Zang</span>, Yuhang Cao, Yuwei Guo, Dahua Lin, Jiaqi Wang</div>
+                      <div class="paper-venue">IEEE International Conference on Computer Vision (<b>ICCV</b>), 2025</div>
+                      <div class="paper-badges">
+                        <a href="https://arxiv.org/pdf/2410.16268" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2410.16268</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:mVmsd5A6BfQC" target="_blank" class="citations-btn">
+                          <i class="fa fa-quote-left"></i>
+                          <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:mVmsd5A6BfQC">0</span>
+                        </a>
+                        <a href="https://github.com/Mark12Ding/SAM2Long" class="github-btn" target="_blank" data-repo="Mark12Ding/SAM2Long">
+                          <i class="fa fa-star"></i>
+                          <span class="star-count">0</span>
+                        </a>
+                      </div>
+            </div>
+          </div>
+
+          <div class="paper-card" data-year="2025" data-topic="Reinforcement Learning from Human Feedback" data-venue="ACL">
+            <div class="paper-content">
+              <papertitle>InternLM-XComposer2.5-Reward: A Simple Yet Effective Multi-Modal Reward Model</papertitle>
+                      <div class="author-names"><span class="author-highlight">Yuhang Zang</span><span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Xiaoyi Dong<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Pan Zhang<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Yuhang Cao<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Ziyu Liu, Shengyuan Ding, Shenxi Wu, Yubo Ma, Haodong Duan, Wenwei Zhang, Kai Chen, Dahua Lin, Jiaqi Wang</div>
+                      <div class="paper-venue">Findings of the Association for Computational Linguistics (<b>Findings of ACL</b>), 2025</div>
+                      <div class="paper-badges">
+                        <a href="https://arxiv.org/abs/2501.12368" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2501.12368</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:TFP_iSt0sucC" target="_blank" class="citations-btn">
+                          <i class="fa fa-quote-left"></i>
+                          <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:TFP_iSt0sucC">0</span>
+                        </a>
+                        <a href="https://github.com/InternLM/InternLM-XComposer" class="github-btn" target="_blank" data-repo="InternLM/InternLM-XComposer">
+                          <i class="fa fa-star"></i>
+                          <span class="star-count">0</span>
+                        </a>
+                        <a href="https://huggingface.co/internlm/internlm-xcomposer2d5-7b-reward" class="huggingface-btn model"><span class="hf-emoji">🤗</span>IXC 2.5 Reward
+                        </a>
+                        <a href="https://huggingface.co/internlm/internlm-xcomposer2d5-7b-chat" class="huggingface-btn model"><span class="hf-emoji">🤗</span>IXC 2.5 Chat
+                        </a>
+                      </div>
+            </div>
+          </div>
+
+          <div class="paper-card" data-year="2025" data-topic="Multimodal Large Language Models" data-venue="ACL">
+            <div class="paper-content">
+              <papertitle>Towards Storage-Efficient Visual Document Retrieval: An Empirical Study on Reducing Patch-Level Embeddings</papertitle>
+                      <div class="author-names">Yubo Ma, Jinsong Li, <span class="author-highlight">Yuhang Zang</span><span class="author-annotation corresponding"><i class="fa fa-envelope"></i></span>, Xiaobao Wu, Xiaoyi Dong, Pan Zhang, Yuhang Cao, Haodong Duan, Jiaqi Wang, Yixin Cao, Aixin Sun</div>
+                      <div class="paper-venue">Findings of the Association for Computational Linguistics (<b>Findings of ACL</b>), 2025</div>
+                    </div>
+                    <div class="paper-badges">
+                        <a href="https://arxiv.org/abs/2501.12368" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2501.12368</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:cFHS6HbyZ2cC" target="_blank" class="citations-btn">
+                          <i class="fa fa-quote-left"></i>
+                          <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:cFHS6HbyZ2cC">0</span>
+                        </a>
+            </div>
+          </div>
+          
+          <div class="paper-card" data-year="2025" data-topic="Multimodal Large Language Models" data-venue="ICML">
+            <div class="paper-content">
+              <papertitle>VideoRoPE: What Makes for Good Video Rotary Position Embedding?</papertitle>
+                      <div class="author-names">Xilin Wei<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Xiaoran Liu<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, <span class="author-highlight">Yuhang Zang</span><span class="author-annotation corresponding"><i class="fa fa-envelope"></i></span>, Xiaoyi Dong, Pan Zhang, Yuhang Cao, Jian Tong, Haodong Duan, Qipeng Guo<span class="author-annotation corresponding"><i class="fa fa-envelope"></i></span>, Jiaqi Wang<span class="author-annotation corresponding"><i class="fa fa-envelope"></i></span>, Xipeng Qiu, Dahua Lin</div>
+                      <div class="paper-venue">International Conference on Machine Learning (<b>ICML</b>), 2025 <font color="#e86e14">(Oral)</font></div>
+                      <div class="paper-badges">
+                        <a href="https://arxiv.org/abs/2401.15914" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2401.15914</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:isC4tDSrTZIC" target="_blank" class="citations-btn">
+                          <i class="fa fa-quote-left"></i>
+                          <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:isC4tDSrTZIC">0</span>
+                        </a>
+                        <a href="https://github.com/Wiselnn570/VideoRoPE" class="github-btn" target="_blank" data-repo="Wiselnn570/VideoRoPE">
+                          <i class="fa fa-star"></i>
+                          <span class="star-count">0</span>
+                        </a>
+                      </div>
+            </div>
+          </div>
+
+          <div class="paper-card" data-year="2025" data-topic="AIGC" data-venue="ICML">
+            <div class="paper-content">
+              <papertitle>SongGen: A Single Stage Auto-regressive Transformer for Text-to-Song Generation Way</papertitle>
+                      <div class="author-names">Zihan Liu, Shuangrui Ding, Zhixiong Zhang, Xiaoyi Dong, Pan Zhang, <span class="author-highlight">Yuhang Zang</span>, Yuhang Cao, Dahua Lin, Jiaqi Wang</div>
+                      <div class="paper-venue">International Conference on Machine Learning (<b>ICML</b>), 2025</div>
+                      <div class="paper-badges">
+                        <a href="https://arxiv.org/abs/2502.13128" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2502.13128</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:blknAaTinKkC" target="_blank" class="citations-btn">
+                          <i class="fa fa-quote-left"></i>
+                          <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:blknAaTinKkC">0</span>
+                        </a>
+                        <a href="https://github.com/LiuZH-19/SongGen" class="github-btn" target="_blank" data-repo="LiuZH-19/SongGen">
+                          <i class="fa fa-star"></i>
+                          <span class="star-count">0</span>
+                        </a>
+                      </div>
+            </div>
+          </div>
+
+          <div class="paper-card" data-year="2025" data-topic="AIGC" data-venue="CVPR">
+            <div class="paper-content">
+              <papertitle>ByTheWay: Boost Your Text-to-Video Generation Model to Higher Quality in a Training-free Way</papertitle>
+                      <div class="author-names">Jiazi Bu<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Pengyang Ling<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Pan Zhang, Tong Wu, Xiaoyi Dong, <span class="author-highlight">Yuhang Zang</span>, Yuhang Cao, Dahua Lin, Jiaqi Wang</div>
+                      <div class="paper-venue">IEEE Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>), 2025</div>
+                      <div class="paper-badges">
+                        <a href="https://arxiv.org/abs/2410.06241" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2410.06241</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:dfsIfKJdRG4C" target="_blank" class="citations-btn">
+                          <i class="fa fa-quote-left"></i>
+                          <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:dfsIfKJdRG4C">0</span>
+                        </a>
+                        <a href="https://github.com/Bujiazi/BroadWay/" class="github-btn" target="_blank" data-repo="Bujiazi/BroadWay/">
+                          <i class="fa fa-star"></i>
+                          <span class="star-count">0</span>
+                        </a>
+                      </div>
+            </div>
+          </div>
+
+          <div class="paper-card" data-year="2025" data-topic="Multimodal Large Language Models" data-venue="CVPR">
+            <div class="paper-content">
+              <papertitle>OVOBench: How Far is Your Video-LLMs from Real-World Online Video Understanding?</papertitle>
+                      <div class="author-names">Yifei Li<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Junbo Niu<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Ziyang Miao, Chunjiang Ge, Yuanhang Zhou, Qihao He, Xiaoyi Dong, Haodong Duan, Shuangrui Ding, Rui Qian, Pan Zhang, <span class="author-highlight">Yuhang Zang</span>, Yuhang Cao, Conghui He, Jiaqi Wang</div>
+                      <div class="paper-venue">IEEE Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>), 2025</div>
+                      <div class="paper-badges">
+                        <a href="https://arxiv.org/abs/2501.05510" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2501.05510</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:iH-uZ7U-co4C" target="_blank" class="citations-btn">
+                          <i class="fa fa-quote-left"></i>
+                          <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:iH-uZ7U-co4C">0</span>
+                        </a>
+                        <a href="https://github.com/JoeLeelyf/OVO-Bench" class="github-btn" target="_blank" data-repo="JoeLeelyf/OVO-Bench">
+                          <i class="fa fa-star"></i>
+                          <span class="star-count">0</span>
+                        </a>
+                      </div>
+            </div>
+          </div>
+
+          <div class="paper-card" data-year="2025" data-topic="Multimodal Large Language Models" data-venue="CVPR">
+            <div class="paper-content">
+              <papertitle>Dispider: Enabling Video LLMs with Active Real-Time Interaction via Disentangled Perception, Decision, and Reaction</papertitle>
+                      <div class="author-names">Rui Qian<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Shuangrui Ding<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Xiaoyi Dong, Pan Zhang, <span class="author-highlight">Yuhang Zang</span>, Yuhang Cao, Dahua Lin, Jiaqi Wang</div>
+                      <div class="paper-venue">IEEE Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>), 2025</div>
+                      <div class="paper-badges">
+                        <a href="https://arxiv.org/abs/2501.03218" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2501.03218</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:r0BpntZqJG4C" target="_blank" class="citations-btn">
+                          <i class="fa fa-quote-left"></i>
+                          <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:r0BpntZqJG4C">0</span>
+                        </a>
+                        <a href="https://github.com/Mark12Ding/Dispider" class="github-btn" target="_blank" data-repo="Mark12Ding/Dispider">
+                          <i class="fa fa-star"></i>
+                          <span class="star-count">0</span>
+                        </a>
+                      </div>
+            </div>
+          </div>
+
+          <div class="paper-card" data-year="2025" data-topic="Multimodal Large Language Models" data-venue="CVPR">
+            <div class="paper-content">
+              <papertitle>PyramidDrop: Accelerating Your Large Vision-Language Models via Pyramid Visual Redundancy Reduction</papertitle>
+                      <div class="author-names">Long Xing, Qidong Huang, Xiaoyi Dong, Jiajie Lu, Pan Zhang, <span class="author-highlight">Yuhang Zang</span>, Yuhang Cao, Conghui He, Jiaqi Wang, Feng Wu, Dahua Lin</div>
+                      <div class="paper-venue">IEEE Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>), 2025</div>
+                      <div class="paper-badges">
+                        <a href="https://arxiv.org/abs/2410.17247" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2410.17247</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:4OULZ7Gr8RgC" target="_blank" class="citations-btn">
+                          <i class="fa fa-quote-left"></i>
+                          <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:4OULZ7Gr8RgC">0</span>
+                        </a>
+                        <a href="https://github.com/Cooperx521/PyramidDrop" class="github-btn" target="_blank" data-repo="Cooperx521/PyramidDrop">
+                          <i class="fa fa-star"></i>
+                          <span class="star-count">0</span>
+                        </a>
+                      </div>
+            </div>
+          </div>
+
+          <div class="paper-card" data-year="2025" data-topic="AIGC" data-venue="CVPR">
+            <div class="paper-content">
+              <papertitle>WildAvatar: Web-scale In-the-wild Video Dataset for 3D Avatar Creation</papertitle>
+                      <div class="author-names">Zihao Huang, ShouKang Hu, Guangcong Wang, Tianqi Liu, <span class="author-highlight">Yuhang Zang</span>, Zhiguo Cao, Wei Li, Ziwei Liu</div>
+                      <div class="paper-venue">IEEE Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>), 2025</div>
+                      <div class="paper-badges">
+                        <a href="https://arxiv.org/abs/2407.02165" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2407.02165</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:fPk4N6BV_jEC" target="_blank" class="citations-btn">
+                          <i class="fa fa-quote-left"></i>
+                          <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:fPk4N6BV_jEC">0</span>
+                        </a>
+                        <a href="https://github.com/wildavatar/WildAvatar_Toolbox" class="github-btn" target="_blank" data-repo="wildavatar/WildAvatar_Toolbox">
+                          <i class="fa fa-star"></i>
+                          <span class="star-count">0</span>
+                        </a>
+                      </div>
+            </div>
+          </div>
+
+          <div class="paper-card" data-year="2025" data-topic="Reinforcement Learning from Human Feedback" data-venue="ICLR">
+            <div class="paper-content">
+              <papertitle>MIA-DPO: Multi-Image Augmented Direct Preference Optimization For Large Vision-Language Models</papertitle>
+                      <div class="author-names">Ziyu Liu, <span class="author-highlight">Yuhang Zang</span><span class="author-annotation corresponding"><i class="fa fa-envelope"></i></span>, Xiaoyi Dong, Pan Zhang, Yuhang Cao, Haodong Duan, Conghui He, Yuanjun Xiong, Dahua Lin, Jiaqi Wang<span class="author-annotation corresponding"><i class="fa fa-envelope"></i></span></div>
+                      <div class="paper-venue">International Conference on Learning Representations (<b>ICLR</b>), 2025</div>
+                      <div class="paper-badges">
+                        <a href="https://arxiv.org/abs/2410.17637" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2410.17637</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:9ZlFYXVOiuMC" target="_blank" class="citations-btn">
+                          <i class="fa fa-quote-left"></i>
+                          <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:9ZlFYXVOiuMC">0</span>
+                        </a>
+                        <a href="https://github.com/Liuziyu77/MIA-DPO" class="github-btn" target="_blank" data-repo="Liuziyu77/MIA-DPO">
+                          <i class="fa fa-star"></i>
+                          <span class="star-count">0</span>
+                        </a>
+                        <a href="https://liuziyu77.github.io/MIA-DPO" target="_blank" class="homepage-btn"><i class="fa fa-home"></i>Home</a>
+                      </div>
+            </div>
+          </div>
+
+          <div class="paper-card" data-year="2025" data-topic="AIGC" data-venue="ICLR">
+            <div class="paper-content">
+              <papertitle>MotionClone: Training-Free Motion Cloning for Controllable Video Generation</papertitle>
+                      <div class="author-names">Pengyang Ling<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Jiazi Bu<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Pan Zhang, Xiaoyi Dong, <span class="author-highlight">Yuhang Zang</span>, Tong Wu, Huaian Chen, Jiaqi Wang, Yi Jin</div>
+                      <div class="paper-venue">International Conference on Learning Representations (<b>ICLR</b>), 2025</div>
+                      <div class="paper-badges">
+                        <a href="https://arxiv.org/abs/2406.05338" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2406.05338</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:kNdYIx-mwKoC" target="_blank" class="citations-btn">
+                          <i class="fa fa-quote-left"></i>
+                          <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:kNdYIx-mwKoC">0</span>
+                        </a>
+                        <a href="https://github.com/Bujiazi/MotionClone" class="github-btn" target="_blank" data-repo="Bujiazi/MotionClone">
+                          <i class="fa fa-star"></i>
+                          <span class="star-count">0</span>
+                        </a>
+                        <a href="https://bujiazi.github.io/motionclone.github.io/" target="_blank" class="homepage-btn"><i class="fa fa-home"></i>Home</a>
+                      </div>
+            </div>
+          </div>
+
+          <div class="paper-card" data-year="2024" data-topic="Multimodal Large Language Models" data-venue="ACM MM">
+            <div class="paper-content">
+              <papertitle>VLMEvalKit: An Open-Source Toolkit for Evaluating Large Multi-Modality Models</papertitle>
+                      <div class="author-names">Haodong Duan, Xinyu Fang, Junming Yang, Xiangyu Zhao, Yuxuan Qiao, Mo Li, Amit Agarwal, Zhe Chen, Lin Chen, Yuan Liu, Yubo Ma, Hailong Sun, Yifan Zhang, Shiyin Lu, Tack Hwa Wong, Weiyun Wang, Peiheng Zhou, Xiaozhe Li, Chaoyou Fu, Junbo Cui, Xiaoyi Dong, <span class="author-highlight">Yuhang Zang</span>, Pan Zhang, Jiaqi Wang, Dahua Lin, Kai Chen
+                    </div>
+                      <div class="paper-venue">ACM Multimedia (<b>ACM MM</b>), 2024 (Open Source Software Competition)</font></div>
+                      <div class="paper-badges">
+                        <a href="https://arxiv.org/abs/2407.11691" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2407.11691</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:4TOpqqG69KYC" target="_blank" class="citations-btn">
+                          <i class="fa fa-quote-left"></i>
+                          <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:4TOpqqG69KYC">0</span>
+                        </a>
+                        <a href="https://github.com/open-compass/VLMEvalKit" class="github-btn" target="_blank" data-repo="open-compass/VLMEvalKit">
+                          <i class="fa fa-star"></i>
+                          <span class="star-count">0</span>
+                        </a>
+                      </div>
+            </div>
+          </div>
+
+          <div class="paper-card" data-year="2024" data-topic="Multimodal Large Language Models" data-venue="NeurIPS">
+            <div class="paper-content">
+              <papertitle>MMLongBench-Doc: Benchmarking Long-context Document Understanding with Visualizations</papertitle>
+                      <div class="author-names">Yubo Ma, <span class="author-highlight">Yuhang Zang</span><span class="author-annotation corresponding"><i class="fa fa-envelope"></i></span>, Liangyu Chen, Meiqi Chen, Yizhu Jiao, Xinze Li, Xinyuan Lu, Ziyu Liu, Yan Ma, Xiaoyi Dong, Pan Zhang, Liangming Pan, Yu-Gang Jiang, Jiaqi Wang, Yixin Cao<span class="author-annotation corresponding"><i class="fa fa-envelope"></i></span>, Aixin Sun</div>
+                      <div class="paper-venue">Neural Information Processing Systems (<b>NeurIPS</b>), 2024 (Datasets and Benchmarks Track) <font color="#e86e14">(Spotlight)</font></div>
+                      <div class="paper-badges">
+                        <a href="https://arxiv.org/abs/2407.01523" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2407.01523</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:ULOm3_A8WrAC" target="_blank" class="citations-btn">
+                          <i class="fa fa-quote-left"></i>
+                          <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:ULOm3_A8WrAC">0</span>
+                        </a>
+                        <a href="https://github.com/mayubo2333/MMLongBench-Doc" class="github-btn" target="_blank" data-repo="mayubo2333/MMLongBench-Doc">
+                          <i class="fa fa-star"></i>
+                          <span class="star-count">0</span>
+                        </a>
+                        <a href="https://mayubo2333.github.io/MMLongBench-Doc/" target="_blank" class="homepage-btn"><i class="fa fa-home"></i>Home</a>
+                        <a href="https://huggingface.co/datasets/yubo2333/MMLongBench-Doc" class="huggingface-btn dataset"><span class="hf-emoji">🤗</span>Dataset</a>
+                      </div>
+            </div>
+          </div>
+
+          <div class="paper-card" data-year="2024" data-topic="Multimodal Large Language Models" data-venue="NeurIPS">
+            <div class="paper-content">
+              <papertitle>MMDU: A Multi-Turn Multi-Image Dialog Understanding Benchmark and Instruction-Tuning Dataset for LVLMs</papertitle>
+                      <div class="author-names">Ziyu Liu, Tao Chu, <span class="author-highlight">Yuhang Zang</span><span class="author-annotation corresponding"><i class="fa fa-envelope"></i></span>, Xilin Wei, Xiaoyi Dong, Pan Zhang, Zijian Liang, Yuanjun Xiong, Yu Qiao, Dahua Lin, Jiaqi Wang<span class="author-annotation corresponding"><i class="fa fa-envelope"></i></span></div>
+                      <div class="paper-venue">Neural Information Processing Systems (<b>NeurIPS</b>), 2024 (Datasets and Benchmarks Track)</div>
+                      <div class="paper-badges">
+                        <a href="https://arxiv.org/abs/2406.11833" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2406.11833</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:Zph67rFs4hoC" target="_blank" class="citations-btn">
+                          <i class="fa fa-quote-left"></i>
+                          <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:Zph67rFs4hoC">0</span>
+                        </a>
+                        <a href="https://github.com/Liuziyu77/MMDU" class="github-btn" target="_blank" data-repo="Liuziyu77/MMDU">
+                          <i class="fa fa-star"></i>
+                          <span class="star-count">0</span>
+                        </a>
+                        <a href="https://liuziyu77.github.io/MMDU/" target="_blank" class="homepage-btn"><i class="fa fa-home"></i>Home</a>
+                        <a href="https://huggingface.co/datasets/laolao77/MMDU" class="huggingface-btn dataset"><span class="hf-emoji">🤗</span>Dataset</a>
+                      </div>
+            </div>
+          </div>
+
+          <div class="paper-card" data-year="2024" data-topic="Multimodal Large Language Models" data-venue="NeurIPS">
+            <div class="paper-content">
+              <papertitle>ShareGPT4Video: Improving Video Understanding and Generation with Better Captions</papertitle>
+                      <div class="author-names">Lin Chen<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Xilin Wei<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Jinsong Li<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Xiaoyi Dong, Pan Zhang, <span class="author-highlight">Yuhang Zang</span>, Zehui Chen, Haodong Duan, Bin Lin, Zhenyu Tang, Li Yuan, Yu Qiao, Dahua Lin, Feng Zhao, Jiaqi Wang</div>
+                      <div class="paper-venue">Neural Information Processing Systems (<b>NeurIPS</b>), 2024 (Datasets and Benchmarks Track)</div>
+                      <div class="paper-badges">
+                        <a href="https://arxiv.org/abs/2406.04325" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2406.04325</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:3fE2CSJIrl8C" target="_blank" class="citations-btn">
+                          <i class="fa fa-quote-left"></i>
+                          <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:3fE2CSJIrl8C">0</span>
+                        </a>
+                        <a href="https://github.com/ShareGPT4Omni/ShareGPT4Video" class="github-btn" target="_blank" data-repo="ShareGPT4Omni/ShareGPT4Video">
+                          <i class="fa fa-star"></i>
+                          <span class="star-count">0</span>
+                        </a>
+                        <a href="https://sharegpt4video.github.io/" target="_blank" class="homepage-btn"><i class="fa fa-home"></i>Home</a>
+                        <a href="https://huggingface.co/datasets/ShareGPT4Video/ShareGPT4Video" class="huggingface-btn dataset"><span class="hf-emoji">🤗</span>Dataset</a>
+                      </div>
+            </div>
+          </div>
+
+          <div class="paper-card" data-year="2024" data-topic="Multimodal Large Language Models" data-venue="NeurIPS">
+            <div class="paper-content">
+              <papertitle>Streaming Long Video Understanding with Large Language Models</papertitle>
+                      <div class="author-names">Rui Qian, Xiaoyi Dong, Pan Zhang, <span class="author-highlight">Yuhang Zang</span>, Shuangrui Ding, Dahua Lin, Jiaqi Wang</div>
+                      <div class="paper-venue">Neural Information Processing Systems (<b>NeurIPS</b>), 2024</div>
+                      <div class="paper-badges">
+                        <a href="https://arxiv.org/abs/2405.16009" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2405.16009</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:8k81kl-MbHgC" target="_blank" class="citations-btn">
+                          <i class="fa fa-quote-left"></i>
+                          <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:8k81kl-MbHgC">0</span>
+                        </a>
+                      </div>
+            </div>
+          </div>
+
+          <div class="paper-card" data-year="2024" data-topic="Multimodal Large Language Models" data-venue="NeurIPS">
+            <div class="paper-content">
+              <papertitle>Are We on the Right Way for Evaluating Large Vision-Language Models?</papertitle>
+                      <div class="author-names">Lin Chen<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Jinsong Li<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Xiaoyi Dong, Pan Zhang, <span class="author-highlight">Yuhang Zang</span>, Zehui Chen, Haodong Duan, Jiaqi Wang, Yu Qiao, Dahua Lin, Feng Zhao</div>
+                      <div class="paper-venue">Neural Information Processing Systems (<b>NeurIPS</b>), 2024</div>
+                      <div class="paper-badges">
+                        <a href="https://arxiv.org/abs/2403.20330" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2403.20330</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:UebtZRa9Y70C" target="_blank" class="citations-btn">
+                          <i class="fa fa-quote-left"></i>
+                          <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:UebtZRa9Y70C">0</span>
+                        </a>
+                        <a href="https://github.com/MMStar-Benchmark/MMStar" class="github-btn" target="_blank" data-repo="MMStar-Benchmark/MMStar">
+                          <i class="fa fa-star"></i>
+                          <span class="star-count">0</span>
+                        </a>
+                        <a href="https://mmstar-benchmark.github.io/" target="_blank" class="homepage-btn"><i class="fa fa-home"></i>Home</a>
+                      </div>
+            </div>
+          </div>
+
+          <div class="paper-card" data-year="2024" data-topic="Multimodal Large Language Models" data-venue="NeurIPS">
+            <div class="paper-content">
+              <papertitle>InternLM-XComposer2-4KHD: A Pioneering Large Vision-Language Model Handling Resolutions from 336 Pixels to 4K HD</papertitle>
+                      <div class="author-names">Xiaoyi Dong<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Pan Zhang<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, <span class="author-highlight">Yuhang Zang</span>, Yuhang Cao, Bin Wang, Linke Ouyang, Songyang Zhang, Haodong Duan, Wenwei Zhang, Yining Li, Hang Yan, Yang Gao, Zhe Chen, Xinyue Zhang, Wei Li, Jingwen Li, Wenhai Wang, Kai Chen, Conghui He, Xingcheng Zhang, Jifeng Dai, Yu Qiao, Dahua Lin, Jiaqi Wang</div>
+                      <div class="paper-venue">Neural Information Processing Systems (<b>NeurIPS</b>), 2024</div>
+                      <div class="paper-badges">
+                        <a href="https://arxiv.org/abs/2404.06512" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2404.06512</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:hqOjcs7Dif8C" target="_blank" class="citations-btn">
+                          <i class="fa fa-quote-left"></i>
+                          <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:hqOjcs7Dif8C">0</span>
+                        </a>
+                        <a href="https://github.com/InternLM/InternLM-XComposer" class="github-btn" target="_blank" data-repo="InternLM/InternLM-XComposer">
+                          <i class="fa fa-star"></i>
+                          <span class="star-count">0</span>
+                        </a>
+                      </div>
+            </div>
+          </div>
+
+          <div class="paper-card" data-year="2024" data-topic="AIGC" data-venue="ECCV">
+            <div class="paper-content">
+              <papertitle>Fast Generalizable Gaussian Splatting Reconstruction from Multi-View Stereo</papertitle>
+                      <div class="author-names">Tianqi Liu, Guangcong Wang, Shoukang Hu, Liao Shen, Xinyi Ye, <span class="author-highlight">Yuhang Zang</span>, Zhiguo Cao, Wei Li, Ziwei Liu</div>
+                      <div class="paper-venue">European Conference on Computer Vision (<b>ECCV</b>), 2024</div>
+                      <div class="paper-badges">
+                        <a href="https://arxiv.org/abs/2405.12218" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2405.12218</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:aqlVkmm33-oC" target="_blank" class="citations-btn">
+                          <i class="fa fa-quote-left"></i>
+                          <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:aqlVkmm33-oC">0</span>
+                        </a>
+                        <a href="https://github.com/TQTQliu/MVSGaussian" class="github-btn" target="_blank" data-repo="TQTQliu/MVSGaussian">
+                          <i class="fa fa-star"></i>
+                          <span class="star-count">0</span>
+                        </a>
+                        <a href="https://mvsgaussian.github.io/" target="_blank" class="homepage-btn"><i class="fa fa-home"></i>Home</a>
+                      </div>
+            </div>
+          </div>
+
+          <div class="paper-card" data-year="2024" data-topic="Vision-Language Models" data-venue="ECCV">
+            <div class="paper-content">
+              <papertitle>Long-CLIP: Unlocking the Long-Text Capability of CLIP</papertitle>
+                      <div class="author-names">Beichen Zhang, Pan Zhang, Xiaoyi Dong, <span class="author-highlight">Yuhang Zang</span>, Jiaqi Wang</div>
+                      <div class="paper-venue">European Conference on Computer Vision (<b>ECCV</b>), 2024</div>
+                      <div class="paper-badges">
+                        <a href="https://arxiv.org/abs/2403.15378" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2403.15378</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:roLk4NBRz8UC" target="_blank" class="citations-btn">
+                          <i class="fa fa-quote-left"></i>
+                          <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:roLk4NBRz8UC">0</span>
+                        </a>
+                        <a href="https://github.com/beichenzbc/Long-CLIP" class="github-btn" target="_blank" data-repo="beichenzbc/Long-CLIP">
+                          <i class="fa fa-star"></i>
+                          <span class="star-count">0</span>
+                        </a>
+                      </div>
+            </div>
+          </div>
+
+          <div class="paper-card" data-year="2024" data-topic="Vision-Language Models" data-venue="CVPR">
+            <div class="paper-content">
+              <papertitle>Alpha-CLIP: A CLIP Model Focusing on Wherever You Want</papertitle>
+                      <div class="author-names">Zeyi Sun, Ye Fang, Tong Wu, Pan Zhang, <span class="author-highlight">Yuhang Zang</span>, Shu Kong, Yuanjun Xiong, Dahua Lin, Jiaqi Wang</div>
+                      <div class="paper-venue">IEEE Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>), 2024</div>
+                      <div class="paper-badges">
+                        <a href="https://arxiv.org/abs/2312.03818" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2312.03818</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:WF5omc3nYNoC" target="_blank" class="citations-btn">
+                          <i class="fa fa-quote-left"></i>
+                          <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:WF5omc3nYNoC">0</span>
+                        </a>
+                        <a href="https://github.com/SunzeY/AlphaCLIP" class="github-btn" target="_blank" data-repo="SunzeY/AlphaCLIP">
+                          <i class="fa fa-star"></i>
+                          <span class="star-count">0</span>
+                        </a>
+                        <a href="https://aleafy.github.io/alpha-clip/" target="_blank" class="homepage-btn"><i class="fa fa-home"></i>Home</a>
+                        <a href="https://huggingface.co/spaces/Zery/Alpha_CLIP_ImgVar" class="huggingface-btn space"><span class="hf-emoji">🤗</span>Space</a>
+                      </div>
+            </div>
+          </div>
+
+          <div class="paper-card" data-year="2024" data-topic="Vision-Language Models" data-venue="ICLR">
+            <div class="paper-content">
+              <papertitle>Overcoming the Pitfalls of Vision-Language Model Finetuning for OOD Generalization</papertitle>
+                      <div class="author-names"><span class="author-highlight">Yuhang Zang</span>, Hanlin Goh, Josh Susskind, Chen Huang</div>
+                      <div class="paper-venue">International Conference on Learning Representations (<b>ICLR</b>), 2024</div>
+                      <div class="paper-badges">
+                        <a href="https://arxiv.org/abs/2401.15914" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2401.15914</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:ufrVoPGSRksC" target="_blank" class="citations-btn">
+                          <i class="fa fa-quote-left"></i>
+                          <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:ufrVoPGSRksC">0</span>
+                        </a>
+                      </div>
+            </div>
+          </div>
+
+          <div class="paper-card" data-year="2024" data-topic="Multimodal Large Language Models" data-venue="IJCV">
+            <div class="paper-content">
+              <papertitle>Contextual Object Detection with Multimodal Large Language Models</papertitle>
+                      <div class="author-names"><span class="author-highlight">Yuhang Zang</span>, Wei Li, Jun Han, Kaiyang Zhou, Chen Change Loy</div>
+                      <div class="paper-venue">International Journal of Computer Vision (<b>IJCV</b>), 2024</div>
+                      <div class="paper-badges">
+                        <a href="https://arxiv.org/abs/2305.18279" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2305.18279</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:YsMSGLbcyi4C" target="_blank" class="citations-btn">
+                          <i class="fa fa-quote-left"></i>
+                          <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:YsMSGLbcyi4C">0</span>
+                        </a>
+                        <a href="https://github.com/yuhangzang/ContextDET" class="github-btn" target="_blank" data-repo="yuhangzang/ContextDET">
+                          <i class="fa fa-star"></i>
+                          <span class="star-count">0</span>
+                        </a>
+                        <a href="https://www.mmlab-ntu.com/project/contextdet/index.html" target="_blank" class="homepage-btn"><i class="fa fa-home"></i>Home</a>
+                        <a href="https://huggingface.co/spaces/yuhangzang/ContextDet-Demo" class="huggingface-btn space"><span class="hf-emoji">🤗</span>Space</a>
+                      </div>
+            </div>
+          </div>
+
+          <div class="paper-card" data-year="2023" data-topic="Image Understanding" data-venue="Thesis">
+            <div class="paper-content">
+              <papertitle>Real-World Object Detection</papertitle>
+                      <div class="author-names"><span class="author-highlight">Yuhang Zang</span></div>
+                      <div class="paper-venue">PhD Thesis, Nanyang Technological University, 2023</div>
+                      <div class="paper-badges">
+                        <a href="https://dr.ntu.edu.sg/handle/10356/171489" target="_blank" class="arxiv-btn"><i class="fa fa-file-pdf-o"></i>PDF</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:eQOLeE2rZwMC" target="_blank" class="citations-btn">
+                          <i class="fa fa-quote-left"></i>
+                          <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:eQOLeE2rZwMC">0</span>
+                        </a>
+                      </div>
+            </div>
+          </div>
+
+          <div class="paper-card" data-year="2022" data-topic="Vision-Language Models" data-venue="arXiv">
+            <div class="paper-content">
+              <papertitle>Unified Vision and Language Prompt Learning</papertitle>
+                      <div class="author-names"><span class="author-highlight">Yuhang Zang</span>, Wei Li, Kaiyang Zhou, Chen Huang, Chen Change Loy</div>
+                      <div class="paper-venue">arXiv 2022</div>
+                      <div class="paper-badges">
+                        <a href="https://arxiv.org/abs/2210.07225" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2210.07225</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:Tyk-4Ss8FVUC" target="_blank" class="citations-btn">
+                          <i class="fa fa-quote-left"></i>
+                          <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:Tyk-4Ss8FVUC">0</span>
+                        </a>
+                        <a href="https://github.com/yuhangzang/UPT" class="github-btn" target="_blank" data-repo="yuhangzang/UPT">
+                          <i class="fa fa-star"></i>
+                          <span class="star-count">0</span>
+                        </a>
+                      </div>
+            </div>
+          </div>
+          
+          <div class="paper-card" data-year="2023" data-topic="Image Understanding" data-venue="IJCV">
+            <div class="paper-content">
+              <papertitle>Semi-Supervised and Long-Tailed Object Detection with CascadeMatch</papertitle>
+                      <div class="author-names"><span class="author-highlight">Yuhang Zang</span>, Kaiyang Zhou, Chen Huang, Chen Change Loy</div>
+                      <div class="paper-venue">International Journal of Computer Vision (<b>IJCV</b>), 2023</div>
+                      <div class="paper-badges">
+                        <a href="https://arxiv.org/abs/2305.14813" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2305.14813</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:W7OEmFMy1HYC" target="_blank" class="citations-btn">
+                          <i class="fa fa-quote-left"></i>
+                          <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:W7OEmFMy1HYC">0</span>
+                        </a>
+                      </div>
+            </div>
+          </div>
+
+          <div class="paper-card" data-year="2022" data-topic="Image Understanding" data-venue="ECCV">
+            <div class="paper-content">
+              <papertitle>Open-Vocabulary DETR with Conditional Matching</papertitle>
+                      <div class="author-names"><span class="author-highlight">Yuhang Zang</span>, Wei Li, Kaiyang Zhou, Chen Huang, Chen Change Loy</div>
+                      <div class="paper-venue">European Conference on Computer Vision (<b>ECCV</b>), 2022 <font color="#e86e14">(Oral)</font></div>
+                      <div class="paper-badges">
+                        <a href="https://arxiv.org/abs/2203.11876" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2203.11876</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:IjCSPb-OGe4C" target="_blank" class="citations-btn">
+                          <i class="fa fa-quote-left"></i>
+                          <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:IjCSPb-OGe4C">0</span>
+                        </a>
+                        <a href="https://github.com/yuhangzang/OV-DETR" class="github-btn" target="_blank" data-repo="yuhangzang/OV-DETR">
+                          <i class="fa fa-star"></i>
+                          <span class="star-count">0</span>
+                        </a>
+                        <a href="https://www.mmlab-ntu.com/project/ovdetr/index.html" target="_blank" class="homepage-btn"><i class="fa fa-home"></i>Home</a>
+                      </div>
+            </div>
+          </div>
+
+          <div class="paper-card" data-year="2021" data-topic="Image Understanding" data-venue="ICCV">
+            <div class="paper-content">
+              <papertitle>FASA: Feature Augmentation and Sampling Adaptation for Long-Tailed Instance Segmentation</papertitle>
+                      <div class="author-names"><span class="author-highlight">Yuhang Zang</span>, Chen Huang, Chen Change Loy</div>
+                      <div class="paper-venue">IEEE International Conference on Computer Vision (<b>ICCV</b>), 2021</div>
+                      <div class="paper-badges">
+                        <a href="https://arxiv.org/abs/2102.12867" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2102.12867</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:qjMakFHDy7sC" target="_blank" class="citations-btn">
+                          <i class="fa fa-quote-left"></i>
+                          <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:qjMakFHDy7sC">0</span>
+                        </a>
+                        <a href="https://github.com/yuhangzang/FASA" class="github-btn" target="_blank" data-repo="yuhangzang/FASA">
+                          <i class="fa fa-star"></i>
+                          <span class="star-count">0</span>
+                        </a>
+                        <a href="https://www.mmlab-ntu.com/project/fasa/index.html" target="_blank" class="homepage-btn"><i class="fa fa-home"></i>Home</a>
+                      </div>
+            </div>
+          </div>
+
+          <div class="paper-card" data-year="2021" data-topic="Image Understanding" data-venue="CVPR">
+            <div class="paper-content">
+              <papertitle>Seesaw Loss for Long-Tailed Instance Segmentation</papertitle>
+                      <div class="author-names">Jiaqi Wang, Wenwei Zhang, <span class="author-highlight">Yuhang Zang</span>, Yuhang Cao, Jiangmiao Pang, Tao Gong, Kai Chen, Ziwei Liu, Chen Change Loy, Dahua Lin</div>
+                      <div class="paper-venue">IEEE Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>), 2021</div>
+                      <div class="paper-badges">
+                        <a href="https://arxiv.org/abs/2008.10032" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2008.10032</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:2osOgNQ5qMEC" target="_blank" class="citations-btn">
+                          <i class="fa fa-quote-left"></i>
+                          <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:2osOgNQ5qMEC">0</span>
+                        </a>
+                        <a href="https://github.com/open-mmlab/mmdetection/tree/master/configs/seesaw_loss" class="github-btn" target="_blank" data-repo="open-mmlab/mmdetection/tree/master/configs/seesaw_loss">
+                          <i class="fa fa-star"></i>
+                          <span class="star-count">0</span>
+                        </a>
+                      </div>
+            </div>
+          </div>
+
+          <div class="paper-card" data-year="2020" data-topic="Image Understanding" data-venue="AAAI">
+            <div class="paper-content">
+              <papertitle>KPNet: Towards Minimal Face Detector</papertitle>
+                      <div class="author-names">Guanglu Song, Yu Liu, <span class="author-highlight">Yuhang Zang</span>, Xiaogang Wang, Biao Leng, Qingsheng Yuan</div>
+                      <div class="paper-venue">AAAI Conference on Artificial Intelligence (<b>AAAI</b>), 2020</div>
+                      <div class="paper-badges">
+                        <a href="https://arxiv.org/abs/2003.07543" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2003.07543</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:d1gkVwhDpl0C" target="_blank" class="citations-btn">
+                          <i class="fa fa-quote-left"></i>
+                          <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:d1gkVwhDpl0C">0</span>
+                        </a>
+                      </div>
+            </div>
+          </div>
+
+          <div class="paper-card" data-year="2019" data-topic="Image Understanding" data-venue="ICCV">
+            <div class="paper-content">
+              <papertitle>Efficient and Accurate Arbitrary-Shaped Text Detection with Pixel Aggregation Network</papertitle>
+                      <div class="author-names">Wenhai Wang, Enze Xie, Xiaoge Song, <span class="author-highlight">Yuhang Zang</span>, Wenjia Wang, Tong Lu, Gang Yu, Chunhua Shen</div>
+                      <div class="paper-venue">IEEE International Conference on Computer Vision (<b>ICCV</b>), 2019</div>
+                      <div class="paper-badges">
+                        <a href="https://arxiv.org/abs/1908.05900" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:1908.05900</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:u-x6o8ySG0sC" target="_blank" class="citations-btn">
+                          <i class="fa fa-quote-left"></i>
+                          <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:u-x6o8ySG0sC">0</span>
+                        </a>
+                        <a href="https://github.com/open-mmlab/mmocr/tree/main/configs/textdet/panet" class="github-btn" target="_blank" data-repo="open-mmlab/mmocr/tree/main/configs/textdet/panet">
+                          <i class="fa fa-star"></i>
+                          <span class="star-count">0</span>
+                        </a>
+                      </div>
+            </div>
+          </div>
+
+          <div class="paper-card" data-year="2019" data-topic="Image Understanding" data-venue="AAAI">
+            <div class="paper-content">
+              <papertitle>Scene Text Detection with Supervised Pyramid Context Network</papertitle>
+                      <div class="author-names">Enze Xie<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, <span class="author-highlight">Yuhang Zang</span>, Shuai Shao, Gang Yu, Cong Yao, Guangyao Li</div>
+                      <div class="paper-venue">AAAI Conference on Artificial Intelligence (<b>AAAI</b>), 2019</div>
+                      <div class="paper-badges">
+                        <a href="https://arxiv.org/abs/1811.08605" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:1811.08605</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:u5HHmVD_uO8C" target="_blank" class="citations-btn">
+                          <i class="fa fa-quote-left"></i>
+                          <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:u5HHmVD_uO8C">0</span>
+                        </a>
+                      </div>
+            </div>
+          </div>
+
+          </div>
+  </main>      
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script>
+      let originalPapers = [];
+      
+      // Dark mode functionality
+      function toggleTheme() {
+          const html = document.documentElement;
+          const themeToggle = document.getElementById('theme-toggle');
+          const themeIcon = themeToggle.querySelector('.theme-icon');
+          
+          if (html.getAttribute('data-theme') === 'dark') {
+              html.removeAttribute('data-theme');
+              themeIcon.textContent = '🌙';
+              localStorage.setItem('theme', 'light');
+          } else {
+              html.setAttribute('data-theme', 'dark');
+              themeIcon.textContent = '☀️';
+              localStorage.setItem('theme', 'dark');
+          }
+      }
+      
+      // Auto detect system preference and apply saved theme
+      function initTheme() {
+          const savedTheme = localStorage.getItem('theme');
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          const themeToggle = document.getElementById('theme-toggle');
+          const themeIcon = themeToggle?.querySelector('.theme-icon');
+          
+          if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+              document.documentElement.setAttribute('data-theme', 'dark');
+              if (themeIcon) themeIcon.textContent = '☀️';
+          } else {
+              document.documentElement.removeAttribute('data-theme');
+              if (themeIcon) themeIcon.textContent = '🌙';
+          }
+      }
+      
+      // Listen for system theme changes
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+          if (!localStorage.getItem('theme')) {
+              const themeIcon = document.querySelector('.theme-icon');
+              if (e.matches) {
+                  document.documentElement.setAttribute('data-theme', 'dark');
+                  if (themeIcon) themeIcon.textContent = '☀️';
+              } else {
+                  document.documentElement.removeAttribute('data-theme');
+                  if (themeIcon) themeIcon.textContent = '🌙';
+              }
+          }
+      });
+      
+      // Initialize theme before page load
+      initTheme();
+      
+      // Mobile menu toggle functionality
+      function toggleMobileMenu() {
+          const navMenu = document.getElementById('nav-menu');
+          const mobileToggle = document.querySelector('.mobile-menu-toggle');
+          
+          navMenu.classList.toggle('active');
+          mobileToggle.classList.toggle('active');
+      }
+      
+      // Close mobile menu when clicking outside
+      document.addEventListener('click', function(event) {
+          const navMenu = document.getElementById('nav-menu');
+          const mobileToggle = document.querySelector('.mobile-menu-toggle');
+          const mainNav = document.querySelector('.main-nav');
+          
+          if (!mainNav.contains(event.target) && navMenu.classList.contains('active')) {
+              navMenu.classList.remove('active');
+              mobileToggle.classList.remove('active');
+          }
+      });
+      
+      // Close mobile menu when clicking on nav links
+      document.addEventListener('DOMContentLoaded', function() {
+          const navLinks = document.querySelectorAll('.nav-link');
+          const navMenu = document.getElementById('nav-menu');
+          const mobileToggle = document.querySelector('.mobile-menu-toggle');
+          
+          navLinks.forEach(link => {
+              link.addEventListener('click', () => {
+                  navMenu.classList.remove('active');
+                  mobileToggle.classList.remove('active');
+              });
+          });
+      });
+      
+      window.onload = function () {
+          // Store original papers (only the paper cards, not headers)
+          const papersContainer = document.getElementById('papers-container');
+          originalPapers = Array.from(papersContainer.children).filter(child => child.classList.contains('paper-card'));
+          
+          // Update topic, venue, and date counts
+          updateTopicCounts();
+          updateVenueCounts();
+          updateDateCounts();
+          
+          // Initialize citation loading indicators
+          var citationEles = document.getElementsByClassName('show_paper_citations');
+          Array.prototype.forEach.call(citationEles, element => {
+              element.innerHTML = '<i class="fa fa-spinner fa-spin" style="font-size: 10px; opacity: 0.6;"></i>';
+          });
+          
+          var gsDataBaseUrl = 'https://raw.githubusercontent.com/yuhangzang/asset/refs/heads/google-scholar/gs_data.json'
+          $.getJSON(gsDataBaseUrl, function (data) {  
+              // Build lookup map from publications array
+              var publicationsMap = {};
+              data.publications.forEach(pub => {
+                  publicationsMap[pub.key] = pub.citations;
+              });
+              
+              var citationEles = document.getElementsByClassName('show_paper_citations')
+              Array.prototype.forEach.call(citationEles, element => {
+                  var paperId = element.getAttribute('data')
+                  var numCitations = publicationsMap[paperId] || 0;
+                  element.innerHTML = numCitations;
+              });
+          }).fail(function() {
+              // Reset to 0 if loading fails
+              Array.prototype.forEach.call(citationEles, element => {
+                  element.innerHTML = '0';
+              });
+          });
+          
+          // Initialize GitHub star loading indicators
+          const githubButtons = document.querySelectorAll('.github-btn[data-repo]');
+          githubButtons.forEach(button => {
+              const starCountElement = button.querySelector('.star-count');
+              if (starCountElement) {
+                  starCountElement.innerHTML = '<i class="fa fa-spinner fa-spin" style="font-size: 10px;"></i>';
+              }
+          });
+          
+          // Load GitHub star counts with timeout and better error handling
+          async function fetchGitHubStars(repo, starCountElement) {
+              try {
+                  // Use a timeout to prevent hanging
+                  const controller = new AbortController();
+                  const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+                  
+                  const response = await fetch(`https://api.github.com/repos/${repo}`, {
+                      signal: controller.signal,
+                      headers: {
+                          'Accept': 'application/vnd.github.v3+json',
+                          'User-Agent': 'GitHub-Stars-Fetcher'
+                      }
+                  });
+                  
+                  clearTimeout(timeoutId);
+                  
+                  if (!response.ok) {
+                      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                  }
+                  
+                  const data = await response.json();
+                  
+                  if (data.stargazers_count !== undefined) {
+                      starCountElement.textContent = formatStarCount(data.stargazers_count);
+                  } else {
+                      starCountElement.textContent = '-';
+                  }
+                  
+              } catch (error) {
+                  console.log(`Failed to load stars for ${repo}:`, error.message);
+                  
+                  // Fallback: try a simple badge API that returns JSON
+                  try {
+                      const badgeResponse = await fetch(`https://img.shields.io/github/stars/${repo}.json`);
+                      if (badgeResponse.ok) {
+                          const badgeData = await badgeResponse.json();
+                          if (badgeData.value && badgeData.value !== 'repo not found') {
+                              let stars = badgeData.value;
+                              // Handle k format (e.g., "1.2k")
+                              if (typeof stars === 'string' && stars.includes('k')) {
+                                  stars = Math.round(parseFloat(stars) * 1000);
+                              }
+                              starCountElement.textContent = formatStarCount(parseInt(stars) || 0);
+                              return;
+                          }
+                      }
+                  } catch (badgeError) {
+                      console.log(`Badge API also failed for ${repo}:`, badgeError.message);
+                  }
+                  
+                  // If all methods fail, show dash
+                  starCountElement.textContent = '-';
+              }
+          }
+          
+          githubButtons.forEach(button => {
+              const repo = button.getAttribute('data-repo');
+              const starCountElement = button.querySelector('.star-count');
+              
+              if (repo && starCountElement) {
+                  fetchGitHubStars(repo, starCountElement);
+              }
+          });
+      }
+      
+      // Helper function to format star counts (e.g., 1234 -> 1.2k)
+      function formatStarCount(count) {
+          if (count >= 1000) {
+              return (count / 1000).toFixed(1).replace(/\.0$/, '') + 'k';
+          }
+          return count.toString();
+      }
+      
+      function updateTopicCounts() {
+          // Count papers for each topic
+          const topicCounts = {};
+          originalPapers.forEach(paper => {
+              const topic = paper.getAttribute('data-topic');
+              topicCounts[topic] = (topicCounts[topic] || 0) + 1;
+          });
+          
+          // Update topic links with counts
+          const topicLinks = document.querySelectorAll('.topic-link');
+          topicLinks.forEach(link => {
+              const topicName = link.textContent.trim();
+              const count = topicCounts[topicName] || 0;
+              link.innerHTML = `${topicName} (${count})`;
+          });
+      }
+      
+      function updateVenueCounts() {
+          // Count papers for each venue
+          const venueCounts = {};
+          originalPapers.forEach(paper => {
+              const venue = paper.getAttribute('data-venue');
+              venueCounts[venue] = (venueCounts[venue] || 0) + 1;
+          });
+          
+          // Update venue links with counts
+          const venueLinks = document.querySelectorAll('.venue-link');
+          venueLinks.forEach(link => {
+              const venueName = link.textContent.trim();
+              const count = venueCounts[venueName] || 0;
+              link.innerHTML = `${venueName} (${count})`;
+          });
+      }
+      
+      function updateDateCounts() {
+          // Count papers for each year
+          const yearCounts = {};
+          originalPapers.forEach(paper => {
+              const year = paper.getAttribute('data-year');
+              yearCounts[year] = (yearCounts[year] || 0) + 1;
+          });
+          
+          // Update date links with counts
+          const dateLinks = document.querySelectorAll('.date-link');
+          dateLinks.forEach(link => {
+              const yearName = link.textContent.trim();
+              const count = yearCounts[yearName] || 0;
+              link.innerHTML = `${yearName} (${count})`;
+          });
+      }
+      
+      function sortPapers(sortBy) {
+          const papersContainer = document.getElementById('papers-container');
+          // Always use the original papers array to avoid including headers
+          const papers = [...originalPapers];
+          const buttons = document.querySelectorAll('.sort-btn');
+          
+          // Update active button
+          buttons.forEach(btn => btn.classList.remove('active'));
+          // Find the correct button based on sortBy parameter
+          const activeButton = Array.from(buttons).find(btn => 
+              (sortBy === 'date' && btn.textContent.includes('Date')) ||
+              (sortBy === 'topic' && btn.textContent.includes('Topic')) ||
+              (sortBy === 'venue' && btn.textContent.includes('Venue'))
+          );
+          if (activeButton) {
+              activeButton.classList.add('active');
+          }
+          
+          // Clear container
+          papersContainer.innerHTML = '';
+          
+          let sortedPapers;
+          
+          if (sortBy === 'date') {
+              // Sort by year (newest first)
+              sortedPapers = papers.sort((a, b) => {
+                  const yearA = parseInt(a.getAttribute('data-year'));
+                  const yearB = parseInt(b.getAttribute('data-year'));
+                  return yearB - yearA;
+              });
+              
+              // Group by year and add headers
+              let currentYear = null;
+              sortedPapers.forEach(paper => {
+                  const paperYear = paper.getAttribute('data-year');
+                  
+                  if (paperYear !== currentYear) {
+                      // Create year header
+                      const yearHeader = document.createElement('div');
+                      yearHeader.className = 'year-header';
+                      yearHeader.textContent = paperYear;
+                      papersContainer.appendChild(yearHeader);
+                      currentYear = paperYear;
+                  }
+                  
+                  papersContainer.appendChild(paper);
+              });
+              
+          } else if (sortBy === 'topic') {
+              // Sort by topic with custom order
+              const topicOrder = {
+                  'Reinforcement Learning from Human Feedback': 1,
+                  'Multimodal Large Language Models': 2,
+                  'Vision-Language Models': 3,
+                  'Image Understanding': 4,
+                  'AIGC': 5,
+              };
+              
+              sortedPapers = papers.sort((a, b) => {
+                  const topicA = a.getAttribute('data-topic');
+                  const topicB = b.getAttribute('data-topic');
+                  
+                  if (topicA === topicB) {
+                      // If same topic, sort by year (newest first)
+                      const yearA = parseInt(a.getAttribute('data-year'));
+                      const yearB = parseInt(b.getAttribute('data-year'));
+                      return yearB - yearA;
+                  }
+                  
+                  // Sort by custom topic order
+                  const orderA = topicOrder[topicA] || 999;
+                  const orderB = topicOrder[topicB] || 999;
+                  return orderA - orderB;
+              });
+              
+              // Group by topic and add headers
+              let currentTopic = null;
+              sortedPapers.forEach(paper => {
+                  const paperTopic = paper.getAttribute('data-topic');
+                  
+                  if (paperTopic !== currentTopic) {
+                      // Create topic header
+                      const topicHeader = document.createElement('div');
+                      topicHeader.className = 'topic-header';
+                      topicHeader.id = 'topic-' + paperTopic.replace(/\s+/g, '-').toLowerCase();
+                      topicHeader.textContent = paperTopic;
+                      papersContainer.appendChild(topicHeader);
+                      currentTopic = paperTopic;
+                  }
+                  
+                  papersContainer.appendChild(paper);
+              });
+          } else if (sortBy === 'venue') {
+              // Sort by venue with custom order
+              const venueOrder = {
+                  'ICML': 1,
+                  'NeurIPS': 2,
+                  'ICLR': 3,
+                  'ACL': 4,
+                  'IJCV': 5,
+                  'CVPR': 6,
+                  'ICCV': 7,
+                  'ECCV': 8,
+                  'AAAI': 9,
+                  'ACM MM': 10,
+                  'arXiv': 11,
+                  'Thesis': 12
+              };
+              
+              sortedPapers = papers.sort((a, b) => {
+                  const venueA = a.getAttribute('data-venue');
+                  const venueB = b.getAttribute('data-venue');
+                  
+                  if (venueA === venueB) {
+                      // If same venue, sort by year (newest first)
+                      const yearA = parseInt(a.getAttribute('data-year'));
+                      const yearB = parseInt(b.getAttribute('data-year'));
+                      return yearB - yearA;
+                  }
+                  
+                  // Sort by custom venue order
+                  const orderA = venueOrder[venueA] || 999;
+                  const orderB = venueOrder[venueB] || 999;
+                  return orderA - orderB;
+              });
+              
+              // Group by venue and add headers
+              let currentVenue = null;
+              sortedPapers.forEach(paper => {
+                  const paperVenue = paper.getAttribute('data-venue');
+                  
+                  if (paperVenue !== currentVenue) {
+                      // Create venue header
+                      const venueHeader = document.createElement('div');
+                      venueHeader.className = 'venue-header';
+                      venueHeader.id = 'venue-' + paperVenue.replace(/\s+/g, '-').toLowerCase();
+                      venueHeader.textContent = paperVenue;
+                      papersContainer.appendChild(venueHeader);
+                      currentVenue = paperVenue;
+                  }
+                  
+                  papersContainer.appendChild(paper);
+              });
+          }
+          
+          // Add smooth animation
+          papersContainer.style.opacity = '0.5';
+          setTimeout(() => {
+              papersContainer.style.opacity = '1';
+          }, 150);
+      }
+      
+      function jumpToTopic(topicName) {
+          // First, make sure we're in topic view
+          sortPapers('topic');
+          
+          // Then scroll to the topic
+          setTimeout(() => {
+              const topicId = 'topic-' + topicName.replace(/\s+/g, '-').toLowerCase();
+              const topicElement = document.getElementById(topicId);
+              if (topicElement) {
+                  topicElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+          }, 200);
+      }
+      
+      function jumpToVenue(venueName) {
+          // First, make sure we're in venue view
+          sortPapers('venue');
+          
+          // Then scroll to the venue
+          setTimeout(() => {
+              const venueId = 'venue-' + venueName.replace(/\s+/g, '-').toLowerCase();
+              const venueElement = document.getElementById(venueId);
+              if (venueElement) {
+                  venueElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+          }, 200);
+      }
+      
+      function jumpToYear(year) {
+          // First, make sure we're in date view
+          sortPapers('date');
+          
+          // Then scroll to the year
+          setTimeout(() => {
+              const yearHeaders = document.querySelectorAll('.year-header');
+              let targetHeader = null;
+              yearHeaders.forEach(header => {
+                  if (header.textContent.trim() === year) {
+                      targetHeader = header;
+                  }
+              });
+              if (targetHeader) {
+                  targetHeader.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+          }, 200);
+      }
+      
+      // Back to Top Button functionality
+      function scrollToTop() {
+          window.scrollTo({
+              top: 0,
+              behavior: 'smooth'
+          });
+      }
+      
+      // Show/hide back to top button based on scroll position
+      window.addEventListener('scroll', function() {
+          const backToTopBtn = document.querySelector('.back-to-top-btn');
+          if (window.pageYOffset > 300) {
+              backToTopBtn.classList.add('show');
+          } else {
+              backToTopBtn.classList.remove('show');
+          }
+      });
+  </script>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top-btn" onclick="scrollToTop()" title="Back to Top">
+    <i class="fa fa-arrow-up"></i>
+  </button>
+
+</body>
+</html>
