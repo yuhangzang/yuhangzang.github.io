@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<!-- Meta tags for search engines to crawl -->
+<meta name="robots" content="index, follow">
+<meta name="description" content="Yuhang Zang's blog posts">
+<meta name="keywords" content="Yuhang Zang; Zang Yuhang; Computer Vision; Machine Learning; Deep Learning; Blog;">
+<meta name="author" content="Yuhang Zang">
+<link rel="author" href="yuhangzang.github.io">
+<title>Yuhang Zang - Blog</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://buttons.github.io">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<link id="theme-style" rel="stylesheet" href="../main.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<nav class="main-nav">
+  <div class="nav-container">
+    <div class="nav-brand">
+      <a href="../index.html" class="brand-link">Yuhang Zang</a>
+    </div>
+    
+    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+    
+    <div class="nav-menu" id="nav-menu">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="../research.html" class="nav-link">Publications</a>
+      <a href="../index.html#services" class="nav-link">Services</a>
+      <a href="../index.html#awards" class="nav-link">Awards</a>
+      <a href="./index.html" class="nav-link active">Blog</a>
+      <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
+        <span class="theme-icon">🌙</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<body>
+  <main>
+        <heading>Blog Posts</heading>
+        
+        <div class="posts-list">
+          
+
+        </div>
+  </main>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script>
+    // Dark mode functionality
+    function toggleTheme() {
+        const html = document.documentElement;
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = themeToggle.querySelector('.theme-icon');
+        
+        if (html.getAttribute('data-theme') === 'dark') {
+            html.removeAttribute('data-theme');
+            themeIcon.textContent = '🌙';
+            localStorage.setItem('theme', 'light');
+        } else {
+            html.setAttribute('data-theme', 'dark');
+            themeIcon.textContent = '☀️';
+            localStorage.setItem('theme', 'dark');
+        }
+    }
+    
+    // Auto detect system preference and apply saved theme
+    function initTheme() {
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = themeToggle?.querySelector('.theme-icon');
+        
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            if (themeIcon) themeIcon.textContent = '☀️';
+        } else {
+            document.documentElement.removeAttribute('data-theme');
+            if (themeIcon) themeIcon.textContent = '🌙';
+        }
+    }
+    
+    // Listen for system theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) {
+            const themeIcon = document.querySelector('.theme-icon');
+            if (e.matches) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                if (themeIcon) themeIcon.textContent = '☀️';
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+                if (themeIcon) themeIcon.textContent = '🌙';
+            }
+        }
+    });
+    
+    // Initialize theme before page load
+    initTheme();
+    
+    // Mobile menu toggle functionality
+    function toggleMobileMenu() {
+        const navMenu = document.getElementById('nav-menu');
+        const mobileToggle = document.querySelector('.mobile-menu-toggle');
+        
+        navMenu.classList.toggle('active');
+        mobileToggle.classList.toggle('active');
+    }
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const navMenu = document.getElementById('nav-menu');
+        const mobileToggle = document.querySelector('.mobile-menu-toggle');
+        const mainNav = document.querySelector('.main-nav');
+        
+        if (!mainNav.contains(event.target) && navMenu.classList.contains('active')) {
+            navMenu.classList.remove('active');
+            mobileToggle.classList.remove('active');
+        }
+    });
+    
+    // Close mobile menu when clicking on nav links
+    document.addEventListener('DOMContentLoaded', function() {
+        const navLinks = document.querySelectorAll('.nav-link');
+        const navMenu = document.getElementById('nav-menu');
+        const mobileToggle = document.querySelector('.mobile-menu-toggle');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileToggle.classList.remove('active');
+            });
+        });
+    });
+  </script>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top-btn" onclick="scrollToTop()" title="Back to Top">
+    <i class="fa fa-arrow-up"></i>
+  </button>
+
+  <script>
+    // Back to Top Button functionality
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+    
+    // Show/hide back to top button based on scroll position
+    window.addEventListener('scroll', function() {
+        const backToTopBtn = document.querySelector('.back-to-top-btn');
+        if (window.pageYOffset > 300) {
+            backToTopBtn.classList.add('show');
+        } else {
+            backToTopBtn.classList.remove('show');
+        }
+    });
+  </script>
+
+</body>
+
+</html>
