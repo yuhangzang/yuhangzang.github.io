@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<!-- Meta tags for search engines to crawl -->
+<meta name="robots" content="index, follow">
+<meta name="description" content="One Race for Multi-modal Long-Context Understanding: MMLongBench-Doc Leaderboard Updates - Yuhang Zang's Blog">
+<meta name="keywords" content="Yuhang Zang; Vision-Language Models; Evaluation; Multimodal AI; Research;">
+<meta name="author" content="Yuhang Zang">
+<link rel="author" href="yuhangzang.github.io">
+<title>One Year of Race for Multi-modal Long-Context Understanding: MMLongBench-Doc Leaderboard Updates - Yuhang Zang</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://buttons.github.io">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<link id="theme-style" rel="stylesheet" href="../../main.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+<style>
+  /* Collapsible code block styles */
+  .code-wrapper {
+    position: relative;
+    margin: 1em 0;
+  }
+  
+  .code-toggle {
+    background: #f8f9fa;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    padding: 8px 16px;
+    font-size: 14px;
+    font-family: var(--font-family);
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+  }
+  
+  .code-toggle:hover {
+    background: var(--google-gray-100);
+    border-color: var(--border-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  
+  .code-toggle::before {
+    content: "▶";
+    font-size: 12px;
+    transition: transform 0.2s ease;
+    display: inline-block;
+    color: var(--google-blue);
+  }
+  
+  .code-toggle.expanded::before {
+    transform: rotate(90deg);
+  }
+  
+  .code-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+  
+  .code-content.expanded {
+    max-height: 3000px;
+    transition: max-height 0.5s ease-in;
+  }
+  
+  .code-lang {
+    background: var(--google-blue);
+    color: white;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 12px;
+    margin-left: 4px;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  
+  /* Dark mode adjustments */
+  [data-theme="dark"] .code-toggle {
+    background: var(--surface-color);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+  }
+  
+  [data-theme="dark"] .code-toggle:hover {
+    background: #3c4043;
+    border-color: #5f6368;
+  }
+  
+  [data-theme="dark"] .code-lang {
+    background: var(--google-blue);
+    color: white;
+  }
+  
+  /* Dark mode table styling */
+  [data-theme="dark"] .leaderboard-table {
+    background: var(--surface-color) !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3) !important;
+  }
+  
+  [data-theme="dark"] .leaderboard-table thead tr {
+    background: #3c4043 !important;
+  }
+  
+  [data-theme="dark"] .leaderboard-table thead th {
+    color: var(--text-primary) !important;
+  }
+  
+  [data-theme="dark"] .leaderboard-table tbody tr {
+    border-bottom: 1px solid #5f6368 !important;
+  }
+  
+  [data-theme="dark"] .leaderboard-table tbody td {
+    color: var(--text-primary) !important;
+  }
+  
+  [data-theme="dark"] .leaderboard-table caption {
+    color: var(--text-primary) !important;
+  }
+  
+  /* Dark mode figure caption styling */
+  [data-theme="dark"] figcaption {
+    color: var(--text-primary) !important;
+  }
+  
+  /* Reference links styling - Override main.css */
+  .blog-post .post-content a {
+    color: var(--google-blue) !important;
+    text-decoration: underline !important;
+    font-weight: 400 !important;
+  }
+  
+  .blog-post .post-content a:hover {
+    color: var(--primary-hover) !important;
+    text-decoration: underline !important;
+  }
+  
+  [data-theme="dark"] .blog-post .post-content a {
+    color: var(--google-blue) !important;
+  }
+  
+  [data-theme="dark"] .blog-post .post-content a:hover {
+    color: var(--primary-hover) !important;
+  }
+</style>
+</head>
+
+<nav class="main-nav">
+  <div class="nav-container">
+    <div class="nav-brand">
+      <a href="../../index.html" class="brand-link">Yuhang Zang</a>
+    </div>
+    
+    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+    
+    <div class="nav-menu" id="nav-menu">
+      <a href="../../index.html" class="nav-link">Home</a>
+      <a href="../../research.html" class="nav-link">Publications</a>
+      <a href="../../index.html#services" class="nav-link">Services</a>
+      <a href="../../index.html#awards" class="nav-link">Awards</a>
+      <a href="../index.html" class="nav-link active">Blog</a>
+      <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
+        <span class="theme-icon">🌙</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<body>
+  <main>
+    <!-- Breadcrumb Navigation -->
+    <div class="breadcrumb">
+      <a href="../../index.html" class="breadcrumb-link">Home</a>
+      <span class="breadcrumb-separator">></span>
+      <a href="../index.html" class="breadcrumb-link">Blog</a>
+      <span class="breadcrumb-separator">></span>
+      <span class="breadcrumb-current">MMLongBench-Doc Updates</span>
+    </div>
+
+    <!-- Article Content -->
+    <article class="blog-post">
+      <header class="post-header">
+        <h1 class="post-title">One Year of Race for Multi-modal Long-Context Understanding: MMLongBench-Doc Leaderboard Updates</h1>
+        
+        <div class="post-meta">
+          <span class="post-date">
+            <i class="fa fa-calendar"></i>
+            July 4, 2025
+          </span>
+          <span class="post-reading-time">
+            <i class="fa fa-clock"></i>
+            10 min read
+          </span>
+          <span class="post-author">
+            <i class="fa fa-user"></i>
+            Author: Yuhang Zang
+          </span>
+        </div>
+      </header>
+
+      <div class="post-content">
+        <p>As Large Language Models (LLMs) are increasingly deployed in real-world scenarios, the ability to understand long-context multimodal content—such as lengthy videos, extensive documents, and complex visual narratives—has become crucial for practical applications. MMLongBench-Doc <a href="#ref1">[1]</a> (NeurIPS 2024 Datasets and Benchmarks Track Spotlight) is a challenging long-context, multi-modal benchmark that evaluates the document understanding ability of Large Vision-Language Models (LVLMs). With documents averaging 47.5 pages and 21,214 textual tokens, MMLongBench-Doc presents a truly demanding test for long-context document understanding capabilities.</p>
+
+        <figure class="blog-image" style="text-align: center; margin: 2em 0;">
+          <img src="./long-liu25.png" alt="Long-context multimodal applications" style="width: 100%; max-width: 700px; height: auto; border: 1px solid #e0e0e0; border-radius: 8px;">
+          <figcaption style="margin-top: 1em; color: #666; font-size: 0.9em; line-height: 1.4; max-width: 700px; margin-left: auto; margin-right: auto;">
+            <strong>Figure 1:</strong> Long-context understanding capabilities enable AI systems to process extensive multimodal content across diverse domains, from analyzing lengthy research papers and legal documents to understanding hour-long videos and complex visual narratives, making it an essential capability for real-world AI applications. (Image source: <a href="#ref2">[2]</a>)
+          </figcaption>
+        </figure>
+
+        <p>Since we proposed MMLongBench-Doc in July 2024, a year has passed, and the landscape of LVLMs has evolved dramatically. The benchmark has been widely adopted by industry teams to evaluate multimodal long-context document understanding capabilities, including MiniMax-01 <a href="#ref3">[3]</a>, GLM-4.1V-Thinking <a href="#ref4">[4]</a>, Kimi-VL <a href="#ref5">[5]</a>, and Aria <a href="#ref6">[6]</a>. How do the latest proprietary models (e.g., GPT-4.1 <a href="#ref7">[7]</a>) and open-source models perform on our benchmark? We have updated our <a href="https://huggingface.co/spaces/OpenIXCLab/mmlongbench-doc" target="_blank">leaderboard</a> to reflect these recent developments.</p>
+
+        <div style="text-align: center; margin: 2em 0;">
+          <table class="leaderboard-table" style="margin: 0 auto; border-collapse: collapse; min-width: 800px; max-width: 1000px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden;">
+            <caption style="margin-bottom: 1em; color: #666; font-size: 0.9em; line-height: 1.4;">
+              <strong>Table 1:</strong> Top-4 performing models on MMLongBench-Doc as of July 4, 2025. See <a href="https://huggingface.co/spaces/OpenIXCLab/mmlongbench-doc" target="_blank">leaderboard</a> for detailed results.
+            </caption>
+            <thead>
+              <tr style="background: #f8f9fa; color: #333;">
+                <th style="padding: 12px 20px; text-align: center; border-bottom: 2px solid #dee2e6; font-weight: 600;">Rank</th>
+                <th style="padding: 12px 30px; text-align: center; border-bottom: 2px solid #dee2e6; font-weight: 600; white-space: nowrap;">Model</th>
+                <th style="padding: 12px 20px; text-align: center; border-bottom: 2px solid #dee2e6; font-weight: 600;">Acc (%)</th>
+                <th style="padding: 12px 20px; text-align: center; border-bottom: 2px solid #dee2e6; font-weight: 600;">Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid #dee2e6;">
+                <td style="padding: 12px 20px; color: #333;">🥇 1</td>
+                <td style="padding: 12px 30px; color: #333; white-space: nowrap;">GPT-4.1 2025-04-14 detail high <a href="#ref7">[7]</a></td>
+                <td style="padding: 12px 20px; text-align: center; color: #333; font-weight: 700;">49.7</td>
+                <td style="padding: 12px 20px; text-align: center; color: #333;">Proprietary</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #dee2e6;">
+                <td style="padding: 12px 20px; color: #333;">🥈 2</td>
+                <td style="padding: 12px 30px; color: #333; white-space: nowrap;">GPT-4o 2024-11-20 detail high <a href="#ref8">[8]</a></td>
+                <td style="padding: 12px 20px; text-align: center; color: #333;">46.3</td>
+                <td style="padding: 12px 20px; text-align: center; color: #333;">Proprietary</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #dee2e6;">
+                <td style="padding: 12px 20px; color: #333;">🥉 3</td>
+                <td style="padding: 12px 30px; color: #333; white-space: nowrap;">GLM-4.1V-Thinking <a href="#ref4">[4]</a></td>
+                <td style="padding: 12px 20px; text-align: center; color: #333;">42.4</td>
+                <td style="padding: 12px 20px; text-align: center; color: #333;">Open-source</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 20px; color: #333;">4</td>
+                <td style="padding: 12px 30px; color: #333; white-space: nowrap;">Kimi-VL-Thinking-2506 <a href="#ref5">[5]</a></td>
+                <td style="padding: 12px 20px; text-align: center; color: #333;">42.1</td>
+                <td style="padding: 12px 20px; text-align: center; color: #333;">Open-source</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>According to our leaderboard as of July 4, 2025, the current standings on MMLongBench-Doc reflect the intense competition in long-context understanding. GPT-4.1 <a href="#ref7">[7]</a> leads with 49.7% Acc, followed by GPT-4o <a href="#ref8">[8]</a> in second place. Remarkably, GLM-4.1V-Thinking <a href="#ref4">[4]</a> claims the top position among open-source models in third place overall with 42.4% Acc, while Kimi-VL-Thinking-2506 <a href="#ref5">[5]</a> follows closely in fourth place with 42.1% Acc—a difference of merely 0.3 percentage points, demonstrating the remarkable competitiveness of current open-source models.</p>
+
+        <h2>Open-Source Models Achieve Dramatic Improvements</h2>
+        
+        <p>When MMLongBench-Doc launched in July 2024, the challenging nature of long-context document understanding was evident—even the best open-source models struggled to achieve strong performance, with InternVL-Chat-v1.5 <a href="#ref9">[9]</a> reaching only 14.6% accuracy. Fast forward one year, and the transformation has been remarkable. According to our updated <a href="https://huggingface.co/spaces/OpenIXCLab/mmlongbench-doc" target="_blank">leaderboard</a>, open-source models have achieved extraordinary progress. Most notably, GLM-4.1V-Thinking <a href="#ref4">[4]</a> now achieves 42.4% Acc, securing the top position among open-source models as shown in Table 1. <strong>From 14.6% to 42.4%, this represents an impressive nearly 3x improvement over the previous best open-source performance.</strong></p>
+
+        <p>How do these models achieve this remarkable progress in long-context understanding? Different open-source models have explored diverse approaches to enhance their long-context capabilities, with several key innovations emerging:</p>
+        <ul>
+          <li><strong>Advanced Positional Encoding:</strong> RoPE (Rotary Position Embedding) <a href="#ref10">[10]</a> enables models to understand relative positions of tokens in sequences. When combined with extrapolation methods like YaRN <a href="#ref11">[11]</a>, RoPE provides crucial length extrapolation capabilities that allow models to handle sequences longer than those seen during training. While earlier LVLMs primarily relied on 1D RoPE, recent developments have introduced 2D and 3D RoPE variants, such as M-RoPE in Qwen2.5-VL <a href="#ref12">[12]</a>, which better capture spatial relationships in documents and offer superior extrapolation performance for long-context understanding. Following the introduction of M-RoPE, almost all LVLMs have adopted the architecture of 2D RoPE for ViT <a href="#ref13">[13]</a> and 3D RoPE for LLM.</li>
+          <li><strong>Linear Attention:</strong> Traditional attention mechanisms <a href="#ref14">[14]</a> have O(n²) computational complexity that scales quadratically with sequence length, making them computationally prohibitive for very long contexts. Linear attention <a href="#ref15">[15]</a> offers significant computational advantages by reducing complexity to O(n) and enabling efficient processing of arbitrarily long sequences. However, this efficiency comes at a cost: linear attention compresses all information into a fixed-size hidden state, fundamentally limiting its ability to access and retrieve specific information from long contexts. This compression bottleneck particularly hurts performance on retrieval tasks where models need to locate precise information within extensive documents. To address this limitation, MiniMax-01 <a href="#ref3">[3]</a> successfully adopts a hybrid architecture (Hybrid-lightning) that takes the advantages of both linear and traditional softmax attention, demonstrating improvements in long-context capabilities. Currently, mainstream open-source LLM approaches (such as Qwen3 <a href="#ref16">[16]</a>) have not adopted linear attention, and whether to use linear attention or hybrid approaches remains an open question in the field.</li>
+          <li><strong>Long-context Continual Training:</strong> Many models adopt a three-stage training pipeline that inserts a long-context training stage between pre-training and supervised fine-tuning. This stage gradually extends the context window size from short (e.g., 8k tokens) to long (e.g., 32k tokens). The training data includes extended textual sequences, and some models like GLM-4.1V-Thinking <a href="#ref4">[4]</a> use interleaved text/video long-context data to enhance multimodal long-context understanding capabilities. Similarly, Kimi-VL <a href="#ref5">[5]</a> uses a Joint Long-context Activation Stage to extend the context length from 8K to 128K tokens, training on not only long text, but also long multimodal data, including long interleaved data, long videos, and long documents.</li>
+        </ul>
+
+        <p>Beyond these long-context-specific innovations, we also observe other important trends in open-source model development that, while not directly targeting long-context capabilities, have contributed to overall improvements in LVLM performance:</p>
+        <ul>
+          <li><strong>MoE (Mixture of Experts) Structure:</strong> Compared to dense models, MoE architecture <a href="#ref17">[17]</a> enables efficient scaling by activating only a subset of parameters during inference, providing superior parameter efficiency. Mainstream large-scale models like DeepSeekV3 <a href="#ref18">[18]</a> and Qwen3-235B-A22B have adopted MoE architectures. LVLMs such as Kimi-VL <a href="#ref5">[5]</a> and MiniMax-01 <a href="#ref3">[3]</a> have also embraced MoE designs, and we anticipate seeing more MoE-based LVLMs in the future. However, MoE also has limitations, including increased memory requirements due to loading all expert parameters, more complex training dynamics, and potential load balancing issues. For smaller models below 10B parameters, dense architectures may be more suitable and efficient.</li>
+          <li><strong>Thinking Mode (RL Post-training):</strong> Following the success of OpenAI o1 <a href="#ref19">[19]</a> and DeepSeek R1 <a href="#ref20">[20]</a> in demonstrating the importance of Chain-of-Thought (CoT) <a href="#ref21">[21]</a> and reasoning capabilities, Reinforcement Learning with Verifiable Rewards (RLVR) <a href="#ref22">[22]</a> methods have proven effective for both text-based reasoning and visual understanding tasks <a href="#ref23">[23]</a>. LVLMs such as GLM-4.1V-Thinking <a href="#ref4">[4]</a> and Kimi-VL-Thinking <a href="#ref5">[5]</a> have integrated reasoning abilities through reinforcement learning-based post-training. These models show significant improvements on mathematical and knowledge-intensive tasks, while also enhancing their ability to process complex document structures through more systematic reasoning approaches.</li>
+        </ul>
+
+        <h2>Proprietary Models Maintain Performance Leadership</h2>
+
+        <p>While the remarkable progress of open-source models has substantially narrowed the performance gap, proprietary models continue to set the benchmark for state-of-the-art long-context understanding. Our latest evaluations reveal a compelling competitive landscape: GPT-4.1 <a href="#ref7">[7]</a> leads with 49.7% accuracy, maintaining a 7.3 percentage point advantage over the top-performing open-source model, GLM-4.1V-Thinking <a href="#ref4">[4]</a>. GPT-4o <a href="#ref8">[8]</a> follows closely at 46.3%, securing second place and demonstrating the consistent strength of OpenAI's multimodal offerings.</p>
+
+        <p>This performance hierarchy reflects several key advantages that proprietary models retain: access to vast computational resources for training, proprietary datasets curated over years of development, and advanced training methodologies often kept as trade secrets. However, the narrow margins—particularly the mere 0.3 percentage point difference between the third and fourth-place models—suggest that the open-source community is rapidly closing the gap. This intense competition has created a virtuous cycle of innovation, driving both proprietary and open-source teams to push the frontiers of long-context multimodal understanding at an unprecedented pace.</p>
+
+
+        <h2>Conclusion</h2>
+        
+        <p>The landscape of long-context LVLMs has undergone a remarkable transformation this past year, with open-source models achieving nearly 3x performance improvements on our benchmark and substantially narrowing the gap with proprietary counterparts. While GPT-4.1 <a href="#ref7">[7]</a> continues to lead our leaderboard, this intensifying competition between open-source and proprietary models has created an unprecedented pace of innovation that benefits the entire research community.</p>
+        
+        <p>Moving forward, we are committed to maintaining MMLongBench-Doc as a reliable and comprehensive benchmark. We will continue to provide updated evaluations, improve annotation quality, and ensure that our benchmark remains a valuable resource for the LVLM research community.</p>
+
+        <h2>References</h2>
+        <p id="ref1">[1] Ma, Yubo, et al. "<a href="https://neurips.cc/virtual/2024/poster/97524" target="_blank">MMLongBench-Doc: Benchmarking long-context document understanding with visualizations.</a>" NeurIPS Datasets Benchmarks 2024.</p>
+        <p id="ref2">[2] Liu, Xiaoran, et al. "<a href="https://arxiv.org/abs/2502.17129" target="_blank">Thus spake long-context large language model.</a>" arXiv preprint arXiv:2502.17129 (2025).</p>
+        <p id="ref3">[3] Li, Aonian, et al. "<a href="https://arxiv.org/abs/2501.08313" target="_blank">Minimax-01: Scaling foundation models with lightning attention.</a>" arXiv preprint arXiv:2501.08313 (2025).</p>
+        <p id="ref4">[4] GLM-V Team. "<a href="https://arxiv.org/abs/2507.01006" target="_blank">GLM-4.1V-Thinking: Towards Versatile Multimodal Reasoning with Scalable Reinforcement Learning.</a>" arXiv preprint arXiv:2507.01006 (2025).</p>
+        <p id="ref5">[5] Team, Kimi, et al. "<a href="https://arxiv.org/abs/2504.07491" target="_blank">Kimi-VL technical report.</a>" arXiv preprint arXiv:2504.07491 (2025).</p>
+        <p id="ref6">[6] Li, Dongxu, et al. "<a href="https://arxiv.org/abs/2410.05993" target="_blank">Aria: An open multimodal native mixture-of-experts model.</a>" arXiv preprint arXiv:2410.05993 (2024).</p>
+        <p id="ref7">[7] OpenAI. "<a href="https://openai.com/index/gpt-4-1/" target="_blank">GPT-4.1: Our latest updates and improvements.</a>" OpenAI Blog, 2024.</p>
+        <p id="ref8">[8] Hurst, Aaron, et al. "<a href="https://arxiv.org/abs/2410.21276" target="_blank">GPT-4o system card.</a>" arXiv preprint arXiv:2410.21276 (2024).</p>
+        <p id="ref9">[9] Chen, Zhe, et al. "<a href="https://arxiv.org/abs/2404.16821" target="_blank">How far are we to gpt-4v? closing the gap to commercial multimodal models with open-source suites.</a>" Science China Information Sciences 67.12 (2024): 220101.</p>
+        <p id="ref10">[10] Su, Jianlin, et al. "<a href="https://doi.org/10.1016/j.neucom.2023.127063" target="_blank">RoFormer: Enhanced transformer with rotary position embedding.</a>" Neurocomputing 568 (2024): 127063.</p>
+        <p id="ref11">[11] Peng, Bowen, et al. "<a href="https://arxiv.org/abs/2309.00071" target="_blank">YaRN: Efficient context window extension of large language models.</a>" arXiv preprint arXiv:2309.00071 (2023).</p>
+        <p id="ref12">[12] Bai, Shuai, et al. "<a href="https://arxiv.org/abs/2502.13923" target="_blank">Qwen2. 5-vl technical report.</a>" arXiv preprint arXiv:2502.13923 (2025).</p>
+        <p id="ref13">[13] Dosovitskiy, Alexey, et al. "<a href="https://arxiv.org/abs/2010.11929" target="_blank">An image is worth 16x16 words: Transformers for image recognition at scale.</a>" arXiv preprint arXiv:2010.11929 (2020).</p>
+        <p id="ref14">[14] Vaswani, Ashish, et al. "<a href="https://arxiv.org/abs/1706.03762" target="_blank">Attention is all you need.</a>" NeurIPS 2017.</p>
+        <p id="ref15">[15] Katharopoulos, Angelos, et al. "<a href="https://arxiv.org/abs/2006.16236" target="_blank">Transformers are rnns: Fast autoregressive transformers with linear attention.</a>" ICML 2020.</p>
+        <p id="ref16">[16] Yang, An, et al. "<a href="https://arxiv.org/abs/2505.09388" target="_blank">Qwen3 technical report.</a>" arXiv preprint arXiv:2505.09388 (2025).</p>
+        <p id="ref17">[17] Shazeer, Noam, et al. "<a href="https://arxiv.org/abs/1701.06538" target="_blank">Outrageously large neural networks: The sparsely-gated mixture-of-experts layer.</a>" arXiv preprint arXiv:1701.06538 (2017).</p>
+        <p id="ref18">[18] Liu, Aixin, et al. "<a href="https://arxiv.org/abs/2412.19437" target="_blank">DeepSeek-v3 technical report.</a>" arXiv preprint arXiv:2412.19437 (2024).</p>
+        <p id="ref19">[19] Jaech, Aaron, et al. "<a href="https://arxiv.org/abs/2412.16720" target="_blank">OpenAI o1 system card.</a>" arXiv preprint arXiv:2412.16720 (2024).</p>
+        <p id="ref20">[20] Guo, Daya, et al. "<a href="https://arxiv.org/abs/2501.12948" target="_blank">DeepSeek-R1: Incentivizing reasoning capability in llms via reinforcement learning.</a>" arXiv preprint arXiv:2501.12948 (2025).</p>
+        <p id="ref21">[21] Wei, Jason, et al. "<a href="https://arxiv.org/abs/2201.11903" target="_blank">Chain-of-thought prompting elicits reasoning in large language models.</a>" NeurIPS 2022.</p>
+        <p id="ref22">[22] Lambert, Nathan, et al. "<a href="https://arxiv.org/abs/2411.15124" target="_blank">Tülu 3: Pushing frontiers in open language model post-training.</a>" arXiv preprint arXiv:2411.15124 (2024).</p>
+        <p id="ref23">[23] Liu, Ziyu, et al. "Visual-RFT: Visual reinforcement fine-tuning." ICCV 2025.</p>
+
+      </div>
+
+      <footer class="post-footer">
+        
+      </footer>
+    </article>
+  </main>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script>
+    // Dark mode functionality
+    function toggleTheme() {
+        const html = document.documentElement;
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = themeToggle.querySelector('.theme-icon');
+        
+        if (html.getAttribute('data-theme') === 'dark') {
+            html.removeAttribute('data-theme');
+            themeIcon.textContent = '🌙';
+            localStorage.setItem('theme', 'light');
+        } else {
+            html.setAttribute('data-theme', 'dark');
+            themeIcon.textContent = '☀️';
+            localStorage.setItem('theme', 'dark');
+        }
+    }
+    
+    // Auto detect system preference and apply saved theme
+    function initTheme() {
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = themeToggle?.querySelector('.theme-icon');
+        
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            if (themeIcon) themeIcon.textContent = '☀️';
+        } else {
+            document.documentElement.removeAttribute('data-theme');
+            if (themeIcon) themeIcon.textContent = '🌙';
+        }
+    }
+    
+    // Listen for system theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) {
+            const themeIcon = document.querySelector('.theme-icon');
+            if (e.matches) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                if (themeIcon) themeIcon.textContent = '☀️';
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+                if (themeIcon) themeIcon.textContent = '🌙';
+            }
+        }
+    });
+    
+    // Initialize theme before page load
+    initTheme();
+    
+    // Mobile menu toggle functionality
+    function toggleMobileMenu() {
+        const navMenu = document.getElementById('nav-menu');
+        const mobileToggle = document.querySelector('.mobile-menu-toggle');
+        
+        navMenu.classList.toggle('active');
+        mobileToggle.classList.toggle('active');
+    }
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const navMenu = document.getElementById('nav-menu');
+        const mobileToggle = document.querySelector('.mobile-menu-toggle');
+        const mainNav = document.querySelector('.main-nav');
+        
+        if (!mainNav.contains(event.target) && navMenu.classList.contains('active')) {
+            navMenu.classList.remove('active');
+            mobileToggle.classList.remove('active');
+        }
+    });
+    
+    // Close mobile menu when clicking on nav links
+    document.addEventListener('DOMContentLoaded', function() {
+        const navLinks = document.querySelectorAll('.nav-link');
+        const navMenu = document.getElementById('nav-menu');
+        const mobileToggle = document.querySelector('.mobile-menu-toggle');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileToggle.classList.remove('active');
+            });
+        });
+    });
+    
+  </script>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top-btn" onclick="scrollToTop()" title="Back to Top">
+    <i class="fa fa-arrow-up"></i>
+  </button>
+
+  <script>
+    // Back to Top Button functionality
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+    
+    // Show/hide back to top button based on scroll position
+    window.addEventListener('scroll', function() {
+        const backToTopBtn = document.querySelector('.back-to-top-btn');
+        if (window.pageYOffset > 300) {
+            backToTopBtn.classList.add('show');
+        } else {
+            backToTopBtn.classList.remove('show');
+        }
+    });
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+
+  <script>
+    // Make code blocks collapsible
+    document.addEventListener('DOMContentLoaded', function() {
+      // Wait for Prism to highlight code
+      setTimeout(function() {
+        const codeBlocks = document.querySelectorAll('pre > code');
+        
+        codeBlocks.forEach(function(codeBlock, index) {
+          // Get the language from the class name
+          const langClass = Array.from(codeBlock.classList).find(c => c.startsWith('language-'));
+          const lang = langClass ? langClass.replace('language-', '') : 'code';
+          
+          // Create wrapper
+          const wrapper = document.createElement('div');
+          wrapper.className = 'code-wrapper';
+          
+          // Create toggle button
+          const toggleBtn = document.createElement('button');
+          toggleBtn.className = 'code-toggle';
+          toggleBtn.innerHTML = `Show Code<span class="code-lang">${lang}</span>`;
+          
+          // Create content wrapper
+          const contentWrapper = document.createElement('div');
+          contentWrapper.className = 'code-content';
+          
+          // Wrap the pre element
+          const preElement = codeBlock.parentElement;
+          preElement.parentNode.insertBefore(wrapper, preElement);
+          wrapper.appendChild(toggleBtn);
+          wrapper.appendChild(contentWrapper);
+          contentWrapper.appendChild(preElement);
+          
+          // Toggle functionality
+          toggleBtn.addEventListener('click', function() {
+            const isExpanded = contentWrapper.classList.contains('expanded');
+            
+            if (isExpanded) {
+              contentWrapper.classList.remove('expanded');
+              toggleBtn.classList.remove('expanded');
+              toggleBtn.innerHTML = `Show Code<span class="code-lang">${lang}</span>`;
+            } else {
+              contentWrapper.classList.add('expanded');
+              toggleBtn.classList.add('expanded');
+              toggleBtn.innerHTML = `Hide Code<span class="code-lang">${lang}</span>`;
+            }
+          });
+        });
+      }, 100); // Small delay to ensure Prism has processed
+    });
+  </script>
+
+</body>
+
+</html>
