@@ -10,7 +10,8 @@
    - Responsive and mobile-first
 */
 
-/* Google Fonts already imported in HTML */
+/* Import Google Fonts first */
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap');
 
 :root {
   /* Override Apple colors with Google palette */
@@ -997,11 +998,6 @@ papertitle {
 .award-card.influential-award {
   border-left: 4px solid var(--google-green);
   background: rgba(52, 168, 83, 0.05);
-}
-
-.award-card.academic {
-  border-left: 4px solid var(--google-blue);
-  background: rgba(26, 115, 232, 0.05);
 }
 
 .award-icon {
