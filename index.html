@@ -455,6 +455,10 @@
             </div>
           </div>
           </div>
+          <div class="show-more-container">
+            <button id="toggle-papers" class="show-more-btn" type="button">Show More</button>
+          </div>
+          </div>
 
           <div class="interns-section">
             <heading>Interns Mentored</heading>
@@ -739,6 +743,10 @@
   <script defer src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
   <script>
       let originalPapers = [];
+      const PAPERS_DEFAULT_LIMIT = 5;
+      let showAllPapers = false;
+      let showMoreContainer = null;
+      let togglePapersButton = null;
       
       // Dark mode functionality
       function toggleTheme() {
@@ -828,7 +836,24 @@
       window.onload = function () {
           // Store original papers (only the paper cards, not headers)
           const papersContainer = document.getElementById('papers-container');
-          originalPapers = Array.from(papersContainer.children).filter(child => child.classList.contains('paper-card'));
+          if (papersContainer) {
+              originalPapers = Array.from(papersContainer.children).filter(child => child.classList.contains('paper-card'));
+          }
+
+          togglePapersButton = document.getElementById('toggle-papers');
+          showMoreContainer = document.querySelector('.show-more-container');
+
+          if (togglePapersButton) {
+              togglePapersButton.setAttribute('aria-controls', 'papers-container');
+              togglePapersButton.setAttribute('aria-expanded', 'false');
+              togglePapersButton.addEventListener('click', () => {
+                  const nextState = !showAllPapers;
+                  setPaperVisibility(nextState);
+                  if (!nextState) {
+                      document.querySelector('.papers-section')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+              });
+          }
           
           // Update topic, venue, and date counts
           updateTopicCounts();
@@ -943,6 +968,8 @@
                   fetchGitHubStars(repo, starCountElement);
               }
           });
+
+          applyPaperVisibility();
       }
       
       // Helper function to format star counts (e.g., 1234 -> 1.2k)
@@ -1149,6 +1176,8 @@
               });
           }
           
+          applyPaperVisibility();
+
           // Add smooth animation
           papersContainer.style.opacity = '0.5';
           setTimeout(() => {
@@ -1157,6 +1186,7 @@
       }
       
       function jumpToTopic(topicName) {
+          setPaperVisibility(true);
           // First, make sure we're in topic view
           sortPapers('topic');
           
@@ -1171,6 +1201,7 @@
       }
       
       function jumpToVenue(venueName) {
+          setPaperVisibility(true);
           // First, make sure we're in venue view
           sortPapers('venue');
           
@@ -1185,6 +1216,7 @@
       }
       
       function jumpToYear(year) {
+          setPaperVisibility(true);
           // First, make sure we're in date view
           sortPapers('date');
           
@@ -1203,6 +1235,57 @@
           }, 200);
       }
       
+      function setPaperVisibility(showAll) {
+          showAllPapers = showAll;
+          applyPaperVisibility();
+      }
+
+      function applyPaperVisibility() {
+          if (!showMoreContainer) {
+              showMoreContainer = document.querySelector('.show-more-container');
+          }
+          if (!togglePapersButton) {
+              togglePapersButton = document.getElementById('toggle-papers');
+          }
+
+          const papersContainer = document.getElementById('papers-container');
+          if (!papersContainer || !showMoreContainer || !togglePapersButton) {
+              return;
+          }
+
+          const paperCards = Array.from(papersContainer.querySelectorAll('.paper-card'));
+          const totalPapers = paperCards.length;
+          const hiddenCount = Math.max(totalPapers - PAPERS_DEFAULT_LIMIT, 0);
+
+          if (totalPapers <= PAPERS_DEFAULT_LIMIT) {
+              showMoreContainer.style.display = 'none';
+              showAllPapers = true;
+              paperCards.forEach(card => {
+                  card.style.display = '';
+              });
+              togglePapersButton.classList.remove('showing-all');
+              togglePapersButton.textContent = `Show More (${hiddenCount})`;
+              togglePapersButton.setAttribute('aria-expanded', 'true');
+              return;
+          }
+
+          showMoreContainer.style.display = 'flex';
+
+          paperCards.forEach((card, index) => {
+              card.style.display = (showAllPapers || index < PAPERS_DEFAULT_LIMIT) ? '' : 'none';
+          });
+
+          if (showAllPapers) {
+              togglePapersButton.textContent = `Show Less (${totalPapers})`;
+              togglePapersButton.classList.add('showing-all');
+              togglePapersButton.setAttribute('aria-expanded', 'true');
+          } else {
+              togglePapersButton.textContent = `Show More (${hiddenCount})`;
+              togglePapersButton.classList.remove('showing-all');
+              togglePapersButton.setAttribute('aria-expanded', 'false');
+          }
+      }
+
       // Project box click functionality
       function initProjectBoxClicks() {
           const projectBoxes = document.querySelectorAll('.project-box');

@@ -671,6 +671,36 @@ heading {
   transform: none !important;
 }
 
+.show-more-container {
+  display: flex;
+  justify-content: center;
+  margin: var(--space-2) 0 var(--space-1) !important;
+}
+
+.show-more-btn {
+  background: var(--background-color) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--radius-full) !important;
+  padding: 8px 20px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: var(--text-secondary) !important;
+  cursor: pointer;
+  transition: all var(--transition-fast) !important;
+}
+
+.show-more-btn:hover {
+  background: var(--surface-color) !important;
+  border-color: var(--border-hover) !important;
+  color: var(--text-primary) !important;
+}
+
+.show-more-btn.showing-all {
+  background: var(--background-color) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-secondary) !important;
+}
+
 #papers-container {
   counter-reset: paper-counter;
 }
