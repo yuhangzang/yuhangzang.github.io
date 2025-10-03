@@ -411,6 +411,121 @@ main {
   box-shadow: none !important;
 }
 
+/* Enable positioned tooltip inside WeChat tile */
+.social-link.wechat { position: relative; }
+
+/* QR tooltip popup */
+.social-link.wechat .qr-tooltip {
+  position: absolute;
+  top: calc(100% + 10px); /* pop below with extra gap */
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  background: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 4px; /* smaller padding for compact size */
+  box-shadow: var(--shadow-md);
+  z-index: 10000; /* ensure above following sections */
+  width: 120px; /* compact tooltip width */
+  text-align: center;
+}
+
+/* Small arrow pointer for the tooltip (below, pointing up) */
+.social-link.wechat .qr-tooltip::before,
+.social-link.wechat .qr-tooltip::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+}
+
+/* Border arrow */
+.social-link.wechat .qr-tooltip::before {
+  top: -7px;
+  border-bottom: 7px solid var(--border-color);
+}
+
+/* Inner fill arrow */
+.social-link.wechat .qr-tooltip::after {
+  top: -6px;
+  border-bottom: 6px solid var(--background-color);
+}
+
+.social-link.wechat .qr-image {
+  width: 100px; /* compact QR size */
+  height: auto;
+  display: block;
+  border-radius: var(--radius-sm);
+}
+
+.social-link.wechat .qr-caption {
+  margin-top: 3px;
+  font-size: 9px; /* slightly smaller caption */
+  color: var(--text-secondary);
+}
+
+/* Show tooltip on hover or keyboard focus */
+.social-link.wechat:hover .qr-tooltip,
+.social-link.wechat:focus .qr-tooltip,
+.social-link.wechat:focus-within .qr-tooltip { display: block; }
+
+/* Emphasize WeChat link with distinctive green styling */
+.social-link.wechat {
+  border-color: #34c759 !important; /* green border for emphasis */
+  background: rgba(52, 199, 89, 0.06) !important;
+  color: var(--text-secondary) !important;
+  box-shadow: 0 0 0 2px rgba(52, 199, 89, 0.08) !important;
+}
+
+.social-link.wechat i {
+  color: #34c759 !important;
+}
+
+.social-link.wechat:hover {
+  background: #34c759 !important;
+  border-color: #34c759 !important; /* keep green on hover */
+  color: #ffffff !important;
+  box-shadow: 0 4px 10px rgba(52, 199, 89, 0.35) !important;
+}
+
+/* Dark theme adjustments for WeChat */
+[data-theme="dark"] .social-link.wechat {
+  background: rgba(52, 199, 89, 0.12) !important;
+  border-color: #34c759 !important; /* green border in dark mode */
+  color: var(--google-gray-200) !important;
+  box-shadow: 0 0 0 2px rgba(52, 199, 89, 0.12) !important;
+}
+
+[data-theme="dark"] .social-link.wechat .qr-tooltip {
+  background: var(--google-gray-800);
+  border-color: var(--google-gray-700);
+}
+
+/* Dark theme arrow colors to match tooltip */
+[data-theme="dark"] .social-link.wechat .qr-tooltip::before {
+  border-bottom-color: var(--google-gray-700);
+}
+
+[data-theme="dark"] .social-link.wechat .qr-tooltip::after {
+  border-bottom-color: var(--google-gray-800);
+}
+
+[data-theme="dark"] .social-link.wechat i {
+  color: #6ee7a0 !important;
+}
+
+[data-theme="dark"] .social-link.wechat:hover {
+  background: #34c759 !important;
+  border-color: #34c759 !important; /* keep green on hover */
+  color: #0b1a0f !important;
+  box-shadow: 0 6px 14px rgba(52, 199, 89, 0.45) !important;
+}
+
 .social-link span:not(.hf-icon) {
   display: block;
   font-size: 10px !important;
