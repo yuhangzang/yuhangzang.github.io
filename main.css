@@ -709,13 +709,17 @@ heading {
   background: var(--background-color) !important;
   border: 1px solid var(--border-color) !important;
   border-radius: var(--radius-md) !important;
-  padding: var(--space-3) !important;
-  margin-bottom: var(--space-2) !important;
+  padding: var(--space-2) var(--space-3) !important;
+  margin-bottom: var(--space-1) !important;
   box-shadow: none !important;
   transition: all var(--transition-medium) !important;
   position: relative !important;
   counter-increment: paper-counter;
 }
+.paper-card:last-child {
+  margin-bottom: 0 !important;
+}
+
 
 .paper-card::before {
   content: counter(paper-counter);
@@ -774,7 +778,7 @@ papertitle {
   font-size: var(--font-size-sm) !important;
   color: var(--text-primary) !important;
   font-weight: 400 !important;
-  margin-bottom: var(--space-2) !important;
+  margin-bottom: var(--space-1) !important;
 }
 
 /* Oral/Spotlight status badges */
@@ -897,7 +901,7 @@ papertitle {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-1);
-  margin-top: var(--space-2);
+  margin-top: var(--space-1);
 }
 
 .paper-badges img,
@@ -984,7 +988,7 @@ papertitle {
 .legend-text {
   color: var(--google-gray-600);
   font-size: 0.8rem;
-  margin-top: var(--space-2);
+  margin-top: var(--space-1);
 }
 
 .author-legend {
@@ -992,7 +996,7 @@ papertitle {
   flex-wrap: wrap;
   gap: var(--space-3);
   align-items: center;
-  margin-top: var(--space-2);
+  margin-top: var(--space-1);
   padding: var(--space-2);
   background: var(--google-gray-50);
   border-radius: var(--radius-md);
@@ -2624,7 +2628,7 @@ a:hover {
 
 /* Paper badges specific override */
 .paper-badges {
-  margin-top: 12px !important;
+  margin-top: var(--space-1) !important;
   gap: 8px !important;
 }
 

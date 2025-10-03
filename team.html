@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<!-- Meta tags for search engines to crawl -->
+<meta name="robots" content="index, follow">
+<meta name="description" content="Yuhang Zang's academic website - Team">
+<meta name="keywords" content="Yuhang Zang; Zang Yuhang; Team; Interns; Mentorship;">
+<meta name="author" content="Yuhang Zang">
+<link rel="author" href="yuhangzang.github.io">
+<title>Yuhang Zang - Team</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://buttons.github.io">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<link id="theme-style" rel="stylesheet" href="./main.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<nav class="main-nav">
+  <div class="nav-container">
+    <div class="nav-brand">
+      <a href="./index.html" class="brand-link">Yuhang Zang</a>
+    </div>
+    
+    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+    
+    <div class="nav-menu" id="nav-menu">
+      <a href="./index.html" class="nav-link">Home</a>
+      <a href="./research.html" class="nav-link">Publications</a>
+      <a href="./team.html" class="nav-link active">Team</a>
+      <a href="./index.html#services" class="nav-link">Services</a>
+      <a href="./index.html#awards" class="nav-link">Awards</a>
+      <a href="./posts/index.html" class="nav-link">Blog</a>
+      <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
+        <span class="theme-icon">🌙</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<body>
+  <main>
+    <div class="interns-section">
+      <heading>Interns Mentored</heading>
+
+      <div class="interns-compact">
+        <div class="intern-group">
+          <div class="intern-header">
+            <i class="fa fa-users"></i>
+            <span>Current Interns (3)</span>
+          </div>
+          <div class="intern-list">
+            <div class="intern-item">
+              <div class="intern-summary">
+                <div class="intern-name-line">
+                  <a href="https://liuziyu77.github.io" target="_blank" class="intern-name">Ziyu Liu</a>
+                  <span class="intern-period-compact">2023.10 - Present</span>
+                </div>
+                <div class="intern-details-compact">PhD Student, Shanghai Jiao Tong University</div>
+              </div>
+            </div>
+
+            <div class="intern-item">
+              <div class="intern-summary">
+                <div class="intern-name-line">
+                  <a href="https://github.com/Wiselnn570" target="_blank" class="intern-name">Xilin Wei</a>
+                  <span class="intern-period-compact">2023.10 - Present</span>
+                </div>
+                <div class="intern-details-compact">PhD Student, Fudan University</div>
+              </div>
+            </div>
+
+            <div class="intern-item">
+              <div class="intern-summary">
+                <div class="intern-name-line">
+                  <a href="https://github.com/SYuan03" target="_blank" class="intern-name">Shengyuan Ding</a>
+                  <span class="intern-period-compact">2024.10 - Present</span>
+                </div>
+                <div class="intern-details-compact">PhD Student, Fudan University</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="intern-group">
+          <div class="intern-header">
+            <i class="fa fa-graduation-cap"></i>
+            <span>Alumni (2)</span>
+          </div>
+          <div class="intern-list">
+            <div class="intern-item alumni">
+              <div class="intern-summary">
+                <div class="intern-name-line">
+                  <a href="https://codegoat24.github.io/" target="_blank" class="intern-name">Yibin Wang</a>
+                  <span class="intern-period-compact">2024 - 2024</span>
+                </div>
+                <div class="intern-details-compact">PhD Student, Fudan University</div>
+              </div>
+            </div>
+
+            <div class="intern-item alumni">
+              <div class="intern-summary">
+                <div class="intern-name-line">
+                  <a href="https://mayubo2333.github.io" target="_blank" class="intern-name">Yubo Ma</a>
+                  <span class="intern-period-compact">2023 - 2024</span>
+                </div>
+                <div class="intern-details-compact">PhD Candidate, Nanyang Technological University</div>
+                <div class="intern-details-compact">Next: Qwen Team, Alibaba</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <script>
+      let originalPapers = [];
+      const PAPERS_DEFAULT_LIMIT = 5;
+      let showAllPapers = false;
+      let showMoreContainer = null;
+      let togglePapersButton = null;
+      
+      // Dark mode functionality
+      function toggleTheme() {
+          const html = document.documentElement;
+          const themeToggle = document.getElementById('theme-toggle');
+          const themeIcon = themeToggle.querySelector('.theme-icon');
+          
+          if (html.getAttribute('data-theme') === 'dark') {
+              html.removeAttribute('data-theme');
+              themeIcon.textContent = '🌙';
+              localStorage.setItem('theme', 'light');
+          } else {
+              html.setAttribute('data-theme', 'dark');
+              themeIcon.textContent = '☀️';
+              localStorage.setItem('theme', 'dark');
+          }
+      }
+      
+      // Auto detect system preference and apply saved theme
+      function initTheme() {
+          const savedTheme = localStorage.getItem('theme');
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          const themeToggle = document.getElementById('theme-toggle');
+          const themeIcon = themeToggle?.querySelector('.theme-icon');
+          
+          if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+              document.documentElement.setAttribute('data-theme', 'dark');
+              if (themeIcon) themeIcon.textContent = '☀️';
+          } else {
+              document.documentElement.removeAttribute('data-theme');
+              if (themeIcon) themeIcon.textContent = '🌙';
+          }
+      }
+      
+      // Listen for system theme changes
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+          if (!localStorage.getItem('theme')) {
+              const themeIcon = document.querySelector('.theme-icon');
+              if (e.matches) {
+                  document.documentElement.setAttribute('data-theme', 'dark');
+                  if (themeIcon) themeIcon.textContent = '☀️';
+              } else {
+                  document.documentElement.removeAttribute('data-theme');
+                  if (themeIcon) themeIcon.textContent = '🌙';
+              }
+          }
+      });
+      
+      // Initialize theme before page load
+      initTheme();
+      
+      // Mobile menu toggle functionality
+      function toggleMobileMenu() {
+          const navMenu = document.getElementById('nav-menu');
+          const mobileToggle = document.querySelector('.mobile-menu-toggle');
+          
+          navMenu.classList.toggle('active');
+          mobileToggle.classList.toggle('active');
+      }
+      
+      // Close mobile menu when clicking outside
+      document.addEventListener('click', function(event) {
+          const navMenu = document.getElementById('nav-menu');
+          const mobileToggle = document.querySelector('.mobile-menu-toggle');
+          const mainNav = document.querySelector('.main-nav');
+          
+          if (!mainNav.contains(event.target) && navMenu.classList.contains('active')) {
+              navMenu.classList.remove('active');
+              mobileToggle.classList.remove('active');
+          }
+      });
+      
+      // Close mobile menu when clicking on nav links
+      document.addEventListener('DOMContentLoaded', function() {
+          const navLinks = document.querySelectorAll('.nav-link');
+          const navMenu = document.getElementById('nav-menu');
+          const mobileToggle = document.querySelector('.mobile-menu-toggle');
+          
+          navLinks.forEach(link => {
+              link.addEventListener('click', () => {
+                  navMenu.classList.remove('active');
+                  mobileToggle.classList.remove('active');
+              });
+          });
+      });
+      
+      window.onload = function () {
+          const papersContainer = document.getElementById('papers-container');
+          if (papersContainer) {
+              originalPapers = Array.from(papersContainer.children).filter(child => child.classList.contains('paper-card'));
+          }
+
+          showMoreContainer = document.querySelector('.show-more-container');
+          togglePapersButton = document.getElementById('toggle-papers');
+          
+          if (togglePapersButton) {
+              togglePapersButton.addEventListener('click', function () {
+                  showAllPapers = !showAllPapers;
+                  updatePapersVisibility();
+              });
+            
+              updatePapersVisibility();
+          }
+
+          initProjectBoxClicks();
+      }
+      
+      document.addEventListener('DOMContentLoaded', function () {
+          const sortButtons = document.querySelectorAll('.sort-btn');
+          sortButtons.forEach(button => {
+              button.addEventListener('click', function () {
+                  sortButtons.forEach(btn => btn.classList.remove('active'));
+                  this.classList.add('active');
+              });
+          });
+      });
+
+      function sortPapers(criteria) {
+          if (!originalPapers.length) return;
+
+          const itemsByCriteria = {
+              'date': sortByDate,
+              'topic': groupByTopic,
+              'venue': groupByVenue
+          };
+
+          const sortFunction = itemsByCriteria[criteria];
+          if (!sortFunction) return;
+
+          const papersContainer = document.getElementById('papers-container');
+          if (!papersContainer) return;
+
+          papersContainer.innerHTML = '';
+
+          const fragment = document.createDocumentFragment();
+          sortFunction(originalPapers).forEach(item => {
+              fragment.appendChild(item);
+          });
+
+          papersContainer.appendChild(fragment);
+          updatePapersVisibility(true);
+      }
+
+      function sortByDate(cards) {
+          return cards.slice().sort((a, b) => {
+              const yearA = parseInt(a.getAttribute('data-year'));
+              const yearB = parseInt(b.getAttribute('data-year'));
+              return yearB - yearA;
+          });
+      }
+
+      function groupByTopic(cards) {
+          const topics = {};
+          cards.forEach(card => {
+              const topic = card.getAttribute('data-topic') || 'Other';
+              if (!topics[topic]) {
+                  const topicGroup = document.createElement('div');
+                  topicGroup.className = 'topic-group';
+                  const topicHeading = document.createElement('div');
+                  topicHeading.className = 'topic-header';
+                  topicHeading.id = `topic-${topic.replace(/\s+/g, '-').toLowerCase()}`;
+                  topicHeading.textContent = topic;
+                  topicGroup.appendChild(topicHeading);
+                  topics[topic] = topicGroup;
+              }
+              topics[topic].appendChild(card.cloneNode(true));
+          });
+          return Object.values(topics);
+      }
+
+      function groupByVenue(cards) {
+          const venues = {};
+          cards.forEach(card => {
+              const venue = card.getAttribute('data-venue') || 'Other';
+              if (!venues[venue]) {
+                  const venueGroup = document.createElement('div');
+                  venueGroup.className = 'venue-group';
+                  const venueHeading = document.createElement('div');
+                  venueHeading.className = 'venue-header';
+                  venueHeading.id = `venue-${venue.replace(/\s+/g, '-').toLowerCase()}`;
+                  venueHeading.textContent = venue;
+                  venueGroup.appendChild(venueHeading);
+                  venues[venue] = venueGroup;
+              }
+              venues[venue].appendChild(card.cloneNode(true));
+          });
+          return Object.values(venues);
+      }
+
+      function updatePapersVisibility(forceShowAll = false) {
+          const papersContainer = document.getElementById('papers-container');
+          if (!papersContainer) return;
+
+          if (forceShowAll) {
+              showAllPapers = true;
+          }
+
+          const paperCards = Array.from(papersContainer.querySelectorAll('.paper-card'));
+          const totalPapers = paperCards.length;
+          const hiddenCount = Math.max(totalPapers - PAPERS_DEFAULT_LIMIT, 0);
+
+          if (totalPapers <= PAPERS_DEFAULT_LIMIT) {
+              showMoreContainer.style.display = 'none';
+              showAllPapers = true;
+              paperCards.forEach(card => {
+                  card.style.display = '';
+              });
+              togglePapersButton.classList.remove('showing-all');
+              togglePapersButton.textContent = `Show More (${hiddenCount})`;
+              togglePapersButton.setAttribute('aria-expanded', 'true');
+              return;
+          }
+
+          showMoreContainer.style.display = 'flex';
+
+          paperCards.forEach((card, index) => {
+              card.style.display = (showAllPapers || index < PAPERS_DEFAULT_LIMIT) ? '' : 'none';
+          });
+
+          if (showAllPapers) {
+              togglePapersButton.textContent = `Show Less (${totalPapers})`;
+              togglePapersButton.classList.add('showing-all');
+              togglePapersButton.setAttribute('aria-expanded', 'true');
+          } else {
+              togglePapersButton.textContent = `Show More (${hiddenCount})`;
+              togglePapersButton.classList.remove('showing-all');
+              togglePapersButton.setAttribute('aria-expanded', 'false');
+          }
+      }
+
+      // Project box click functionality
+      function initProjectBoxClicks() {
+          const projectBoxes = document.querySelectorAll('.project-box');
+          projectBoxes.forEach(box => {
+              box.addEventListener('click', function(e) {
+                  if (e.target.tagName === 'A' || e.target.closest('a')) {
+                      return;
+                  }
+                  
+                  const projectLink = box.querySelector('.project-title');
+                  if (projectLink && projectLink.href) {
+                      window.open(projectLink.href, projectLink.target || '_blank');
+                  }
+              });
+          });
+      }
+      
+      // Back to Top Button functionality
+      function scrollToTop() {
+          window.scrollTo({
+              top: 0,
+              behavior: 'smooth'
+          });
+      }
+      
+      // Show/hide back to top button based on scroll position
+      window.addEventListener('scroll', function() {
+          const backToTopBtn = document.querySelector('.back-to-top-btn');
+          if (window.pageYOffset > 300) {
+              backToTopBtn.classList.add('show');
+          } else {
+              backToTopBtn.classList.remove('show');
+          }
+      });
+  </script>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top-btn" onclick="scrollToTop()" title="Back to Top">
+    <i class="fa fa-arrow-up"></i>
+  </button>
+</body>
+
+</html>
