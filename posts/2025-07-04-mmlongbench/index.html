@@ -13,13 +13,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-<link rel="preconnect" href="https://cdn.jsdelivr.net">
-<link rel="preconnect" href="https://buttons.github.io">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
-<script async defer src="https://buttons.github.io/buttons.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link id="theme-style" rel="stylesheet" href="../../main.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
 <style>
@@ -157,33 +152,32 @@
 </style>
 </head>
 
-<nav class="main-nav">
-  <div class="nav-container">
-    <div class="nav-brand">
-      <a href="../../index.html" class="brand-link">Yuhang Zang</a>
-    </div>
-    
-    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu">
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-    </button>
-    
-    <div class="nav-menu" id="nav-menu">
-      <a href="../../index.html" class="nav-link">Home</a>
-      <a href="../../research.html" class="nav-link">Publications</a>
-      <a href="../../team.html" class="nav-link">Team</a>
-      <a href="../../index.html#services" class="nav-link">Services</a>
-      <a href="../../index.html#awards" class="nav-link">Awards</a>
-      <a href="../index.html" class="nav-link active">Blog</a>
-      <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
-        <span class="theme-icon">🌙</span>
-      </button>
-    </div>
-  </div>
-</nav>
-
 <body>
+  <nav class="main-nav">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="../../index.html" class="brand-link">Yuhang Zang</a>
+      </div>
+      
+      <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      
+      <div class="nav-menu" id="nav-menu">
+        <a href="../../index.html" class="nav-link">Home</a>
+        <a href="../../research.html" class="nav-link">Publications</a>
+        <a href="../../team.html" class="nav-link">Team</a>
+        <a href="../../index.html#services" class="nav-link">Services</a>
+        <a href="../../index.html#awards" class="nav-link">Awards</a>
+        <a href="../index.html" class="nav-link active">Blog</a>
+        <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </nav>
   <main>
     <!-- Breadcrumb Navigation -->
     <div class="breadcrumb">
@@ -334,7 +328,6 @@
     </article>
   </main>
 
-  <script defer src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
   <script>
     // Dark mode functionality
     function toggleTheme() {

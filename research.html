@@ -16,40 +16,37 @@
 <link rel="icon" type="image/png" sizes="32x32" href="./imgs/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="./imgs/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="./imgs/apple-touch-icon.png">
-<script async defer src="https://buttons.github.io/buttons.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link id="theme-style" rel="stylesheet" href="./main.css">
 </head>
 
-<nav class="main-nav">
-  <div class="nav-container">
-    <div class="nav-brand">
-      <a href="./index.html" class="brand-link">Yuhang Zang</a>
-    </div>
-    
-    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu">
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-      <span class="hamburger-line"></span>
-    </button>
-    
-    <div class="nav-menu" id="nav-menu">
-      <a href="./index.html" class="nav-link">Home</a>
-      <a href="./research.html" class="nav-link active">Publications</a>
-      <a href="./team.html" class="nav-link">Team</a>
-      <a href="./index.html#services" class="nav-link">Services</a>
-      <a href="./index.html#awards" class="nav-link">Awards</a>
-      <a href="./posts/index.html" class="nav-link">Blog</a>
-      <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
-        <span class="theme-icon">🌙</span>
-      </button>
-    </div>
-  </div>
-</nav>
-
 <body>
+  <nav class="main-nav">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="./index.html" class="brand-link">Yuhang Zang</a>
+      </div>
+      
+      <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      
+      <div class="nav-menu" id="nav-menu">
+        <a href="./index.html" class="nav-link">Home</a>
+        <a href="./research.html" class="nav-link active">Publications</a>
+        <a href="./team.html" class="nav-link">Team</a>
+        <a href="./index.html#services" class="nav-link">Services</a>
+        <a href="./index.html#awards" class="nav-link">Awards</a>
+        <a href="./posts/index.html" class="nav-link">Blog</a>
+        <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </nav>
   <main>
 
         <div class="papers-section">
@@ -918,7 +915,6 @@
           </div>
   </main>      
 
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
   <script>
       let originalPapers = [];
       
@@ -1023,26 +1019,34 @@
               element.innerHTML = '<i class="fa fa-spinner fa-spin" style="font-size: 10px; opacity: 0.6;"></i>';
           });
           
-          var gsDataBaseUrl = 'https://raw.githubusercontent.com/yuhangzang/asset/refs/heads/google-scholar/gs_data.json'
-          $.getJSON(gsDataBaseUrl, function (data) {  
-              // Build lookup map from publications array
-              var publicationsMap = {};
-              data.publications.forEach(pub => {
-                  publicationsMap[pub.key] = pub.citations;
+          var gsDataBaseUrl = 'https://raw.githubusercontent.com/yuhangzang/asset/refs/heads/google-scholar/gs_data.json';
+          fetch(gsDataBaseUrl)
+              .then(response => {
+                  if (!response.ok) {
+                      throw new Error('Failed to load citation data');
+                  }
+                  return response.json();
+              })
+              .then(data => {
+                  // Build lookup map from publications array
+                  var publicationsMap = {};
+                  data.publications.forEach(pub => {
+                      publicationsMap[pub.key] = pub.citations;
+                  });
+
+                  var citationEles = document.getElementsByClassName('show_paper_citations');
+                  Array.prototype.forEach.call(citationEles, element => {
+                      var paperId = element.getAttribute('data');
+                      var numCitations = publicationsMap[paperId] || 0;
+                      element.innerHTML = numCitations;
+                  });
+              })
+              .catch(() => {
+                  // Reset to 0 if loading fails
+                  Array.prototype.forEach.call(citationEles, element => {
+                      element.innerHTML = '0';
+                  });
               });
-              
-              var citationEles = document.getElementsByClassName('show_paper_citations')
-              Array.prototype.forEach.call(citationEles, element => {
-                  var paperId = element.getAttribute('data')
-                  var numCitations = publicationsMap[paperId] || 0;
-                  element.innerHTML = numCitations;
-              });
-          }).fail(function() {
-              // Reset to 0 if loading fails
-              Array.prototype.forEach.call(citationEles, element => {
-                  element.innerHTML = '0';
-              });
-          });
           
           // Initialize GitHub star loading indicators
           const githubButtons = document.querySelectorAll('.github-btn[data-repo]');

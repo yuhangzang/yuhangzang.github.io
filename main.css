@@ -301,49 +301,6 @@ main {
   margin-top: var(--space-3);
 }
 
-.bio-card {
-  display: flex;
-  gap: var(--space-2);
-  margin-bottom: var(--space-3);
-  padding: var(--space-3) !important;
-  background: var(--surface-color) !important;
-  border-radius: var(--radius-md) !important;
-  border: 1px solid var(--border-color) !important;
-  border-left: 4px solid var(--primary-color) !important;
-  box-shadow: none !important;
-  transition: box-shadow var(--transition-medium), border-color var(--transition-medium) !important;
-}
-
-.bio-card:hover {
-  box-shadow: var(--shadow-sm) !important;
-  border-color: var(--border-hover) !important;
-  transform: none !important;
-}
-
-.bio-card.research-focus {
-  border-left-color: var(--success-color) !important;
-  background: var(--primary-light) !important;
-}
-
-[data-theme="dark"] .bio-card.research-focus {
-  background: var(--surface-color) !important;
-}
-
-.bio-icon {
-  color: var(--google-blue);
-  font-size: var(--font-size-lg);
-  margin-top: 2px;
-}
-
-.bio-content {
-  flex: 1;
-}
-
-.bio-content p {
-  margin: 0;
-  line-height: 1.6;
-}
-
 /* Profile image - Google style */
 .profile-image-container {
   display: flex;
@@ -1309,14 +1266,6 @@ papertitle {
     justify-self: center;
   }
   
-  .bio-card {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .bio-icon {
-    margin-bottom: var(--space-1);
-  }
 }
 
 /* Dark mode support */
@@ -1348,7 +1297,6 @@ papertitle {
   border-bottom-color: var(--google-gray-700);
 }
 
-[data-theme="dark"] .bio-card,
 [data-theme="dark"] .navigation-compact,
 [data-theme="dark"] .news-section,
 [data-theme="dark"] .papers-section,
@@ -1429,8 +1377,7 @@ button:focus,
   }
   
   .paper-card,
-  .award-card,
-  .bio-card {
+  .award-card {
     border-width: 2px;
   }
 }
@@ -1792,12 +1739,6 @@ button:focus,
 .scholar-link:hover {
   text-decoration: underline !important;
   color: var(--primary-hover) !important;
-}
-
-/* Bio icon override */
-.bio-icon {
-  color: var(--text-secondary) !important;
-  font-size: 18px !important;
 }
 
 /* Intern name styling */
@@ -2770,12 +2711,6 @@ a:hover {
   line-height: 1.3 !important;
 }
 
-.projects-inline {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  gap: 4px !important;
-}
-
 /* Google Material Design Project Box */
 .project-box {
   background: var(--background-color) !important;
@@ -2923,10 +2858,6 @@ a:hover {
 
 /* Responsive adjustments for project boxes */
 @media (max-width: 768px) {
-  .projects-inline {
-    gap: 4px !important;
-  }
-  
   .project-box {
     padding: 5px 10px !important;
     min-height: 26px !important;
