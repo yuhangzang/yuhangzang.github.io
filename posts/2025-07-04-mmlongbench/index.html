@@ -13,9 +13,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 <link id="theme-style" rel="stylesheet" href="../../main.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></noscript>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
 <style>
   /* Collapsible code block styles */
@@ -159,13 +160,13 @@
         <a href="../../index.html" class="brand-link">Yuhang Zang</a>
       </div>
       
-      <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu">
+      <button class="mobile-menu-toggle" type="button" onclick="toggleMobileMenu(this)" aria-label="Toggle navigation menu" aria-controls="nav-menu" aria-expanded="false">
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
       </button>
       
-      <div class="nav-menu" id="nav-menu">
+      <div class="nav-menu" id="nav-menu" aria-hidden="true">
         <a href="../../index.html" class="nav-link">Home</a>
         <a href="../../research.html" class="nav-link">Publications</a>
         <a href="../../team.html" class="nav-link">Team</a>
@@ -213,7 +214,7 @@
         <p>As Large Language Models (LLMs) are increasingly deployed in real-world scenarios, the ability to understand long-context multimodal content—such as lengthy videos, extensive documents, and complex visual narratives—has become crucial for practical applications. MMLongBench-Doc <a href="#ref1">[1]</a> (NeurIPS 2024 Datasets and Benchmarks Track Spotlight) is a challenging long-context, multi-modal benchmark that evaluates the document understanding ability of Large Vision-Language Models (LVLMs). With documents averaging 47.5 pages and 21,214 textual tokens, MMLongBench-Doc presents a truly demanding test for long-context document understanding capabilities.</p>
 
         <figure class="blog-image" style="text-align: center; margin: 2em 0;">
-          <img src="./long-liu25.png" alt="Long-context multimodal applications" style="width: 100%; max-width: 700px; height: auto; border: 1px solid #e0e0e0; border-radius: 8px;">
+          <img src="./long-liu25.png" alt="Long-context multimodal applications" style="width: 100%; max-width: 700px; height: auto; border: 1px solid #e0e0e0; border-radius: 8px;" loading="lazy" decoding="async">
           <figcaption style="margin-top: 1em; color: #666; font-size: 0.9em; line-height: 1.4; max-width: 700px; margin-left: auto; margin-right: auto;">
             <strong>Figure 1:</strong> Long-context understanding capabilities enable AI systems to process extensive multimodal content across diverse domains, from analyzing lengthy research papers and legal documents to understanding hour-long videos and complex visual narratives, making it an essential capability for real-world AI applications. (Image source: <a href="#ref2">[2]</a>)
           </figcaption>
@@ -380,36 +381,52 @@
     initTheme();
     
     // Mobile menu toggle functionality
-    function toggleMobileMenu() {
+    function toggleMobileMenu(targetButton) {
         const navMenu = document.getElementById('nav-menu');
-        const mobileToggle = document.querySelector('.mobile-menu-toggle');
-        
-        navMenu.classList.toggle('active');
-        mobileToggle.classList.toggle('active');
+        const mobileToggle = targetButton || document.querySelector('.mobile-menu-toggle');
+        if (!navMenu || !mobileToggle) {
+            return;
+        }
+
+        const isOpen = navMenu.classList.toggle('active');
+        mobileToggle.classList.toggle('active', isOpen);
+        mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        navMenu.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
     }
-    
+
     // Close mobile menu when clicking outside
     document.addEventListener('click', function(event) {
         const navMenu = document.getElementById('nav-menu');
         const mobileToggle = document.querySelector('.mobile-menu-toggle');
         const mainNav = document.querySelector('.main-nav');
         
+        if (!navMenu || !mobileToggle || !mainNav) {
+            return;
+        }
+
         if (!mainNav.contains(event.target) && navMenu.classList.contains('active')) {
             navMenu.classList.remove('active');
             mobileToggle.classList.remove('active');
+            mobileToggle.setAttribute('aria-expanded', 'false');
+            navMenu.setAttribute('aria-hidden', 'true');
         }
     });
-    
+
     // Close mobile menu when clicking on nav links
     document.addEventListener('DOMContentLoaded', function() {
         const navLinks = document.querySelectorAll('.nav-link');
         const navMenu = document.getElementById('nav-menu');
         const mobileToggle = document.querySelector('.mobile-menu-toggle');
+        if (!navMenu || !mobileToggle) {
+            return;
+        }
         
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
                 mobileToggle.classList.remove('active');
+                mobileToggle.setAttribute('aria-expanded', 'false');
+                navMenu.setAttribute('aria-hidden', 'true');
             });
         });
     });
