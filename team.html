@@ -14,6 +14,19 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<script>
+(function() {
+    try {
+        var storedTheme = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (storedTheme === 'dark' || (!storedTheme && prefersDark)) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    } catch (error) {
+        // Ignore unavailable storage situations and continue with default theme
+    }
+})();
+</script>
 <link id="theme-style" rel="stylesheet" href="./main.css">
 <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></noscript>
@@ -153,7 +166,7 @@
             <div class="intern-item cohort-2025">
               <div class="intern-summary">
                 <div class="intern-name-line">
-                  <a href="https://github.com/SYuan03" target="_blank" rel="noopener noreferrer" class="intern-name">Shengyuan Ding</a><span class="co-supervision-group"><span class="co-supervised-indicator co-supervised-indicator--jiaqi" title="Co-supervised with Dr. Jiaqi Wang" aria-label="Co-supervised with Dr. Jiaqi Wang"></span></span>
+                  <a href="https://scholar.google.com/citations?user=iDPJVBsAAAAJ" target="_blank" rel="noopener noreferrer" class="intern-name">Shengyuan Ding</a><span class="co-supervision-group"><span class="co-supervised-indicator co-supervised-indicator--jiaqi" title="Co-supervised with Dr. Jiaqi Wang" aria-label="Co-supervised with Dr. Jiaqi Wang"></span></span>
                 </div>
                 <div class="intern-details-compact">PhD Student, Fudan University</div>
               </div>
@@ -180,7 +193,7 @@
             <div class="intern-item cohort-2025">
               <div class="intern-summary">
                 <div class="intern-name-line">
-                  <a href="https://scholar.google.com/citations?user=QZk6nZ8AAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer" class="intern-name">Zhixiong Zhang</a><span class="co-supervision-group"><span class="co-supervised-indicator co-supervised-indicator--jiaqi" title="Co-supervised with Dr. Jiaqi Wang" aria-label="Co-supervised with Dr. Jiaqi Wang"></span><span class="co-supervised-indicator co-supervised-indicator--xiaoyi" title="Co-supervised with Dr. Xiaoyi Dong" aria-label="Co-supervised with Dr. Xiaoyi Dong"></span></span>
+                  <a href="https://scholar.google.com/citations?hl=en&amp;user=XBzscD0AAAAJ" target="_blank" rel="noopener noreferrer" class="intern-name">Zhixiong Zhang</a><span class="co-supervision-group"><span class="co-supervised-indicator co-supervised-indicator--jiaqi" title="Co-supervised with Dr. Jiaqi Wang" aria-label="Co-supervised with Dr. Jiaqi Wang"></span><span class="co-supervised-indicator co-supervised-indicator--xiaoyi" title="Co-supervised with Dr. Xiaoyi Dong" aria-label="Co-supervised with Dr. Xiaoyi Dong"></span></span>
                 </div>
                 <div class="intern-details-compact">PhD Student, Shanghai Jiao Tong University</div>
               </div>
