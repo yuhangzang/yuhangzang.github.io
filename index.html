@@ -1,9 +1,9 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Meta tags for search engines to crawl -->
 <meta name="robots" content="index, follow">
 <meta name="description" content="Yuhang Zang's academic website">
@@ -39,13 +39,13 @@
       </button>
       
       <div class="nav-menu" id="nav-menu" aria-hidden="true">
-        <a href="./index.html" class="nav-link active">Home</a>
+        <a href="./index.html" class="nav-link active" aria-current="page">Home</a>
         <a href="./research.html" class="nav-link">Publications</a>
         <a href="./team.html" class="nav-link">Team</a>
         <a href="./index.html#services" class="nav-link">Services</a>
         <a href="./index.html#awards" class="nav-link">Awards</a>
         <a href="./posts/index.html" class="nav-link">Blog</a>
-        <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
+        <button id="theme-toggle" class="theme-toggle" type="button" onclick="toggleTheme()" title="Toggle dark mode" aria-pressed="false">
           <span class="theme-icon">🌙</span>
         </button>
       </div>
@@ -57,7 +57,7 @@
               <div class="profile-left">
                 <div class="profile-header">
                   <div class="name-container">
-                    <name>Yuhang Zang</name>
+                    <h1 class="profile-name">Yuhang Zang</h1>
                   </div>
                 </div>
                 
@@ -80,10 +80,11 @@
 
                   <div class="social-section">
                     <div class="social-grid">
-                      <a href="mailto:zang0012ATntu.edu.sg" class="social-link email">
+                      <a href="#email" class="social-link email" data-user="zang0012" data-domain="ntu.edu.sg" onclick="openEmail(event)" aria-label="Email Yuhang Zang">
                         <i class="fa fa-envelope"></i>
                         <span>Email</span>
                       </a>
+                      <noscript><span class="email-fallback">zang0012 [at] ntu [dot] edu [dot] sg</span></noscript>
                       <a href="https://github.com/yuhangzang" class="social-link github">
                         <i class="fa fa-github"></i>
                         <span>GitHub</span>
@@ -116,7 +117,7 @@
           </div>
 
           <div class="news-section">
-            <heading>News</heading>
+            <h2 class="section-heading">News</h2>
             <div class="scrollable">
               <ul>
                 <li class="news-item-new">[09/2025] <a href="https://arxiv.org/abs/2505.03318">UnifiedReward-Think</a> and <a href="https://arxiv.org/abs/2504.06232">Hi-Flow</a> were accepted by NeurIPS 2025.<div class="new-badge news-new-badge">New!</div>
@@ -139,12 +140,12 @@
           </div>
 
           <div class="papers-section">
-            <heading>Selected Papers <a href="./research.html" class="full-list-link"><i class="fa fa-list-ul"></i> Full List</a> <a href="https://scholar.google.com/citations?user=hW23VKIAAAAJ&hl=en" class="scholar-link" target="_blank"><i class="fa fa-graduation-cap"></i> Scholar</a></heading>
+            <h2 class="section-heading">Selected Papers <a href="./research.html" class="full-list-link"><i class="fa fa-list-ul"></i> Full List</a> <a href="https://scholar.google.com/citations?user=hW23VKIAAAAJ&hl=en" class="scholar-link" target="_blank" rel="noopener noreferrer"><i class="fa fa-graduation-cap"></i> Scholar</a></h2>
             
             <div class="sort-controls">
-              <button class="sort-btn active" onclick="sortPapers('date')">Show by Date</button>
-              <button class="sort-btn" onclick="sortPapers('topic')">Show by Topic</button>
-              <button class="sort-btn" onclick="sortPapers('venue')">Show by Venue</button>
+              <button class="sort-btn active" type="button" onclick="sortPapers('date')">Show by Date</button>
+              <button class="sort-btn" type="button" onclick="sortPapers('topic')">Show by Topic</button>
+              <button class="sort-btn" type="button" onclick="sortPapers('venue')">Show by Venue</button>
             </div>
             
             <div class="navigation-compact">
@@ -197,12 +198,12 @@
                 <div class="paper-venue">Neural Information Processing Systems (<b>NeurIPS</b>), 2025</div>
               </div>
               <div class="paper-badges">
-                <a href="https://arxiv.org/abs/2505.03318" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2505.03318</a>
-                <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:35N4QoGY0k4C" target="_blank" class="citations-btn">
+                <a href="https://arxiv.org/abs/2505.03318" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2505.03318</a>
+                <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:35N4QoGY0k4C" target="_blank" rel="noopener noreferrer" class="citations-btn">
                   <i class="fa fa-quote-left"></i>
                   <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:35N4QoGY0k4C">0</span>
                 </a>
-                <a href="https://github.com/CodeGoat24/UnifiedReward" class="github-btn" target="_blank" data-repo="CodeGoat24/UnifiedReward">
+                <a href="https://github.com/CodeGoat24/UnifiedReward" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="CodeGoat24/UnifiedReward">
                   <i class="fa fa-star"></i>
                   <span class="star-count">0</span>
                 </a>
@@ -222,12 +223,12 @@
                 <div class="paper-venue">IEEE International Conference on Computer Vision (<b>ICCV</b>), 2025</div>
               </div>
               <div class="paper-badges">
-                <a href="https://arxiv.org/abs/2503.01785" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2503.01785</a>
-                <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:O3NaXMp0MMsC" target="_blank" class="citations-btn">
+                <a href="https://arxiv.org/abs/2503.01785" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2503.01785</a>
+                <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:O3NaXMp0MMsC" target="_blank" rel="noopener noreferrer" class="citations-btn">
                   <i class="fa fa-quote-left"></i>
                   <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:O3NaXMp0MMsC">0</span>
                 </a>
-                <a href="https://github.com/Liuziyu77/Visual-RFT" class="github-btn" target="_blank" data-repo="Liuziyu77/Visual-RFT">
+                <a href="https://github.com/Liuziyu77/Visual-RFT" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="Liuziyu77/Visual-RFT">
                   <i class="fa fa-star"></i>
                   <span class="star-count">0</span>
                 </a>
@@ -246,12 +247,12 @@
                 <div class="paper-venue">Findings of the Association for Computational Linguistics (<b>Findings of ACL</b>), 2025</div>
               </div>
               <div class="paper-badges">
-                <a href="https://arxiv.org/abs/2501.12368" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2501.12368</a>
-                <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:TFP_iSt0sucC" target="_blank" class="citations-btn">
+                <a href="https://arxiv.org/abs/2501.12368" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2501.12368</a>
+                <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:TFP_iSt0sucC" target="_blank" rel="noopener noreferrer" class="citations-btn">
                   <i class="fa fa-quote-left"></i>
                   <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:TFP_iSt0sucC">0</span>
                 </a>
-                <a href="https://github.com/InternLM/InternLM-XComposer" class="github-btn" target="_blank" data-repo="InternLM/InternLM-XComposer">
+                <a href="https://github.com/InternLM/InternLM-XComposer" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="InternLM/InternLM-XComposer">
                   <i class="fa fa-star"></i>
                   <span class="star-count">0</span>
                 </a>
@@ -273,12 +274,12 @@
                 <div class="paper-venue">International Conference on Machine Learning (<b>ICML</b>), 2025 <span class="oral-spotlight-badge oral-badge">Oral</span></div>
               </div>
               <div class="paper-badges">
-                <a href="https://arxiv.org/abs/2502.05173" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2502.05173</a>
-                <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:isC4tDSrTZIC" target="_blank" class="citations-btn">
+                <a href="https://arxiv.org/abs/2502.05173" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2502.05173</a>
+                <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:isC4tDSrTZIC" target="_blank" rel="noopener noreferrer" class="citations-btn">
                   <i class="fa fa-quote-left"></i>
                   <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:isC4tDSrTZIC">0</span>
                 </a>
-                <a href="https://github.com/Wiselnn570/VideoRoPE" class="github-btn" target="_blank" data-repo="Wiselnn570/VideoRoPE">
+                <a href="https://github.com/Wiselnn570/VideoRoPE" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="Wiselnn570/VideoRoPE">
                   <i class="fa fa-star"></i>
                   <span class="star-count">0</span>
                 </a>
@@ -294,12 +295,12 @@
                 <div class="paper-venue">Neural Information Processing Systems (<b>NeurIPS</b>), 2024</div>
               </div>
               <div class="paper-badges">
-                <a href="https://arxiv.org/abs/2404.06512" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2404.06512</a>
-                <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:hqOjcs7Dif8C" target="_blank" class="citations-btn">
+                <a href="https://arxiv.org/abs/2404.06512" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2404.06512</a>
+                <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:hqOjcs7Dif8C" target="_blank" rel="noopener noreferrer" class="citations-btn">
                   <i class="fa fa-quote-left"></i>
                   <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:hqOjcs7Dif8C">0</span>
                 </a>
-                <a href="https://github.com/InternLM/InternLM-XComposer" class="github-btn" target="_blank" data-repo="InternLM/InternLM-XComposer">
+                <a href="https://github.com/InternLM/InternLM-XComposer" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="InternLM/InternLM-XComposer">
                   <i class="fa fa-star"></i>
                   <span class="star-count">0</span>
                 </a>
@@ -315,16 +316,16 @@
                 <div class="paper-venue">Neural Information Processing Systems (<b>NeurIPS</b>), 2024 (Datasets and Benchmarks Track) <span class="oral-spotlight-badge spotlight-badge">Spotlight</span></div>
               </div>
               <div class="paper-badges">
-                <a href="https://arxiv.org/abs/2407.01523" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2407.01523</a>
-                <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:ULOm3_A8WrAC" target="_blank" class="citations-btn">
+                <a href="https://arxiv.org/abs/2407.01523" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2407.01523</a>
+                <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:ULOm3_A8WrAC" target="_blank" rel="noopener noreferrer" class="citations-btn">
                   <i class="fa fa-quote-left"></i>
                   <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:ULOm3_A8WrAC">0</span>
                 </a>
-                <a href="https://github.com/mayubo2333/MMLongBench-Doc" class="github-btn" target="_blank" data-repo="mayubo2333/MMLongBench-Doc">
+                <a href="https://github.com/mayubo2333/MMLongBench-Doc" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="mayubo2333/MMLongBench-Doc">
                   <i class="fa fa-star"></i>
                   <span class="star-count">0</span>
                 </a>
-                <a href="https://mayubo2333.github.io/MMLongBench-Doc/" target="_blank" class="homepage-btn"><i class="fa fa-home"></i>Home</a>
+                <a href="https://mayubo2333.github.io/MMLongBench-Doc/" target="_blank" rel="noopener noreferrer" class="homepage-btn"><i class="fa fa-home"></i>Home</a>
                 <a href="https://huggingface.co/datasets/yubo2333/MMLongBench-Doc" class="huggingface-btn dataset">
                   <span class="hf-emoji">🤗</span>Dataset
                 </a>
@@ -340,8 +341,8 @@
                 <div class="paper-venue">International Conference on Learning Representations (<b>ICLR</b>), 2024</div>
               </div>
               <div class="paper-badges">
-                <a href="https://arxiv.org/abs/2401.15914" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2401.15914</a>
-                <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:ufrVoPGSRksC" target="_blank" class="citations-btn">
+                <a href="https://arxiv.org/abs/2401.15914" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2401.15914</a>
+                <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:ufrVoPGSRksC" target="_blank" rel="noopener noreferrer" class="citations-btn">
                   <i class="fa fa-quote-left"></i>
                   <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:ufrVoPGSRksC">0</span>
                 </a>
@@ -357,16 +358,16 @@
                 <div class="paper-venue">International Journal of Computer Vision (<b>IJCV</b>), 2024</div>
               </div>
               <div class="paper-badges">
-                <a href="https://arxiv.org/abs/2305.18279" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2305.18279</a>
-                <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:xtRiw3GOFMkC" target="_blank" class="citations-btn">
+                <a href="https://arxiv.org/abs/2305.18279" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2305.18279</a>
+                <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:xtRiw3GOFMkC" target="_blank" rel="noopener noreferrer" class="citations-btn">
                   <i class="fa fa-quote-left"></i>
                   <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:xtRiw3GOFMkC">0</span>
                 </a>
-                <a href="https://github.com/yuhangzang/ContextDET" class="github-btn" target="_blank" data-repo="yuhangzang/ContextDET">
+                <a href="https://github.com/yuhangzang/ContextDET" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="yuhangzang/ContextDET">
                   <i class="fa fa-star"></i>
                   <span class="star-count">0</span>
                 </a>
-                <a href="https://www.mmlab-ntu.com/project/contextdet/index.html" target="_blank" class="homepage-btn"><i class="fa fa-home"></i>Home</a>
+                <a href="https://www.mmlab-ntu.com/project/contextdet/index.html" target="_blank" rel="noopener noreferrer" class="homepage-btn"><i class="fa fa-home"></i>Home</a>
                 <a href="https://huggingface.co/spaces/yuhangzang/ContextDet-Demo" class="huggingface-btn space">
                   <span class="hf-emoji">🤗</span>Space
                 </a>
@@ -382,12 +383,12 @@
                 <div class="paper-venue">arXiv 2022</div>
               </div>
               <div class="paper-badges">
-                <a href="https://arxiv.org/abs/2210.07225" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2210.07225</a>
-                <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:Tyk-4Ss8FVUC" target="_blank" class="citations-btn">
+                <a href="https://arxiv.org/abs/2210.07225" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2210.07225</a>
+                <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:Tyk-4Ss8FVUC" target="_blank" rel="noopener noreferrer" class="citations-btn">
                   <i class="fa fa-quote-left"></i>
                   <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:Tyk-4Ss8FVUC">0</span>
                 </a>
-                <a href="https://github.com/yuhangzang/UPT" class="github-btn" target="_blank" data-repo="yuhangzang/UPT">
+                <a href="https://github.com/yuhangzang/UPT" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="yuhangzang/UPT">
                   <i class="fa fa-star"></i>
                   <span class="star-count">0</span>
                 </a>
@@ -403,8 +404,8 @@
                 <div class="paper-venue">International Journal of Computer Vision (<b>IJCV</b>), 2023</div>
               </div>
               <div class="paper-badges">
-                <a href="https://arxiv.org/abs/2305.14813" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2305.14813</a>
-                <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:W7OEmFMy1HYC" target="_blank" class="citations-btn">
+                <a href="https://arxiv.org/abs/2305.14813" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2305.14813</a>
+                <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:W7OEmFMy1HYC" target="_blank" rel="noopener noreferrer" class="citations-btn">
                   <i class="fa fa-quote-left"></i>
                   <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:W7OEmFMy1HYC">0</span>
                 </a>
@@ -420,16 +421,16 @@
                 <div class="paper-venue">European Conference on Computer Vision (<b>ECCV</b>), 2022 <span class="oral-spotlight-badge oral-badge">Oral</span></div>
               </div>
               <div class="paper-badges">
-                <a href="https://arxiv.org/abs/2203.11876" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2203.11876</a>
-                <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:IjCSPb-OGe4C" target="_blank" class="citations-btn">
+                <a href="https://arxiv.org/abs/2203.11876" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2203.11876</a>
+                <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:IjCSPb-OGe4C" target="_blank" rel="noopener noreferrer" class="citations-btn">
                   <i class="fa fa-quote-left"></i>
                   <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:IjCSPb-OGe4C">0</span>
                 </a>
-                <a href="https://github.com/yuhangzang/OV-DETR" class="github-btn" target="_blank" data-repo="yuhangzang/OV-DETR">
+                <a href="https://github.com/yuhangzang/OV-DETR" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="yuhangzang/OV-DETR">
                   <i class="fa fa-star"></i>
                   <span class="star-count">0</span>
                 </a>
-                <a href="https://www.mmlab-ntu.com/project/ovdetr/index.html" target="_blank" class="homepage-btn"><i class="fa fa-home"></i>Home</a>
+                <a href="https://www.mmlab-ntu.com/project/ovdetr/index.html" target="_blank" rel="noopener noreferrer" class="homepage-btn"><i class="fa fa-home"></i>Home</a>
               </div>
             </div>
           </div>
@@ -442,16 +443,16 @@
                 <div class="paper-venue">IEEE International Conference on Computer Vision (<b>ICCV</b>), 2021</div>
               </div>
               <div class="paper-badges">
-                <a href="https://arxiv.org/abs/2102.12867" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2102.12867</a>
-                <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:qjMakFHDy7sC" target="_blank" class="citations-btn">
+                <a href="https://arxiv.org/abs/2102.12867" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2102.12867</a>
+                <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:qjMakFHDy7sC" target="_blank" rel="noopener noreferrer" class="citations-btn">
                   <i class="fa fa-quote-left"></i>
                   <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:qjMakFHDy7sC">0</span>
                 </a>
-                <a href="https://github.com/yuhangzang/FASA" class="github-btn" target="_blank" data-repo="yuhangzang/FASA">
+                <a href="https://github.com/yuhangzang/FASA" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="yuhangzang/FASA">
                   <i class="fa fa-star"></i>
                   <span class="star-count">0</span>
                 </a>
-                <a href="https://www.mmlab-ntu.com/project/fasa/index.html" target="_blank" class="homepage-btn"><i class="fa fa-home"></i>Home</a>
+                <a href="https://www.mmlab-ntu.com/project/fasa/index.html" target="_blank" rel="noopener noreferrer" class="homepage-btn"><i class="fa fa-home"></i>Home</a>
               </div>
             </div>
           </div>
@@ -462,7 +463,7 @@
           </div>
 
           <div class="activities-section" id="services">
-            <heading>Services</heading>
+            <h2 class="section-heading">Services</h2>
             <div class="activities-compact">
               <div class="activity-group">
                 <div class="activity-role">
@@ -470,11 +471,11 @@
                   <strong>Area Chair / Senior Program Committee:</strong>
                 </div>
                 <div class="activity-list">
-                  <a href="https://cvpr.thecvf.com/Conferences/2026" class="activity-badge cvpr badge-link" target="_blank">CVPR 2026</a>
-                  <a href="https://iclr.cc/" class="activity-badge iclr badge-link" target="_blank">ICLR 2026</a>
-                  <a href="https://aaai.org/conference/aaai/aaai-26/aia-call/" class="activity-badge aaai badge-link" target="_blank">AAAI 2026 AIA</a>
-                  <a href="https://neurips.cc/Conferences/2025" class="activity-badge neurips badge-link" target="_blank">NeurIPS 2025</a>
-                  <a href="https://colmweb.org/" class="activity-badge colm badge-link" target="_blank">COLM 2025</a>
+                  <a href="https://cvpr.thecvf.com/Conferences/2026" class="activity-badge cvpr badge-link" target="_blank" rel="noopener noreferrer">CVPR 2026</a>
+                  <a href="https://iclr.cc/" class="activity-badge iclr badge-link" target="_blank" rel="noopener noreferrer">ICLR 2026</a>
+                  <a href="https://aaai.org/conference/aaai/aaai-26/aia-call/" class="activity-badge aaai badge-link" target="_blank" rel="noopener noreferrer">AAAI 2026 AIA</a>
+                  <a href="https://neurips.cc/Conferences/2025" class="activity-badge neurips badge-link" target="_blank" rel="noopener noreferrer">NeurIPS 2025</a>
+                  <a href="https://colmweb.org/" class="activity-badge colm badge-link" target="_blank" rel="noopener noreferrer">COLM 2025</a>
                 </div>
               </div>
 
@@ -484,12 +485,12 @@
                   <strong>Conference Reviewer:</strong>
                 </div>
                 <div class="activity-list">
-                  <a href="https://aclanthology.org/venues/acl/" class="activity-badge acl badge-link" target="_blank">ACL ARR</a>
-                  <a href="https://icml.cc/" class="activity-badge icml badge-link" target="_blank">ICML</a>
-                  <a href="https://aistats.org/aistats2025/" class="activity-badge aistats badge-link" target="_blank">AISTATS</a>
-                  <a href="https://iccv.thecvf.com/" class="activity-badge iccv badge-link" target="_blank">ICCV</a>
-                  <a href="https://eccv.ecva.net/" class="activity-badge eccv badge-link" target="_blank">ECCV</a>
-                  <a href="https://acmmm2025.org/" class="activity-badge acmm badge-link" target="_blank">ACM MM</a>
+                  <a href="https://aclanthology.org/venues/acl/" class="activity-badge acl badge-link" target="_blank" rel="noopener noreferrer">ACL ARR</a>
+                  <a href="https://icml.cc/" class="activity-badge icml badge-link" target="_blank" rel="noopener noreferrer">ICML</a>
+                  <a href="https://aistats.org/aistats2025/" class="activity-badge aistats badge-link" target="_blank" rel="noopener noreferrer">AISTATS</a>
+                  <a href="https://iccv.thecvf.com/" class="activity-badge iccv badge-link" target="_blank" rel="noopener noreferrer">ICCV</a>
+                  <a href="https://eccv.ecva.net/" class="activity-badge eccv badge-link" target="_blank" rel="noopener noreferrer">ECCV</a>
+                  <a href="https://acmmm2025.org/" class="activity-badge acmm badge-link" target="_blank" rel="noopener noreferrer">ACM MM</a>
                 </div>
               </div>
 
@@ -499,11 +500,11 @@
                   <strong>Journal Reviewer:</strong>
                 </div>
                 <div class="activity-list">
-                  <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=34" class="activity-badge tpami badge-link" target="_blank">IEEE TPAMI</a>
-                  <a href="https://link.springer.com/journal/11263" class="activity-badge ijcv badge-link" target="_blank">IJCV</a>
-                  <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=76" class="activity-badge tcsvt badge-link" target="_blank">IEEE TCSVT</a>
-                  <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=6046" class="activity-badge tmm badge-link" target="_blank">IEEE TMM</a>
-                  <a href="https://www.sciencedirect.com/journal/pattern-recognition" class="activity-badge pr badge-link" target="_blank">PR</a>
+                  <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=34" class="activity-badge tpami badge-link" target="_blank" rel="noopener noreferrer">IEEE TPAMI</a>
+                  <a href="https://link.springer.com/journal/11263" class="activity-badge ijcv badge-link" target="_blank" rel="noopener noreferrer">IJCV</a>
+                  <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=76" class="activity-badge tcsvt badge-link" target="_blank" rel="noopener noreferrer">IEEE TCSVT</a>
+                  <a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=6046" class="activity-badge tmm badge-link" target="_blank" rel="noopener noreferrer">IEEE TMM</a>
+                  <a href="https://www.sciencedirect.com/journal/pattern-recognition" class="activity-badge pr badge-link" target="_blank" rel="noopener noreferrer">PR</a>
                 </div>
               </div>
 
@@ -513,14 +514,14 @@
                   <strong>Workshop Organizer:</strong>
                 </div>
                 <div class="activity-list">
-                  <a href='https://vplow.github.io/vplow_4th.html' class="activity-badge badge-link" target="_blank">VPLOW@CVPR2024</a>
+                  <a href='https://vplow.github.io/vplow_4th.html' class="activity-badge badge-link" target="_blank" rel="noopener noreferrer">VPLOW@CVPR2024</a>
                 </div>
               </div>
             </div>
           </div>
 
           <div class="awards-section" id="awards">
-            <heading>Awards</heading>
+            <h2 class="section-heading">Awards</h2>
             <div class="awards-grid">
               
               <div class="award-card influential-award">
@@ -531,8 +532,8 @@
                   <div class="award-main">
                     <div class="award-category">Influential Paper (Paperdigest)</div>
                     <div class="award-title">
-                      <a href='https://arxiv.org/abs/2503.01785' class="paper-link" target="_blank">Visual-RFT</a>: 
-                      Most Influential ArXiv CV 2025: #5 in <a href='https://resources.paperdigest.org/2025/09/most-influential-arxiv-computer-vision-and-pattern-recognition-papers-2025-09-version/' class="award-link" target="_blank">2025-09 Version</a>
+                      <a href='https://arxiv.org/abs/2503.01785' class="paper-link" target="_blank" rel="noopener noreferrer">Visual-RFT</a>: 
+                      Most Influential ArXiv CV 2025: #5 in <a href='https://resources.paperdigest.org/2025/09/most-influential-arxiv-computer-vision-and-pattern-recognition-papers-2025-09-version/' class="award-link" target="_blank" rel="noopener noreferrer">2025-09 Version</a>
                     </div>
                   </div>
                   <div class="award-year">2025</div>
@@ -547,8 +548,8 @@
                   <div class="award-main">
                     <div class="award-category">Influential Paper (Paperdigest)</div>
                     <div class="award-title">
-                      <a href='https://arxiv.org/abs/2403.20330' class="paper-link" target="_blank">MMStar</a>: 
-                      Most Influential NeurIPS 2024: #9 in <a href='https://www.paperdigest.org/2025/03/most-influential-nips-papers-2025-03-version/' class="award-link" target="_blank">2025-03 Version</a>, #9 in <a href='https://www.paperdigest.org/2025/09/most-influential-nips-papers-2025-09-version/' class="award-link" target="_blank">2025-09 Version</a>
+                      <a href='https://arxiv.org/abs/2403.20330' class="paper-link" target="_blank" rel="noopener noreferrer">MMStar</a>: 
+                      Most Influential NeurIPS 2024: #9 in <a href='https://www.paperdigest.org/2025/03/most-influential-nips-papers-2025-03-version/' class="award-link" target="_blank" rel="noopener noreferrer">2025-03 Version</a>, #9 in <a href='https://www.paperdigest.org/2025/09/most-influential-nips-papers-2025-09-version/' class="award-link" target="_blank" rel="noopener noreferrer">2025-09 Version</a>
                     </div>
                   </div>
                   <div class="award-year">2025</div>
@@ -563,8 +564,8 @@
                   <div class="award-main">
                     <div class="award-category">Influential Paper (Paperdigest)</div>
                     <div class="award-title">
-                      <a href='https://arxiv.org/abs/2401.16420' class="paper-link" target="_blank">InternLM-XComposer2</a>: 
-                      Most Influential ArXiv CV 2024: #10 in <a href='https://resources.paperdigest.org/2024/10/most-influential-arxiv-computer-vision-and-pattern-recognition-papers-2024-10/' class="award-link" target="_blank">2024-10 Version</a>
+                      <a href='https://arxiv.org/abs/2401.16420' class="paper-link" target="_blank" rel="noopener noreferrer">InternLM-XComposer2</a>: 
+                      Most Influential ArXiv CV 2024: #10 in <a href='https://resources.paperdigest.org/2024/10/most-influential-arxiv-computer-vision-and-pattern-recognition-papers-2024-10/' class="award-link" target="_blank" rel="noopener noreferrer">2024-10 Version</a>
                     </div>
                   </div>
                   <div class="award-year">2024</div>
@@ -579,7 +580,7 @@
                   <div class="award-main">
                     <div class="award-category">3rd Place</div>
                     <div class="award-title">
-                      <a href='https://www.lvisdataset.org/challenge_2020' class="award-link" target="_blank">LVIS Challenge 2020 - Instance Segmentation</a>
+                      <a href='https://www.lvisdataset.org/challenge_2020' class="award-link" target="_blank" rel="noopener noreferrer">LVIS Challenge 2020 - Instance Segmentation</a>
                     </div>
                     <div class="award-venue">ECCV 2020 Workshop</div>
                   </div>
@@ -595,7 +596,7 @@
                   <div class="award-main">
                     <div class="award-category">1st Place</div>
                     <div class="award-title">
-                      <a href='https://www.kaggle.com/c/open-images-2019-object-detection/leaderboard' class="award-link" target="_blank">Google Open Images 2019 - Object Detection Challenge</a>
+                      <a href='https://www.kaggle.com/c/open-images-2019-object-detection/leaderboard' class="award-link" target="_blank" rel="noopener noreferrer">Google Open Images 2019 - Object Detection Challenge</a>
                     </div>
                     <div class="award-venue">ICCV 2019 Workshop</div>
                   </div>
@@ -614,7 +615,35 @@
       let showAllPapers = false;
       let showMoreContainer = null;
       let togglePapersButton = null;
+      const colorSchemeQuery = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+      const motionPreferenceQuery = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
       
+      // Lazy-assemble email links to reduce harvesting
+      function openEmail(event) {
+          const link = event.currentTarget;
+          if (!link) {
+              return;
+          }
+
+          const user = link.getAttribute('data-user');
+          const domain = link.getAttribute('data-domain');
+          if (!user || !domain) {
+              return;
+          }
+
+          const address = `${user}@${domain}`;
+          const mailto = `mailto:${address}`;
+          link.setAttribute('href', mailto);
+          link.removeAttribute('onclick');
+          link.removeAttribute('data-user');
+          link.removeAttribute('data-domain');
+          window.location.href = mailto;
+      }
+
+      function shouldReduceMotion() {
+          return motionPreferenceQuery ? motionPreferenceQuery.matches : false;
+      }
+
       // Dark mode functionality
       function toggleTheme() {
           const html = document.documentElement;
@@ -625,42 +654,59 @@
               html.removeAttribute('data-theme');
               themeIcon.textContent = '🌙';
               localStorage.setItem('theme', 'light');
+              themeToggle.setAttribute('aria-pressed', 'false');
           } else {
               html.setAttribute('data-theme', 'dark');
               themeIcon.textContent = '☀️';
               localStorage.setItem('theme', 'dark');
+              themeToggle.setAttribute('aria-pressed', 'true');
           }
       }
       
       // Auto detect system preference and apply saved theme
       function initTheme() {
           const savedTheme = localStorage.getItem('theme');
-          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          const prefersDark = colorSchemeQuery ? colorSchemeQuery.matches : false;
           const themeToggle = document.getElementById('theme-toggle');
           const themeIcon = themeToggle?.querySelector('.theme-icon');
           
           if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
               document.documentElement.setAttribute('data-theme', 'dark');
               if (themeIcon) themeIcon.textContent = '☀️';
+              if (themeToggle) themeToggle.setAttribute('aria-pressed', 'true');
           } else {
               document.documentElement.removeAttribute('data-theme');
               if (themeIcon) themeIcon.textContent = '🌙';
+              if (themeToggle) themeToggle.setAttribute('aria-pressed', 'false');
           }
       }
       
       // Listen for system theme changes
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-          if (!localStorage.getItem('theme')) {
-              const themeIcon = document.querySelector('.theme-icon');
-              if (e.matches) {
-                  document.documentElement.setAttribute('data-theme', 'dark');
-                  if (themeIcon) themeIcon.textContent = '☀️';
-              } else {
-                  document.documentElement.removeAttribute('data-theme');
-                  if (themeIcon) themeIcon.textContent = '🌙';
-              }
+      function handleSystemThemeChange(e) {
+          if (localStorage.getItem('theme')) {
+              return;
           }
-      });
+
+          const themeIcon = document.querySelector('.theme-icon');
+          const themeToggle = document.getElementById('theme-toggle');
+          if (e.matches) {
+              document.documentElement.setAttribute('data-theme', 'dark');
+              if (themeIcon) themeIcon.textContent = '☀️';
+              if (themeToggle) themeToggle.setAttribute('aria-pressed', 'true');
+          } else {
+              document.documentElement.removeAttribute('data-theme');
+              if (themeIcon) themeIcon.textContent = '🌙';
+              if (themeToggle) themeToggle.setAttribute('aria-pressed', 'false');
+          }
+      }
+
+      if (colorSchemeQuery) {
+          if (typeof colorSchemeQuery.addEventListener === 'function') {
+              colorSchemeQuery.addEventListener('change', handleSystemThemeChange);
+          } else if (typeof colorSchemeQuery.addListener === 'function') {
+              colorSchemeQuery.addListener(handleSystemThemeChange);
+          }
+      }
       
       // Initialize theme before page load
       initTheme();
@@ -733,7 +779,10 @@
                   const nextState = !showAllPapers;
                   setPaperVisibility(nextState);
                   if (!nextState) {
-                      document.querySelector('.papers-section')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      document.querySelector('.papers-section')?.scrollIntoView({
+                          behavior: shouldReduceMotion() ? 'auto' : 'smooth',
+                          block: 'start'
+                      });
                   }
               });
           }
@@ -1112,7 +1161,10 @@
               const topicId = 'topic-' + topicName.replace(/\s+/g, '-').toLowerCase();
               const topicElement = document.getElementById(topicId);
               if (topicElement) {
-                  topicElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  topicElement.scrollIntoView({
+                      behavior: shouldReduceMotion() ? 'auto' : 'smooth',
+                      block: 'start'
+                  });
               }
           }, 200);
       }
@@ -1127,7 +1179,10 @@
               const venueId = 'venue-' + venueName.replace(/\s+/g, '-').toLowerCase();
               const venueElement = document.getElementById(venueId);
               if (venueElement) {
-                  venueElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  venueElement.scrollIntoView({
+                      behavior: shouldReduceMotion() ? 'auto' : 'smooth',
+                      block: 'start'
+                  });
               }
           }, 200);
       }
@@ -1147,7 +1202,10 @@
                   }
               });
               if (targetHeader) {
-                  targetHeader.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  targetHeader.scrollIntoView({
+                      behavior: shouldReduceMotion() ? 'auto' : 'smooth',
+                      block: 'start'
+                  });
               }
           }, 200);
       }
@@ -1225,7 +1283,7 @@
       function scrollToTop() {
           window.scrollTo({
               top: 0,
-              behavior: 'smooth'
+              behavior: shouldReduceMotion() ? 'auto' : 'smooth'
           });
       }
       
@@ -1241,7 +1299,7 @@
   </script>
 
   <!-- Back to Top Button -->
-  <button class="back-to-top-btn" onclick="scrollToTop()" title="Back to Top">
+  <button class="back-to-top-btn" type="button" onclick="scrollToTop()" title="Back to Top">
     <i class="fa fa-arrow-up"></i>
   </button>
 

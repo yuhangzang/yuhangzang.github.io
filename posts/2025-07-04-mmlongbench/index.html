@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -172,8 +172,8 @@
         <a href="../../team.html" class="nav-link">Team</a>
         <a href="../../index.html#services" class="nav-link">Services</a>
         <a href="../../index.html#awards" class="nav-link">Awards</a>
-        <a href="../index.html" class="nav-link active">Blog</a>
-        <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
+        <a href="../index.html" class="nav-link active" aria-current="page">Blog</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" onclick="toggleTheme()" title="Toggle dark mode" aria-pressed="false">
           <span class="theme-icon">🌙</span>
         </button>
       </div>
@@ -220,12 +220,12 @@
           </figcaption>
         </figure>
 
-        <p>Since we proposed MMLongBench-Doc in July 2024, a year has passed, and the landscape of LVLMs has evolved dramatically. The benchmark has been widely adopted by industry teams to evaluate multimodal long-context document understanding capabilities, including MiniMax-01 <a href="#ref3">[3]</a>, GLM-4.1V-Thinking <a href="#ref4">[4]</a>, Kimi-VL <a href="#ref5">[5]</a>, and Aria <a href="#ref6">[6]</a>. How do the latest proprietary models (e.g., GPT-4.1 <a href="#ref7">[7]</a>) and open-source models perform on our benchmark? We have updated our <a href="https://huggingface.co/spaces/OpenIXCLab/mmlongbench-doc" target="_blank">leaderboard</a> to reflect these recent developments.</p>
+        <p>Since we proposed MMLongBench-Doc in July 2024, a year has passed, and the landscape of LVLMs has evolved dramatically. The benchmark has been widely adopted by industry teams to evaluate multimodal long-context document understanding capabilities, including MiniMax-01 <a href="#ref3">[3]</a>, GLM-4.1V-Thinking <a href="#ref4">[4]</a>, Kimi-VL <a href="#ref5">[5]</a>, and Aria <a href="#ref6">[6]</a>. How do the latest proprietary models (e.g., GPT-4.1 <a href="#ref7">[7]</a>) and open-source models perform on our benchmark? We have updated our <a href="https://huggingface.co/spaces/OpenIXCLab/mmlongbench-doc" target="_blank" rel="noopener noreferrer">leaderboard</a> to reflect these recent developments.</p>
 
         <div style="text-align: center; margin: 2em 0;">
           <table class="leaderboard-table" style="margin: 0 auto; border-collapse: collapse; min-width: 800px; max-width: 1000px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden;">
             <caption style="margin-bottom: 1em; color: #666; font-size: 0.9em; line-height: 1.4;">
-              <strong>Table 1:</strong> Top-4 performing models on MMLongBench-Doc as of July 4, 2025. See <a href="https://huggingface.co/spaces/OpenIXCLab/mmlongbench-doc" target="_blank">leaderboard</a> for detailed results.
+              <strong>Table 1:</strong> Top-4 performing models on MMLongBench-Doc as of July 4, 2025. See <a href="https://huggingface.co/spaces/OpenIXCLab/mmlongbench-doc" target="_blank" rel="noopener noreferrer">leaderboard</a> for detailed results.
             </caption>
             <thead>
               <tr style="background: #f8f9fa; color: #333;">
@@ -268,7 +268,7 @@
 
         <h2>Open-Source Models Achieve Dramatic Improvements</h2>
         
-        <p>When MMLongBench-Doc launched in July 2024, the challenging nature of long-context document understanding was evident—even the best open-source models struggled to achieve strong performance, with InternVL-Chat-v1.5 <a href="#ref9">[9]</a> reaching only 14.6% accuracy. Fast forward one year, and the transformation has been remarkable. According to our updated <a href="https://huggingface.co/spaces/OpenIXCLab/mmlongbench-doc" target="_blank">leaderboard</a>, open-source models have achieved extraordinary progress. Most notably, GLM-4.1V-Thinking <a href="#ref4">[4]</a> now achieves 42.4% Acc, securing the top position among open-source models as shown in Table 1. <strong>From 14.6% to 42.4%, this represents an impressive nearly 3x improvement over the previous best open-source performance.</strong></p>
+        <p>When MMLongBench-Doc launched in July 2024, the challenging nature of long-context document understanding was evident—even the best open-source models struggled to achieve strong performance, with InternVL-Chat-v1.5 <a href="#ref9">[9]</a> reaching only 14.6% accuracy. Fast forward one year, and the transformation has been remarkable. According to our updated <a href="https://huggingface.co/spaces/OpenIXCLab/mmlongbench-doc" target="_blank" rel="noopener noreferrer">leaderboard</a>, open-source models have achieved extraordinary progress. Most notably, GLM-4.1V-Thinking <a href="#ref4">[4]</a> now achieves 42.4% Acc, securing the top position among open-source models as shown in Table 1. <strong>From 14.6% to 42.4%, this represents an impressive nearly 3x improvement over the previous best open-source performance.</strong></p>
 
         <p>How do these models achieve this remarkable progress in long-context understanding? Different open-source models have explored diverse approaches to enhance their long-context capabilities, with several key innovations emerging:</p>
         <ul>
@@ -297,28 +297,28 @@
         <p>Moving forward, we are committed to maintaining MMLongBench-Doc as a reliable and comprehensive benchmark. We will continue to provide updated evaluations, improve annotation quality, and ensure that our benchmark remains a valuable resource for the LVLM research community.</p>
 
         <h2>References</h2>
-        <p id="ref1">[1] Ma, Yubo, et al. "<a href="https://neurips.cc/virtual/2024/poster/97524" target="_blank">MMLongBench-Doc: Benchmarking long-context document understanding with visualizations.</a>" NeurIPS Datasets Benchmarks 2024.</p>
-        <p id="ref2">[2] Liu, Xiaoran, et al. "<a href="https://arxiv.org/abs/2502.17129" target="_blank">Thus spake long-context large language model.</a>" arXiv preprint arXiv:2502.17129 (2025).</p>
-        <p id="ref3">[3] Li, Aonian, et al. "<a href="https://arxiv.org/abs/2501.08313" target="_blank">Minimax-01: Scaling foundation models with lightning attention.</a>" arXiv preprint arXiv:2501.08313 (2025).</p>
-        <p id="ref4">[4] GLM-V Team. "<a href="https://arxiv.org/abs/2507.01006" target="_blank">GLM-4.1V-Thinking: Towards Versatile Multimodal Reasoning with Scalable Reinforcement Learning.</a>" arXiv preprint arXiv:2507.01006 (2025).</p>
-        <p id="ref5">[5] Team, Kimi, et al. "<a href="https://arxiv.org/abs/2504.07491" target="_blank">Kimi-VL technical report.</a>" arXiv preprint arXiv:2504.07491 (2025).</p>
-        <p id="ref6">[6] Li, Dongxu, et al. "<a href="https://arxiv.org/abs/2410.05993" target="_blank">Aria: An open multimodal native mixture-of-experts model.</a>" arXiv preprint arXiv:2410.05993 (2024).</p>
-        <p id="ref7">[7] OpenAI. "<a href="https://openai.com/index/gpt-4-1/" target="_blank">GPT-4.1: Our latest updates and improvements.</a>" OpenAI Blog, 2024.</p>
-        <p id="ref8">[8] Hurst, Aaron, et al. "<a href="https://arxiv.org/abs/2410.21276" target="_blank">GPT-4o system card.</a>" arXiv preprint arXiv:2410.21276 (2024).</p>
-        <p id="ref9">[9] Chen, Zhe, et al. "<a href="https://arxiv.org/abs/2404.16821" target="_blank">How far are we to gpt-4v? closing the gap to commercial multimodal models with open-source suites.</a>" Science China Information Sciences 67.12 (2024): 220101.</p>
-        <p id="ref10">[10] Su, Jianlin, et al. "<a href="https://doi.org/10.1016/j.neucom.2023.127063" target="_blank">RoFormer: Enhanced transformer with rotary position embedding.</a>" Neurocomputing 568 (2024): 127063.</p>
-        <p id="ref11">[11] Peng, Bowen, et al. "<a href="https://arxiv.org/abs/2309.00071" target="_blank">YaRN: Efficient context window extension of large language models.</a>" arXiv preprint arXiv:2309.00071 (2023).</p>
-        <p id="ref12">[12] Bai, Shuai, et al. "<a href="https://arxiv.org/abs/2502.13923" target="_blank">Qwen2. 5-vl technical report.</a>" arXiv preprint arXiv:2502.13923 (2025).</p>
-        <p id="ref13">[13] Dosovitskiy, Alexey, et al. "<a href="https://arxiv.org/abs/2010.11929" target="_blank">An image is worth 16x16 words: Transformers for image recognition at scale.</a>" arXiv preprint arXiv:2010.11929 (2020).</p>
-        <p id="ref14">[14] Vaswani, Ashish, et al. "<a href="https://arxiv.org/abs/1706.03762" target="_blank">Attention is all you need.</a>" NeurIPS 2017.</p>
-        <p id="ref15">[15] Katharopoulos, Angelos, et al. "<a href="https://arxiv.org/abs/2006.16236" target="_blank">Transformers are rnns: Fast autoregressive transformers with linear attention.</a>" ICML 2020.</p>
-        <p id="ref16">[16] Yang, An, et al. "<a href="https://arxiv.org/abs/2505.09388" target="_blank">Qwen3 technical report.</a>" arXiv preprint arXiv:2505.09388 (2025).</p>
-        <p id="ref17">[17] Shazeer, Noam, et al. "<a href="https://arxiv.org/abs/1701.06538" target="_blank">Outrageously large neural networks: The sparsely-gated mixture-of-experts layer.</a>" arXiv preprint arXiv:1701.06538 (2017).</p>
-        <p id="ref18">[18] Liu, Aixin, et al. "<a href="https://arxiv.org/abs/2412.19437" target="_blank">DeepSeek-v3 technical report.</a>" arXiv preprint arXiv:2412.19437 (2024).</p>
-        <p id="ref19">[19] Jaech, Aaron, et al. "<a href="https://arxiv.org/abs/2412.16720" target="_blank">OpenAI o1 system card.</a>" arXiv preprint arXiv:2412.16720 (2024).</p>
-        <p id="ref20">[20] Guo, Daya, et al. "<a href="https://arxiv.org/abs/2501.12948" target="_blank">DeepSeek-R1: Incentivizing reasoning capability in llms via reinforcement learning.</a>" arXiv preprint arXiv:2501.12948 (2025).</p>
-        <p id="ref21">[21] Wei, Jason, et al. "<a href="https://arxiv.org/abs/2201.11903" target="_blank">Chain-of-thought prompting elicits reasoning in large language models.</a>" NeurIPS 2022.</p>
-        <p id="ref22">[22] Lambert, Nathan, et al. "<a href="https://arxiv.org/abs/2411.15124" target="_blank">Tülu 3: Pushing frontiers in open language model post-training.</a>" arXiv preprint arXiv:2411.15124 (2024).</p>
+        <p id="ref1">[1] Ma, Yubo, et al. "<a href="https://neurips.cc/virtual/2024/poster/97524" target="_blank" rel="noopener noreferrer">MMLongBench-Doc: Benchmarking long-context document understanding with visualizations.</a>" NeurIPS Datasets Benchmarks 2024.</p>
+        <p id="ref2">[2] Liu, Xiaoran, et al. "<a href="https://arxiv.org/abs/2502.17129" target="_blank" rel="noopener noreferrer">Thus spake long-context large language model.</a>" arXiv preprint arXiv:2502.17129 (2025).</p>
+        <p id="ref3">[3] Li, Aonian, et al. "<a href="https://arxiv.org/abs/2501.08313" target="_blank" rel="noopener noreferrer">Minimax-01: Scaling foundation models with lightning attention.</a>" arXiv preprint arXiv:2501.08313 (2025).</p>
+        <p id="ref4">[4] GLM-V Team. "<a href="https://arxiv.org/abs/2507.01006" target="_blank" rel="noopener noreferrer">GLM-4.1V-Thinking: Towards Versatile Multimodal Reasoning with Scalable Reinforcement Learning.</a>" arXiv preprint arXiv:2507.01006 (2025).</p>
+        <p id="ref5">[5] Team, Kimi, et al. "<a href="https://arxiv.org/abs/2504.07491" target="_blank" rel="noopener noreferrer">Kimi-VL technical report.</a>" arXiv preprint arXiv:2504.07491 (2025).</p>
+        <p id="ref6">[6] Li, Dongxu, et al. "<a href="https://arxiv.org/abs/2410.05993" target="_blank" rel="noopener noreferrer">Aria: An open multimodal native mixture-of-experts model.</a>" arXiv preprint arXiv:2410.05993 (2024).</p>
+        <p id="ref7">[7] OpenAI. "<a href="https://openai.com/index/gpt-4-1/" target="_blank" rel="noopener noreferrer">GPT-4.1: Our latest updates and improvements.</a>" OpenAI Blog, 2024.</p>
+        <p id="ref8">[8] Hurst, Aaron, et al. "<a href="https://arxiv.org/abs/2410.21276" target="_blank" rel="noopener noreferrer">GPT-4o system card.</a>" arXiv preprint arXiv:2410.21276 (2024).</p>
+        <p id="ref9">[9] Chen, Zhe, et al. "<a href="https://arxiv.org/abs/2404.16821" target="_blank" rel="noopener noreferrer">How far are we to gpt-4v? closing the gap to commercial multimodal models with open-source suites.</a>" Science China Information Sciences 67.12 (2024): 220101.</p>
+        <p id="ref10">[10] Su, Jianlin, et al. "<a href="https://doi.org/10.1016/j.neucom.2023.127063" target="_blank" rel="noopener noreferrer">RoFormer: Enhanced transformer with rotary position embedding.</a>" Neurocomputing 568 (2024): 127063.</p>
+        <p id="ref11">[11] Peng, Bowen, et al. "<a href="https://arxiv.org/abs/2309.00071" target="_blank" rel="noopener noreferrer">YaRN: Efficient context window extension of large language models.</a>" arXiv preprint arXiv:2309.00071 (2023).</p>
+        <p id="ref12">[12] Bai, Shuai, et al. "<a href="https://arxiv.org/abs/2502.13923" target="_blank" rel="noopener noreferrer">Qwen2. 5-vl technical report.</a>" arXiv preprint arXiv:2502.13923 (2025).</p>
+        <p id="ref13">[13] Dosovitskiy, Alexey, et al. "<a href="https://arxiv.org/abs/2010.11929" target="_blank" rel="noopener noreferrer">An image is worth 16x16 words: Transformers for image recognition at scale.</a>" arXiv preprint arXiv:2010.11929 (2020).</p>
+        <p id="ref14">[14] Vaswani, Ashish, et al. "<a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noopener noreferrer">Attention is all you need.</a>" NeurIPS 2017.</p>
+        <p id="ref15">[15] Katharopoulos, Angelos, et al. "<a href="https://arxiv.org/abs/2006.16236" target="_blank" rel="noopener noreferrer">Transformers are rnns: Fast autoregressive transformers with linear attention.</a>" ICML 2020.</p>
+        <p id="ref16">[16] Yang, An, et al. "<a href="https://arxiv.org/abs/2505.09388" target="_blank" rel="noopener noreferrer">Qwen3 technical report.</a>" arXiv preprint arXiv:2505.09388 (2025).</p>
+        <p id="ref17">[17] Shazeer, Noam, et al. "<a href="https://arxiv.org/abs/1701.06538" target="_blank" rel="noopener noreferrer">Outrageously large neural networks: The sparsely-gated mixture-of-experts layer.</a>" arXiv preprint arXiv:1701.06538 (2017).</p>
+        <p id="ref18">[18] Liu, Aixin, et al. "<a href="https://arxiv.org/abs/2412.19437" target="_blank" rel="noopener noreferrer">DeepSeek-v3 technical report.</a>" arXiv preprint arXiv:2412.19437 (2024).</p>
+        <p id="ref19">[19] Jaech, Aaron, et al. "<a href="https://arxiv.org/abs/2412.16720" target="_blank" rel="noopener noreferrer">OpenAI o1 system card.</a>" arXiv preprint arXiv:2412.16720 (2024).</p>
+        <p id="ref20">[20] Guo, Daya, et al. "<a href="https://arxiv.org/abs/2501.12948" target="_blank" rel="noopener noreferrer">DeepSeek-R1: Incentivizing reasoning capability in llms via reinforcement learning.</a>" arXiv preprint arXiv:2501.12948 (2025).</p>
+        <p id="ref21">[21] Wei, Jason, et al. "<a href="https://arxiv.org/abs/2201.11903" target="_blank" rel="noopener noreferrer">Chain-of-thought prompting elicits reasoning in large language models.</a>" NeurIPS 2022.</p>
+        <p id="ref22">[22] Lambert, Nathan, et al. "<a href="https://arxiv.org/abs/2411.15124" target="_blank" rel="noopener noreferrer">Tülu 3: Pushing frontiers in open language model post-training.</a>" arXiv preprint arXiv:2411.15124 (2024).</p>
         <p id="ref23">[23] Liu, Ziyu, et al. "Visual-RFT: Visual reinforcement fine-tuning." ICCV 2025.</p>
 
       </div>
@@ -330,6 +330,12 @@
   </main>
 
   <script>
+    const colorSchemeQuery = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+    const motionPreferenceQuery = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+    function shouldReduceMotion() {
+        return motionPreferenceQuery ? motionPreferenceQuery.matches : false;
+    }
+
     // Dark mode functionality
     function toggleTheme() {
         const html = document.documentElement;
@@ -340,42 +346,59 @@
             html.removeAttribute('data-theme');
             themeIcon.textContent = '🌙';
             localStorage.setItem('theme', 'light');
+            themeToggle.setAttribute('aria-pressed', 'false');
         } else {
             html.setAttribute('data-theme', 'dark');
             themeIcon.textContent = '☀️';
             localStorage.setItem('theme', 'dark');
+            themeToggle.setAttribute('aria-pressed', 'true');
         }
     }
     
     // Auto detect system preference and apply saved theme
     function initTheme() {
         const savedTheme = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const prefersDark = colorSchemeQuery ? colorSchemeQuery.matches : false;
         const themeToggle = document.getElementById('theme-toggle');
         const themeIcon = themeToggle?.querySelector('.theme-icon');
         
         if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
             document.documentElement.setAttribute('data-theme', 'dark');
             if (themeIcon) themeIcon.textContent = '☀️';
+            if (themeToggle) themeToggle.setAttribute('aria-pressed', 'true');
         } else {
             document.documentElement.removeAttribute('data-theme');
             if (themeIcon) themeIcon.textContent = '🌙';
+            if (themeToggle) themeToggle.setAttribute('aria-pressed', 'false');
         }
     }
     
     // Listen for system theme changes
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-        if (!localStorage.getItem('theme')) {
-            const themeIcon = document.querySelector('.theme-icon');
-            if (e.matches) {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                if (themeIcon) themeIcon.textContent = '☀️';
-            } else {
-                document.documentElement.removeAttribute('data-theme');
-                if (themeIcon) themeIcon.textContent = '🌙';
-            }
+    function handleSystemThemeChange(e) {
+        if (localStorage.getItem('theme')) {
+            return;
         }
-    });
+
+        const themeIcon = document.querySelector('.theme-icon');
+        const themeToggle = document.getElementById('theme-toggle');
+        if (e.matches) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            if (themeIcon) themeIcon.textContent = '☀️';
+            if (themeToggle) themeToggle.setAttribute('aria-pressed', 'true');
+        } else {
+            document.documentElement.removeAttribute('data-theme');
+            if (themeIcon) themeIcon.textContent = '🌙';
+            if (themeToggle) themeToggle.setAttribute('aria-pressed', 'false');
+        }
+    }
+
+    if (colorSchemeQuery) {
+        if (typeof colorSchemeQuery.addEventListener === 'function') {
+            colorSchemeQuery.addEventListener('change', handleSystemThemeChange);
+        } else if (typeof colorSchemeQuery.addListener === 'function') {
+            colorSchemeQuery.addListener(handleSystemThemeChange);
+        }
+    }
     
     // Initialize theme before page load
     initTheme();
@@ -434,18 +457,18 @@
   </script>
 
   <!-- Back to Top Button -->
-  <button class="back-to-top-btn" onclick="scrollToTop()" title="Back to Top">
+  <button class="back-to-top-btn" type="button" onclick="scrollToTop()" title="Back to Top">
     <i class="fa fa-arrow-up"></i>
   </button>
 
   <script>
     // Back to Top Button functionality
-    function scrollToTop() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    }
+   function scrollToTop() {
+       window.scrollTo({
+           top: 0,
+            behavior: shouldReduceMotion() ? 'auto' : 'smooth'
+       });
+   }
     
     // Show/hide back to top button based on scroll position
     window.addEventListener('scroll', function() {

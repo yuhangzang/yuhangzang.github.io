@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Meta tags for search engines to crawl -->
 <meta name="robots" content="index, follow">
 <meta name="description" content="Yuhang Zang's academic website - Team">
@@ -35,11 +35,11 @@
       <div class="nav-menu" id="nav-menu" aria-hidden="true">
         <a href="./index.html" class="nav-link">Home</a>
         <a href="./research.html" class="nav-link">Publications</a>
-        <a href="./team.html" class="nav-link active">Team</a>
+        <a href="./team.html" class="nav-link active" aria-current="page">Team</a>
         <a href="./index.html#services" class="nav-link">Services</a>
         <a href="./index.html#awards" class="nav-link">Awards</a>
         <a href="./posts/index.html" class="nav-link">Blog</a>
-        <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
+        <button id="theme-toggle" class="theme-toggle" type="button" onclick="toggleTheme()" title="Toggle dark mode" aria-pressed="false">
           <span class="theme-icon">🌙</span>
         </button>
       </div>
@@ -47,57 +47,193 @@
   </nav>
   <main>
     <div class="interns-section">
-      <heading>Interns Mentored</heading>
+      <h1 class="section-heading">Interns Mentored</h1>
+      <div class="intern-legend">
+        Some interns are/were co-supervised with
+        <span class="legend-entry"><span class="co-supervised-indicator co-supervised-indicator--jiaqi" aria-hidden="true"></span><a href="https://myownskyw7.github.io/" target="_blank" rel="noopener noreferrer" class="legend-link">Dr. Jiaqi Wang</a>,</span><span class="legend-entry"><span class="co-supervised-indicator co-supervised-indicator--xiaoyi" aria-hidden="true"></span><a href="https://lightdxy.github.io/" target="_blank" rel="noopener noreferrer" class="legend-link">Dr. Xiaoyi Dong</a>,</span><span class="legend-entry"><span class="co-supervised-indicator co-supervised-indicator--zhang" aria-hidden="true"></span><a href="https://panzhang0212.github.io/" target="_blank" rel="noopener noreferrer" class="legend-link">Dr. Pan Zhang</a>,</span><span class="legend-entry"><span class="co-supervised-indicator co-supervised-indicator--haodong" aria-hidden="true"></span><a href="https://kennymckormick.github.io/" target="_blank" rel="noopener noreferrer" class="legend-link">Dr. Haodong Duan</a>.</span>
+      </div>
 
       <div class="interns-compact">
-        <div class="intern-group">
+        <div class="intern-group current">
           <div class="intern-header">
             <i class="fa fa-users"></i>
-            <span>Current Interns (3)</span>
+            <span>Current Interns - Hosted or Collaborated (<span id="current-intern-count">0</span>)</span>
           </div>
           <div class="intern-list">
-            <div class="intern-item">
+            <div class="intern-item cohort-2023">
               <div class="intern-summary">
                 <div class="intern-name-line">
-                  <a href="https://liuziyu77.github.io" target="_blank" class="intern-name">Ziyu Liu</a>
-                  <span class="intern-period-compact">2023.10 - Present</span>
+                  <a href="https://lixinze777.github.io" target="_blank" rel="noopener noreferrer" class="intern-name">Xinze Li</a>
+                </div>
+                <div class="intern-details-compact">PhD Candidate, Nanyang Technological University</div>
+              </div>
+            </div>
+
+            <div class="intern-item cohort-2023">
+              <div class="intern-summary">
+                <div class="intern-name-line">
+                  <a href="https://scholar.google.com/citations?user=iELd-Q0AAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer" class="intern-name">Zihan Liu</a><span class="co-supervision-group"><span class="co-supervised-indicator co-supervised-indicator--jiaqi" title="Co-supervised with Dr. Jiaqi Wang" aria-label="Co-supervised with Dr. Jiaqi Wang"></span></span>
+                </div>
+                <div class="intern-details-compact">PhD Candidate, Beihang University</div>
+              </div>
+            </div>
+
+            <div class="intern-item cohort-2023">
+              <div class="intern-summary">
+                <div class="intern-name-line">
+                  <a href="https://sunzey.github.io" target="_blank" rel="noopener noreferrer" class="intern-name">Zeyi Sun</a><span class="co-supervision-group"><span class="co-supervised-indicator co-supervised-indicator--jiaqi" title="Co-supervised with Dr. Jiaqi Wang" aria-label="Co-supervised with Dr. Jiaqi Wang"></span></span>
                 </div>
                 <div class="intern-details-compact">PhD Student, Shanghai Jiao Tong University</div>
               </div>
             </div>
 
-            <div class="intern-item">
+            <div class="intern-item cohort-2023">
               <div class="intern-summary">
                 <div class="intern-name-line">
-                  <a href="https://github.com/Wiselnn570" target="_blank" class="intern-name">Xilin Wei</a>
-                  <span class="intern-period-compact">2023.10 - Present</span>
+                  <a href="https://scholar.google.com/citations?user=O-uWJAkAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="intern-name">Long Xing</a><span class="co-supervision-group"><span class="co-supervised-indicator co-supervised-indicator--jiaqi" title="Co-supervised with Dr. Jiaqi Wang" aria-label="Co-supervised with Dr. Jiaqi Wang"></span><span class="co-supervised-indicator co-supervised-indicator--xiaoyi" title="Co-supervised with Dr. Xiaoyi Dong" aria-label="Co-supervised with Dr. Xiaoyi Dong"></span></span>
+                </div>
+                <div class="intern-details-compact">PhD Student, University of Science and Technology of China</div>
+              </div>
+            </div>
+
+            <div class="intern-item cohort-2023">
+              <div class="intern-summary">
+                <div class="intern-name-line">
+                  <a href="https://scholar.google.com/citations?user=XLnXvPwAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="intern-name">Yujie Zhou</a><span class="co-supervision-group"><span class="co-supervised-indicator co-supervised-indicator--jiaqi" title="Co-supervised with Dr. Jiaqi Wang" aria-label="Co-supervised with Dr. Jiaqi Wang"></span><span class="co-supervised-indicator co-supervised-indicator--zhang" title="Co-supervised with Dr. Pan Zhang" aria-label="Co-supervised with Dr. Pan Zhang"></span></span>
+                </div>
+                <div class="intern-details-compact">PhD Student, Shanghai Jiao Tong University</div>
+              </div>
+            </div>
+
+            <div class="intern-item cohort-2024">
+              <div class="intern-summary">
+                <div class="intern-name-line">
+                  <a href="https://scholar.google.com/citations?user=QZk6nZ8AAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer" class="intern-name">Xinyu Fang</a><span class="co-supervision-group"><span class="co-supervised-indicator co-supervised-indicator--haodong" title="Co-supervised with Dr. Haodong Duan" aria-label="Co-supervised with Dr. Haodong Duan"></span></span>
+                </div>
+                <div class="intern-details-compact">PhD Student, Zhejiang University</div>
+              </div>
+            </div>
+
+            <div class="intern-item cohort-2024">
+              <div class="intern-summary">
+                <div class="intern-name-line">
+                  <a href="https://li-jinsong.github.io" target="_blank" rel="noopener noreferrer" class="intern-name">Jinsong Li</a><span class="co-supervision-group"><span class="co-supervised-indicator co-supervised-indicator--jiaqi" title="Co-supervised with Dr. Jiaqi Wang" aria-label="Co-supervised with Dr. Jiaqi Wang"></span><span class="co-supervised-indicator co-supervised-indicator--xiaoyi" title="Co-supervised with Dr. Xiaoyi Dong" aria-label="Co-supervised with Dr. Xiaoyi Dong"></span></span>
+                </div>
+                <div class="intern-details-compact">PhD Student, The Chinese University of Hong Kong</div>
+              </div>
+            </div>
+
+            <div class="intern-item cohort-2024">
+              <div class="intern-summary">
+                <div class="intern-name-line">
+                  <a href="https://liuziyu77.github.io" target="_blank" rel="noopener noreferrer" class="intern-name">Ziyu Liu</a><span class="co-supervision-group"><span class="co-supervised-indicator co-supervised-indicator--jiaqi" title="Co-supervised with Dr. Jiaqi Wang" aria-label="Co-supervised with Dr. Jiaqi Wang"></span></span>
+                </div>
+                <div class="intern-details-compact">PhD Student, Shanghai Jiao Tong University</div>
+              </div>
+            </div>
+
+            <div class="intern-item cohort-2024">
+              <div class="intern-summary">
+                <div class="intern-name-line">
+                  <a href="https://wiselnn570.github.io" target="_blank" rel="noopener noreferrer" class="intern-name">Xilin Wei</a><span class="co-supervision-group"><span class="co-supervised-indicator co-supervised-indicator--jiaqi" title="Co-supervised with Dr. Jiaqi Wang" aria-label="Co-supervised with Dr. Jiaqi Wang"></span></span>
                 </div>
                 <div class="intern-details-compact">PhD Student, Fudan University</div>
               </div>
             </div>
 
-            <div class="intern-item">
+            <div class="intern-item cohort-2025">
               <div class="intern-summary">
                 <div class="intern-name-line">
-                  <a href="https://github.com/SYuan03" target="_blank" class="intern-name">Shengyuan Ding</a>
-                  <span class="intern-period-compact">2024.10 - Present</span>
+                  <a href="https://bujiazi.github.io" target="_blank" rel="noopener noreferrer" class="intern-name">Jiazi Bu</a><span class="co-supervision-group"><span class="co-supervised-indicator co-supervised-indicator--jiaqi" title="Co-supervised with Dr. Jiaqi Wang" aria-label="Co-supervised with Dr. Jiaqi Wang"></span><span class="co-supervised-indicator co-supervised-indicator--zhang" title="Co-supervised with Dr. Pan Zhang" aria-label="Co-supervised with Dr. Pan Zhang"></span></span>
+                </div>
+                <div class="intern-details-compact">PhD Student, Shanghai Jiao Tong University</div>
+              </div>
+            </div>
+
+            <div class="intern-item cohort-2025">
+              <div class="intern-summary">
+                <div class="intern-name-line">
+                  <a href="https://github.com/SYuan03" target="_blank" rel="noopener noreferrer" class="intern-name">Shengyuan Ding</a><span class="co-supervision-group"><span class="co-supervised-indicator co-supervised-indicator--jiaqi" title="Co-supervised with Dr. Jiaqi Wang" aria-label="Co-supervised with Dr. Jiaqi Wang"></span></span>
                 </div>
                 <div class="intern-details-compact">PhD Student, Fudan University</div>
+              </div>
+            </div>
+
+            <div class="intern-item cohort-2025">
+              <div class="intern-summary">
+                <div class="intern-name-line">
+                  <a href="https://joeleelyf.github.io" target="_blank" rel="noopener noreferrer" class="intern-name">Yifei Li</a><span class="co-supervision-group"><span class="co-supervised-indicator co-supervised-indicator--jiaqi" title="Co-supervised with Dr. Jiaqi Wang" aria-label="Co-supervised with Dr. Jiaqi Wang"></span><span class="co-supervised-indicator co-supervised-indicator--xiaoyi" title="Co-supervised with Dr. Xiaoyi Dong" aria-label="Co-supervised with Dr. Xiaoyi Dong"></span></span>
+                </div>
+                <div class="intern-details-compact">PhD Student, Tsinghua University</div>
+              </div>
+            </div>
+
+            <div class="intern-item cohort-2025">
+              <div class="intern-summary">
+                <div class="intern-name-line">
+                  <a href="https://scholar.google.com/citations?user=qlxc34gAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="intern-name">Beichen Zhang</a><span class="co-supervision-group"><span class="co-supervised-indicator co-supervised-indicator--jiaqi" title="Co-supervised with Dr. Jiaqi Wang" aria-label="Co-supervised with Dr. Jiaqi Wang"></span><span class="co-supervised-indicator co-supervised-indicator--xiaoyi" title="Co-supervised with Dr. Xiaoyi Dong" aria-label="Co-supervised with Dr. Xiaoyi Dong"></span></span>
+                </div>
+                <div class="intern-details-compact">PhD Student, The Chinese University of Hong Kong</div>
+              </div>
+            </div>
+
+            <div class="intern-item cohort-2025">
+              <div class="intern-summary">
+                <div class="intern-name-line">
+                  <a href="https://scholar.google.com/citations?user=QZk6nZ8AAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer" class="intern-name">Zhixiong Zhang</a><span class="co-supervision-group"><span class="co-supervised-indicator co-supervised-indicator--jiaqi" title="Co-supervised with Dr. Jiaqi Wang" aria-label="Co-supervised with Dr. Jiaqi Wang"></span><span class="co-supervised-indicator co-supervised-indicator--xiaoyi" title="Co-supervised with Dr. Xiaoyi Dong" aria-label="Co-supervised with Dr. Xiaoyi Dong"></span></span>
+                </div>
+                <div class="intern-details-compact">PhD Student, Shanghai Jiao Tong University</div>
+              </div>
+            </div>
+
+            <div class="intern-item cohort-2026">
+              <div class="intern-summary">
+                <div class="intern-name-line">
+                  <a href="https://github.com/Lennox-Dai" target="_blank" rel="noopener noreferrer" class="intern-name">Xuanlang Dai</a>
+                </div>
+                <div class="intern-details-compact">Incoming PhD Student, Fudan University</div>
+              </div>
+            </div>
+
+            <div class="intern-item cohort-2026">
+              <div class="intern-summary">
+                <div class="intern-name-line">
+                  <a href="https://scholar.google.com/citations?user=yQ8U3tUAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="intern-name">Yuhong Liu</a><span class="co-supervision-group"><span class="co-supervised-indicator co-supervised-indicator--jiaqi" title="Co-supervised with Dr. Jiaqi Wang" aria-label="Co-supervised with Dr. Jiaqi Wang"></span><span class="co-supervised-indicator co-supervised-indicator--xiaoyi" title="Co-supervised with Dr. Xiaoyi Dong" aria-label="Co-supervised with Dr. Xiaoyi Dong"></span></span>
+                </div>
+                <div class="intern-details-compact">Undergraduate, Shanghai Jiao Tong University</div>
+              </div>
+            </div>
+
+            <div class="intern-item cohort-2026">
+              <div class="intern-summary">
+                <div class="intern-name-line">
+                  <a href="https://openreview.net/profile?id=~Shenxi_Wu1" target="_blank" rel="noopener noreferrer" class="intern-name">Shenxi Wu</a><span class="co-supervision-group"><span class="co-supervised-indicator co-supervised-indicator--jiaqi" title="Co-supervised with Dr. Jiaqi Wang" aria-label="Co-supervised with Dr. Jiaqi Wang"></span></span>
+                </div>
+                <div class="intern-details-compact">Undergraduate, Fudan University</div>
+              </div>
+            </div>
+
+            <div class="intern-item cohort-2026">
+              <div class="intern-summary">
+                <div class="intern-name-line">
+                  Penghui Yang
+                </div>
+                <div class="intern-details-compact">Incoming PhD Student, Shanghai Jiao Tong University</div>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="intern-group">
+        <div class="intern-group alumni-group">
           <div class="intern-header">
             <i class="fa fa-graduation-cap"></i>
-            <span>Alumni (2)</span>
+            <span>Alumni - Hosted or Collaborated (<span id="alumni-intern-count">0</span>)</span>
           </div>
           <div class="intern-list">
             <div class="intern-item alumni">
               <div class="intern-summary">
                 <div class="intern-name-line">
-                  <a href="https://codegoat24.github.io/" target="_blank" class="intern-name">Yibin Wang</a>
+                  <a href="https://codegoat24.github.io/" target="_blank" rel="noopener noreferrer" class="intern-name">Yibin Wang</a><span class="co-supervision-group"><span class="co-supervised-indicator co-supervised-indicator--jiaqi" title="Co-supervised with Dr. Jiaqi Wang" aria-label="Co-supervised with Dr. Jiaqi Wang"></span></span>
                   <span class="intern-period-compact">2024 - 2024</span>
                 </div>
                 <div class="intern-details-compact">PhD Student, Fudan University</div>
@@ -107,10 +243,10 @@
             <div class="intern-item alumni">
               <div class="intern-summary">
                 <div class="intern-name-line">
-                  <a href="https://mayubo2333.github.io" target="_blank" class="intern-name">Yubo Ma</a>
+                  <a href="https://mayubo2333.github.io" target="_blank" rel="noopener noreferrer" class="intern-name">Yubo Ma</a>
                   <span class="intern-period-compact">2023 - 2024</span>
                 </div>
-                <div class="intern-details-compact">PhD Candidate, Nanyang Technological University</div>
+                <div class="intern-details-compact">PhD, Nanyang Technological University</div>
                 <div class="intern-details-compact">Next: Qwen Team, Alibaba</div>
               </div>
             </div>
@@ -126,7 +262,33 @@
       let showAllPapers = false;
       let showMoreContainer = null;
       let togglePapersButton = null;
+      const colorSchemeQuery = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+      const motionPreferenceQuery = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
       
+      function updateInternCounts() {
+          const currentCountTarget = document.getElementById('current-intern-count');
+          if (currentCountTarget) {
+              const currentInterns = document.querySelectorAll('.intern-group.current .intern-list .intern-item:not(.alumni)');
+              currentCountTarget.textContent = currentInterns.length.toString();
+          }
+
+          const coSupervisedCountTarget = document.getElementById('co-supervised-intern-count');
+          if (coSupervisedCountTarget) {
+              const coSupervisedInterns = document.querySelectorAll('.intern-group.co-supervised .intern-list .intern-item');
+              coSupervisedCountTarget.textContent = coSupervisedInterns.length.toString();
+          }
+
+          const alumniCountTarget = document.getElementById('alumni-intern-count');
+          if (alumniCountTarget) {
+              const alumniInterns = document.querySelectorAll('.intern-group.alumni-group .intern-list .intern-item.alumni');
+              alumniCountTarget.textContent = alumniInterns.length.toString();
+          }
+      }
+
+      function shouldReduceMotion() {
+          return motionPreferenceQuery ? motionPreferenceQuery.matches : false;
+      }
+
       // Dark mode functionality
       function toggleTheme() {
           const html = document.documentElement;
@@ -137,42 +299,59 @@
               html.removeAttribute('data-theme');
               themeIcon.textContent = '🌙';
               localStorage.setItem('theme', 'light');
+              themeToggle.setAttribute('aria-pressed', 'false');
           } else {
               html.setAttribute('data-theme', 'dark');
               themeIcon.textContent = '☀️';
               localStorage.setItem('theme', 'dark');
+              themeToggle.setAttribute('aria-pressed', 'true');
           }
       }
       
       // Auto detect system preference and apply saved theme
       function initTheme() {
           const savedTheme = localStorage.getItem('theme');
-          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          const prefersDark = colorSchemeQuery ? colorSchemeQuery.matches : false;
           const themeToggle = document.getElementById('theme-toggle');
           const themeIcon = themeToggle?.querySelector('.theme-icon');
           
           if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
               document.documentElement.setAttribute('data-theme', 'dark');
               if (themeIcon) themeIcon.textContent = '☀️';
+              if (themeToggle) themeToggle.setAttribute('aria-pressed', 'true');
           } else {
               document.documentElement.removeAttribute('data-theme');
               if (themeIcon) themeIcon.textContent = '🌙';
+              if (themeToggle) themeToggle.setAttribute('aria-pressed', 'false');
           }
       }
       
       // Listen for system theme changes
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-          if (!localStorage.getItem('theme')) {
-              const themeIcon = document.querySelector('.theme-icon');
-              if (e.matches) {
-                  document.documentElement.setAttribute('data-theme', 'dark');
-                  if (themeIcon) themeIcon.textContent = '☀️';
-              } else {
-                  document.documentElement.removeAttribute('data-theme');
-                  if (themeIcon) themeIcon.textContent = '🌙';
-              }
+      function handleSystemThemeChange(e) {
+          if (localStorage.getItem('theme')) {
+              return;
           }
-      });
+
+          const themeIcon = document.querySelector('.theme-icon');
+          const themeToggle = document.getElementById('theme-toggle');
+          if (e.matches) {
+              document.documentElement.setAttribute('data-theme', 'dark');
+              if (themeIcon) themeIcon.textContent = '☀️';
+              if (themeToggle) themeToggle.setAttribute('aria-pressed', 'true');
+          } else {
+              document.documentElement.removeAttribute('data-theme');
+              if (themeIcon) themeIcon.textContent = '🌙';
+              if (themeToggle) themeToggle.setAttribute('aria-pressed', 'false');
+          }
+      }
+
+      if (colorSchemeQuery) {
+          if (typeof colorSchemeQuery.addEventListener === 'function') {
+              colorSchemeQuery.addEventListener('change', handleSystemThemeChange);
+          } else if (typeof colorSchemeQuery.addListener === 'function') {
+              colorSchemeQuery.addListener(handleSystemThemeChange);
+          }
+      }
       
       // Initialize theme before page load
       initTheme();
@@ -229,6 +408,8 @@
       });
       
       function initTeamPage() {
+          updateInternCounts();
+
           const papersContainer = document.getElementById('papers-container');
           if (papersContainer) {
               originalPapers = Array.from(papersContainer.children).filter(child => child.classList.contains('paper-card'));
@@ -399,7 +580,7 @@
       function scrollToTop() {
           window.scrollTo({
               top: 0,
-              behavior: 'smooth'
+              behavior: shouldReduceMotion() ? 'auto' : 'smooth'
           });
       }
       
@@ -415,7 +596,7 @@
   </script>
 
   <!-- Back to Top Button -->
-  <button class="back-to-top-btn" onclick="scrollToTop()" title="Back to Top">
+  <button class="back-to-top-btn" type="button" onclick="scrollToTop()" title="Back to Top">
     <i class="fa fa-arrow-up"></i>
   </button>
 </body>

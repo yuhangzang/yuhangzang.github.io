@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,12 +43,12 @@
       
       <div class="nav-menu" id="nav-menu" aria-hidden="true">
         <a href="./index.html" class="nav-link">Home</a>
-        <a href="./research.html" class="nav-link active">Publications</a>
+        <a href="./research.html" class="nav-link active" aria-current="page">Publications</a>
         <a href="./team.html" class="nav-link">Team</a>
         <a href="./index.html#services" class="nav-link">Services</a>
         <a href="./index.html#awards" class="nav-link">Awards</a>
         <a href="./posts/index.html" class="nav-link">Blog</a>
-        <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
+        <button id="theme-toggle" class="theme-toggle" type="button" onclick="toggleTheme()" title="Toggle dark mode" aria-pressed="false">
           <span class="theme-icon">🌙</span>
         </button>
       </div>
@@ -57,12 +57,12 @@
   <main>
 
         <div class="papers-section">
-            <heading>Publications <a href="./index.html#papers-container" class="full-list-link"><i class="fa fa-star"></i> Selected List</a> <a href="https://scholar.google.com/citations?user=hW23VKIAAAAJ&hl=en" class="scholar-link" target="_blank"><i class="fa fa-graduation-cap"></i> Scholar</a></heading>
+            <h1 class="section-heading">Publications <a href="./index.html#papers-container" class="full-list-link"><i class="fa fa-star"></i> Selected List</a> <a href="https://scholar.google.com/citations?user=hW23VKIAAAAJ&hl=en" class="scholar-link" target="_blank" rel="noopener noreferrer"><i class="fa fa-graduation-cap"></i> Scholar</a></h1>
             
             <div class="sort-controls">
-              <button class="sort-btn active" onclick="sortPapers('date')">Show by Date</button>
-              <button class="sort-btn" onclick="sortPapers('topic')">Show by Topic</button>
-              <button class="sort-btn" onclick="sortPapers('venue')">Show by Venue</button>
+              <button class="sort-btn active" type="button" onclick="sortPapers('date')">Show by Date</button>
+              <button class="sort-btn" type="button" onclick="sortPapers('topic')">Show by Topic</button>
+              <button class="sort-btn" type="button" onclick="sortPapers('venue')">Show by Venue</button>
             </div>
             
             <div class="navigation-compact">
@@ -123,12 +123,12 @@
                 <div class="paper-venue">Neural Information Processing Systems (<b>NeurIPS</b>), 2025</div>
               </div>
               <div class="paper-badges">
-                <a href="https://arxiv.org/abs/2505.03318" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2505.03318</a>
-                <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:35N4QoGY0k4C" target="_blank" class="citations-btn">
+                <a href="https://arxiv.org/abs/2505.03318" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2505.03318</a>
+                <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:35N4QoGY0k4C" target="_blank" rel="noopener noreferrer" class="citations-btn">
                   <i class="fa fa-quote-left"></i>
                   <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:35N4QoGY0k4C">0</span>
                 </a>
-                <a href="https://github.com/CodeGoat24/UnifiedReward" class="github-btn" target="_blank" data-repo="CodeGoat24/UnifiedReward">
+                <a href="https://github.com/CodeGoat24/UnifiedReward" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="CodeGoat24/UnifiedReward">
                   <i class="fa fa-star"></i>
                   <span class="star-count">0</span>
                 </a>
@@ -148,12 +148,12 @@
                 <div class="paper-venue">Neural Information Processing Systems (<b>NeurIPS</b>), 2025</div>
               </div>
               <div class="paper-badges">
-                <a href="https://arxiv.org/abs/2504.06232" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2504.06232</a>
-                <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:J_g5lzvAfSwC" target="_blank" class="citations-btn">
+                <a href="https://arxiv.org/abs/2504.06232" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2504.06232</a>
+                <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:J_g5lzvAfSwC" target="_blank" rel="noopener noreferrer" class="citations-btn">
                   <i class="fa fa-quote-left"></i>
                   <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:J_g5lzvAfSwC">0</span>
                 </a>
-                <a href="https://github.com/Bujiazi/HiFlow" class="github-btn" target="_blank" data-repo="Bujiazi/HiFlow">
+                <a href="https://github.com/Bujiazi/HiFlow" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="Bujiazi/HiFlow">
                   <i class="fa fa-star"></i>
                   <span class="star-count">0</span>
                 </a>
@@ -167,12 +167,12 @@
                       <div class="author-names">Ziyu Liu<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Zeyi Sun<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, <span class="author-highlight">Yuhang Zang</span><span class="author-annotation corresponding"><i class="fa fa-envelope"></i></span>, Xiaoyi Dong, Yuhang Cao, Haodong Duan, Dahua Lin, Jiaqi Wang<span class="author-annotation corresponding"><i class="fa fa-envelope"></i></span></div>
                       <div class="paper-venue">IEEE International Conference on Computer Vision (<b>ICCV</b>), 2025</div>
                       <div class="paper-badges">
-                        <a href="https://arxiv.org/abs/2503.01785" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2503.01785</a>
-                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:O3NaXMp0MMsC" target="_blank" class="citations-btn">
+                        <a href="https://arxiv.org/abs/2503.01785" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2503.01785</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:O3NaXMp0MMsC" target="_blank" rel="noopener noreferrer" class="citations-btn">
                           <i class="fa fa-quote-left"></i>
                           <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:O3NaXMp0MMsC">0</span>
                         </a>
-                        <a href="https://github.com/Liuziyu77/Visual-RFT" class="github-btn" target="_blank" data-repo="Liuziyu77/Visual-RFT">
+                        <a href="https://github.com/Liuziyu77/Visual-RFT" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="Liuziyu77/Visual-RFT">
                           <i class="fa fa-star"></i>
                           <span class="star-count">0</span>
                         </a>
@@ -188,12 +188,12 @@
                       <div class="author-names">Shengyuan Ding<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Shenxi Wu<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Xiangyu Zhao, <span class="author-highlight">Yuhang Zang</span><span class="author-annotation corresponding"><i class="fa fa-envelope"></i></span>, Haodong Duan, Xiaoyi Dong, Pan Zhang, Yuhang Cao, Dahua Lin, Jiaqi Wang<span class="author-annotation corresponding"><i class="fa fa-envelope"></i></span></div>
                       <div class="paper-venue">IEEE International Conference on Computer Vision (<b>ICCV</b>), 2025</div>
                       <div class="paper-badges">
-                        <a href="https://arxiv.org/pdf/2504.07957" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2504.07957</a>
-                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:RYcK_YlVTxYC" target="_blank" class="citations-btn">
+                        <a href="https://arxiv.org/pdf/2504.07957" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2504.07957</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:RYcK_YlVTxYC" target="_blank" rel="noopener noreferrer" class="citations-btn">
                           <i class="fa fa-quote-left"></i>
                           <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:RYcK_YlVTxYC">0</span>
                         </a>
-                        <a href="https://github.com/SYuan03/MM-IFEngine" class="github-btn" target="_blank" data-repo="SYuan03/MM-IFEngine">
+                        <a href="https://github.com/SYuan03/MM-IFEngine" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="SYuan03/MM-IFEngine">
                           <i class="fa fa-star"></i>
                           <span class="star-count">0</span>
                         </a>
@@ -210,12 +210,12 @@
                       <div class="author-names">Zeyi Sun, Ziyang Chu, Pan Zhang, Tong Wu, Xiaoyi Dong, <span class="author-highlight">Yuhang Zang</span>, Yuanjun Xiong, Dahua Lin, Jiaqi Wang</div>
                       <div class="paper-venue">IEEE International Conference on Computer Vision (<b>ICCV</b>), 2025</div>
                       <div class="paper-badges">
-                        <a href="https://arxiv.org/pdf/2412.01824" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2412.01824</a>
-                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:7PzlFSSx8tAC" target="_blank" class="citations-btn">
+                        <a href="https://arxiv.org/pdf/2412.01824" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2412.01824</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:7PzlFSSx8tAC" target="_blank" rel="noopener noreferrer" class="citations-btn">
                           <i class="fa fa-quote-left"></i>
                           <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:7PzlFSSx8tAC">0</span>
                         </a>
-                        <a href="https://github.com/SunzeY/X-Prompt" class="github-btn" target="_blank" data-repo="SunzeY/X-Prompt">
+                        <a href="https://github.com/SunzeY/X-Prompt" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="SunzeY/X-Prompt">
                           <i class="fa fa-star"></i>
                           <span class="star-count">0</span>
                         </a>
@@ -229,12 +229,12 @@
                       <div class="author-names">Zeyi Sun, Tong Wu, Pan Zhang, <span class="author-highlight">Yuhang Zang</span>, Xiaoyi Dong, Yuanjun Xiong, Dahua Lin, Jiaqi Wang</div>
                       <div class="paper-venue">IEEE International Conference on Computer Vision (<b>ICCV</b>), 2025</div>
                       <div class="paper-badges">
-                        <a href="https://arxiv.org/pdf/2406.00093" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2406.00093</a>
-                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:MXK_kJrjxJIC" target="_blank" class="citations-btn">
+                        <a href="https://arxiv.org/pdf/2406.00093" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2406.00093</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:MXK_kJrjxJIC" target="_blank" rel="noopener noreferrer" class="citations-btn">
                           <i class="fa fa-quote-left"></i>
                           <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:MXK_kJrjxJIC">0</span>
                         </a>
-                        <a href="https://github.com/SunzeY/Bootstrap3D" class="github-btn" target="_blank" data-repo="SunzeY/Bootstrap3D">
+                        <a href="https://github.com/SunzeY/Bootstrap3D" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="SunzeY/Bootstrap3D">
                           <i class="fa fa-star"></i>
                           <span class="star-count">0</span>
                         </a>
@@ -248,12 +248,12 @@
                       <div class="author-names">Jiaer Xia, Bingkui Tong, <span class="author-highlight">Yuhang Zang</span>, Rui Shao, Kaiyang Zhou</div>
                       <div class="paper-venue">IEEE International Conference on Computer Vision (<b>ICCV</b>), 2025 <span class="oral-spotlight-badge spotlight-badge">Highlight</span></div>
                       <div class="paper-badges">
-                        <a href="https://arxiv.org/pdf/2507.02859" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2507.02859</a>
-                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:abG-DnoFyZgC" target="_blank" class="citations-btn">
+                        <a href="https://arxiv.org/pdf/2507.02859" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2507.02859</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:abG-DnoFyZgC" target="_blank" rel="noopener noreferrer" class="citations-btn">
                           <i class="fa fa-quote-left"></i>
                           <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:abG-DnoFyZgC">0</span>
                         </a>
-                        <a href="https://github.com/maifoundations/GCoT" class="github-btn" target="_blank" data-repo="maifoundations/GCoT">
+                        <a href="https://github.com/maifoundations/GCoT" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="maifoundations/GCoT">
                           <i class="fa fa-star"></i>
                           <span class="star-count">0</span>
                         </a>
@@ -267,12 +267,12 @@
                       <div class="author-names">Yujie Zhou<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Jiazi Bu<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Pengyang Ling, Pan Zhang, Tong Wu, Qidong Huang, Jinsong Li, Xiaoyi Dong, <span class="author-highlight">Yuhang Zang</span>, Yuhang Cao, Anyi Rao, Jiaqi Wang, Li Niu</div>
                       <div class="paper-venue">IEEE International Conference on Computer Vision (<b>ICCV</b>), 2025</div>
                       <div class="paper-badges">
-                        <a href="https://arxiv.org/pdf/2502.08590" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2502.08590</a>
-                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:maZDTaKrznsC" target="_blank" class="citations-btn">
+                        <a href="https://arxiv.org/pdf/2502.08590" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2502.08590</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:maZDTaKrznsC" target="_blank" rel="noopener noreferrer" class="citations-btn">
                           <i class="fa fa-quote-left"></i>
                           <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:maZDTaKrznsC">0</span>
                         </a>
-                        <a href="https://github.com/bcmi/Light-A-Video" class="github-btn" target="_blank" data-repo="bcmi/Light-A-Video">
+                        <a href="https://github.com/bcmi/Light-A-Video" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="bcmi/Light-A-Video">
                           <i class="fa fa-star"></i>
                           <span class="star-count">0</span>
                         </a>
@@ -286,12 +286,12 @@
                       <div class="author-names">Qidong Huang, Xiaoyi Dong, Pan Zhang, <span class="author-highlight">Yuhang Zang</span>, Yuhang Cao, Jiaqi Wang, Dahua Lin, Weiming Zhang, Nenghai Yu</div>
                       <div class="paper-venue">IEEE International Conference on Computer Vision (<b>ICCV</b>), 2025</div>
                       <div class="paper-badges">
-                        <a href="https://arxiv.org/pdf/2410.07167" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2410.07167</a>
-                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:4DMP91E08xMC" target="_blank" class="citations-btn">
+                        <a href="https://arxiv.org/pdf/2410.07167" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2410.07167</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:4DMP91E08xMC" target="_blank" rel="noopener noreferrer" class="citations-btn">
                           <i class="fa fa-quote-left"></i>
                           <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:4DMP91E08xMC">0</span>
                         </a>
-                        <a href="https://github.com/shikiw/Modality-Integration-Rate" class="github-btn" target="_blank" data-repo="shikiw/Modality-Integration-Rate">
+                        <a href="https://github.com/shikiw/Modality-Integration-Rate" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="shikiw/Modality-Integration-Rate">
                           <i class="fa fa-star"></i>
                           <span class="star-count">0</span>
                         </a>
@@ -305,12 +305,12 @@
                       <div class="author-names">Shuangrui Ding, Rui Qian, Xiaoyi Dong, Pan Zhang, <span class="author-highlight">Yuhang Zang</span>, Yuhang Cao, Yuwei Guo, Dahua Lin, Jiaqi Wang</div>
                       <div class="paper-venue">IEEE International Conference on Computer Vision (<b>ICCV</b>), 2025</div>
                       <div class="paper-badges">
-                        <a href="https://arxiv.org/pdf/2410.16268" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2410.16268</a>
-                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:mVmsd5A6BfQC" target="_blank" class="citations-btn">
+                        <a href="https://arxiv.org/pdf/2410.16268" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2410.16268</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:mVmsd5A6BfQC" target="_blank" rel="noopener noreferrer" class="citations-btn">
                           <i class="fa fa-quote-left"></i>
                           <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:mVmsd5A6BfQC">0</span>
                         </a>
-                        <a href="https://github.com/Mark12Ding/SAM2Long" class="github-btn" target="_blank" data-repo="Mark12Ding/SAM2Long">
+                        <a href="https://github.com/Mark12Ding/SAM2Long" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="Mark12Ding/SAM2Long">
                           <i class="fa fa-star"></i>
                           <span class="star-count">0</span>
                         </a>
@@ -324,12 +324,12 @@
                       <div class="author-names"><span class="author-highlight">Yuhang Zang</span><span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Xiaoyi Dong<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Pan Zhang<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Yuhang Cao<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Ziyu Liu, Shengyuan Ding, Shenxi Wu, Yubo Ma, Haodong Duan, Wenwei Zhang, Kai Chen, Dahua Lin, Jiaqi Wang</div>
                       <div class="paper-venue">Findings of the Association for Computational Linguistics (<b>Findings of ACL</b>), 2025</div>
                       <div class="paper-badges">
-                        <a href="https://arxiv.org/abs/2501.12368" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2501.12368</a>
-                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:TFP_iSt0sucC" target="_blank" class="citations-btn">
+                        <a href="https://arxiv.org/abs/2501.12368" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2501.12368</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:TFP_iSt0sucC" target="_blank" rel="noopener noreferrer" class="citations-btn">
                           <i class="fa fa-quote-left"></i>
                           <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:TFP_iSt0sucC">0</span>
                         </a>
-                        <a href="https://github.com/InternLM/InternLM-XComposer" class="github-btn" target="_blank" data-repo="InternLM/InternLM-XComposer">
+                        <a href="https://github.com/InternLM/InternLM-XComposer" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="InternLM/InternLM-XComposer">
                           <i class="fa fa-star"></i>
                           <span class="star-count">0</span>
                         </a>
@@ -347,8 +347,8 @@
                       <div class="author-names">Yubo Ma, Jinsong Li, <span class="author-highlight">Yuhang Zang</span><span class="author-annotation corresponding"><i class="fa fa-envelope"></i></span>, Xiaobao Wu, Xiaoyi Dong, Pan Zhang, Yuhang Cao, Haodong Duan, Jiaqi Wang, Yixin Cao, Aixin Sun</div>
                       <div class="paper-venue">Findings of the Association for Computational Linguistics (<b>Findings of ACL</b>), 2025</div>
                     <div class="paper-badges">
-                        <a href="https://arxiv.org/abs/2501.12368" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2501.12368</a>
-                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:cFHS6HbyZ2cC" target="_blank" class="citations-btn">
+                        <a href="https://arxiv.org/abs/2501.12368" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2501.12368</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:cFHS6HbyZ2cC" target="_blank" rel="noopener noreferrer" class="citations-btn">
                           <i class="fa fa-quote-left"></i>
                           <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:cFHS6HbyZ2cC">0</span>
                         </a>
@@ -362,12 +362,12 @@
                       <div class="author-names">Xilin Wei<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Xiaoran Liu<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, <span class="author-highlight">Yuhang Zang</span><span class="author-annotation corresponding"><i class="fa fa-envelope"></i></span>, Xiaoyi Dong, Pan Zhang, Yuhang Cao, Jian Tong, Haodong Duan, Qipeng Guo<span class="author-annotation corresponding"><i class="fa fa-envelope"></i></span>, Jiaqi Wang<span class="author-annotation corresponding"><i class="fa fa-envelope"></i></span>, Xipeng Qiu, Dahua Lin</div>
                       <div class="paper-venue">International Conference on Machine Learning (<b>ICML</b>), 2025 <span class="oral-spotlight-badge oral-badge">Oral</span></div>
                       <div class="paper-badges">
-                        <a href="https://arxiv.org/abs/2502.05173" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2502.05173</a>
-                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:isC4tDSrTZIC" target="_blank" class="citations-btn">
+                        <a href="https://arxiv.org/abs/2502.05173" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2502.05173</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:isC4tDSrTZIC" target="_blank" rel="noopener noreferrer" class="citations-btn">
                           <i class="fa fa-quote-left"></i>
                           <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:isC4tDSrTZIC">0</span>
                         </a>
-                        <a href="https://github.com/Wiselnn570/VideoRoPE" class="github-btn" target="_blank" data-repo="Wiselnn570/VideoRoPE">
+                        <a href="https://github.com/Wiselnn570/VideoRoPE" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="Wiselnn570/VideoRoPE">
                           <i class="fa fa-star"></i>
                           <span class="star-count">0</span>
                         </a>
@@ -381,12 +381,12 @@
                       <div class="author-names">Zihan Liu, Shuangrui Ding, Zhixiong Zhang, Xiaoyi Dong, Pan Zhang, <span class="author-highlight">Yuhang Zang</span>, Yuhang Cao, Dahua Lin, Jiaqi Wang</div>
                       <div class="paper-venue">International Conference on Machine Learning (<b>ICML</b>), 2025</div>
                       <div class="paper-badges">
-                        <a href="https://arxiv.org/abs/2502.13128" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2502.13128</a>
-                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:blknAaTinKkC" target="_blank" class="citations-btn">
+                        <a href="https://arxiv.org/abs/2502.13128" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2502.13128</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:blknAaTinKkC" target="_blank" rel="noopener noreferrer" class="citations-btn">
                           <i class="fa fa-quote-left"></i>
                           <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:blknAaTinKkC">0</span>
                         </a>
-                        <a href="https://github.com/LiuZH-19/SongGen" class="github-btn" target="_blank" data-repo="LiuZH-19/SongGen">
+                        <a href="https://github.com/LiuZH-19/SongGen" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="LiuZH-19/SongGen">
                           <i class="fa fa-star"></i>
                           <span class="star-count">0</span>
                         </a>
@@ -400,12 +400,12 @@
                       <div class="author-names">Jiazi Bu<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Pengyang Ling<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Pan Zhang, Tong Wu, Xiaoyi Dong, <span class="author-highlight">Yuhang Zang</span>, Yuhang Cao, Dahua Lin, Jiaqi Wang</div>
                       <div class="paper-venue">IEEE Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>), 2025</div>
                       <div class="paper-badges">
-                        <a href="https://arxiv.org/abs/2410.06241" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2410.06241</a>
-                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:dfsIfKJdRG4C" target="_blank" class="citations-btn">
+                        <a href="https://arxiv.org/abs/2410.06241" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2410.06241</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:dfsIfKJdRG4C" target="_blank" rel="noopener noreferrer" class="citations-btn">
                           <i class="fa fa-quote-left"></i>
                           <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:dfsIfKJdRG4C">0</span>
                         </a>
-                        <a href="https://github.com/Bujiazi/ByTheWay" class="github-btn" target="_blank" data-repo="Bujiazi/ByTheWay">
+                        <a href="https://github.com/Bujiazi/ByTheWay" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="Bujiazi/ByTheWay">
                           <i class="fa fa-star"></i>
                           <span class="star-count">0</span>
                         </a>
@@ -419,12 +419,12 @@
                       <div class="author-names">Yifei Li<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Junbo Niu<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Ziyang Miao, Chunjiang Ge, Yuanhang Zhou, Qihao He, Xiaoyi Dong, Haodong Duan, Shuangrui Ding, Rui Qian, Pan Zhang, <span class="author-highlight">Yuhang Zang</span>, Yuhang Cao, Conghui He, Jiaqi Wang</div>
                       <div class="paper-venue">IEEE Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>), 2025</div>
                       <div class="paper-badges">
-                        <a href="https://arxiv.org/abs/2501.05510" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2501.05510</a>
-                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:iH-uZ7U-co4C" target="_blank" class="citations-btn">
+                        <a href="https://arxiv.org/abs/2501.05510" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2501.05510</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:iH-uZ7U-co4C" target="_blank" rel="noopener noreferrer" class="citations-btn">
                           <i class="fa fa-quote-left"></i>
                           <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:iH-uZ7U-co4C">0</span>
                         </a>
-                        <a href="https://github.com/JoeLeelyf/OVO-Bench" class="github-btn" target="_blank" data-repo="JoeLeelyf/OVO-Bench">
+                        <a href="https://github.com/JoeLeelyf/OVO-Bench" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="JoeLeelyf/OVO-Bench">
                           <i class="fa fa-star"></i>
                           <span class="star-count">0</span>
                         </a>
@@ -438,12 +438,12 @@
                       <div class="author-names">Rui Qian<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Shuangrui Ding<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Xiaoyi Dong, Pan Zhang, <span class="author-highlight">Yuhang Zang</span>, Yuhang Cao, Dahua Lin, Jiaqi Wang</div>
                       <div class="paper-venue">IEEE Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>), 2025</div>
                       <div class="paper-badges">
-                        <a href="https://arxiv.org/abs/2501.03218" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2501.03218</a>
-                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:r0BpntZqJG4C" target="_blank" class="citations-btn">
+                        <a href="https://arxiv.org/abs/2501.03218" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2501.03218</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:r0BpntZqJG4C" target="_blank" rel="noopener noreferrer" class="citations-btn">
                           <i class="fa fa-quote-left"></i>
                           <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:r0BpntZqJG4C">0</span>
                         </a>
-                        <a href="https://github.com/Mark12Ding/Dispider" class="github-btn" target="_blank" data-repo="Mark12Ding/Dispider">
+                        <a href="https://github.com/Mark12Ding/Dispider" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="Mark12Ding/Dispider">
                           <i class="fa fa-star"></i>
                           <span class="star-count">0</span>
                         </a>
@@ -457,12 +457,12 @@
                       <div class="author-names">Long Xing, Qidong Huang, Xiaoyi Dong, Jiajie Lu, Pan Zhang, <span class="author-highlight">Yuhang Zang</span>, Yuhang Cao, Conghui He, Jiaqi Wang, Feng Wu, Dahua Lin</div>
                       <div class="paper-venue">IEEE Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>), 2025</div>
                       <div class="paper-badges">
-                        <a href="https://arxiv.org/abs/2410.17247" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2410.17247</a>
-                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:4OULZ7Gr8RgC" target="_blank" class="citations-btn">
+                        <a href="https://arxiv.org/abs/2410.17247" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2410.17247</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:4OULZ7Gr8RgC" target="_blank" rel="noopener noreferrer" class="citations-btn">
                           <i class="fa fa-quote-left"></i>
                           <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:4OULZ7Gr8RgC">0</span>
                         </a>
-                        <a href="https://github.com/Cooperx521/PyramidDrop" class="github-btn" target="_blank" data-repo="Cooperx521/PyramidDrop">
+                        <a href="https://github.com/Cooperx521/PyramidDrop" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="Cooperx521/PyramidDrop">
                           <i class="fa fa-star"></i>
                           <span class="star-count">0</span>
                         </a>
@@ -476,12 +476,12 @@
                       <div class="author-names">Zihao Huang, ShouKang Hu, Guangcong Wang, Tianqi Liu, <span class="author-highlight">Yuhang Zang</span>, Zhiguo Cao, Wei Li, Ziwei Liu</div>
                       <div class="paper-venue">IEEE Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>), 2025</div>
                       <div class="paper-badges">
-                        <a href="https://arxiv.org/abs/2407.02165" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2407.02165</a>
-                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:fPk4N6BV_jEC" target="_blank" class="citations-btn">
+                        <a href="https://arxiv.org/abs/2407.02165" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2407.02165</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:fPk4N6BV_jEC" target="_blank" rel="noopener noreferrer" class="citations-btn">
                           <i class="fa fa-quote-left"></i>
                           <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:fPk4N6BV_jEC">0</span>
                         </a>
-                        <a href="https://github.com/wildavatar/WildAvatar_Toolbox" class="github-btn" target="_blank" data-repo="wildavatar/WildAvatar_Toolbox">
+                        <a href="https://github.com/wildavatar/WildAvatar_Toolbox" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="wildavatar/WildAvatar_Toolbox">
                           <i class="fa fa-star"></i>
                           <span class="star-count">0</span>
                         </a>
@@ -495,16 +495,16 @@
                       <div class="author-names">Ziyu Liu, <span class="author-highlight">Yuhang Zang</span><span class="author-annotation corresponding"><i class="fa fa-envelope"></i></span>, Xiaoyi Dong, Pan Zhang, Yuhang Cao, Haodong Duan, Conghui He, Yuanjun Xiong, Dahua Lin, Jiaqi Wang<span class="author-annotation corresponding"><i class="fa fa-envelope"></i></span></div>
                       <div class="paper-venue">International Conference on Learning Representations (<b>ICLR</b>), 2025</div>
                       <div class="paper-badges">
-                        <a href="https://arxiv.org/abs/2410.17637" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2410.17637</a>
-                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:9ZlFYXVOiuMC" target="_blank" class="citations-btn">
+                        <a href="https://arxiv.org/abs/2410.17637" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2410.17637</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:9ZlFYXVOiuMC" target="_blank" rel="noopener noreferrer" class="citations-btn">
                           <i class="fa fa-quote-left"></i>
                           <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:9ZlFYXVOiuMC">0</span>
                         </a>
-                        <a href="https://github.com/Liuziyu77/MIA-DPO" class="github-btn" target="_blank" data-repo="Liuziyu77/MIA-DPO">
+                        <a href="https://github.com/Liuziyu77/MIA-DPO" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="Liuziyu77/MIA-DPO">
                           <i class="fa fa-star"></i>
                           <span class="star-count">0</span>
                         </a>
-                        <a href="https://liuziyu77.github.io/MIA-DPO" target="_blank" class="homepage-btn"><i class="fa fa-home"></i>Home</a>
+                        <a href="https://liuziyu77.github.io/MIA-DPO" target="_blank" rel="noopener noreferrer" class="homepage-btn"><i class="fa fa-home"></i>Home</a>
                       </div>
             </div>
           </div>
@@ -515,16 +515,16 @@
                       <div class="author-names">Pengyang Ling<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Jiazi Bu<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Pan Zhang, Xiaoyi Dong, <span class="author-highlight">Yuhang Zang</span>, Tong Wu, Huaian Chen, Jiaqi Wang, Yi Jin</div>
                       <div class="paper-venue">International Conference on Learning Representations (<b>ICLR</b>), 2025</div>
                       <div class="paper-badges">
-                        <a href="https://arxiv.org/abs/2406.05338" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2406.05338</a>
-                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:kNdYIx-mwKoC" target="_blank" class="citations-btn">
+                        <a href="https://arxiv.org/abs/2406.05338" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2406.05338</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:kNdYIx-mwKoC" target="_blank" rel="noopener noreferrer" class="citations-btn">
                           <i class="fa fa-quote-left"></i>
                           <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:kNdYIx-mwKoC">0</span>
                         </a>
-                        <a href="https://github.com/Bujiazi/MotionClone" class="github-btn" target="_blank" data-repo="Bujiazi/MotionClone">
+                        <a href="https://github.com/Bujiazi/MotionClone" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="Bujiazi/MotionClone">
                           <i class="fa fa-star"></i>
                           <span class="star-count">0</span>
                         </a>
-                        <a href="https://bujiazi.github.io/motionclone.github.io/" target="_blank" class="homepage-btn"><i class="fa fa-home"></i>Home</a>
+                        <a href="https://bujiazi.github.io/motionclone.github.io/" target="_blank" rel="noopener noreferrer" class="homepage-btn"><i class="fa fa-home"></i>Home</a>
                       </div>
             </div>
           </div>
@@ -536,12 +536,12 @@
                     </div>
                       <div class="paper-venue">ACM Multimedia (<b>ACM MM</b>), 2024 (Open Source Software Competition)</font></div>
                       <div class="paper-badges">
-                        <a href="https://arxiv.org/abs/2407.11691" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2407.11691</a>
-                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:4TOpqqG69KYC" target="_blank" class="citations-btn">
+                        <a href="https://arxiv.org/abs/2407.11691" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2407.11691</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:4TOpqqG69KYC" target="_blank" rel="noopener noreferrer" class="citations-btn">
                           <i class="fa fa-quote-left"></i>
                           <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:4TOpqqG69KYC">0</span>
                         </a>
-                        <a href="https://github.com/open-compass/VLMEvalKit" class="github-btn" target="_blank" data-repo="open-compass/VLMEvalKit">
+                        <a href="https://github.com/open-compass/VLMEvalKit" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="open-compass/VLMEvalKit">
                           <i class="fa fa-star"></i>
                           <span class="star-count">0</span>
                         </a>
@@ -555,16 +555,16 @@
                       <div class="author-names">Yubo Ma, <span class="author-highlight">Yuhang Zang</span><span class="author-annotation corresponding"><i class="fa fa-envelope"></i></span>, Liangyu Chen, Meiqi Chen, Yizhu Jiao, Xinze Li, Xinyuan Lu, Ziyu Liu, Yan Ma, Xiaoyi Dong, Pan Zhang, Liangming Pan, Yu-Gang Jiang, Jiaqi Wang, Yixin Cao<span class="author-annotation corresponding"><i class="fa fa-envelope"></i></span>, Aixin Sun</div>
                       <div class="paper-venue">Neural Information Processing Systems (<b>NeurIPS</b>), 2024 (Datasets and Benchmarks Track) <span class="oral-spotlight-badge spotlight-badge">Spotlight</span></div>
                       <div class="paper-badges">
-                        <a href="https://arxiv.org/abs/2407.01523" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2407.01523</a>
-                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:ULOm3_A8WrAC" target="_blank" class="citations-btn">
+                        <a href="https://arxiv.org/abs/2407.01523" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2407.01523</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:ULOm3_A8WrAC" target="_blank" rel="noopener noreferrer" class="citations-btn">
                           <i class="fa fa-quote-left"></i>
                           <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:ULOm3_A8WrAC">0</span>
                         </a>
-                        <a href="https://github.com/mayubo2333/MMLongBench-Doc" class="github-btn" target="_blank" data-repo="mayubo2333/MMLongBench-Doc">
+                        <a href="https://github.com/mayubo2333/MMLongBench-Doc" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="mayubo2333/MMLongBench-Doc">
                           <i class="fa fa-star"></i>
                           <span class="star-count">0</span>
                         </a>
-                        <a href="https://mayubo2333.github.io/MMLongBench-Doc/" target="_blank" class="homepage-btn"><i class="fa fa-home"></i>Home</a>
+                        <a href="https://mayubo2333.github.io/MMLongBench-Doc/" target="_blank" rel="noopener noreferrer" class="homepage-btn"><i class="fa fa-home"></i>Home</a>
                         <a href="https://huggingface.co/datasets/yubo2333/MMLongBench-Doc" class="huggingface-btn dataset"><span class="hf-emoji">🤗</span>Dataset</a>
                       </div>
             </div>
@@ -576,16 +576,16 @@
                       <div class="author-names">Ziyu Liu, Tao Chu, <span class="author-highlight">Yuhang Zang</span><span class="author-annotation corresponding"><i class="fa fa-envelope"></i></span>, Xilin Wei, Xiaoyi Dong, Pan Zhang, Zijian Liang, Yuanjun Xiong, Yu Qiao, Dahua Lin, Jiaqi Wang<span class="author-annotation corresponding"><i class="fa fa-envelope"></i></span></div>
                       <div class="paper-venue">Neural Information Processing Systems (<b>NeurIPS</b>), 2024 (Datasets and Benchmarks Track)</div>
                       <div class="paper-badges">
-                        <a href="https://arxiv.org/abs/2406.11833" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2406.11833</a>
-                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:Zph67rFs4hoC" target="_blank" class="citations-btn">
+                        <a href="https://arxiv.org/abs/2406.11833" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2406.11833</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:Zph67rFs4hoC" target="_blank" rel="noopener noreferrer" class="citations-btn">
                           <i class="fa fa-quote-left"></i>
                           <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:Zph67rFs4hoC">0</span>
                         </a>
-                        <a href="https://github.com/Liuziyu77/MMDU" class="github-btn" target="_blank" data-repo="Liuziyu77/MMDU">
+                        <a href="https://github.com/Liuziyu77/MMDU" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="Liuziyu77/MMDU">
                           <i class="fa fa-star"></i>
                           <span class="star-count">0</span>
                         </a>
-                        <a href="https://liuziyu77.github.io/MMDU/" target="_blank" class="homepage-btn"><i class="fa fa-home"></i>Home</a>
+                        <a href="https://liuziyu77.github.io/MMDU/" target="_blank" rel="noopener noreferrer" class="homepage-btn"><i class="fa fa-home"></i>Home</a>
                         <a href="https://huggingface.co/datasets/laolao77/MMDU" class="huggingface-btn dataset"><span class="hf-emoji">🤗</span>Dataset</a>
                       </div>
             </div>
@@ -597,16 +597,16 @@
                       <div class="author-names">Lin Chen<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Xilin Wei<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Jinsong Li<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Xiaoyi Dong, Pan Zhang, <span class="author-highlight">Yuhang Zang</span>, Zehui Chen, Haodong Duan, Bin Lin, Zhenyu Tang, Li Yuan, Yu Qiao, Dahua Lin, Feng Zhao, Jiaqi Wang</div>
                       <div class="paper-venue">Neural Information Processing Systems (<b>NeurIPS</b>), 2024 (Datasets and Benchmarks Track)</div>
                       <div class="paper-badges">
-                        <a href="https://arxiv.org/abs/2406.04325" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2406.04325</a>
-                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:3fE2CSJIrl8C" target="_blank" class="citations-btn">
+                        <a href="https://arxiv.org/abs/2406.04325" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2406.04325</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:3fE2CSJIrl8C" target="_blank" rel="noopener noreferrer" class="citations-btn">
                           <i class="fa fa-quote-left"></i>
                           <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:3fE2CSJIrl8C">0</span>
                         </a>
-                        <a href="https://github.com/ShareGPT4Omni/ShareGPT4Video" class="github-btn" target="_blank" data-repo="ShareGPT4Omni/ShareGPT4Video">
+                        <a href="https://github.com/ShareGPT4Omni/ShareGPT4Video" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="ShareGPT4Omni/ShareGPT4Video">
                           <i class="fa fa-star"></i>
                           <span class="star-count">0</span>
                         </a>
-                        <a href="https://sharegpt4video.github.io/" target="_blank" class="homepage-btn"><i class="fa fa-home"></i>Home</a>
+                        <a href="https://sharegpt4video.github.io/" target="_blank" rel="noopener noreferrer" class="homepage-btn"><i class="fa fa-home"></i>Home</a>
                         <a href="https://huggingface.co/datasets/ShareGPT4Video/ShareGPT4Video" class="huggingface-btn dataset"><span class="hf-emoji">🤗</span>Dataset</a>
                       </div>
             </div>
@@ -618,8 +618,8 @@
                       <div class="author-names">Rui Qian, Xiaoyi Dong, Pan Zhang, <span class="author-highlight">Yuhang Zang</span>, Shuangrui Ding, Dahua Lin, Jiaqi Wang</div>
                       <div class="paper-venue">Neural Information Processing Systems (<b>NeurIPS</b>), 2024</div>
                       <div class="paper-badges">
-                        <a href="https://arxiv.org/abs/2405.16009" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2405.16009</a>
-                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:NhqRSupF_l8C" target="_blank" class="citations-btn">
+                        <a href="https://arxiv.org/abs/2405.16009" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2405.16009</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:NhqRSupF_l8C" target="_blank" rel="noopener noreferrer" class="citations-btn">
                           <i class="fa fa-quote-left"></i>
                           <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:NhqRSupF_l8C">0</span>
                         </a>
@@ -633,16 +633,16 @@
                       <div class="author-names">Lin Chen<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Jinsong Li<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Xiaoyi Dong, Pan Zhang, <span class="author-highlight">Yuhang Zang</span>, Zehui Chen, Haodong Duan, Jiaqi Wang, Yu Qiao, Dahua Lin, Feng Zhao</div>
                       <div class="paper-venue">Neural Information Processing Systems (<b>NeurIPS</b>), 2024</div>
                       <div class="paper-badges">
-                        <a href="https://arxiv.org/abs/2403.20330" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2403.20330</a>
-                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:UebtZRa9Y70C" target="_blank" class="citations-btn">
+                        <a href="https://arxiv.org/abs/2403.20330" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2403.20330</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:UebtZRa9Y70C" target="_blank" rel="noopener noreferrer" class="citations-btn">
                           <i class="fa fa-quote-left"></i>
                           <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:UebtZRa9Y70C">0</span>
                         </a>
-                        <a href="https://github.com/MMStar-Benchmark/MMStar" class="github-btn" target="_blank" data-repo="MMStar-Benchmark/MMStar">
+                        <a href="https://github.com/MMStar-Benchmark/MMStar" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="MMStar-Benchmark/MMStar">
                           <i class="fa fa-star"></i>
                           <span class="star-count">0</span>
                         </a>
-                        <a href="https://mmstar-benchmark.github.io/" target="_blank" class="homepage-btn"><i class="fa fa-home"></i>Home</a>
+                        <a href="https://mmstar-benchmark.github.io/" target="_blank" rel="noopener noreferrer" class="homepage-btn"><i class="fa fa-home"></i>Home</a>
                       </div>
             </div>
           </div>
@@ -653,12 +653,12 @@
                       <div class="author-names">Xiaoyi Dong<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Pan Zhang<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, <span class="author-highlight">Yuhang Zang</span>, Yuhang Cao, Bin Wang, Linke Ouyang, Songyang Zhang, Haodong Duan, Wenwei Zhang, Yining Li, Hang Yan, Yang Gao, Zhe Chen, Xinyue Zhang, Wei Li, Jingwen Li, Wenhai Wang, Kai Chen, Conghui He, Xingcheng Zhang, Jifeng Dai, Yu Qiao, Dahua Lin, Jiaqi Wang</div>
                       <div class="paper-venue">Neural Information Processing Systems (<b>NeurIPS</b>), 2024</div>
                       <div class="paper-badges">
-                        <a href="https://arxiv.org/abs/2404.06512" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2404.06512</a>
-                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:hqOjcs7Dif8C" target="_blank" class="citations-btn">
+                        <a href="https://arxiv.org/abs/2404.06512" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2404.06512</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:hqOjcs7Dif8C" target="_blank" rel="noopener noreferrer" class="citations-btn">
                           <i class="fa fa-quote-left"></i>
                           <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:hqOjcs7Dif8C">0</span>
                         </a>
-                        <a href="https://github.com/InternLM/InternLM-XComposer" class="github-btn" target="_blank" data-repo="InternLM/InternLM-XComposer">
+                        <a href="https://github.com/InternLM/InternLM-XComposer" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="InternLM/InternLM-XComposer">
                           <i class="fa fa-star"></i>
                           <span class="star-count">0</span>
                         </a>
@@ -672,16 +672,16 @@
                       <div class="author-names">Tianqi Liu, Guangcong Wang, Shoukang Hu, Liao Shen, Xinyi Ye, <span class="author-highlight">Yuhang Zang</span>, Zhiguo Cao, Wei Li, Ziwei Liu</div>
                       <div class="paper-venue">European Conference on Computer Vision (<b>ECCV</b>), 2024</div>
                       <div class="paper-badges">
-                        <a href="https://arxiv.org/abs/2405.12218" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2405.12218</a>
-                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:aqlVkmm33-oC" target="_blank" class="citations-btn">
+                        <a href="https://arxiv.org/abs/2405.12218" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2405.12218</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:aqlVkmm33-oC" target="_blank" rel="noopener noreferrer" class="citations-btn">
                           <i class="fa fa-quote-left"></i>
                           <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:aqlVkmm33-oC">0</span>
                         </a>
-                        <a href="https://github.com/TQTQliu/MVSGaussian" class="github-btn" target="_blank" data-repo="TQTQliu/MVSGaussian">
+                        <a href="https://github.com/TQTQliu/MVSGaussian" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="TQTQliu/MVSGaussian">
                           <i class="fa fa-star"></i>
                           <span class="star-count">0</span>
                         </a>
-                        <a href="https://mvsgaussian.github.io/" target="_blank" class="homepage-btn"><i class="fa fa-home"></i>Home</a>
+                        <a href="https://mvsgaussian.github.io/" target="_blank" rel="noopener noreferrer" class="homepage-btn"><i class="fa fa-home"></i>Home</a>
                       </div>
             </div>
           </div>
@@ -692,12 +692,12 @@
                       <div class="author-names">Beichen Zhang, Pan Zhang, Xiaoyi Dong, <span class="author-highlight">Yuhang Zang</span>, Jiaqi Wang</div>
                       <div class="paper-venue">European Conference on Computer Vision (<b>ECCV</b>), 2024</div>
                       <div class="paper-badges">
-                        <a href="https://arxiv.org/abs/2403.15378" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2403.15378</a>
-                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:roLk4NBRz8UC" target="_blank" class="citations-btn">
+                        <a href="https://arxiv.org/abs/2403.15378" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2403.15378</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:roLk4NBRz8UC" target="_blank" rel="noopener noreferrer" class="citations-btn">
                           <i class="fa fa-quote-left"></i>
                           <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:roLk4NBRz8UC">0</span>
                         </a>
-                        <a href="https://github.com/beichenzbc/Long-CLIP" class="github-btn" target="_blank" data-repo="beichenzbc/Long-CLIP">
+                        <a href="https://github.com/beichenzbc/Long-CLIP" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="beichenzbc/Long-CLIP">
                           <i class="fa fa-star"></i>
                           <span class="star-count">0</span>
                         </a>
@@ -711,16 +711,16 @@
                       <div class="author-names">Zeyi Sun, Ye Fang, Tong Wu, Pan Zhang, <span class="author-highlight">Yuhang Zang</span>, Shu Kong, Yuanjun Xiong, Dahua Lin, Jiaqi Wang</div>
                       <div class="paper-venue">IEEE Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>), 2024</div>
                       <div class="paper-badges">
-                        <a href="https://arxiv.org/abs/2312.03818" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2312.03818</a>
-                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:WF5omc3nYNoC" target="_blank" class="citations-btn">
+                        <a href="https://arxiv.org/abs/2312.03818" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2312.03818</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:WF5omc3nYNoC" target="_blank" rel="noopener noreferrer" class="citations-btn">
                           <i class="fa fa-quote-left"></i>
                           <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:WF5omc3nYNoC">0</span>
                         </a>
-                        <a href="https://github.com/SunzeY/AlphaCLIP" class="github-btn" target="_blank" data-repo="SunzeY/AlphaCLIP">
+                        <a href="https://github.com/SunzeY/AlphaCLIP" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="SunzeY/AlphaCLIP">
                           <i class="fa fa-star"></i>
                           <span class="star-count">0</span>
                         </a>
-                        <a href="https://aleafy.github.io/alpha-clip/" target="_blank" class="homepage-btn"><i class="fa fa-home"></i>Home</a>
+                        <a href="https://aleafy.github.io/alpha-clip/" target="_blank" rel="noopener noreferrer" class="homepage-btn"><i class="fa fa-home"></i>Home</a>
                         <a href="https://huggingface.co/spaces/Zery/Alpha_CLIP_ImgVar" class="huggingface-btn space"><span class="hf-emoji">🤗</span>Space</a>
                       </div>
             </div>
@@ -732,8 +732,8 @@
                       <div class="author-names"><span class="author-highlight">Yuhang Zang</span>, Hanlin Goh, Josh Susskind, Chen Huang</div>
                       <div class="paper-venue">International Conference on Learning Representations (<b>ICLR</b>), 2024</div>
                       <div class="paper-badges">
-                        <a href="https://arxiv.org/abs/2401.15914" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2401.15914</a>
-                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:ufrVoPGSRksC" target="_blank" class="citations-btn">
+                        <a href="https://arxiv.org/abs/2401.15914" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2401.15914</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:ufrVoPGSRksC" target="_blank" rel="noopener noreferrer" class="citations-btn">
                           <i class="fa fa-quote-left"></i>
                           <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:ufrVoPGSRksC">0</span>
                         </a>
@@ -747,16 +747,16 @@
                       <div class="author-names"><span class="author-highlight">Yuhang Zang</span>, Wei Li, Jun Han, Kaiyang Zhou, Chen Change Loy</div>
                       <div class="paper-venue">International Journal of Computer Vision (<b>IJCV</b>), 2024</div>
                       <div class="paper-badges">
-                        <a href="https://arxiv.org/abs/2305.18279" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2305.18279</a>
-                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:xtRiw3GOFMkC" target="_blank" class="citations-btn">
+                        <a href="https://arxiv.org/abs/2305.18279" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2305.18279</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:xtRiw3GOFMkC" target="_blank" rel="noopener noreferrer" class="citations-btn">
                           <i class="fa fa-quote-left"></i>
                           <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:xtRiw3GOFMkC">0</span>
                         </a>
-                        <a href="https://github.com/yuhangzang/ContextDET" class="github-btn" target="_blank" data-repo="yuhangzang/ContextDET">
+                        <a href="https://github.com/yuhangzang/ContextDET" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="yuhangzang/ContextDET">
                           <i class="fa fa-star"></i>
                           <span class="star-count">0</span>
                         </a>
-                        <a href="https://www.mmlab-ntu.com/project/contextdet/index.html" target="_blank" class="homepage-btn"><i class="fa fa-home"></i>Home</a>
+                        <a href="https://www.mmlab-ntu.com/project/contextdet/index.html" target="_blank" rel="noopener noreferrer" class="homepage-btn"><i class="fa fa-home"></i>Home</a>
                         <a href="https://huggingface.co/spaces/yuhangzang/ContextDet-Demo" class="huggingface-btn space"><span class="hf-emoji">🤗</span>Space</a>
                       </div>
             </div>
@@ -768,8 +768,8 @@
                       <div class="author-names"><span class="author-highlight">Yuhang Zang</span></div>
                       <div class="paper-venue">PhD Thesis, Nanyang Technological University, 2023</div>
                       <div class="paper-badges">
-                        <a href="https://dr.ntu.edu.sg/handle/10356/171489" target="_blank" class="arxiv-btn"><i class="fa fa-file-pdf-o"></i>PDF</a>
-                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:eQOLeE2rZwMC" target="_blank" class="citations-btn">
+                        <a href="https://dr.ntu.edu.sg/handle/10356/171489" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-pdf-o"></i>PDF</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:eQOLeE2rZwMC" target="_blank" rel="noopener noreferrer" class="citations-btn">
                           <i class="fa fa-quote-left"></i>
                           <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:eQOLeE2rZwMC">0</span>
                         </a>
@@ -783,12 +783,12 @@
                       <div class="author-names"><span class="author-highlight">Yuhang Zang</span>, Wei Li, Kaiyang Zhou, Chen Huang, Chen Change Loy</div>
                       <div class="paper-venue">arXiv 2022</div>
                       <div class="paper-badges">
-                        <a href="https://arxiv.org/abs/2210.07225" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2210.07225</a>
-                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:Tyk-4Ss8FVUC" target="_blank" class="citations-btn">
+                        <a href="https://arxiv.org/abs/2210.07225" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2210.07225</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:Tyk-4Ss8FVUC" target="_blank" rel="noopener noreferrer" class="citations-btn">
                           <i class="fa fa-quote-left"></i>
                           <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:Tyk-4Ss8FVUC">0</span>
                         </a>
-                        <a href="https://github.com/yuhangzang/UPT" class="github-btn" target="_blank" data-repo="yuhangzang/UPT">
+                        <a href="https://github.com/yuhangzang/UPT" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="yuhangzang/UPT">
                           <i class="fa fa-star"></i>
                           <span class="star-count">0</span>
                         </a>
@@ -802,8 +802,8 @@
                       <div class="author-names"><span class="author-highlight">Yuhang Zang</span>, Kaiyang Zhou, Chen Huang, Chen Change Loy</div>
                       <div class="paper-venue">International Journal of Computer Vision (<b>IJCV</b>), 2023</div>
                       <div class="paper-badges">
-                        <a href="https://arxiv.org/abs/2305.14813" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2305.14813</a>
-                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:W7OEmFMy1HYC" target="_blank" class="citations-btn">
+                        <a href="https://arxiv.org/abs/2305.14813" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2305.14813</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:W7OEmFMy1HYC" target="_blank" rel="noopener noreferrer" class="citations-btn">
                           <i class="fa fa-quote-left"></i>
                           <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:W7OEmFMy1HYC">0</span>
                         </a>
@@ -817,16 +817,16 @@
                       <div class="author-names"><span class="author-highlight">Yuhang Zang</span>, Wei Li, Kaiyang Zhou, Chen Huang, Chen Change Loy</div>
                       <div class="paper-venue">European Conference on Computer Vision (<b>ECCV</b>), 2022 <span class="oral-spotlight-badge oral-badge">Oral</span></div>
                       <div class="paper-badges">
-                        <a href="https://arxiv.org/abs/2203.11876" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2203.11876</a>
-                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:IjCSPb-OGe4C" target="_blank" class="citations-btn">
+                        <a href="https://arxiv.org/abs/2203.11876" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2203.11876</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:IjCSPb-OGe4C" target="_blank" rel="noopener noreferrer" class="citations-btn">
                           <i class="fa fa-quote-left"></i>
                           <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:IjCSPb-OGe4C">0</span>
                         </a>
-                        <a href="https://github.com/yuhangzang/OV-DETR" class="github-btn" target="_blank" data-repo="yuhangzang/OV-DETR">
+                        <a href="https://github.com/yuhangzang/OV-DETR" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="yuhangzang/OV-DETR">
                           <i class="fa fa-star"></i>
                           <span class="star-count">0</span>
                         </a>
-                        <a href="https://www.mmlab-ntu.com/project/ovdetr/index.html" target="_blank" class="homepage-btn"><i class="fa fa-home"></i>Home</a>
+                        <a href="https://www.mmlab-ntu.com/project/ovdetr/index.html" target="_blank" rel="noopener noreferrer" class="homepage-btn"><i class="fa fa-home"></i>Home</a>
                       </div>
             </div>
           </div>
@@ -837,16 +837,16 @@
                       <div class="author-names"><span class="author-highlight">Yuhang Zang</span>, Chen Huang, Chen Change Loy</div>
                       <div class="paper-venue">IEEE International Conference on Computer Vision (<b>ICCV</b>), 2021</div>
                       <div class="paper-badges">
-                        <a href="https://arxiv.org/abs/2102.12867" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2102.12867</a>
-                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:qjMakFHDy7sC" target="_blank" class="citations-btn">
+                        <a href="https://arxiv.org/abs/2102.12867" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2102.12867</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:qjMakFHDy7sC" target="_blank" rel="noopener noreferrer" class="citations-btn">
                           <i class="fa fa-quote-left"></i>
                           <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:qjMakFHDy7sC">0</span>
                         </a>
-                        <a href="https://github.com/yuhangzang/FASA" class="github-btn" target="_blank" data-repo="yuhangzang/FASA">
+                        <a href="https://github.com/yuhangzang/FASA" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="yuhangzang/FASA">
                           <i class="fa fa-star"></i>
                           <span class="star-count">0</span>
                         </a>
-                        <a href="https://www.mmlab-ntu.com/project/fasa/index.html" target="_blank" class="homepage-btn"><i class="fa fa-home"></i>Home</a>
+                        <a href="https://www.mmlab-ntu.com/project/fasa/index.html" target="_blank" rel="noopener noreferrer" class="homepage-btn"><i class="fa fa-home"></i>Home</a>
                       </div>
             </div>
           </div>
@@ -857,12 +857,12 @@
                       <div class="author-names">Jiaqi Wang, Wenwei Zhang, <span class="author-highlight">Yuhang Zang</span>, Yuhang Cao, Jiangmiao Pang, Tao Gong, Kai Chen, Ziwei Liu, Chen Change Loy, Dahua Lin</div>
                       <div class="paper-venue">IEEE Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>), 2021</div>
                       <div class="paper-badges">
-                        <a href="https://arxiv.org/abs/2008.10032" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2008.10032</a>
-                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:2osOgNQ5qMEC" target="_blank" class="citations-btn">
+                        <a href="https://arxiv.org/abs/2008.10032" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2008.10032</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:2osOgNQ5qMEC" target="_blank" rel="noopener noreferrer" class="citations-btn">
                           <i class="fa fa-quote-left"></i>
                           <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:2osOgNQ5qMEC">0</span>
                         </a>
-                        <a href="https://github.com/open-mmlab/mmdetection/tree/master/configs/seesaw_loss" class="github-btn" target="_blank" data-repo="open-mmlab/mmdetection/tree/master/configs/seesaw_loss">
+                        <a href="https://github.com/open-mmlab/mmdetection/tree/master/configs/seesaw_loss" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="open-mmlab/mmdetection">
                           <i class="fa fa-star"></i>
                           <span class="star-count">0</span>
                         </a>
@@ -876,8 +876,8 @@
                       <div class="author-names">Guanglu Song, Yu Liu, <span class="author-highlight">Yuhang Zang</span>, Xiaogang Wang, Biao Leng, Qingsheng Yuan</div>
                       <div class="paper-venue">AAAI Conference on Artificial Intelligence (<b>AAAI</b>), 2020</div>
                       <div class="paper-badges">
-                        <a href="https://arxiv.org/abs/2003.07543" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2003.07543</a>
-                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:d1gkVwhDpl0C" target="_blank" class="citations-btn">
+                        <a href="https://arxiv.org/abs/2003.07543" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2003.07543</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:d1gkVwhDpl0C" target="_blank" rel="noopener noreferrer" class="citations-btn">
                           <i class="fa fa-quote-left"></i>
                           <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:d1gkVwhDpl0C">0</span>
                         </a>
@@ -891,12 +891,12 @@
                       <div class="author-names">Wenhai Wang, Enze Xie, Xiaoge Song, <span class="author-highlight">Yuhang Zang</span>, Wenjia Wang, Tong Lu, Gang Yu, Chunhua Shen</div>
                       <div class="paper-venue">IEEE International Conference on Computer Vision (<b>ICCV</b>), 2019</div>
                       <div class="paper-badges">
-                        <a href="https://arxiv.org/abs/1908.05900" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:1908.05900</a>
-                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:u-x6o8ySG0sC" target="_blank" class="citations-btn">
+                        <a href="https://arxiv.org/abs/1908.05900" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:1908.05900</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:u-x6o8ySG0sC" target="_blank" rel="noopener noreferrer" class="citations-btn">
                           <i class="fa fa-quote-left"></i>
                           <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:u-x6o8ySG0sC">0</span>
                         </a>
-                        <a href="https://github.com/open-mmlab/mmocr/tree/main/configs/textdet/panet" class="github-btn" target="_blank" data-repo="open-mmlab/mmocr/tree/main/configs/textdet/panet">
+                        <a href="https://github.com/open-mmlab/mmocr/tree/main/configs/textdet/panet" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="open-mmlab/mmocr">
                           <i class="fa fa-star"></i>
                           <span class="star-count">0</span>
                         </a>
@@ -910,8 +910,8 @@
                       <div class="author-names">Enze Xie<span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, <span class="author-highlight">Yuhang Zang</span><span class="author-annotation equal-contrib"><i class="fa fa-star"></i></span>, Shuai Shao, Gang Yu, Cong Yao, Guangyao Li</div>
                       <div class="paper-venue">AAAI Conference on Artificial Intelligence (<b>AAAI</b>), 2019</div>
                       <div class="paper-badges">
-                        <a href="https://arxiv.org/abs/1811.08605" target="_blank" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:1811.08605</a>
-                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:u5HHmVD_uO8C" target="_blank" class="citations-btn">
+                        <a href="https://arxiv.org/abs/1811.08605" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:1811.08605</a>
+                        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:u5HHmVD_uO8C" target="_blank" rel="noopener noreferrer" class="citations-btn">
                           <i class="fa fa-quote-left"></i>
                           <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:u5HHmVD_uO8C">0</span>
                         </a>
@@ -924,7 +924,13 @@
 
   <script>
       let originalPapers = [];
+      const colorSchemeQuery = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+      const motionPreferenceQuery = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
       
+      function shouldReduceMotion() {
+          return motionPreferenceQuery ? motionPreferenceQuery.matches : false;
+      }
+
       // Dark mode functionality
       function toggleTheme() {
           const html = document.documentElement;
@@ -935,42 +941,59 @@
               html.removeAttribute('data-theme');
               themeIcon.textContent = '🌙';
               localStorage.setItem('theme', 'light');
+              themeToggle.setAttribute('aria-pressed', 'false');
           } else {
               html.setAttribute('data-theme', 'dark');
               themeIcon.textContent = '☀️';
               localStorage.setItem('theme', 'dark');
+              themeToggle.setAttribute('aria-pressed', 'true');
           }
       }
       
       // Auto detect system preference and apply saved theme
       function initTheme() {
           const savedTheme = localStorage.getItem('theme');
-          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          const prefersDark = colorSchemeQuery ? colorSchemeQuery.matches : false;
           const themeToggle = document.getElementById('theme-toggle');
           const themeIcon = themeToggle?.querySelector('.theme-icon');
           
           if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
               document.documentElement.setAttribute('data-theme', 'dark');
               if (themeIcon) themeIcon.textContent = '☀️';
+              if (themeToggle) themeToggle.setAttribute('aria-pressed', 'true');
           } else {
               document.documentElement.removeAttribute('data-theme');
               if (themeIcon) themeIcon.textContent = '🌙';
+              if (themeToggle) themeToggle.setAttribute('aria-pressed', 'false');
           }
       }
       
       // Listen for system theme changes
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-          if (!localStorage.getItem('theme')) {
-              const themeIcon = document.querySelector('.theme-icon');
-              if (e.matches) {
-                  document.documentElement.setAttribute('data-theme', 'dark');
-                  if (themeIcon) themeIcon.textContent = '☀️';
-              } else {
-                  document.documentElement.removeAttribute('data-theme');
-                  if (themeIcon) themeIcon.textContent = '🌙';
-              }
+      function handleSystemThemeChange(e) {
+          if (localStorage.getItem('theme')) {
+              return;
           }
-      });
+
+          const themeIcon = document.querySelector('.theme-icon');
+          const themeToggle = document.getElementById('theme-toggle');
+          if (e.matches) {
+              document.documentElement.setAttribute('data-theme', 'dark');
+              if (themeIcon) themeIcon.textContent = '☀️';
+              if (themeToggle) themeToggle.setAttribute('aria-pressed', 'true');
+          } else {
+              document.documentElement.removeAttribute('data-theme');
+              if (themeIcon) themeIcon.textContent = '🌙';
+              if (themeToggle) themeToggle.setAttribute('aria-pressed', 'false');
+          }
+      }
+
+      if (colorSchemeQuery) {
+          if (typeof colorSchemeQuery.addEventListener === 'function') {
+              colorSchemeQuery.addEventListener('change', handleSystemThemeChange);
+          } else if (typeof colorSchemeQuery.addListener === 'function') {
+              colorSchemeQuery.addListener(handleSystemThemeChange);
+          }
+      }
       
       // Initialize theme before page load
       initTheme();
@@ -1399,7 +1422,10 @@
               const topicId = 'topic-' + topicName.replace(/\s+/g, '-').toLowerCase();
               const topicElement = document.getElementById(topicId);
               if (topicElement) {
-                  topicElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  topicElement.scrollIntoView({
+                      behavior: shouldReduceMotion() ? 'auto' : 'smooth',
+                      block: 'start'
+                  });
               }
           }, 200);
       }
@@ -1413,7 +1439,10 @@
               const venueId = 'venue-' + venueName.replace(/\s+/g, '-').toLowerCase();
               const venueElement = document.getElementById(venueId);
               if (venueElement) {
-                  venueElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  venueElement.scrollIntoView({
+                      behavior: shouldReduceMotion() ? 'auto' : 'smooth',
+                      block: 'start'
+                  });
               }
           }, 200);
       }
@@ -1432,7 +1461,10 @@
                   }
               });
               if (targetHeader) {
-                  targetHeader.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  targetHeader.scrollIntoView({
+                      behavior: shouldReduceMotion() ? 'auto' : 'smooth',
+                      block: 'start'
+                  });
               }
           }, 200);
       }
@@ -1441,7 +1473,7 @@
       function scrollToTop() {
           window.scrollTo({
               top: 0,
-              behavior: 'smooth'
+              behavior: shouldReduceMotion() ? 'auto' : 'smooth'
           });
       }
       
@@ -1457,7 +1489,7 @@
   </script>
 
   <!-- Back to Top Button -->
-  <button class="back-to-top-btn" onclick="scrollToTop()" title="Back to Top">
+  <button class="back-to-top-btn" type="button" onclick="scrollToTop()" title="Back to Top">
     <i class="fa fa-arrow-up"></i>
   </button>
 

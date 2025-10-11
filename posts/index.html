@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -43,15 +43,15 @@
         <a href="../team.html" class="nav-link">Team</a>
         <a href="../index.html#services" class="nav-link">Services</a>
         <a href="../index.html#awards" class="nav-link">Awards</a>
-        <a href="./index.html" class="nav-link active">Blog</a>
-        <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
+        <a href="./index.html" class="nav-link active" aria-current="page">Blog</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" onclick="toggleTheme()" title="Toggle dark mode" aria-pressed="false">
           <span class="theme-icon">🌙</span>
         </button>
       </div>
     </div>
   </nav>
   <main>
-        <heading>Blog Posts</heading>
+        <h1 class="section-heading">Blog Posts</h1>
 
         <div class="posts-list">
           <article class="post-card">
@@ -91,6 +91,12 @@
   </main>
 
   <script>
+    const colorSchemeQuery = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+    const motionPreferenceQuery = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+    function shouldReduceMotion() {
+        return motionPreferenceQuery ? motionPreferenceQuery.matches : false;
+    }
+
     // Dark mode functionality
     function toggleTheme() {
         const html = document.documentElement;
@@ -101,42 +107,59 @@
             html.removeAttribute('data-theme');
             themeIcon.textContent = '🌙';
             localStorage.setItem('theme', 'light');
+            themeToggle.setAttribute('aria-pressed', 'false');
         } else {
             html.setAttribute('data-theme', 'dark');
             themeIcon.textContent = '☀️';
             localStorage.setItem('theme', 'dark');
+            themeToggle.setAttribute('aria-pressed', 'true');
         }
     }
     
     // Auto detect system preference and apply saved theme
     function initTheme() {
         const savedTheme = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const prefersDark = colorSchemeQuery ? colorSchemeQuery.matches : false;
         const themeToggle = document.getElementById('theme-toggle');
         const themeIcon = themeToggle?.querySelector('.theme-icon');
         
         if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
             document.documentElement.setAttribute('data-theme', 'dark');
             if (themeIcon) themeIcon.textContent = '☀️';
+            if (themeToggle) themeToggle.setAttribute('aria-pressed', 'true');
         } else {
             document.documentElement.removeAttribute('data-theme');
             if (themeIcon) themeIcon.textContent = '🌙';
+            if (themeToggle) themeToggle.setAttribute('aria-pressed', 'false');
         }
     }
     
     // Listen for system theme changes
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-        if (!localStorage.getItem('theme')) {
-            const themeIcon = document.querySelector('.theme-icon');
-            if (e.matches) {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                if (themeIcon) themeIcon.textContent = '☀️';
-            } else {
-                document.documentElement.removeAttribute('data-theme');
-                if (themeIcon) themeIcon.textContent = '🌙';
-            }
+    function handleSystemThemeChange(e) {
+        if (localStorage.getItem('theme')) {
+            return;
         }
-    });
+
+        const themeIcon = document.querySelector('.theme-icon');
+        const themeToggle = document.getElementById('theme-toggle');
+        if (e.matches) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            if (themeIcon) themeIcon.textContent = '☀️';
+            if (themeToggle) themeToggle.setAttribute('aria-pressed', 'true');
+        } else {
+            document.documentElement.removeAttribute('data-theme');
+            if (themeIcon) themeIcon.textContent = '🌙';
+            if (themeToggle) themeToggle.setAttribute('aria-pressed', 'false');
+        }
+    }
+
+    if (colorSchemeQuery) {
+        if (typeof colorSchemeQuery.addEventListener === 'function') {
+            colorSchemeQuery.addEventListener('change', handleSystemThemeChange);
+        } else if (typeof colorSchemeQuery.addListener === 'function') {
+            colorSchemeQuery.addListener(handleSystemThemeChange);
+        }
+    }
     
     // Initialize theme before page load
     initTheme();
@@ -194,7 +217,7 @@
   </script>
 
   <!-- Back to Top Button -->
-  <button class="back-to-top-btn" onclick="scrollToTop()" title="Back to Top">
+  <button class="back-to-top-btn" type="button" onclick="scrollToTop()" title="Back to Top">
     <i class="fa fa-arrow-up"></i>
   </button>
 
@@ -203,7 +226,7 @@
     function scrollToTop() {
         window.scrollTo({
             top: 0,
-            behavior: 'smooth'
+            behavior: shouldReduceMotion() ? 'auto' : 'smooth'
         });
     }
     
