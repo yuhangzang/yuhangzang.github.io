@@ -1,60 +1,72 @@
 // Shared JavaScript for yuhangzang.github.io
 // Common functionality across all pages
 
-// Constants
-const colorSchemeQuery = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
-const motionPreferenceQuery = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
-const prefersReducedData = typeof navigator !== 'undefined' && navigator.connection && navigator.connection.saveData;
-const CACHE_DEFAULT_MAX_AGE = 6 * 60 * 60 * 1000; // 6 hours
+// Constants - only define if not already defined by inline scripts
+if (typeof colorSchemeQuery === 'undefined') {
+    var colorSchemeQuery = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+}
+if (typeof motionPreferenceQuery === 'undefined') {
+    var motionPreferenceQuery = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+}
+if (typeof prefersReducedData === 'undefined') {
+    var prefersReducedData = typeof navigator !== 'undefined' && navigator.connection && navigator.connection.saveData;
+}
+if (typeof CACHE_DEFAULT_MAX_AGE === 'undefined') {
+    var CACHE_DEFAULT_MAX_AGE = 6 * 60 * 60 * 1000; // 6 hours
+}
 
-// Session cache implementation
-const sessionCache = (() => {
-    try {
-        const storage = window.sessionStorage;
-        const testKey = '__cache_test__';
-        storage.setItem(testKey, '1');
-        storage.removeItem(testKey);
-        return {
-            get(key, maxAgeMs = CACHE_DEFAULT_MAX_AGE) {
-                try {
-                    const raw = storage.getItem(key);
-                    if (!raw) {
-                        return null;
-                    }
-                    const parsed = JSON.parse(raw);
-                    if (!parsed || typeof parsed.timestamp !== 'number') {
+// Session cache implementation - only define if not already defined
+if (typeof sessionCache === 'undefined') {
+    var sessionCache = (() => {
+        try {
+            const storage = window.sessionStorage;
+            const testKey = '__cache_test__';
+            storage.setItem(testKey, '1');
+            storage.removeItem(testKey);
+            return {
+                get(key, maxAgeMs = CACHE_DEFAULT_MAX_AGE) {
+                    try {
+                        const raw = storage.getItem(key);
+                        if (!raw) {
+                            return null;
+                        }
+                        const parsed = JSON.parse(raw);
+                        if (!parsed || typeof parsed.timestamp !== 'number') {
+                            storage.removeItem(key);
+                            return null;
+                        }
+                        if (Date.now() - parsed.timestamp > maxAgeMs) {
+                            storage.removeItem(key);
+                            return null;
+                        }
+                        return parsed.value;
+                    } catch (storageError) {
                         storage.removeItem(key);
                         return null;
                     }
-                    if (Date.now() - parsed.timestamp > maxAgeMs) {
-                        storage.removeItem(key);
-                        return null;
+                },
+                set(key, value) {
+                    try {
+                        storage.setItem(key, JSON.stringify({ value, timestamp: Date.now() }));
+                    } catch (setError) {
+                        // Ignore storage quota or serialization errors
                     }
-                    return parsed.value;
-                } catch (storageError) {
-                    storage.removeItem(key);
-                    return null;
                 }
-            },
-            set(key, value) {
-                try {
-                    storage.setItem(key, JSON.stringify({ value, timestamp: Date.now() }));
-                } catch (setError) {
-                    // Ignore storage quota or serialization errors
-                }
-            }
-        };
-    } catch (error) {
-        return {
-            get() { return null; },
-            set() {}
-        };
-    }
-})();
+            };
+        } catch (error) {
+            return {
+                get() { return null; },
+                set() {}
+            };
+        }
+    })();
+}
 
-// Utility functions
-function shouldReduceMotion() {
-    return motionPreferenceQuery ? motionPreferenceQuery.matches : false;
+// Utility functions - only define if not already defined
+if (typeof shouldReduceMotion === 'undefined') {
+    var shouldReduceMotion = function() {
+        return motionPreferenceQuery ? motionPreferenceQuery.matches : false;
+    };
 }
 
 // Lazy-assemble email links to reduce harvesting
@@ -170,8 +182,12 @@ document.addEventListener('DOMContentLoaded', function() {
         themeToggle.addEventListener('click', toggleTheme);
     }
 
-    // Set up mobile menu toggle button
+    // Cache DOM elements used multiple times
+    const navMenu = document.getElementById('nav-menu');
     const mobileToggle = document.querySelector('.mobile-menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
+
+    // Set up mobile menu toggle button
     if (mobileToggle) {
         mobileToggle.addEventListener('click', function() {
             toggleMobileMenu(this);
@@ -201,10 +217,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Close mobile menu when clicking outside
     document.addEventListener('click', function(event) {
-        const navMenu = document.getElementById('nav-menu');
-        const mobileToggle = document.querySelector('.mobile-menu-toggle');
-        const mainNav = document.querySelector('.main-nav');
-
         if (!navMenu || !mobileToggle || !mainNav) {
             return;
         }
@@ -219,8 +231,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Close mobile menu when clicking on nav links
     const navLinks = document.querySelectorAll('.nav-link');
-    const navMenu = document.getElementById('nav-menu');
-    const mobileToggle = document.querySelector('.mobile-menu-toggle');
     if (navMenu && mobileToggle) {
         navLinks.forEach(link => {
             link.addEventListener('click', () => {

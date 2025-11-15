@@ -23,10 +23,8 @@
 <meta name="twitter:description" content="Research publications on multimodal LLMs, vision-language models, and reinforcement learning from human feedback.">
 <meta name="twitter:image" content="https://yuhangzang.github.io/imgs/yuhang_zang.jpg">
 <!-- Favicon -->
-<link rel="icon" type="image/x-icon" href="./imgs/favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="./imgs/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="./imgs/favicon-16x16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="./imgs/apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="./imgs/apple.svg">
+<link rel="apple-touch-icon" href="./imgs/apple.svg">
 <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></noscript>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -943,7 +941,62 @@
           </div>
 
           </div>
-  </main>      
+  </main>
+
+  <script>
+      // Critical shared variables needed before main.js loads
+      // Using var to allow redeclaration from main.js without errors
+      var prefersReducedData = typeof navigator !== 'undefined' && navigator.connection && navigator.connection.saveData;
+      var CACHE_DEFAULT_MAX_AGE = 6 * 60 * 60 * 1000; // 6 hours
+
+      // Session cache implementation
+      var sessionCache = (() => {
+          try {
+              const storage = window.sessionStorage;
+              const testKey = '__cache_test__';
+              storage.setItem(testKey, '1');
+              storage.removeItem(testKey);
+              return {
+                  get(key, maxAgeMs = CACHE_DEFAULT_MAX_AGE) {
+                      try {
+                          const raw = storage.getItem(key);
+                          if (!raw) return null;
+                          const parsed = JSON.parse(raw);
+                          if (!parsed || typeof parsed.timestamp !== 'number') {
+                              storage.removeItem(key);
+                              return null;
+                          }
+                          if (Date.now() - parsed.timestamp > maxAgeMs) {
+                              storage.removeItem(key);
+                              return null;
+                          }
+                          return parsed.value;
+                      } catch (storageError) {
+                          storage.removeItem(key);
+                          return null;
+                      }
+                  },
+                  set(key, value) {
+                      try {
+                          storage.setItem(key, JSON.stringify({ value, timestamp: Date.now() }));
+                      } catch (setError) {
+                          // Ignore storage quota or serialization errors
+                      }
+                  }
+              };
+          } catch (error) {
+              return {
+                  get() { return null; },
+                  set() {}
+              };
+          }
+      })();
+
+      var motionPreferenceQuery = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+      var shouldReduceMotion = function() {
+          return motionPreferenceQuery ? motionPreferenceQuery.matches : false;
+      };
+  </script>
 
   <script>
       // Page-specific JavaScript for research.html
@@ -1479,8 +1532,8 @@
     <i class="fa fa-arrow-up"></i>
   </button>
 
-  <!-- Shared JavaScript -->
-  <script src="./assets/main.js" defer></script>
+  <!-- Shared JavaScript for UI functionality -->
+  <script src="./assets/main.js"></script>
 
 </body>
 </html>
