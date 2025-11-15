@@ -10,6 +10,22 @@
 <meta name="author" content="Yuhang Zang">
 <link rel="author" href="yuhangzang.github.io">
 <title>Yuhang Zang - Team</title>
+<!-- Open Graph / Social Media Meta Tags -->
+<meta property="og:title" content="Yuhang Zang - Team">
+<meta property="og:description" content="Research team and mentored interns at Shanghai AI Laboratory working on multimodal LLMs and vision-language models.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yuhangzang.github.io/team.html">
+<meta property="og:image" content="https://yuhangzang.github.io/imgs/yuhang_zang.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@yuhangzang">
+<meta name="twitter:title" content="Yuhang Zang - Team">
+<meta name="twitter:description" content="Research team and mentored interns at Shanghai AI Laboratory.">
+<meta name="twitter:image" content="https://yuhangzang.github.io/imgs/yuhang_zang.jpg">
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="./imgs/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="./imgs/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./imgs/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./imgs/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://cdnjs.cloudflare.com">
@@ -39,7 +55,7 @@
         <a href="./index.html" class="brand-link">Yuhang Zang</a>
       </div>
       
-      <button class="mobile-menu-toggle" type="button" onclick="toggleMobileMenu(this)" aria-label="Toggle navigation menu" aria-controls="nav-menu" aria-expanded="false">
+      <button class="mobile-menu-toggle" type="button" aria-label="Toggle navigation menu" aria-controls="nav-menu" aria-expanded="false">
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
@@ -51,7 +67,7 @@
         <a href="./index.html#services" class="nav-link">Services</a>
         <a href="./index.html#awards" class="nav-link">Awards</a>
         <a href="./posts/index.html" class="nav-link">Blog</a>
-        <button id="theme-toggle" class="theme-toggle" type="button" onclick="toggleTheme()" title="Toggle dark mode" aria-pressed="false">
+        <button id="theme-toggle" class="theme-toggle" type="button" title="Toggle dark mode" aria-pressed="false">
           <span class="theme-icon">🌙</span>
         </button>
       </div>
@@ -269,14 +285,13 @@
   </main>
 
   <script>
+      // Page-specific JavaScript for team.html
       let originalPapers = [];
       const PAPERS_DEFAULT_LIMIT = 5;
       let showAllPapers = false;
       let showMoreContainer = null;
       let togglePapersButton = null;
-      const colorSchemeQuery = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
-      const motionPreferenceQuery = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
-      
+
       function updateInternCounts() {
           const currentCountTarget = document.getElementById('current-intern-count');
           if (currentCountTarget) {
@@ -297,128 +312,6 @@
           }
       }
 
-      function shouldReduceMotion() {
-          return motionPreferenceQuery ? motionPreferenceQuery.matches : false;
-      }
-
-      // Dark mode functionality
-      function toggleTheme() {
-          const html = document.documentElement;
-          const themeToggle = document.getElementById('theme-toggle');
-          const themeIcon = themeToggle.querySelector('.theme-icon');
-          
-          if (html.getAttribute('data-theme') === 'dark') {
-              html.removeAttribute('data-theme');
-              themeIcon.textContent = '🌙';
-              localStorage.setItem('theme', 'light');
-              themeToggle.setAttribute('aria-pressed', 'false');
-          } else {
-              html.setAttribute('data-theme', 'dark');
-              themeIcon.textContent = '☀️';
-              localStorage.setItem('theme', 'dark');
-              themeToggle.setAttribute('aria-pressed', 'true');
-          }
-      }
-      
-      // Auto detect system preference and apply saved theme
-      function initTheme() {
-          const savedTheme = localStorage.getItem('theme');
-          const prefersDark = colorSchemeQuery ? colorSchemeQuery.matches : false;
-          const themeToggle = document.getElementById('theme-toggle');
-          const themeIcon = themeToggle?.querySelector('.theme-icon');
-          
-          if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-              document.documentElement.setAttribute('data-theme', 'dark');
-              if (themeIcon) themeIcon.textContent = '☀️';
-              if (themeToggle) themeToggle.setAttribute('aria-pressed', 'true');
-          } else {
-              document.documentElement.removeAttribute('data-theme');
-              if (themeIcon) themeIcon.textContent = '🌙';
-              if (themeToggle) themeToggle.setAttribute('aria-pressed', 'false');
-          }
-      }
-      
-      // Listen for system theme changes
-      function handleSystemThemeChange(e) {
-          if (localStorage.getItem('theme')) {
-              return;
-          }
-
-          const themeIcon = document.querySelector('.theme-icon');
-          const themeToggle = document.getElementById('theme-toggle');
-          if (e.matches) {
-              document.documentElement.setAttribute('data-theme', 'dark');
-              if (themeIcon) themeIcon.textContent = '☀️';
-              if (themeToggle) themeToggle.setAttribute('aria-pressed', 'true');
-          } else {
-              document.documentElement.removeAttribute('data-theme');
-              if (themeIcon) themeIcon.textContent = '🌙';
-              if (themeToggle) themeToggle.setAttribute('aria-pressed', 'false');
-          }
-      }
-
-      if (colorSchemeQuery) {
-          if (typeof colorSchemeQuery.addEventListener === 'function') {
-              colorSchemeQuery.addEventListener('change', handleSystemThemeChange);
-          } else if (typeof colorSchemeQuery.addListener === 'function') {
-              colorSchemeQuery.addListener(handleSystemThemeChange);
-          }
-      }
-      
-      // Initialize theme before page load
-      initTheme();
-      
-      // Mobile menu toggle functionality
-      function toggleMobileMenu(targetButton) {
-          const navMenu = document.getElementById('nav-menu');
-          const mobileToggle = targetButton || document.querySelector('.mobile-menu-toggle');
-          if (!navMenu || !mobileToggle) {
-              return;
-          }
-
-          const isOpen = navMenu.classList.toggle('active');
-          mobileToggle.classList.toggle('active', isOpen);
-          mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-          navMenu.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
-      }
-
-      // Close mobile menu when clicking outside
-      document.addEventListener('click', function(event) {
-          const navMenu = document.getElementById('nav-menu');
-          const mobileToggle = document.querySelector('.mobile-menu-toggle');
-          const mainNav = document.querySelector('.main-nav');
-
-          if (!navMenu || !mobileToggle || !mainNav) {
-              return;
-          }
-
-          if (!mainNav.contains(event.target) && navMenu.classList.contains('active')) {
-              navMenu.classList.remove('active');
-              mobileToggle.classList.remove('active');
-              mobileToggle.setAttribute('aria-expanded', 'false');
-              navMenu.setAttribute('aria-hidden', 'true');
-          }
-      });
-
-      // Close mobile menu when clicking on nav links
-      document.addEventListener('DOMContentLoaded', function() {
-          const navLinks = document.querySelectorAll('.nav-link');
-          const navMenu = document.getElementById('nav-menu');
-          const mobileToggle = document.querySelector('.mobile-menu-toggle');
-          if (!navMenu || !mobileToggle) {
-              return;
-          }
-
-          navLinks.forEach(link => {
-              link.addEventListener('click', () => {
-                  navMenu.classList.remove('active');
-                  mobileToggle.classList.remove('active');
-                  mobileToggle.setAttribute('aria-expanded', 'false');
-                  navMenu.setAttribute('aria-hidden', 'true');
-              });
-          });
-      });
-      
       function initTeamPage() {
           updateInternCounts();
 
@@ -587,30 +480,16 @@
               });
           });
       }
-      
-      // Back to Top Button functionality
-      function scrollToTop() {
-          window.scrollTo({
-              top: 0,
-              behavior: shouldReduceMotion() ? 'auto' : 'smooth'
-          });
-      }
-      
-      // Show/hide back to top button based on scroll position
-      window.addEventListener('scroll', function() {
-          const backToTopBtn = document.querySelector('.back-to-top-btn');
-          if (window.pageYOffset > 300) {
-              backToTopBtn.classList.add('show');
-          } else {
-              backToTopBtn.classList.remove('show');
-          }
-      });
   </script>
 
   <!-- Back to Top Button -->
-  <button class="back-to-top-btn" type="button" onclick="scrollToTop()" title="Back to Top">
+  <button class="back-to-top-btn" type="button" title="Back to Top">
     <i class="fa fa-arrow-up"></i>
   </button>
+
+  <!-- Shared JavaScript -->
+  <script src="./assets/main.js" defer></script>
+
 </body>
 
 </html>

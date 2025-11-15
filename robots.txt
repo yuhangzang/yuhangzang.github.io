@@ -1,0 +1,17 @@
+# robots.txt for yuhangzang.github.io
+
+User-agent: *
+Allow: /
+
+# Disallow crawling of assets directory
+Disallow: /assets/
+
+# Allow all search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Sitemap location
+Sitemap: https://yuhangzang.github.io/sitemap.xml

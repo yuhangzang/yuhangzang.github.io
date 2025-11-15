@@ -11,6 +11,17 @@
 <meta name="author" content="Yuhang Zang">
 <link rel="author" href="yuhangzang.github.io">
 <title>Yuhang Zang - Publications</title>
+<!-- Open Graph / Social Media Meta Tags -->
+<meta property="og:title" content="Yuhang Zang - Publications">
+<meta property="og:description" content="Research publications on multimodal LLMs, vision-language models, and reinforcement learning from human feedback. Published at NeurIPS, ICLR, CVPR, ICCV, ECCV, and more.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yuhangzang.github.io/research.html">
+<meta property="og:image" content="https://yuhangzang.github.io/imgs/yuhang_zang.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@yuhangzang">
+<meta name="twitter:title" content="Yuhang Zang - Publications">
+<meta name="twitter:description" content="Research publications on multimodal LLMs, vision-language models, and reinforcement learning from human feedback.">
+<meta name="twitter:image" content="https://yuhangzang.github.io/imgs/yuhang_zang.jpg">
 <!-- Favicon -->
 <link rel="icon" type="image/x-icon" href="./imgs/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="./imgs/favicon-32x32.png">
@@ -48,7 +59,7 @@
         <a href="./index.html" class="brand-link">Yuhang Zang</a>
       </div>
       
-      <button class="mobile-menu-toggle" type="button" onclick="toggleMobileMenu(this)" aria-label="Toggle navigation menu" aria-controls="nav-menu" aria-expanded="false">
+      <button class="mobile-menu-toggle" type="button" aria-label="Toggle navigation menu" aria-controls="nav-menu" aria-expanded="false">
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
@@ -60,7 +71,7 @@
         <a href="./index.html#services" class="nav-link">Services</a>
         <a href="./index.html#awards" class="nav-link">Awards</a>
         <a href="./posts/index.html" class="nav-link">Blog</a>
-        <button id="theme-toggle" class="theme-toggle" type="button" onclick="toggleTheme()" title="Toggle dark mode" aria-pressed="false">
+        <button id="theme-toggle" class="theme-toggle" type="button" title="Toggle dark mode" aria-pressed="false">
           <span class="theme-icon">🌙</span>
         </button>
       </div>
@@ -72,44 +83,44 @@
             <h1 class="section-heading">Publications <a href="./index.html#papers-container" class="full-list-link"><i class="fa fa-star"></i> Selected List</a> <a href="https://scholar.google.com/citations?user=hW23VKIAAAAJ&hl=en" class="scholar-link" target="_blank" rel="noopener noreferrer"><i class="fa fa-graduation-cap"></i> Scholar</a></h1>
             
             <div class="sort-controls">
-              <button class="sort-btn active" type="button" onclick="sortPapers('date')">Show by Date</button>
-              <button class="sort-btn" type="button" onclick="sortPapers('topic')">Show by Topic</button>
-              <button class="sort-btn" type="button" onclick="sortPapers('venue')">Show by Venue</button>
+              <button class="sort-btn active" type="button" data-sort-type="date">Show by Date</button>
+              <button class="sort-btn" type="button" data-sort-type="topic">Show by Topic</button>
+              <button class="sort-btn" type="button" data-sort-type="venue">Show by Venue</button>
             </div>
             
             <div class="navigation-compact">
               <div class="nav-line">
                 <span class="nav-label">Dates:</span>
-                <a href="#" class="date-link" onclick="jumpToYear('2025'); return false;">2025</a>,
-                <a href="#" class="date-link" onclick="jumpToYear('2024'); return false;">2024</a>,
-                <a href="#" class="date-link" onclick="jumpToYear('2023'); return false;">2023</a>,
-                <a href="#" class="date-link" onclick="jumpToYear('2022'); return false;">2022</a>,
-                <a href="#" class="date-link" onclick="jumpToYear('2021'); return false;">2021</a>,
-                <a href="#" class="date-link" onclick="jumpToYear('2020'); return false;">2020</a>,
-                <a href="#" class="date-link" onclick="jumpToYear('2019'); return false;">2019</a>
+                <a href="#" class="date-link" data-year="2025">2025</a>,
+                <a href="#" class="date-link" data-year="2024">2024</a>,
+                <a href="#" class="date-link" data-year="2023">2023</a>,
+                <a href="#" class="date-link" data-year="2022">2022</a>,
+                <a href="#" class="date-link" data-year="2021">2021</a>,
+                <a href="#" class="date-link" data-year="2020">2020</a>,
+                <a href="#" class="date-link" data-year="2019">2019</a>
               </div>
               <div class="nav-line">
                 <span class="nav-label">Topics:</span>
-                <a href="#" class="topic-link" onclick="jumpToTopic('Reinforcement Learning from Human Feedback'); return false;">Reinforcement Learning from Human Feedback</a>,
-                <a href="#" class="topic-link" onclick="jumpToTopic('Multimodal Large Language Models'); return false;">Multimodal Large Language Models</a>,
-                <a href="#" class="topic-link" onclick="jumpToTopic('Vision-Language Models'); return false;">Vision-Language Models</a>,
-                <a href="#" class="topic-link" onclick="jumpToTopic('Image Understanding'); return false;">Image Understanding</a>,
-                <a href="#" class="topic-link" onclick="jumpToTopic('AIGC'); return false;">AIGC</a>
+                <a href="#" class="topic-link" data-topic="Reinforcement Learning from Human Feedback">Reinforcement Learning from Human Feedback</a>,
+                <a href="#" class="topic-link" data-topic="Multimodal Large Language Models">Multimodal Large Language Models</a>,
+                <a href="#" class="topic-link" data-topic="Vision-Language Models">Vision-Language Models</a>,
+                <a href="#" class="topic-link" data-topic="Image Understanding">Image Understanding</a>,
+                <a href="#" class="topic-link" data-topic="AIGC">AIGC</a>
               </div>
               <div class="nav-line">
                 <span class="nav-label">Venues:</span>
-                <a href="#" class="venue-link" onclick="jumpToVenue('ICML'); return false;">ICML</a>,
-                <a href="#" class="venue-link" onclick="jumpToVenue('NeurIPS'); return false;">NeurIPS</a>,
-                <a href="#" class="venue-link" onclick="jumpToVenue('ICLR'); return false;">ICLR</a>,
-                <a href="#" class="venue-link" onclick="jumpToVenue('ACL'); return false;">ACL</a>,
-                <a href="#" class="venue-link" onclick="jumpToVenue('IJCV'); return false;">IJCV</a>,
-                <a href="#" class="venue-link" onclick="jumpToVenue('CVPR'); return false;">CVPR</a>,
-                <a href="#" class="venue-link" onclick="jumpToVenue('ICCV'); return false;">ICCV</a>,
-                <a href="#" class="venue-link" onclick="jumpToVenue('ECCV'); return false;">ECCV</a>,
-                <a href="#" class="venue-link" onclick="jumpToVenue('AAAI'); return false;">AAAI</a>,
-                <a href="#" class="venue-link" onclick="jumpToVenue('ACM MM'); return false;">ACM MM</a>,
-                <a href="#" class="venue-link" onclick="jumpToVenue('arXiv'); return false;">arXiv</a>,
-                <a href="#" class="venue-link" onclick="jumpToVenue('Thesis'); return false;">Thesis</a>
+                <a href="#" class="venue-link" data-venue="ICML">ICML</a>,
+                <a href="#" class="venue-link" data-venue="NeurIPS">NeurIPS</a>,
+                <a href="#" class="venue-link" data-venue="ICLR">ICLR</a>,
+                <a href="#" class="venue-link" data-venue="ACL">ACL</a>,
+                <a href="#" class="venue-link" data-venue="IJCV">IJCV</a>,
+                <a href="#" class="venue-link" data-venue="CVPR">CVPR</a>,
+                <a href="#" class="venue-link" data-venue="ICCV">ICCV</a>,
+                <a href="#" class="venue-link" data-venue="ECCV">ECCV</a>,
+                <a href="#" class="venue-link" data-venue="AAAI">AAAI</a>,
+                <a href="#" class="venue-link" data-venue="ACM MM">ACM MM</a>,
+                <a href="#" class="venue-link" data-venue="arXiv">arXiv</a>,
+                <a href="#" class="venue-link" data-venue="Thesis">Thesis</a>
               </div>
               
               <div class="author-legend">
@@ -935,62 +946,11 @@
   </main>      
 
   <script>
+      // Page-specific JavaScript for research.html
       let originalPapers = [];
-      const colorSchemeQuery = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
-      const motionPreferenceQuery = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
-      const prefersReducedData = typeof navigator !== 'undefined' && navigator.connection && navigator.connection.saveData;
-      const CACHE_DEFAULT_MAX_AGE = 6 * 60 * 60 * 1000; // 6 hours
       const GITHUB_STARS_CACHE_MAX_AGE = 3 * 60 * 60 * 1000; // 3 hours
       const GS_DATA_CACHE_KEY = 'cache:gs-data:v1';
       const GS_DATA_CACHE_MAX_AGE = 6 * 60 * 60 * 1000; // 6 hours
-
-      const sessionCache = (() => {
-          try {
-              const storage = window.sessionStorage;
-              const testKey = '__cache_test__';
-              storage.setItem(testKey, '1');
-              storage.removeItem(testKey);
-              return {
-                  get(key, maxAgeMs = CACHE_DEFAULT_MAX_AGE) {
-                      try {
-                          const raw = storage.getItem(key);
-                          if (!raw) {
-                              return null;
-                          }
-                          const parsed = JSON.parse(raw);
-                          if (!parsed || typeof parsed.timestamp !== 'number') {
-                              storage.removeItem(key);
-                              return null;
-                          }
-                          if (Date.now() - parsed.timestamp > maxAgeMs) {
-                              storage.removeItem(key);
-                              return null;
-                          }
-                          return parsed.value;
-                      } catch (storageError) {
-                          storage.removeItem(key);
-                          return null;
-                      }
-                  },
-                  set(key, value) {
-                      try {
-                          storage.setItem(key, JSON.stringify({ value, timestamp: Date.now() }));
-                      } catch (setError) {
-                          // Ignore storage quota or serialization errors
-                      }
-                  }
-              };
-          } catch (error) {
-              return {
-                  get() { return null; },
-                  set() {}
-              };
-          }
-      })();
-      
-      function shouldReduceMotion() {
-          return motionPreferenceQuery ? motionPreferenceQuery.matches : false;
-      }
 
       function populateCitationElements(citationElements, citationData) {
           if (!citationElements) {
@@ -1016,124 +976,6 @@
           });
       }
 
-      // Dark mode functionality
-      function toggleTheme() {
-          const html = document.documentElement;
-          const themeToggle = document.getElementById('theme-toggle');
-          const themeIcon = themeToggle.querySelector('.theme-icon');
-          
-          if (html.getAttribute('data-theme') === 'dark') {
-              html.removeAttribute('data-theme');
-              themeIcon.textContent = '🌙';
-              localStorage.setItem('theme', 'light');
-              themeToggle.setAttribute('aria-pressed', 'false');
-          } else {
-              html.setAttribute('data-theme', 'dark');
-              themeIcon.textContent = '☀️';
-              localStorage.setItem('theme', 'dark');
-              themeToggle.setAttribute('aria-pressed', 'true');
-          }
-      }
-      
-      // Auto detect system preference and apply saved theme
-      function initTheme() {
-          const savedTheme = localStorage.getItem('theme');
-          const prefersDark = colorSchemeQuery ? colorSchemeQuery.matches : false;
-          const themeToggle = document.getElementById('theme-toggle');
-          const themeIcon = themeToggle?.querySelector('.theme-icon');
-          
-          if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-              document.documentElement.setAttribute('data-theme', 'dark');
-              if (themeIcon) themeIcon.textContent = '☀️';
-              if (themeToggle) themeToggle.setAttribute('aria-pressed', 'true');
-          } else {
-              document.documentElement.removeAttribute('data-theme');
-              if (themeIcon) themeIcon.textContent = '🌙';
-              if (themeToggle) themeToggle.setAttribute('aria-pressed', 'false');
-          }
-      }
-      
-      // Listen for system theme changes
-      function handleSystemThemeChange(e) {
-          if (localStorage.getItem('theme')) {
-              return;
-          }
-
-          const themeIcon = document.querySelector('.theme-icon');
-          const themeToggle = document.getElementById('theme-toggle');
-          if (e.matches) {
-              document.documentElement.setAttribute('data-theme', 'dark');
-              if (themeIcon) themeIcon.textContent = '☀️';
-              if (themeToggle) themeToggle.setAttribute('aria-pressed', 'true');
-          } else {
-              document.documentElement.removeAttribute('data-theme');
-              if (themeIcon) themeIcon.textContent = '🌙';
-              if (themeToggle) themeToggle.setAttribute('aria-pressed', 'false');
-          }
-      }
-
-      if (colorSchemeQuery) {
-          if (typeof colorSchemeQuery.addEventListener === 'function') {
-              colorSchemeQuery.addEventListener('change', handleSystemThemeChange);
-          } else if (typeof colorSchemeQuery.addListener === 'function') {
-              colorSchemeQuery.addListener(handleSystemThemeChange);
-          }
-      }
-      
-      // Initialize theme before page load
-      initTheme();
-      
-      // Mobile menu toggle functionality
-      function toggleMobileMenu(targetButton) {
-          const navMenu = document.getElementById('nav-menu');
-          const mobileToggle = targetButton || document.querySelector('.mobile-menu-toggle');
-          if (!navMenu || !mobileToggle) {
-              return;
-          }
-
-          const isOpen = navMenu.classList.toggle('active');
-          mobileToggle.classList.toggle('active', isOpen);
-          mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-          navMenu.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
-      }
-      
-      // Close mobile menu when clicking outside
-      document.addEventListener('click', function(event) {
-          const navMenu = document.getElementById('nav-menu');
-          const mobileToggle = document.querySelector('.mobile-menu-toggle');
-          const mainNav = document.querySelector('.main-nav');
-          
-          if (!navMenu || !mobileToggle || !mainNav) {
-              return;
-          }
-
-          if (!mainNav.contains(event.target) && navMenu.classList.contains('active')) {
-              navMenu.classList.remove('active');
-              mobileToggle.classList.remove('active');
-              mobileToggle.setAttribute('aria-expanded', 'false');
-              navMenu.setAttribute('aria-hidden', 'true');
-          }
-      });
-      
-      // Close mobile menu when clicking on nav links
-      document.addEventListener('DOMContentLoaded', function() {
-          const navLinks = document.querySelectorAll('.nav-link');
-          const navMenu = document.getElementById('nav-menu');
-          const mobileToggle = document.querySelector('.mobile-menu-toggle');
-          if (!navMenu || !mobileToggle) {
-              return;
-          }
-          
-          navLinks.forEach(link => {
-              link.addEventListener('click', () => {
-                  navMenu.classList.remove('active');
-                  mobileToggle.classList.remove('active');
-                  mobileToggle.setAttribute('aria-expanded', 'false');
-                  navMenu.setAttribute('aria-hidden', 'true');
-              });
-          });
-      });
-      
       function initPublicationsPage() {
           // Store original papers (only the paper cards, not headers)
           const papersContainer = document.getElementById('papers-container');
@@ -1174,7 +1016,6 @@
                           populateCitationElements(citationElements, data);
                       })
                       .catch(error => {
-                          console.log('Citations failed to load:', error);
                           Array.prototype.forEach.call(citationElements, element => {
                               element.innerHTML = '0';
                           });
@@ -1232,8 +1073,6 @@
                   starCountElement.textContent = '-';
                   return null;
               } catch (error) {
-                  console.log(`Failed to load stars for ${repo}:`, error.message);
-
                   try {
                       const badgeResponse = await fetch(`https://img.shields.io/github/stars/${repo}.json`);
                       if (badgeResponse.ok) {
@@ -1251,7 +1090,7 @@
                           }
                       }
                   } catch (badgeError) {
-                      console.log(`Badge API also failed for ${repo}:`, badgeError.message);
+                      // Badge API fallback failed silently
                   }
 
                   starCountElement.textContent = '-';
@@ -1317,7 +1156,56 @@
       } else {
           initPublicationsPage();
       }
-      
+
+      // Set up event listeners for sort buttons and navigation links
+      document.addEventListener('DOMContentLoaded', function() {
+          // Sort buttons
+          document.querySelectorAll('.sort-btn').forEach(btn => {
+              btn.addEventListener('click', function() {
+                  const sortType = this.dataset.sortType;
+                  if (sortType) {
+                      sortPapers(sortType);
+                  }
+              });
+          });
+
+          // Date links
+          document.querySelectorAll('.date-link').forEach(link => {
+              link.addEventListener('click', function(e) {
+                  e.preventDefault();
+                  const year = this.dataset.year;
+                  if (year) {
+                      jumpToYear(year);
+                  }
+                  return false;
+              });
+          });
+
+          // Topic links
+          document.querySelectorAll('.topic-link').forEach(link => {
+              link.addEventListener('click', function(e) {
+                  e.preventDefault();
+                  const topic = this.dataset.topic;
+                  if (topic) {
+                      jumpToTopic(topic);
+                  }
+                  return false;
+              });
+          });
+
+          // Venue links
+          document.querySelectorAll('.venue-link').forEach(link => {
+              link.addEventListener('click', function(e) {
+                  e.preventDefault();
+                  const venue = this.dataset.venue;
+                  if (venue) {
+                      jumpToVenue(venue);
+                  }
+                  return false;
+              });
+          });
+      });
+
       // Helper function to format star counts (e.g., 1234 -> 1.2k)
       function formatStarCount(count) {
           if (count >= 1000) {
@@ -1584,30 +1472,15 @@
               }
           }, 200);
       }
-      
-      // Back to Top Button functionality
-      function scrollToTop() {
-          window.scrollTo({
-              top: 0,
-              behavior: shouldReduceMotion() ? 'auto' : 'smooth'
-          });
-      }
-      
-      // Show/hide back to top button based on scroll position
-      window.addEventListener('scroll', function() {
-          const backToTopBtn = document.querySelector('.back-to-top-btn');
-          if (window.pageYOffset > 300) {
-              backToTopBtn.classList.add('show');
-          } else {
-              backToTopBtn.classList.remove('show');
-          }
-      });
   </script>
 
   <!-- Back to Top Button -->
-  <button class="back-to-top-btn" type="button" onclick="scrollToTop()" title="Back to Top">
+  <button class="back-to-top-btn" type="button" title="Back to Top">
     <i class="fa fa-arrow-up"></i>
   </button>
+
+  <!-- Shared JavaScript -->
+  <script src="./assets/main.js" defer></script>
 
 </body>
 </html>
