@@ -10,6 +10,7 @@
 <meta name="keywords" content="Yuhang Zang; Zang Yuhang; Computer Vision; Machine Learning; Deep Learning;">
 <meta name="author" content="Yuhang Zang">
 <link rel="author" href="yuhangzang.github.io">
+<link rel="canonical" href="https://yuhangzang.github.io/research.html">
 <title>Yuhang Zang - Publications</title>
 <!-- Open Graph / Social Media Meta Tags -->
 <meta property="og:title" content="Yuhang Zang - Publications">
@@ -84,6 +85,15 @@
               <button class="sort-btn active" type="button" data-sort-type="date">Show by Date</button>
               <button class="sort-btn" type="button" data-sort-type="topic">Show by Topic</button>
               <button class="sort-btn" type="button" data-sort-type="venue">Show by Venue</button>
+            </div>
+
+            <div class="search-container">
+              <i class="fa fa-search search-icon"></i>
+              <input type="text" id="paper-search" class="search-input" placeholder="Search publications by title, author, or venue..." aria-label="Search publications">
+              <button type="button" id="clear-search" class="clear-search-btn" aria-label="Clear search" style="display: none;">
+                <i class="fa fa-times"></i>
+              </button>
+              <span id="search-results-count" class="search-results-count"></span>
             </div>
             
             <div class="navigation-compact">
@@ -1525,12 +1535,310 @@
               }
           }, 200);
       }
+
+      // Search functionality
+      const searchInput = document.getElementById('paper-search');
+      const clearSearchBtn = document.getElementById('clear-search');
+      const searchResultsCount = document.getElementById('search-results-count');
+
+      function searchPapers(query) {
+          const papers = document.querySelectorAll('.paper-card');
+          const headers = document.querySelectorAll('.year-header, .topic-header, .venue-header');
+          const normalizedQuery = query.toLowerCase().trim();
+
+          if (!normalizedQuery) {
+              // Show all papers and headers
+              papers.forEach(paper => paper.classList.remove('search-hidden'));
+              headers.forEach(header => header.classList.remove('search-hidden'));
+              searchResultsCount.textContent = '';
+              clearSearchBtn.style.display = 'none';
+              return;
+          }
+
+          clearSearchBtn.style.display = 'block';
+          let visibleCount = 0;
+
+          papers.forEach(paper => {
+              const title = paper.querySelector('papertitle')?.textContent?.toLowerCase() || '';
+              const authors = paper.querySelector('.author-names')?.textContent?.toLowerCase() || '';
+              const venue = paper.querySelector('.paper-venue')?.textContent?.toLowerCase() || '';
+              const year = paper.getAttribute('data-year') || '';
+              const topic = paper.getAttribute('data-topic')?.toLowerCase() || '';
+
+              const searchText = `${title} ${authors} ${venue} ${year} ${topic}`;
+
+              if (searchText.includes(normalizedQuery)) {
+                  paper.classList.remove('search-hidden');
+                  visibleCount++;
+              } else {
+                  paper.classList.add('search-hidden');
+              }
+          });
+
+          // Update headers visibility based on visible papers
+          updateHeadersVisibility();
+
+          // Update results count
+          const total = papers.length;
+          searchResultsCount.textContent = `${visibleCount} of ${total}`;
+      }
+
+      function updateHeadersVisibility() {
+          const headers = document.querySelectorAll('.year-header, .topic-header, .venue-header');
+
+          headers.forEach(header => {
+              let nextElement = header.nextElementSibling;
+              let hasVisiblePaper = false;
+
+              // Check following siblings until we hit another header or end
+              while (nextElement && !nextElement.classList.contains('year-header') &&
+                     !nextElement.classList.contains('topic-header') &&
+                     !nextElement.classList.contains('venue-header')) {
+                  if (nextElement.classList.contains('paper-card') &&
+                      !nextElement.classList.contains('search-hidden')) {
+                      hasVisiblePaper = true;
+                      break;
+                  }
+                  nextElement = nextElement.nextElementSibling;
+              }
+
+              if (hasVisiblePaper) {
+                  header.classList.remove('search-hidden');
+              } else {
+                  header.classList.add('search-hidden');
+              }
+          });
+      }
+
+      // Debounce function to limit search frequency
+      function debounce(func, wait) {
+          let timeout;
+          return function executedFunction(...args) {
+              const later = () => {
+                  clearTimeout(timeout);
+                  func(...args);
+              };
+              clearTimeout(timeout);
+              timeout = setTimeout(later, wait);
+          };
+      }
+
+      const debouncedSearch = debounce((query) => searchPapers(query), 200);
+
+      searchInput.addEventListener('input', (e) => {
+          debouncedSearch(e.target.value);
+      });
+
+      clearSearchBtn.addEventListener('click', () => {
+          searchInput.value = '';
+          searchPapers('');
+          searchInput.focus();
+      });
+
+      // Clear search on Escape key
+      searchInput.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
+              searchInput.value = '';
+              searchPapers('');
+          }
+      });
   </script>
 
   <!-- Back to Top Button -->
   <button class="back-to-top-btn" type="button" title="Back to Top">
     <i class="fa fa-arrow-up"></i>
   </button>
+
+  <!-- BibTeX Modal -->
+  <div class="bibtex-modal-overlay" id="bibtex-modal">
+    <div class="bibtex-modal" role="dialog" aria-labelledby="bibtex-modal-title" aria-modal="true">
+      <div class="bibtex-modal-header">
+        <h3 class="bibtex-modal-title" id="bibtex-modal-title">BibTeX Citation</h3>
+        <button class="bibtex-modal-close" type="button" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="bibtex-modal-body">
+        <pre class="bibtex-content" id="bibtex-content"></pre>
+      </div>
+      <div class="bibtex-modal-footer">
+        <button class="bibtex-download-btn" type="button" id="bibtex-download">
+          <i class="fa fa-download"></i> Download .bib
+        </button>
+        <button class="bibtex-copy-btn" type="button" id="bibtex-copy">
+          <i class="fa fa-copy"></i> Copy to Clipboard
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- BibTeX functionality -->
+  <script>
+  (function() {
+      const venueMap = {
+          'NeurIPS': { booktitle: 'NeurIPS', type: 'inproceedings' },
+          'ICML': { booktitle: 'ICML', type: 'inproceedings' },
+          'ICLR': { booktitle: 'ICLR', type: 'inproceedings' },
+          'CVPR': { booktitle: 'CVPR', type: 'inproceedings' },
+          'ICCV': { booktitle: 'ICCV', type: 'inproceedings' },
+          'ECCV': { booktitle: 'ECCV', type: 'inproceedings' },
+          'ACL': { booktitle: 'ACL', type: 'inproceedings' },
+          'AAAI': { booktitle: 'AAAI', type: 'inproceedings' },
+          'ACM MM': { booktitle: 'ACM MM', type: 'inproceedings' },
+          'IJCV': { journal: 'IJCV', type: 'article' },
+          'arXiv': { journal: 'arXiv preprint', type: 'article' },
+          'Thesis': { type: 'phdthesis' }
+      };
+
+      function generateCiteKey(title, year, authors) {
+          const firstAuthor = authors.split(',')[0].trim().split(' ').pop().toLowerCase();
+          const firstWord = title.split(/[\s:]+/)[0].toLowerCase().replace(/[^a-z]/g, '');
+          return `${firstAuthor}${year}${firstWord}`;
+      }
+
+      function cleanAuthors(authorsHtml) {
+          const temp = document.createElement('div');
+          temp.innerHTML = authorsHtml;
+          let text = temp.textContent || temp.innerText;
+          // Clean up annotations and extra spaces
+          text = text.replace(/\s+/g, ' ').trim();
+          // Convert to BibTeX format: "First Last and First Last and ..."
+          const authorList = text.split(',').map(a => a.trim()).filter(a => a);
+          return authorList.join(' and ');
+      }
+
+      function generateBibTeX(paperCard) {
+          const title = paperCard.querySelector('papertitle')?.textContent?.trim() || '';
+          const authorsEl = paperCard.querySelector('.author-names');
+          const authors = authorsEl ? cleanAuthors(authorsEl.innerHTML) : '';
+          const year = paperCard.getAttribute('data-year') || '';
+          const venue = paperCard.getAttribute('data-venue') || '';
+          const arxivBtn = paperCard.querySelector('.arxiv-btn');
+          const arxivId = arxivBtn ? arxivBtn.textContent.replace('arXiv:', '').trim() : '';
+
+          const venueInfo = venueMap[venue] || { booktitle: venue, type: 'inproceedings' };
+          const citeKey = generateCiteKey(title, year, authors);
+
+          let bibtex = `@${venueInfo.type}{${citeKey},\n`;
+          bibtex += `  title     = {${title}},\n`;
+          bibtex += `  author    = {${authors}},\n`;
+          bibtex += `  year      = {${year}},\n`;
+
+          if (venueInfo.type === 'article') {
+              bibtex += `  journal   = {${venueInfo.journal}},\n`;
+              if (arxivId) {
+                  bibtex += `  eprint    = {${arxivId}},\n`;
+                  bibtex += `  archivePrefix = {arXiv},\n`;
+              }
+          } else if (venueInfo.type === 'phdthesis') {
+              bibtex += `  school    = {Nanyang Technological University},\n`;
+          } else {
+              bibtex += `  booktitle = {${venueInfo.booktitle}},\n`;
+          }
+
+          bibtex = bibtex.slice(0, -2) + '\n}';
+          return { bibtex, citeKey };
+      }
+
+      // Add BibTeX buttons to all paper cards
+      function addBibTeXButtons() {
+          const paperCards = document.querySelectorAll('.paper-card');
+          paperCards.forEach(card => {
+              const badgesDiv = card.querySelector('.paper-badges');
+              if (badgesDiv && !badgesDiv.querySelector('.bibtex-btn')) {
+                  const btn = document.createElement('button');
+                  btn.className = 'bibtex-btn';
+                  btn.type = 'button';
+                  btn.innerHTML = '<i class="fa fa-quote-right"></i> BibTeX';
+                  btn.addEventListener('click', () => showBibTeXModal(card));
+                  badgesDiv.appendChild(btn);
+              }
+          });
+      }
+
+      // Modal functionality
+      const modal = document.getElementById('bibtex-modal');
+      const modalContent = document.getElementById('bibtex-content');
+      const copyBtn = document.getElementById('bibtex-copy');
+      const downloadBtn = document.getElementById('bibtex-download');
+      const closeBtn = modal.querySelector('.bibtex-modal-close');
+      let currentBibTeX = '';
+      let currentCiteKey = '';
+
+      function showBibTeXModal(paperCard) {
+          const { bibtex, citeKey } = generateBibTeX(paperCard);
+          currentBibTeX = bibtex;
+          currentCiteKey = citeKey;
+          modalContent.textContent = bibtex;
+          modal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+          copyBtn.innerHTML = '<i class="fa fa-copy"></i> Copy to Clipboard';
+          copyBtn.classList.remove('copied');
+      }
+
+      function closeBibTeXModal() {
+          modal.classList.remove('active');
+          document.body.style.overflow = '';
+      }
+
+      closeBtn.addEventListener('click', closeBibTeXModal);
+      modal.addEventListener('click', (e) => {
+          if (e.target === modal) closeBibTeXModal();
+      });
+      document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && modal.classList.contains('active')) {
+              closeBibTeXModal();
+          }
+      });
+
+      copyBtn.addEventListener('click', async () => {
+          try {
+              await navigator.clipboard.writeText(currentBibTeX);
+              copyBtn.innerHTML = '<i class="fa fa-check"></i> Copied!';
+              copyBtn.classList.add('copied');
+              setTimeout(() => {
+                  copyBtn.innerHTML = '<i class="fa fa-copy"></i> Copy to Clipboard';
+                  copyBtn.classList.remove('copied');
+              }, 2000);
+          } catch (err) {
+              // Fallback for older browsers
+              const textarea = document.createElement('textarea');
+              textarea.value = currentBibTeX;
+              document.body.appendChild(textarea);
+              textarea.select();
+              document.execCommand('copy');
+              document.body.removeChild(textarea);
+              copyBtn.innerHTML = '<i class="fa fa-check"></i> Copied!';
+              copyBtn.classList.add('copied');
+          }
+      });
+
+      downloadBtn.addEventListener('click', () => {
+          const blob = new Blob([currentBibTeX], { type: 'text/plain' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = `${currentCiteKey}.bib`;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+      });
+
+      // Initialize on DOM ready
+      if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', addBibTeXButtons);
+      } else {
+          addBibTeXButtons();
+      }
+
+      // Re-add buttons after sorting (since DOM is manipulated)
+      const sortBtns = document.querySelectorAll('.sort-btn');
+      sortBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+              setTimeout(addBibTeXButtons, 200);
+          });
+      });
+  })();
+  </script>
 
   <!-- Shared JavaScript for UI functionality -->
   <script src="./assets/main.js"></script>

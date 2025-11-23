@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Yuhang Zang's Blog</title>
+    <description>Blog posts about vision-language models, multimodal AI, and machine learning research.</description>
+    <link>https://yuhangzang.github.io/posts/</link>
+    <atom:link href="https://yuhangzang.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 04 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <managingEditor>yuhangzang@foxmail.com (Yuhang Zang)</managingEditor>
+    <webMaster>yuhangzang@foxmail.com (Yuhang Zang)</webMaster>
+    <image>
+      <url>https://yuhangzang.github.io/imgs/yuhang_zang.jpg</url>
+      <title>Yuhang Zang's Blog</title>
+      <link>https://yuhangzang.github.io/posts/</link>
+    </image>
+
+    <item>
+      <title>One Year of Race for Multi-modal Long-Context Understanding: MMLongBench-Doc Leaderboard Updates</title>
+      <link>https://yuhangzang.github.io/posts/2025-07-04-mmlongbench/</link>
+      <guid isPermaLink="true">https://yuhangzang.github.io/posts/2025-07-04-mmlongbench/</guid>
+      <pubDate>Fri, 04 Jul 2025 00:00:00 +0000</pubDate>
+      <author>yuhangzang@foxmail.com (Yuhang Zang)</author>
+      <description><![CDATA[As Large Language Models (LLMs) are increasingly deployed in real-world scenarios, the ability to understand long-context multimodal content—such as lengthy videos, extensive documents, and complex visual narratives—has become crucial for practical applications. MMLongBench-Doc (NeurIPS 2024 Datasets and Benchmarks Track Spotlight) is a challenging long-context, multi-modal benchmark that evaluates the document understanding ability of Large Vision-Language Models (LVLMs). With documents averaging 47.5 pages and 21,214 textual tokens, MMLongBench-Doc presents a truly demanding test for long-context document understanding capabilities.]]></description>
+      <category>Multimodal AI</category>
+      <category>Vision-Language Models</category>
+      <category>Evaluation</category>
+    </item>
+
+  </channel>
+</rss>
