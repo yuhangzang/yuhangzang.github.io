@@ -43,7 +43,7 @@
     }
 })();
 </script>
-<link id="theme-style" rel="stylesheet" href="../main.css">
+<link id="theme-style" rel="stylesheet" href="../main.min.css">
 <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></noscript>
 </head>
@@ -76,8 +76,22 @@
   <main>
         <h1 class="section-heading">Blog Posts <a href="../feed.xml" class="rss-link" target="_blank" rel="noopener noreferrer" title="Subscribe via RSS"><i class="fa fa-rss"></i> RSS</a></h1>
 
+        <!-- Tag Filter Section -->
+        <div class="blog-tags-filter">
+          <span class="filter-label"><i class="fa fa-tags"></i> Filter by tag:</span>
+          <div class="tags-container">
+            <button class="tag-filter-btn active" data-tag="all">All</button>
+            <button class="tag-filter-btn" data-tag="multimodal-llm">Multimodal LLM</button>
+            <button class="tag-filter-btn" data-tag="benchmark">Benchmark</button>
+            <button class="tag-filter-btn" data-tag="document-understanding">Document Understanding</button>
+            <button class="tag-filter-btn" data-tag="long-context">Long Context</button>
+            <button class="tag-filter-btn" data-tag="vision-language">Vision-Language</button>
+            <button class="tag-filter-btn" data-tag="reinforcement-learning">Reinforcement Learning</button>
+          </div>
+        </div>
+
         <div class="posts-list">
-          <article class="post-card">
+          <article class="post-card" data-tags="multimodal-llm benchmark document-understanding long-context">
             <div class="post-header">
               <h2 class="post-title">
                 <a href="./2025-07-04-mmlongbench/index.html" class="post-link">One Year of Race for Multi-modal Long-Context Understanding: MMLongBench-Doc Leaderboard Updates</a>
@@ -95,6 +109,12 @@
                   <i class="fa fa-user"></i>
                   Author: Yuhang Zang
                 </span>
+              </div>
+              <div class="post-tags-inline">
+                <a href="?tag=multimodal-llm" class="post-tag-small">Multimodal LLM</a>
+                <a href="?tag=benchmark" class="post-tag-small">Benchmark</a>
+                <a href="?tag=document-understanding" class="post-tag-small">Document Understanding</a>
+                <a href="?tag=long-context" class="post-tag-small">Long Context</a>
               </div>
             </div>
 
@@ -118,8 +138,68 @@
     <i class="fa fa-arrow-up"></i>
   </button>
 
+  <!-- Tag Filtering JavaScript -->
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const tagButtons = document.querySelectorAll('.tag-filter-btn');
+    const postCards = document.querySelectorAll('.post-card');
+
+    // Check URL for tag parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const tagFromUrl = urlParams.get('tag');
+
+    function filterByTag(tag) {
+      // Update active button
+      tagButtons.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.tag === tag);
+      });
+
+      // Filter posts
+      postCards.forEach(card => {
+        const cardTags = card.dataset.tags ? card.dataset.tags.split(' ') : [];
+        if (tag === 'all' || cardTags.includes(tag)) {
+          card.style.display = '';
+          card.classList.remove('hidden');
+        } else {
+          card.style.display = 'none';
+          card.classList.add('hidden');
+        }
+      });
+
+      // Update URL without reload
+      const newUrl = tag === 'all'
+        ? window.location.pathname
+        : window.location.pathname + '?tag=' + tag;
+      window.history.replaceState({}, '', newUrl);
+    }
+
+    // Add click handlers to tag buttons
+    tagButtons.forEach(btn => {
+      btn.addEventListener('click', function() {
+        filterByTag(this.dataset.tag);
+      });
+    });
+
+    // Add click handlers to inline tags
+    document.querySelectorAll('.post-tag-small').forEach(tag => {
+      tag.addEventListener('click', function(e) {
+        e.preventDefault();
+        const tagValue = new URLSearchParams(this.getAttribute('href').split('?')[1]).get('tag');
+        if (tagValue) {
+          filterByTag(tagValue);
+        }
+      });
+    });
+
+    // Apply filter from URL on page load
+    if (tagFromUrl) {
+      filterByTag(tagFromUrl);
+    }
+  });
+  </script>
+
   <!-- Shared JavaScript -->
-  <script src="../assets/main.js" defer></script>
+  <script src="../assets/main.min.js" defer></script>
 
 </body>
 

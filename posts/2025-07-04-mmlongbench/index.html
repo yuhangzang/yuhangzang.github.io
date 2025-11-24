@@ -32,7 +32,7 @@
     }
 })();
 </script>
-<link id="theme-style" rel="stylesheet" href="../../main.css">
+<link id="theme-style" rel="stylesheet" href="../../main.min.css">
 <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></noscript>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
@@ -225,13 +225,22 @@
             Author: Yuhang Zang
           </span>
         </div>
+        <div class="post-tags">
+          <a href="../index.html?tag=multimodal-llm" class="post-tag">Multimodal LLM</a>
+          <a href="../index.html?tag=benchmark" class="post-tag">Benchmark</a>
+          <a href="../index.html?tag=document-understanding" class="post-tag">Document Understanding</a>
+          <a href="../index.html?tag=long-context" class="post-tag">Long Context</a>
+        </div>
       </header>
 
       <div class="post-content">
         <p>As Large Language Models (LLMs) are increasingly deployed in real-world scenarios, the ability to understand long-context multimodal content—such as lengthy videos, extensive documents, and complex visual narratives—has become crucial for practical applications. MMLongBench-Doc <a href="#ref1">[1]</a> (NeurIPS 2024 Datasets and Benchmarks Track Spotlight) is a challenging long-context, multi-modal benchmark that evaluates the document understanding ability of Large Vision-Language Models (LVLMs). With documents averaging 47.5 pages and 21,214 textual tokens, MMLongBench-Doc presents a truly demanding test for long-context document understanding capabilities.</p>
 
         <figure class="blog-image" style="text-align: center; margin: 2em 0;">
-          <img src="./long-liu25.png" alt="Long-context multimodal applications" style="width: 100%; max-width: 700px; height: auto; border: 1px solid #e0e0e0; border-radius: 8px;" loading="lazy" decoding="async">
+          <picture>
+            <source srcset="./long-liu25.webp" type="image/webp">
+            <img src="./long-liu25.png" alt="Long-context multimodal applications" style="width: 100%; max-width: 700px; height: auto; border: 1px solid #e0e0e0; border-radius: 8px;" loading="lazy" decoding="async">
+          </picture>
           <figcaption style="margin-top: 1em; color: #666; font-size: 0.9em; line-height: 1.4; max-width: 700px; margin-left: auto; margin-right: auto;">
             <strong>Figure 1:</strong> Long-context understanding capabilities enable AI systems to process extensive multimodal content across diverse domains, from analyzing lengthy research papers and legal documents to understanding hour-long videos and complex visual narratives, making it an essential capability for real-world AI applications. (Image source: <a href="#ref2">[2]</a>)
           </figcaption>

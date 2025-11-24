@@ -48,7 +48,76 @@
 })();
 </script>
 <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-<link id="theme-style" rel="stylesheet" href="./main.css">
+<link id="theme-style" rel="stylesheet" href="./main.min.css">
+<!-- Schema.org Structured Data for Publications -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Yuhang Zang - Publications",
+  "description": "Research publications on multimodal LLMs, vision-language models, and reinforcement learning from human feedback.",
+  "url": "https://yuhangzang.github.io/research.html",
+  "author": {
+    "@type": "Person",
+    "name": "Yuhang Zang",
+    "url": "https://yuhangzang.github.io/",
+    "affiliation": {
+      "@type": "Organization",
+      "name": "Shanghai AI Laboratory"
+    }
+  },
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "ScholarlyArticle",
+        "position": 1,
+        "name": "Unified Multimodal Chain-of-Thought Reward Model through Reinforcement Fine-Tuning",
+        "author": ["Yibin Wang", "Zhimin Li", "Yuhang Zang", "Chunyu Wang", "Qinglin Lu", "Cheng Jin", "Jiaqi Wang"],
+        "datePublished": "2025",
+        "publisher": {"@type": "Organization", "name": "NeurIPS"},
+        "url": "https://arxiv.org/abs/2505.03318"
+      },
+      {
+        "@type": "ScholarlyArticle",
+        "position": 2,
+        "name": "Visual-RFT: Visual Reinforcement Fine-Tuning",
+        "author": ["Ziyu Liu", "Zeyi Sun", "Yuhang Zang", "Xiaoyi Dong", "Yuhang Cao", "Haodong Duan", "Dahua Lin", "Jiaqi Wang"],
+        "datePublished": "2025",
+        "publisher": {"@type": "Organization", "name": "ICCV"},
+        "url": "https://arxiv.org/abs/2503.01785"
+      },
+      {
+        "@type": "ScholarlyArticle",
+        "position": 3,
+        "name": "InternLM-XComposer2.5-Reward: A Simple Yet Effective Multi-Modal Reward Model",
+        "author": ["Yuhang Zang", "Xiaoyi Dong", "Pan Zhang", "Yuhang Cao", "Ziyu Liu", "Shengyuan Ding", "Shenxi Wu", "Yubo Ma", "Haodong Duan", "Wenwei Zhang", "Kai Chen", "Dahua Lin", "Jiaqi Wang"],
+        "datePublished": "2025",
+        "publisher": {"@type": "Organization", "name": "ACL Findings"},
+        "url": "https://arxiv.org/abs/2501.12368"
+      },
+      {
+        "@type": "ScholarlyArticle",
+        "position": 4,
+        "name": "VideoRoPE: What Makes for Good Video Rotary Position Embedding?",
+        "author": ["Xilin Wei", "Xiaoran Liu", "Yuhang Zang", "Xiaoyi Dong", "Pan Zhang", "Yuhang Cao", "Jian Tong", "Haodong Duan", "Qipeng Guo", "Jiaqi Wang", "Xipeng Qiu", "Dahua Lin"],
+        "datePublished": "2025",
+        "publisher": {"@type": "Organization", "name": "ICML"},
+        "url": "https://arxiv.org/abs/2502.05173"
+      },
+      {
+        "@type": "ScholarlyArticle",
+        "position": 5,
+        "name": "MMLongBench-Doc: Benchmarking long-context document understanding with visualizations",
+        "author": ["Yubo Ma", "Yuhang Zang", "et al."],
+        "datePublished": "2024",
+        "publisher": {"@type": "Organization", "name": "NeurIPS Datasets and Benchmarks"},
+        "url": "https://neurips.cc/virtual/2024/poster/97524"
+      }
+    ]
+  }
+}
+</script>
 </head>
 
 <body>
@@ -1841,7 +1910,7 @@
   </script>
 
   <!-- Shared JavaScript for UI functionality -->
-  <script src="./assets/main.js"></script>
+  <script src="./assets/main.min.js" defer></script>
 
 </body>
 </html>

@@ -3045,3 +3045,202 @@ a:hover {
     right: 4px !important;
   }
 }
+
+/* ============================================
+   Blog Tag System Styles
+   ============================================ */
+
+/* Tag Filter Section */
+.blog-tags-filter {
+  margin-bottom: var(--space-4);
+  padding: var(--space-3);
+  background: var(--surface-color);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+}
+
+.filter-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-2);
+}
+
+.filter-label i {
+  color: var(--primary-color);
+  margin-right: 6px;
+}
+
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: var(--font-family);
+  color: var(--text-secondary);
+  background: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.tag-filter-btn:hover {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  background: var(--google-blue-light);
+}
+
+.tag-filter-btn.active {
+  color: #ffffff;
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/* Post Tags - Inline in post cards */
+.post-tags-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: var(--space-2);
+}
+
+.post-tag-small {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--primary-color);
+  background: var(--google-blue-light);
+  border: none;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.post-tag-small:hover {
+  background: var(--primary-color);
+  color: #ffffff;
+}
+
+/* Post Tags - Full size in blog post header */
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: var(--space-3);
+}
+
+.post-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--primary-color);
+  background: var(--google-blue-light);
+  border: 1px solid transparent;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.post-tag:hover {
+  background: var(--primary-color);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Dark mode tag styles */
+[data-theme="dark"] .blog-tags-filter {
+  background: var(--surface-color);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .tag-filter-btn {
+  background: #3c4043;
+  border-color: #5f6368;
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .tag-filter-btn:hover {
+  background: rgba(138, 180, 248, 0.15);
+  border-color: #8ab4f8;
+  color: #8ab4f8;
+}
+
+[data-theme="dark"] .tag-filter-btn.active {
+  background: #8ab4f8;
+  border-color: #8ab4f8;
+  color: #202124;
+}
+
+[data-theme="dark"] .post-tag-small {
+  background: rgba(138, 180, 248, 0.15);
+  color: #8ab4f8;
+}
+
+[data-theme="dark"] .post-tag-small:hover {
+  background: #8ab4f8;
+  color: #202124;
+}
+
+[data-theme="dark"] .post-tag {
+  background: rgba(138, 180, 248, 0.15);
+  color: #8ab4f8;
+}
+
+[data-theme="dark"] .post-tag:hover {
+  background: #8ab4f8;
+  color: #202124;
+}
+
+/* Responsive adjustments for tags */
+@media (max-width: 768px) {
+  .blog-tags-filter {
+    padding: var(--space-2);
+  }
+
+  .tags-container {
+    gap: 6px;
+  }
+
+  .tag-filter-btn {
+    padding: 5px 12px;
+    font-size: 12px;
+  }
+
+  .post-tags {
+    gap: 6px;
+  }
+
+  .post-tag {
+    padding: 5px 12px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .filter-label {
+    font-size: 13px;
+  }
+
+  .tag-filter-btn {
+    padding: 4px 10px;
+    font-size: 11px;
+  }
+
+  .post-tag-small {
+    padding: 2px 8px;
+    font-size: 10px;
+  }
+}
