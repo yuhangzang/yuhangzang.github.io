@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Page not found - Yuhang Zang's academic website">
+<title>404 - Page Not Found | Yuhang Zang</title>
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="./imgs/favicon.svg">
+<link rel="apple-touch-icon" href="./imgs/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./imgs/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./imgs/favicon-16x16.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script>
+(function() {
+    try {
+        var storedTheme = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (storedTheme === 'dark' || (!storedTheme && prefersDark)) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    } catch (error) {
+        // Ignore unavailable storage situations
+    }
+})();
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link id="theme-style" rel="stylesheet" href="./main.min.css">
+<style>
+.error-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    text-align: center;
+    padding: var(--spacing-xl);
+}
+
+.error-code {
+    font-size: clamp(80px, 20vw, 180px);
+    font-weight: 700;
+    color: var(--google-blue);
+    line-height: 1;
+    margin-bottom: var(--spacing-md);
+    opacity: 0.9;
+}
+
+.error-title {
+    font-size: clamp(24px, 5vw, 36px);
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.error-message {
+    font-size: 18px;
+    color: var(--text-secondary);
+    max-width: 500px;
+    margin-bottom: var(--spacing-xl);
+    line-height: 1.6;
+}
+
+.error-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.error-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: var(--radius-md);
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.error-btn-primary {
+    background: var(--google-blue);
+    color: white;
+}
+
+.error-btn-primary:hover {
+    background: var(--google-blue-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.error-btn-secondary {
+    background: var(--surface-color);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.error-btn-secondary:hover {
+    background: var(--google-gray-100);
+    border-color: var(--border-hover);
+}
+
+.error-links {
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--border-color);
+}
+
+.error-links-title {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.error-links-list {
+    display: flex;
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.error-links-list a {
+    color: var(--google-blue);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.error-links-list a:hover {
+    text-decoration: underline;
+}
+</style>
+</head>
+
+<body>
+  <nav class="main-nav">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="./index.html" class="brand-link">Yuhang Zang</a>
+      </div>
+
+      <button class="mobile-menu-toggle" type="button" aria-label="Toggle navigation menu" aria-controls="nav-menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+      <div class="nav-menu" id="nav-menu" aria-hidden="true">
+        <a href="./index.html" class="nav-link">Home</a>
+        <a href="./research.html" class="nav-link">Publications</a>
+        <a href="./index.html#services" class="nav-link">Services</a>
+        <a href="./index.html#awards" class="nav-link">Awards</a>
+        <a href="./posts/index.html" class="nav-link">Blog</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" title="Toggle dark mode" aria-pressed="false">
+          <span class="theme-icon">&#127769;</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="error-page">
+      <div class="error-code">404</div>
+      <h1 class="error-title">Page Not Found</h1>
+      <p class="error-message">
+        The page you're looking for doesn't exist or has been moved.
+        Let's get you back on track.
+      </p>
+
+      <div class="error-actions">
+        <a href="./index.html" class="error-btn error-btn-primary">
+          <span>Go to Homepage</span>
+        </a>
+        <a href="javascript:history.back()" class="error-btn error-btn-secondary">
+          <span>Go Back</span>
+        </a>
+      </div>
+
+      <div class="error-links">
+        <div class="error-links-title">Quick Links</div>
+        <div class="error-links-list">
+          <a href="./research.html">Publications</a>
+          <a href="./team.html">Team</a>
+          <a href="./posts/index.html">Blog</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Shared JavaScript -->
+  <script src="./assets/main.min.js" defer></script>
+</body>
+</html>
