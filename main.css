@@ -1316,6 +1316,11 @@ papertitle {
   background: rgba(205, 127, 50, 0.05);
 }
 
+.award-card.silver {
+  border-left: 4px solid #c0c0c0;
+  background: rgba(192, 192, 192, 0.05);
+}
+
 .award-card.influential-award {
   border-left: 4px solid var(--google-green);
   background: rgba(52, 168, 83, 0.05);
