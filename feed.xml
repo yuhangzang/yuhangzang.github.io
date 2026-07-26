@@ -6,7 +6,7 @@
     <link>https://yuhangzang.github.io/posts/</link>
     <atom:link href="https://yuhangzang.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <language>en-us</language>
-    <lastBuildDate>Fri, 04 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 26 Jul 2026 00:00:00 +0800</lastBuildDate>
     <managingEditor>yuhangzang@foxmail.com (Yuhang Zang)</managingEditor>
     <webMaster>yuhangzang@foxmail.com (Yuhang Zang)</webMaster>
     <image>
@@ -14,6 +14,18 @@
       <title>Yuhang Zang's Blog</title>
       <link>https://yuhangzang.github.io/posts/</link>
     </image>
+
+    <item>
+      <title>Writing Papers in the Age of AI Reviewers</title>
+      <link>https://yuhangzang.github.io/posts/2026-07-26-writing/</link>
+      <guid isPermaLink="true">https://yuhangzang.github.io/posts/2026-07-26-writing/</guid>
+      <pubDate>Sun, 26 Jul 2026 00:00:00 +0800</pubDate>
+      <author>yuhangzang@foxmail.com (Yuhang Zang)</author>
+      <description><![CDATA[AI has made it easier to produce a research paper. It is also changing how that paper is reviewed. As submission volume rises and AI-assisted reviews become common, academic writing must move beyond an endless defensive checklist and direct attention toward the result that genuinely matters.]]></description>
+      <category>Academic Writing</category>
+      <category>Peer Review</category>
+      <category>AI Research</category>
+    </item>
 
     <item>
       <title>One Year of Race for Multi-modal Long-Context Understanding: MMLongBench-Doc Leaderboard Updates</title>

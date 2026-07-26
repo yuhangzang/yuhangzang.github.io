@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow">
+<meta name="description" content="AI has changed both the production and review of research papers. What does that mean for academic writing, peer review, and the value of a paper?">
+<meta name="keywords" content="Yuhang Zang; Academic Writing; Peer Review; AI Research; AI Reviewers; Machine Learning; Research Culture;">
+<meta name="author" content="Yuhang Zang">
+<link rel="author" href="https://yuhangzang.github.io/">
+<link rel="canonical" href="https://yuhangzang.github.io/posts/2026-07-26-writing/">
+<link rel="alternate" type="application/rss+xml" title="Yuhang Zang's Blog RSS Feed" href="https://yuhangzang.github.io/feed.xml">
+<title>Writing Papers in the Age of AI Reviewers - Yuhang Zang</title>
+
+<meta property="og:title" content="Writing Papers in the Age of AI Reviewers">
+<meta property="og:description" content="AI has changed both the production and review of research papers. Academic writing must change with it.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://yuhangzang.github.io/posts/2026-07-26-writing/">
+<meta property="og:image" content="https://yuhangzang.github.io/imgs/yuhang_zang.jpg">
+<meta property="article:published_time" content="2026-07-26T00:00:00+08:00">
+<meta property="article:author" content="Yuhang Zang">
+<meta property="article:tag" content="Academic Writing">
+<meta property="article:tag" content="Peer Review">
+<meta property="article:tag" content="AI Research">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@yuhangzang">
+<meta name="twitter:title" content="Writing Papers in the Age of AI Reviewers">
+<meta name="twitter:description" content="AI has changed both the production and review of research papers. Academic writing must change with it.">
+<meta name="twitter:image" content="https://yuhangzang.github.io/imgs/yuhang_zang.jpg">
+
+<link rel="icon" type="image/svg+xml" href="../../imgs/favicon.svg">
+<link rel="manifest" href="../../site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
+<script>
+(function() {
+    try {
+        var storedTheme = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (storedTheme === 'dark' || (!storedTheme && prefersDark)) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    } catch (error) {
+        // Continue with the default theme when storage is unavailable.
+    }
+})();
+</script>
+<link id="theme-style" rel="stylesheet" href="../../main.min.css">
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></noscript>
+<style>
+  .article-deck {
+    color: var(--text-secondary);
+    font-size: 1.18rem;
+    line-height: 1.65;
+    margin: -0.35rem auto 1.75rem;
+    max-width: 760px;
+    text-align: center;
+  }
+
+  .opening-note,
+  .forecast-note {
+    background: color-mix(in srgb, var(--google-blue) 8%, var(--surface-color));
+    border-left: 4px solid var(--google-blue);
+    border-radius: 0 10px 10px 0;
+    margin: 1.75rem 0;
+    padding: 1.15rem 1.35rem;
+  }
+
+  .opening-note p,
+  .forecast-note p {
+    margin: 0;
+  }
+
+  .review-checklist {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(60, 64, 67, 0.08);
+    margin: 1.75rem 0;
+    padding: 1.25rem 1.5rem 1.1rem;
+  }
+
+  .review-checklist h3 {
+    margin-top: 0;
+  }
+
+  .review-checklist li {
+    margin-bottom: 0.7rem;
+  }
+
+  .references-list li {
+    margin-bottom: 0.85rem;
+  }
+
+  .blog-post .post-content a {
+    color: var(--google-blue);
+    text-decoration: underline;
+  }
+
+  @media (max-width: 600px) {
+    .article-deck {
+      font-size: 1.05rem;
+      text-align: left;
+    }
+
+    .review-checklist {
+      padding: 1rem 1.1rem 0.8rem;
+    }
+
+  }
+</style>
+</head>
+
+<body>
+  <nav class="main-nav">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="../../index.html" class="brand-link">Yuhang Zang</a>
+      </div>
+
+      <button class="mobile-menu-toggle" type="button" aria-label="Toggle navigation menu" aria-controls="nav-menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+      <div class="nav-menu" id="nav-menu" aria-hidden="true">
+        <a href="../../index.html" class="nav-link">Home</a>
+        <a href="../../research.html" class="nav-link">Publications</a>
+        <a href="../../index.html#services" class="nav-link">Services</a>
+        <a href="../../index.html#awards" class="nav-link">Awards</a>
+        <a href="../index.html" class="nav-link active" aria-current="page">Blog</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" title="Toggle dark mode" aria-pressed="false">
+          <span class="theme-icon">&#127769;</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="breadcrumb">
+      <a href="../../index.html" class="breadcrumb-link">Home</a>
+      <span class="breadcrumb-separator">&gt;</span>
+      <a href="../index.html" class="breadcrumb-link">Blog</a>
+      <span class="breadcrumb-separator">&gt;</span>
+      <span class="breadcrumb-current">Writing Papers in the Age of AI Reviewers</span>
+    </div>
+
+    <article class="blog-post">
+      <header class="post-header">
+        <h1 class="post-title">Writing Papers in the Age of AI Reviewers</h1>
+        <p class="article-deck">AI has made it easier to produce a research paper. It is also changing how that paper is reviewed. Our writing habits and the review system around them have not caught up.</p>
+
+        <div class="post-meta">
+          <span class="post-date"><i class="fa fa-calendar"></i> July 26, 2026</span>
+          <span class="post-reading-time"><i class="fa fa-clock-o"></i> 11 min read</span>
+          <span class="post-author"><i class="fa fa-user"></i> Author: Yuhang Zang</span>
+        </div>
+        <div class="post-tags">
+          <a href="../index.html?tag=academic-writing" class="post-tag">Academic Writing</a>
+          <a href="../index.html?tag=peer-review" class="post-tag">Peer Review</a>
+          <a href="../index.html?tag=ai-research" class="post-tag">AI Research</a>
+        </div>
+      </header>
+
+      <div class="post-content">
+        <div class="opening-note">
+          <p><strong>A personal note:</strong> My first paper was published at AAAI 2019, when I was a fourth-year undergraduate. The scale and culture of AI publishing already felt intense. In retrospect, that period now looks almost quiet.</p>
+        </div>
+
+        <p>NeurIPS received 6,743 submissions in 2019 <a href="#ref1">[1]</a>. Five years later, its 2024 main and datasets-and-benchmarks tracks received 17,491 submissions <a href="#ref2">[2]</a>. In 2025, the conference reported 21,575 submissions <a href="#ref3">[3]</a>. The number more than tripled in six years.</p>
+
+        <p>That curve is not merely a story about a successful conference. It is a stress test for the entire publication system. If it continues, I would not be surprised to see a major AI conference approach 40,000 submissions during the NeurIPS 2026 cycle. This is a forecast, not a reported number, but the direction is hard to miss.</p>
+
+        <h2>The Submission Explosion</h2>
+
+        <p>There are familiar reasons for this growth. AI has become one of the most popular areas of science and engineering. More undergraduates enter research early. More PhD students need publications to graduate or compete for jobs. More companies and investors fund large research teams. An expanding community should produce more papers.</p>
+
+        <p>But the production function of a paper has changed too. Since the arrival of capable Large Language Models, researchers can ask GPT to polish prose, brainstorm variants, debug code, summarize related work, and reformat a submission. The emerging idea of AutoResearch pushes this further. None of these tools guarantees a good scientific contribution, but they reduce the cost of turning an idea into something that looks like a conference paper.</p>
+
+        <p>When the cost of packaging a result falls, more results get packaged. A small gain can acquire a broad motivation, an elaborate method name, and a polished experimental section. The bottleneck moves downstream: from producing submissions to distinguishing important work from competent-looking work.</p>
+
+        <h2>Peer Review Is Changing Too</h2>
+
+        <p>The review system was not designed for this volume. NeurIPS 2025 listed 21,921 technical reviewers and 1,985 area chairs <a href="#ref3">[3]</a>. Recruiting a reviewer pool roughly as large as the submission count is an extraordinary organizational effort, yet scale alone does not create attention, expertise, or time.</p>
+
+        <p>Reviewers now use the same class of LLM tools as authors. A large-scale study of reviews from ICLR 2024, NeurIPS 2023, CoRL 2023, and EMNLP 2023 estimated that 6.5% to 16.9% of review text may have been substantially modified by an LLM beyond spell-checking or minor edits <a href="#ref4">[4]</a>. The study does not prove that every such review was poor, nor can it reliably label an individual review. It does establish that AI-assisted reviewing is not hypothetical.</p>
+
+        <p>In my experience, the more troubling change is stylistic convergence. Reviews increasingly read as if they were generated from the same checklist. They are fluent, comprehensive in appearance, and often detached from the central scientific idea. Even a meta-review can become little more than a smooth summary of existing scores, with no visible attempt to resolve the substantive disagreement underneath them.</p>
+
+        <div class="review-checklist">
+          <h3>The AI reviewer's favorite checklist</h3>
+          <ol>
+            <li><strong>More comparisons:</strong> add more baselines, base models, model families, and whichever system is currently called state of the art.</li>
+            <li><strong>More repetitions:</strong> run more seeds, report averages and standard deviations, add error bars, and perform significance tests.</li>
+            <li><strong>More qualifications:</strong> expand the authors' own limitations section, then repeat those same limitations as weaknesses.</li>
+            <li><strong>More accounting:</strong> provide complexity analysis, training and inference costs, memory use, and failure cases.</li>
+            <li><strong>More decomposition:</strong> add ablations for every component and interaction.</li>
+            <li><strong>More implementation detail:</strong> enumerate hyperparameters and test sensitivity to each of them.</li>
+          </ol>
+        </div>
+
+        <p>Any one of these requests can be reasonable. Reproducibility matters. Strong baselines matter. Variance matters. The problem is the indiscriminate accumulation of individually reasonable requests. If authors satisfy every possible checklist item, the paper becomes longer, more expensive, and less clear - without necessarily becoming more insightful.</p>
+
+        <p>I once asked GPT to review a paper that had received an ICLR Best Paper Award, and it recommended rejection. This was only an anecdotal experiment, and the point is not that a model can never identify a strong paper. It is that checklist compliance and scientific value are different objectives.</p>
+
+        <h2>From Defensive to Offensive Writing</h2>
+
+        <p>When I was a PhD student, much of the writing advice I received was defensive. Do not claim more than the evidence supports. Anticipate the reviewer's questions. Disclose limitations. Close obvious loopholes. That advice remains ethically and scientifically correct.</p>
+
+        <p>But writing only defensively no longer works when the space of possible objections can be generated without limit. Follow every branch and you will run another baseline, another seed, another ablation, and another analysis. Fifty pages may still not be enough. Worse, the main contribution can disappear beneath the defensive perimeter built around it.</p>
+
+        <div class="forecast-note">
+          <p>In the age of AI review, a paper needs more <strong>offensive writing</strong>: it must actively direct attention toward the result that matters.</p>
+        </div>
+
+        <p>By <em>offensive</em>, I do not mean aggressive language, hidden limitations, or inflated claims. I mean organizing the paper around its genuine advantage. Decide what the work demonstrates better than existing alternatives, and make every major section help the reader understand that result. If an experiment is not central to the claim, do not promote its outcome into a headline conclusion. If the method is not designed to optimize a particular axis, do not let that axis become the spine of the paper.</p>
+
+        <p>This requires discipline. State the contribution precisely. Choose experiments that test it directly. Discuss meaningful limitations in context, including why they arise and when they matter. Separate limitations from self-indictment. A limitation section should define the boundary of a claim; it should not provide a list of sentences that can be copied verbatim into a weakness box.</p>
+
+        <p>Most importantly, write for a thoughtful human reader even if an AI system will screen, summarize, or criticize the paper. A human can recognize a coherent research vision: why this problem matters, why this particular choice is revealing, and what becomes possible because of the result. A checklist cannot substitute for that narrative.</p>
+
+        <h2>Who Decides the Value of a Paper?</h2>
+
+        <p>A few reviewers and an area chair decide whether a paper is accepted to a conference. They do not decide its final value. That judgment is made slowly by the community: by researchers who build on the work, practitioners who use it, teachers who explain it, and later papers that discover whether its central idea survives.</p>
+
+        <p>This distinction matters more as the review process becomes noisier. A conference label is still useful, but it cannot carry the full weight of research evaluation. The quality of a researcher's representative work, sustained community impact, reusable artifacts, and longer-term trajectory are increasingly better signals than paper counts or the assumption that every acceptance is equivalent.</p>
+
+        <p>That is not an argument to ignore peer review. It is an argument to remember what peer review can and cannot do.</p>
+
+        <h2>The Review System Must Change</h2>
+
+        <p>Authors can adapt their writing, but individual adaptation cannot solve a structural problem. Submission caps may curb extreme behavior, yet they do not change the underlying economics: submitting another paper is cheap for the author, while reviewing it consumes someone else's time.</p>
+
+        <p>I think major conferences should seriously consider submission fees, with waivers based on need and geography. If a paper is accepted, part of the fee could be returned or credited toward registration. The remaining pool could pay reviewers for timely, substantive work. Payment would not automatically produce good judgment, and it could create new incentives to manage. Still, the current system already assigns an enormous economic value to reviews while pricing the reviewer's labor at zero.</p>
+
+        <div class="forecast-note">
+          <p><strong>A longer-term forecast:</strong> NeurIPS 2036 or AAAI 2037 could receive 150,000 submissions if growth continues and automated research matures. That number is speculative. The institutional question it raises is immediate: should the review system wait until volume makes the present model impossible?</p>
+        </div>
+
+        <h2>What Should Remain Human</h2>
+
+        <p>AI can make papers clearer. It can help reviewers find missing controls, inconsistent claims, or overlooked literature. Used carefully, it can reduce mechanical work on both sides. The goal should not be to preserve every old habit simply because it predates language models.</p>
+
+        <p>What must remain human is the allocation of attention and responsibility. Someone must decide which question is worth asking, which evidence changes our understanding, and which criticism is important enough to affect the verdict. Someone must stand behind that judgment.</p>
+
+        <p>The age of AI reviewers therefore calls for two changes at once. Authors should write more deliberately, constructing papers around their real strengths instead of chasing an infinite checklist. Conferences should redesign incentives so that careful human judgment remains possible at scale. If we do only the first, papers will become better optimized for a deteriorating system. If we do only the second, the submission flood will continue to overwhelm it.</p>
+
+        <h2>References</h2>
+        <ol class="references-list">
+          <li id="ref1"><a href="https://neurips.cc/Conferences/2019/Press" target="_blank" rel="noopener noreferrer">NeurIPS 2019 Press and Conference Information</a>, Neural Information Processing Systems Foundation.</li>
+          <li id="ref2"><a href="https://media.neurips.cc/Conferences/NeurIPS2024/NeurIPS2024-Fact_Sheet.pdf" target="_blank" rel="noopener noreferrer">NeurIPS 2024 Fact Sheet</a>, Neural Information Processing Systems Foundation.</li>
+          <li id="ref3"><a href="https://media.neurips.cc/Conferences/NeurIPS2025/press/NeurIPS2025-Fact_Sheet.pdf" target="_blank" rel="noopener noreferrer">NeurIPS 2025 Fact Sheet</a>, Neural Information Processing Systems Foundation.</li>
+          <li id="ref4">Weixin Liang et al., <a href="https://arxiv.org/abs/2403.07183" target="_blank" rel="noopener noreferrer">"Monitoring AI-Modified Content at Scale: A Case Study on the Impact of ChatGPT on AI Conference Peer Reviews"</a>, ICML 2024.</li>
+        </ol>
+      </div>
+
+      <footer class="post-footer">
+        <div class="post-navigation">
+          <a href="../index.html" class="back-to-blog"><i class="fa fa-arrow-left"></i> Back to all posts</a>
+        </div>
+      </footer>
+    </article>
+  </main>
+
+  <button class="back-to-top-btn" type="button" title="Back to Top" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+  </button>
+
+  <script src="../../assets/main.min.js" defer></script>
+</body>
+</html>
