@@ -226,6 +226,7 @@
                 <a href="#" class="venue-link" data-venue="ACL">ACL</a>,
                 <a href="#" class="venue-link" data-venue="IJCV">IJCV</a>,
                 <a href="#" class="venue-link" data-venue="TIP">TIP</a>,
+                <a href="#" class="venue-link" data-venue="TMLR">TMLR</a>,
                 <a href="#" class="venue-link" data-venue="CVPR">CVPR</a>,
                 <a href="#" class="venue-link" data-venue="ICCV">ICCV</a>,
                 <a href="#" class="venue-link" data-venue="ECCV">ECCV</a>,
@@ -249,6 +250,28 @@
             
             <div id="papers-container">
 
+          <div class="paper-card" data-year="2026" data-topic="Multimodal Large Language Models" data-venue="TMLR">
+            <div class="new-badge">New!</div>
+            <div class="paper-content">
+              <div class="paper-info">
+                <papertitle>Visionary-R1: Mitigating Shortcuts in Visual Reasoning with Reinforcement Learning</papertitle>
+                <div class="author-names">Jiaer Xia, <span class="author-highlight">Yuhang Zang</span>, Peng Gao, Yixuan Li, Kaiyang Zhou</div>
+                <div class="paper-venue">Transactions on Machine Learning Research (<b>TMLR</b>), 2026</div>
+              </div>
+              <div class="paper-badges">
+                <a href="https://arxiv.org/abs/2505.14677" target="_blank" rel="noopener noreferrer" class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:2505.14677</a>
+                <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:70eg2SAEIzsC" target="_blank" rel="noopener noreferrer" class="citations-btn">
+                  <i class="fa fa-quote-left"></i>
+                  <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:70eg2SAEIzsC">0</span>
+                </a>
+                <a href="https://github.com/maifoundations/Visionary-R1" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="maifoundations/Visionary-R1">
+                  <i class="fa fa-star"></i>
+                  <span class="star-count">0</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
           <div class="paper-card" data-year="2026" data-topic="AIGC" data-venue="ECCV">
             <div class="new-badge">New!</div>
             <div class="paper-content">
@@ -264,6 +287,10 @@
                   <span class="citation-count show_paper_citations" data="hW23VKIAAAAJ:uLbwQdceFCQC">0</span>
                 </a>
                 <a href="https://internlm.github.io/EndoCoT/" target="_blank" rel="noopener noreferrer" class="homepage-btn"><i class="fa fa-home"></i>Home</a>
+                <a href="https://github.com/InternLM/EndoCoT" class="github-btn" target="_blank" rel="noopener noreferrer" data-repo="InternLM/EndoCoT">
+                  <i class="fa fa-star"></i>
+                  <span class="star-count">0</span>
+                </a>
               </div>
             </div>
           </div>
@@ -287,7 +314,6 @@
           </div>
 
           <div class="paper-card" data-year="2026" data-topic="Multimodal Large Language Models" data-venue="ACL">
-            <div class="new-badge">New!</div>
             <div class="paper-content">
               <div class="paper-info">
                 <papertitle>MinerU2.5: A Decoupled Vision-Language Model for Efficient High-Resolution Document Parsing</papertitle>
@@ -309,7 +335,6 @@
           </div>
 
           <div class="paper-card" data-year="2026" data-topic="Multimodal Large Language Models" data-venue="ICML">
-            <div class="new-badge">New!</div>
             <div class="paper-content">
               <div class="paper-info">
                 <papertitle>SEAgent: Self-Evolving Computer Use Agent with Autonomous Learning from Experience</papertitle>
@@ -1898,13 +1923,14 @@
                   'ACL': 4,
                   'IJCV': 5,
                   'TIP': 6,
-                  'CVPR': 7,
-                  'ICCV': 8,
-                  'ECCV': 9,
-                  'AAAI': 10,
-                  'ACM MM': 11,
-                  'arXiv': 12,
-                  'Thesis': 13
+                  'TMLR': 7,
+                  'CVPR': 8,
+                  'ICCV': 9,
+                  'ECCV': 10,
+                  'AAAI': 11,
+                  'ACM MM': 12,
+                  'arXiv': 13,
+                  'Thesis': 14
               };
               
               sortedPapers = papers.sort((a, b) => {
@@ -2155,6 +2181,7 @@
           'ACM MM': { booktitle: 'ACM MM', type: 'inproceedings' },
           'IJCV': { journal: 'IJCV', type: 'article' },
           'TIP': { journal: 'IEEE Trans. Image Processing', type: 'article' },
+          'TMLR': { journal: 'Transactions on Machine Learning Research', type: 'article' },
           'arXiv': { journal: 'arXiv preprint', type: 'article' },
           'Thesis': { type: 'phdthesis' }
       };
