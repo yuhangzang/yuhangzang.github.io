@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!-- Generated from data/publications.json. Edit the shared data and rebuild. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EndoCoT: Scaling Endogenous Chain-of-Thought Reasoning in Diffusion Models | Yuhang Zang</title>
+<meta name="description" content="EndoCoT couples iterative latent reasoning with diffusion generation, achieving 92.1% average accuracy under task-specific training across the visual reasoning settings in Table 1, compared with 83.8% for DiffThinker.">
+<link rel="canonical" href="https://yuhangzang.github.io/papers/arxiv-2603.12252.html">
+<meta name="citation_title" content="EndoCoT: Scaling Endogenous Chain-of-Thought Reasoning in Diffusion Models">
+<meta name="citation_author" content="Xuanlang Dai">
+<meta name="citation_author" content="Yujie Zhou">
+<meta name="citation_author" content="Long Xing">
+<meta name="citation_author" content="Jiazi Bu">
+<meta name="citation_author" content="Xilin Wei">
+<meta name="citation_author" content="Yuhong Liu">
+<meta name="citation_author" content="Beichen Zhang">
+<meta name="citation_author" content="Kai Chen">
+<meta name="citation_author" content="Yuhang Zang">
+<meta name="citation_publication_date" content="2026">
+<meta name="citation_arxiv_id" content="2603.12252">
+
+<meta name="citation_pdf_url" content="https://arxiv.org/pdf/2603.12252v4">
+<meta name="citation_journal_title" content="arXiv preprint arXiv:2603.12252">
+
+
+
+<link rel="alternate" type="application/x-bibtex" href="arxiv-2603.12252.bib">
+<meta property="og:type" content="article">
+<meta property="og:title" content="EndoCoT: Scaling Endogenous Chain-of-Thought Reasoning in Diffusion Models">
+<meta property="og:description" content="EndoCoT couples iterative latent reasoning with diffusion generation, achieving 92.1% average accuracy under task-specific training across the visual reasoning settings in Table 1, compared with 83.8% for DiffThinker.">
+<meta property="og:url" content="https://yuhangzang.github.io/papers/arxiv-2603.12252.html">
+<link rel="icon" type="image/svg+xml" href="../imgs/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"></noscript>
+<script>
+try {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+} catch {}
+</script>
+<link rel="stylesheet" href="../main.min.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","@id":"https://yuhangzang.github.io/papers/arxiv-2603.12252.html#paper","name":"EndoCoT: Scaling Endogenous Chain-of-Thought Reasoning in Diffusion Models","author":[{"@type":"Person","name":"Xuanlang Dai"},{"@type":"Person","name":"Yujie Zhou"},{"@type":"Person","name":"Long Xing"},{"@type":"Person","name":"Jiazi Bu"},{"@type":"Person","name":"Xilin Wei"},{"@type":"Person","name":"Yuhong Liu"},{"@type":"Person","name":"Beichen Zhang"},{"@type":"Person","name":"Kai Chen"},{"@type":"Person","name":"Yuhang Zang"}],"datePublished":"2026","url":"https://yuhangzang.github.io/papers/arxiv-2603.12252.html","sameAs":["https://arxiv.org/abs/2603.12252"],"identifier":{"@type":"PropertyValue","propertyID":"arXiv","value":"2603.12252"},"encoding":{"@type":"MediaObject","name":"EndoCoT paper · arXiv v4","contentUrl":"https://arxiv.org/pdf/2603.12252v4","encodingFormat":"application/pdf"},"isPartOf":{"@type":"CreativeWork","name":"arXiv preprint arXiv:2603.12252"},"keywords":["Endogenous chain-of-thought","Latent reasoning","Diffusion models","Diffusion Transformers (DiT)","Multimodal large language models","Visual reasoning","Spatial planning","Iterative thought guidance","Terminal thought grounding","Progressive training","Test-time scaling","Image-to-image generation"],"abstract":"Recently, Multimodal Large Language Models (MLLMs) have been widely integrated into diffusion frameworks primarily as text encoders to tackle complex tasks such as spatial reasoning. However, this paradigm suffers from two critical limitations: (i) MLLMs text encoder exhibit insufficient reasoning depth. Single-step encoding fails to activate the Chain-of-Thought process, which is essential for MLLMs to provide accurate guidance for complex tasks. (ii) The guidance remains invariant during the decoding process. Invariant guidance during decoding prevents DiT from progressively decomposing complex instructions into actionable denoising steps, even with correct MLLM encodings. To this end, we propose Endogenous Chain-of-Thought (EndoCoT), a novel framework that first activates MLLMs’ reasoning potential by iteratively refining latent thought states through an iterative thought guidance module, and then bridges these states to the DiT’s denoising process. Second, a terminal thought grounding module is applied to ensure the reasoning trajectory remains grounded in textual supervision by aligning the final state with ground-truth answers. With these two components, the MLLM text encoder delivers meticulously reasoned guidance, enabling the DiT to execute it progressively and ultimately solve complex tasks in a step-by-step manner. Extensive evaluations across diverse benchmarks (e.g., Maze, TSP, VSP, and Sudoku) achieve an average accuracy of 92.1%, outperforming the strongest baseline by 8.3 percentage points.","description":"EndoCoT couples iterative latent reasoning with diffusion generation, achieving 92.1% average accuracy under task-specific training across the visual reasoning settings in Table 1, compared with 83.8% for DiffThinker."}</script>
+<script src="../assets/main.min.js" defer></script>
+</head>
+<body class="paper-page">
+<nav class="main-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="../index.html" class="brand-link">Yuhang Zang</a>
+      </div>
+      <button class="mobile-menu-toggle" type="button" aria-label="Toggle navigation menu" aria-controls="nav-menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <div class="nav-menu" id="nav-menu" aria-hidden="true">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../research.html" class="nav-link active" aria-current="location">Publications</a>
+        <a href="../index.html#services" class="nav-link">Services</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" title="Toggle dark mode" aria-label="Toggle dark mode" aria-pressed="false">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+<main class="paper-detail">
+  <article class="papers-section">
+    <p class="paper-detail-kicker">ECCV · 2026</p>
+    <h1 class="section-heading">EndoCoT: Scaling Endogenous Chain-of-Thought Reasoning in Diffusion Models</h1>
+    <p class="paper-detail-authors author-names">Xuanlang Dai, Yujie Zhou, Long Xing, Jiazi Bu, Xilin Wei, Yuhong Liu, Beichen Zhang, Kai Chen<span class="paper-corresponding author-annotation corresponding" role="img" aria-label="Corresponding author" title="Corresponding author"><svg class="paper-envelope" viewBox="0 0 16 12" aria-hidden="true"><path fill="currentColor" d="M1 0h14a1 1 0 0 1 1 1v1L8 7 0 2V1a1 1 0 0 1 1-1ZM0 4l8 5 8-5v7a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1Z"/></svg><span class="paper-sr-only">(corresponding author)</span></span>, <strong class="author-highlight">Yuhang Zang</strong><span class="paper-corresponding author-annotation corresponding" role="img" aria-label="Corresponding author" title="Corresponding author"><svg class="paper-envelope" viewBox="0 0 16 12" aria-hidden="true"><path fill="currentColor" d="M1 0h14a1 1 0 0 1 1 1v1L8 7 0 2V1a1 1 0 0 1 1-1ZM0 4l8 5 8-5v7a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1Z"/></svg><span class="paper-sr-only">(corresponding author)</span></span></p>
+    <p class="paper-detail-note paper-author-legend"><svg class="paper-envelope" viewBox="0 0 16 12" aria-hidden="true"><path fill="currentColor" d="M1 0h14a1 1 0 0 1 1 1v1L8 7 0 2V1a1 1 0 0 1 1-1ZM0 4l8 5 8-5v7a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1Z"/></svg> Corresponding author</p>
+    <section class="paper-takeaway" aria-labelledby="takeaway-heading">
+      <h2 id="takeaway-heading">Key takeaway</h2>
+      <p>EndoCoT couples iterative latent reasoning with diffusion generation, achieving 92.1% average accuracy under task-specific training across the visual reasoning settings in Table 1, compared with 83.8% for DiffThinker. <a href="https://arxiv.org/html/2603.12252v4#S5.T1">Table 1</a></p>
+    </section>
+    <section aria-labelledby="abstract-heading">
+      <h2 id="abstract-heading">Abstract</h2>
+      <p>Recently, Multimodal Large Language Models (MLLMs) have been widely integrated into diffusion frameworks primarily as text encoders to tackle complex tasks such as spatial reasoning. However, this paradigm suffers from two critical limitations: (i) MLLMs text encoder exhibit insufficient reasoning depth. Single-step encoding fails to activate the Chain-of-Thought process, which is essential for MLLMs to provide accurate guidance for complex tasks. (ii) The guidance remains invariant during the decoding process. Invariant guidance during decoding prevents DiT from progressively decomposing complex instructions into actionable denoising steps, even with correct MLLM encodings. To this end, we propose Endogenous Chain-of-Thought (EndoCoT), a novel framework that first activates MLLMs’ reasoning potential by iteratively refining latent thought states through an iterative thought guidance module, and then bridges these states to the DiT’s denoising process. Second, a terminal thought grounding module is applied to ensure the reasoning trajectory remains grounded in textual supervision by aligning the final state with ground-truth answers. With these two components, the MLLM text encoder delivers meticulously reasoned guidance, enabling the DiT to execute it progressively and ultimately solve complex tasks in a step-by-step manner. Extensive evaluations across diverse benchmarks (e.g., Maze, TSP, VSP, and Sudoku) achieve an average accuracy of 92.1%, outperforming the strongest baseline by 8.3 percentage points.</p>
+      <p class="paper-detail-note">Author abstract · <a href="https://arxiv.org/html/2603.12252v4#abstract1">Author abstract</a></p>
+    </section>
+    <section aria-labelledby="publication-heading">
+      <h2 id="publication-heading">Publication</h2>
+      <p>European Conference on Computer Vision (ECCV), 2026</p>
+
+    </section>
+    <section aria-labelledby="resources-heading">
+      <h2 id="resources-heading">Paper and resources</h2>
+      <ul class="paper-detail-resources">
+        <li><a href="https://arxiv.org/pdf/2603.12252v4">EndoCoT paper · arXiv v4 (PDF)</a></li>
+        <li><a href="https://arxiv.org/abs/2603.12252">arXiv:2603.12252</a></li>
+        <li><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=hW23VKIAAAAJ&amp;citation_for_view=hW23VKIAAAAJ:uLbwQdceFCQC">Google Scholar</a></li>
+        <li><a href="https://internlm.github.io/EndoCoT/">Project website</a></li>
+        <li><a href="https://github.com/InternLM/EndoCoT">Code · InternLM/EndoCoT</a></li>
+      </ul>
+    </section>
+    <section aria-labelledby="topics-heading">
+      <h2 id="topics-heading">Research topics</h2>
+      <p class="paper-keywords">Endogenous chain-of-thought · Latent reasoning · Diffusion models · Diffusion Transformers (DiT) · Multimodal large language models · Visual reasoning · Spatial planning · Iterative thought guidance · Terminal thought grounding · Progressive training · Test-time scaling · Image-to-image generation</p>
+    </section>
+    <section aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Research problem and approach</h2>
+      <p>Using an MLLM as a single-pass text encoder leaves diffusion generation with shallow reasoning and fixed guidance. EndoCoT repeatedly updates latent thought states, uses them to condition the diffusion model, and grounds the final state in textual supervision so that generation can follow a multi-step reasoning process. <a href="https://arxiv.org/html/2603.12252v4#S4.SS2">Section 4.2</a></p>
+    </section>
+    <section aria-labelledby="contributions-heading">
+      <h2 id="contributions-heading">Main contributions</h2>
+      <ul class="paper-detail-resources"><li>Iterative thought guidance updates latent reasoning states and conditions visual generation at each reasoning step; LoRA adapts both the MLLM and the diffusion transformer. <a href="https://arxiv.org/html/2603.12252v4#S4.SS2.SSS1">Section 4.2.1</a></li>
+<li>Terminal thought grounding aligns the final latent state with a reference representation of the ground-truth reasoning, complementing visual supervision. <a href="https://arxiv.org/html/2603.12252v4#S4.SS2.SSS2">Section 4.2.2</a></li>
+<li>Progressive training first supervises intermediate and final reasoning steps, then optimizes the terminal output. At inference, latent thought states can be updated without decoding every intermediate image. <a href="https://arxiv.org/html/2603.12252v4#S4.SS2.SSS3">Sections 4.2.3–4.2.4</a></li></ul>
+    </section>
+    <section aria-labelledby="method-comparison-heading">
+      <h2 id="method-comparison-heading">Method comparison</h2>
+      <div class="paper-results-scroll" role="region" aria-label="Method comparison table" tabindex="0">
+        <table class="paper-methods">
+          <thead><tr><th scope="col">Approach</th><th scope="col">Conditioning</th><th scope="col">Reasoning process</th><th scope="col">Supervision</th></tr></thead>
+          <tbody><tr><th scope="row">Standard diffusion conditioning</th><td>Static text embeddings</td><td>Denoising under fixed guidance</td><td>Final visual target</td></tr>
+<tr><th scope="row">EndoCoT</th><td>Iteratively refined latent thought states</td><td>Multiple latent reasoning steps guide generation</td><td>Intermediate visual targets and textual grounding of the final state</td></tr></tbody>
+        </table>
+      </div>
+      <p class="paper-detail-note"><a href="https://arxiv.org/html/2603.12252v4#S4.SS2">Section 4.2</a></p>
+    </section>
+    <section aria-labelledby="results-heading">
+      <h2 id="results-heading">Selected results</h2>
+      <div class="paper-results-scroll" role="region" aria-label="Results table" tabindex="0">
+        <table class="paper-results">
+          <caption>Qwen-Image-Edit-2511 · arXiv v4, Table 1. Comparisons use the same training setting in each row.</caption>
+          <thead><tr><th scope="col">Setting / metric</th><th scope="col">DiffThinker</th><th scope="col">EndoCoT</th><th scope="col">Gain</th><th scope="col">Source</th></tr></thead>
+          <tbody><tr><th scope="row">Task-specific training · all evaluated settings<br><span class="paper-detail-note">Average accuracy (%)</span></th><td>83.8</td><td>92.1</td><td>+8.3</td><td><a href="https://arxiv.org/html/2603.12252v4#S5.T1">Table 1</a></td></tr>
+<tr><th scope="row">Unified training · one model for all tasks<br><span class="paper-detail-note">Average accuracy (%)</span></th><td>77.1</td><td>84.2</td><td>+7.1</td><td><a href="https://arxiv.org/html/2603.12252v4#S5.T1">Table 1</a></td></tr>
+<tr><th scope="row">Task-specific training · Maze, scale 32<br><span class="paper-detail-note">Accuracy (%)</span></th><td>65.0</td><td>90.0</td><td>+25.0</td><td><a href="https://arxiv.org/html/2603.12252v4#S5.T1">Table 1</a></td></tr>
+<tr><th scope="row">Task-specific training · Sudoku, scale 35<br><span class="paper-detail-note">Accuracy (%)</span></th><td>55.0</td><td>95.0</td><td>+40.0</td><td><a href="https://arxiv.org/html/2603.12252v4#S5.T1">Table 1</a></td></tr></tbody>
+        </table>
+      </div>
+      <p class="paper-detail-note">Average accuracy follows the 18 settings reported in Table 1, covering Maze, TSP, Sudoku and VSP (including VSP-Super). Gains are percentage points over DiffThinker.</p>
+    </section>
+
+    <section aria-labelledby="citation-heading">
+      <h2 id="citation-heading">Cite this paper</h2>
+      <p>Xuanlang Dai, Yujie Zhou, Long Xing, Jiazi Bu, Xilin Wei, Yuhong Liu, Beichen Zhang, Kai Chen, Yuhang Zang. EndoCoT: Scaling Endogenous Chain-of-Thought Reasoning in Diffusion Models. arXiv preprint arXiv:2603.12252, 2026.</p>
+
+
+      <div class="paper-citation-actions">
+        <button class="paper-copy-button" type="button" data-copy-target="paper-bibtex-content" aria-describedby="bibtex-copy-status" hidden>Copy to clipboard</button>
+        <a href="arxiv-2603.12252.bib" download>Download BibTeX</a>
+        <a href="https://arxiv.org/abs/2603.12252">arXiv record</a>
+      </div>
+      <p id="bibtex-copy-status" class="paper-detail-note" role="status" aria-live="polite"></p>
+      <pre class="paper-bibtex"><code id="paper-bibtex-content">@article{dai2026endocot,
+  title     = {{EndoCoT: Scaling Endogenous Chain-of-Thought Reasoning in Diffusion Models}},
+  author    = {Xuanlang Dai and Yujie Zhou and Long Xing and Jiazi Bu and Xilin Wei and Yuhong Liu and Beichen Zhang and Kai Chen and Yuhang Zang},
+  journal   = {arXiv preprint arXiv:2603.12252},
+  year      = {2026},
+  url       = {https://arxiv.org/abs/2603.12252}
+}
+</code></pre>
+    </section>
+  <footer class="paper-detail-footer"><a href="../research.html">← All publications</a></footer>
+  </article>
+</main>
+</body>
+</html>

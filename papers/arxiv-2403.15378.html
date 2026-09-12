@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!-- Generated from data/publications.json. Edit the shared data and rebuild. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Long-CLIP: Unlocking the Long-Text Capability of CLIP | Yuhang Zang</title>
+<meta name="description" content="Long-CLIP extends CLIP to detailed text descriptions through efficient fine-tuning while preserving the embedding alignment needed for plug-and-play downstream use.">
+<link rel="canonical" href="https://yuhangzang.github.io/papers/arxiv-2403.15378.html">
+<meta name="citation_title" content="Long-CLIP: Unlocking the Long-Text Capability of CLIP">
+<meta name="citation_author" content="Beichen Zhang">
+<meta name="citation_author" content="Pan Zhang">
+<meta name="citation_author" content="Xiaoyi Dong">
+<meta name="citation_author" content="Yuhang Zang">
+<meta name="citation_author" content="Jiaqi Wang">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_arxiv_id" content="2403.15378">
+<meta name="citation_doi" content="10.1007/978-3-031-72983-6_18">
+<meta name="citation_pdf_url" content="https://link.springer.com/content/pdf/10.1007/978-3-031-72983-6_18">
+<meta name="citation_conference_title" content="Computer Vision – ECCV 2024">
+<meta name="citation_firstpage" content="310">
+<meta name="citation_lastpage" content="325">
+
+
+<link rel="alternate" type="application/x-bibtex" href="arxiv-2403.15378.bib">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Long-CLIP: Unlocking the Long-Text Capability of CLIP">
+<meta property="og:description" content="Long-CLIP extends CLIP to detailed text descriptions through efficient fine-tuning while preserving the embedding alignment needed for plug-and-play downstream use.">
+<meta property="og:url" content="https://yuhangzang.github.io/papers/arxiv-2403.15378.html">
+<link rel="icon" type="image/svg+xml" href="../imgs/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"></noscript>
+<script>
+try {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+} catch {}
+</script>
+<link rel="stylesheet" href="../main.min.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","@id":"https://yuhangzang.github.io/papers/arxiv-2403.15378.html#paper","name":"Long-CLIP: Unlocking the Long-Text Capability of CLIP","author":[{"@type":"Person","name":"Beichen Zhang"},{"@type":"Person","name":"Pan Zhang"},{"@type":"Person","name":"Xiaoyi Dong"},{"@type":"Person","name":"Yuhang Zang"},{"@type":"Person","name":"Jiaqi Wang"}],"datePublished":"2025","url":"https://yuhangzang.github.io/papers/arxiv-2403.15378.html","sameAs":["https://doi.org/10.1007/978-3-031-72983-6_18","https://arxiv.org/abs/2403.15378"],"identifier":[{"@type":"PropertyValue","propertyID":"arXiv","value":"2403.15378"},{"@type":"PropertyValue","propertyID":"DOI","value":"10.1007/978-3-031-72983-6_18"}],"encoding":{"@type":"MediaObject","name":"Paper · arXiv v3","contentUrl":"https://arxiv.org/pdf/2403.15378v3","encodingFormat":"application/pdf"},"isPartOf":{"@type":"CreativeWork","name":"Computer Vision – ECCV 2024"},"pageStart":310,"pageEnd":325,"keywords":["Long-CLIP","Long-text image retrieval","CLIP","Contrastive vision-language learning","Positional embedding","Efficient fine-tuning","Detailed text-to-image generation","Zero-shot generalization"],"abstract":"Contrastive Language-Image Pre-training (CLIP) has been the cornerstone for zero-shot classification, text-image retrieval, and text-image generation by aligning image and text modalities. Despite its widespread adoption, a significant limitation of CLIP lies in the inadequate length of text input. The length of the text token is restricted to 77, and an empirical study shows the actual effective length is even less than 20. This prevents CLIP from handling detailed descriptions, limiting its applications for image retrieval and text-to-image generation with extensive prerequisites. To this end, we propose Long-CLIP as a plug-and-play alternative to CLIP that supports long-text input, retains or even surpasses its zero-shot generalizability, and aligns the CLIP latent space, making it readily replace CLIP without any further adaptation in downstream frameworks. Nevertheless, achieving this goal is far from straightforward, as simplistic fine-tuning can result in a significant degradation of CLIP's performance. Moreover, substituting the text encoder with a language model supporting longer contexts necessitates pretraining with vast amounts of data, incurring significant expenses. Accordingly, Long-CLIP introduces an efficient fine-tuning solution on CLIP with two novel strategies designed to maintain the original capabilities, including (1) a knowledge-preserved stretching of positional embedding and (2) a primary component matching of CLIP features. With leveraging just one million extra long text-image pairs, Long-CLIP has shown the superiority to CLIP for about 20% in long caption text-image retrieval and 6% in traditional text-image retrieval tasks, e.g., COCO and Flickr30k. Furthermore, Long-CLIP offers enhanced capabilities for generating images from detailed text descriptions by replacing CLIP in a plug-and-play manner.","description":"Long-CLIP extends CLIP to detailed text descriptions through efficient fine-tuning while preserving the embedding alignment needed for plug-and-play downstream use."}</script>
+<script src="../assets/main.min.js" defer></script>
+</head>
+<body class="paper-page">
+<nav class="main-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="../index.html" class="brand-link">Yuhang Zang</a>
+      </div>
+      <button class="mobile-menu-toggle" type="button" aria-label="Toggle navigation menu" aria-controls="nav-menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <div class="nav-menu" id="nav-menu" aria-hidden="true">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../research.html" class="nav-link active" aria-current="location">Publications</a>
+        <a href="../index.html#services" class="nav-link">Services</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" title="Toggle dark mode" aria-label="Toggle dark mode" aria-pressed="false">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+<main class="paper-detail">
+  <article class="papers-section">
+    <p class="paper-detail-kicker">ECCV · 2024</p>
+    <h1 class="section-heading">Long-CLIP: Unlocking the Long-Text Capability of CLIP</h1>
+    <p class="paper-detail-authors author-names">Beichen Zhang, Pan Zhang, Xiaoyi Dong, <strong class="author-highlight">Yuhang Zang</strong>, Jiaqi Wang</p>
+
+    <section class="paper-takeaway" aria-labelledby="takeaway-heading">
+      <h2 id="takeaway-heading">Key takeaway</h2>
+      <p>Long-CLIP extends CLIP to detailed text descriptions through efficient fine-tuning while preserving the embedding alignment needed for plug-and-play downstream use. <a href="https://arxiv.org/abs/2403.15378v3">arXiv abstract · v3</a></p>
+    </section>
+    <section aria-labelledby="abstract-heading">
+      <h2 id="abstract-heading">Abstract</h2>
+      <p>Contrastive Language-Image Pre-training (CLIP) has been the cornerstone for zero-shot classification, text-image retrieval, and text-image generation by aligning image and text modalities. Despite its widespread adoption, a significant limitation of CLIP lies in the inadequate length of text input. The length of the text token is restricted to 77, and an empirical study shows the actual effective length is even less than 20. This prevents CLIP from handling detailed descriptions, limiting its applications for image retrieval and text-to-image generation with extensive prerequisites. To this end, we propose Long-CLIP as a plug-and-play alternative to CLIP that supports long-text input, retains or even surpasses its zero-shot generalizability, and aligns the CLIP latent space, making it readily replace CLIP without any further adaptation in downstream frameworks. Nevertheless, achieving this goal is far from straightforward, as simplistic fine-tuning can result in a significant degradation of CLIP&#39;s performance. Moreover, substituting the text encoder with a language model supporting longer contexts necessitates pretraining with vast amounts of data, incurring significant expenses. Accordingly, Long-CLIP introduces an efficient fine-tuning solution on CLIP with two novel strategies designed to maintain the original capabilities, including (1) a knowledge-preserved stretching of positional embedding and (2) a primary component matching of CLIP features. With leveraging just one million extra long text-image pairs, Long-CLIP has shown the superiority to CLIP for about 20% in long caption text-image retrieval and 6% in traditional text-image retrieval tasks, e.g., COCO and Flickr30k. Furthermore, Long-CLIP offers enhanced capabilities for generating images from detailed text descriptions by replacing CLIP in a plug-and-play manner.</p>
+      <p class="paper-detail-note">Author abstract · <a href="https://arxiv.org/abs/2403.15378v3">arXiv abstract · v3</a></p>
+    </section>
+    <section aria-labelledby="publication-heading">
+      <h2 id="publication-heading">Publication</h2>
+      <p>European Conference on Computer Vision (ECCV), 2024</p>
+
+    </section>
+    <section aria-labelledby="resources-heading">
+      <h2 id="resources-heading">Paper and resources</h2>
+      <ul class="paper-detail-resources">
+        <li><a href="https://arxiv.org/pdf/2403.15378v3">Paper · arXiv v3 (PDF)</a></li>
+        <li><a href="https://arxiv.org/abs/2403.15378">arXiv:2403.15378</a></li>
+        <li><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=hW23VKIAAAAJ&amp;citation_for_view=hW23VKIAAAAJ:roLk4NBRz8UC">Google Scholar</a></li>
+        <li><a href="https://github.com/beichenzbc/Long-CLIP">Code · beichenzbc/Long-CLIP</a></li>
+      </ul>
+    </section>
+    <section aria-labelledby="topics-heading">
+      <h2 id="topics-heading">Research topics</h2>
+      <p class="paper-keywords">Long-CLIP · Long-text image retrieval · CLIP · Contrastive vision-language learning · Positional embedding · Efficient fine-tuning · Detailed text-to-image generation · Zero-shot generalization</p>
+    </section>
+    <section aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Research problem and approach</h2>
+      <p>CLIP&#39;s short text context restricts retrieval and generation with detailed descriptions, but naive fine-tuning can damage generalization. Long-CLIP stretches positional embeddings while preserving knowledge and matches principal feature components to retain CLIP capabilities. <a href="https://arxiv.org/abs/2403.15378v3">arXiv abstract · v3</a></p>
+    </section>
+    <section aria-labelledby="contributions-heading">
+      <h2 id="contributions-heading">Main contributions</h2>
+      <ul class="paper-detail-resources"><li>Introduces knowledge-preserved positional-embedding stretching and primary component matching. <a href="https://arxiv.org/abs/2403.15378v3">arXiv abstract · v3</a></li>
+<li>Uses one million additional long text-image pairs to extend context without training a replacement encoder from scratch. <a href="https://arxiv.org/abs/2403.15378v3">arXiv abstract · v3</a></li></ul>
+    </section>
+    <section aria-labelledby="method-comparison-heading">
+      <h2 id="method-comparison-heading">Method comparison</h2>
+      <div class="paper-results-scroll" role="region" aria-label="Method comparison table" tabindex="0">
+        <table class="paper-methods paper-methods-compact">
+          <thead><tr><th scope="col">Approach</th><th scope="col">Key difference</th></tr></thead>
+          <tbody><tr><th scope="row">Naive CLIP fine-tuning for longer text</th><td>Can degrade the original model&#39;s capabilities; replacing the encoder also entails costly pretraining.</td></tr>
+<tr><th scope="row">Long-CLIP</th><td>Stretches positional embeddings and preserves feature knowledge through efficient fine-tuning on long captions.</td></tr></tbody>
+        </table>
+      </div>
+      <p class="paper-detail-note"><a href="https://arxiv.org/abs/2403.15378v3">arXiv abstract · v3</a></p>
+    </section>
+    <section aria-labelledby="results-heading">
+      <h2 id="results-heading">Selected results</h2>
+      <ul class="paper-detail-resources"><li>With ViT-L/14, Long-CLIP raises Urban-200 image-to-text and text-to-image R@1 from 47.0% to 81.5%. On short-caption COCO, text-to-image R@1 rises from 35.4% to 46.3%, while direct fine-tuning lowers it to 23.1%. <a href="https://arxiv.org/html/2403.15378v3#S4.T3">Tables 1–3 · long- and short-caption evaluation · arXiv v3</a></li>
+<li>Combining knowledge-preserving stretching and primary-component matching gives 66.8% ImageNet accuracy versus 55.1% with neither component. COCO text-to-image R@5 rises from 43.4% to 65.8%, while Urban-200 text-to-image R@1 changes from 78.0% to 79.0%. <a href="https://arxiv.org/html/2403.15378v3#S4.T4">Table 4 · position and feature-matching ablation · arXiv v3</a></li></ul>
+    </section>
+
+    <section aria-labelledby="citation-heading">
+      <h2 id="citation-heading">Cite this paper</h2>
+      <p>Beichen Zhang, Pan Zhang, Xiaoyi Dong, Yuhang Zang, Jiaqi Wang. Long-CLIP: Unlocking the Long-Text Capability of CLIP. Computer Vision – ECCV 2024, 2025, pp. 310–325.</p>
+
+      <p class="paper-detail-note">The conference took place in 2024; the proceedings volume was published in 2025.</p>
+      <div class="paper-citation-actions">
+        <button class="paper-copy-button" type="button" data-copy-target="paper-bibtex-content" aria-describedby="bibtex-copy-status" hidden>Copy to clipboard</button>
+        <a href="arxiv-2403.15378.bib" download>Download BibTeX</a>
+        <a href="https://doi.org/10.1007/978-3-031-72983-6_18">ECCV publisher record</a>
+      </div>
+      <p id="bibtex-copy-status" class="paper-detail-note" role="status" aria-live="polite"></p>
+      <pre class="paper-bibtex"><code id="paper-bibtex-content">@inproceedings{arxiv240315378,
+  title     = {{Long-CLIP: Unlocking the Long-Text Capability of CLIP}},
+  author    = {Beichen Zhang and Pan Zhang and Xiaoyi Dong and Yuhang Zang and Jiaqi Wang},
+  booktitle = {Computer Vision – ECCV 2024},
+  year      = {2025},
+  publisher = {Springer Nature Switzerland},
+  pages     = {310--325},
+  doi       = {10.1007/978-3-031-72983-6\_18},
+  url       = {https://doi.org/10.1007/978-3-031-72983-6_18}
+}
+</code></pre>
+    </section>
+  <footer class="paper-detail-footer"><a href="../research.html">← All publications</a></footer>
+  </article>
+</main>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!-- Generated from data/publications.json. Edit the shared data and rebuild. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VLMEvalKit: An Open-Source Toolkit for Evaluating Large Multi-Modality Models | Yuhang Zang</title>
+<meta name="description" content="VLMEvalKit standardizes multimodal evaluation behind a common interface that handles data preparation, distributed inference, post-processing and metrics for reproducible comparisons.">
+<link rel="canonical" href="https://yuhangzang.github.io/papers/arxiv-2407.11691.html">
+<meta name="citation_title" content="VLMEvalKit: An Open-Source ToolKit for Evaluating Large Multi-Modality Models">
+<meta name="citation_author" content="Haodong Duan">
+<meta name="citation_author" content="Junming Yang">
+<meta name="citation_author" content="Yuxuan Qiao">
+<meta name="citation_author" content="Xinyu Fang">
+<meta name="citation_author" content="Lin Chen">
+<meta name="citation_author" content="Yuan Liu">
+<meta name="citation_author" content="Xiaoyi Dong">
+<meta name="citation_author" content="Yuhang Zang">
+<meta name="citation_author" content="Pan Zhang">
+<meta name="citation_author" content="Jiaqi Wang">
+<meta name="citation_author" content="Dahua Lin">
+<meta name="citation_author" content="Kai Chen">
+<meta name="citation_publication_date" content="2024">
+<meta name="citation_arxiv_id" content="2407.11691">
+<meta name="citation_doi" content="10.1145/3664647.3685520">
+<meta name="citation_pdf_url" content="https://dl.acm.org/doi/pdf/10.1145/3664647.3685520">
+<meta name="citation_conference_title" content="Proceedings of the 32nd ACM International Conference on Multimedia">
+<meta name="citation_firstpage" content="11198">
+<meta name="citation_lastpage" content="11201">
+
+
+<link rel="alternate" type="application/x-bibtex" href="arxiv-2407.11691.bib">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VLMEvalKit: An Open-Source Toolkit for Evaluating Large Multi-Modality Models">
+<meta property="og:description" content="VLMEvalKit standardizes multimodal evaluation behind a common interface that handles data preparation, distributed inference, post-processing and metrics for reproducible comparisons.">
+<meta property="og:url" content="https://yuhangzang.github.io/papers/arxiv-2407.11691.html">
+<link rel="icon" type="image/svg+xml" href="../imgs/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"></noscript>
+<script>
+try {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+} catch {}
+</script>
+<link rel="stylesheet" href="../main.min.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","@id":"https://yuhangzang.github.io/papers/arxiv-2407.11691.html#paper","name":"VLMEvalKit: An Open-Source ToolKit for Evaluating Large Multi-Modality Models","alternateName":"VLMEvalKit: An Open-Source Toolkit for Evaluating Large Multi-Modality Models","author":[{"@type":"Person","name":"Haodong Duan"},{"@type":"Person","name":"Junming Yang"},{"@type":"Person","name":"Yuxuan Qiao"},{"@type":"Person","name":"Xinyu Fang"},{"@type":"Person","name":"Lin Chen"},{"@type":"Person","name":"Yuan Liu"},{"@type":"Person","name":"Xiaoyi Dong"},{"@type":"Person","name":"Yuhang Zang"},{"@type":"Person","name":"Pan Zhang"},{"@type":"Person","name":"Jiaqi Wang"},{"@type":"Person","name":"Dahua Lin"},{"@type":"Person","name":"Kai Chen"}],"datePublished":"2024","url":"https://yuhangzang.github.io/papers/arxiv-2407.11691.html","sameAs":["https://doi.org/10.1145/3664647.3685520","https://arxiv.org/abs/2407.11691"],"identifier":[{"@type":"PropertyValue","propertyID":"arXiv","value":"2407.11691"},{"@type":"PropertyValue","propertyID":"DOI","value":"10.1145/3664647.3685520"}],"encoding":{"@type":"MediaObject","name":"Paper · arXiv v5","contentUrl":"https://arxiv.org/pdf/2407.11691v5","encodingFormat":"application/pdf"},"isPartOf":{"@type":"CreativeWork","name":"Proceedings of the 32nd ACM International Conference on Multimedia"},"pageStart":11198,"pageEnd":11201,"keywords":["VLMEvalKit","Multimodal evaluation","Reproducible benchmarks","OpenVLM Leaderboard","Vision-language models","Distributed inference","Evaluation toolkit","Cross-model comparison"],"abstract":"We present VLMEvalKit: an open-source toolkit for evaluating large multi-modality models based on PyTorch. The toolkit aims to provide a user-friendly and comprehensive framework for researchers and developers to evaluate existing multi-modality models and publish reproducible evaluation results. In VLMEvalKit, we implement over 450+ large multi-modality model configurations, including both proprietary APIs and open-source models, and support 330+ benchmarks across diverse multi-modal benchmarks. By implementing a single interface, new models can be easily added to the toolkit, while the toolkit automatically handles the remaining workloads, including data preparation, distributed inference, prediction post-processing, and metric calculation. VLMEvalKit has also evolved to a broader evaluation suite spanning video/audio, document understanding, GUI grounding, spatial reasoning, safety, scientific reasoning, and multi-turn dialogue. Based on the evaluation results obtained with the toolkit, we host the OpenVLM Leaderboard, a comprehensive leaderboard to track the progress of multi-modality learning research. The toolkit is released on https://github.com/open-compass/VLMEvalKit and is actively maintained.","description":"VLMEvalKit standardizes multimodal evaluation behind a common interface that handles data preparation, distributed inference, post-processing and metrics for reproducible comparisons."}</script>
+<script src="../assets/main.min.js" defer></script>
+</head>
+<body class="paper-page">
+<nav class="main-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="../index.html" class="brand-link">Yuhang Zang</a>
+      </div>
+      <button class="mobile-menu-toggle" type="button" aria-label="Toggle navigation menu" aria-controls="nav-menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <div class="nav-menu" id="nav-menu" aria-hidden="true">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../research.html" class="nav-link active" aria-current="location">Publications</a>
+        <a href="../index.html#services" class="nav-link">Services</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" title="Toggle dark mode" aria-label="Toggle dark mode" aria-pressed="false">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+<main class="paper-detail">
+  <article class="papers-section">
+    <p class="paper-detail-kicker">ACM MM · 2024</p>
+    <h1 class="section-heading">VLMEvalKit: An Open-Source Toolkit for Evaluating Large Multi-Modality Models</h1>
+    <p class="paper-detail-authors author-names">Haodong Duan, Xinyu Fang, Junming Yang, Xiangyu Zhao, Zerun Ma, Yuxuan Qiao, Mo Li, Tianhao Liang, Lin Zhu, Amit Agarwal, Xiaozhe Li, Shengyuan Ding, Jiazi Bu, Ziyu Liu, Zhangyang Qi, Yifei Li, <strong class="author-highlight">Yuhang Zang</strong>, Zhe Chen, Lin Chen, Yuan Liu, Yubo Ma, Hailong Sun, Yifan Zhang, Shiyin Lu, Tack Hwa Wong, Weiyun Wang, Peiheng Zhou, Chaoyou Fu, Junbo Cui, Jixuan Chen, Enxin Song, Song Mao, Junming Lin, Xilin Wei, Jinsong Li, Zeyi Sun, Zhaowei Wang, Zicheng Zhang, Xiaoyi Dong, Junjun He, Pan Zhang, Jiaqi Wang, Dahua Lin, Kai Chen</p>
+
+    <section class="paper-takeaway" aria-labelledby="takeaway-heading">
+      <h2 id="takeaway-heading">Key takeaway</h2>
+      <p>VLMEvalKit standardizes multimodal evaluation behind a common interface that handles data preparation, distributed inference, post-processing and metrics for reproducible comparisons. <a href="https://arxiv.org/abs/2407.11691v5">arXiv abstract · v5</a></p>
+    </section>
+    <section aria-labelledby="abstract-heading">
+      <h2 id="abstract-heading">Abstract</h2>
+      <p>We present VLMEvalKit: an open-source toolkit for evaluating large multi-modality models based on PyTorch. The toolkit aims to provide a user-friendly and comprehensive framework for researchers and developers to evaluate existing multi-modality models and publish reproducible evaluation results. In VLMEvalKit, we implement over 450+ large multi-modality model configurations, including both proprietary APIs and open-source models, and support 330+ benchmarks across diverse multi-modal benchmarks. By implementing a single interface, new models can be easily added to the toolkit, while the toolkit automatically handles the remaining workloads, including data preparation, distributed inference, prediction post-processing, and metric calculation. VLMEvalKit has also evolved to a broader evaluation suite spanning video/audio, document understanding, GUI grounding, spatial reasoning, safety, scientific reasoning, and multi-turn dialogue. Based on the evaluation results obtained with the toolkit, we host the OpenVLM Leaderboard, a comprehensive leaderboard to track the progress of multi-modality learning research. The toolkit is released on https://github.com/open-compass/VLMEvalKit and is actively maintained.</p>
+      <p class="paper-detail-note">Author abstract · <a href="https://arxiv.org/abs/2407.11691v5">arXiv abstract · v5</a></p>
+    </section>
+    <section aria-labelledby="publication-heading">
+      <h2 id="publication-heading">Publication</h2>
+      <p>ACM Multimedia (ACM MM), 2024 (Open Source Software Competition)</p>
+
+    </section>
+    <section aria-labelledby="resources-heading">
+      <h2 id="resources-heading">Paper and resources</h2>
+      <ul class="paper-detail-resources">
+        <li><a href="https://arxiv.org/pdf/2407.11691v5">Paper · arXiv v5 (PDF)</a></li>
+        <li><a href="https://arxiv.org/abs/2407.11691">arXiv:2407.11691</a></li>
+        <li><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=hW23VKIAAAAJ&amp;citation_for_view=hW23VKIAAAAJ:4TOpqqG69KYC">Google Scholar</a></li>
+        <li><a href="https://github.com/open-compass/VLMEvalKit">Code · open-compass/VLMEvalKit</a></li>
+      </ul>
+    </section>
+    <section aria-labelledby="topics-heading">
+      <h2 id="topics-heading">Research topics</h2>
+      <p class="paper-keywords">VLMEvalKit · Multimodal evaluation · Reproducible benchmarks · OpenVLM Leaderboard · Vision-language models · Distributed inference · Evaluation toolkit · Cross-model comparison</p>
+    </section>
+    <section aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Research problem and approach</h2>
+      <p>Comparing multimodal models requires coordinating heterogeneous APIs, datasets and evaluation rules. VLMEvalKit supplies a shared PyTorch-based framework for proprietary and open models and publishes results through the OpenVLM Leaderboard. <a href="https://arxiv.org/abs/2407.11691v5">arXiv abstract · v5</a></p>
+    </section>
+    <section aria-labelledby="contributions-heading">
+      <h2 id="contributions-heading">Main contributions</h2>
+      <ul class="paper-detail-resources"><li>Lets a new model join the evaluation pipeline through a single interface. <a href="https://arxiv.org/abs/2407.11691v5">arXiv abstract · v5</a></li>
+<li>Extends evaluation across image, video, audio, documents, GUI grounding, spatial reasoning, safety and multi-turn dialogue. <a href="https://arxiv.org/abs/2407.11691v5">arXiv abstract · v5</a></li></ul>
+    </section>
+    <section aria-labelledby="method-comparison-heading">
+      <h2 id="method-comparison-heading">Method comparison</h2>
+      <div class="paper-results-scroll" role="region" aria-label="Method comparison table" tabindex="0">
+        <table class="paper-methods paper-methods-compact">
+          <thead><tr><th scope="col">Approach</th><th scope="col">Key difference</th></tr></thead>
+          <tbody><tr><th scope="row">Model integration in VLMEvalKit</th><td>Implements a common interface for the model or API being evaluated.</td></tr>
+<tr><th scope="row">Shared evaluation pipeline</th><td>Handles data preparation, distributed inference, post-processing and metrics after model integration.</td></tr></tbody>
+        </table>
+      </div>
+      <p class="paper-detail-note"><a href="https://arxiv.org/abs/2407.11691v5">arXiv abstract · v5</a></p>
+    </section>
+    <section aria-labelledby="results-heading">
+      <h2 id="results-heading">Selected results</h2>
+      <ul class="paper-detail-resources"><li>The expanded report documents support for more than 335 multimodal benchmarks, including video, document parsing, spatial grounding, safety and scientific reasoning. This is the scope reported in arXiv v5, which postdates the four-page ACM Multimedia 2024 publication. <a href="https://arxiv.org/html/2407.11691v5#S1.T1">Table 1 · expanded arXiv v5 toolkit · arXiv v5</a></li>
+<li>The general-VQA comparison normalizes individual benchmark scores to 0–100 before averaging. In its 2025-09-17 snapshot, Gemini-2.5-Pro scores 80.1 on average and GPT-5-20250807 79.9; these date-stamped results illustrate the toolkit’s evaluation protocol rather than a live ranking. <a href="https://arxiv.org/html/2407.11691v5#S2.T2">Table 2 · reproducible leaderboard snapshot · arXiv v5</a></li></ul>
+    </section>
+
+    <section aria-labelledby="citation-heading">
+      <h2 id="citation-heading">Cite this paper</h2>
+      <p>Haodong Duan, Junming Yang, Yuxuan Qiao, Xinyu Fang, Lin Chen, Yuan Liu, Xiaoyi Dong, Yuhang Zang, Pan Zhang, Jiaqi Wang, Dahua Lin, Kai Chen. VLMEvalKit: An Open-Source ToolKit for Evaluating Large Multi-Modality Models. Proceedings of the 32nd ACM International Conference on Multimedia, 2024, pp. 11198–11201.</p>
+      <p class="paper-detail-note">This citation uses the author list of the published version.</p>
+
+      <div class="paper-citation-actions">
+        <button class="paper-copy-button" type="button" data-copy-target="paper-bibtex-content" aria-describedby="bibtex-copy-status" hidden>Copy to clipboard</button>
+        <a href="arxiv-2407.11691.bib" download>Download BibTeX</a>
+        <a href="https://doi.org/10.1145/3664647.3685520">ACM MM publisher record</a>
+      </div>
+      <p id="bibtex-copy-status" class="paper-detail-note" role="status" aria-live="polite"></p>
+      <pre class="paper-bibtex"><code id="paper-bibtex-content">@inproceedings{arxiv240711691,
+  title     = {{VLMEvalKit: An Open-Source ToolKit for Evaluating Large Multi-Modality Models}},
+  author    = {Haodong Duan and Junming Yang and Yuxuan Qiao and Xinyu Fang and Lin Chen and Yuan Liu and Xiaoyi Dong and Yuhang Zang and Pan Zhang and Jiaqi Wang and Dahua Lin and Kai Chen},
+  booktitle = {Proceedings of the 32nd ACM International Conference on Multimedia},
+  month     = {October},
+  year      = {2024},
+  publisher = {ACM},
+  pages     = {11198--11201},
+  doi       = {10.1145/3664647.3685520},
+  url       = {https://doi.org/10.1145/3664647.3685520}
+}
+</code></pre>
+    </section>
+  <footer class="paper-detail-footer"><a href="../research.html">← All publications</a></footer>
+  </article>
+</main>
+</body>
+</html>

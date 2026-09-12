@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!-- Generated from data/publications.json. Edit the shared data and rebuild. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VideoRoPE: What Makes for Good Video Rotary Position Embedding? | Yuhang Zang</title>
+<meta name="description" content="VideoRoPE adapts rotary position embeddings to video through low-frequency temporal allocation, a spatially symmetric diagonal layout and adjustable temporal spacing.">
+<link rel="canonical" href="https://yuhangzang.github.io/papers/arxiv-2502.05173.html">
+<meta name="citation_title" content="VideoRoPE: What Makes for Good Video Rotary Position Embedding?">
+<meta name="citation_author" content="Xilin Wei">
+<meta name="citation_author" content="Xiaoran Liu">
+<meta name="citation_author" content="Yuhang Zang">
+<meta name="citation_author" content="Xiaoyi Dong">
+<meta name="citation_author" content="Pan Zhang">
+<meta name="citation_author" content="Yuhang Cao">
+<meta name="citation_author" content="Jian Tong">
+<meta name="citation_author" content="Haodong Duan">
+<meta name="citation_author" content="Qipeng Guo">
+<meta name="citation_author" content="Jiaqi Wang">
+<meta name="citation_author" content="Xipeng Qiu">
+<meta name="citation_author" content="Dahua Lin">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_arxiv_id" content="2502.05173">
+
+<meta name="citation_pdf_url" content="https://raw.githubusercontent.com/mlresearch/v267/main/assets/wei25h/wei25h.pdf">
+<meta name="citation_conference_title" content="Proceedings of the 42nd International Conference on Machine Learning">
+<meta name="citation_firstpage" content="66118">
+<meta name="citation_lastpage" content="66136">
+<meta name="citation_volume" content="267">
+
+<link rel="alternate" type="application/x-bibtex" href="arxiv-2502.05173.bib">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VideoRoPE: What Makes for Good Video Rotary Position Embedding?">
+<meta property="og:description" content="VideoRoPE adapts rotary position embeddings to video through low-frequency temporal allocation, a spatially symmetric diagonal layout and adjustable temporal spacing.">
+<meta property="og:url" content="https://yuhangzang.github.io/papers/arxiv-2502.05173.html">
+<link rel="icon" type="image/svg+xml" href="../imgs/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"></noscript>
+<script>
+try {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+} catch {}
+</script>
+<link rel="stylesheet" href="../main.min.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","@id":"https://yuhangzang.github.io/papers/arxiv-2502.05173.html#paper","name":"VideoRoPE: What Makes for Good Video Rotary Position Embedding?","author":[{"@type":"Person","name":"Xilin Wei"},{"@type":"Person","name":"Xiaoran Liu"},{"@type":"Person","name":"Yuhang Zang"},{"@type":"Person","name":"Xiaoyi Dong"},{"@type":"Person","name":"Pan Zhang"},{"@type":"Person","name":"Yuhang Cao"},{"@type":"Person","name":"Jian Tong"},{"@type":"Person","name":"Haodong Duan"},{"@type":"Person","name":"Qipeng Guo"},{"@type":"Person","name":"Jiaqi Wang"},{"@type":"Person","name":"Xipeng Qiu"},{"@type":"Person","name":"Dahua Lin"}],"datePublished":"2025","url":"https://yuhangzang.github.io/papers/arxiv-2502.05173.html","sameAs":["https://proceedings.mlr.press/v267/wei25h.html","https://arxiv.org/abs/2502.05173"],"identifier":{"@type":"PropertyValue","propertyID":"arXiv","value":"2502.05173"},"encoding":{"@type":"MediaObject","name":"Paper · arXiv v3","contentUrl":"https://arxiv.org/pdf/2502.05173v3","encodingFormat":"application/pdf"},"isPartOf":{"@type":"PublicationVolume","name":"Proceedings of the 42nd International Conference on Machine Learning","volumeNumber":"267","isPartOf":{"@type":"CreativeWork","name":"Proceedings of the 42nd International Conference on Machine Learning"}},"pageStart":66118,"pageEnd":66136,"keywords":["VideoRoPE","Rotary position embedding","Video language models","Spatiotemporal encoding","Long-video retrieval","Temporal frequency allocation","V-NIAH-D","Position encoding"],"abstract":"While Rotary Position Embedding (RoPE) and its variants are widely adopted for their long-context capabilities, the extension of the 1D RoPE to video, with its complex spatio-temporal structure, remains an open challenge. This work first introduces a comprehensive analysis that identifies four key characteristics essential for the effective adaptation of RoPE to video, which have not been fully considered in prior work. As part of our analysis, we introduce a challenging V-NIAH-D (Visual Needle-In-A-Haystack with Distractors) task, which adds periodic distractors into V-NIAH. The V-NIAH-D task demonstrates that previous RoPE variants, lacking appropriate temporal dimension allocation, are easily misled by distractors. Based on our analysis, we introduce VideoRoPE, with a 3D structure designed to preserve spatio-temporal relationships. VideoRoPE features low-frequency temporal allocation to mitigate periodic oscillations, a diagonal layout to maintain spatial symmetry, and adjustable temporal spacing to decouple temporal and spatial indexing. VideoRoPE consistently surpasses previous RoPE variants, across diverse downstream tasks such as long video retrieval, video understanding, and video hallucination. Our code will be available at https://github.com/Wiselnn570/VideoRoPE.","description":"VideoRoPE adapts rotary position embeddings to video through low-frequency temporal allocation, a spatially symmetric diagonal layout and adjustable temporal spacing."}</script>
+<script src="../assets/main.min.js" defer></script>
+</head>
+<body class="paper-page">
+<nav class="main-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="../index.html" class="brand-link">Yuhang Zang</a>
+      </div>
+      <button class="mobile-menu-toggle" type="button" aria-label="Toggle navigation menu" aria-controls="nav-menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <div class="nav-menu" id="nav-menu" aria-hidden="true">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../research.html" class="nav-link active" aria-current="location">Publications</a>
+        <a href="../index.html#services" class="nav-link">Services</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" title="Toggle dark mode" aria-label="Toggle dark mode" aria-pressed="false">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+<main class="paper-detail">
+  <article class="papers-section">
+    <p class="paper-detail-kicker">ICML · 2025</p>
+    <h1 class="section-heading">VideoRoPE: What Makes for Good Video Rotary Position Embedding?</h1>
+    <p class="paper-detail-authors author-names">Xilin Wei, Xiaoran Liu, <strong class="author-highlight">Yuhang Zang</strong><span class="paper-corresponding author-annotation corresponding" role="img" aria-label="Corresponding author" title="Corresponding author"><svg class="paper-envelope" viewBox="0 0 16 12" aria-hidden="true"><path fill="currentColor" d="M1 0h14a1 1 0 0 1 1 1v1L8 7 0 2V1a1 1 0 0 1 1-1ZM0 4l8 5 8-5v7a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1Z"/></svg><span class="paper-sr-only">(corresponding author)</span></span>, Xiaoyi Dong, Pan Zhang, Yuhang Cao, Jian Tong, Haodong Duan, Qipeng Guo<span class="paper-corresponding author-annotation corresponding" role="img" aria-label="Corresponding author" title="Corresponding author"><svg class="paper-envelope" viewBox="0 0 16 12" aria-hidden="true"><path fill="currentColor" d="M1 0h14a1 1 0 0 1 1 1v1L8 7 0 2V1a1 1 0 0 1 1-1ZM0 4l8 5 8-5v7a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1Z"/></svg><span class="paper-sr-only">(corresponding author)</span></span>, Jiaqi Wang<span class="paper-corresponding author-annotation corresponding" role="img" aria-label="Corresponding author" title="Corresponding author"><svg class="paper-envelope" viewBox="0 0 16 12" aria-hidden="true"><path fill="currentColor" d="M1 0h14a1 1 0 0 1 1 1v1L8 7 0 2V1a1 1 0 0 1 1-1ZM0 4l8 5 8-5v7a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1Z"/></svg><span class="paper-sr-only">(corresponding author)</span></span>, Xipeng Qiu, Dahua Lin</p>
+    <p class="paper-detail-note paper-author-legend"><svg class="paper-envelope" viewBox="0 0 16 12" aria-hidden="true"><path fill="currentColor" d="M1 0h14a1 1 0 0 1 1 1v1L8 7 0 2V1a1 1 0 0 1 1-1ZM0 4l8 5 8-5v7a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1Z"/></svg> Corresponding author</p>
+    <section class="paper-takeaway" aria-labelledby="takeaway-heading">
+      <h2 id="takeaway-heading">Key takeaway</h2>
+      <p>VideoRoPE adapts rotary position embeddings to video through low-frequency temporal allocation, a spatially symmetric diagonal layout and adjustable temporal spacing. <a href="https://arxiv.org/abs/2502.05173v3">arXiv abstract · v3</a></p>
+    </section>
+    <section aria-labelledby="abstract-heading">
+      <h2 id="abstract-heading">Abstract</h2>
+      <p>While Rotary Position Embedding (RoPE) and its variants are widely adopted for their long-context capabilities, the extension of the 1D RoPE to video, with its complex spatio-temporal structure, remains an open challenge. This work first introduces a comprehensive analysis that identifies four key characteristics essential for the effective adaptation of RoPE to video, which have not been fully considered in prior work. As part of our analysis, we introduce a challenging V-NIAH-D (Visual Needle-In-A-Haystack with Distractors) task, which adds periodic distractors into V-NIAH. The V-NIAH-D task demonstrates that previous RoPE variants, lacking appropriate temporal dimension allocation, are easily misled by distractors. Based on our analysis, we introduce VideoRoPE, with a 3D structure designed to preserve spatio-temporal relationships. VideoRoPE features low-frequency temporal allocation to mitigate periodic oscillations, a diagonal layout to maintain spatial symmetry, and adjustable temporal spacing to decouple temporal and spatial indexing. VideoRoPE consistently surpasses previous RoPE variants, across diverse downstream tasks such as long video retrieval, video understanding, and video hallucination. Our code will be available at https://github.com/Wiselnn570/VideoRoPE.</p>
+      <p class="paper-detail-note">Author abstract · <a href="https://arxiv.org/abs/2502.05173v3">arXiv abstract · v3</a></p>
+    </section>
+    <section aria-labelledby="publication-heading">
+      <h2 id="publication-heading">Publication</h2>
+      <p>International Conference on Machine Learning (ICML), 2025</p>
+      <p>Oral</p>
+    </section>
+    <section aria-labelledby="resources-heading">
+      <h2 id="resources-heading">Paper and resources</h2>
+      <ul class="paper-detail-resources">
+        <li><a href="https://arxiv.org/pdf/2502.05173v3">Paper · arXiv v3 (PDF)</a></li>
+        <li><a href="https://arxiv.org/abs/2502.05173">arXiv:2502.05173</a></li>
+        <li><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=hW23VKIAAAAJ&amp;citation_for_view=hW23VKIAAAAJ:isC4tDSrTZIC">Google Scholar</a></li>
+        <li><a href="https://github.com/Wiselnn570/VideoRoPE">Code · Wiselnn570/VideoRoPE</a></li>
+      </ul>
+    </section>
+    <section aria-labelledby="topics-heading">
+      <h2 id="topics-heading">Research topics</h2>
+      <p class="paper-keywords">VideoRoPE · Rotary position embedding · Video language models · Spatiotemporal encoding · Long-video retrieval · Temporal frequency allocation · V-NIAH-D · Position encoding</p>
+    </section>
+    <section aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Research problem and approach</h2>
+      <p>Extending one-dimensional position encoding to video requires preserving both temporal and spatial structure. VideoRoPE studies the design requirements and uses distractor-heavy retrieval to expose failures caused by inappropriate temporal frequency allocation. <a href="https://arxiv.org/abs/2502.05173v3">arXiv abstract · v3</a></p>
+    </section>
+    <section aria-labelledby="contributions-heading">
+      <h2 id="contributions-heading">Main contributions</h2>
+      <ul class="paper-detail-resources"><li>Introduces V-NIAH-D, a visual needle-in-a-haystack task with periodic distractors. <a href="https://arxiv.org/abs/2502.05173v3">arXiv abstract · v3</a></li>
+<li>Designs a three-dimensional rotary embedding that separates temporal spacing from spatial indexing. <a href="https://arxiv.org/abs/2502.05173v3">arXiv abstract · v3</a></li></ul>
+    </section>
+    <section aria-labelledby="method-comparison-heading">
+      <h2 id="method-comparison-heading">Method comparison</h2>
+      <div class="paper-results-scroll" role="region" aria-label="Method comparison table" tabindex="0">
+        <table class="paper-methods paper-methods-compact">
+          <thead><tr><th scope="col">Approach</th><th scope="col">Key difference</th></tr></thead>
+          <tbody><tr><th scope="row">Video RoPE without suitable temporal allocation</th><td>Can be misled by periodic distractors in long-video retrieval.</td></tr>
+<tr><th scope="row">VideoRoPE</th><td>Combines low-frequency temporal allocation, diagonal spatial layout and adjustable temporal spacing.</td></tr></tbody>
+        </table>
+      </div>
+      <p class="paper-detail-note"><a href="https://arxiv.org/abs/2502.05173v3">arXiv abstract · v3</a></p>
+    </section>
+    <section aria-labelledby="results-heading">
+      <h2 id="results-heading">Selected results</h2>
+      <ul class="paper-detail-resources"><li>At 64k context, VideoRoPE scores 57.26 on LongVideoBench, 65.56 on MLVU and 61.33 on Video-MME, compared with M-RoPE’s 54.35, 61.10 and 59.67. The models are trained with an 8k context window. <a href="https://arxiv.org/html/2502.05173v3#S5.T2">Table 2 · extrapolation beyond 8k training context · arXiv v3</a></li>
+<li>VideoRoPE achieves 91.11% on V-NIAH and 87.11% on its distractor variant V-NIAH-D, versus M-RoPE’s 78.67% and 74.67%. Accuracy is averaged across haystack lengths and needle-frame depths. <a href="https://arxiv.org/html/2502.05173v3#S5.T3">Table 3 · distractor-controlled retrieval · arXiv v3</a></li></ul>
+    </section>
+
+    <section aria-labelledby="citation-heading">
+      <h2 id="citation-heading">Cite this paper</h2>
+      <p>Xilin Wei, Xiaoran Liu, Yuhang Zang, Xiaoyi Dong, Pan Zhang, Yuhang Cao, Jian Tong, Haodong Duan, Qipeng Guo, Jiaqi Wang, Xipeng Qiu, Dahua Lin. VideoRoPE: What Makes for Good Video Rotary Position Embedding?. Proceedings of the 42nd International Conference on Machine Learning, 267, 2025, pp. 66118–66136.</p>
+
+
+      <div class="paper-citation-actions">
+        <button class="paper-copy-button" type="button" data-copy-target="paper-bibtex-content" aria-describedby="bibtex-copy-status" hidden>Copy to clipboard</button>
+        <a href="arxiv-2502.05173.bib" download>Download BibTeX</a>
+        <a href="https://proceedings.mlr.press/v267/wei25h.html">ICML 2025 proceedings record</a>
+      </div>
+      <p id="bibtex-copy-status" class="paper-detail-note" role="status" aria-live="polite"></p>
+      <pre class="paper-bibtex"><code id="paper-bibtex-content">@inproceedings{arxiv250205173,
+  title     = {{VideoRoPE: What Makes for Good Video Rotary Position Embedding?}},
+  author    = {Xilin Wei and Xiaoran Liu and Yuhang Zang and Xiaoyi Dong and Pan Zhang and Yuhang Cao and Jian Tong and Haodong Duan and Qipeng Guo and Jiaqi Wang and Xipeng Qiu and Dahua Lin},
+  booktitle = {Proceedings of the 42nd International Conference on Machine Learning},
+  year      = {2025},
+  volume    = {267},
+  publisher = {PMLR},
+  pages     = {66118--66136},
+  url       = {https://proceedings.mlr.press/v267/wei25h.html}
+}
+</code></pre>
+    </section>
+  <footer class="paper-detail-footer"><a href="../research.html">← All publications</a></footer>
+  </article>
+</main>
+</body>
+</html>

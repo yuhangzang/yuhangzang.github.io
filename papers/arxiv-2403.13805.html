@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<!-- Generated from data/publications.json. Edit the shared data and rebuild. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RAR: Retrieving And Ranking Augmented MLLMs for Visual Recognition | Yuhang Zang</title>
+<meta name="description" content="RAR combines CLIP retrieval with MLLM reranking to recognize fine-grained categories without placing an entire large vocabulary into the language model&#39;s context.">
+<link rel="canonical" href="https://yuhangzang.github.io/papers/arxiv-2403.13805.html">
+<meta name="citation_title" content="RAR: Retrieving and Ranking Augmented MLLMs for Visual Recognition">
+<meta name="citation_author" content="Ziyu Liu">
+<meta name="citation_author" content="Zeyi Sun">
+<meta name="citation_author" content="Yuhang Zang">
+<meta name="citation_author" content="Wei Li">
+<meta name="citation_author" content="Pan Zhang">
+<meta name="citation_author" content="Xiaoyi Dong">
+<meta name="citation_author" content="Yuanjun Xiong">
+<meta name="citation_author" content="Dahua Lin">
+<meta name="citation_author" content="Jiaqi Wang">
+<meta name="citation_publication_date" content="2026">
+<meta name="citation_arxiv_id" content="2403.13805">
+<meta name="citation_doi" content="10.1109/tip.2025.3644175">
+<meta name="citation_pdf_url" content="https://arxiv.org/pdf/2403.13805v2">
+<meta name="citation_journal_title" content="IEEE Transactions on Image Processing">
+<meta name="citation_firstpage" content="388">
+<meta name="citation_lastpage" content="401">
+<meta name="citation_volume" content="35">
+
+<link rel="alternate" type="application/x-bibtex" href="arxiv-2403.13805.bib">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RAR: Retrieving And Ranking Augmented MLLMs for Visual Recognition">
+<meta property="og:description" content="RAR combines CLIP retrieval with MLLM reranking to recognize fine-grained categories without placing an entire large vocabulary into the language model&#39;s context.">
+<meta property="og:url" content="https://yuhangzang.github.io/papers/arxiv-2403.13805.html">
+<link rel="icon" type="image/svg+xml" href="../imgs/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"></noscript>
+<script>
+try {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+} catch {}
+</script>
+<link rel="stylesheet" href="../main.min.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","@id":"https://yuhangzang.github.io/papers/arxiv-2403.13805.html#paper","name":"RAR: Retrieving and Ranking Augmented MLLMs for Visual Recognition","alternateName":"RAR: Retrieving And Ranking Augmented MLLMs for Visual Recognition","author":[{"@type":"Person","name":"Ziyu Liu"},{"@type":"Person","name":"Zeyi Sun"},{"@type":"Person","name":"Yuhang Zang"},{"@type":"Person","name":"Wei Li"},{"@type":"Person","name":"Pan Zhang"},{"@type":"Person","name":"Xiaoyi Dong"},{"@type":"Person","name":"Yuanjun Xiong"},{"@type":"Person","name":"Dahua Lin"},{"@type":"Person","name":"Jiaqi Wang"}],"datePublished":"2026","url":"https://yuhangzang.github.io/papers/arxiv-2403.13805.html","sameAs":["https://doi.org/10.1109/tip.2025.3644175","https://arxiv.org/abs/2403.13805"],"identifier":[{"@type":"PropertyValue","propertyID":"arXiv","value":"2403.13805"},{"@type":"PropertyValue","propertyID":"DOI","value":"10.1109/tip.2025.3644175"}],"encoding":{"@type":"MediaObject","name":"Paper · arXiv v2","contentUrl":"https://arxiv.org/pdf/2403.13805v2","encodingFormat":"application/pdf"},"isPartOf":{"@type":"PublicationVolume","name":"IEEE Transactions on Image Processing","volumeNumber":"35","isPartOf":{"@type":"Periodical","name":"IEEE Transactions on Image Processing"}},"pageStart":388,"pageEnd":401,"keywords":["RAR","Retrieval-augmented recognition","Multimodal reranking","Fine-grained classification","CLIP","Few-shot recognition","Zero-shot recognition","Category memory"],"abstract":"CLIP (Contrastive Language-Image Pre-training) uses contrastive learning from noise image-text pairs to excel at recognizing a wide array of candidates, yet its focus on broad associations hinders the precision in distinguishing subtle differences among fine-grained items. Conversely, Multimodal Large Language Models (MLLMs) excel at classifying fine-grained categories, thanks to their substantial knowledge from pre-training on web-level corpora. However, the performance of MLLMs declines with an increase in category numbers, primarily due to growing complexity and constraints of limited context window size. To synergize the strengths of both approaches and enhance the few-shot/zero-shot recognition abilities for datasets characterized by extensive and fine-grained vocabularies, this paper introduces RAR, a Retrieving And Ranking augmented method for MLLMs. We initially establish a multi-modal retriever based on CLIP to create and store explicit memory for different categories beyond the immediate context window. During inference, RAR retrieves the top-k similar results from the memory and uses MLLMs to rank and make the final predictions. Our proposed approach not only addresses the inherent limitations in fine-grained recognition but also preserves the model's comprehensive knowledge base, significantly boosting accuracy across a range of vision-language recognition tasks. Notably, our approach demonstrates a significant improvement in performance on 5 fine-grained visual recognition benchmarks, 11 few-shot image recognition datasets, and the 2 object detection datasets under the zero-shot recognition setting.","description":"RAR combines CLIP retrieval with MLLM reranking to recognize fine-grained categories without placing an entire large vocabulary into the language model's context."}</script>
+<script src="../assets/main.min.js" defer></script>
+</head>
+<body class="paper-page">
+<nav class="main-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="../index.html" class="brand-link">Yuhang Zang</a>
+      </div>
+      <button class="mobile-menu-toggle" type="button" aria-label="Toggle navigation menu" aria-controls="nav-menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <div class="nav-menu" id="nav-menu" aria-hidden="true">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../research.html" class="nav-link active" aria-current="location">Publications</a>
+        <a href="../index.html#services" class="nav-link">Services</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" title="Toggle dark mode" aria-label="Toggle dark mode" aria-pressed="false">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+<main class="paper-detail">
+  <article class="papers-section">
+    <p class="paper-detail-kicker">TIP · 2026</p>
+    <h1 class="section-heading">RAR: Retrieving And Ranking Augmented MLLMs for Visual Recognition</h1>
+    <p class="paper-detail-authors author-names">Ziyu Liu, Zeyi Sun, <strong class="author-highlight">Yuhang Zang</strong><span class="paper-corresponding author-annotation corresponding" role="img" aria-label="Corresponding author" title="Corresponding author"><svg class="paper-envelope" viewBox="0 0 16 12" aria-hidden="true"><path fill="currentColor" d="M1 0h14a1 1 0 0 1 1 1v1L8 7 0 2V1a1 1 0 0 1 1-1ZM0 4l8 5 8-5v7a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1Z"/></svg><span class="paper-sr-only">(corresponding author)</span></span>, Wei Li, Pan Zhang, Xiaoyi Dong, Yuanjun Xiong, Dahua Lin, Jiaqi Wang<span class="paper-corresponding author-annotation corresponding" role="img" aria-label="Corresponding author" title="Corresponding author"><svg class="paper-envelope" viewBox="0 0 16 12" aria-hidden="true"><path fill="currentColor" d="M1 0h14a1 1 0 0 1 1 1v1L8 7 0 2V1a1 1 0 0 1 1-1ZM0 4l8 5 8-5v7a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1Z"/></svg><span class="paper-sr-only">(corresponding author)</span></span></p>
+    <p class="paper-detail-note paper-author-legend"><svg class="paper-envelope" viewBox="0 0 16 12" aria-hidden="true"><path fill="currentColor" d="M1 0h14a1 1 0 0 1 1 1v1L8 7 0 2V1a1 1 0 0 1 1-1ZM0 4l8 5 8-5v7a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1Z"/></svg> Corresponding author</p>
+    <section class="paper-takeaway" aria-labelledby="takeaway-heading">
+      <h2 id="takeaway-heading">Key takeaway</h2>
+      <p>RAR combines CLIP retrieval with MLLM reranking to recognize fine-grained categories without placing an entire large vocabulary into the language model&#39;s context. <a href="https://arxiv.org/abs/2403.13805v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="abstract-heading">
+      <h2 id="abstract-heading">Abstract</h2>
+      <p>CLIP (Contrastive Language-Image Pre-training) uses contrastive learning from noise image-text pairs to excel at recognizing a wide array of candidates, yet its focus on broad associations hinders the precision in distinguishing subtle differences among fine-grained items. Conversely, Multimodal Large Language Models (MLLMs) excel at classifying fine-grained categories, thanks to their substantial knowledge from pre-training on web-level corpora. However, the performance of MLLMs declines with an increase in category numbers, primarily due to growing complexity and constraints of limited context window size. To synergize the strengths of both approaches and enhance the few-shot/zero-shot recognition abilities for datasets characterized by extensive and fine-grained vocabularies, this paper introduces RAR, a Retrieving And Ranking augmented method for MLLMs. We initially establish a multi-modal retriever based on CLIP to create and store explicit memory for different categories beyond the immediate context window. During inference, RAR retrieves the top-k similar results from the memory and uses MLLMs to rank and make the final predictions. Our proposed approach not only addresses the inherent limitations in fine-grained recognition but also preserves the model&#39;s comprehensive knowledge base, significantly boosting accuracy across a range of vision-language recognition tasks. Notably, our approach demonstrates a significant improvement in performance on 5 fine-grained visual recognition benchmarks, 11 few-shot image recognition datasets, and the 2 object detection datasets under the zero-shot recognition setting.</p>
+      <p class="paper-detail-note">Author abstract · <a href="https://arxiv.org/abs/2403.13805v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="publication-heading">
+      <h2 id="publication-heading">Publication</h2>
+      <p>IEEE Transactions on Image Processing (TIP), 2026</p>
+
+    </section>
+    <section aria-labelledby="resources-heading">
+      <h2 id="resources-heading">Paper and resources</h2>
+      <ul class="paper-detail-resources">
+        <li><a href="https://arxiv.org/pdf/2403.13805v2">Paper · arXiv v2 (PDF)</a></li>
+        <li><a href="https://arxiv.org/abs/2403.13805">arXiv:2403.13805</a></li>
+        <li><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=hW23VKIAAAAJ&amp;citation_for_view=hW23VKIAAAAJ:LkGwnXOMwfcC">Google Scholar</a></li>
+        <li><a href="https://github.com/Liuziyu77/RAR">Code · Liuziyu77/RAR</a></li>
+      </ul>
+    </section>
+    <section aria-labelledby="topics-heading">
+      <h2 id="topics-heading">Research topics</h2>
+      <p class="paper-keywords">RAR · Retrieval-augmented recognition · Multimodal reranking · Fine-grained classification · CLIP · Few-shot recognition · Zero-shot recognition · Category memory</p>
+    </section>
+    <section aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Research problem and approach</h2>
+      <p>CLIP scales to many categories but can miss subtle distinctions, whereas MLLMs struggle with large candidate sets. RAR retrieves a small set of relevant category memories and lets the MLLM rank them. <a href="https://arxiv.org/abs/2403.13805v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="contributions-heading">
+      <h2 id="contributions-heading">Main contributions</h2>
+      <ul class="paper-detail-resources"><li>Builds an explicit multimodal category memory outside the immediate context window. <a href="https://arxiv.org/abs/2403.13805v2">arXiv abstract · v2</a></li>
+<li>Separates scalable candidate retrieval from fine-grained semantic classification. <a href="https://arxiv.org/abs/2403.13805v2">arXiv abstract · v2</a></li></ul>
+    </section>
+    <section aria-labelledby="method-comparison-heading">
+      <h2 id="method-comparison-heading">Method comparison</h2>
+      <div class="paper-results-scroll" role="region" aria-label="Method comparison table" tabindex="0">
+        <table class="paper-methods paper-methods-compact">
+          <thead><tr><th scope="col">Approach</th><th scope="col">Key difference</th></tr></thead>
+          <tbody><tr><th scope="row">CLIP category matching</th><td>Scales to large candidate vocabularies but can miss fine-grained distinctions.</td></tr>
+<tr><th scope="row">Direct MLLM classification</th><td>Offers semantic reasoning but is constrained by large candidate sets in the context window.</td></tr>
+<tr><th scope="row">RAR</th><td>Uses CLIP to retrieve category memories and an MLLM to rerank the selected candidates.</td></tr></tbody>
+        </table>
+      </div>
+      <p class="paper-detail-note"><a href="https://arxiv.org/abs/2403.13805v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="results-heading">
+      <h2 id="results-heading">Selected results</h2>
+      <ul class="paper-detail-resources"><li>Across five fine-grained datasets, RAR achieves 58.5% average clustering accuracy and 65.3% semantic-similarity accuracy, compared with FineR’s 57.0% and 64.3%. <a href="https://arxiv.org/html/2403.13805v2#S4.T2">Table II · fine-grained recognition · arXiv v2</a></li>
+<li>Using CLIP ViT-L/14@336 features and LLaVA-1.5 reranking, RAR raises average top-1 accuracy across 11 datasets from 65.0% to 69.9% in the 4-shot setting and from 70.8% to 75.5% in the 8-shot setting. <a href="https://arxiv.org/html/2403.13805v2#S4.T4">Table IV · CLIP ViT-L/14@336 retrieval · arXiv v2</a></li></ul>
+    </section>
+
+    <section aria-labelledby="citation-heading">
+      <h2 id="citation-heading">Cite this paper</h2>
+      <p>Ziyu Liu, Zeyi Sun, Yuhang Zang, Wei Li, Pan Zhang, Xiaoyi Dong, Yuanjun Xiong, Dahua Lin, Jiaqi Wang. RAR: Retrieving and Ranking Augmented MLLMs for Visual Recognition. IEEE Transactions on Image Processing, 35, 2026, pp. 388–401.</p>
+
+
+      <div class="paper-citation-actions">
+        <button class="paper-copy-button" type="button" data-copy-target="paper-bibtex-content" aria-describedby="bibtex-copy-status" hidden>Copy to clipboard</button>
+        <a href="arxiv-2403.13805.bib" download>Download BibTeX</a>
+        <a href="https://doi.org/10.1109/tip.2025.3644175">TIP publisher record</a>
+      </div>
+      <p id="bibtex-copy-status" class="paper-detail-note" role="status" aria-live="polite"></p>
+      <pre class="paper-bibtex"><code id="paper-bibtex-content">@article{arxiv240313805,
+  title     = {{RAR: Retrieving and Ranking Augmented MLLMs for Visual Recognition}},
+  author    = {Ziyu Liu and Zeyi Sun and Yuhang Zang and Wei Li and Pan Zhang and Xiaoyi Dong and Yuanjun Xiong and Dahua Lin and Jiaqi Wang},
+  journal   = {IEEE Transactions on Image Processing},
+  year      = {2026},
+  volume    = {35},
+  publisher = {Institute of Electrical and Electronics Engineers (IEEE)},
+  pages     = {388--401},
+  doi       = {10.1109/tip.2025.3644175},
+  url       = {https://doi.org/10.1109/tip.2025.3644175}
+}
+</code></pre>
+    </section>
+  <footer class="paper-detail-footer"><a href="../research.html">← All publications</a></footer>
+  </article>
+</main>
+</body>
+</html>

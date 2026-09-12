@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!-- Generated from data/publications.json. Edit the shared data and rebuild. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MMDU: A Multi-Turn Multi-Image Dialog Understanding Benchmark and Instruction-Tuning Dataset for LVLMs | Yuhang Zang</title>
+<meta name="description" content="MMDU evaluates sustained multi-image dialogue, while MMDU-45k provides instruction data that helps open LVLMs close the conversational gap identified by the benchmark.">
+<link rel="canonical" href="https://yuhangzang.github.io/papers/arxiv-2406.11833.html">
+<meta name="citation_title" content="MMDU: A Multi-Turn Multi-Image Dialog Understanding Benchmark and Instruction-Tuning Dataset for LVLMs">
+<meta name="citation_author" content="Ziyu Liu">
+<meta name="citation_author" content="Tao Chu">
+<meta name="citation_author" content="Yuhang Zang">
+<meta name="citation_author" content="Xilin Wei">
+<meta name="citation_author" content="Xiaoyi Dong">
+<meta name="citation_author" content="Pan Zhang">
+<meta name="citation_author" content="Zijian Liang">
+<meta name="citation_author" content="Yuanjun Xiong">
+<meta name="citation_author" content="Yu Qiao">
+<meta name="citation_author" content="Dahua Lin">
+<meta name="citation_author" content="Jiaqi Wang">
+<meta name="citation_publication_date" content="2024">
+<meta name="citation_arxiv_id" content="2406.11833">
+<meta name="citation_doi" content="10.52202/079017-0278">
+<meta name="citation_pdf_url" content="https://proceedings.neurips.cc/paper_files/paper/2024/file/1057053100de064a44286239724f7865-Paper-Datasets_and_Benchmarks_Track.pdf">
+<meta name="citation_conference_title" content="Advances in Neural Information Processing Systems">
+<meta name="citation_firstpage" content="8698">
+<meta name="citation_lastpage" content="8733">
+<meta name="citation_volume" content="37">
+
+<link rel="alternate" type="application/x-bibtex" href="arxiv-2406.11833.bib">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MMDU: A Multi-Turn Multi-Image Dialog Understanding Benchmark and Instruction-Tuning Dataset for LVLMs">
+<meta property="og:description" content="MMDU evaluates sustained multi-image dialogue, while MMDU-45k provides instruction data that helps open LVLMs close the conversational gap identified by the benchmark.">
+<meta property="og:url" content="https://yuhangzang.github.io/papers/arxiv-2406.11833.html">
+<link rel="icon" type="image/svg+xml" href="../imgs/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"></noscript>
+<script>
+try {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+} catch {}
+</script>
+<link rel="stylesheet" href="../main.min.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","@id":"https://yuhangzang.github.io/papers/arxiv-2406.11833.html#paper","name":"MMDU: A Multi-Turn Multi-Image Dialog Understanding Benchmark and Instruction-Tuning Dataset for LVLMs","author":[{"@type":"Person","name":"Ziyu Liu"},{"@type":"Person","name":"Tao Chu"},{"@type":"Person","name":"Yuhang Zang"},{"@type":"Person","name":"Xilin Wei"},{"@type":"Person","name":"Xiaoyi Dong"},{"@type":"Person","name":"Pan Zhang"},{"@type":"Person","name":"Zijian Liang"},{"@type":"Person","name":"Yuanjun Xiong"},{"@type":"Person","name":"Yu Qiao"},{"@type":"Person","name":"Dahua Lin"},{"@type":"Person","name":"Jiaqi Wang"}],"datePublished":"2024","url":"https://yuhangzang.github.io/papers/arxiv-2406.11833.html","sameAs":["https://papers.nips.cc/paper_files/paper/2024/hash/1057053100de064a44286239724f7865-Abstract-Datasets_and_Benchmarks_Track.html","https://arxiv.org/abs/2406.11833"],"identifier":[{"@type":"PropertyValue","propertyID":"arXiv","value":"2406.11833"},{"@type":"PropertyValue","propertyID":"DOI","value":"10.52202/079017-0278"}],"encoding":{"@type":"MediaObject","name":"Paper · arXiv v2","contentUrl":"https://arxiv.org/pdf/2406.11833v2","encodingFormat":"application/pdf"},"isPartOf":{"@type":"PublicationVolume","name":"Advances in Neural Information Processing Systems","volumeNumber":"37","isPartOf":{"@type":"CreativeWork","name":"Advances in Neural Information Processing Systems"}},"pageStart":8698,"pageEnd":8733,"keywords":["MMDU","MMDU-45k","Multi-turn dialogue","Multi-image understanding","Conversational instruction tuning","Long-context interaction","Multimodal benchmarks","Vision-language assistants"],"abstract":"Generating natural and meaningful responses to communicate with multi-modal human inputs is a fundamental capability of Large Vision-Language Models(LVLMs). While current open-source LVLMs demonstrate promising performance in simplified scenarios such as single-turn single-image input, they fall short in real-world conversation scenarios such as following instructions in a long context history with multi-turn and multi-images. Existing LVLM benchmarks primarily focus on single-choice questions or short-form responses, which do not adequately assess the capabilities of LVLMs in real-world human-AI interaction applications. Therefore, we introduce MMDU, a comprehensive benchmark, and MMDU-45k, a large-scale instruction tuning dataset, designed to evaluate and improve LVLMs' abilities in multi-turn and multi-image conversations. We employ the clustering algorithm to find the relevant images and textual descriptions from the open-source Wikipedia and construct the question-answer pairs by human annotators with the assistance of the GPT-4o model. MMDU has a maximum of 18k image+text tokens, 20 images, and 27 turns, which is at least 5x longer than previous benchmarks and poses challenges to current LVLMs. Our in-depth analysis of 15 representative LVLMs using MMDU reveals that open-source LVLMs lag behind closed-source counterparts due to limited conversational instruction tuning data. We demonstrate that fine-tuning open-source LVLMs on MMDU-45k significantly address this gap, generating longer and more accurate conversations, and improving scores on MMDU and existing benchmarks (MMStar: +1.1%, MathVista: +1.5%, ChartQA:+1.2%). Our contributions pave the way for bridging the gap between current LVLM models and real-world application demands. This project is available at https://github.com/Liuziyu77/MMDU.","description":"MMDU evaluates sustained multi-image dialogue, while MMDU-45k provides instruction data that helps open LVLMs close the conversational gap identified by the benchmark."}</script>
+<script src="../assets/main.min.js" defer></script>
+</head>
+<body class="paper-page">
+<nav class="main-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="../index.html" class="brand-link">Yuhang Zang</a>
+      </div>
+      <button class="mobile-menu-toggle" type="button" aria-label="Toggle navigation menu" aria-controls="nav-menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <div class="nav-menu" id="nav-menu" aria-hidden="true">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../research.html" class="nav-link active" aria-current="location">Publications</a>
+        <a href="../index.html#services" class="nav-link">Services</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" title="Toggle dark mode" aria-label="Toggle dark mode" aria-pressed="false">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+<main class="paper-detail">
+  <article class="papers-section">
+    <p class="paper-detail-kicker">NeurIPS · 2024</p>
+    <h1 class="section-heading">MMDU: A Multi-Turn Multi-Image Dialog Understanding Benchmark and Instruction-Tuning Dataset for LVLMs</h1>
+    <p class="paper-detail-authors author-names">Ziyu Liu, Tao Chu, <strong class="author-highlight">Yuhang Zang</strong><span class="paper-corresponding author-annotation corresponding" role="img" aria-label="Corresponding author" title="Corresponding author"><svg class="paper-envelope" viewBox="0 0 16 12" aria-hidden="true"><path fill="currentColor" d="M1 0h14a1 1 0 0 1 1 1v1L8 7 0 2V1a1 1 0 0 1 1-1ZM0 4l8 5 8-5v7a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1Z"/></svg><span class="paper-sr-only">(corresponding author)</span></span>, Xilin Wei, Xiaoyi Dong, Pan Zhang, Zijian Liang, Yuanjun Xiong, Yu Qiao, Dahua Lin, Jiaqi Wang<span class="paper-corresponding author-annotation corresponding" role="img" aria-label="Corresponding author" title="Corresponding author"><svg class="paper-envelope" viewBox="0 0 16 12" aria-hidden="true"><path fill="currentColor" d="M1 0h14a1 1 0 0 1 1 1v1L8 7 0 2V1a1 1 0 0 1 1-1ZM0 4l8 5 8-5v7a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1Z"/></svg><span class="paper-sr-only">(corresponding author)</span></span></p>
+    <p class="paper-detail-note paper-author-legend"><svg class="paper-envelope" viewBox="0 0 16 12" aria-hidden="true"><path fill="currentColor" d="M1 0h14a1 1 0 0 1 1 1v1L8 7 0 2V1a1 1 0 0 1 1-1ZM0 4l8 5 8-5v7a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1Z"/></svg> Corresponding author</p>
+    <section class="paper-takeaway" aria-labelledby="takeaway-heading">
+      <h2 id="takeaway-heading">Key takeaway</h2>
+      <p>MMDU evaluates sustained multi-image dialogue, while MMDU-45k provides instruction data that helps open LVLMs close the conversational gap identified by the benchmark. <a href="https://arxiv.org/abs/2406.11833v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="abstract-heading">
+      <h2 id="abstract-heading">Abstract</h2>
+      <p>Generating natural and meaningful responses to communicate with multi-modal human inputs is a fundamental capability of Large Vision-Language Models(LVLMs). While current open-source LVLMs demonstrate promising performance in simplified scenarios such as single-turn single-image input, they fall short in real-world conversation scenarios such as following instructions in a long context history with multi-turn and multi-images. Existing LVLM benchmarks primarily focus on single-choice questions or short-form responses, which do not adequately assess the capabilities of LVLMs in real-world human-AI interaction applications. Therefore, we introduce MMDU, a comprehensive benchmark, and MMDU-45k, a large-scale instruction tuning dataset, designed to evaluate and improve LVLMs&#39; abilities in multi-turn and multi-image conversations. We employ the clustering algorithm to find the relevant images and textual descriptions from the open-source Wikipedia and construct the question-answer pairs by human annotators with the assistance of the GPT-4o model. MMDU has a maximum of 18k image+text tokens, 20 images, and 27 turns, which is at least 5x longer than previous benchmarks and poses challenges to current LVLMs. Our in-depth analysis of 15 representative LVLMs using MMDU reveals that open-source LVLMs lag behind closed-source counterparts due to limited conversational instruction tuning data. We demonstrate that fine-tuning open-source LVLMs on MMDU-45k significantly address this gap, generating longer and more accurate conversations, and improving scores on MMDU and existing benchmarks (MMStar: +1.1%, MathVista: +1.5%, ChartQA:+1.2%). Our contributions pave the way for bridging the gap between current LVLM models and real-world application demands. This project is available at https://github.com/Liuziyu77/MMDU.</p>
+      <p class="paper-detail-note">Author abstract · <a href="https://arxiv.org/abs/2406.11833v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="publication-heading">
+      <h2 id="publication-heading">Publication</h2>
+      <p>Neural Information Processing Systems (NeurIPS), 2024 (Datasets and Benchmarks Track)</p>
+
+    </section>
+    <section aria-labelledby="resources-heading">
+      <h2 id="resources-heading">Paper and resources</h2>
+      <ul class="paper-detail-resources">
+        <li><a href="https://arxiv.org/pdf/2406.11833v2">Paper · arXiv v2 (PDF)</a></li>
+        <li><a href="https://arxiv.org/abs/2406.11833">arXiv:2406.11833</a></li>
+        <li><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=hW23VKIAAAAJ&amp;citation_for_view=hW23VKIAAAAJ:Zph67rFs4hoC">Google Scholar</a></li>
+        <li><a href="https://github.com/Liuziyu77/MMDU">Code · Liuziyu77/MMDU</a></li>
+        <li><a href="https://liuziyu77.github.io/MMDU/">Project website</a></li>
+        <li><a href="https://huggingface.co/datasets/laolao77/MMDU">Hugging Face · Dataset</a></li>
+      </ul>
+    </section>
+    <section aria-labelledby="topics-heading">
+      <h2 id="topics-heading">Research topics</h2>
+      <p class="paper-keywords">MMDU · MMDU-45k · Multi-turn dialogue · Multi-image understanding · Conversational instruction tuning · Long-context interaction · Multimodal benchmarks · Vision-language assistants</p>
+    </section>
+    <section aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Research problem and approach</h2>
+      <p>Single-turn or short-answer benchmarks underrepresent real multimodal conversations. MMDU uses related Wikipedia images and descriptions to construct longer dialogues with human annotation and GPT-4o assistance. <a href="https://arxiv.org/abs/2406.11833v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="contributions-heading">
+      <h2 id="contributions-heading">Main contributions</h2>
+      <ul class="paper-detail-resources"><li>Introduces a benchmark reaching 18K image-plus-text tokens, 20 images and 27 turns. <a href="https://arxiv.org/abs/2406.11833v2">arXiv abstract · v2</a></li>
+<li>Builds MMDU-45k for instruction tuning and evaluates 15 representative LVLMs. <a href="https://arxiv.org/abs/2406.11833v2">arXiv abstract · v2</a></li></ul>
+    </section>
+    <section aria-labelledby="method-comparison-heading">
+      <h2 id="method-comparison-heading">Method comparison</h2>
+      <div class="paper-results-scroll" role="region" aria-label="Method comparison table" tabindex="0">
+        <table class="paper-methods paper-methods-compact">
+          <thead><tr><th scope="col">Approach</th><th scope="col">Key difference</th></tr></thead>
+          <tbody><tr><th scope="row">Single-turn or short-response evaluation</th><td>Underrepresents sustained conversations with multiple images and a long interaction history.</td></tr>
+<tr><th scope="row">MMDU</th><td>Evaluates long multi-turn, multi-image dialogue and supplies MMDU-45k to improve these skills.</td></tr></tbody>
+        </table>
+      </div>
+      <p class="paper-detail-note"><a href="https://arxiv.org/abs/2406.11833v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="results-heading">
+      <h2 id="results-heading">Selected results</h2>
+      <ul class="paper-detail-resources"><li>Adding MMDU-45k raises InternLM-XComposer2’s MMDU average from 35.6 to 50.1, including image-relationship understanding from 35.2 to 48.7. LLaVA-1.5-7B improves from 32.2 to 37.2 overall. <a href="https://arxiv.org/html/2406.11833v2#S4.T2">Table 2 · dialogue fine-tuning · arXiv v2</a></li>
+<li>For LLaVA-1.5, training with MMDU-45k raises BLINK from 37.1 to 40.1 and Mantis in the image-sequence setting from 37.8 to 44.7. This tests transfer beyond the MMDU benchmark itself. <a href="https://arxiv.org/html/2406.11833v2#S4.T4.fig1">Table 4 · transfer to multi-image benchmarks · arXiv v2</a></li></ul>
+    </section>
+
+    <section aria-labelledby="citation-heading">
+      <h2 id="citation-heading">Cite this paper</h2>
+      <p>Ziyu Liu, Tao Chu, Yuhang Zang, Xilin Wei, Xiaoyi Dong, Pan Zhang, Zijian Liang, Yuanjun Xiong, Yu Qiao, Dahua Lin, Jiaqi Wang. MMDU: A Multi-Turn Multi-Image Dialog Understanding Benchmark and Instruction-Tuning Dataset for LVLMs. Advances in Neural Information Processing Systems, 37, 2024, pp. 8698–8733.</p>
+
+
+      <div class="paper-citation-actions">
+        <button class="paper-copy-button" type="button" data-copy-target="paper-bibtex-content" aria-describedby="bibtex-copy-status" hidden>Copy to clipboard</button>
+        <a href="arxiv-2406.11833.bib" download>Download BibTeX</a>
+        <a href="https://papers.nips.cc/paper_files/paper/2024/hash/1057053100de064a44286239724f7865-Abstract-Datasets_and_Benchmarks_Track.html">NeurIPS 2024 proceedings record</a>
+      </div>
+      <p id="bibtex-copy-status" class="paper-detail-note" role="status" aria-live="polite"></p>
+      <pre class="paper-bibtex"><code id="paper-bibtex-content">@inproceedings{arxiv240611833,
+  title     = {{MMDU: A Multi-Turn Multi-Image Dialog Understanding Benchmark and Instruction-Tuning Dataset for LVLMs}},
+  author    = {Ziyu Liu and Tao Chu and Yuhang Zang and Xilin Wei and Xiaoyi Dong and Pan Zhang and Zijian Liang and Yuanjun Xiong and Yu Qiao and Dahua Lin and Jiaqi Wang},
+  booktitle = {Advances in Neural Information Processing Systems},
+  year      = {2024},
+  volume    = {37},
+  publisher = {Curran Associates, Inc.},
+  pages     = {8698--8733},
+  doi       = {10.52202/079017-0278},
+  url       = {https://papers.nips.cc/paper_files/paper/2024/hash/1057053100de064a44286239724f7865-Abstract-Datasets_and_Benchmarks_Track.html}
+}
+</code></pre>
+    </section>
+  <footer class="paper-detail-footer"><a href="../research.html">← All publications</a></footer>
+  </article>
+</main>
+</body>
+</html>

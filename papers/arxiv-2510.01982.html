@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!-- Generated from data/publications.json. Edit the shared data and rebuild. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fine-Grained GRPO for Precise Preference Alignment in Flow Models | Yuhang Zang</title>
+<meta name="description" content="G²RPO improves credit assignment in flow-model reinforcement learning by isolating stochastic perturbations and integrating advantages across multiple denoising granularities.">
+<link rel="canonical" href="https://yuhangzang.github.io/papers/arxiv-2510.01982.html">
+<meta name="citation_title" content="Fine-Grained GRPO for Precise Preference Alignment in Flow Models">
+<meta name="citation_author" content="Yujie Zhou">
+<meta name="citation_author" content="Pengyang Ling">
+<meta name="citation_author" content="Jiazi Bu">
+<meta name="citation_author" content="Yibin Wang">
+<meta name="citation_author" content="Yuhang Zang">
+<meta name="citation_author" content="Jiaqi Wang">
+<meta name="citation_author" content="Li Niu">
+<meta name="citation_author" content="Guangtao Zhai">
+<meta name="citation_publication_date" content="2026">
+<meta name="citation_arxiv_id" content="2510.01982">
+
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/CVPR2026/papers/Zhou_Fine-Grained_GRPO_for_Precise_Preference_Alignment_in_Flow_Models_CVPR_2026_paper.pdf">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)">
+<meta name="citation_firstpage" content="20045">
+<meta name="citation_lastpage" content="20054">
+
+
+<link rel="alternate" type="application/x-bibtex" href="arxiv-2510.01982.bib">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fine-Grained GRPO for Precise Preference Alignment in Flow Models">
+<meta property="og:description" content="G²RPO improves credit assignment in flow-model reinforcement learning by isolating stochastic perturbations and integrating advantages across multiple denoising granularities.">
+<meta property="og:url" content="https://yuhangzang.github.io/papers/arxiv-2510.01982.html">
+<link rel="icon" type="image/svg+xml" href="../imgs/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"></noscript>
+<script>
+try {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+} catch {}
+</script>
+<link rel="stylesheet" href="../main.min.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","@id":"https://yuhangzang.github.io/papers/arxiv-2510.01982.html#paper","name":"Fine-Grained GRPO for Precise Preference Alignment in Flow Models","author":[{"@type":"Person","name":"Yujie Zhou"},{"@type":"Person","name":"Pengyang Ling"},{"@type":"Person","name":"Jiazi Bu"},{"@type":"Person","name":"Yibin Wang"},{"@type":"Person","name":"Yuhang Zang"},{"@type":"Person","name":"Jiaqi Wang"},{"@type":"Person","name":"Li Niu"},{"@type":"Person","name":"Guangtao Zhai"}],"datePublished":"2026","url":"https://yuhangzang.github.io/papers/arxiv-2510.01982.html","sameAs":["https://openaccess.thecvf.com/content/CVPR2026/html/Zhou_Fine-Grained_GRPO_for_Precise_Preference_Alignment_in_Flow_Models_CVPR_2026_paper.html","https://arxiv.org/abs/2510.01982"],"identifier":{"@type":"PropertyValue","propertyID":"arXiv","value":"2510.01982"},"encoding":{"@type":"MediaObject","name":"Paper · arXiv v3","contentUrl":"https://arxiv.org/pdf/2510.01982v3","encodingFormat":"application/pdf"},"isPartOf":{"@type":"CreativeWork","name":"Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)"},"pageStart":20045,"pageEnd":20054,"keywords":["G²RPO","Granular-GRPO","Flow models","Preference alignment","Credit assignment","Stochastic sampling","Multi-granularity advantages","Diffusion reinforcement learning"],"abstract":"The incorporation of online reinforcement learning (RL) into diffusion and flow-based generative models has recently gained attention as a powerful paradigm for aligning model behavior with human preferences. By leveraging stochastic sampling via Stochastic Differential Equations (SDEs) during the denoising phase, these models can explore a variety of denoising trajectories, enhancing the exploratory capacity of RL. However, despite their ability to discover potentially high-reward samples, current approaches often struggle to effectively align with preferences due to the sparsity and narrowness of reward feedback. To overcome this limitation, we introduce a novel framework called Granular-GRPO (G²RPO), which enables fine-grained and comprehensive evaluation of sampling directions in the RL training of flow models. Specifically, we propose a Singular Stochastic Sampling mechanism that supports step-wise stochastic exploration while ensuring strong correlation between injected noise and reward signals, enabling more accurate credit assignment to each SDE perturbation. Additionally, to mitigate the bias introduced by fixed-granularity denoising, we design a Multi-Granularity Advantage Integration module that aggregates advantages computed across multiple diffusion scales, resulting in a more robust and holistic assessment of sampling trajectories. Extensive experiments on various reward models, including both in-domain and out-of-domain settings, demonstrate that our G²RPO outperforms existing flow-based GRPO baselines, highlighting its effectiveness and generalization capability.","description":"G²RPO improves credit assignment in flow-model reinforcement learning by isolating stochastic perturbations and integrating advantages across multiple denoising granularities."}</script>
+<script src="../assets/main.min.js" defer></script>
+</head>
+<body class="paper-page">
+<nav class="main-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="../index.html" class="brand-link">Yuhang Zang</a>
+      </div>
+      <button class="mobile-menu-toggle" type="button" aria-label="Toggle navigation menu" aria-controls="nav-menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <div class="nav-menu" id="nav-menu" aria-hidden="true">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../research.html" class="nav-link active" aria-current="location">Publications</a>
+        <a href="../index.html#services" class="nav-link">Services</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" title="Toggle dark mode" aria-label="Toggle dark mode" aria-pressed="false">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+<main class="paper-detail">
+  <article class="papers-section">
+    <p class="paper-detail-kicker">CVPR · 2026</p>
+    <h1 class="section-heading">Fine-Grained GRPO for Precise Preference Alignment in Flow Models</h1>
+    <p class="paper-detail-authors author-names">Yujie Zhou, Pengyang Ling, Jiazi Bu, Yibin Wang, <strong class="author-highlight">Yuhang Zang</strong>, Jiaqi Wang, Li Niu, Guangtao Zhai</p>
+
+    <section class="paper-takeaway" aria-labelledby="takeaway-heading">
+      <h2 id="takeaway-heading">Key takeaway</h2>
+      <p>G²RPO improves credit assignment in flow-model reinforcement learning by isolating stochastic perturbations and integrating advantages across multiple denoising granularities. <a href="https://arxiv.org/abs/2510.01982v3">arXiv abstract · v3</a></p>
+    </section>
+    <section aria-labelledby="abstract-heading">
+      <h2 id="abstract-heading">Abstract</h2>
+      <p>The incorporation of online reinforcement learning (RL) into diffusion and flow-based generative models has recently gained attention as a powerful paradigm for aligning model behavior with human preferences. By leveraging stochastic sampling via Stochastic Differential Equations (SDEs) during the denoising phase, these models can explore a variety of denoising trajectories, enhancing the exploratory capacity of RL. However, despite their ability to discover potentially high-reward samples, current approaches often struggle to effectively align with preferences due to the sparsity and narrowness of reward feedback. To overcome this limitation, we introduce a novel framework called Granular-GRPO (G²RPO), which enables fine-grained and comprehensive evaluation of sampling directions in the RL training of flow models. Specifically, we propose a Singular Stochastic Sampling mechanism that supports step-wise stochastic exploration while ensuring strong correlation between injected noise and reward signals, enabling more accurate credit assignment to each SDE perturbation. Additionally, to mitigate the bias introduced by fixed-granularity denoising, we design a Multi-Granularity Advantage Integration module that aggregates advantages computed across multiple diffusion scales, resulting in a more robust and holistic assessment of sampling trajectories. Extensive experiments on various reward models, including both in-domain and out-of-domain settings, demonstrate that our G²RPO outperforms existing flow-based GRPO baselines, highlighting its effectiveness and generalization capability.</p>
+      <p class="paper-detail-note">Author abstract · <a href="https://arxiv.org/abs/2510.01982v3">arXiv abstract · v3</a></p>
+    </section>
+    <section aria-labelledby="publication-heading">
+      <h2 id="publication-heading">Publication</h2>
+      <p>IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2026</p>
+
+    </section>
+    <section aria-labelledby="resources-heading">
+      <h2 id="resources-heading">Paper and resources</h2>
+      <ul class="paper-detail-resources">
+        <li><a href="https://arxiv.org/pdf/2510.01982v3">Paper · arXiv v3 (PDF)</a></li>
+        <li><a href="https://arxiv.org/abs/2510.01982">arXiv:2510.01982</a></li>
+        <li><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=hW23VKIAAAAJ&amp;citation_for_view=hW23VKIAAAAJ:PELIpwtuRlgC">Google Scholar</a></li>
+        <li><a href="https://github.com/bcmi/Granular-GRPO">Code · bcmi/Granular-GRPO</a></li>
+      </ul>
+    </section>
+    <section aria-labelledby="topics-heading">
+      <h2 id="topics-heading">Research topics</h2>
+      <p class="paper-keywords">G²RPO · Granular-GRPO · Flow models · Preference alignment · Credit assignment · Stochastic sampling · Multi-granularity advantages · Diffusion reinforcement learning</p>
+    </section>
+    <section aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Research problem and approach</h2>
+      <p>Sparse and narrow reward feedback can obscure which denoising decisions produced a good sample. Granular-GRPO evaluates sampling directions more precisely and combines evidence from multiple diffusion scales. <a href="https://arxiv.org/abs/2510.01982v3">arXiv abstract · v3</a></p>
+    </section>
+    <section aria-labelledby="contributions-heading">
+      <h2 id="contributions-heading">Main contributions</h2>
+      <ul class="paper-detail-resources"><li>Introduces Singular Stochastic Sampling to strengthen the connection between injected noise and rewards. <a href="https://arxiv.org/abs/2510.01982v3">arXiv abstract · v3</a></li>
+<li>Aggregates advantages using Multi-Granularity Advantage Integration. <a href="https://arxiv.org/abs/2510.01982v3">arXiv abstract · v3</a></li></ul>
+    </section>
+    <section aria-labelledby="method-comparison-heading">
+      <h2 id="method-comparison-heading">Method comparison</h2>
+      <div class="paper-results-scroll" role="region" aria-label="Method comparison table" tabindex="0">
+        <table class="paper-methods paper-methods-compact">
+          <thead><tr><th scope="col">Approach</th><th scope="col">Key difference</th></tr></thead>
+          <tbody><tr><th scope="row">Fixed-granularity flow-model GRPO</th><td>Can leave reward feedback sparse and obscure the contribution of individual stochastic perturbations.</td></tr>
+<tr><th scope="row">G²RPO</th><td>Isolates stochastic exploration and integrates advantages across denoising granularities for finer credit assignment.</td></tr></tbody>
+        </table>
+      </div>
+      <p class="paper-detail-note"><a href="https://arxiv.org/abs/2510.01982v3">arXiv abstract · v3</a></p>
+    </section>
+    <section aria-labelledby="results-heading">
+      <h2 id="results-heading">Selected results</h2>
+      <ul class="paper-detail-resources"><li>With joint HPS and CLIP rewards, G²RPO scores 0.376 HPS, 0.406 CLIP and 3.783 UnifiedReward, versus 0.363, 0.399 and 3.661 for MixGRPO. These are evaluator scores rather than task-accuracy percentages. <a href="https://arxiv.org/html/2510.01982v3#S4.T1">Table 1 · joint HPS and CLIP reward training · arXiv v3</a></li>
+<li>Using granularities {1,2,3} instead of {1} changes CLIP from 0.395 to 0.406 and UnifiedReward from 3.688 to 3.783. HPS is 0.376, slightly below the {1,3} setting’s 0.378, illustrating the multi-metric trade-off. <a href="https://arxiv.org/html/2510.01982v3#S4.T2">Table 2 · denoising-granularity ablation · arXiv v3</a></li></ul>
+    </section>
+
+    <section aria-labelledby="citation-heading">
+      <h2 id="citation-heading">Cite this paper</h2>
+      <p>Yujie Zhou, Pengyang Ling, Jiazi Bu, Yibin Wang, Yuhang Zang, Jiaqi Wang, Li Niu, Guangtao Zhai. Fine-Grained GRPO for Precise Preference Alignment in Flow Models. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2026, pp. 20045–20054.</p>
+
+
+      <div class="paper-citation-actions">
+        <button class="paper-copy-button" type="button" data-copy-target="paper-bibtex-content" aria-describedby="bibtex-copy-status" hidden>Copy to clipboard</button>
+        <a href="arxiv-2510.01982.bib" download>Download BibTeX</a>
+        <a href="https://openaccess.thecvf.com/content/CVPR2026/html/Zhou_Fine-Grained_GRPO_for_Precise_Preference_Alignment_in_Flow_Models_CVPR_2026_paper.html">CVPR 2026 proceedings record</a>
+      </div>
+      <p id="bibtex-copy-status" class="paper-detail-note" role="status" aria-live="polite"></p>
+      <pre class="paper-bibtex"><code id="paper-bibtex-content">@inproceedings{arxiv251001982,
+  title     = {{Fine-Grained GRPO for Precise Preference Alignment in Flow Models}},
+  author    = {Yujie Zhou and Pengyang Ling and Jiazi Bu and Yibin Wang and Yuhang Zang and Jiaqi Wang and Li Niu and Guangtao Zhai},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  month     = {June},
+  year      = {2026},
+  pages     = {20045--20054},
+  url       = {https://openaccess.thecvf.com/content/CVPR2026/html/Zhou_Fine-Grained_GRPO_for_Precise_Preference_Alignment_in_Flow_Models_CVPR_2026_paper.html}
+}
+</code></pre>
+    </section>
+  <footer class="paper-detail-footer"><a href="../research.html">← All publications</a></footer>
+  </article>
+</main>
+</body>
+</html>

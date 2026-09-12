@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!-- Generated from data/publications.json. Edit the shared data and rebuild. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TRivia: Self-supervised Fine-tuning of Vision-Language Models for Table Recognition | Yuhang Zang</title>
+<meta name="description" content="TRivia improves table recognition from unlabeled table images by rewarding whether recognized table content can correctly answer automatically generated questions.">
+<link rel="canonical" href="https://yuhangzang.github.io/papers/arxiv-2512.01248.html">
+<meta name="citation_title" content="TRivia: Self-supervised Fine-tuning of Vision-Language Models for Table Recognition">
+<meta name="citation_author" content="Junyuan Zhang">
+<meta name="citation_author" content="Bin Wang">
+<meta name="citation_author" content="Qintong Zhang">
+<meta name="citation_author" content="Fan Wu">
+<meta name="citation_author" content="Zichen Wen">
+<meta name="citation_author" content="Jialin Lu">
+<meta name="citation_author" content="Junjie Shan">
+<meta name="citation_author" content="Ziqi Zhao">
+<meta name="citation_author" content="Shuya Yang">
+<meta name="citation_author" content="Ziling Wang">
+<meta name="citation_author" content="Ziyang Miao">
+<meta name="citation_author" content="Huaping Zhong">
+<meta name="citation_author" content="Yuhang Zang">
+<meta name="citation_author" content="Xiaoyi Dong">
+<meta name="citation_author" content="Ka-Ho Chow">
+<meta name="citation_author" content="Conghui He">
+<meta name="citation_publication_date" content="2026">
+<meta name="citation_arxiv_id" content="2512.01248">
+
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/CVPR2026/papers/Zhang_TRivia_Self-supervised_Fine-tuning_of_Vision-Language_Models_for_Table_Recognition_CVPR_2026_paper.pdf">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)">
+<meta name="citation_firstpage" content="33196">
+<meta name="citation_lastpage" content="33206">
+
+
+<link rel="alternate" type="application/x-bibtex" href="arxiv-2512.01248.bib">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TRivia: Self-supervised Fine-tuning of Vision-Language Models for Table Recognition">
+<meta property="og:description" content="TRivia improves table recognition from unlabeled table images by rewarding whether recognized table content can correctly answer automatically generated questions.">
+<meta property="og:url" content="https://yuhangzang.github.io/papers/arxiv-2512.01248.html">
+<link rel="icon" type="image/svg+xml" href="../imgs/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"></noscript>
+<script>
+try {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+} catch {}
+</script>
+<link rel="stylesheet" href="../main.min.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","@id":"https://yuhangzang.github.io/papers/arxiv-2512.01248.html#paper","name":"TRivia: Self-supervised Fine-tuning of Vision-Language Models for Table Recognition","author":[{"@type":"Person","name":"Junyuan Zhang"},{"@type":"Person","name":"Bin Wang"},{"@type":"Person","name":"Qintong Zhang"},{"@type":"Person","name":"Fan Wu"},{"@type":"Person","name":"Zichen Wen"},{"@type":"Person","name":"Jialin Lu"},{"@type":"Person","name":"Junjie Shan"},{"@type":"Person","name":"Ziqi Zhao"},{"@type":"Person","name":"Shuya Yang"},{"@type":"Person","name":"Ziling Wang"},{"@type":"Person","name":"Ziyang Miao"},{"@type":"Person","name":"Huaping Zhong"},{"@type":"Person","name":"Yuhang Zang"},{"@type":"Person","name":"Xiaoyi Dong"},{"@type":"Person","name":"Ka-Ho Chow"},{"@type":"Person","name":"Conghui He"}],"datePublished":"2026","url":"https://yuhangzang.github.io/papers/arxiv-2512.01248.html","sameAs":["https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_TRivia_Self-supervised_Fine-tuning_of_Vision-Language_Models_for_Table_Recognition_CVPR_2026_paper.html","https://arxiv.org/abs/2512.01248"],"identifier":{"@type":"PropertyValue","propertyID":"arXiv","value":"2512.01248"},"encoding":{"@type":"MediaObject","name":"Paper · arXiv v2","contentUrl":"https://arxiv.org/pdf/2512.01248v2","encodingFormat":"application/pdf"},"isPartOf":{"@type":"CreativeWork","name":"Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)"},"pageStart":33196,"pageEnd":33206,"keywords":["TRivia","Table recognition","Document parsing","Self-supervised fine-tuning","Unlabeled table images","Question-answering rewards","GRPO","Structured document extraction"],"abstract":"Table recognition (TR) aims to transform table images into semi-structured representations such as HTML or Markdown. As a core component of document parsing, TR has long relied on supervised learning, with recent efforts dominated by fine-tuning vision-language models (VLMs) using labeled data. While VLMs have brought TR to the next level, pushing performance further demands large-scale labeled data that is costly to obtain. Consequently, although proprietary models have continuously pushed the performance boundary, open-source models, often trained with limited resources and, in practice, the only viable option for many due to privacy regulations, still lag far behind. To bridge this gap, we introduce TRivia, a self-supervised fine-tuning method that enables pretrained VLMs to learn TR directly from unlabeled table images in the wild. Built upon Group Relative Policy Optimization, TRivia automatically identifies unlabeled samples that most effectively facilitate learning and eliminates the need for human annotations through a question-answering-based reward mechanism. An attention-guided module generates diverse questions for each table image, and the ability to interpret the recognition results and answer them correctly provides feedback to optimize the TR model. This closed-loop process allows the TR model to autonomously learn to recognize, structure, and reason over tables without labeled data. Leveraging this pipeline, we present TRivia-3B, an open-sourced, compact, and state-of-the-art TR model that surpasses existing systems (e.g., Gemini 2.5 Pro, MinerU2.5) on three popular benchmarks. Model and code are released at: https://github.com/HKU-TASR/TRivia","description":"TRivia improves table recognition from unlabeled table images by rewarding whether recognized table content can correctly answer automatically generated questions."}</script>
+<script src="../assets/main.min.js" defer></script>
+</head>
+<body class="paper-page">
+<nav class="main-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="../index.html" class="brand-link">Yuhang Zang</a>
+      </div>
+      <button class="mobile-menu-toggle" type="button" aria-label="Toggle navigation menu" aria-controls="nav-menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <div class="nav-menu" id="nav-menu" aria-hidden="true">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../research.html" class="nav-link active" aria-current="location">Publications</a>
+        <a href="../index.html#services" class="nav-link">Services</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" title="Toggle dark mode" aria-label="Toggle dark mode" aria-pressed="false">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+<main class="paper-detail">
+  <article class="papers-section">
+    <p class="paper-detail-kicker">CVPR · 2026</p>
+    <h1 class="section-heading">TRivia: Self-supervised Fine-tuning of Vision-Language Models for Table Recognition</h1>
+    <p class="paper-detail-authors author-names">Junyuan Zhang, Bin Wang, Qintong Zhang, Fan Wu, Zichen Wen, Jialin Lu, Junjie Shan, Ziqi Zhao, Shuya Yang, Ziling Wang, Ziyang Miao, Huaping Zhong, <strong class="author-highlight">Yuhang Zang</strong>, Xiaoyi Dong, Ka-Ho Chow, Conghui He</p>
+
+    <section class="paper-takeaway" aria-labelledby="takeaway-heading">
+      <h2 id="takeaway-heading">Key takeaway</h2>
+      <p>TRivia improves table recognition from unlabeled table images by rewarding whether recognized table content can correctly answer automatically generated questions. <a href="https://arxiv.org/abs/2512.01248v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="abstract-heading">
+      <h2 id="abstract-heading">Abstract</h2>
+      <p>Table recognition (TR) aims to transform table images into semi-structured representations such as HTML or Markdown. As a core component of document parsing, TR has long relied on supervised learning, with recent efforts dominated by fine-tuning vision-language models (VLMs) using labeled data. While VLMs have brought TR to the next level, pushing performance further demands large-scale labeled data that is costly to obtain. Consequently, although proprietary models have continuously pushed the performance boundary, open-source models, often trained with limited resources and, in practice, the only viable option for many due to privacy regulations, still lag far behind. To bridge this gap, we introduce TRivia, a self-supervised fine-tuning method that enables pretrained VLMs to learn TR directly from unlabeled table images in the wild. Built upon Group Relative Policy Optimization, TRivia automatically identifies unlabeled samples that most effectively facilitate learning and eliminates the need for human annotations through a question-answering-based reward mechanism. An attention-guided module generates diverse questions for each table image, and the ability to interpret the recognition results and answer them correctly provides feedback to optimize the TR model. This closed-loop process allows the TR model to autonomously learn to recognize, structure, and reason over tables without labeled data. Leveraging this pipeline, we present TRivia-3B, an open-sourced, compact, and state-of-the-art TR model that surpasses existing systems (e.g., Gemini 2.5 Pro, MinerU2.5) on three popular benchmarks. Model and code are released at: https://github.com/HKU-TASR/TRivia</p>
+      <p class="paper-detail-note">Author abstract · <a href="https://arxiv.org/abs/2512.01248v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="publication-heading">
+      <h2 id="publication-heading">Publication</h2>
+      <p>IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2026</p>
+
+    </section>
+    <section aria-labelledby="resources-heading">
+      <h2 id="resources-heading">Paper and resources</h2>
+      <ul class="paper-detail-resources">
+        <li><a href="https://arxiv.org/pdf/2512.01248v2">Paper · arXiv v2 (PDF)</a></li>
+        <li><a href="https://arxiv.org/abs/2512.01248">arXiv:2512.01248</a></li>
+        <li><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=hW23VKIAAAAJ&amp;citation_for_view=hW23VKIAAAAJ:t6usbXjVLHcC">Google Scholar</a></li>
+        <li><a href="https://github.com/opendatalab/TRivia">Code · opendatalab/TRivia</a></li>
+      </ul>
+    </section>
+    <section aria-labelledby="topics-heading">
+      <h2 id="topics-heading">Research topics</h2>
+      <p class="paper-keywords">TRivia · Table recognition · Document parsing · Self-supervised fine-tuning · Unlabeled table images · Question-answering rewards · GRPO · Structured document extraction</p>
+    </section>
+    <section aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Research problem and approach</h2>
+      <p>High-quality table recognition normally requires costly labeled images. TRivia creates a self-supervised loop that selects informative samples, generates attention-guided questions and uses question-answering feedback to train the recognizer. <a href="https://arxiv.org/abs/2512.01248v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="contributions-heading">
+      <h2 id="contributions-heading">Main contributions</h2>
+      <ul class="paper-detail-resources"><li>Adapts GRPO to learn table structure and content from unlabeled images. <a href="https://arxiv.org/abs/2512.01248v2">arXiv abstract · v2</a></li>
+<li>Introduces TRivia-3B as a compact table-recognition model trained with this feedback loop. <a href="https://arxiv.org/abs/2512.01248v2">arXiv abstract · v2</a></li></ul>
+    </section>
+    <section aria-labelledby="method-comparison-heading">
+      <h2 id="method-comparison-heading">Method comparison</h2>
+      <div class="paper-results-scroll" role="region" aria-label="Method comparison table" tabindex="0">
+        <table class="paper-methods paper-methods-compact">
+          <thead><tr><th scope="col">Approach</th><th scope="col">Key difference</th></tr></thead>
+          <tbody><tr><th scope="row">Supervised table recognition</th><td>Learns table structure and content from labeled table images.</td></tr>
+<tr><th scope="row">TRivia</th><td>Uses unlabeled images and automatically generated question-answering feedback to fine-tune a table recognizer.</td></tr></tbody>
+        </table>
+      </div>
+      <p class="paper-detail-note"><a href="https://arxiv.org/abs/2512.01248v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="results-heading">
+      <h2 id="results-heading">Selected results</h2>
+      <ul class="paper-detail-resources"><li>TRivia-3B obtains TEDS scores of 91.60 on OmniDocBench, 84.90 on CC-OCR and 90.76 on OCRBench, versus MinerU2.5’s 90.85, 79.76 and 87.13. The reported overall TEDS across these three benchmarks is 89.88. <a href="https://arxiv.org/html/2512.01248v2#S4.T1">Table 1 · table recognition · arXiv v2</a></li>
+<li>Starting from Stage 2’s 88.57 overall TEDS, SFT with Qwen2.5-VL-72B pseudo-labels reduces performance to 80.02 and GRPO with those labels yields 83.65. TRivia’s table-QA approach reaches 89.88, supporting its use of question-answer consistency in place of direct pseudo-label supervision. <a href="https://arxiv.org/html/2512.01248v2#S5.T2">Table 2 · pseudo-label ablation · arXiv v2</a></li></ul>
+    </section>
+
+    <section aria-labelledby="citation-heading">
+      <h2 id="citation-heading">Cite this paper</h2>
+      <p>Junyuan Zhang, Bin Wang, Qintong Zhang, Fan Wu, Zichen Wen, Jialin Lu, Junjie Shan, Ziqi Zhao, Shuya Yang, Ziling Wang, Ziyang Miao, Huaping Zhong, Yuhang Zang, Xiaoyi Dong, Ka-Ho Chow, Conghui He. TRivia: Self-supervised Fine-tuning of Vision-Language Models for Table Recognition. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2026, pp. 33196–33206.</p>
+
+
+      <div class="paper-citation-actions">
+        <button class="paper-copy-button" type="button" data-copy-target="paper-bibtex-content" aria-describedby="bibtex-copy-status" hidden>Copy to clipboard</button>
+        <a href="arxiv-2512.01248.bib" download>Download BibTeX</a>
+        <a href="https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_TRivia_Self-supervised_Fine-tuning_of_Vision-Language_Models_for_Table_Recognition_CVPR_2026_paper.html">CVPR 2026 proceedings record</a>
+      </div>
+      <p id="bibtex-copy-status" class="paper-detail-note" role="status" aria-live="polite"></p>
+      <pre class="paper-bibtex"><code id="paper-bibtex-content">@inproceedings{arxiv251201248,
+  title     = {{TRivia: Self-supervised Fine-tuning of Vision-Language Models for Table Recognition}},
+  author    = {Junyuan Zhang and Bin Wang and Qintong Zhang and Fan Wu and Zichen Wen and Jialin Lu and Junjie Shan and Ziqi Zhao and Shuya Yang and Ziling Wang and Ziyang Miao and Huaping Zhong and Yuhang Zang and Xiaoyi Dong and Ka-Ho Chow and Conghui He},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  month     = {June},
+  year      = {2026},
+  pages     = {33196--33206},
+  url       = {https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_TRivia_Self-supervised_Fine-tuning_of_Vision-Language_Models_for_Table_Recognition_CVPR_2026_paper.html}
+}
+</code></pre>
+    </section>
+  <footer class="paper-detail-footer"><a href="../research.html">← All publications</a></footer>
+  </article>
+</main>
+</body>
+</html>

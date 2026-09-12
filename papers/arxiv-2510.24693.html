@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!-- Generated from data/publications.json. Edit the shared data and rebuild. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>STAR-Bench: Probing Deep Spatio-Temporal Reasoning as Audio 4D Intelligence | Yuhang Zang</title>
+<meta name="description" content="STAR-Bench probes audio reasoning that text captions cannot adequately replace, exposing weaknesses in understanding sound dynamics across time and three-dimensional space.">
+<link rel="canonical" href="https://yuhangzang.github.io/papers/arxiv-2510.24693.html">
+<meta name="citation_title" content="STAR-Bench: Probing Deep Spatio-Temporal Reasoning as Audio 4D Intelligence">
+<meta name="citation_author" content="Zihan Liu">
+<meta name="citation_author" content="Zhikang Niu">
+<meta name="citation_author" content="Qiuyang Xiao">
+<meta name="citation_author" content="Zhisheng Zheng">
+<meta name="citation_author" content="Ruoqi Yuan">
+<meta name="citation_author" content="Yuhang Zang">
+<meta name="citation_author" content="Yuhang Cao">
+<meta name="citation_author" content="Xiaoyi Dong">
+<meta name="citation_author" content="Jianze Liang">
+<meta name="citation_author" content="Xie Chen">
+<meta name="citation_author" content="Leilei Sun">
+<meta name="citation_author" content="Dahua Lin">
+<meta name="citation_author" content="Jiaqi Wang">
+<meta name="citation_publication_date" content="2026">
+<meta name="citation_arxiv_id" content="2510.24693">
+
+<meta name="citation_pdf_url" content="https://proceedings.iclr.cc/paper_files/paper/2026/file/d9f8b5abc8e0926539ecbb492af7b2f1-Paper-Conference.pdf">
+<meta name="citation_conference_title" content="International Conference on Learning Representations">
+<meta name="citation_firstpage" content="134703">
+<meta name="citation_lastpage" content="134731">
+<meta name="citation_volume" content="2026">
+
+<link rel="alternate" type="application/x-bibtex" href="arxiv-2510.24693.bib">
+<meta property="og:type" content="article">
+<meta property="og:title" content="STAR-Bench: Probing Deep Spatio-Temporal Reasoning as Audio 4D Intelligence">
+<meta property="og:description" content="STAR-Bench probes audio reasoning that text captions cannot adequately replace, exposing weaknesses in understanding sound dynamics across time and three-dimensional space.">
+<meta property="og:url" content="https://yuhangzang.github.io/papers/arxiv-2510.24693.html">
+<link rel="icon" type="image/svg+xml" href="../imgs/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"></noscript>
+<script>
+try {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+} catch {}
+</script>
+<link rel="stylesheet" href="../main.min.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","@id":"https://yuhangzang.github.io/papers/arxiv-2510.24693.html#paper","name":"STAR-Bench: Probing Deep Spatio-Temporal Reasoning as Audio 4D Intelligence","author":[{"@type":"Person","name":"Zihan Liu"},{"@type":"Person","name":"Zhikang Niu"},{"@type":"Person","name":"Qiuyang Xiao"},{"@type":"Person","name":"Zhisheng Zheng"},{"@type":"Person","name":"Ruoqi Yuan"},{"@type":"Person","name":"Yuhang Zang"},{"@type":"Person","name":"Yuhang Cao"},{"@type":"Person","name":"Xiaoyi Dong"},{"@type":"Person","name":"Jianze Liang"},{"@type":"Person","name":"Xie Chen"},{"@type":"Person","name":"Leilei Sun"},{"@type":"Person","name":"Dahua Lin"},{"@type":"Person","name":"Jiaqi Wang"}],"datePublished":"2026","url":"https://yuhangzang.github.io/papers/arxiv-2510.24693.html","sameAs":["https://proceedings.iclr.cc/paper_files/paper/2026/hash/d9f8b5abc8e0926539ecbb492af7b2f1-Abstract-Conference.html","https://arxiv.org/abs/2510.24693"],"identifier":{"@type":"PropertyValue","propertyID":"arXiv","value":"2510.24693"},"encoding":{"@type":"MediaObject","name":"Paper · arXiv v2","contentUrl":"https://arxiv.org/pdf/2510.24693v2","encodingFormat":"application/pdf"},"isPartOf":{"@type":"PublicationVolume","name":"International Conference on Learning Representations","volumeNumber":"2026","isPartOf":{"@type":"CreativeWork","name":"International Conference on Learning Representations"}},"pageStart":134703,"pageEnd":134731,"keywords":["STAR-Bench","Audio 4D intelligence","Spatial audio","Temporal audio reasoning","Acoustic perception","Sound localization","Audio-language models","Multimodal evaluation"],"abstract":"Despite rapid progress in Multi-modal Large Language Models and Large Audio-Language Models, existing audio benchmarks largely test semantics that can be recovered from text captions, masking deficits in fine-grained perceptual reasoning. We formalize audio 4D intelligence that is defined as reasoning over sound dynamics in time and 3D space, and introduce STAR-Bench to measure it. STAR-Bench combines a Foundational Acoustic Perception setting (six attributes under absolute and relative regimes) with a Holistic Spatio-Temporal Reasoning setting that includes segment reordering for continuous and discrete processes and spatial tasks spanning static localization, multi-source relations, and dynamic trajectories. Our data curation pipeline uses two methods to ensure high-quality samples. For foundational tasks, we use procedurally synthesized and physics-simulated audio. For holistic data, we follow a four-stage process that includes human annotation and final selection based on human performance. Unlike prior benchmarks where caption-only answering reduces accuracy slightly, STAR-Bench induces far larger drops (-31.5% temporal, -35.2% spatial), evidencing its focus on linguistically hard-to-describe cues. Evaluating 19 models reveals substantial gaps compared with humans and a capability hierarchy: closed-source models are bottlenecked by fine-grained perception, while open-source models lag across perception, knowledge, and reasoning. Our STAR-Bench provides critical insights and a clear path forward for developing future models with a more robust understanding of the physical world.","description":"STAR-Bench probes audio reasoning that text captions cannot adequately replace, exposing weaknesses in understanding sound dynamics across time and three-dimensional space."}</script>
+<script src="../assets/main.min.js" defer></script>
+</head>
+<body class="paper-page">
+<nav class="main-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="../index.html" class="brand-link">Yuhang Zang</a>
+      </div>
+      <button class="mobile-menu-toggle" type="button" aria-label="Toggle navigation menu" aria-controls="nav-menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <div class="nav-menu" id="nav-menu" aria-hidden="true">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../research.html" class="nav-link active" aria-current="location">Publications</a>
+        <a href="../index.html#services" class="nav-link">Services</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" title="Toggle dark mode" aria-label="Toggle dark mode" aria-pressed="false">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+<main class="paper-detail">
+  <article class="papers-section">
+    <p class="paper-detail-kicker">ICLR · 2026</p>
+    <h1 class="section-heading">STAR-Bench: Probing Deep Spatio-Temporal Reasoning as Audio 4D Intelligence</h1>
+    <p class="paper-detail-authors author-names">Zihan Liu, Zhikang Niu, Qiuyang Xiao, Zhisheng Zheng, Ruoqi Yuan, <strong class="author-highlight">Yuhang Zang</strong><span class="paper-corresponding author-annotation corresponding" role="img" aria-label="Corresponding author" title="Corresponding author"><svg class="paper-envelope" viewBox="0 0 16 12" aria-hidden="true"><path fill="currentColor" d="M1 0h14a1 1 0 0 1 1 1v1L8 7 0 2V1a1 1 0 0 1 1-1ZM0 4l8 5 8-5v7a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1Z"/></svg><span class="paper-sr-only">(corresponding author)</span></span>, Yuhang Cao, Xiaoyi Dong, Jianze Liang, Xie Chen, Leilei Sun, Dahua Lin, Jiaqi Wang<span class="paper-corresponding author-annotation corresponding" role="img" aria-label="Corresponding author" title="Corresponding author"><svg class="paper-envelope" viewBox="0 0 16 12" aria-hidden="true"><path fill="currentColor" d="M1 0h14a1 1 0 0 1 1 1v1L8 7 0 2V1a1 1 0 0 1 1-1ZM0 4l8 5 8-5v7a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1Z"/></svg><span class="paper-sr-only">(corresponding author)</span></span></p>
+    <p class="paper-detail-note paper-author-legend"><svg class="paper-envelope" viewBox="0 0 16 12" aria-hidden="true"><path fill="currentColor" d="M1 0h14a1 1 0 0 1 1 1v1L8 7 0 2V1a1 1 0 0 1 1-1ZM0 4l8 5 8-5v7a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1Z"/></svg> Corresponding author</p>
+    <section class="paper-takeaway" aria-labelledby="takeaway-heading">
+      <h2 id="takeaway-heading">Key takeaway</h2>
+      <p>STAR-Bench probes audio reasoning that text captions cannot adequately replace, exposing weaknesses in understanding sound dynamics across time and three-dimensional space. <a href="https://arxiv.org/abs/2510.24693v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="abstract-heading">
+      <h2 id="abstract-heading">Abstract</h2>
+      <p>Despite rapid progress in Multi-modal Large Language Models and Large Audio-Language Models, existing audio benchmarks largely test semantics that can be recovered from text captions, masking deficits in fine-grained perceptual reasoning. We formalize audio 4D intelligence that is defined as reasoning over sound dynamics in time and 3D space, and introduce STAR-Bench to measure it. STAR-Bench combines a Foundational Acoustic Perception setting (six attributes under absolute and relative regimes) with a Holistic Spatio-Temporal Reasoning setting that includes segment reordering for continuous and discrete processes and spatial tasks spanning static localization, multi-source relations, and dynamic trajectories. Our data curation pipeline uses two methods to ensure high-quality samples. For foundational tasks, we use procedurally synthesized and physics-simulated audio. For holistic data, we follow a four-stage process that includes human annotation and final selection based on human performance. Unlike prior benchmarks where caption-only answering reduces accuracy slightly, STAR-Bench induces far larger drops (-31.5% temporal, -35.2% spatial), evidencing its focus on linguistically hard-to-describe cues. Evaluating 19 models reveals substantial gaps compared with humans and a capability hierarchy: closed-source models are bottlenecked by fine-grained perception, while open-source models lag across perception, knowledge, and reasoning. Our STAR-Bench provides critical insights and a clear path forward for developing future models with a more robust understanding of the physical world.</p>
+      <p class="paper-detail-note">Author abstract · <a href="https://arxiv.org/abs/2510.24693v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="publication-heading">
+      <h2 id="publication-heading">Publication</h2>
+      <p>International Conference on Learning Representations (ICLR), 2026</p>
+
+    </section>
+    <section aria-labelledby="resources-heading">
+      <h2 id="resources-heading">Paper and resources</h2>
+      <ul class="paper-detail-resources">
+        <li><a href="https://arxiv.org/pdf/2510.24693v2">Paper · arXiv v2 (PDF)</a></li>
+        <li><a href="https://arxiv.org/abs/2510.24693">arXiv:2510.24693</a></li>
+        <li><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=hW23VKIAAAAJ&amp;citation_for_view=hW23VKIAAAAJ:q3oQSFYPqjQC">Google Scholar</a></li>
+        <li><a href="https://github.com/InternLM/StarBench">Code · InternLM/StarBench</a></li>
+      </ul>
+    </section>
+    <section aria-labelledby="topics-heading">
+      <h2 id="topics-heading">Research topics</h2>
+      <p class="paper-keywords">STAR-Bench · Audio 4D intelligence · Spatial audio · Temporal audio reasoning · Acoustic perception · Sound localization · Audio-language models · Multimodal evaluation</p>
+    </section>
+    <section aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Research problem and approach</h2>
+      <p>Semantic audio benchmarks can conceal perceptual deficits because captions already contain enough information to answer. STAR-Bench targets acoustic attributes, temporal ordering and spatial relations that demand listening. <a href="https://arxiv.org/abs/2510.24693v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="contributions-heading">
+      <h2 id="contributions-heading">Main contributions</h2>
+      <ul class="paper-detail-resources"><li>Combines foundational acoustic perception with holistic temporal and spatial reasoning tasks. <a href="https://arxiv.org/abs/2510.24693v2">arXiv abstract · v2</a></li>
+<li>Uses procedural synthesis, physical simulation and human-validated curation for complementary task families. <a href="https://arxiv.org/abs/2510.24693v2">arXiv abstract · v2</a></li></ul>
+    </section>
+    <section aria-labelledby="method-comparison-heading">
+      <h2 id="method-comparison-heading">Method comparison</h2>
+      <div class="paper-results-scroll" role="region" aria-label="Method comparison table" tabindex="0">
+        <table class="paper-methods paper-methods-compact">
+          <thead><tr><th scope="col">Approach</th><th scope="col">Key difference</th></tr></thead>
+          <tbody><tr><th scope="row">Caption-solvable audio evaluation</th><td>Emphasizes semantic information that can often be recovered without listening to the original sound.</td></tr>
+<tr><th scope="row">STAR-Bench</th><td>Tests acoustic attributes and temporal-spatial relations that are difficult to convey fully through captions.</td></tr></tbody>
+        </table>
+      </div>
+      <p class="paper-detail-note"><a href="https://arxiv.org/abs/2510.24693v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="results-heading">
+      <h2 id="results-heading">Selected results</h2>
+      <ul class="paper-detail-resources"><li>Gemini-2.5-Pro achieves 49.59% macro accuracy on STAR-Bench versus the human reference of 79.11%. Its temporal overall accuracy is 58.52% and spatial overall accuracy is 43.62%, compared with 88.00% and 73.72% for humans. <a href="https://arxiv.org/html/2510.24693v2#S4.T2">Table 2 · audio reasoning evaluation · arXiv v2</a></li>
+<li>For temporal reasoning, Gemini-2.5-Pro’s average accuracy is 58.52%, but its all-correct rate across repeated runs is 34.89%. The two metrics distinguish average correctness from reliable answers on the same examples. <a href="https://arxiv.org/html/2510.24693v2#A5.T5">Table 5 · repeated-run consistency · arXiv v2</a></li></ul>
+    </section>
+
+    <section aria-labelledby="citation-heading">
+      <h2 id="citation-heading">Cite this paper</h2>
+      <p>Zihan Liu, Zhikang Niu, Qiuyang Xiao, Zhisheng Zheng, Ruoqi Yuan, Yuhang Zang, Yuhang Cao, Xiaoyi Dong, Jianze Liang, Xie Chen, Leilei Sun, Dahua Lin, Jiaqi Wang. STAR-Bench: Probing Deep Spatio-Temporal Reasoning as Audio 4D Intelligence. International Conference on Learning Representations, 2026, 2026, pp. 134703–134731.</p>
+
+
+      <div class="paper-citation-actions">
+        <button class="paper-copy-button" type="button" data-copy-target="paper-bibtex-content" aria-describedby="bibtex-copy-status" hidden>Copy to clipboard</button>
+        <a href="arxiv-2510.24693.bib" download>Download BibTeX</a>
+        <a href="https://proceedings.iclr.cc/paper_files/paper/2026/hash/d9f8b5abc8e0926539ecbb492af7b2f1-Abstract-Conference.html">ICLR 2026 proceedings record</a>
+      </div>
+      <p id="bibtex-copy-status" class="paper-detail-note" role="status" aria-live="polite"></p>
+      <pre class="paper-bibtex"><code id="paper-bibtex-content">@inproceedings{arxiv251024693,
+  title     = {{STAR-Bench: Probing Deep Spatio-Temporal Reasoning as Audio 4D Intelligence}},
+  author    = {Zihan Liu and Zhikang Niu and Qiuyang Xiao and Zhisheng Zheng and Ruoqi Yuan and Yuhang Zang and Yuhang Cao and Xiaoyi Dong and Jianze Liang and Xie Chen and Leilei Sun and Dahua Lin and Jiaqi Wang},
+  booktitle = {International Conference on Learning Representations},
+  year      = {2026},
+  volume    = {2026},
+  pages     = {134703--134731},
+  url       = {https://proceedings.iclr.cc/paper_files/paper/2026/hash/d9f8b5abc8e0926539ecbb492af7b2f1-Abstract-Conference.html}
+}
+</code></pre>
+    </section>
+  <footer class="paper-detail-footer"><a href="../research.html">← All publications</a></footer>
+  </article>
+</main>
+</body>
+</html>

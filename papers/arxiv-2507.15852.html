@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!-- Generated from data/publications.json. Edit the shared data and rebuild. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Advancing Complex Video Object Segmentation via Progressive Concept Construction | Yuhang Zang</title>
+<meta name="description" content="SeC improves video object segmentation through progressively constructed object concepts, helping maintain identity across large appearance changes and scene transitions.">
+<link rel="canonical" href="https://yuhangzang.github.io/papers/arxiv-2507.15852.html">
+<meta name="citation_title" content="Advancing Complex Video Object Segmentation via Progressive Concept Construction">
+<meta name="citation_author" content="Zhixiong Zhang">
+<meta name="citation_author" content="Shuangrui Ding">
+<meta name="citation_author" content="Xiaoyi Dong">
+<meta name="citation_author" content="Songxin He">
+<meta name="citation_author" content="Jianfan Lin">
+<meta name="citation_author" content="Junsong Tang">
+<meta name="citation_author" content="Yuhang Zang">
+<meta name="citation_author" content="Yuhang Cao">
+<meta name="citation_author" content="Dahua Lin">
+<meta name="citation_author" content="Jiaqi Wang">
+<meta name="citation_publication_date" content="2026">
+<meta name="citation_arxiv_id" content="2507.15852">
+
+<meta name="citation_pdf_url" content="https://proceedings.iclr.cc/paper_files/paper/2026/file/d3f48777432f64bc96b1203713f20352-Paper-Conference.pdf">
+<meta name="citation_conference_title" content="International Conference on Learning Representations">
+<meta name="citation_firstpage" content="130411">
+<meta name="citation_lastpage" content="130434">
+<meta name="citation_volume" content="2026">
+
+<link rel="alternate" type="application/x-bibtex" href="arxiv-2507.15852.bib">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Advancing Complex Video Object Segmentation via Progressive Concept Construction">
+<meta property="og:description" content="SeC improves video object segmentation through progressively constructed object concepts, helping maintain identity across large appearance changes and scene transitions.">
+<meta property="og:url" content="https://yuhangzang.github.io/papers/arxiv-2507.15852.html">
+<link rel="icon" type="image/svg+xml" href="../imgs/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"></noscript>
+<script>
+try {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+} catch {}
+</script>
+<link rel="stylesheet" href="../main.min.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","@id":"https://yuhangzang.github.io/papers/arxiv-2507.15852.html#paper","name":"Advancing Complex Video Object Segmentation via Progressive Concept Construction","author":[{"@type":"Person","name":"Zhixiong Zhang"},{"@type":"Person","name":"Shuangrui Ding"},{"@type":"Person","name":"Xiaoyi Dong"},{"@type":"Person","name":"Songxin He"},{"@type":"Person","name":"Jianfan Lin"},{"@type":"Person","name":"Junsong Tang"},{"@type":"Person","name":"Yuhang Zang"},{"@type":"Person","name":"Yuhang Cao"},{"@type":"Person","name":"Dahua Lin"},{"@type":"Person","name":"Jiaqi Wang"}],"datePublished":"2026","url":"https://yuhangzang.github.io/papers/arxiv-2507.15852.html","sameAs":["https://proceedings.iclr.cc/paper_files/paper/2026/hash/d3f48777432f64bc96b1203713f20352-Abstract-Conference.html","https://arxiv.org/abs/2507.15852"],"identifier":{"@type":"PropertyValue","propertyID":"arXiv","value":"2507.15852"},"encoding":{"@type":"MediaObject","name":"Paper · arXiv v3","contentUrl":"https://arxiv.org/pdf/2507.15852v3","encodingFormat":"application/pdf"},"isPartOf":{"@type":"PublicationVolume","name":"International Conference on Learning Representations","volumeNumber":"2026","isPartOf":{"@type":"CreativeWork","name":"International Conference on Learning Representations"}},"pageStart":130411,"pageEnd":130434,"keywords":["SeC","Segment Concept","Video object segmentation","Object-centric representations","Concept construction","Scene transitions","SeCVOS","Semantic tracking"],"abstract":"We propose Segment Concept (SeC), a concept-driven video object segmentation (VOS) framework that shifts from conventional feature matching to the progressive construction and utilization of high-level, object-centric representations. SeC employs Large Vision-Language Models (LVLMs) to integrate visual cues across diverse frames, constructing robust conceptual priors. To balance semantic reasoning with computational overhead, SeC forwards the LVLMs only when a new scene appears, injecting concept-level features at those points. To rigorously assess VOS methods in scenarios demanding high-level conceptual reasoning and robust semantic understanding, we introduce the Semantic Complex Scenarios Video Object Segmentation benchmark (SeCVOS). SeCVOS comprises 160 manually annotated multi-scenario videos designed to challenge models with substantial appearance variations and dynamic scene transformations. Empirical evaluations demonstrate that SeC substantially outperforms state-of-the-art approaches, including SAM 2 and its advanced variants, on both SeCVOS and standard VOS benchmarks. In particular, SeC achieves an 11.8-point improvement over SAM 2.1 on SeCVOS, establishing a new state-of-the-art in concept-aware VOS.","description":"SeC improves video object segmentation through progressively constructed object concepts, helping maintain identity across large appearance changes and scene transitions."}</script>
+<script src="../assets/main.min.js" defer></script>
+</head>
+<body class="paper-page">
+<nav class="main-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="../index.html" class="brand-link">Yuhang Zang</a>
+      </div>
+      <button class="mobile-menu-toggle" type="button" aria-label="Toggle navigation menu" aria-controls="nav-menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <div class="nav-menu" id="nav-menu" aria-hidden="true">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../research.html" class="nav-link active" aria-current="location">Publications</a>
+        <a href="../index.html#services" class="nav-link">Services</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" title="Toggle dark mode" aria-label="Toggle dark mode" aria-pressed="false">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+<main class="paper-detail">
+  <article class="papers-section">
+    <p class="paper-detail-kicker">ICLR · 2026</p>
+    <h1 class="section-heading">Advancing Complex Video Object Segmentation via Progressive Concept Construction</h1>
+    <p class="paper-detail-authors author-names">Zhixiong Zhang, Shuangrui Ding, Xiaoyi Dong, Songxin He, Jianfan Lin, Junsong Tang, <strong class="author-highlight">Yuhang Zang</strong>, Yuhang Cao, Dahua Lin, Jiaqi Wang</p>
+
+    <section class="paper-takeaway" aria-labelledby="takeaway-heading">
+      <h2 id="takeaway-heading">Key takeaway</h2>
+      <p>SeC improves video object segmentation through progressively constructed object concepts, helping maintain identity across large appearance changes and scene transitions. <a href="https://arxiv.org/abs/2507.15852v3">arXiv abstract · v3</a></p>
+    </section>
+    <section aria-labelledby="abstract-heading">
+      <h2 id="abstract-heading">Abstract</h2>
+      <p>We propose Segment Concept (SeC), a concept-driven video object segmentation (VOS) framework that shifts from conventional feature matching to the progressive construction and utilization of high-level, object-centric representations. SeC employs Large Vision-Language Models (LVLMs) to integrate visual cues across diverse frames, constructing robust conceptual priors. To balance semantic reasoning with computational overhead, SeC forwards the LVLMs only when a new scene appears, injecting concept-level features at those points. To rigorously assess VOS methods in scenarios demanding high-level conceptual reasoning and robust semantic understanding, we introduce the Semantic Complex Scenarios Video Object Segmentation benchmark (SeCVOS). SeCVOS comprises 160 manually annotated multi-scenario videos designed to challenge models with substantial appearance variations and dynamic scene transformations. Empirical evaluations demonstrate that SeC substantially outperforms state-of-the-art approaches, including SAM 2 and its advanced variants, on both SeCVOS and standard VOS benchmarks. In particular, SeC achieves an 11.8-point improvement over SAM 2.1 on SeCVOS, establishing a new state-of-the-art in concept-aware VOS.</p>
+      <p class="paper-detail-note">Author abstract · <a href="https://arxiv.org/abs/2507.15852v3">arXiv abstract · v3</a></p>
+    </section>
+    <section aria-labelledby="publication-heading">
+      <h2 id="publication-heading">Publication</h2>
+      <p>International Conference on Learning Representations (ICLR), 2026</p>
+
+    </section>
+    <section aria-labelledby="resources-heading">
+      <h2 id="resources-heading">Paper and resources</h2>
+      <ul class="paper-detail-resources">
+        <li><a href="https://arxiv.org/pdf/2507.15852v3">Paper · arXiv v3 (PDF)</a></li>
+        <li><a href="https://arxiv.org/abs/2507.15852">arXiv:2507.15852</a></li>
+        <li><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=hW23VKIAAAAJ&amp;citation_for_view=hW23VKIAAAAJ:dshw04ExmUIC">Google Scholar</a></li>
+        <li><a href="https://github.com/OpenIXCLab/SeC">Code · OpenIXCLab/SeC</a></li>
+      </ul>
+    </section>
+    <section aria-labelledby="topics-heading">
+      <h2 id="topics-heading">Research topics</h2>
+      <p class="paper-keywords">SeC · Segment Concept · Video object segmentation · Object-centric representations · Concept construction · Scene transitions · SeCVOS · Semantic tracking</p>
+    </section>
+    <section aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Research problem and approach</h2>
+      <p>Feature matching alone is brittle when objects or scenes change substantially. SeC uses large vision-language models to integrate cues across frames and injects conceptual features when new scenes appear. <a href="https://arxiv.org/abs/2507.15852v3">arXiv abstract · v3</a></p>
+    </section>
+    <section aria-labelledby="contributions-heading">
+      <h2 id="contributions-heading">Main contributions</h2>
+      <ul class="paper-detail-resources"><li>Builds high-level object representations while limiting expensive LVLM calls to scene changes. <a href="https://arxiv.org/abs/2507.15852v3">arXiv abstract · v3</a></li>
+<li>Introduces SeCVOS, 160 manually annotated videos with semantically complex scenarios. <a href="https://arxiv.org/abs/2507.15852v3">arXiv abstract · v3</a></li></ul>
+    </section>
+    <section aria-labelledby="method-comparison-heading">
+      <h2 id="method-comparison-heading">Method comparison</h2>
+      <div class="paper-results-scroll" role="region" aria-label="Method comparison table" tabindex="0">
+        <table class="paper-methods paper-methods-compact">
+          <thead><tr><th scope="col">Approach</th><th scope="col">Key difference</th></tr></thead>
+          <tbody><tr><th scope="row">Feature-matching video segmentation</th><td>Can lose object identity through major appearance changes or scene transitions.</td></tr>
+<tr><th scope="row">SeC</th><td>Builds object concepts across frames and injects updated conceptual features at scene changes.</td></tr></tbody>
+        </table>
+      </div>
+      <p class="paper-detail-note"><a href="https://arxiv.org/abs/2507.15852v3">arXiv abstract · v3</a></p>
+    </section>
+    <section aria-labelledby="results-heading">
+      <h2 id="results-heading">Selected results</h2>
+      <ul class="paper-detail-resources"><li>On SeCVOS, SeC reaches 70.0 J&amp;F versus SAM2.1’s 58.2. On the multi-scene-change subset the scores are 67.5 and 52.4, respectively, a 15.1-point improvement. <a href="https://arxiv.org/html/2507.15852v3#S5.T4">Table 4 · scene-changing video segmentation · arXiv v3</a></li>
+<li>On SeCVOS, pixel-level association alone raises J&amp;F from 58.2 to 62.2, and adding concept guidance raises it to 70.0. On SA-V, the same progression is 78.6 → 82.4 → 82.7, showing that concept guidance has a larger effect on the scene-changing benchmark. <a href="https://arxiv.org/html/2507.15852v3#S5.T7">Table 6 · component ablation · arXiv v3</a></li></ul>
+    </section>
+
+    <section aria-labelledby="citation-heading">
+      <h2 id="citation-heading">Cite this paper</h2>
+      <p>Zhixiong Zhang, Shuangrui Ding, Xiaoyi Dong, Songxin He, Jianfan Lin, Junsong Tang, Yuhang Zang, Yuhang Cao, Dahua Lin, Jiaqi Wang. Advancing Complex Video Object Segmentation via Progressive Concept Construction. International Conference on Learning Representations, 2026, 2026, pp. 130411–130434.</p>
+
+
+      <div class="paper-citation-actions">
+        <button class="paper-copy-button" type="button" data-copy-target="paper-bibtex-content" aria-describedby="bibtex-copy-status" hidden>Copy to clipboard</button>
+        <a href="arxiv-2507.15852.bib" download>Download BibTeX</a>
+        <a href="https://proceedings.iclr.cc/paper_files/paper/2026/hash/d3f48777432f64bc96b1203713f20352-Abstract-Conference.html">ICLR 2026 proceedings record</a>
+      </div>
+      <p id="bibtex-copy-status" class="paper-detail-note" role="status" aria-live="polite"></p>
+      <pre class="paper-bibtex"><code id="paper-bibtex-content">@inproceedings{arxiv250715852,
+  title     = {{Advancing Complex Video Object Segmentation via Progressive Concept Construction}},
+  author    = {Zhixiong Zhang and Shuangrui Ding and Xiaoyi Dong and Songxin He and Jianfan Lin and Junsong Tang and Yuhang Zang and Yuhang Cao and Dahua Lin and Jiaqi Wang},
+  booktitle = {International Conference on Learning Representations},
+  year      = {2026},
+  volume    = {2026},
+  pages     = {130411--130434},
+  url       = {https://proceedings.iclr.cc/paper_files/paper/2026/hash/d3f48777432f64bc96b1203713f20352-Abstract-Conference.html}
+}
+</code></pre>
+    </section>
+  <footer class="paper-detail-footer"><a href="../research.html">← All publications</a></footer>
+  </article>
+</main>
+</body>
+</html>

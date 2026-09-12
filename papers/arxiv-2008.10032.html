@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!-- Generated from data/publications.json. Edit the shared data and rebuild. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seesaw Loss for Long-Tailed Instance Segmentation | Yuhang Zang</title>
+<meta name="description" content="Seesaw Loss balances rare-class learning by reducing overwhelming negative gradients while restoring penalties for misclassified examples to control false positives.">
+<link rel="canonical" href="https://yuhangzang.github.io/papers/arxiv-2008.10032.html">
+<meta name="citation_title" content="Seesaw Loss for Long-Tailed Instance Segmentation">
+<meta name="citation_author" content="Jiaqi Wang">
+<meta name="citation_author" content="Wenwei Zhang">
+<meta name="citation_author" content="Yuhang Zang">
+<meta name="citation_author" content="Yuhang Cao">
+<meta name="citation_author" content="Jiangmiao Pang">
+<meta name="citation_author" content="Tao Gong">
+<meta name="citation_author" content="Kai Chen">
+<meta name="citation_author" content="Ziwei Liu">
+<meta name="citation_author" content="Chen Change Loy">
+<meta name="citation_author" content="Dahua Lin">
+<meta name="citation_publication_date" content="2021">
+<meta name="citation_arxiv_id" content="2008.10032">
+
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/CVPR2021/papers/Wang_Seesaw_Loss_for_Long-Tailed_Instance_Segmentation_CVPR_2021_paper.pdf">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)">
+<meta name="citation_firstpage" content="9695">
+<meta name="citation_lastpage" content="9704">
+
+
+<link rel="alternate" type="application/x-bibtex" href="arxiv-2008.10032.bib">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Seesaw Loss for Long-Tailed Instance Segmentation">
+<meta property="og:description" content="Seesaw Loss balances rare-class learning by reducing overwhelming negative gradients while restoring penalties for misclassified examples to control false positives.">
+<meta property="og:url" content="https://yuhangzang.github.io/papers/arxiv-2008.10032.html">
+<link rel="icon" type="image/svg+xml" href="../imgs/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"></noscript>
+<script>
+try {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+} catch {}
+</script>
+<link rel="stylesheet" href="../main.min.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","@id":"https://yuhangzang.github.io/papers/arxiv-2008.10032.html#paper","name":"Seesaw Loss for Long-Tailed Instance Segmentation","author":[{"@type":"Person","name":"Jiaqi Wang"},{"@type":"Person","name":"Wenwei Zhang"},{"@type":"Person","name":"Yuhang Zang"},{"@type":"Person","name":"Yuhang Cao"},{"@type":"Person","name":"Jiangmiao Pang"},{"@type":"Person","name":"Tao Gong"},{"@type":"Person","name":"Kai Chen"},{"@type":"Person","name":"Ziwei Liu"},{"@type":"Person","name":"Chen Change Loy"},{"@type":"Person","name":"Dahua Lin"}],"datePublished":"2021","url":"https://yuhangzang.github.io/papers/arxiv-2008.10032.html","sameAs":["https://openaccess.thecvf.com/content/CVPR2021/html/Wang_Seesaw_Loss_for_Long-Tailed_Instance_Segmentation_CVPR_2021_paper.html","https://arxiv.org/abs/2008.10032"],"identifier":{"@type":"PropertyValue","propertyID":"arXiv","value":"2008.10032"},"encoding":{"@type":"MediaObject","name":"Paper · arXiv v4","contentUrl":"https://arxiv.org/pdf/2008.10032v4","encodingFormat":"application/pdf"},"isPartOf":{"@type":"CreativeWork","name":"Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)"},"pageStart":9695,"pageEnd":9704,"keywords":["Seesaw Loss","Long-tailed instance segmentation","Gradient rebalancing","Class imbalance","Rare-category detection","Mitigation factor","Compensation factor","Loss function design"],"abstract":"Instance segmentation has witnessed a remarkable progress on class-balanced benchmarks. However, they fail to perform as accurately in real-world scenarios, where the category distribution of objects naturally comes with a long tail. Instances of head classes dominate a long-tailed dataset and they serve as negative samples of tail categories. The overwhelming gradients of negative samples on tail classes lead to a biased learning process for classifiers. Consequently, objects of tail categories are more likely to be misclassified as backgrounds or head categories. To tackle this problem, we propose Seesaw Loss to dynamically re-balance gradients of positive and negative samples for each category, with two complementary factors, i.e., mitigation factor and compensation factor. The mitigation factor reduces punishments to tail categories w.r.t. the ratio of cumulative training instances between different categories. Meanwhile, the compensation factor increases the penalty of misclassified instances to avoid false positives of tail categories. We conduct extensive experiments on Seesaw Loss with mainstream frameworks and different data sampling strategies. With a simple end-to-end training pipeline, Seesaw Loss obtains significant gains over Cross-Entropy Loss, and achieves state-of-the-art performance on LVIS dataset without bells and whistles. Code is available at https://github.com/open-mmlab/mmdetection.","description":"Seesaw Loss balances rare-class learning by reducing overwhelming negative gradients while restoring penalties for misclassified examples to control false positives."}</script>
+<script src="../assets/main.min.js" defer></script>
+</head>
+<body class="paper-page">
+<nav class="main-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="../index.html" class="brand-link">Yuhang Zang</a>
+      </div>
+      <button class="mobile-menu-toggle" type="button" aria-label="Toggle navigation menu" aria-controls="nav-menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <div class="nav-menu" id="nav-menu" aria-hidden="true">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../research.html" class="nav-link active" aria-current="location">Publications</a>
+        <a href="../index.html#services" class="nav-link">Services</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" title="Toggle dark mode" aria-label="Toggle dark mode" aria-pressed="false">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+<main class="paper-detail">
+  <article class="papers-section">
+    <p class="paper-detail-kicker">CVPR · 2021</p>
+    <h1 class="section-heading">Seesaw Loss for Long-Tailed Instance Segmentation</h1>
+    <p class="paper-detail-authors author-names">Jiaqi Wang, Wenwei Zhang, <strong class="author-highlight">Yuhang Zang</strong>, Yuhang Cao, Jiangmiao Pang, Tao Gong, Kai Chen, Ziwei Liu, Chen Change Loy, Dahua Lin</p>
+
+    <section class="paper-takeaway" aria-labelledby="takeaway-heading">
+      <h2 id="takeaway-heading">Key takeaway</h2>
+      <p>Seesaw Loss balances rare-class learning by reducing overwhelming negative gradients while restoring penalties for misclassified examples to control false positives. <a href="https://arxiv.org/abs/2008.10032v4">arXiv abstract · v4</a></p>
+    </section>
+    <section aria-labelledby="abstract-heading">
+      <h2 id="abstract-heading">Abstract</h2>
+      <p>Instance segmentation has witnessed a remarkable progress on class-balanced benchmarks. However, they fail to perform as accurately in real-world scenarios, where the category distribution of objects naturally comes with a long tail. Instances of head classes dominate a long-tailed dataset and they serve as negative samples of tail categories. The overwhelming gradients of negative samples on tail classes lead to a biased learning process for classifiers. Consequently, objects of tail categories are more likely to be misclassified as backgrounds or head categories. To tackle this problem, we propose Seesaw Loss to dynamically re-balance gradients of positive and negative samples for each category, with two complementary factors, i.e., mitigation factor and compensation factor. The mitigation factor reduces punishments to tail categories w.r.t. the ratio of cumulative training instances between different categories. Meanwhile, the compensation factor increases the penalty of misclassified instances to avoid false positives of tail categories. We conduct extensive experiments on Seesaw Loss with mainstream frameworks and different data sampling strategies. With a simple end-to-end training pipeline, Seesaw Loss obtains significant gains over Cross-Entropy Loss, and achieves state-of-the-art performance on LVIS dataset without bells and whistles. Code is available at https://github.com/open-mmlab/mmdetection.</p>
+      <p class="paper-detail-note">Author abstract · <a href="https://arxiv.org/abs/2008.10032v4">arXiv abstract · v4</a></p>
+    </section>
+    <section aria-labelledby="publication-heading">
+      <h2 id="publication-heading">Publication</h2>
+      <p>IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2021</p>
+
+    </section>
+    <section aria-labelledby="resources-heading">
+      <h2 id="resources-heading">Paper and resources</h2>
+      <ul class="paper-detail-resources">
+        <li><a href="https://arxiv.org/pdf/2008.10032v4">Paper · arXiv v4 (PDF)</a></li>
+        <li><a href="https://arxiv.org/abs/2008.10032">arXiv:2008.10032</a></li>
+        <li><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=hW23VKIAAAAJ&amp;citation_for_view=hW23VKIAAAAJ:2osOgNQ5qMEC">Google Scholar</a></li>
+        <li><a href="https://github.com/open-mmlab/mmdetection/tree/master/configs/seesaw_loss">Code · open-mmlab/mmdetection</a></li>
+      </ul>
+    </section>
+    <section aria-labelledby="topics-heading">
+      <h2 id="topics-heading">Research topics</h2>
+      <p class="paper-keywords">Seesaw Loss · Long-tailed instance segmentation · Gradient rebalancing · Class imbalance · Rare-category detection · Mitigation factor · Compensation factor · Loss function design</p>
+    </section>
+    <section aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Research problem and approach</h2>
+      <p>Frequent categories dominate negative training signals and bias long-tailed classifiers against rare objects. Seesaw Loss dynamically adjusts positive-negative balance with a mitigation factor based on cumulative class counts and a complementary compensation factor. <a href="https://arxiv.org/abs/2008.10032v4">arXiv abstract · v4</a></p>
+    </section>
+    <section aria-labelledby="contributions-heading">
+      <h2 id="contributions-heading">Main contributions</h2>
+      <ul class="paper-detail-resources"><li>Introduces complementary mitigation and compensation terms for class-dependent gradient rebalancing. <a href="https://arxiv.org/abs/2008.10032v4">arXiv abstract · v4</a></li>
+<li>Integrates with end-to-end instance segmentation training across mainstream frameworks and sampling strategies. <a href="https://arxiv.org/abs/2008.10032v4">arXiv abstract · v4</a></li></ul>
+    </section>
+    <section aria-labelledby="method-comparison-heading">
+      <h2 id="method-comparison-heading">Method comparison</h2>
+      <div class="paper-results-scroll" role="region" aria-label="Method comparison table" tabindex="0">
+        <table class="paper-methods paper-methods-compact">
+          <thead><tr><th scope="col">Approach</th><th scope="col">Key difference</th></tr></thead>
+          <tbody><tr><th scope="row">Cross-entropy on long-tailed instances</th><td>Frequent-category negatives can overwhelm the learning signal for rare classes.</td></tr>
+<tr><th scope="row">Seesaw Loss</th><td>Reduces excessive rare-class penalties while compensating for misclassified examples to limit false positives.</td></tr></tbody>
+        </table>
+      </div>
+      <p class="paper-detail-note"><a href="https://arxiv.org/abs/2008.10032v4">arXiv abstract · v4</a></p>
+    </section>
+    <section aria-labelledby="results-heading">
+      <h2 id="results-heading">Selected results</h2>
+      <ul class="paper-detail-resources"><li>On LVIS-v1 validation with a 2× schedule and repeat-factor sampling, Seesaw Loss raises mask AP from cross-entropy’s 25.5 to 27.6 and rare-class AP from 16.6 to 20.6. Adding normalized mask prediction reaches 28.1 overall mask AP. <a href="https://arxiv.org/html/2008.10032v4#S3.T1">Table 1 · Mask R-CNN R101-FPN with RFS · arXiv v4</a></li>
+<li>With Mask R-CNN and RFS, mitigation alone gives 25.1 mask AP, compensation alone 24.1, and both 25.7, versus 23.7 for the baseline. Adding normalized linear activation reaches 26.4 AP and 19.6 rare-class AP. <a href="https://arxiv.org/html/2008.10032v4#S4.T2">Table 2 · R50-FPN loss-component ablation · arXiv v4</a></li></ul>
+    </section>
+
+    <section aria-labelledby="citation-heading">
+      <h2 id="citation-heading">Cite this paper</h2>
+      <p>Jiaqi Wang, Wenwei Zhang, Yuhang Zang, Yuhang Cao, Jiangmiao Pang, Tao Gong, Kai Chen, Ziwei Liu, Chen Change Loy, Dahua Lin. Seesaw Loss for Long-Tailed Instance Segmentation. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2021, pp. 9695–9704.</p>
+
+
+      <div class="paper-citation-actions">
+        <button class="paper-copy-button" type="button" data-copy-target="paper-bibtex-content" aria-describedby="bibtex-copy-status" hidden>Copy to clipboard</button>
+        <a href="arxiv-2008.10032.bib" download>Download BibTeX</a>
+        <a href="https://openaccess.thecvf.com/content/CVPR2021/html/Wang_Seesaw_Loss_for_Long-Tailed_Instance_Segmentation_CVPR_2021_paper.html">CVPR 2021 proceedings record</a>
+      </div>
+      <p id="bibtex-copy-status" class="paper-detail-note" role="status" aria-live="polite"></p>
+      <pre class="paper-bibtex"><code id="paper-bibtex-content">@inproceedings{arxiv200810032,
+  title     = {{Seesaw Loss for Long-Tailed Instance Segmentation}},
+  author    = {Jiaqi Wang and Wenwei Zhang and Yuhang Zang and Yuhang Cao and Jiangmiao Pang and Tao Gong and Kai Chen and Ziwei Liu and Chen Change Loy and Dahua Lin},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  month     = {June},
+  year      = {2021},
+  pages     = {9695--9704},
+  url       = {https://openaccess.thecvf.com/content/CVPR2021/html/Wang_Seesaw_Loss_for_Long-Tailed_Instance_Segmentation_CVPR_2021_paper.html}
+}
+</code></pre>
+    </section>
+  <footer class="paper-detail-footer"><a href="../research.html">← All publications</a></footer>
+  </article>
+</main>
+</body>
+</html>

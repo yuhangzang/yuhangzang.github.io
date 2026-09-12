@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!-- Generated from data/publications.json. Edit the shared data and rebuild. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Visionary-R1: Mitigating Shortcuts in Visual Reasoning with Reinforcement Learning | Yuhang Zang</title>
+<meta name="description" content="Visionary-R1 reduces shortcut learning in visual reinforcement learning by requiring image interpretation before reasoning through a caption–reason–answer output format.">
+<link rel="canonical" href="https://yuhangzang.github.io/papers/arxiv-2505.14677.html">
+<meta name="citation_title" content="Visionary-R1: Mitigating Shortcuts in Visual Reasoning with Reinforcement Learning">
+<meta name="citation_author" content="Jiaer Xia">
+<meta name="citation_author" content="Yuhang Zang">
+<meta name="citation_author" content="Peng Gao">
+<meta name="citation_author" content="Sharon Li">
+<meta name="citation_author" content="Kaiyang Zhou">
+<meta name="citation_publication_date" content="2026">
+<meta name="citation_arxiv_id" content="2505.14677">
+
+<meta name="citation_pdf_url" content="https://openreview.net/pdf?id=JWkZXBgh5a">
+<meta name="citation_journal_title" content="Transactions on Machine Learning Research">
+
+
+
+<link rel="alternate" type="application/x-bibtex" href="arxiv-2505.14677.bib">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Visionary-R1: Mitigating Shortcuts in Visual Reasoning with Reinforcement Learning">
+<meta property="og:description" content="Visionary-R1 reduces shortcut learning in visual reinforcement learning by requiring image interpretation before reasoning through a caption–reason–answer output format.">
+<meta property="og:url" content="https://yuhangzang.github.io/papers/arxiv-2505.14677.html">
+<link rel="icon" type="image/svg+xml" href="../imgs/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"></noscript>
+<script>
+try {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+} catch {}
+</script>
+<link rel="stylesheet" href="../main.min.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","@id":"https://yuhangzang.github.io/papers/arxiv-2505.14677.html#paper","name":"Visionary-R1: Mitigating Shortcuts in Visual Reasoning with Reinforcement Learning","author":[{"@type":"Person","name":"Jiaer Xia"},{"@type":"Person","name":"Yuhang Zang"},{"@type":"Person","name":"Peng Gao"},{"@type":"Person","name":"Sharon Li"},{"@type":"Person","name":"Kaiyang Zhou"}],"datePublished":"2026","url":"https://yuhangzang.github.io/papers/arxiv-2505.14677.html","sameAs":["https://jmlr.org/tmlr/papers/bib/JWkZXBgh5a.bib","https://arxiv.org/abs/2505.14677"],"identifier":{"@type":"PropertyValue","propertyID":"arXiv","value":"2505.14677"},"encoding":{"@type":"MediaObject","name":"Paper · arXiv v3","contentUrl":"https://arxiv.org/pdf/2505.14677v3","encodingFormat":"application/pdf"},"isPartOf":{"@type":"Periodical","name":"Transactions on Machine Learning Research"},"keywords":["Visionary-R1","Visual reasoning","Shortcut learning","Reinforcement learning","GRPO","Caption–reason–answer","CoT-free supervision","Out-of-distribution generalization"],"abstract":"Learning general-purpose reasoning capabilities has long been a challenging problem in AI. Recent research in large language models (LLMs), such as DeepSeek-R1, has shown that reinforcement learning techniques like GRPO can enable pre-trained LLMs to develop reasoning capabilities using simple question-answer pairs. In this paper, we aim to train visual language models (VLMs) to perform reasoning on image data through reinforcement learning and visual question-answer pairs, without any explicit chain-of-thought (CoT) supervision. Our findings indicate that simply applying reinforcement learning to a VLM -- by prompting the model to produce a reasoning chain before providing an answer -- can lead the model to develop shortcuts from easy questions, thereby reducing its ability to generalize across unseen data distributions. We argue that the key to mitigating shortcut learning is to encourage the model to interpret images prior to reasoning. Therefore, we train the model to adhere to a caption-reason-answer output format: initially generating a detailed caption for an image, followed by constructing an extensive reasoning chain. When trained on 273K CoT-free visual question-answer pairs and using only reinforcement learning, our model, named Visionary-R1, outperforms strong multimodal models, such as GPT-4o, Claude3.5-Sonnet, and Gemini-1.5-Pro, on multiple visual reasoning benchmarks.","description":"Visionary-R1 reduces shortcut learning in visual reinforcement learning by requiring image interpretation before reasoning through a caption–reason–answer output format."}</script>
+<script src="../assets/main.min.js" defer></script>
+</head>
+<body class="paper-page">
+<nav class="main-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="../index.html" class="brand-link">Yuhang Zang</a>
+      </div>
+      <button class="mobile-menu-toggle" type="button" aria-label="Toggle navigation menu" aria-controls="nav-menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <div class="nav-menu" id="nav-menu" aria-hidden="true">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../research.html" class="nav-link active" aria-current="location">Publications</a>
+        <a href="../index.html#services" class="nav-link">Services</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" title="Toggle dark mode" aria-label="Toggle dark mode" aria-pressed="false">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+<main class="paper-detail">
+  <article class="papers-section">
+    <p class="paper-detail-kicker">TMLR · 2026</p>
+    <h1 class="section-heading">Visionary-R1: Mitigating Shortcuts in Visual Reasoning with Reinforcement Learning</h1>
+    <p class="paper-detail-authors author-names">Jiaer Xia, <strong class="author-highlight">Yuhang Zang</strong>, Peng Gao, Sharon Li, Kaiyang Zhou</p>
+
+    <section class="paper-takeaway" aria-labelledby="takeaway-heading">
+      <h2 id="takeaway-heading">Key takeaway</h2>
+      <p>Visionary-R1 reduces shortcut learning in visual reinforcement learning by requiring image interpretation before reasoning through a caption–reason–answer output format. <a href="https://arxiv.org/abs/2505.14677v3">arXiv abstract · v3</a></p>
+    </section>
+    <section aria-labelledby="abstract-heading">
+      <h2 id="abstract-heading">Abstract</h2>
+      <p>Learning general-purpose reasoning capabilities has long been a challenging problem in AI. Recent research in large language models (LLMs), such as DeepSeek-R1, has shown that reinforcement learning techniques like GRPO can enable pre-trained LLMs to develop reasoning capabilities using simple question-answer pairs. In this paper, we aim to train visual language models (VLMs) to perform reasoning on image data through reinforcement learning and visual question-answer pairs, without any explicit chain-of-thought (CoT) supervision. Our findings indicate that simply applying reinforcement learning to a VLM -- by prompting the model to produce a reasoning chain before providing an answer -- can lead the model to develop shortcuts from easy questions, thereby reducing its ability to generalize across unseen data distributions. We argue that the key to mitigating shortcut learning is to encourage the model to interpret images prior to reasoning. Therefore, we train the model to adhere to a caption-reason-answer output format: initially generating a detailed caption for an image, followed by constructing an extensive reasoning chain. When trained on 273K CoT-free visual question-answer pairs and using only reinforcement learning, our model, named Visionary-R1, outperforms strong multimodal models, such as GPT-4o, Claude3.5-Sonnet, and Gemini-1.5-Pro, on multiple visual reasoning benchmarks.</p>
+      <p class="paper-detail-note">Author abstract · <a href="https://arxiv.org/abs/2505.14677v3">arXiv abstract · v3</a></p>
+    </section>
+    <section aria-labelledby="publication-heading">
+      <h2 id="publication-heading">Publication</h2>
+      <p>Transactions on Machine Learning Research (TMLR), 2026</p>
+
+    </section>
+    <section aria-labelledby="resources-heading">
+      <h2 id="resources-heading">Paper and resources</h2>
+      <ul class="paper-detail-resources">
+        <li><a href="https://arxiv.org/pdf/2505.14677v3">Paper · arXiv v3 (PDF)</a></li>
+        <li><a href="https://arxiv.org/abs/2505.14677">arXiv:2505.14677</a></li>
+        <li><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=hW23VKIAAAAJ&amp;citation_for_view=hW23VKIAAAAJ:70eg2SAEIzsC">Google Scholar</a></li>
+        <li><a href="https://github.com/maifoundations/Visionary-R1">Code · maifoundations/Visionary-R1</a></li>
+      </ul>
+    </section>
+    <section aria-labelledby="topics-heading">
+      <h2 id="topics-heading">Research topics</h2>
+      <p class="paper-keywords">Visionary-R1 · Visual reasoning · Shortcut learning · Reinforcement learning · GRPO · Caption–reason–answer · CoT-free supervision · Out-of-distribution generalization</p>
+    </section>
+    <section aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Research problem and approach</h2>
+      <p>Applying reinforcement learning directly to visual question answering can encourage shortcuts learned from easy questions. Visionary-R1 explicitly encourages image interpretation before constructing a reasoning chain. <a href="https://arxiv.org/abs/2505.14677v3">arXiv abstract · v3</a></p>
+    </section>
+    <section aria-labelledby="contributions-heading">
+      <h2 id="contributions-heading">Main contributions</h2>
+      <ul class="paper-detail-resources"><li>Analyzes shortcut learning and failures to generalize to unseen data distributions. <a href="https://arxiv.org/abs/2505.14677v3">arXiv abstract · v3</a></li>
+<li>Trains with reinforcement learning on question-answer pairs without explicit chain-of-thought supervision. <a href="https://arxiv.org/abs/2505.14677v3">arXiv abstract · v3</a></li></ul>
+    </section>
+    <section aria-labelledby="method-comparison-heading">
+      <h2 id="method-comparison-heading">Method comparison</h2>
+      <div class="paper-results-scroll" role="region" aria-label="Method comparison table" tabindex="0">
+        <table class="paper-methods paper-methods-compact">
+          <thead><tr><th scope="col">Approach</th><th scope="col">Key difference</th></tr></thead>
+          <tbody><tr><th scope="row">Direct visual-question RL</th><td>Can exploit shortcuts from easier questions instead of learning robust visual reasoning.</td></tr>
+<tr><th scope="row">Visionary-R1</th><td>Uses a caption–reason–answer format to encourage image interpretation before reasoning, without CoT labels.</td></tr></tbody>
+        </table>
+      </div>
+      <p class="paper-detail-note"><a href="https://arxiv.org/abs/2505.14677v3">arXiv abstract · v3</a></p>
+    </section>
+    <section aria-labelledby="results-heading">
+      <h2 id="results-heading">Selected results</h2>
+      <ul class="paper-detail-resources"><li>On the 3B backbone, Visionary-R1 scores 69.4 on MathVista, 24.7 on MathVision and 84.1 on MMBench, compared with 61.8, 20.3 and 78.6 for the GRPO baseline in the same table. <a href="https://arxiv.org/html/2505.14677v3#S4.T1">Table 1 · 3B backbone comparison · arXiv v3</a></li>
+<li>In the ChartQA-training ablation, adding captions to GRPO changes MathVista/MathVision from 59.0/18.2 to 62.6/20.9; the caption-reward configuration reaches 64.6/22.7. Adding only a caption-length reward gives 62.0/20.3, so longer captions alone do not explain the improvement. <a href="https://arxiv.org/html/2505.14677v3#S4.T2">Table 2 · perception-reward ablation · arXiv v3</a></li></ul>
+    </section>
+
+    <section aria-labelledby="citation-heading">
+      <h2 id="citation-heading">Cite this paper</h2>
+      <p>Jiaer Xia, Yuhang Zang, Peng Gao, Sharon Li, Kaiyang Zhou. Visionary-R1: Mitigating Shortcuts in Visual Reasoning with Reinforcement Learning. Transactions on Machine Learning Research, 2026.</p>
+
+
+      <div class="paper-citation-actions">
+        <button class="paper-copy-button" type="button" data-copy-target="paper-bibtex-content" aria-describedby="bibtex-copy-status" hidden>Copy to clipboard</button>
+        <a href="arxiv-2505.14677.bib" download>Download BibTeX</a>
+        <a href="https://jmlr.org/tmlr/papers/bib/JWkZXBgh5a.bib">TMLR published citation record</a>
+      </div>
+      <p id="bibtex-copy-status" class="paper-detail-note" role="status" aria-live="polite"></p>
+      <pre class="paper-bibtex"><code id="paper-bibtex-content">@article{arxiv250514677,
+  title     = {{Visionary-R1: Mitigating Shortcuts in Visual Reasoning with Reinforcement Learning}},
+  author    = {Jiaer Xia and Yuhang Zang and Peng Gao and Sharon Li and Kaiyang Zhou},
+  journal   = {Transactions on Machine Learning Research},
+  year      = {2026},
+  url       = {https://jmlr.org/tmlr/papers/bib/JWkZXBgh5a.bib}
+}
+</code></pre>
+    </section>
+  <footer class="paper-detail-footer"><a href="../research.html">← All publications</a></footer>
+  </article>
+</main>
+</body>
+</html>

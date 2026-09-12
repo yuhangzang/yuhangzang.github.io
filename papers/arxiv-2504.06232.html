@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<!-- Generated from data/publications.json. Edit the shared data and rebuild. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HiFlow: Training-free High-Resolution Image Generation with Flow-Aligned Guidance | Yuhang Zang</title>
+<meta name="description" content="HiFlow improves training-free high-resolution generation by aligning initialization, direction and acceleration with a reference flow derived from lower-resolution generation.">
+<link rel="canonical" href="https://yuhangzang.github.io/papers/arxiv-2504.06232.html">
+<meta name="citation_title" content="HiFlow: Training-free High-Resolution Image Generation with Flow-Aligned Guidance">
+<meta name="citation_author" content="Jiazi Bu">
+<meta name="citation_author" content="Pengyang Ling">
+<meta name="citation_author" content="Yujie Zhou">
+<meta name="citation_author" content="Pan Zhang">
+<meta name="citation_author" content="Tong Wu">
+<meta name="citation_author" content="Xiaoyi Dong">
+<meta name="citation_author" content="Yuhang Zang">
+<meta name="citation_author" content="Yuhang Cao">
+<meta name="citation_author" content="Dahua Lin">
+<meta name="citation_author" content="Jiaqi Wang">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_arxiv_id" content="2504.06232">
+<meta name="citation_doi" content="10.52202/085713-4831">
+<meta name="citation_pdf_url" content="https://proceedings.neurips.cc/paper_files/paper/2025/file/d4ecde5d18d36150c529d1b9c5f0d727-Paper-Conference.pdf">
+<meta name="citation_conference_title" content="Advances in Neural Information Processing Systems">
+<meta name="citation_firstpage" content="144317">
+<meta name="citation_lastpage" content="144351">
+<meta name="citation_volume" content="38">
+
+<link rel="alternate" type="application/x-bibtex" href="arxiv-2504.06232.bib">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HiFlow: Training-free High-Resolution Image Generation with Flow-Aligned Guidance">
+<meta property="og:description" content="HiFlow improves training-free high-resolution generation by aligning initialization, direction and acceleration with a reference flow derived from lower-resolution generation.">
+<meta property="og:url" content="https://yuhangzang.github.io/papers/arxiv-2504.06232.html">
+<link rel="icon" type="image/svg+xml" href="../imgs/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"></noscript>
+<script>
+try {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+} catch {}
+</script>
+<link rel="stylesheet" href="../main.min.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","@id":"https://yuhangzang.github.io/papers/arxiv-2504.06232.html#paper","name":"HiFlow: Training-free High-Resolution Image Generation with Flow-Aligned Guidance","author":[{"@type":"Person","name":"Jiazi Bu"},{"@type":"Person","name":"Pengyang Ling"},{"@type":"Person","name":"Yujie Zhou"},{"@type":"Person","name":"Pan Zhang"},{"@type":"Person","name":"Tong Wu"},{"@type":"Person","name":"Xiaoyi Dong"},{"@type":"Person","name":"Yuhang Zang"},{"@type":"Person","name":"Yuhang Cao"},{"@type":"Person","name":"Dahua Lin"},{"@type":"Person","name":"Jiaqi Wang"}],"datePublished":"2025","url":"https://yuhangzang.github.io/papers/arxiv-2504.06232.html","sameAs":["https://proceedings.neurips.cc/paper_files/paper/2025/hash/d4ecde5d18d36150c529d1b9c5f0d727-Abstract-Conference.html","https://arxiv.org/abs/2504.06232"],"identifier":[{"@type":"PropertyValue","propertyID":"arXiv","value":"2504.06232"},{"@type":"PropertyValue","propertyID":"DOI","value":"10.52202/085713-4831"}],"encoding":{"@type":"MediaObject","name":"Paper · arXiv v2","contentUrl":"https://arxiv.org/pdf/2504.06232v2","encodingFormat":"application/pdf"},"isPartOf":{"@type":"PublicationVolume","name":"Advances in Neural Information Processing Systems","volumeNumber":"38","isPartOf":{"@type":"CreativeWork","name":"Advances in Neural Information Processing Systems"}},"pageStart":144317,"pageEnd":144351,"keywords":["HiFlow","High-resolution image generation","Flow-aligned guidance","Training-free generation","Flow matching","Resolution extrapolation","Structure preservation","Text-to-image models"],"abstract":"Text-to-image (T2I) diffusion/flow models have drawn considerable attention recently due to their remarkable ability to deliver flexible visual creations. Still, high-resolution image synthesis presents formidable challenges due to the scarcity and complexity of high-resolution content. Recent approaches have investigated training-free strategies to enable high-resolution image synthesis with pre-trained models. However, these techniques often struggle with generating high-quality visuals and tend to exhibit artifacts or low-fidelity details, as they typically rely solely on the endpoint of the low-resolution sampling trajectory while neglecting intermediate states that are critical for preserving structure and synthesizing finer detail. To this end, we present HiFlow, a training-free and model-agnostic framework to unlock the resolution potential of pre-trained flow models. Specifically, HiFlow establishes a virtual reference flow within the high-resolution space that effectively captures the characteristics of low-resolution flow information, offering guidance for high-resolution generation through three key aspects: initialization alignment for low-frequency consistency, direction alignment for structure preservation, and acceleration alignment for detail fidelity. By leveraging such flow-aligned guidance, HiFlow substantially elevates the quality of high-resolution image synthesis of T2I models and demonstrates versatility across their personalized variants. Extensive experiments validate HiFlow's capability in achieving superior high-resolution image quality over state-of-the-art methods.","description":"HiFlow improves training-free high-resolution generation by aligning initialization, direction and acceleration with a reference flow derived from lower-resolution generation."}</script>
+<script src="../assets/main.min.js" defer></script>
+</head>
+<body class="paper-page">
+<nav class="main-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="../index.html" class="brand-link">Yuhang Zang</a>
+      </div>
+      <button class="mobile-menu-toggle" type="button" aria-label="Toggle navigation menu" aria-controls="nav-menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <div class="nav-menu" id="nav-menu" aria-hidden="true">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../research.html" class="nav-link active" aria-current="location">Publications</a>
+        <a href="../index.html#services" class="nav-link">Services</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" title="Toggle dark mode" aria-label="Toggle dark mode" aria-pressed="false">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+<main class="paper-detail">
+  <article class="papers-section">
+    <p class="paper-detail-kicker">NeurIPS · 2025</p>
+    <h1 class="section-heading">HiFlow: Training-free High-Resolution Image Generation with Flow-Aligned Guidance</h1>
+    <p class="paper-detail-authors author-names">Jiazi Bu, Pengyang Ling, Yujie Zhou, Pan Zhang<span class="paper-corresponding author-annotation corresponding" role="img" aria-label="Corresponding author" title="Corresponding author"><svg class="paper-envelope" viewBox="0 0 16 12" aria-hidden="true"><path fill="currentColor" d="M1 0h14a1 1 0 0 1 1 1v1L8 7 0 2V1a1 1 0 0 1 1-1ZM0 4l8 5 8-5v7a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1Z"/></svg><span class="paper-sr-only">(corresponding author)</span></span>, Tong Wu, Xiaoyi Dong, <strong class="author-highlight">Yuhang Zang</strong>, Yuhang Cao, Dahua Lin, Jiaqi Wang<span class="paper-corresponding author-annotation corresponding" role="img" aria-label="Corresponding author" title="Corresponding author"><svg class="paper-envelope" viewBox="0 0 16 12" aria-hidden="true"><path fill="currentColor" d="M1 0h14a1 1 0 0 1 1 1v1L8 7 0 2V1a1 1 0 0 1 1-1ZM0 4l8 5 8-5v7a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1Z"/></svg><span class="paper-sr-only">(corresponding author)</span></span></p>
+    <p class="paper-detail-note paper-author-legend"><svg class="paper-envelope" viewBox="0 0 16 12" aria-hidden="true"><path fill="currentColor" d="M1 0h14a1 1 0 0 1 1 1v1L8 7 0 2V1a1 1 0 0 1 1-1ZM0 4l8 5 8-5v7a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1Z"/></svg> Corresponding author</p>
+    <section class="paper-takeaway" aria-labelledby="takeaway-heading">
+      <h2 id="takeaway-heading">Key takeaway</h2>
+      <p>HiFlow improves training-free high-resolution generation by aligning initialization, direction and acceleration with a reference flow derived from lower-resolution generation. <a href="https://arxiv.org/abs/2504.06232v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="abstract-heading">
+      <h2 id="abstract-heading">Abstract</h2>
+      <p>Text-to-image (T2I) diffusion/flow models have drawn considerable attention recently due to their remarkable ability to deliver flexible visual creations. Still, high-resolution image synthesis presents formidable challenges due to the scarcity and complexity of high-resolution content. Recent approaches have investigated training-free strategies to enable high-resolution image synthesis with pre-trained models. However, these techniques often struggle with generating high-quality visuals and tend to exhibit artifacts or low-fidelity details, as they typically rely solely on the endpoint of the low-resolution sampling trajectory while neglecting intermediate states that are critical for preserving structure and synthesizing finer detail. To this end, we present HiFlow, a training-free and model-agnostic framework to unlock the resolution potential of pre-trained flow models. Specifically, HiFlow establishes a virtual reference flow within the high-resolution space that effectively captures the characteristics of low-resolution flow information, offering guidance for high-resolution generation through three key aspects: initialization alignment for low-frequency consistency, direction alignment for structure preservation, and acceleration alignment for detail fidelity. By leveraging such flow-aligned guidance, HiFlow substantially elevates the quality of high-resolution image synthesis of T2I models and demonstrates versatility across their personalized variants. Extensive experiments validate HiFlow&#39;s capability in achieving superior high-resolution image quality over state-of-the-art methods.</p>
+      <p class="paper-detail-note">Author abstract · <a href="https://arxiv.org/abs/2504.06232v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="publication-heading">
+      <h2 id="publication-heading">Publication</h2>
+      <p>Neural Information Processing Systems (NeurIPS), 2025</p>
+
+    </section>
+    <section aria-labelledby="resources-heading">
+      <h2 id="resources-heading">Paper and resources</h2>
+      <ul class="paper-detail-resources">
+        <li><a href="https://arxiv.org/pdf/2504.06232v2">Paper · arXiv v2 (PDF)</a></li>
+        <li><a href="https://arxiv.org/abs/2504.06232">arXiv:2504.06232</a></li>
+        <li><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=hW23VKIAAAAJ&amp;citation_for_view=hW23VKIAAAAJ:J_g5lzvAfSwC">Google Scholar</a></li>
+        <li><a href="https://github.com/Bujiazi/HiFlow">Code · Bujiazi/HiFlow</a></li>
+      </ul>
+    </section>
+    <section aria-labelledby="topics-heading">
+      <h2 id="topics-heading">Research topics</h2>
+      <p class="paper-keywords">HiFlow · High-resolution image generation · Flow-aligned guidance · Training-free generation · Flow matching · Resolution extrapolation · Structure preservation · Text-to-image models</p>
+    </section>
+    <section aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Research problem and approach</h2>
+      <p>Using only the endpoint of a low-resolution trajectory can lose structure and fine detail. HiFlow transfers information from intermediate flow states into a virtual high-resolution reference flow. <a href="https://arxiv.org/abs/2504.06232v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="contributions-heading">
+      <h2 id="contributions-heading">Main contributions</h2>
+      <ul class="paper-detail-resources"><li>Aligns low-frequency initialization, structural direction and detail-related acceleration. <a href="https://arxiv.org/abs/2504.06232v2">arXiv abstract · v2</a></li>
+<li>Provides a model-agnostic approach that also applies to personalized flow-model variants. <a href="https://arxiv.org/abs/2504.06232v2">arXiv abstract · v2</a></li></ul>
+    </section>
+    <section aria-labelledby="method-comparison-heading">
+      <h2 id="method-comparison-heading">Method comparison</h2>
+      <div class="paper-results-scroll" role="region" aria-label="Method comparison table" tabindex="0">
+        <table class="paper-methods paper-methods-compact">
+          <thead><tr><th scope="col">Approach</th><th scope="col">Key difference</th></tr></thead>
+          <tbody><tr><th scope="row">Endpoint-only low-resolution guidance</th><td>Uses the final lower-resolution result while discarding intermediate generation-trajectory information.</td></tr>
+<tr><th scope="row">HiFlow</th><td>Transfers intermediate flow information through aligned initialization, structural direction and detail-related acceleration.</td></tr></tbody>
+        </table>
+      </div>
+      <p class="paper-detail-note"><a href="https://arxiv.org/abs/2504.06232v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="results-heading">
+      <h2 id="results-heading">Selected results</h2>
+      <ul class="paper-detail-resources"><li>At 4K resolution, HiFlow obtains FID 52.55 and patch FID 45.01, compared with I-Max’s 53.27 and 52.93. Lower values indicate better distributional image quality in this evaluation. <a href="https://arxiv.org/html/2504.06232v2#S4.T1">Table 1 · 4096×4096 image generation · arXiv v2</a></li>
+<li>The reported 4K latency is 379 seconds for HiFlow versus 735 for I-Max. Removing acceleration alignment raises HiFlow’s 4K patch FID from 45.01 to 51.79, isolating its contribution to fine detail. <a href="https://arxiv.org/html/2504.06232v2#S4.T3">Tables 2–3 · latency and alignment ablation · arXiv v2</a></li></ul>
+    </section>
+
+    <section aria-labelledby="citation-heading">
+      <h2 id="citation-heading">Cite this paper</h2>
+      <p>Jiazi Bu, Pengyang Ling, Yujie Zhou, Pan Zhang, Tong Wu, Xiaoyi Dong, Yuhang Zang, Yuhang Cao, Dahua Lin, Jiaqi Wang. HiFlow: Training-free High-Resolution Image Generation with Flow-Aligned Guidance. Advances in Neural Information Processing Systems, 38, 2025, pp. 144317–144351.</p>
+
+
+      <div class="paper-citation-actions">
+        <button class="paper-copy-button" type="button" data-copy-target="paper-bibtex-content" aria-describedby="bibtex-copy-status" hidden>Copy to clipboard</button>
+        <a href="arxiv-2504.06232.bib" download>Download BibTeX</a>
+        <a href="https://proceedings.neurips.cc/paper_files/paper/2025/hash/d4ecde5d18d36150c529d1b9c5f0d727-Abstract-Conference.html">NeurIPS 2025 proceedings record</a>
+      </div>
+      <p id="bibtex-copy-status" class="paper-detail-note" role="status" aria-live="polite"></p>
+      <pre class="paper-bibtex"><code id="paper-bibtex-content">@inproceedings{arxiv250406232,
+  title     = {{HiFlow: Training-free High-Resolution Image Generation with Flow-Aligned Guidance}},
+  author    = {Jiazi Bu and Pengyang Ling and Yujie Zhou and Pan Zhang and Tong Wu and Xiaoyi Dong and Yuhang Zang and Yuhang Cao and Dahua Lin and Jiaqi Wang},
+  booktitle = {Advances in Neural Information Processing Systems},
+  year      = {2025},
+  volume    = {38},
+  publisher = {Curran Associates, Inc.},
+  pages     = {144317--144351},
+  doi       = {10.52202/085713-4831},
+  url       = {https://proceedings.neurips.cc/paper_files/paper/2025/hash/d4ecde5d18d36150c529d1b9c5f0d727-Abstract-Conference.html}
+}
+</code></pre>
+    </section>
+  <footer class="paper-detail-footer"><a href="../research.html">← All publications</a></footer>
+  </article>
+</main>
+</body>
+</html>

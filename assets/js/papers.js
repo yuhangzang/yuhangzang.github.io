@@ -24,7 +24,7 @@ export function initPaperList(container) {
         paper.querySelector('papertitle')?.textContent,
         paper.querySelector('.author-names')?.textContent,
         paper.querySelector('.paper-venue')?.textContent,
-        paper.dataset.year, paper.dataset.topic
+        paper.dataset.year, paper.dataset.topic, paper.dataset.keywords
     ].join(' ').toLowerCase()]));
 
     function updateVisibility() {

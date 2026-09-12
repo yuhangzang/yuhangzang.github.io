@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<!-- Generated from data/publications.json. Edit the shared data and rebuild. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>InternLM-XComposer2.5-Reward: A Simple Yet Effective Multi-Modal Reward Model | Yuhang Zang</title>
+<meta name="description" content="IXC-2.5-Reward provides a multimodal preference signal that supports reinforcement learning, best-response selection and instruction-data filtering across text, image and video inputs.">
+<link rel="canonical" href="https://yuhangzang.github.io/papers/arxiv-2501.12368.html">
+<meta name="citation_title" content="InternLM-XComposer2.5-Reward: A Simple Yet Effective Multi-Modal Reward Model">
+<meta name="citation_author" content="Yuhang Zang">
+<meta name="citation_author" content="Xiaoyi Dong">
+<meta name="citation_author" content="Pan Zhang">
+<meta name="citation_author" content="Yuhang Cao">
+<meta name="citation_author" content="Ziyu Liu">
+<meta name="citation_author" content="Shengyuan Ding">
+<meta name="citation_author" content="Shenxi Wu">
+<meta name="citation_author" content="Yubo Ma">
+<meta name="citation_author" content="Haodong Duan">
+<meta name="citation_author" content="Wenwei Zhang">
+<meta name="citation_author" content="Kai Chen">
+<meta name="citation_author" content="Dahua Lin">
+<meta name="citation_author" content="Jiaqi Wang">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_arxiv_id" content="2501.12368">
+<meta name="citation_doi" content="10.18653/v1/2025.findings-acl.340">
+<meta name="citation_pdf_url" content="https://aclanthology.org/2025.findings-acl.340.pdf">
+<meta name="citation_conference_title" content="Findings of the Association for Computational Linguistics: ACL 2025">
+<meta name="citation_firstpage" content="6547">
+<meta name="citation_lastpage" content="6563">
+
+
+<link rel="alternate" type="application/x-bibtex" href="arxiv-2501.12368.bib">
+<meta property="og:type" content="article">
+<meta property="og:title" content="InternLM-XComposer2.5-Reward: A Simple Yet Effective Multi-Modal Reward Model">
+<meta property="og:description" content="IXC-2.5-Reward provides a multimodal preference signal that supports reinforcement learning, best-response selection and instruction-data filtering across text, image and video inputs.">
+<meta property="og:url" content="https://yuhangzang.github.io/papers/arxiv-2501.12368.html">
+<link rel="icon" type="image/svg+xml" href="../imgs/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"></noscript>
+<script>
+try {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+} catch {}
+</script>
+<link rel="stylesheet" href="../main.min.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","@id":"https://yuhangzang.github.io/papers/arxiv-2501.12368.html#paper","name":"InternLM-XComposer2.5-Reward: A Simple Yet Effective Multi-Modal Reward Model","author":[{"@type":"Person","name":"Yuhang Zang"},{"@type":"Person","name":"Xiaoyi Dong"},{"@type":"Person","name":"Pan Zhang"},{"@type":"Person","name":"Yuhang Cao"},{"@type":"Person","name":"Ziyu Liu"},{"@type":"Person","name":"Shengyuan Ding"},{"@type":"Person","name":"Shenxi Wu"},{"@type":"Person","name":"Yubo Ma"},{"@type":"Person","name":"Haodong Duan"},{"@type":"Person","name":"Wenwei Zhang"},{"@type":"Person","name":"Kai Chen"},{"@type":"Person","name":"Dahua Lin"},{"@type":"Person","name":"Jiaqi Wang"}],"datePublished":"2025","url":"https://yuhangzang.github.io/papers/arxiv-2501.12368.html","sameAs":["https://aclanthology.org/2025.findings-acl.340/","https://arxiv.org/abs/2501.12368"],"identifier":[{"@type":"PropertyValue","propertyID":"arXiv","value":"2501.12368"},{"@type":"PropertyValue","propertyID":"DOI","value":"10.18653/v1/2025.findings-acl.340"}],"encoding":{"@type":"MediaObject","name":"Paper · arXiv v2","contentUrl":"https://arxiv.org/pdf/2501.12368v2","encodingFormat":"application/pdf"},"isPartOf":{"@type":"CreativeWork","name":"Findings of the Association for Computational Linguistics: ACL 2025"},"pageStart":6547,"pageEnd":6563,"keywords":["InternLM-XComposer2.5-Reward","Multimodal reward models","Human preference alignment","Reinforcement learning","PPO","Best-of-N selection","Instruction data filtering","Video reward modeling"],"abstract":"Despite the promising performance of Large Vision Language Models (LVLMs) in visual understanding, they occasionally generate incorrect outputs. While reward models (RMs) with reinforcement learning or test-time scaling offer the potential for improving generation quality, a critical gap remains: publicly available multi-modal RMs for LVLMs are scarce, and the implementation details of proprietary models are often unclear. We bridge this gap with InternLM-XComposer2.5-Reward (IXC-2.5-Reward), a simple yet effective multi-modal reward model that aligns LVLMs with human preferences. To ensure the robustness and versatility of IXC-2.5-Reward, we set up a high-quality multi-modal preference corpus spanning text, image, and video inputs across diverse domains, such as instruction following, general understanding, text-rich documents, mathematical reasoning, and video understanding. IXC-2.5-Reward achieves excellent results on the latest multi-modal reward model benchmark and shows competitive performance on text-only reward model benchmarks. We further demonstrate three key applications of IXC-2.5-Reward: (1) Providing a supervisory signal for RL training. We integrate IXC-2.5-Reward with Proximal Policy Optimization (PPO) yields IXC-2.5-Chat, which shows consistent improvements in instruction following and multi-modal open-ended dialogue; (2) Selecting the best response from candidate responses for test-time scaling; and (3) Filtering outlier or noisy samples from existing image and video instruction tuning training data. To ensure reproducibility and facilitate further research, we have open-sourced all model weights and training recipes at https://github.com/InternLM/InternLM-XComposer/tree/main/InternLM-XComposer-2.5-Reward","description":"IXC-2.5-Reward provides a multimodal preference signal that supports reinforcement learning, best-response selection and instruction-data filtering across text, image and video inputs."}</script>
+<script src="../assets/main.min.js" defer></script>
+</head>
+<body class="paper-page">
+<nav class="main-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="../index.html" class="brand-link">Yuhang Zang</a>
+      </div>
+      <button class="mobile-menu-toggle" type="button" aria-label="Toggle navigation menu" aria-controls="nav-menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <div class="nav-menu" id="nav-menu" aria-hidden="true">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../research.html" class="nav-link active" aria-current="location">Publications</a>
+        <a href="../index.html#services" class="nav-link">Services</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" title="Toggle dark mode" aria-label="Toggle dark mode" aria-pressed="false">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+<main class="paper-detail">
+  <article class="papers-section">
+    <p class="paper-detail-kicker">ACL · 2025</p>
+    <h1 class="section-heading">InternLM-XComposer2.5-Reward: A Simple Yet Effective Multi-Modal Reward Model</h1>
+    <p class="paper-detail-authors author-names"><strong class="author-highlight">Yuhang Zang</strong>, Xiaoyi Dong, Pan Zhang, Yuhang Cao, Ziyu Liu, Shengyuan Ding, Shenxi Wu, Yubo Ma, Haodong Duan, Wenwei Zhang, Kai Chen, Dahua Lin, Jiaqi Wang</p>
+
+    <section class="paper-takeaway" aria-labelledby="takeaway-heading">
+      <h2 id="takeaway-heading">Key takeaway</h2>
+      <p>IXC-2.5-Reward provides a multimodal preference signal that supports reinforcement learning, best-response selection and instruction-data filtering across text, image and video inputs. <a href="https://arxiv.org/abs/2501.12368v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="abstract-heading">
+      <h2 id="abstract-heading">Abstract</h2>
+      <p>Despite the promising performance of Large Vision Language Models (LVLMs) in visual understanding, they occasionally generate incorrect outputs. While reward models (RMs) with reinforcement learning or test-time scaling offer the potential for improving generation quality, a critical gap remains: publicly available multi-modal RMs for LVLMs are scarce, and the implementation details of proprietary models are often unclear. We bridge this gap with InternLM-XComposer2.5-Reward (IXC-2.5-Reward), a simple yet effective multi-modal reward model that aligns LVLMs with human preferences. To ensure the robustness and versatility of IXC-2.5-Reward, we set up a high-quality multi-modal preference corpus spanning text, image, and video inputs across diverse domains, such as instruction following, general understanding, text-rich documents, mathematical reasoning, and video understanding. IXC-2.5-Reward achieves excellent results on the latest multi-modal reward model benchmark and shows competitive performance on text-only reward model benchmarks. We further demonstrate three key applications of IXC-2.5-Reward: (1) Providing a supervisory signal for RL training. We integrate IXC-2.5-Reward with Proximal Policy Optimization (PPO) yields IXC-2.5-Chat, which shows consistent improvements in instruction following and multi-modal open-ended dialogue; (2) Selecting the best response from candidate responses for test-time scaling; and (3) Filtering outlier or noisy samples from existing image and video instruction tuning training data. To ensure reproducibility and facilitate further research, we have open-sourced all model weights and training recipes at https://github.com/InternLM/InternLM-XComposer/tree/main/InternLM-XComposer-2.5-Reward</p>
+      <p class="paper-detail-note">Author abstract · <a href="https://arxiv.org/abs/2501.12368v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="publication-heading">
+      <h2 id="publication-heading">Publication</h2>
+      <p>Findings of the Association for Computational Linguistics (ACL), 2025</p>
+
+    </section>
+    <section aria-labelledby="resources-heading">
+      <h2 id="resources-heading">Paper and resources</h2>
+      <ul class="paper-detail-resources">
+        <li><a href="https://arxiv.org/pdf/2501.12368v2">Paper · arXiv v2 (PDF)</a></li>
+        <li><a href="https://arxiv.org/abs/2501.12368">arXiv:2501.12368</a></li>
+        <li><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=hW23VKIAAAAJ&amp;citation_for_view=hW23VKIAAAAJ:TFP_iSt0sucC">Google Scholar</a></li>
+        <li><a href="https://github.com/InternLM/InternLM-XComposer">Code · InternLM/InternLM-XComposer</a></li>
+        <li><a href="https://huggingface.co/internlm/internlm-xcomposer2d5-7b-reward">Hugging Face · IXC 2.5 Reward</a></li>
+        <li><a href="https://huggingface.co/internlm/internlm-xcomposer2d5-7b-chat">Hugging Face · IXC 2.5 Chat</a></li>
+      </ul>
+    </section>
+    <section aria-labelledby="topics-heading">
+      <h2 id="topics-heading">Research topics</h2>
+      <p class="paper-keywords">InternLM-XComposer2.5-Reward · Multimodal reward models · Human preference alignment · Reinforcement learning · PPO · Best-of-N selection · Instruction data filtering · Video reward modeling</p>
+    </section>
+    <section aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Research problem and approach</h2>
+      <p>Public multimodal reward models are scarce and proprietary training recipes are difficult to reproduce. IXC-2.5-Reward addresses this gap with an open reward model trained on a preference corpus spanning instruction following, documents, reasoning and video understanding. <a href="https://arxiv.org/abs/2501.12368v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="contributions-heading">
+      <h2 id="contributions-heading">Main contributions</h2>
+      <ul class="paper-detail-resources"><li>Constructs a diverse multimodal preference corpus and releases reward-model weights and training recipes. <a href="https://arxiv.org/abs/2501.12368v2">arXiv abstract · v2</a></li>
+<li>Demonstrates one reward model in PPO training, test-time response selection and noisy-data filtering. <a href="https://arxiv.org/abs/2501.12368v2">arXiv abstract · v2</a></li></ul>
+    </section>
+    <section aria-labelledby="method-comparison-heading">
+      <h2 id="method-comparison-heading">Method comparison</h2>
+      <div class="paper-results-scroll" role="region" aria-label="Method comparison table" tabindex="0">
+        <table class="paper-methods paper-methods-compact">
+          <thead><tr><th scope="col">Approach</th><th scope="col">Key difference</th></tr></thead>
+          <tbody><tr><th scope="row">PPO training with IXC-2.5-Reward</th><td>Uses reward scores as supervision to update the model&#39;s response policy.</td></tr>
+<tr><th scope="row">Test-time selection with IXC-2.5-Reward</th><td>Ranks existing candidate responses to select a preferred output without a policy update.</td></tr>
+<tr><th scope="row">Data filtering with IXC-2.5-Reward</th><td>Identifies noisy or outlying image and video instruction examples before training.</td></tr></tbody>
+        </table>
+      </div>
+      <p class="paper-detail-note"><a href="https://arxiv.org/abs/2501.12368v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="results-heading">
+      <h2 id="results-heading">Selected results</h2>
+      <ul class="paper-detail-resources"><li>IXC-2.5-Reward-7B obtains 65.8% overall accuracy and 70.0% macro accuracy on VLRewardBench. GPT-4o (2024-08-06) scores 65.8% overall and 62.4% macro accuracy; the equal overall score and different macro score reflect category balance. <a href="https://arxiv.org/html/2501.12368v2#S3.T3">Table 3 · VLRewardBench · arXiv v2</a></li>
+<li>IXC-2.5-Reward scores 88.6 on text-only RewardBench, compared with 87.6 for InternLM2-7B-Reward and 80.0 for LLaVA-Critic-8B. This evaluates text reward capability separately from multimodal judgment. <a href="https://arxiv.org/html/2501.12368v2#S5.T4">Table 4 · text-only RewardBench · arXiv v2</a></li></ul>
+    </section>
+
+    <section aria-labelledby="citation-heading">
+      <h2 id="citation-heading">Cite this paper</h2>
+      <p>Yuhang Zang, Xiaoyi Dong, Pan Zhang, Yuhang Cao, Ziyu Liu, Shengyuan Ding, Shenxi Wu, Yubo Ma, Haodong Duan, Wenwei Zhang, Kai Chen, Dahua Lin, Jiaqi Wang. InternLM-XComposer2.5-Reward: A Simple Yet Effective Multi-Modal Reward Model. Findings of the Association for Computational Linguistics: ACL 2025, 2025, pp. 6547–6563.</p>
+
+
+      <div class="paper-citation-actions">
+        <button class="paper-copy-button" type="button" data-copy-target="paper-bibtex-content" aria-describedby="bibtex-copy-status" hidden>Copy to clipboard</button>
+        <a href="arxiv-2501.12368.bib" download>Download BibTeX</a>
+        <a href="https://aclanthology.org/2025.findings-acl.340/">ACL 2025 proceedings record</a>
+      </div>
+      <p id="bibtex-copy-status" class="paper-detail-note" role="status" aria-live="polite"></p>
+      <pre class="paper-bibtex"><code id="paper-bibtex-content">@inproceedings{arxiv250112368,
+  title     = {{InternLM-XComposer2.5-Reward: A Simple Yet Effective Multi-Modal Reward Model}},
+  author    = {Yuhang Zang and Xiaoyi Dong and Pan Zhang and Yuhang Cao and Ziyu Liu and Shengyuan Ding and Shenxi Wu and Yubo Ma and Haodong Duan and Wenwei Zhang and Kai Chen and Dahua Lin and Jiaqi Wang},
+  booktitle = {Findings of the Association for Computational Linguistics: ACL 2025},
+  month     = {July},
+  year      = {2025},
+  publisher = {Association for Computational Linguistics},
+  pages     = {6547--6563},
+  doi       = {10.18653/v1/2025.findings-acl.340},
+  url       = {https://aclanthology.org/2025.findings-acl.340/}
+}
+</code></pre>
+    </section>
+  <footer class="paper-detail-footer"><a href="../research.html">← All publications</a></footer>
+  </article>
+</main>
+</body>
+</html>

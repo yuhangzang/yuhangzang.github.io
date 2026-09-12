@@ -1,3 +1,5 @@
+import { initCopyButtons } from './js/clipboard.js';
+
 function initSiteUI() {
     const themeButton = document.getElementById('theme-toggle');
     const colorScheme = window.matchMedia('(prefers-color-scheme: dark)');
@@ -71,3 +73,4 @@ function initSiteUI() {
 }
 
 initSiteUI();
+initCopyButtons();

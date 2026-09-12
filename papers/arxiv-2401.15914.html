@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!-- Generated from data/publications.json. Edit the shared data and rebuild. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Overcoming the Pitfalls of Vision-Language Model Finetuning for OOD Generalization | Yuhang Zang</title>
+<meta name="description" content="OGEN improves out-of-distribution generalization during vision-language fine-tuning by synthesizing features for unknown classes and using adaptive self-distillation to limit overfitting.">
+<link rel="canonical" href="https://yuhangzang.github.io/papers/arxiv-2401.15914.html">
+<meta name="citation_title" content="Overcoming the Pitfalls of Vision-Language Model Finetuning for OOD Generalization">
+<meta name="citation_author" content="Yuhang Zang">
+<meta name="citation_author" content="Hanlin Goh">
+<meta name="citation_author" content="Joshua Susskind">
+<meta name="citation_author" content="Chen Huang">
+<meta name="citation_publication_date" content="2024">
+<meta name="citation_arxiv_id" content="2401.15914">
+
+<meta name="citation_pdf_url" content="https://proceedings.iclr.cc/paper_files/paper/2024/file/8140f43b06c9c7e14fb96953caed2665-Paper-Conference.pdf">
+<meta name="citation_conference_title" content="International Conference on Learning Representations">
+<meta name="citation_firstpage" content="30327">
+<meta name="citation_lastpage" content="30342">
+<meta name="citation_volume" content="2024">
+
+<link rel="alternate" type="application/x-bibtex" href="arxiv-2401.15914.bib">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Overcoming the Pitfalls of Vision-Language Model Finetuning for OOD Generalization">
+<meta property="og:description" content="OGEN improves out-of-distribution generalization during vision-language fine-tuning by synthesizing features for unknown classes and using adaptive self-distillation to limit overfitting.">
+<meta property="og:url" content="https://yuhangzang.github.io/papers/arxiv-2401.15914.html">
+<link rel="icon" type="image/svg+xml" href="../imgs/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"></noscript>
+<script>
+try {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+} catch {}
+</script>
+<link rel="stylesheet" href="../main.min.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","@id":"https://yuhangzang.github.io/papers/arxiv-2401.15914.html#paper","name":"Overcoming the Pitfalls of Vision-Language Model Finetuning for OOD Generalization","author":[{"@type":"Person","name":"Yuhang Zang"},{"@type":"Person","name":"Hanlin Goh"},{"@type":"Person","name":"Joshua Susskind"},{"@type":"Person","name":"Chen Huang"}],"datePublished":"2024","url":"https://yuhangzang.github.io/papers/arxiv-2401.15914.html","sameAs":["https://proceedings.iclr.cc/paper_files/paper/2024/hash/8140f43b06c9c7e14fb96953caed2665-Abstract-Conference.html","https://arxiv.org/abs/2401.15914"],"identifier":{"@type":"PropertyValue","propertyID":"arXiv","value":"2401.15914"},"encoding":{"@type":"MediaObject","name":"Paper · arXiv v2","contentUrl":"https://arxiv.org/pdf/2401.15914v2","encodingFormat":"application/pdf"},"isPartOf":{"@type":"PublicationVolume","name":"International Conference on Learning Representations","volumeNumber":"2024","isPartOf":{"@type":"CreativeWork","name":"International Conference on Learning Representations"}},"pageStart":30327,"pageEnd":30342,"keywords":["OGEN","Out-of-distribution generalization","Vision-language fine-tuning","Unknown-class recognition","Feature synthesis","Adaptive self-distillation","Prompt learning","Open-domain recognition"],"abstract":"Existing vision-language models exhibit strong generalization on a variety of visual domains and tasks. However, such models mainly perform zero-shot recognition in a closed-set manner, and thus struggle to handle open-domain visual concepts by design. There are recent finetuning methods, such as prompt learning, that not only study the discrimination between in-distribution (ID) and out-of-distribution (OOD) samples, but also show some improvements in both ID and OOD accuracies. In this paper, we first demonstrate that vision-language models, after long enough finetuning but without proper regularization, tend to overfit the known classes in the given dataset, with degraded performance on unknown classes. Then we propose a novel approach OGEN to address this pitfall, with the main focus on improving the OOD GENeralization of finetuned models. Specifically, a class-conditional feature generator is introduced to synthesize OOD features using just the class name of any unknown class. Such synthesized features will provide useful knowledge about unknowns and help regularize the decision boundary between ID and OOD data when optimized jointly. Equally important is our adaptive self-distillation mechanism to regularize our feature generation model during joint optimization, i.e., adaptively transferring knowledge between model states to further prevent overfitting. Experiments validate that our method yields convincing gains in OOD generalization performance in different settings. Code: https://github.com/apple/ml-ogen.","description":"OGEN improves out-of-distribution generalization during vision-language fine-tuning by synthesizing features for unknown classes and using adaptive self-distillation to limit overfitting."}</script>
+<script src="../assets/main.min.js" defer></script>
+</head>
+<body class="paper-page">
+<nav class="main-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="../index.html" class="brand-link">Yuhang Zang</a>
+      </div>
+      <button class="mobile-menu-toggle" type="button" aria-label="Toggle navigation menu" aria-controls="nav-menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <div class="nav-menu" id="nav-menu" aria-hidden="true">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../research.html" class="nav-link active" aria-current="location">Publications</a>
+        <a href="../index.html#services" class="nav-link">Services</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" title="Toggle dark mode" aria-label="Toggle dark mode" aria-pressed="false">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+<main class="paper-detail">
+  <article class="papers-section">
+    <p class="paper-detail-kicker">ICLR · 2024</p>
+    <h1 class="section-heading">Overcoming the Pitfalls of Vision-Language Model Finetuning for OOD Generalization</h1>
+    <p class="paper-detail-authors author-names"><strong class="author-highlight">Yuhang Zang</strong>, Hanlin Goh, Josh Susskind, Chen Huang</p>
+
+    <section class="paper-takeaway" aria-labelledby="takeaway-heading">
+      <h2 id="takeaway-heading">Key takeaway</h2>
+      <p>OGEN improves out-of-distribution generalization during vision-language fine-tuning by synthesizing features for unknown classes and using adaptive self-distillation to limit overfitting. <a href="https://arxiv.org/abs/2401.15914v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="abstract-heading">
+      <h2 id="abstract-heading">Abstract</h2>
+      <p>Existing vision-language models exhibit strong generalization on a variety of visual domains and tasks. However, such models mainly perform zero-shot recognition in a closed-set manner, and thus struggle to handle open-domain visual concepts by design. There are recent finetuning methods, such as prompt learning, that not only study the discrimination between in-distribution (ID) and out-of-distribution (OOD) samples, but also show some improvements in both ID and OOD accuracies. In this paper, we first demonstrate that vision-language models, after long enough finetuning but without proper regularization, tend to overfit the known classes in the given dataset, with degraded performance on unknown classes. Then we propose a novel approach OGEN to address this pitfall, with the main focus on improving the OOD GENeralization of finetuned models. Specifically, a class-conditional feature generator is introduced to synthesize OOD features using just the class name of any unknown class. Such synthesized features will provide useful knowledge about unknowns and help regularize the decision boundary between ID and OOD data when optimized jointly. Equally important is our adaptive self-distillation mechanism to regularize our feature generation model during joint optimization, i.e., adaptively transferring knowledge between model states to further prevent overfitting. Experiments validate that our method yields convincing gains in OOD generalization performance in different settings. Code: https://github.com/apple/ml-ogen.</p>
+      <p class="paper-detail-note">Author abstract · <a href="https://arxiv.org/abs/2401.15914v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="publication-heading">
+      <h2 id="publication-heading">Publication</h2>
+      <p>International Conference on Learning Representations (ICLR), 2024</p>
+
+    </section>
+    <section aria-labelledby="resources-heading">
+      <h2 id="resources-heading">Paper and resources</h2>
+      <ul class="paper-detail-resources">
+        <li><a href="https://arxiv.org/pdf/2401.15914v2">Paper · arXiv v2 (PDF)</a></li>
+        <li><a href="https://arxiv.org/abs/2401.15914">arXiv:2401.15914</a></li>
+        <li><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=hW23VKIAAAAJ&amp;citation_for_view=hW23VKIAAAAJ:ufrVoPGSRksC">Google Scholar</a></li>
+      </ul>
+    </section>
+    <section aria-labelledby="topics-heading">
+      <h2 id="topics-heading">Research topics</h2>
+      <p class="paper-keywords">OGEN · Out-of-distribution generalization · Vision-language fine-tuning · Unknown-class recognition · Feature synthesis · Adaptive self-distillation · Prompt learning · Open-domain recognition</p>
+    </section>
+    <section aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Research problem and approach</h2>
+      <p>Prolonged fine-tuning can improve known classes while degrading recognition of unknown ones. OGEN regularizes this process with a class-conditional generator that synthesizes unknown-class features from class names and transfers knowledge between model states. <a href="https://arxiv.org/abs/2401.15914v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="contributions-heading">
+      <h2 id="contributions-heading">Main contributions</h2>
+      <ul class="paper-detail-resources"><li>Identifies overfitting to known classes as a failure mode of insufficiently regularized vision-language fine-tuning. <a href="https://arxiv.org/abs/2401.15914v2">arXiv abstract · v2</a></li>
+<li>Combines unknown-class feature generation with adaptive self-distillation during joint optimization. <a href="https://arxiv.org/abs/2401.15914v2">arXiv abstract · v2</a></li></ul>
+    </section>
+    <section aria-labelledby="method-comparison-heading">
+      <h2 id="method-comparison-heading">Method comparison</h2>
+      <div class="paper-results-scroll" role="region" aria-label="Method comparison table" tabindex="0">
+        <table class="paper-methods paper-methods-compact">
+          <thead><tr><th scope="col">Approach</th><th scope="col">Key difference</th></tr></thead>
+          <tbody><tr><th scope="row">Long fine-tuning without proper regularization</th><td>Can overfit known categories and degrade unknown-class recognition.</td></tr>
+<tr><th scope="row">OGEN</th><td>Synthesizes unknown-class features and applies adaptive self-distillation during joint optimization.</td></tr></tbody>
+        </table>
+      </div>
+      <p class="paper-detail-note"><a href="https://arxiv.org/abs/2401.15914v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="results-heading">
+      <h2 id="results-heading">Selected results</h2>
+      <ul class="paper-detail-resources"><li>Across 11 datasets, adding OGEN to CoOp raises new-class accuracy from 63.22% to 69.54% while base-class accuracy changes from 82.69% to 83.47%. The harmonic mean rises from 71.66% to 75.87% in the main comparison. <a href="https://arxiv.org/html/2401.15914v2#S4.T1">Table 1 · base-to-new generalization · arXiv v2</a></li>
+<li>In the ablation, the feature generator alone raises new-class accuracy from 63.22% to 69.02%; adding adaptive self-distillation reaches 69.54%. Joint class extrapolation scores 69.02% on new classes versus 64.08% without extrapolation. <a href="https://arxiv.org/html/2401.15914v2#S4.T4">Tables 3–4 · feature-generation ablation · arXiv v2</a></li></ul>
+    </section>
+
+    <section aria-labelledby="citation-heading">
+      <h2 id="citation-heading">Cite this paper</h2>
+      <p>Yuhang Zang, Hanlin Goh, Joshua Susskind, Chen Huang. Overcoming the Pitfalls of Vision-Language Model Finetuning for OOD Generalization. International Conference on Learning Representations, 2024, 2024, pp. 30327–30342.</p>
+      <p class="paper-detail-note">This citation uses the author list of the published version.</p>
+
+      <div class="paper-citation-actions">
+        <button class="paper-copy-button" type="button" data-copy-target="paper-bibtex-content" aria-describedby="bibtex-copy-status" hidden>Copy to clipboard</button>
+        <a href="arxiv-2401.15914.bib" download>Download BibTeX</a>
+        <a href="https://proceedings.iclr.cc/paper_files/paper/2024/hash/8140f43b06c9c7e14fb96953caed2665-Abstract-Conference.html">ICLR 2024 proceedings record</a>
+      </div>
+      <p id="bibtex-copy-status" class="paper-detail-note" role="status" aria-live="polite"></p>
+      <pre class="paper-bibtex"><code id="paper-bibtex-content">@inproceedings{arxiv240115914,
+  title     = {{Overcoming the Pitfalls of Vision-Language Model Finetuning for OOD Generalization}},
+  author    = {Yuhang Zang and Hanlin Goh and Joshua Susskind and Chen Huang},
+  booktitle = {International Conference on Learning Representations},
+  year      = {2024},
+  volume    = {2024},
+  pages     = {30327--30342},
+  url       = {https://proceedings.iclr.cc/paper_files/paper/2024/hash/8140f43b06c9c7e14fb96953caed2665-Abstract-Conference.html}
+}
+</code></pre>
+    </section>
+  <footer class="paper-detail-footer"><a href="../research.html">← All publications</a></footer>
+  </article>
+</main>
+</body>
+</html>

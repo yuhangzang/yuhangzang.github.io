@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!-- Generated from data/publications.json. Edit the shared data and rebuild. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bootstrap3D: Improving Multi-view Diffusion Model with Synthetic Data | Yuhang Zang</title>
+<meta name="description" content="Bootstrap3D uses filtered and recaptioned synthetic multi-view images to improve 3D generation while preserving the strengths of pretrained 2D diffusion models.">
+<link rel="canonical" href="https://yuhangzang.github.io/papers/arxiv-2406.00093.html">
+<meta name="citation_title" content="Bootstrap3D: Improving Multi-view Diffusion Model with Synthetic Data">
+<meta name="citation_author" content="Zeyi Sun">
+<meta name="citation_author" content="Tong Wu">
+<meta name="citation_author" content="Pan Zhang">
+<meta name="citation_author" content="Yuhang Zang">
+<meta name="citation_author" content="Xiaoyi Dong">
+<meta name="citation_author" content="Yuanjun Xiong">
+<meta name="citation_author" content="Dahua Lin">
+<meta name="citation_author" content="Jiaqi Wang">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_arxiv_id" content="2406.00093">
+
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/ICCV2025/papers/Sun_Bootstrap3D_Improving_Multi-view_Diffusion_Model_with_Synthetic_Data_ICCV_2025_paper.pdf">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)">
+<meta name="citation_firstpage" content="15714">
+<meta name="citation_lastpage" content="15726">
+
+
+<link rel="alternate" type="application/x-bibtex" href="arxiv-2406.00093.bib">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Bootstrap3D: Improving Multi-view Diffusion Model with Synthetic Data">
+<meta property="og:description" content="Bootstrap3D uses filtered and recaptioned synthetic multi-view images to improve 3D generation while preserving the strengths of pretrained 2D diffusion models.">
+<meta property="og:url" content="https://yuhangzang.github.io/papers/arxiv-2406.00093.html">
+<link rel="icon" type="image/svg+xml" href="../imgs/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"></noscript>
+<script>
+try {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+} catch {}
+</script>
+<link rel="stylesheet" href="../main.min.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","@id":"https://yuhangzang.github.io/papers/arxiv-2406.00093.html#paper","name":"Bootstrap3D: Improving Multi-view Diffusion Model with Synthetic Data","author":[{"@type":"Person","name":"Zeyi Sun"},{"@type":"Person","name":"Tong Wu"},{"@type":"Person","name":"Pan Zhang"},{"@type":"Person","name":"Yuhang Zang"},{"@type":"Person","name":"Xiaoyi Dong"},{"@type":"Person","name":"Yuanjun Xiong"},{"@type":"Person","name":"Dahua Lin"},{"@type":"Person","name":"Jiaqi Wang"}],"datePublished":"2025","url":"https://yuhangzang.github.io/papers/arxiv-2406.00093.html","sameAs":["https://openaccess.thecvf.com/content/ICCV2025/html/Sun_Bootstrap3D_Improving_Multi-view_Diffusion_Model_with_Synthetic_Data_ICCV_2025_paper.html","https://arxiv.org/pdf/2406.00093"],"identifier":{"@type":"PropertyValue","propertyID":"arXiv","value":"2406.00093"},"encoding":{"@type":"MediaObject","name":"Paper · arXiv v2","contentUrl":"https://arxiv.org/pdf/2406.00093v2","encodingFormat":"application/pdf"},"isPartOf":{"@type":"CreativeWork","name":"Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)"},"pageStart":15714,"pageEnd":15726,"keywords":["Bootstrap3D","Multi-view diffusion","Synthetic 3D training data","MV-LLaVA","Dense captions","View consistency","Training Timestep Reschedule","3D content generation"],"abstract":"Recent years have witnessed remarkable progress in multi-view diffusion models for 3D content creation. However, there remains a significant gap in image quality and prompt-following ability compared to 2D diffusion models. A critical bottleneck is the scarcity of high-quality 3D objects with detailed captions. To address this challenge, we propose Bootstrap3D, a novel framework that automatically generates an arbitrary quantity of multi-view images to assist in training multi-view diffusion models. Specifically, we introduce a data generation pipeline that employs (1) 2D and video diffusion models to generate multi-view images based on constructed text prompts, and (2) our fine-tuned 3D-aware MV-LLaVA for filtering high-quality data and rewriting inaccurate captions. Leveraging this pipeline, we have generated 1 million high-quality synthetic multi-view images with dense descriptive captions to address the shortage of high-quality 3D data. Furthermore, we present a Training Timestep Reschedule (TTR) strategy that leverages the denoising process to learn multi-view consistency while maintaining the original 2D diffusion prior. Extensive experiments demonstrate that Bootstrap3D can generate high-quality multi-view images with superior aesthetic quality, image-text alignment, and maintained view consistency.","description":"Bootstrap3D uses filtered and recaptioned synthetic multi-view images to improve 3D generation while preserving the strengths of pretrained 2D diffusion models."}</script>
+<script src="../assets/main.min.js" defer></script>
+</head>
+<body class="paper-page">
+<nav class="main-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="../index.html" class="brand-link">Yuhang Zang</a>
+      </div>
+      <button class="mobile-menu-toggle" type="button" aria-label="Toggle navigation menu" aria-controls="nav-menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <div class="nav-menu" id="nav-menu" aria-hidden="true">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../research.html" class="nav-link active" aria-current="location">Publications</a>
+        <a href="../index.html#services" class="nav-link">Services</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" title="Toggle dark mode" aria-label="Toggle dark mode" aria-pressed="false">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+<main class="paper-detail">
+  <article class="papers-section">
+    <p class="paper-detail-kicker">ICCV · 2025</p>
+    <h1 class="section-heading">Bootstrap3D: Improving Multi-view Diffusion Model with Synthetic Data</h1>
+    <p class="paper-detail-authors author-names">Zeyi Sun, Tong Wu, Pan Zhang, <strong class="author-highlight">Yuhang Zang</strong>, Xiaoyi Dong, Yuanjun Xiong, Dahua Lin, Jiaqi Wang</p>
+
+    <section class="paper-takeaway" aria-labelledby="takeaway-heading">
+      <h2 id="takeaway-heading">Key takeaway</h2>
+      <p>Bootstrap3D uses filtered and recaptioned synthetic multi-view images to improve 3D generation while preserving the strengths of pretrained 2D diffusion models. <a href="https://arxiv.org/abs/2406.00093v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="abstract-heading">
+      <h2 id="abstract-heading">Abstract</h2>
+      <p>Recent years have witnessed remarkable progress in multi-view diffusion models for 3D content creation. However, there remains a significant gap in image quality and prompt-following ability compared to 2D diffusion models. A critical bottleneck is the scarcity of high-quality 3D objects with detailed captions. To address this challenge, we propose Bootstrap3D, a novel framework that automatically generates an arbitrary quantity of multi-view images to assist in training multi-view diffusion models. Specifically, we introduce a data generation pipeline that employs (1) 2D and video diffusion models to generate multi-view images based on constructed text prompts, and (2) our fine-tuned 3D-aware MV-LLaVA for filtering high-quality data and rewriting inaccurate captions. Leveraging this pipeline, we have generated 1 million high-quality synthetic multi-view images with dense descriptive captions to address the shortage of high-quality 3D data. Furthermore, we present a Training Timestep Reschedule (TTR) strategy that leverages the denoising process to learn multi-view consistency while maintaining the original 2D diffusion prior. Extensive experiments demonstrate that Bootstrap3D can generate high-quality multi-view images with superior aesthetic quality, image-text alignment, and maintained view consistency.</p>
+      <p class="paper-detail-note">Author abstract · <a href="https://arxiv.org/abs/2406.00093v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="publication-heading">
+      <h2 id="publication-heading">Publication</h2>
+      <p>IEEE International Conference on Computer Vision (ICCV), 2025</p>
+
+    </section>
+    <section aria-labelledby="resources-heading">
+      <h2 id="resources-heading">Paper and resources</h2>
+      <ul class="paper-detail-resources">
+        <li><a href="https://arxiv.org/pdf/2406.00093v2">Paper · arXiv v2 (PDF)</a></li>
+        <li><a href="https://arxiv.org/pdf/2406.00093">arXiv:2406.00093</a></li>
+        <li><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=hW23VKIAAAAJ&amp;citation_for_view=hW23VKIAAAAJ:MXK_kJrjxJIC">Google Scholar</a></li>
+        <li><a href="https://github.com/SunzeY/Bootstrap3D">Code · SunzeY/Bootstrap3D</a></li>
+      </ul>
+    </section>
+    <section aria-labelledby="topics-heading">
+      <h2 id="topics-heading">Research topics</h2>
+      <p class="paper-keywords">Bootstrap3D · Multi-view diffusion · Synthetic 3D training data · MV-LLaVA · Dense captions · View consistency · Training Timestep Reschedule · 3D content generation</p>
+    </section>
+    <section aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Research problem and approach</h2>
+      <p>Multi-view diffusion is limited by scarce, well-captioned 3D data. Bootstrap3D creates multi-view images using image and video generators, then filters and recaptions them with a 3D-aware vision-language model. <a href="https://arxiv.org/abs/2406.00093v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="contributions-heading">
+      <h2 id="contributions-heading">Main contributions</h2>
+      <ul class="paper-detail-resources"><li>Generates one million synthetic multi-view images with dense captions using MV-LLaVA-based quality control. <a href="https://arxiv.org/abs/2406.00093v2">arXiv abstract · v2</a></li>
+<li>Introduces Training Timestep Reschedule to balance view consistency with the 2D diffusion prior. <a href="https://arxiv.org/abs/2406.00093v2">arXiv abstract · v2</a></li></ul>
+    </section>
+    <section aria-labelledby="method-comparison-heading">
+      <h2 id="method-comparison-heading">Method comparison</h2>
+      <div class="paper-results-scroll" role="region" aria-label="Method comparison table" tabindex="0">
+        <table class="paper-methods paper-methods-compact">
+          <thead><tr><th scope="col">Approach</th><th scope="col">Key difference</th></tr></thead>
+          <tbody><tr><th scope="row">Multi-view learning from scarce 3D data</th><td>Faces limited coverage and caption quality in available multi-view supervision.</td></tr>
+<tr><th scope="row">Bootstrap3D</th><td>Adds filtered, recaptioned synthetic multi-view images and reschedules training timesteps to retain the 2D prior.</td></tr></tbody>
+        </table>
+      </div>
+      <p class="paper-detail-note"><a href="https://arxiv.org/abs/2406.00093v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="results-heading">
+      <h2 id="results-heading">Selected results</h2>
+      <ul class="paper-detail-resources"><li>On four-view generation, Bootstrap3D improves CLIP-L/14 retrieval score from MVDream’s 84.8 to 88.8 and lowers FID against the PixArt reference distribution from 59.2 to 31.0. CLIP evaluation uses 110 GPTeval3D prompts; FID uses 30k object-centric reference images. <a href="https://arxiv.org/html/2406.00093v2#S4.T1">Table 1 · four-view generation · arXiv v2</a></li>
+<li>With 100k synthetic images and Cap3D captions, enabling TTR lowers multi-view FID from 92.0 to 60.8 and generated-object FID from 134.6 to 70.6. Adding dense recaptioning further lowers these values to 50.2 and 50.9. <a href="https://arxiv.org/html/2406.00093v2#S4.T3">Table 3 · synthetic-data ablation · arXiv v2</a></li></ul>
+    </section>
+
+    <section aria-labelledby="citation-heading">
+      <h2 id="citation-heading">Cite this paper</h2>
+      <p>Zeyi Sun, Tong Wu, Pan Zhang, Yuhang Zang, Xiaoyi Dong, Yuanjun Xiong, Dahua Lin, Jiaqi Wang. Bootstrap3D: Improving Multi-view Diffusion Model with Synthetic Data. Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), 2025, pp. 15714–15726.</p>
+
+
+      <div class="paper-citation-actions">
+        <button class="paper-copy-button" type="button" data-copy-target="paper-bibtex-content" aria-describedby="bibtex-copy-status" hidden>Copy to clipboard</button>
+        <a href="arxiv-2406.00093.bib" download>Download BibTeX</a>
+        <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Sun_Bootstrap3D_Improving_Multi-view_Diffusion_Model_with_Synthetic_Data_ICCV_2025_paper.html">ICCV 2025 proceedings record</a>
+      </div>
+      <p id="bibtex-copy-status" class="paper-detail-note" role="status" aria-live="polite"></p>
+      <pre class="paper-bibtex"><code id="paper-bibtex-content">@inproceedings{arxiv240600093,
+  title     = {{Bootstrap3D: Improving Multi-view Diffusion Model with Synthetic Data}},
+  author    = {Zeyi Sun and Tong Wu and Pan Zhang and Yuhang Zang and Xiaoyi Dong and Yuanjun Xiong and Dahua Lin and Jiaqi Wang},
+  booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+  month     = {October},
+  year      = {2025},
+  pages     = {15714--15726},
+  url       = {https://openaccess.thecvf.com/content/ICCV2025/html/Sun_Bootstrap3D_Improving_Multi-view_Diffusion_Model_with_Synthetic_Data_ICCV_2025_paper.html}
+}
+</code></pre>
+    </section>
+  <footer class="paper-detail-footer"><a href="../research.html">← All publications</a></footer>
+  </article>
+</main>
+</body>
+</html>

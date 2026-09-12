@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!-- Generated from data/publications.json. Edit the shared data and rebuild. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skill-as-Pseudocode: Refactoring Skill Libraries to Pseudocode for LLM Agents | Yuhang Zang</title>
+<meta name="description" content="Skill-as-Pseudocode improves agent use of procedural libraries by pairing typed contracts with concrete action templates; contracts alone do not deliver the same benefit.">
+<link rel="canonical" href="https://yuhangzang.github.io/papers/arxiv-2605.27955.html">
+<meta name="citation_title" content="Skill-as-Pseudocode: Refactoring Skill Libraries to Pseudocode for LLM Agents">
+<meta name="citation_author" content="Xinze Li">
+<meta name="citation_author" content="Yuhang Zang">
+<meta name="citation_author" content="Yixin Cao">
+<meta name="citation_author" content="Aixin Sun">
+<meta name="citation_publication_date" content="2026">
+<meta name="citation_arxiv_id" content="2605.27955">
+
+<meta name="citation_pdf_url" content="https://arxiv.org/pdf/2605.27955v2">
+<meta name="citation_journal_title" content="arXiv preprint arXiv:2605.27955">
+
+
+
+<link rel="alternate" type="application/x-bibtex" href="arxiv-2605.27955.bib">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Skill-as-Pseudocode: Refactoring Skill Libraries to Pseudocode for LLM Agents">
+<meta property="og:description" content="Skill-as-Pseudocode improves agent use of procedural libraries by pairing typed contracts with concrete action templates; contracts alone do not deliver the same benefit.">
+<meta property="og:url" content="https://yuhangzang.github.io/papers/arxiv-2605.27955.html">
+<link rel="icon" type="image/svg+xml" href="../imgs/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"></noscript>
+<script>
+try {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+} catch {}
+</script>
+<link rel="stylesheet" href="../main.min.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","@id":"https://yuhangzang.github.io/papers/arxiv-2605.27955.html#paper","name":"Skill-as-Pseudocode: Refactoring Skill Libraries to Pseudocode for LLM Agents","author":[{"@type":"Person","name":"Xinze Li"},{"@type":"Person","name":"Yuhang Zang"},{"@type":"Person","name":"Yixin Cao"},{"@type":"Person","name":"Aixin Sun"}],"datePublished":"2026","url":"https://yuhangzang.github.io/papers/arxiv-2605.27955.html","sameAs":["https://arxiv.org/abs/2605.27955"],"identifier":{"@type":"PropertyValue","propertyID":"arXiv","value":"2605.27955"},"encoding":{"@type":"MediaObject","name":"Paper · arXiv v2","contentUrl":"https://arxiv.org/pdf/2605.27955v2","encodingFormat":"application/pdf"},"isPartOf":{"@type":"CreativeWork","name":"arXiv preprint arXiv:2605.27955"},"keywords":["Skill-as-Pseudocode","LLM agents","Agent skill libraries","Typed contracts","Pseudocode","Action templates","ALFWorld","Token efficiency","Procedural knowledge"],"abstract":"Markdown skill libraries for LLM agents ship as free-form prose, forcing the agent to re-derive both the input schema and the concrete invocation syntax on every retrieval. This produces a \"confused → re-retrieve → still confused\" loop: the agent issues a partially-correct action, receives uninformative feedback, and re-retrieves the same prose. We propose Skill-as-Pseudocode (SaP), an automatic conversion of markdown skill libraries into typed pseudocode with deterministic quality control. From each cluster of similar procedural passages, SaP extracts a typed contract and filters it through a four-check deterministic verifier (coverage, binding, replacement, risk). Promoted contracts are inlined into a rewritten skill skeleton alongside restored action templates, giving the agent two complementary signals: a typed signature for what a skill does and a concrete template for how to invoke it. On the ALFWorld unseen split (134 games, gpt-4o-mini, three seeds), SaP wins 82/402 paired games versus 47/402 for the Graph-of-Skills (GoS) baseline (pooled McNemar p = 8.2 × 10⁻⁵), at -22.8 ± 6.4% input tokens and -14.5 ± 4.1% LLM calls per game. A bundle-component ablation attributes the gain to the pairing of typed contracts with concrete action templates: the contract alone falls below the prose baseline.","description":"Skill-as-Pseudocode improves agent use of procedural libraries by pairing typed contracts with concrete action templates; contracts alone do not deliver the same benefit."}</script>
+<script src="../assets/main.min.js" defer></script>
+</head>
+<body class="paper-page">
+<nav class="main-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="../index.html" class="brand-link">Yuhang Zang</a>
+      </div>
+      <button class="mobile-menu-toggle" type="button" aria-label="Toggle navigation menu" aria-controls="nav-menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <div class="nav-menu" id="nav-menu" aria-hidden="true">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../research.html" class="nav-link active" aria-current="location">Publications</a>
+        <a href="../index.html#services" class="nav-link">Services</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" title="Toggle dark mode" aria-label="Toggle dark mode" aria-pressed="false">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+<main class="paper-detail">
+  <article class="papers-section">
+    <p class="paper-detail-kicker">EMNLP · 2026</p>
+    <h1 class="section-heading">Skill-as-Pseudocode: Refactoring Skill Libraries to Pseudocode for LLM Agents</h1>
+    <p class="paper-detail-authors author-names">Xinze Li, <strong class="author-highlight">Yuhang Zang</strong>, Yixin Cao, Aixin Sun</p>
+
+    <section class="paper-takeaway" aria-labelledby="takeaway-heading">
+      <h2 id="takeaway-heading">Key takeaway</h2>
+      <p>Skill-as-Pseudocode improves agent use of procedural libraries by pairing typed contracts with concrete action templates; contracts alone do not deliver the same benefit. <a href="https://arxiv.org/abs/2605.27955v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="abstract-heading">
+      <h2 id="abstract-heading">Abstract</h2>
+      <p>Markdown skill libraries for LLM agents ship as free-form prose, forcing the agent to re-derive both the input schema and the concrete invocation syntax on every retrieval. This produces a &quot;confused → re-retrieve → still confused&quot; loop: the agent issues a partially-correct action, receives uninformative feedback, and re-retrieves the same prose. We propose Skill-as-Pseudocode (SaP), an automatic conversion of markdown skill libraries into typed pseudocode with deterministic quality control. From each cluster of similar procedural passages, SaP extracts a typed contract and filters it through a four-check deterministic verifier (coverage, binding, replacement, risk). Promoted contracts are inlined into a rewritten skill skeleton alongside restored action templates, giving the agent two complementary signals: a typed signature for what a skill does and a concrete template for how to invoke it. On the ALFWorld unseen split (134 games, gpt-4o-mini, three seeds), SaP wins 82/402 paired games versus 47/402 for the Graph-of-Skills (GoS) baseline (pooled McNemar p = 8.2 × 10⁻⁵), at -22.8 ± 6.4% input tokens and -14.5 ± 4.1% LLM calls per game. A bundle-component ablation attributes the gain to the pairing of typed contracts with concrete action templates: the contract alone falls below the prose baseline.</p>
+      <p class="paper-detail-note">Author abstract · <a href="https://arxiv.org/abs/2605.27955v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="publication-heading">
+      <h2 id="publication-heading">Publication</h2>
+      <p>Findings of Empirical Methods in Natural Language Processing (Findings of EMNLP), 2026</p>
+
+    </section>
+    <section aria-labelledby="resources-heading">
+      <h2 id="resources-heading">Paper and resources</h2>
+      <ul class="paper-detail-resources">
+        <li><a href="https://arxiv.org/pdf/2605.27955v2">Paper · arXiv v2 (PDF)</a></li>
+        <li><a href="https://arxiv.org/abs/2605.27955">arXiv:2605.27955</a></li>
+        <li><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=hW23VKIAAAAJ&amp;citation_for_view=hW23VKIAAAAJ:uJ-U7cs_P_0C">Google Scholar</a></li>
+        <li><a href="https://github.com/InternLM/Skill-as-Pseudocode">Code · InternLM/Skill-as-Pseudocode</a></li>
+      </ul>
+    </section>
+    <section aria-labelledby="topics-heading">
+      <h2 id="topics-heading">Research topics</h2>
+      <p class="paper-keywords">Skill-as-Pseudocode · LLM agents · Agent skill libraries · Typed contracts · Pseudocode · Action templates · ALFWorld · Token efficiency · Procedural knowledge</p>
+    </section>
+    <section aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Research problem and approach</h2>
+      <p>Free-form skill descriptions force agents to repeatedly infer input schemas and invocation syntax. SaP converts procedural passages into typed pseudocode and restores executable action templates in the rewritten library. <a href="https://arxiv.org/abs/2605.27955v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="contributions-heading">
+      <h2 id="contributions-heading">Main contributions</h2>
+      <ul class="paper-detail-resources"><li>Extracts typed contracts from clusters of similar procedures and verifies coverage, binding, replacement and risk. <a href="https://arxiv.org/abs/2605.27955v2">arXiv abstract · v2</a></li>
+<li>Uses component ablations to separate the effects of contracts and action templates. <a href="https://arxiv.org/abs/2605.27955v2">arXiv abstract · v2</a></li></ul>
+    </section>
+    <section aria-labelledby="method-comparison-heading">
+      <h2 id="method-comparison-heading">Method comparison</h2>
+      <div class="paper-results-scroll" role="region" aria-label="Method comparison table" tabindex="0">
+        <table class="paper-methods paper-methods-compact">
+          <thead><tr><th scope="col">Approach</th><th scope="col">Key difference</th></tr></thead>
+          <tbody><tr><th scope="row">Free-form prose skills</th><td>Leaves agents to infer input contracts and concrete invocation syntax from procedural descriptions.</td></tr>
+<tr><th scope="row">Skill-as-Pseudocode</th><td>Pairs verified typed contracts with restored action templates; the study finds contracts alone insufficient.</td></tr></tbody>
+        </table>
+      </div>
+      <p class="paper-detail-note"><a href="https://arxiv.org/abs/2605.27955v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="results-heading">
+      <h2 id="results-heading">Selected results</h2>
+      <ul class="paper-detail-resources"><li>On 134 unseen ALFWorld games with three seeds, GPT-4o-mini and a 30-step limit, SaP succeeds in 82/402 runs (20.4%) versus 47/402 (11.7%) for GoS. Mean input tokens per game decrease from 247.8k to 191.4k and calls from 39.7 to 33.9. <a href="https://arxiv.org/html/2605.27955v2#S5.T1">Table 1 · ALFWorld, 402 paired runs · arXiv v2</a></li>
+<li>In the separate single-seed ablation on 134 games, the full SaP bundle yields 30 successes, compared with 25 for templates alone, 18 for length-matched prose, 16 for raw GoS, and 13 for contracts alone. This supports the combined representation rather than attributing all gains to shorter text. <a href="https://arxiv.org/html/2605.27955v2#S5.T4">Table 4 · skill-bundle ablation · arXiv v2</a></li></ul>
+    </section>
+
+    <section aria-labelledby="citation-heading">
+      <h2 id="citation-heading">Cite this paper</h2>
+      <p>Xinze Li, Yuhang Zang, Yixin Cao, Aixin Sun. Skill-as-Pseudocode: Refactoring Skill Libraries to Pseudocode for LLM Agents. arXiv preprint arXiv:2605.27955, 2026.</p>
+
+
+      <div class="paper-citation-actions">
+        <button class="paper-copy-button" type="button" data-copy-target="paper-bibtex-content" aria-describedby="bibtex-copy-status" hidden>Copy to clipboard</button>
+        <a href="arxiv-2605.27955.bib" download>Download BibTeX</a>
+        <a href="https://arxiv.org/abs/2605.27955">arXiv citation record</a>
+      </div>
+      <p id="bibtex-copy-status" class="paper-detail-note" role="status" aria-live="polite"></p>
+      <pre class="paper-bibtex"><code id="paper-bibtex-content">@article{arxiv260527955,
+  title     = {{Skill-as-Pseudocode: Refactoring Skill Libraries to Pseudocode for LLM Agents}},
+  author    = {Xinze Li and Yuhang Zang and Yixin Cao and Aixin Sun},
+  journal   = {arXiv preprint arXiv:2605.27955},
+  year      = {2026},
+  url       = {https://arxiv.org/abs/2605.27955}
+}
+</code></pre>
+    </section>
+  <footer class="paper-detail-footer"><a href="../research.html">← All publications</a></footer>
+  </article>
+</main>
+</body>
+</html>

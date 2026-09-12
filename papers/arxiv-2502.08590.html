@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!-- Generated from data/publications.json. Edit the shared data and rebuild. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Light-A-Video: Training-free Video Relighting via Progressive Light Fusion | Yuhang Zang</title>
+<meta name="description" content="Light-A-Video adapts image relighting models to temporally coherent video relighting without additional training by combining cross-frame attention and progressive light blending.">
+<link rel="canonical" href="https://yuhangzang.github.io/papers/arxiv-2502.08590.html">
+<meta name="citation_title" content="Light-A-Video: Training-free Video Relighting via Progressive Light Fusion">
+<meta name="citation_author" content="Yujie Zhou">
+<meta name="citation_author" content="Jiazi Bu">
+<meta name="citation_author" content="Pengyang Ling">
+<meta name="citation_author" content="Pan Zhang">
+<meta name="citation_author" content="Tong Wu">
+<meta name="citation_author" content="Qidong Huang">
+<meta name="citation_author" content="Jinsong Li">
+<meta name="citation_author" content="Xiaoyi Dong">
+<meta name="citation_author" content="Yuhang Zang">
+<meta name="citation_author" content="Yuhang Cao">
+<meta name="citation_author" content="Anyi Rao">
+<meta name="citation_author" content="Jiaqi Wang">
+<meta name="citation_author" content="Li Niu">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_arxiv_id" content="2502.08590">
+
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/ICCV2025/papers/Zhou_Light-A-Video_Training-free_Video_Relighting_via_Progressive_Light_Fusion_ICCV_2025_paper.pdf">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)">
+<meta name="citation_firstpage" content="13315">
+<meta name="citation_lastpage" content="13325">
+
+
+<link rel="alternate" type="application/x-bibtex" href="arxiv-2502.08590.bib">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Light-A-Video: Training-free Video Relighting via Progressive Light Fusion">
+<meta property="og:description" content="Light-A-Video adapts image relighting models to temporally coherent video relighting without additional training by combining cross-frame attention and progressive light blending.">
+<meta property="og:url" content="https://yuhangzang.github.io/papers/arxiv-2502.08590.html">
+<link rel="icon" type="image/svg+xml" href="../imgs/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"></noscript>
+<script>
+try {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+} catch {}
+</script>
+<link rel="stylesheet" href="../main.min.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","@id":"https://yuhangzang.github.io/papers/arxiv-2502.08590.html#paper","name":"Light-A-Video: Training-free Video Relighting via Progressive Light Fusion","author":[{"@type":"Person","name":"Yujie Zhou"},{"@type":"Person","name":"Jiazi Bu"},{"@type":"Person","name":"Pengyang Ling"},{"@type":"Person","name":"Pan Zhang"},{"@type":"Person","name":"Tong Wu"},{"@type":"Person","name":"Qidong Huang"},{"@type":"Person","name":"Jinsong Li"},{"@type":"Person","name":"Xiaoyi Dong"},{"@type":"Person","name":"Yuhang Zang"},{"@type":"Person","name":"Yuhang Cao"},{"@type":"Person","name":"Anyi Rao"},{"@type":"Person","name":"Jiaqi Wang"},{"@type":"Person","name":"Li Niu"}],"datePublished":"2025","url":"https://yuhangzang.github.io/papers/arxiv-2502.08590.html","sameAs":["https://openaccess.thecvf.com/content/ICCV2025/html/Zhou_Light-A-Video_Training-free_Video_Relighting_via_Progressive_Light_Fusion_ICCV_2025_paper.html","https://arxiv.org/pdf/2502.08590"],"identifier":{"@type":"PropertyValue","propertyID":"arXiv","value":"2502.08590"},"encoding":{"@type":"MediaObject","name":"Paper · arXiv v2","contentUrl":"https://arxiv.org/pdf/2502.08590v2","encodingFormat":"application/pdf"},"isPartOf":{"@type":"CreativeWork","name":"Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)"},"pageStart":13315,"pageEnd":13325,"keywords":["Light-A-Video","Video relighting","Training-free editing","Temporal consistency","Consistent Light Attention","Progressive Light Fusion","Diffusion models","Illumination editing"],"abstract":"Recent advancements in image relighting models, driven by large-scale datasets and pre-trained diffusion models, have enabled the imposition of consistent lighting. However, video relighting still lags, primarily due to the excessive training costs and the scarcity of diverse, high-quality video relighting datasets. A simple application of image relighting models on a frame-by-frame basis leads to several issues: lighting source inconsistency and relighted appearance inconsistency, resulting in flickers in the generated videos. In this work, we propose Light-A-Video, a training-free approach to achieve temporally smooth video relighting. Adapted from image relighting models, Light-A-Video introduces two key techniques to enhance lighting consistency. First, we design a Consistent Light Attention (CLA) module, which enhances cross-frame interactions within the self-attention layers of the image relight model to stabilize the generation of the background lighting source. Second, leveraging the physical principle of light transport independence, we apply linear blending between the source video's appearance and the relighted appearance, using a Progressive Light Fusion (PLF) strategy to ensure smooth temporal transitions in illumination. Experiments show that Light-A-Video improves the temporal consistency of relighted video while maintaining the relighted image quality, ensuring coherent lighting transitions across frames. Project page: https://bujiazi.github.io/light-a-video.github.io/.","description":"Light-A-Video adapts image relighting models to temporally coherent video relighting without additional training by combining cross-frame attention and progressive light blending."}</script>
+<script src="../assets/main.min.js" defer></script>
+</head>
+<body class="paper-page">
+<nav class="main-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="../index.html" class="brand-link">Yuhang Zang</a>
+      </div>
+      <button class="mobile-menu-toggle" type="button" aria-label="Toggle navigation menu" aria-controls="nav-menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <div class="nav-menu" id="nav-menu" aria-hidden="true">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../research.html" class="nav-link active" aria-current="location">Publications</a>
+        <a href="../index.html#services" class="nav-link">Services</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" title="Toggle dark mode" aria-label="Toggle dark mode" aria-pressed="false">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+<main class="paper-detail">
+  <article class="papers-section">
+    <p class="paper-detail-kicker">ICCV · 2025</p>
+    <h1 class="section-heading">Light-A-Video: Training-free Video Relighting via Progressive Light Fusion</h1>
+    <p class="paper-detail-authors author-names">Yujie Zhou, Jiazi Bu, Pengyang Ling, Pan Zhang, Tong Wu, Qidong Huang, Jinsong Li, Xiaoyi Dong, <strong class="author-highlight">Yuhang Zang</strong>, Yuhang Cao, Anyi Rao, Jiaqi Wang, Li Niu</p>
+
+    <section class="paper-takeaway" aria-labelledby="takeaway-heading">
+      <h2 id="takeaway-heading">Key takeaway</h2>
+      <p>Light-A-Video adapts image relighting models to temporally coherent video relighting without additional training by combining cross-frame attention and progressive light blending. <a href="https://arxiv.org/abs/2502.08590v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="abstract-heading">
+      <h2 id="abstract-heading">Abstract</h2>
+      <p>Recent advancements in image relighting models, driven by large-scale datasets and pre-trained diffusion models, have enabled the imposition of consistent lighting. However, video relighting still lags, primarily due to the excessive training costs and the scarcity of diverse, high-quality video relighting datasets. A simple application of image relighting models on a frame-by-frame basis leads to several issues: lighting source inconsistency and relighted appearance inconsistency, resulting in flickers in the generated videos. In this work, we propose Light-A-Video, a training-free approach to achieve temporally smooth video relighting. Adapted from image relighting models, Light-A-Video introduces two key techniques to enhance lighting consistency. First, we design a Consistent Light Attention (CLA) module, which enhances cross-frame interactions within the self-attention layers of the image relight model to stabilize the generation of the background lighting source. Second, leveraging the physical principle of light transport independence, we apply linear blending between the source video&#39;s appearance and the relighted appearance, using a Progressive Light Fusion (PLF) strategy to ensure smooth temporal transitions in illumination. Experiments show that Light-A-Video improves the temporal consistency of relighted video while maintaining the relighted image quality, ensuring coherent lighting transitions across frames. Project page: https://bujiazi.github.io/light-a-video.github.io/.</p>
+      <p class="paper-detail-note">Author abstract · <a href="https://arxiv.org/abs/2502.08590v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="publication-heading">
+      <h2 id="publication-heading">Publication</h2>
+      <p>IEEE International Conference on Computer Vision (ICCV), 2025</p>
+
+    </section>
+    <section aria-labelledby="resources-heading">
+      <h2 id="resources-heading">Paper and resources</h2>
+      <ul class="paper-detail-resources">
+        <li><a href="https://arxiv.org/pdf/2502.08590v2">Paper · arXiv v2 (PDF)</a></li>
+        <li><a href="https://arxiv.org/pdf/2502.08590">arXiv:2502.08590</a></li>
+        <li><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=hW23VKIAAAAJ&amp;citation_for_view=hW23VKIAAAAJ:maZDTaKrznsC">Google Scholar</a></li>
+        <li><a href="https://github.com/bcmi/Light-A-Video">Code · bcmi/Light-A-Video</a></li>
+      </ul>
+    </section>
+    <section aria-labelledby="topics-heading">
+      <h2 id="topics-heading">Research topics</h2>
+      <p class="paper-keywords">Light-A-Video · Video relighting · Training-free editing · Temporal consistency · Consistent Light Attention · Progressive Light Fusion · Diffusion models · Illumination editing</p>
+    </section>
+    <section aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Research problem and approach</h2>
+      <p>Applying image relighting independently to frames produces changing light sources and flickering appearances. Light-A-Video coordinates background illumination across frames and blends original and relighted appearances progressively. <a href="https://arxiv.org/abs/2502.08590v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="contributions-heading">
+      <h2 id="contributions-heading">Main contributions</h2>
+      <ul class="paper-detail-resources"><li>Uses Consistent Light Attention to stabilize lighting through cross-frame interaction. <a href="https://arxiv.org/abs/2502.08590v2">arXiv abstract · v2</a></li>
+<li>Introduces Progressive Light Fusion based on the independence of light transport. <a href="https://arxiv.org/abs/2502.08590v2">arXiv abstract · v2</a></li></ul>
+    </section>
+    <section aria-labelledby="method-comparison-heading">
+      <h2 id="method-comparison-heading">Method comparison</h2>
+      <div class="paper-results-scroll" role="region" aria-label="Method comparison table" tabindex="0">
+        <table class="paper-methods paper-methods-compact">
+          <thead><tr><th scope="col">Approach</th><th scope="col">Key difference</th></tr></thead>
+          <tbody><tr><th scope="row">Independent frame relighting</th><td>Can produce changing illumination and inconsistent appearance between frames.</td></tr>
+<tr><th scope="row">Light-A-Video</th><td>Combines cross-frame light attention with progressive blending to coordinate relighting without further training.</td></tr></tbody>
+        </table>
+      </div>
+      <p class="paper-detail-note"><a href="https://arxiv.org/abs/2502.08590v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="results-heading">
+      <h2 id="results-heading">Selected results</h2>
+      <ul class="paper-detail-resources"><li>Light-A-Video achieves a motion-preservation error of 1.833 versus 5.969 for framewise IC-Light, while CLIP score rises from 0.9040 to 0.9667. Lower motion error indicates better preservation in the paper’s evaluation. <a href="https://arxiv.org/html/2502.08590v2#S5.T1">Table 1 · video relighting quality and motion · arXiv v2</a></li>
+<li>Compared with IC-Light + SDEdit-0.2, Light-A-Video improves the reported video-stability preference score from 2.752 to 3.502, but FID rises from 13.79 to 29.63. The benefit is strongest in temporal consistency and user preference rather than every image-quality metric. <a href="https://arxiv.org/html/2502.08590v2#S5.T1">Table 1 · relighting trade-offs and user study · arXiv v2</a></li></ul>
+    </section>
+
+    <section aria-labelledby="citation-heading">
+      <h2 id="citation-heading">Cite this paper</h2>
+      <p>Yujie Zhou, Jiazi Bu, Pengyang Ling, Pan Zhang, Tong Wu, Qidong Huang, Jinsong Li, Xiaoyi Dong, Yuhang Zang, Yuhang Cao, Anyi Rao, Jiaqi Wang, Li Niu. Light-A-Video: Training-free Video Relighting via Progressive Light Fusion. Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), 2025, pp. 13315–13325.</p>
+
+
+      <div class="paper-citation-actions">
+        <button class="paper-copy-button" type="button" data-copy-target="paper-bibtex-content" aria-describedby="bibtex-copy-status" hidden>Copy to clipboard</button>
+        <a href="arxiv-2502.08590.bib" download>Download BibTeX</a>
+        <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Zhou_Light-A-Video_Training-free_Video_Relighting_via_Progressive_Light_Fusion_ICCV_2025_paper.html">ICCV 2025 proceedings record</a>
+      </div>
+      <p id="bibtex-copy-status" class="paper-detail-note" role="status" aria-live="polite"></p>
+      <pre class="paper-bibtex"><code id="paper-bibtex-content">@inproceedings{arxiv250208590,
+  title     = {{Light-A-Video: Training-free Video Relighting via Progressive Light Fusion}},
+  author    = {Yujie Zhou and Jiazi Bu and Pengyang Ling and Pan Zhang and Tong Wu and Qidong Huang and Jinsong Li and Xiaoyi Dong and Yuhang Zang and Yuhang Cao and Anyi Rao and Jiaqi Wang and Li Niu},
+  booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+  month     = {October},
+  year      = {2025},
+  pages     = {13315--13325},
+  url       = {https://openaccess.thecvf.com/content/ICCV2025/html/Zhou_Light-A-Video_Training-free_Video_Relighting_via_Progressive_Light_Fusion_ICCV_2025_paper.html}
+}
+</code></pre>
+    </section>
+  <footer class="paper-detail-footer"><a href="../research.html">← All publications</a></footer>
+  </article>
+</main>
+</body>
+</html>

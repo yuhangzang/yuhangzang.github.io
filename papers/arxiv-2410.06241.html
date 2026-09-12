@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!-- Generated from data/publications.json. Edit the shared data and rebuild. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ByTheWay: Boost Your Text-to-Video Generation Model to Higher Quality in a Training-free Way | Yuhang Zang</title>
+<meta name="description" content="ByTheWay improves video consistency and motion without training by reducing disagreement between temporal attention maps and amplifying their motion-related frequency content.">
+<link rel="canonical" href="https://yuhangzang.github.io/papers/arxiv-2410.06241.html">
+<meta name="citation_title" content="ByTheWay: Boost Your Text-to-Video Generation Model to Higher Quality in a Training-free Way">
+<meta name="citation_author" content="Jiazi Bu">
+<meta name="citation_author" content="Pengyang Ling">
+<meta name="citation_author" content="Pan Zhang">
+<meta name="citation_author" content="Tong Wu">
+<meta name="citation_author" content="Xiaoyi Dong">
+<meta name="citation_author" content="Yuhang Zang">
+<meta name="citation_author" content="Yuhang Cao">
+<meta name="citation_author" content="Dahua Lin">
+<meta name="citation_author" content="Jiaqi Wang">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_arxiv_id" content="2410.06241">
+
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/CVPR2025/papers/Bu_ByTheWay_Boost_Your_Text-to-Video_Generation_Model_to_Higher_Quality_in_CVPR_2025_paper.pdf">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)">
+<meta name="citation_firstpage" content="12999">
+<meta name="citation_lastpage" content="13008">
+
+
+<link rel="alternate" type="application/x-bibtex" href="arxiv-2410.06241.bib">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ByTheWay: Boost Your Text-to-Video Generation Model to Higher Quality in a Training-free Way">
+<meta property="og:description" content="ByTheWay improves video consistency and motion without training by reducing disagreement between temporal attention maps and amplifying their motion-related frequency content.">
+<meta property="og:url" content="https://yuhangzang.github.io/papers/arxiv-2410.06241.html">
+<link rel="icon" type="image/svg+xml" href="../imgs/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"></noscript>
+<script>
+try {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+} catch {}
+</script>
+<link rel="stylesheet" href="../main.min.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","@id":"https://yuhangzang.github.io/papers/arxiv-2410.06241.html#paper","name":"ByTheWay: Boost Your Text-to-Video Generation Model to Higher Quality in a Training-free Way","author":[{"@type":"Person","name":"Jiazi Bu"},{"@type":"Person","name":"Pengyang Ling"},{"@type":"Person","name":"Pan Zhang"},{"@type":"Person","name":"Tong Wu"},{"@type":"Person","name":"Xiaoyi Dong"},{"@type":"Person","name":"Yuhang Zang"},{"@type":"Person","name":"Yuhang Cao"},{"@type":"Person","name":"Dahua Lin"},{"@type":"Person","name":"Jiaqi Wang"}],"datePublished":"2025","url":"https://yuhangzang.github.io/papers/arxiv-2410.06241.html","sameAs":["https://openaccess.thecvf.com/content/CVPR2025/html/Bu_ByTheWay_Boost_Your_Text-to-Video_Generation_Model_to_Higher_Quality_in_CVPR_2025_paper.html","https://arxiv.org/abs/2410.06241"],"identifier":{"@type":"PropertyValue","propertyID":"arXiv","value":"2410.06241"},"encoding":{"@type":"MediaObject","name":"Paper · arXiv v3","contentUrl":"https://arxiv.org/pdf/2410.06241v3","encodingFormat":"application/pdf"},"isPartOf":{"@type":"CreativeWork","name":"Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)"},"pageStart":12999,"pageEnd":13008,"keywords":["ByTheWay","Text-to-video generation","Training-free guidance","Temporal attention","Temporal consistency","Motion enhancement","Fourier analysis","Video diffusion"],"abstract":"The text-to-video (T2V) generation models, offering convenient visual creation, have recently garnered increasing attention. Despite their substantial potential, the generated videos may present artifacts, including structural implausibility, temporal inconsistency, and a lack of motion, often resulting in near-static video. In this work, we have identified a correlation between the disparity of temporal attention maps across different blocks and the occurrence of temporal inconsistencies. Additionally, we have observed that the energy contained within the temporal attention maps is directly related to the magnitude of motion amplitude in the generated videos. Based on these observations, we present ByTheWay, a training-free method to improve the quality of text-to-video generation without introducing additional parameters, augmenting memory or sampling time. Specifically, ByTheWay is composed of two principal components: 1) Temporal Self-Guidance improves the structural plausibility and temporal consistency of generated videos by reducing the disparity between the temporal attention maps across various decoder blocks. 2) Fourier-based Motion Enhancement enhances the magnitude and richness of motion by amplifying the energy of the map. Extensive experiments demonstrate that ByTheWay significantly improves the quality of text-to-video generation with negligible additional cost.","description":"ByTheWay improves video consistency and motion without training by reducing disagreement between temporal attention maps and amplifying their motion-related frequency content."}</script>
+<script src="../assets/main.min.js" defer></script>
+</head>
+<body class="paper-page">
+<nav class="main-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="../index.html" class="brand-link">Yuhang Zang</a>
+      </div>
+      <button class="mobile-menu-toggle" type="button" aria-label="Toggle navigation menu" aria-controls="nav-menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <div class="nav-menu" id="nav-menu" aria-hidden="true">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../research.html" class="nav-link active" aria-current="location">Publications</a>
+        <a href="../index.html#services" class="nav-link">Services</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" title="Toggle dark mode" aria-label="Toggle dark mode" aria-pressed="false">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+<main class="paper-detail">
+  <article class="papers-section">
+    <p class="paper-detail-kicker">CVPR · 2025</p>
+    <h1 class="section-heading">ByTheWay: Boost Your Text-to-Video Generation Model to Higher Quality in a Training-free Way</h1>
+    <p class="paper-detail-authors author-names">Jiazi Bu, Pengyang Ling, Pan Zhang, Tong Wu, Xiaoyi Dong, <strong class="author-highlight">Yuhang Zang</strong>, Yuhang Cao, Dahua Lin, Jiaqi Wang</p>
+
+    <section class="paper-takeaway" aria-labelledby="takeaway-heading">
+      <h2 id="takeaway-heading">Key takeaway</h2>
+      <p>ByTheWay improves video consistency and motion without training by reducing disagreement between temporal attention maps and amplifying their motion-related frequency content. <a href="https://arxiv.org/abs/2410.06241v3">arXiv abstract · v3</a></p>
+    </section>
+    <section aria-labelledby="abstract-heading">
+      <h2 id="abstract-heading">Abstract</h2>
+      <p>The text-to-video (T2V) generation models, offering convenient visual creation, have recently garnered increasing attention. Despite their substantial potential, the generated videos may present artifacts, including structural implausibility, temporal inconsistency, and a lack of motion, often resulting in near-static video. In this work, we have identified a correlation between the disparity of temporal attention maps across different blocks and the occurrence of temporal inconsistencies. Additionally, we have observed that the energy contained within the temporal attention maps is directly related to the magnitude of motion amplitude in the generated videos. Based on these observations, we present ByTheWay, a training-free method to improve the quality of text-to-video generation without introducing additional parameters, augmenting memory or sampling time. Specifically, ByTheWay is composed of two principal components: 1) Temporal Self-Guidance improves the structural plausibility and temporal consistency of generated videos by reducing the disparity between the temporal attention maps across various decoder blocks. 2) Fourier-based Motion Enhancement enhances the magnitude and richness of motion by amplifying the energy of the map. Extensive experiments demonstrate that ByTheWay significantly improves the quality of text-to-video generation with negligible additional cost.</p>
+      <p class="paper-detail-note">Author abstract · <a href="https://arxiv.org/abs/2410.06241v3">arXiv abstract · v3</a></p>
+    </section>
+    <section aria-labelledby="publication-heading">
+      <h2 id="publication-heading">Publication</h2>
+      <p>IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2025</p>
+
+    </section>
+    <section aria-labelledby="resources-heading">
+      <h2 id="resources-heading">Paper and resources</h2>
+      <ul class="paper-detail-resources">
+        <li><a href="https://arxiv.org/pdf/2410.06241v3">Paper · arXiv v3 (PDF)</a></li>
+        <li><a href="https://arxiv.org/abs/2410.06241">arXiv:2410.06241</a></li>
+        <li><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=hW23VKIAAAAJ&amp;citation_for_view=hW23VKIAAAAJ:dfsIfKJdRG4C">Google Scholar</a></li>
+        <li><a href="https://github.com/Bujiazi/ByTheWay">Code · Bujiazi/ByTheWay</a></li>
+      </ul>
+    </section>
+    <section aria-labelledby="topics-heading">
+      <h2 id="topics-heading">Research topics</h2>
+      <p class="paper-keywords">ByTheWay · Text-to-video generation · Training-free guidance · Temporal attention · Temporal consistency · Motion enhancement · Fourier analysis · Video diffusion</p>
+    </section>
+    <section aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Research problem and approach</h2>
+      <p>Text-to-video models can produce structural artifacts, flicker and nearly static clips. ByTheWay connects cross-block attention-map disagreement with inconsistency and attention-map energy with motion amplitude, then intervenes directly during generation. <a href="https://arxiv.org/abs/2410.06241v3">arXiv abstract · v3</a></p>
+    </section>
+    <section aria-labelledby="contributions-heading">
+      <h2 id="contributions-heading">Main contributions</h2>
+      <ul class="paper-detail-resources"><li>Introduces Temporal Self-Guidance to coordinate temporal attention across decoder blocks. <a href="https://arxiv.org/abs/2410.06241v3">arXiv abstract · v3</a></li>
+<li>Uses Fourier-based Motion Enhancement to increase motion magnitude and richness. <a href="https://arxiv.org/abs/2410.06241v3">arXiv abstract · v3</a></li></ul>
+    </section>
+    <section aria-labelledby="method-comparison-heading">
+      <h2 id="method-comparison-heading">Method comparison</h2>
+      <div class="paper-results-scroll" role="region" aria-label="Method comparison table" tabindex="0">
+        <table class="paper-methods paper-methods-compact">
+          <thead><tr><th scope="col">Approach</th><th scope="col">Key difference</th></tr></thead>
+          <tbody><tr><th scope="row">Unmodified text-to-video sampling</th><td>Can exhibit disagreement between temporal attention maps and insufficient motion-related energy.</td></tr>
+<tr><th scope="row">ByTheWay</th><td>Coordinates temporal maps through self-guidance and increases motion through Fourier-based enhancement.</td></tr></tbody>
+        </table>
+      </div>
+      <p class="paper-detail-note"><a href="https://arxiv.org/abs/2410.06241v3">arXiv abstract · v3</a></p>
+    </section>
+    <section aria-labelledby="results-heading">
+      <h2 id="results-heading">Selected results</h2>
+      <ul class="paper-detail-resources"><li>Adding ByTheWay to AnimateDiff improves VBench motion smoothness from 0.9474 to 0.9786 and dynamic degree from 0.4073 to 0.5245. FreeInit reaches 0.9713 smoothness but 0.2941 dynamic degree, illustrating the importance of measuring both smoothness and motion extent. <a href="https://arxiv.org/html/2410.06241v3#S5.T2">Table 2 · VBench, AnimateDiff backbone · arXiv v3</a></li>
+<li>In paired video-quality comparisons, users prefer ByTheWay outputs in 74.58% of AnimateDiff comparisons and 69.46% of VideoCrafter2 comparisons. These preference percentages are separate from the MLLM-based structure and motion assessments in the same table. <a href="https://arxiv.org/html/2410.06241v3#S5.T1">Table 1 · human preference study · arXiv v3</a></li></ul>
+    </section>
+
+    <section aria-labelledby="citation-heading">
+      <h2 id="citation-heading">Cite this paper</h2>
+      <p>Jiazi Bu, Pengyang Ling, Pan Zhang, Tong Wu, Xiaoyi Dong, Yuhang Zang, Yuhang Cao, Dahua Lin, Jiaqi Wang. ByTheWay: Boost Your Text-to-Video Generation Model to Higher Quality in a Training-free Way. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2025, pp. 12999–13008.</p>
+
+
+      <div class="paper-citation-actions">
+        <button class="paper-copy-button" type="button" data-copy-target="paper-bibtex-content" aria-describedby="bibtex-copy-status" hidden>Copy to clipboard</button>
+        <a href="arxiv-2410.06241.bib" download>Download BibTeX</a>
+        <a href="https://openaccess.thecvf.com/content/CVPR2025/html/Bu_ByTheWay_Boost_Your_Text-to-Video_Generation_Model_to_Higher_Quality_in_CVPR_2025_paper.html">CVPR 2025 proceedings record</a>
+      </div>
+      <p id="bibtex-copy-status" class="paper-detail-note" role="status" aria-live="polite"></p>
+      <pre class="paper-bibtex"><code id="paper-bibtex-content">@inproceedings{arxiv241006241,
+  title     = {{ByTheWay: Boost Your Text-to-Video Generation Model to Higher Quality in a Training-free Way}},
+  author    = {Jiazi Bu and Pengyang Ling and Pan Zhang and Tong Wu and Xiaoyi Dong and Yuhang Zang and Yuhang Cao and Dahua Lin and Jiaqi Wang},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  month     = {June},
+  year      = {2025},
+  pages     = {12999--13008},
+  url       = {https://openaccess.thecvf.com/content/CVPR2025/html/Bu_ByTheWay_Boost_Your_Text-to-Video_Generation_Model_to_Higher_Quality_in_CVPR_2025_paper.html}
+}
+</code></pre>
+    </section>
+  <footer class="paper-detail-footer"><a href="../research.html">← All publications</a></footer>
+  </article>
+</main>
+</body>
+</html>

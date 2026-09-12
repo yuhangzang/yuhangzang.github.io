@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<!-- Generated from data/publications.json. Edit the shared data and rebuild. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Towards Storage-Efficient Visual Document Retrieval: An Empirical Study on Reducing Patch-Level Embeddings | Yuhang Zang</title>
+<meta name="description" content="Light-ColPali/ColQwen2 retains 98.2% of the original retrieval performance with 11.8% of the embedding memory by merging document patches instead of pruning them.">
+<link rel="canonical" href="https://yuhangzang.github.io/papers/arxiv-2506.04997.html">
+<meta name="citation_title" content="Towards Storage-Efficient Visual Document Retrieval: An Empirical Study on Reducing Patch-Level Embeddings">
+<meta name="citation_author" content="Yubo Ma">
+<meta name="citation_author" content="Jinsong Li">
+<meta name="citation_author" content="Yuhang Zang">
+<meta name="citation_author" content="Xiaobao Wu">
+<meta name="citation_author" content="Xiaoyi Dong">
+<meta name="citation_author" content="Pan Zhang">
+<meta name="citation_author" content="Yuhang Cao">
+<meta name="citation_author" content="Haodong Duan">
+<meta name="citation_author" content="Jiaqi Wang">
+<meta name="citation_author" content="Yixin Cao">
+<meta name="citation_author" content="Aixin Sun">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_arxiv_id" content="2506.04997">
+<meta name="citation_doi" content="10.18653/v1/2025.findings-acl.1003">
+<meta name="citation_pdf_url" content="https://aclanthology.org/2025.findings-acl.1003.pdf">
+<meta name="citation_conference_title" content="Findings of the Association for Computational Linguistics: ACL 2025">
+<meta name="citation_firstpage" content="19568">
+<meta name="citation_lastpage" content="19580">
+
+
+<link rel="alternate" type="application/x-bibtex" href="arxiv-2506.04997.bib">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Towards Storage-Efficient Visual Document Retrieval: An Empirical Study on Reducing Patch-Level Embeddings">
+<meta property="og:description" content="Light-ColPali/ColQwen2 retains 98.2% of the original retrieval performance with 11.8% of the embedding memory by merging document patches instead of pruning them.">
+<meta property="og:url" content="https://yuhangzang.github.io/papers/arxiv-2506.04997.html">
+<link rel="icon" type="image/svg+xml" href="../imgs/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"></noscript>
+<script>
+try {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+} catch {}
+</script>
+<link rel="stylesheet" href="../main.min.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","@id":"https://yuhangzang.github.io/papers/arxiv-2506.04997.html#paper","name":"Towards Storage-Efficient Visual Document Retrieval: An Empirical Study on Reducing Patch-Level Embeddings","author":[{"@type":"Person","name":"Yubo Ma"},{"@type":"Person","name":"Jinsong Li"},{"@type":"Person","name":"Yuhang Zang"},{"@type":"Person","name":"Xiaobao Wu"},{"@type":"Person","name":"Xiaoyi Dong"},{"@type":"Person","name":"Pan Zhang"},{"@type":"Person","name":"Yuhang Cao"},{"@type":"Person","name":"Haodong Duan"},{"@type":"Person","name":"Jiaqi Wang"},{"@type":"Person","name":"Yixin Cao"},{"@type":"Person","name":"Aixin Sun"}],"datePublished":"2025","url":"https://yuhangzang.github.io/papers/arxiv-2506.04997.html","sameAs":["https://aclanthology.org/2025.findings-acl.1003/","https://arxiv.org/abs/2506.04997"],"identifier":[{"@type":"PropertyValue","propertyID":"arXiv","value":"2506.04997"},{"@type":"PropertyValue","propertyID":"DOI","value":"10.18653/v1/2025.findings-acl.1003"}],"encoding":{"@type":"MediaObject","name":"Paper · arXiv v1","contentUrl":"https://arxiv.org/pdf/2506.04997v1","encodingFormat":"application/pdf"},"isPartOf":{"@type":"CreativeWork","name":"Findings of the Association for Computational Linguistics: ACL 2025"},"pageStart":19568,"pageEnd":19580,"keywords":["Light-ColPali","Light-ColQwen2","Visual document retrieval","Multi-vector retrieval","Token merging","Patch embeddings","Storage efficiency","Token pruning"],"abstract":"Despite the strong performance of ColPali/ColQwen2 in Visualized Document Retrieval (VDR), it encodes each page into multiple patch-level embeddings and leads to excessive memory usage. This empirical study investigates methods to reduce patch embeddings per page at minimum performance degradation. We evaluate two token-reduction strategies: token pruning and token merging. Regarding token pruning, we surprisingly observe that a simple random strategy outperforms other sophisticated pruning methods, though still far from satisfactory. Further analysis reveals that pruning is inherently unsuitable for VDR as it requires removing certain page embeddings without query-specific information. Turning to token merging (more suitable for VDR), we search for the optimal combinations of merging strategy across three dimensions and develop Light-ColPali/ColQwen2. It maintains 98.2% of retrieval performance with only 11.8% of original memory usage, and preserves 94.6% effectiveness at 2.8% memory footprint. We expect our empirical findings and resulting Light-ColPali/ColQwen2 offer valuable insights and establish a competitive baseline for future research towards efficient VDR.","description":"Light-ColPali/ColQwen2 retains 98.2% of the original retrieval performance with 11.8% of the embedding memory by merging document patches instead of pruning them."}</script>
+<script src="../assets/main.min.js" defer></script>
+</head>
+<body class="paper-page">
+<nav class="main-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="../index.html" class="brand-link">Yuhang Zang</a>
+      </div>
+      <button class="mobile-menu-toggle" type="button" aria-label="Toggle navigation menu" aria-controls="nav-menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <div class="nav-menu" id="nav-menu" aria-hidden="true">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../research.html" class="nav-link active" aria-current="location">Publications</a>
+        <a href="../index.html#services" class="nav-link">Services</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" title="Toggle dark mode" aria-label="Toggle dark mode" aria-pressed="false">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+<main class="paper-detail">
+  <article class="papers-section">
+    <p class="paper-detail-kicker">ACL · 2025</p>
+    <h1 class="section-heading">Towards Storage-Efficient Visual Document Retrieval: An Empirical Study on Reducing Patch-Level Embeddings</h1>
+    <p class="paper-detail-authors author-names">Yubo Ma, Jinsong Li, <strong class="author-highlight">Yuhang Zang</strong><span class="paper-corresponding author-annotation corresponding" role="img" aria-label="Corresponding author" title="Corresponding author"><svg class="paper-envelope" viewBox="0 0 16 12" aria-hidden="true"><path fill="currentColor" d="M1 0h14a1 1 0 0 1 1 1v1L8 7 0 2V1a1 1 0 0 1 1-1ZM0 4l8 5 8-5v7a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1Z"/></svg><span class="paper-sr-only">(corresponding author)</span></span>, Xiaobao Wu, Xiaoyi Dong, Pan Zhang, Yuhang Cao, Haodong Duan, Jiaqi Wang, Yixin Cao, Aixin Sun</p>
+    <p class="paper-detail-note paper-author-legend"><svg class="paper-envelope" viewBox="0 0 16 12" aria-hidden="true"><path fill="currentColor" d="M1 0h14a1 1 0 0 1 1 1v1L8 7 0 2V1a1 1 0 0 1 1-1ZM0 4l8 5 8-5v7a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1Z"/></svg> Corresponding author</p>
+    <section class="paper-takeaway" aria-labelledby="takeaway-heading">
+      <h2 id="takeaway-heading">Key takeaway</h2>
+      <p>Light-ColPali/ColQwen2 retains 98.2% of the original retrieval performance with 11.8% of the embedding memory by merging document patches instead of pruning them. <a href="https://arxiv.org/abs/2506.04997v1">arXiv abstract · v1</a></p>
+    </section>
+    <section aria-labelledby="abstract-heading">
+      <h2 id="abstract-heading">Abstract</h2>
+      <p>Despite the strong performance of ColPali/ColQwen2 in Visualized Document Retrieval (VDR), it encodes each page into multiple patch-level embeddings and leads to excessive memory usage. This empirical study investigates methods to reduce patch embeddings per page at minimum performance degradation. We evaluate two token-reduction strategies: token pruning and token merging. Regarding token pruning, we surprisingly observe that a simple random strategy outperforms other sophisticated pruning methods, though still far from satisfactory. Further analysis reveals that pruning is inherently unsuitable for VDR as it requires removing certain page embeddings without query-specific information. Turning to token merging (more suitable for VDR), we search for the optimal combinations of merging strategy across three dimensions and develop Light-ColPali/ColQwen2. It maintains 98.2% of retrieval performance with only 11.8% of original memory usage, and preserves 94.6% effectiveness at 2.8% memory footprint. We expect our empirical findings and resulting Light-ColPali/ColQwen2 offer valuable insights and establish a competitive baseline for future research towards efficient VDR.</p>
+      <p class="paper-detail-note">Author abstract · <a href="https://arxiv.org/abs/2506.04997v1">arXiv abstract · v1</a></p>
+    </section>
+    <section aria-labelledby="publication-heading">
+      <h2 id="publication-heading">Publication</h2>
+      <p>Findings of the Association for Computational Linguistics (ACL), 2025</p>
+
+    </section>
+    <section aria-labelledby="resources-heading">
+      <h2 id="resources-heading">Paper and resources</h2>
+      <ul class="paper-detail-resources">
+        <li><a href="https://arxiv.org/pdf/2506.04997v1">Paper · arXiv v1 (PDF)</a></li>
+        <li><a href="https://arxiv.org/abs/2506.04997">arXiv:2506.04997</a></li>
+        <li><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=hW23VKIAAAAJ&amp;citation_for_view=hW23VKIAAAAJ:cFHS6HbyZ2cC">Google Scholar</a></li>
+      </ul>
+    </section>
+    <section aria-labelledby="topics-heading">
+      <h2 id="topics-heading">Research topics</h2>
+      <p class="paper-keywords">Light-ColPali · Light-ColQwen2 · Visual document retrieval · Multi-vector retrieval · Token merging · Patch embeddings · Storage efficiency · Token pruning</p>
+    </section>
+    <section aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Research problem and approach</h2>
+      <p>Multi-vector document retrieval stores many patch embeddings per page. This empirical study compares pruning and merging, finding that query-independent pruning can discard essential page information and that carefully configured merging offers a better storage trade-off. <a href="https://arxiv.org/abs/2506.04997v1">arXiv abstract · v1</a></p>
+    </section>
+    <section aria-labelledby="contributions-heading">
+      <h2 id="contributions-heading">Main contributions</h2>
+      <ul class="paper-detail-resources"><li>Analyzes token pruning and token merging for visual document retrieval, including the surprising strength of random pruning among pruning methods. <a href="https://arxiv.org/abs/2506.04997v1">arXiv abstract · v1</a></li>
+<li>Develops Light-ColPali/ColQwen2 by examining merging choices across three dimensions. <a href="https://arxiv.org/abs/2506.04997v1">arXiv abstract · v1</a></li></ul>
+    </section>
+    <section aria-labelledby="method-comparison-heading">
+      <h2 id="method-comparison-heading">Method comparison</h2>
+      <div class="paper-results-scroll" role="region" aria-label="Method comparison table" tabindex="0">
+        <table class="paper-methods paper-methods-compact">
+          <thead><tr><th scope="col">Approach</th><th scope="col">Key difference</th></tr></thead>
+          <tbody><tr><th scope="row">Patch pruning</th><td>Removes page embeddings without query-specific knowledge, potentially discarding relevant evidence.</td></tr>
+<tr><th scope="row">Patch merging</th><td>Combines page embeddings and yields the stronger measured storage-performance trade-off in this study.</td></tr></tbody>
+        </table>
+      </div>
+      <p class="paper-detail-note"><a href="https://arxiv.org/abs/2506.04997v1">arXiv abstract · v1</a></p>
+    </section>
+    <section aria-labelledby="results-heading">
+      <h2 id="results-heading">Selected results</h2>
+      <ul class="paper-detail-resources"><li>At merging factor 25, Light-ColQwen2 retains 96.3% of ColQwen2’s average NDCG@5 (78.4 versus 81.4). Its relative memory cost is 3.0 versus 64.4, with both normalized to the same DSE-Qwen2 baseline. <a href="https://arxiv.org/html/2506.04997v1#S5.T2">Table 2 · document retrieval, Qwen2-VL-2B · arXiv v1</a></li>
+<li>At merging factor 9, post-projector merging achieves an average retrieval score of 81.4, versus 81.0 after the LLM, 65.4 after the vision encoder, and 59.1 before it. Delaying merging preserves retrieval information more effectively in this comparison. <a href="https://arxiv.org/html/2506.04997v1#S5.T1">Table 1 · merging-location ablation · arXiv v1</a></li></ul>
+    </section>
+
+    <section aria-labelledby="citation-heading">
+      <h2 id="citation-heading">Cite this paper</h2>
+      <p>Yubo Ma, Jinsong Li, Yuhang Zang, Xiaobao Wu, Xiaoyi Dong, Pan Zhang, Yuhang Cao, Haodong Duan, Jiaqi Wang, Yixin Cao, Aixin Sun. Towards Storage-Efficient Visual Document Retrieval: An Empirical Study on Reducing Patch-Level Embeddings. Findings of the Association for Computational Linguistics: ACL 2025, 2025, pp. 19568–19580.</p>
+
+
+      <div class="paper-citation-actions">
+        <button class="paper-copy-button" type="button" data-copy-target="paper-bibtex-content" aria-describedby="bibtex-copy-status" hidden>Copy to clipboard</button>
+        <a href="arxiv-2506.04997.bib" download>Download BibTeX</a>
+        <a href="https://aclanthology.org/2025.findings-acl.1003/">ACL 2025 proceedings record</a>
+      </div>
+      <p id="bibtex-copy-status" class="paper-detail-note" role="status" aria-live="polite"></p>
+      <pre class="paper-bibtex"><code id="paper-bibtex-content">@inproceedings{arxiv250604997,
+  title     = {{Towards Storage-Efficient Visual Document Retrieval: An Empirical Study on Reducing Patch-Level Embeddings}},
+  author    = {Yubo Ma and Jinsong Li and Yuhang Zang and Xiaobao Wu and Xiaoyi Dong and Pan Zhang and Yuhang Cao and Haodong Duan and Jiaqi Wang and Yixin Cao and Aixin Sun},
+  booktitle = {Findings of the Association for Computational Linguistics: ACL 2025},
+  month     = {July},
+  year      = {2025},
+  publisher = {Association for Computational Linguistics},
+  pages     = {19568--19580},
+  doi       = {10.18653/v1/2025.findings-acl.1003},
+  url       = {https://aclanthology.org/2025.findings-acl.1003/}
+}
+</code></pre>
+    </section>
+  <footer class="paper-detail-footer"><a href="../research.html">← All publications</a></footer>
+  </article>
+</main>
+</body>
+</html>

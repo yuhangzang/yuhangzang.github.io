@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<!-- Generated from data/publications.json. Edit the shared data and rebuild. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Visual-RFT: Visual Reinforcement Fine-Tuning | Yuhang Zang</title>
+<meta name="description" content="Visual-RFT shows that GRPO with task-specific verifiable rewards improves classification, detection, and grounding in large vision-language models trained with limited labeled data.">
+<link rel="canonical" href="https://yuhangzang.github.io/papers/arxiv-2503.01785.html">
+<meta name="citation_title" content="Visual-RFT: Visual Reinforcement Fine-Tuning">
+<meta name="citation_author" content="Ziyu Liu">
+<meta name="citation_author" content="Zeyi Sun">
+<meta name="citation_author" content="Yuhang Zang">
+<meta name="citation_author" content="Xiaoyi Dong">
+<meta name="citation_author" content="Yuhang Cao">
+<meta name="citation_author" content="Haodong Duan">
+<meta name="citation_author" content="Dahua Lin">
+<meta name="citation_author" content="Jiaqi Wang">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_arxiv_id" content="2503.01785">
+
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/ICCV2025/papers/Liu_Visual-RFT_Visual_Reinforcement_Fine-Tuning_ICCV_2025_paper.pdf">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)">
+<meta name="citation_firstpage" content="2034">
+<meta name="citation_lastpage" content="2044">
+
+
+<link rel="alternate" type="application/x-bibtex" href="arxiv-2503.01785.bib">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Visual-RFT: Visual Reinforcement Fine-Tuning">
+<meta property="og:description" content="Visual-RFT shows that GRPO with task-specific verifiable rewards improves classification, detection, and grounding in large vision-language models trained with limited labeled data.">
+<meta property="og:url" content="https://yuhangzang.github.io/papers/arxiv-2503.01785.html">
+<link rel="icon" type="image/svg+xml" href="../imgs/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"></noscript>
+<script>
+try {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+} catch {}
+</script>
+<link rel="stylesheet" href="../main.min.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","@id":"https://yuhangzang.github.io/papers/arxiv-2503.01785.html#paper","name":"Visual-RFT: Visual Reinforcement Fine-Tuning","author":[{"@type":"Person","name":"Ziyu Liu"},{"@type":"Person","name":"Zeyi Sun"},{"@type":"Person","name":"Yuhang Zang"},{"@type":"Person","name":"Xiaoyi Dong"},{"@type":"Person","name":"Yuhang Cao"},{"@type":"Person","name":"Haodong Duan"},{"@type":"Person","name":"Dahua Lin"},{"@type":"Person","name":"Jiaqi Wang"}],"datePublished":"2025","url":"https://yuhangzang.github.io/papers/arxiv-2503.01785.html","sameAs":["https://openaccess.thecvf.com/content/ICCV2025/html/Liu_Visual-RFT_Visual_Reinforcement_Fine-Tuning_ICCV_2025_paper.html","https://arxiv.org/abs/2503.01785"],"identifier":{"@type":"PropertyValue","propertyID":"arXiv","value":"2503.01785"},"encoding":{"@type":"MediaObject","name":"ICCV 2025 paper","contentUrl":"https://openaccess.thecvf.com/content/ICCV2025/papers/Liu_Visual-RFT_Visual_Reinforcement_Fine-Tuning_ICCV_2025_paper.pdf","encodingFormat":"application/pdf"},"isPartOf":{"@type":"CreativeWork","name":"Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)"},"pageStart":2034,"pageEnd":2044,"keywords":["Visual Reinforcement Fine-Tuning (Visual-RFT)","Reinforcement Learning with Verifiable Rewards (RLVR)","Group Relative Policy Optimization (GRPO)","Large Vision-Language Models (LVLMs)","Multimodal reinforcement learning","Few-shot learning","Fine-grained image classification","Few-shot object detection","Open-vocabulary object detection","Reasoning grounding"],"citation":[{"@type":"ScholarlyArticle","name":"DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models","url":"https://arxiv.org/abs/2402.03300"},{"@type":"ScholarlyArticle","name":"Qwen2-VL: Enhancing Vision-Language Model’s Perception of the World at Any Resolution","url":"https://arxiv.org/abs/2409.12191"},{"@type":"ScholarlyArticle","name":"DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning","url":"https://arxiv.org/abs/2501.12948"}],"abstract":"Reinforcement Fine-Tuning (RFT) in Large Reasoning Models like OpenAI o1 learns from feedback on its answers, which is especially useful in applications when fine-tuning data is scarce. Recent open-source work like DeepSeek-R1 demonstrates that reinforcement learning with verifiable reward is possibly one key direction in reproducing o1. While the R1-style model has demonstrated success in language models, its application in multi-modal domains remains under-explored. This work introduces Visual Reinforcement Fine-Tuning (Visual-RFT), which further extends the application areas of RFT on visual tasks. Specifically, Visual-RFT first uses Large Vision-Language Models (LVLMs) to generate multiple responses containing reasoning tokens and final answers for each input, and then uses our proposed visual perception verifiable reward functions to update the model via the policy optimization algorithm such as Group Relative Policy Optimization (GRPO). We design different verifiable reward functions for different perception tasks, such as the Intersection over Union (IoU) reward for object detection. Experimental results on fine-grained image classification, few-shot object detection, reasoning grounding, as well as open-vocabulary object detection benchmarks show the competitive performance and advanced generalization ability of Visual-RFT compared with Supervised Fine-tuning (SFT). For example, Visual-RFT improves accuracy by 24.3% over the baseline in one-shot fine-grained image classification with around 100 samples. In few-shot object detection, Visual-RFT also exceeds the baseline by 21.0 on COCO’s 4-shot setting and 15.4 on LVIS. Our Visual-RFT represents a paradigm shift in fine-tuning LVLMs, offering a data-efficient, reward-driven approach that enhances reasoning and adaptability for domain-specific tasks.","description":"Visual-RFT shows that GRPO with task-specific verifiable rewards improves classification, detection, and grounding in large vision-language models trained with limited labeled data."}</script>
+<script src="../assets/main.min.js" defer></script>
+</head>
+<body class="paper-page">
+<nav class="main-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="../index.html" class="brand-link">Yuhang Zang</a>
+      </div>
+      <button class="mobile-menu-toggle" type="button" aria-label="Toggle navigation menu" aria-controls="nav-menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <div class="nav-menu" id="nav-menu" aria-hidden="true">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../research.html" class="nav-link active" aria-current="location">Publications</a>
+        <a href="../index.html#services" class="nav-link">Services</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" title="Toggle dark mode" aria-label="Toggle dark mode" aria-pressed="false">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+<main class="paper-detail">
+  <article class="papers-section">
+    <p class="paper-detail-kicker">ICCV · 2025</p>
+    <h1 class="section-heading">Visual-RFT: Visual Reinforcement Fine-Tuning</h1>
+    <p class="paper-detail-authors author-names">Ziyu Liu, Zeyi Sun, <strong class="author-highlight">Yuhang Zang</strong><span class="paper-corresponding author-annotation corresponding" role="img" aria-label="Corresponding author" title="Corresponding author"><svg class="paper-envelope" viewBox="0 0 16 12" aria-hidden="true"><path fill="currentColor" d="M1 0h14a1 1 0 0 1 1 1v1L8 7 0 2V1a1 1 0 0 1 1-1ZM0 4l8 5 8-5v7a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1Z"/></svg><span class="paper-sr-only">(corresponding author)</span></span>, Xiaoyi Dong, Yuhang Cao, Haodong Duan, Dahua Lin, Jiaqi Wang<span class="paper-corresponding author-annotation corresponding" role="img" aria-label="Corresponding author" title="Corresponding author"><svg class="paper-envelope" viewBox="0 0 16 12" aria-hidden="true"><path fill="currentColor" d="M1 0h14a1 1 0 0 1 1 1v1L8 7 0 2V1a1 1 0 0 1 1-1ZM0 4l8 5 8-5v7a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1Z"/></svg><span class="paper-sr-only">(corresponding author)</span></span></p>
+    <p class="paper-detail-note paper-author-legend"><svg class="paper-envelope" viewBox="0 0 16 12" aria-hidden="true"><path fill="currentColor" d="M1 0h14a1 1 0 0 1 1 1v1L8 7 0 2V1a1 1 0 0 1 1-1ZM0 4l8 5 8-5v7a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1Z"/></svg> Corresponding author</p>
+    <section class="paper-takeaway" aria-labelledby="takeaway-heading">
+      <h2 id="takeaway-heading">Key takeaway</h2>
+      <p>Visual-RFT shows that GRPO with task-specific verifiable rewards improves classification, detection, and grounding in large vision-language models trained with limited labeled data. <a href="https://openaccess.thecvf.com/content/ICCV2025/papers/Liu_Visual-RFT_Visual_Reinforcement_Fine-Tuning_ICCV_2025_paper.pdf#page=6">Sections 3.2 and 4; Tables 2–5</a></p>
+    </section>
+    <section aria-labelledby="abstract-heading">
+      <h2 id="abstract-heading">Abstract</h2>
+      <p>Reinforcement Fine-Tuning (RFT) in Large Reasoning Models like OpenAI o1 learns from feedback on its answers, which is especially useful in applications when fine-tuning data is scarce. Recent open-source work like DeepSeek-R1 demonstrates that reinforcement learning with verifiable reward is possibly one key direction in reproducing o1. While the R1-style model has demonstrated success in language models, its application in multi-modal domains remains under-explored. This work introduces Visual Reinforcement Fine-Tuning (Visual-RFT), which further extends the application areas of RFT on visual tasks. Specifically, Visual-RFT first uses Large Vision-Language Models (LVLMs) to generate multiple responses containing reasoning tokens and final answers for each input, and then uses our proposed visual perception verifiable reward functions to update the model via the policy optimization algorithm such as Group Relative Policy Optimization (GRPO). We design different verifiable reward functions for different perception tasks, such as the Intersection over Union (IoU) reward for object detection. Experimental results on fine-grained image classification, few-shot object detection, reasoning grounding, as well as open-vocabulary object detection benchmarks show the competitive performance and advanced generalization ability of Visual-RFT compared with Supervised Fine-tuning (SFT). For example, Visual-RFT improves accuracy by 24.3% over the baseline in one-shot fine-grained image classification with around 100 samples. In few-shot object detection, Visual-RFT also exceeds the baseline by 21.0 on COCO’s 4-shot setting and 15.4 on LVIS. Our Visual-RFT represents a paradigm shift in fine-tuning LVLMs, offering a data-efficient, reward-driven approach that enhances reasoning and adaptability for domain-specific tasks.</p>
+      <p class="paper-detail-note">Author abstract · <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Liu_Visual-RFT_Visual_Reinforcement_Fine-Tuning_ICCV_2025_paper.html">ICCV 2025 proceedings record</a></p>
+    </section>
+    <section aria-labelledby="publication-heading">
+      <h2 id="publication-heading">Publication</h2>
+      <p>IEEE International Conference on Computer Vision (ICCV), 2025</p>
+
+    </section>
+    <section aria-labelledby="resources-heading">
+      <h2 id="resources-heading">Paper and resources</h2>
+      <ul class="paper-detail-resources">
+        <li><a href="https://openaccess.thecvf.com/content/ICCV2025/papers/Liu_Visual-RFT_Visual_Reinforcement_Fine-Tuning_ICCV_2025_paper.pdf">ICCV 2025 paper (PDF)</a></li>
+        <li><a href="https://arxiv.org/abs/2503.01785">arXiv:2503.01785</a></li>
+        <li><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=hW23VKIAAAAJ&amp;citation_for_view=hW23VKIAAAAJ:O3NaXMp0MMsC">Google Scholar</a></li>
+        <li><a href="https://github.com/Liuziyu77/Visual-RFT">Code · Liuziyu77/Visual-RFT</a></li>
+        <li><a href="https://huggingface.co/collections/laolao77/virft-datasets-67bc271b6f2833eccc0651df">Hugging Face · Dataset</a></li>
+      </ul>
+    </section>
+    <section aria-labelledby="topics-heading">
+      <h2 id="topics-heading">Research topics</h2>
+      <p class="paper-keywords">Visual Reinforcement Fine-Tuning (Visual-RFT) · Reinforcement Learning with Verifiable Rewards (RLVR) · Group Relative Policy Optimization (GRPO) · Large Vision-Language Models (LVLMs) · Multimodal reinforcement learning · Few-shot learning · Fine-grained image classification · Few-shot object detection · Open-vocabulary object detection · Reasoning grounding</p>
+    </section>
+    <section aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Research problem and approach</h2>
+      <p>Visual-RFT studies how to adapt large vision-language models to visual perception tasks with limited labeled examples. It trains with GRPO and task-specific, rule-based rewards, using class correctness for classification and box overlap, confidence, and output format for detection. The experiments compare reinforcement fine-tuning with supervised fine-tuning on classification, detection, and grounding. <a href="https://openaccess.thecvf.com/content/ICCV2025/papers/Liu_Visual-RFT_Visual_Reinforcement_Fine-Tuning_ICCV_2025_paper.pdf#page=4">Sections 1 and 3</a></p>
+    </section>
+    <section aria-labelledby="contributions-heading">
+      <h2 id="contributions-heading">Main contributions</h2>
+      <ul class="paper-detail-resources"><li>Applies reinforcement learning with verifiable rewards to visual perception, including fine-grained classification, few-shot detection, reasoning grounding, and open-vocabulary detection. <a href="https://openaccess.thecvf.com/content/ICCV2025/papers/Liu_Visual-RFT_Visual_Reinforcement_Fine-Tuning_ICCV_2025_paper.pdf#page=3">Section 1</a></li>
+<li>Defines task-specific rewards from labels and bounding boxes, allowing the model to learn from multiple sampled responses without a separately trained preference reward model. <a href="https://openaccess.thecvf.com/content/ICCV2025/papers/Liu_Visual-RFT_Visual_Reinforcement_Fine-Tuning_ICCV_2025_paper.pdf#page=5">Section 3.2</a></li>
+<li>Evaluates learning from limited examples and transfer to novel categories, comparing Visual-RFT with the base model and supervised fine-tuning. <a href="https://openaccess.thecvf.com/content/ICCV2025/papers/Liu_Visual-RFT_Visual_Reinforcement_Fine-Tuning_ICCV_2025_paper.pdf#page=7">Sections 4.2–4.5</a></li></ul>
+    </section>
+    <section aria-labelledby="method-comparison-heading">
+      <h2 id="method-comparison-heading">Method comparison</h2>
+      <div class="paper-results-scroll" role="region" aria-label="Method comparison table" tabindex="0">
+        <table class="paper-methods">
+          <thead><tr><th scope="col">Approach</th><th scope="col">Learning signal</th><th scope="col">Optimization</th><th scope="col">Training data</th></tr></thead>
+          <tbody><tr><th scope="row">Supervised fine-tuning (SFT)</th><td>Target outputs supplied with each training example.</td><td>Increases the likelihood of the demonstrated answers.</td><td>Labeled image–instruction–answer examples.</td></tr>
+<tr><th scope="row">RLHF with a learned reward model</th><td>Scores predicted by a reward model fitted to human preferences.</td><td>Updates the policy to increase the learned reward.</td><td>Preference comparisons for reward-model training, plus inputs for policy optimization.</td></tr>
+<tr><th scope="row">Visual-RFT (RLVR + GRPO)</th><td>Rules evaluate class correctness, box overlap, confidence, and output format.</td><td>Samples multiple responses and uses their relative rewards for GRPO updates.</td><td>Task examples with ground-truth labels or boxes; evaluated with limited data.</td></tr></tbody>
+        </table>
+      </div>
+      <p class="paper-detail-note"><a href="https://openaccess.thecvf.com/content/ICCV2025/papers/Liu_Visual-RFT_Visual_Reinforcement_Fine-Tuning_ICCV_2025_paper.pdf#page=4">Sections 1, 3.1 and 3.2</a></p>
+    </section>
+    <section aria-labelledby="results-heading">
+      <h2 id="results-heading">Selected results</h2>
+      <div class="paper-results-scroll" role="region" aria-label="Results table" tabindex="0">
+        <table class="paper-results">
+          <caption>Qwen2-VL-2B · ICCV 2025 results. Gains are absolute points over the base model.</caption>
+          <thead><tr><th scope="col">Setting / metric</th><th scope="col">Base model</th><th scope="col">SFT</th><th scope="col">Visual-RFT</th><th scope="col">Gain</th><th scope="col">Source</th></tr></thead>
+          <tbody><tr><th scope="row">Fine-grained classification · 1-shot per class; average over Flower102, Pets37, Aircraft, and Cars196<br><span class="paper-detail-note">Accuracy (%)</span></th><td>56.0</td><td>51.7</td><td>80.3</td><td>+24.3</td><td><a href="https://openaccess.thecvf.com/content/ICCV2025/papers/Liu_Visual-RFT_Visual_Reinforcement_Fine-Tuning_ICCV_2025_paper.pdf#page=6">Table 2, p. 2039</a></td></tr>
+<tr><th scope="row">Few-shot detection · COCO, 8 selected categories, 4-shot per category<br><span class="paper-detail-note">mAP</span></th><td>19.6</td><td>25.2</td><td>40.6</td><td>+21.0</td><td><a href="https://openaccess.thecvf.com/content/ICCV2025/papers/Liu_Visual-RFT_Visual_Reinforcement_Fine-Tuning_ICCV_2025_paper.pdf#page=6">Table 3, p. 2039</a></td></tr>
+<tr><th scope="row">Few-shot detection · LVIS, 6 selected rare categories, approximately 10-shot (1–10 images per category)<br><span class="paper-detail-note">mAP</span></th><td>4.0</td><td>10.0</td><td>19.4</td><td>+15.4</td><td><a href="https://openaccess.thecvf.com/content/ICCV2025/papers/Liu_Visual-RFT_Visual_Reinforcement_Fine-Tuning_ICCV_2025_paper.pdf#page=6">Table 4, p. 2039; Section 4.3</a></td></tr></tbody>
+        </table>
+      </div>
+      <p class="paper-detail-note">Accuracy gains are percentage points; mAP gains are mAP points.</p>
+    </section>
+    <section aria-labelledby="related-heading">
+      <h2 id="related-heading">Related work and discussion</h2>
+      <p class="paper-detail-note">Selected references and public discussion. Dates indicate first arXiv submission for papers and posting date for commentary.</p>
+      <div class="paper-related-grid">
+        <div class="paper-related-card" data-direction="cited">
+        <h3>Cited by Visual-RFT</h3>
+        <ul><li>
+          <a class="paper-related-title" href="https://arxiv.org/abs/2402.03300">DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models</a>
+
+          <p class="paper-related-date">Paper · First on arXiv · <time datetime="2024-02-05">2024-02-05</time></p>
+
+          <p>Optimization foundation: introduces GRPO, the policy optimization algorithm used by Visual-RFT.</p>
+          <a class="paper-related-evidence" href="https://openaccess.thecvf.com/content/ICCV2025/papers/Liu_Visual-RFT_Visual_Reinforcement_Fine-Tuning_ICCV_2025_paper.pdf#page=10">Visual-RFT reference 33; Section 3.1</a>
+        </li>
+<li>
+          <a class="paper-related-title" href="https://arxiv.org/abs/2409.12191">Qwen2-VL: Enhancing Vision-Language Model’s Perception of the World at Any Resolution</a>
+
+          <p class="paper-related-date">Paper · First on arXiv · <time datetime="2024-09-18">2024-09-18</time></p>
+
+          <p>Model foundation: Visual-RFT uses Qwen2-VL models for its visual perception experiments.</p>
+          <a class="paper-related-evidence" href="https://openaccess.thecvf.com/content/ICCV2025/papers/Liu_Visual-RFT_Visual_Reinforcement_Fine-Tuning_ICCV_2025_paper.pdf#page=10">Visual-RFT reference 40; Section 4</a>
+        </li>
+<li>
+          <a class="paper-related-title" href="https://arxiv.org/abs/2501.12948">DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning</a>
+
+          <p class="paper-related-date">Paper · First on arXiv · <time datetime="2025-01-22">2025-01-22</time></p>
+
+          <p>Training motivation: Visual-RFT adapts the use of verifiable rewards and GRPO from language reasoning to visual perception.</p>
+          <a class="paper-related-evidence" href="https://openaccess.thecvf.com/content/ICCV2025/papers/Liu_Visual-RFT_Visual_Reinforcement_Fine-Tuning_ICCV_2025_paper.pdf#page=9">Visual-RFT reference 4; Sections 1 and 3.1</a>
+        </li></ul>
+      </div>
+        <div class="paper-related-card" data-direction="citing">
+        <h3>Citations and discussion</h3>
+        <ul><li>
+          <a class="paper-related-title" href="https://x.com/natolambert/status/1899124771725648081">Nathan Lambert on Visual-RFT</a>
+          <p class="paper-related-attribution">Nathan Lambert · Personal commentary</p>
+          <p class="paper-related-date">X post · <time datetime="2025-03-10">2025-03-10</time></p>
+          <blockquote cite="https://x.com/natolambert/status/1899124771725648081"><p>“One of the first papers I&#39;ve seen with RLVR / reinforcement finetuning of vision language models”</p></blockquote>
+          <p>Highlights Visual-RFT as an early example of RLVR for vision-language models, while noting that many details remain to be explored.</p>
+          <a class="paper-related-evidence" href="https://x.com/natolambert/status/1899124771725648081">Read the original post</a>
+        </li>
+<li>
+          <a class="paper-related-title" href="https://arxiv.org/abs/2505.12434">VideoRFT: Incentivizing Video Reasoning Capability in MLLMs via Reinforced Fine-Tuning</a>
+          <p class="paper-related-attribution">Qi Wang et al. · Beijing Institute of Technology; Shenzhen University</p>
+          <p class="paper-related-date">Paper · First on arXiv · <time datetime="2025-05-18">2025-05-18</time></p>
+          <blockquote cite="https://arxiv.org/html/2505.12434v4#S5.SS1"><p>“Pioneering efforts such as Visual-RFT”</p></blockquote>
+          <p>Identifies Visual-RFT among pioneering methods adapting rule-based RL to image perception; explores reinforcement fine-tuning for video reasoning.</p>
+          <a class="paper-related-evidence" href="https://arxiv.org/html/2505.12434v4#S5.SS1">Section 5.1 · Reference 26</a>
+        </li>
+<li>
+          <a class="paper-related-title" href="https://arxiv.org/abs/2505.14362">DeepEyes: Incentivizing “Thinking with Images” via Reinforcement Learning</a>
+          <p class="paper-related-attribution">Ziwei Zheng et al. · Xiaohongshu; Xi’an Jiaotong University</p>
+          <p class="paper-related-date">Paper · First on arXiv · <time datetime="2025-05-20">2025-05-20</time></p>
+
+          <p>Cites Visual-RFT as prior work extending RL-based reasoning to object recognition; develops interleaved visual–textual reasoning through active perception.</p>
+          <a class="paper-related-evidence" href="https://arxiv.org/html/2505.14362v3#S2">Section 2 · Liu et al. (2025b)</a>
+        </li></ul>
+      </div>
+      </div>
+    </section>
+    <section aria-labelledby="citation-heading">
+      <h2 id="citation-heading">Cite this paper</h2>
+      <p>Ziyu Liu, Zeyi Sun, Yuhang Zang, Xiaoyi Dong, Yuhang Cao, Haodong Duan, Dahua Lin, Jiaqi Wang. Visual-RFT: Visual Reinforcement Fine-Tuning. Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), 2025, pp. 2034–2044.</p>
+
+
+      <div class="paper-citation-actions">
+        <button class="paper-copy-button" type="button" data-copy-target="paper-bibtex-content" aria-describedby="bibtex-copy-status" hidden>Copy to clipboard</button>
+        <a href="arxiv-2503.01785.bib" download>Download BibTeX</a>
+        <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Liu_Visual-RFT_Visual_Reinforcement_Fine-Tuning_ICCV_2025_paper.html">ICCV 2025 proceedings record</a>
+      </div>
+      <p id="bibtex-copy-status" class="paper-detail-note" role="status" aria-live="polite"></p>
+      <pre class="paper-bibtex"><code id="paper-bibtex-content">@inproceedings{Liu_2025_ICCV,
+  title     = {{Visual-RFT: Visual Reinforcement Fine-Tuning}},
+  author    = {Ziyu Liu and Zeyi Sun and Yuhang Zang and Xiaoyi Dong and Yuhang Cao and Haodong Duan and Dahua Lin and Jiaqi Wang},
+  booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+  month     = {October},
+  year      = {2025},
+  pages     = {2034--2044},
+  url       = {https://openaccess.thecvf.com/content/ICCV2025/html/Liu_Visual-RFT_Visual_Reinforcement_Fine-Tuning_ICCV_2025_paper.html}
+}
+</code></pre>
+    </section>
+  <footer class="paper-detail-footer"><a href="../research.html">← All publications</a></footer>
+  </article>
+</main>
+</body>
+</html>

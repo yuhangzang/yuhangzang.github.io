@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!-- Generated from data/publications.json. Edit the shared data and rebuild. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Streaming Long Video Understanding with Large Language Models | Yuhang Zang</title>
+<meta name="description" content="VideoStreaming combines propagated clip memory with question-conditioned memory selection so an LLM can answer about long videos using a fixed number of selected video tokens.">
+<link rel="canonical" href="https://yuhangzang.github.io/papers/arxiv-2405.16009.html">
+<meta name="citation_title" content="Streaming Long Video Understanding with Large Language Models">
+<meta name="citation_author" content="Rui Qian">
+<meta name="citation_author" content="Xiaoyi Dong">
+<meta name="citation_author" content="Pan Zhang">
+<meta name="citation_author" content="Yuhang Zang">
+<meta name="citation_author" content="Shuangrui Ding">
+<meta name="citation_author" content="Dahua Lin">
+<meta name="citation_author" content="Jiaqi Wang">
+<meta name="citation_publication_date" content="2024">
+<meta name="citation_arxiv_id" content="2405.16009">
+<meta name="citation_doi" content="10.52202/079017-3792">
+<meta name="citation_pdf_url" content="https://proceedings.neurips.cc/paper_files/paper/2024/file/d7ce06e9293c3d8e6cb3f80b4157f875-Paper-Conference.pdf">
+<meta name="citation_conference_title" content="Advances in Neural Information Processing Systems">
+<meta name="citation_firstpage" content="119336">
+<meta name="citation_lastpage" content="119360">
+<meta name="citation_volume" content="37">
+
+<link rel="alternate" type="application/x-bibtex" href="arxiv-2405.16009.bib">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Streaming Long Video Understanding with Large Language Models">
+<meta property="og:description" content="VideoStreaming combines propagated clip memory with question-conditioned memory selection so an LLM can answer about long videos using a fixed number of selected video tokens.">
+<meta property="og:url" content="https://yuhangzang.github.io/papers/arxiv-2405.16009.html">
+<link rel="icon" type="image/svg+xml" href="../imgs/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"></noscript>
+<script>
+try {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+} catch {}
+</script>
+<link rel="stylesheet" href="../main.min.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","@id":"https://yuhangzang.github.io/papers/arxiv-2405.16009.html#paper","name":"Streaming Long Video Understanding with Large Language Models","author":[{"@type":"Person","name":"Rui Qian"},{"@type":"Person","name":"Xiaoyi Dong"},{"@type":"Person","name":"Pan Zhang"},{"@type":"Person","name":"Yuhang Zang"},{"@type":"Person","name":"Shuangrui Ding"},{"@type":"Person","name":"Dahua Lin"},{"@type":"Person","name":"Jiaqi Wang"}],"datePublished":"2024","url":"https://yuhangzang.github.io/papers/arxiv-2405.16009.html","sameAs":["https://papers.nips.cc/paper_files/paper/2024/hash/d7ce06e9293c3d8e6cb3f80b4157f875-Abstract-Conference.html","https://arxiv.org/abs/2405.16009"],"identifier":[{"@type":"PropertyValue","propertyID":"arXiv","value":"2405.16009"},{"@type":"PropertyValue","propertyID":"DOI","value":"10.52202/079017-3792"}],"encoding":{"@type":"MediaObject","name":"Paper · arXiv v1","contentUrl":"https://arxiv.org/pdf/2405.16009v1","encodingFormat":"application/pdf"},"isPartOf":{"@type":"PublicationVolume","name":"Advances in Neural Information Processing Systems","volumeNumber":"37","isPartOf":{"@type":"CreativeWork","name":"Advances in Neural Information Processing Systems"}},"pageStart":119336,"pageEnd":119360,"keywords":["VideoStreaming","Long-video understanding","Streaming encoding","Memory propagation","Adaptive memory selection","Video question answering","Efficient multimodal inference","Temporal comprehension"],"abstract":"This paper presents VideoStreaming, an advanced vision-language large model (VLLM) for video understanding, that capably understands arbitrary-length video with a constant number of video tokens streamingly encoded and adaptively selected. The challenge of video understanding in the vision language area mainly lies in the significant computational burden caused by the great number of tokens extracted from long videos. Previous works rely on sparse sampling or frame compression to reduce tokens. However, such approaches either disregard temporal information in a long time span or sacrifice spatial details, resulting in flawed compression. To address these limitations, our VideoStreaming has two core designs: Memory-Propagated Streaming Encoding and Adaptive Memory Selection. The Memory-Propagated Streaming Encoding architecture segments long videos into short clips and sequentially encodes each clip with a propagated memory. In each iteration, we utilize the encoded results of the preceding clip as historical memory, which is integrated with the current clip to distill a condensed representation that encapsulates the video content up to the current timestamp. After the encoding process, the Adaptive Memory Selection strategy selects a constant number of question-related memories from all the historical memories and feeds them into the LLM to generate informative responses. The question-related selection reduces redundancy within the memories, enabling efficient and precise video understanding. Meanwhile, the disentangled video extraction and reasoning design allows the LLM to answer different questions about a video by directly selecting corresponding memories, without the need to encode the whole video for each question. Our model achieves superior performance and higher efficiency on long video benchmarks, showcasing precise temporal comprehension for detailed question answering.","description":"VideoStreaming combines propagated clip memory with question-conditioned memory selection so an LLM can answer about long videos using a fixed number of selected video tokens."}</script>
+<script src="../assets/main.min.js" defer></script>
+</head>
+<body class="paper-page">
+<nav class="main-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="../index.html" class="brand-link">Yuhang Zang</a>
+      </div>
+      <button class="mobile-menu-toggle" type="button" aria-label="Toggle navigation menu" aria-controls="nav-menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <div class="nav-menu" id="nav-menu" aria-hidden="true">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../research.html" class="nav-link active" aria-current="location">Publications</a>
+        <a href="../index.html#services" class="nav-link">Services</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" title="Toggle dark mode" aria-label="Toggle dark mode" aria-pressed="false">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+<main class="paper-detail">
+  <article class="papers-section">
+    <p class="paper-detail-kicker">NeurIPS · 2024</p>
+    <h1 class="section-heading">Streaming Long Video Understanding with Large Language Models</h1>
+    <p class="paper-detail-authors author-names">Rui Qian, Xiaoyi Dong, Pan Zhang, <strong class="author-highlight">Yuhang Zang</strong>, Shuangrui Ding, Dahua Lin, Jiaqi Wang</p>
+
+    <section class="paper-takeaway" aria-labelledby="takeaway-heading">
+      <h2 id="takeaway-heading">Key takeaway</h2>
+      <p>VideoStreaming combines propagated clip memory with question-conditioned memory selection so an LLM can answer about long videos using a fixed number of selected video tokens. <a href="https://arxiv.org/abs/2405.16009v1">arXiv abstract · v1</a></p>
+    </section>
+    <section aria-labelledby="abstract-heading">
+      <h2 id="abstract-heading">Abstract</h2>
+      <p>This paper presents VideoStreaming, an advanced vision-language large model (VLLM) for video understanding, that capably understands arbitrary-length video with a constant number of video tokens streamingly encoded and adaptively selected. The challenge of video understanding in the vision language area mainly lies in the significant computational burden caused by the great number of tokens extracted from long videos. Previous works rely on sparse sampling or frame compression to reduce tokens. However, such approaches either disregard temporal information in a long time span or sacrifice spatial details, resulting in flawed compression. To address these limitations, our VideoStreaming has two core designs: Memory-Propagated Streaming Encoding and Adaptive Memory Selection. The Memory-Propagated Streaming Encoding architecture segments long videos into short clips and sequentially encodes each clip with a propagated memory. In each iteration, we utilize the encoded results of the preceding clip as historical memory, which is integrated with the current clip to distill a condensed representation that encapsulates the video content up to the current timestamp. After the encoding process, the Adaptive Memory Selection strategy selects a constant number of question-related memories from all the historical memories and feeds them into the LLM to generate informative responses. The question-related selection reduces redundancy within the memories, enabling efficient and precise video understanding. Meanwhile, the disentangled video extraction and reasoning design allows the LLM to answer different questions about a video by directly selecting corresponding memories, without the need to encode the whole video for each question. Our model achieves superior performance and higher efficiency on long video benchmarks, showcasing precise temporal comprehension for detailed question answering.</p>
+      <p class="paper-detail-note">Author abstract · <a href="https://arxiv.org/abs/2405.16009v1">arXiv abstract · v1</a></p>
+    </section>
+    <section aria-labelledby="publication-heading">
+      <h2 id="publication-heading">Publication</h2>
+      <p>Neural Information Processing Systems (NeurIPS), 2024</p>
+
+    </section>
+    <section aria-labelledby="resources-heading">
+      <h2 id="resources-heading">Paper and resources</h2>
+      <ul class="paper-detail-resources">
+        <li><a href="https://arxiv.org/pdf/2405.16009v1">Paper · arXiv v1 (PDF)</a></li>
+        <li><a href="https://arxiv.org/abs/2405.16009">arXiv:2405.16009</a></li>
+        <li><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=hW23VKIAAAAJ&amp;citation_for_view=hW23VKIAAAAJ:NhqRSupF_l8C">Google Scholar</a></li>
+      </ul>
+    </section>
+    <section aria-labelledby="topics-heading">
+      <h2 id="topics-heading">Research topics</h2>
+      <p class="paper-keywords">VideoStreaming · Long-video understanding · Streaming encoding · Memory propagation · Adaptive memory selection · Video question answering · Efficient multimodal inference · Temporal comprehension</p>
+    </section>
+    <section aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Research problem and approach</h2>
+      <p>Sparse frame sampling loses temporal coverage, while aggressive compression can erase spatial detail. VideoStreaming encodes clips sequentially with historical memory, then selects relevant memories for each question without re-encoding the video. <a href="https://arxiv.org/abs/2405.16009v1">arXiv abstract · v1</a></p>
+    </section>
+    <section aria-labelledby="contributions-heading">
+      <h2 id="contributions-heading">Main contributions</h2>
+      <ul class="paper-detail-resources"><li>Introduces Memory-Propagated Streaming Encoding to accumulate video context clip by clip. <a href="https://arxiv.org/abs/2405.16009v1">arXiv abstract · v1</a></li>
+<li>Uses Adaptive Memory Selection to separate reusable video encoding from question-specific reasoning. <a href="https://arxiv.org/abs/2405.16009v1">arXiv abstract · v1</a></li></ul>
+    </section>
+    <section aria-labelledby="method-comparison-heading">
+      <h2 id="method-comparison-heading">Method comparison</h2>
+      <div class="paper-results-scroll" role="region" aria-label="Method comparison table" tabindex="0">
+        <table class="paper-methods paper-methods-compact">
+          <thead><tr><th scope="col">Approach</th><th scope="col">Key difference</th></tr></thead>
+          <tbody><tr><th scope="row">Sparse sampling or frame compression</th><td>Can trade away long-range temporal information or spatial details when reducing video tokens.</td></tr>
+<tr><th scope="row">VideoStreaming</th><td>Encodes clips with propagated memory and selects a fixed number of question-related memories for the LLM.</td></tr></tbody>
+        </table>
+      </div>
+      <p class="paper-detail-note"><a href="https://arxiv.org/abs/2405.16009v1">arXiv abstract · v1</a></p>
+    </section>
+    <section aria-labelledby="results-heading">
+      <h2 id="results-heading">Selected results</h2>
+      <ul class="paper-detail-resources"><li>VideoStreaming’s 7B answer model plus 1.3B streaming component scores 44.1 on the EgoSchema full test set and 66.2 on Next-QA in the zero-shot evaluation. The 7B LangRepo comparison scores 38.9 and 54.6. <a href="https://arxiv.org/html/2405.16009v1#S4.T4">Tables 3–4 · zero-shot video QA · arXiv v1</a></li>
+<li>With vision-only input, VideoStreaming uses 256 LLM input tokens and 5.32 seconds per question, compared with LLaMA-VID’s 5,477 tokens and 10.47 seconds. Overview/plot/temporal scores are 2.65/3.13/1.88 versus 2.28/2.88/1.46. <a href="https://arxiv.org/html/2405.16009v1#S4.T6">Table 6 · vision-only MovieNet-QA · arXiv v1</a></li></ul>
+    </section>
+
+    <section aria-labelledby="citation-heading">
+      <h2 id="citation-heading">Cite this paper</h2>
+      <p>Rui Qian, Xiaoyi Dong, Pan Zhang, Yuhang Zang, Shuangrui Ding, Dahua Lin, Jiaqi Wang. Streaming Long Video Understanding with Large Language Models. Advances in Neural Information Processing Systems, 37, 2024, pp. 119336–119360.</p>
+
+
+      <div class="paper-citation-actions">
+        <button class="paper-copy-button" type="button" data-copy-target="paper-bibtex-content" aria-describedby="bibtex-copy-status" hidden>Copy to clipboard</button>
+        <a href="arxiv-2405.16009.bib" download>Download BibTeX</a>
+        <a href="https://papers.nips.cc/paper_files/paper/2024/hash/d7ce06e9293c3d8e6cb3f80b4157f875-Abstract-Conference.html">NeurIPS 2024 proceedings record</a>
+      </div>
+      <p id="bibtex-copy-status" class="paper-detail-note" role="status" aria-live="polite"></p>
+      <pre class="paper-bibtex"><code id="paper-bibtex-content">@inproceedings{arxiv240516009,
+  title     = {{Streaming Long Video Understanding with Large Language Models}},
+  author    = {Rui Qian and Xiaoyi Dong and Pan Zhang and Yuhang Zang and Shuangrui Ding and Dahua Lin and Jiaqi Wang},
+  booktitle = {Advances in Neural Information Processing Systems},
+  year      = {2024},
+  volume    = {37},
+  publisher = {Curran Associates, Inc.},
+  pages     = {119336--119360},
+  doi       = {10.52202/079017-3792},
+  url       = {https://papers.nips.cc/paper_files/paper/2024/hash/d7ce06e9293c3d8e6cb3f80b4157f875-Abstract-Conference.html}
+}
+</code></pre>
+    </section>
+  <footer class="paper-detail-footer"><a href="../research.html">← All publications</a></footer>
+  </article>
+</main>
+</body>
+</html>

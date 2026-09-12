@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!-- Generated from data/publications.json. Edit the shared data and rebuild. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Semi-Supervised and Long-Tailed Object Detection with CascadeMatch | Yuhang Zang</title>
+<meta name="description" content="CascadeMatch improves semi-supervised long-tailed detection through progressive cascade thresholds, adaptive pseudo-label mining and ensemble supervision that reduces confirmation bias.">
+<link rel="canonical" href="https://yuhangzang.github.io/papers/arxiv-2305.14813.html">
+<meta name="citation_title" content="Semi-Supervised and Long-Tailed Object Detection with CascadeMatch">
+<meta name="citation_author" content="Yuhang Zang">
+<meta name="citation_author" content="Kaiyang Zhou">
+<meta name="citation_author" content="Chen Huang">
+<meta name="citation_author" content="Chen Change Loy">
+<meta name="citation_publication_date" content="2023">
+<meta name="citation_arxiv_id" content="2305.14813">
+<meta name="citation_doi" content="10.1007/s11263-022-01738-x">
+<meta name="citation_pdf_url" content="https://link.springer.com/content/pdf/10.1007/s11263-022-01738-x.pdf">
+<meta name="citation_journal_title" content="International Journal of Computer Vision">
+<meta name="citation_firstpage" content="987">
+<meta name="citation_lastpage" content="1001">
+<meta name="citation_volume" content="131">
+<meta name="citation_issue" content="4">
+<link rel="alternate" type="application/x-bibtex" href="arxiv-2305.14813.bib">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Semi-Supervised and Long-Tailed Object Detection with CascadeMatch">
+<meta property="og:description" content="CascadeMatch improves semi-supervised long-tailed detection through progressive cascade thresholds, adaptive pseudo-label mining and ensemble supervision that reduces confirmation bias.">
+<meta property="og:url" content="https://yuhangzang.github.io/papers/arxiv-2305.14813.html">
+<link rel="icon" type="image/svg+xml" href="../imgs/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"></noscript>
+<script>
+try {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+} catch {}
+</script>
+<link rel="stylesheet" href="../main.min.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","@id":"https://yuhangzang.github.io/papers/arxiv-2305.14813.html#paper","name":"Semi-Supervised and Long-Tailed Object Detection with CascadeMatch","author":[{"@type":"Person","name":"Yuhang Zang"},{"@type":"Person","name":"Kaiyang Zhou"},{"@type":"Person","name":"Chen Huang"},{"@type":"Person","name":"Chen Change Loy"}],"datePublished":"2023","url":"https://yuhangzang.github.io/papers/arxiv-2305.14813.html","sameAs":["https://doi.org/10.1007/s11263-022-01738-x","https://arxiv.org/abs/2305.14813"],"identifier":[{"@type":"PropertyValue","propertyID":"arXiv","value":"2305.14813"},{"@type":"PropertyValue","propertyID":"DOI","value":"10.1007/s11263-022-01738-x"}],"encoding":{"@type":"MediaObject","name":"Paper · arXiv v1","contentUrl":"https://arxiv.org/pdf/2305.14813v1","encodingFormat":"application/pdf"},"isPartOf":{"@type":"PublicationIssue","name":"International Journal of Computer Vision","issueNumber":"4","isPartOf":{"@type":"PublicationVolume","name":"International Journal of Computer Vision","volumeNumber":"131","isPartOf":{"@type":"Periodical","name":"International Journal of Computer Vision"}}},"pageStart":987,"pageEnd":1001,"keywords":["CascadeMatch","Semi-supervised object detection","Long-tailed detection","Pseudo-labeling","Adaptive confidence thresholds","Confirmation bias","Ensemble supervision","Sparse annotations"],"abstract":"This paper focuses on long-tailed object detection in the semi-supervised learning setting, which poses realistic challenges, but has rarely been studied in the literature. We propose a novel pseudo-labeling-based detector called CascadeMatch. Our detector features a cascade network architecture, which has multi-stage detection heads with progressive confidence thresholds. To avoid manually tuning the thresholds, we design a new adaptive pseudo-label mining mechanism to automatically identify suitable values from data. To mitigate confirmation bias, where a model is negatively reinforced by incorrect pseudo-labels produced by itself, each detection head is trained by the ensemble pseudo-labels of all detection heads. Experiments on two long-tailed datasets, i.e., LVIS and COCO-LT, demonstrate that CascadeMatch surpasses existing state-of-the-art semi-supervised approaches -- across a wide range of detection architectures -- in handling long-tailed object detection. For instance, CascadeMatch outperforms Unbiased Teacher by 1.9 AP Fix on LVIS when using a ResNet50-based Cascade R-CNN structure, and by 1.7 AP Fix when using Sparse R-CNN with a Transformer encoder. We also show that CascadeMatch can even handle the challenging sparsely annotated object detection problem.","description":"CascadeMatch improves semi-supervised long-tailed detection through progressive cascade thresholds, adaptive pseudo-label mining and ensemble supervision that reduces confirmation bias."}</script>
+<script src="../assets/main.min.js" defer></script>
+</head>
+<body class="paper-page">
+<nav class="main-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="../index.html" class="brand-link">Yuhang Zang</a>
+      </div>
+      <button class="mobile-menu-toggle" type="button" aria-label="Toggle navigation menu" aria-controls="nav-menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <div class="nav-menu" id="nav-menu" aria-hidden="true">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../research.html" class="nav-link active" aria-current="location">Publications</a>
+        <a href="../index.html#services" class="nav-link">Services</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" title="Toggle dark mode" aria-label="Toggle dark mode" aria-pressed="false">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+<main class="paper-detail">
+  <article class="papers-section">
+    <p class="paper-detail-kicker">IJCV · 2023</p>
+    <h1 class="section-heading">Semi-Supervised and Long-Tailed Object Detection with CascadeMatch</h1>
+    <p class="paper-detail-authors author-names"><strong class="author-highlight">Yuhang Zang</strong>, Kaiyang Zhou, Chen Huang, Chen Change Loy</p>
+
+    <section class="paper-takeaway" aria-labelledby="takeaway-heading">
+      <h2 id="takeaway-heading">Key takeaway</h2>
+      <p>CascadeMatch improves semi-supervised long-tailed detection through progressive cascade thresholds, adaptive pseudo-label mining and ensemble supervision that reduces confirmation bias. <a href="https://arxiv.org/abs/2305.14813v1">arXiv abstract · v1</a></p>
+    </section>
+    <section aria-labelledby="abstract-heading">
+      <h2 id="abstract-heading">Abstract</h2>
+      <p>This paper focuses on long-tailed object detection in the semi-supervised learning setting, which poses realistic challenges, but has rarely been studied in the literature. We propose a novel pseudo-labeling-based detector called CascadeMatch. Our detector features a cascade network architecture, which has multi-stage detection heads with progressive confidence thresholds. To avoid manually tuning the thresholds, we design a new adaptive pseudo-label mining mechanism to automatically identify suitable values from data. To mitigate confirmation bias, where a model is negatively reinforced by incorrect pseudo-labels produced by itself, each detection head is trained by the ensemble pseudo-labels of all detection heads. Experiments on two long-tailed datasets, i.e., LVIS and COCO-LT, demonstrate that CascadeMatch surpasses existing state-of-the-art semi-supervised approaches -- across a wide range of detection architectures -- in handling long-tailed object detection. For instance, CascadeMatch outperforms Unbiased Teacher by 1.9 AP Fix on LVIS when using a ResNet50-based Cascade R-CNN structure, and by 1.7 AP Fix when using Sparse R-CNN with a Transformer encoder. We also show that CascadeMatch can even handle the challenging sparsely annotated object detection problem.</p>
+      <p class="paper-detail-note">Author abstract · <a href="https://arxiv.org/abs/2305.14813v1">arXiv abstract · v1</a></p>
+    </section>
+    <section aria-labelledby="publication-heading">
+      <h2 id="publication-heading">Publication</h2>
+      <p>International Journal of Computer Vision (IJCV), 2023</p>
+
+    </section>
+    <section aria-labelledby="resources-heading">
+      <h2 id="resources-heading">Paper and resources</h2>
+      <ul class="paper-detail-resources">
+        <li><a href="https://arxiv.org/pdf/2305.14813v1">Paper · arXiv v1 (PDF)</a></li>
+        <li><a href="https://arxiv.org/abs/2305.14813">arXiv:2305.14813</a></li>
+        <li><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=hW23VKIAAAAJ&amp;citation_for_view=hW23VKIAAAAJ:W7OEmFMy1HYC">Google Scholar</a></li>
+      </ul>
+    </section>
+    <section aria-labelledby="topics-heading">
+      <h2 id="topics-heading">Research topics</h2>
+      <p class="paper-keywords">CascadeMatch · Semi-supervised object detection · Long-tailed detection · Pseudo-labeling · Adaptive confidence thresholds · Confirmation bias · Ensemble supervision · Sparse annotations</p>
+    </section>
+    <section aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Research problem and approach</h2>
+      <p>Rare categories make reliable pseudo-label selection difficult, while incorrect labels can reinforce themselves during training. CascadeMatch uses multiple detection heads, learns confidence thresholds from data and supervises each head with their ensemble predictions. <a href="https://arxiv.org/abs/2305.14813v1">arXiv abstract · v1</a></p>
+    </section>
+    <section aria-labelledby="contributions-heading">
+      <h2 id="contributions-heading">Main contributions</h2>
+      <ul class="paper-detail-resources"><li>Introduces a cascade pseudo-labeling architecture with progressive, automatically adapted confidence thresholds. <a href="https://arxiv.org/abs/2305.14813v1">arXiv abstract · v1</a></li>
+<li>Uses ensemble pseudo-labels across detection heads and studies sparsely annotated detection. <a href="https://arxiv.org/abs/2305.14813v1">arXiv abstract · v1</a></li></ul>
+    </section>
+    <section aria-labelledby="method-comparison-heading">
+      <h2 id="method-comparison-heading">Method comparison</h2>
+      <div class="paper-results-scroll" role="region" aria-label="Method comparison table" tabindex="0">
+        <table class="paper-methods paper-methods-compact">
+          <thead><tr><th scope="col">Approach</th><th scope="col">Key difference</th></tr></thead>
+          <tbody><tr><th scope="row">Self-generated pseudo-label supervision</th><td>Can reinforce a detector&#39;s own incorrect labels and requires suitable confidence thresholds.</td></tr>
+<tr><th scope="row">CascadeMatch</th><td>Uses progressive adaptive thresholds and supervises each detection head with ensemble pseudo-labels.</td></tr></tbody>
+        </table>
+      </div>
+      <p class="paper-detail-note"><a href="https://arxiv.org/abs/2305.14813v1">arXiv abstract · v1</a></p>
+    </section>
+    <section aria-labelledby="results-heading">
+      <h2 id="results-heading">Selected results</h2>
+      <ul class="paper-detail-resources"><li>With a 12-epoch schedule, CascadeMatch raises fixed AP from the supervised baseline’s 26.3 to 30.5 and rare-class fixed AP from 19.7 to 23.1, averaged over three random seeds. Soft Teacher reaches 29.2 and 21.1 in the same setting. <a href="https://arxiv.org/html/2305.14813v1#S4.T7">Table 7 · LVIS v1.0, Cascade R-CNN R50-FPN · arXiv v1</a></li>
+<li>Cascade pseudo-labeling alone gives fixed AP 30.1; adaptive pseudo-label mining alone gives 28.9; using both reaches 30.5, compared with 26.3 without unlabeled data. Rare-class fixed AP reaches 23.1 with both components. <a href="https://arxiv.org/html/2305.14813v1#S4.T3">Table 2 · pseudo-labeling ablation · arXiv v1</a></li></ul>
+    </section>
+
+    <section aria-labelledby="citation-heading">
+      <h2 id="citation-heading">Cite this paper</h2>
+      <p>Yuhang Zang, Kaiyang Zhou, Chen Huang, Chen Change Loy. Semi-Supervised and Long-Tailed Object Detection with CascadeMatch. International Journal of Computer Vision, 131(4), 2023, pp. 987–1001.</p>
+
+
+      <div class="paper-citation-actions">
+        <button class="paper-copy-button" type="button" data-copy-target="paper-bibtex-content" aria-describedby="bibtex-copy-status" hidden>Copy to clipboard</button>
+        <a href="arxiv-2305.14813.bib" download>Download BibTeX</a>
+        <a href="https://doi.org/10.1007/s11263-022-01738-x">IJCV publisher record</a>
+      </div>
+      <p id="bibtex-copy-status" class="paper-detail-note" role="status" aria-live="polite"></p>
+      <pre class="paper-bibtex"><code id="paper-bibtex-content">@article{arxiv230514813,
+  title     = {{Semi-Supervised and Long-Tailed Object Detection with CascadeMatch}},
+  author    = {Yuhang Zang and Kaiyang Zhou and Chen Huang and Chen Change Loy},
+  journal   = {International Journal of Computer Vision},
+  month     = {April},
+  year      = {2023},
+  volume    = {131},
+  number    = {4},
+  publisher = {Springer Science and Business Media LLC},
+  pages     = {987--1001},
+  doi       = {10.1007/s11263-022-01738-x},
+  url       = {https://doi.org/10.1007/s11263-022-01738-x}
+}
+</code></pre>
+    </section>
+  <footer class="paper-detail-footer"><a href="../research.html">← All publications</a></footer>
+  </article>
+</main>
+</body>
+</html>

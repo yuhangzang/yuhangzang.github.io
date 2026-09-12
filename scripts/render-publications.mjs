@@ -1,0 +1,221 @@
+import assert from 'node:assert/strict';
+import { renderSiteNavigation } from './render-site.mjs';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { escapeHTML, paperPath, paperURL, paperSchema, renderPaper, renderBibTeX, bibtexPath, siteURL, structuredJSON, citationRecord } from './render-paper.mjs';
+const external = 'target="_blank" rel="noopener noreferrer"';
+
+export function validatePublications(data) {
+    assert.equal(data.schemaVersion, 1, 'Unsupported publication schema');
+    assert(data.papers.length, 'Publication data is empty');
+    const ids = new Set();
+    const paths = new Set();
+    for (const paper of data.papers) {
+        assert(paper.id && !ids.has(paper.id), `Duplicate or missing ID: ${paper.id}`);
+        assert(/^[A-Za-z0-9][A-Za-z0-9:._-]*$/.test(paper.id), `Invalid paper ID: ${paper.id}`);
+        assert(!paths.has(paperPath(paper).toLowerCase()), `Duplicate paper path: ${paper.id}`);
+        paths.add(paperPath(paper).toLowerCase());
+        ids.add(paper.id);
+        assert(paper.title && paper.authors.length, `Missing title or authors: ${paper.id}`);
+        assert(paper.authors.every(author => author.name && !/et al\./i.test(author.name)), `Incomplete authors: ${paper.id}`);
+        assert(Number.isInteger(paper.publication.year) && paper.publication.citationText && paper.publication.venueGroup, `Missing publication information: ${paper.id}`);
+        assert(paper.topics.length, `Missing topic: ${paper.id}`);
+        if (paper.keywords) {
+            assert(Array.isArray(paper.keywords) && paper.keywords.length && paper.keywords.every(term => typeof term === 'string' && term.trim()), `Invalid keywords: ${paper.id}`);
+            assert.equal(new Set(paper.keywords.map(term => term.toLowerCase())).size, paper.keywords.length, `Duplicate keywords: ${paper.id}`);
+        }
+        for (const link of paper.links) {
+            assert(['http:', 'https:'].includes(new URL(link.url).protocol), `Invalid URL: ${paper.id}`);
+            assert(['arxiv', 'scholar', 'code', 'project', 'huggingface', 'paper'].includes(link.type), `Unsupported link: ${link.type}`);
+            if (link.type === 'arxiv') assert(paper.identifiers.arxiv, `Missing arXiv ID: ${paper.id}`);
+            if (link.type === 'scholar') assert(paper.identifiers.googleScholar, `Missing Scholar ID: ${paper.id}`);
+            if (link.type === 'code') assert(link.repository, `Missing repository: ${paper.id}`);
+            if (link.type === 'huggingface') assert(['model', 'dataset', 'space'].includes(link.variant) && link.label, `Invalid resource: ${paper.id}`);
+        }
+        assert(paper.display.badges.every(badge => ['Oral', 'Spotlight', 'Highlight'].includes(badge)), `Unsupported badge: ${paper.id}`);
+        const validURL = url => assert(['http:', 'https:'].includes(new URL(url).protocol), `Invalid source URL: ${paper.id}`);
+        if (paper.citation) {
+            const citation = citationRecord(paper);
+            assert(['inproceedings', 'article', 'phdthesis'].includes(paper.citation.type) && /^[A-Za-z0-9_-]+$/.test(paper.citation.key), `Invalid citation: ${paper.id}`);
+            if (paper.citation.year !== undefined) assert(Number.isInteger(paper.citation.year) && paper.citation.year > 0, `Invalid citation year: ${paper.id}`);
+            assert(typeof citation.title === 'string' && citation.title.trim() && Array.isArray(citation.authors) && citation.authors.length && citation.authors.every(author => author.name && !/et al\./i.test(author.name)), `Incomplete citation identity: ${paper.id}`);
+            if (citation.month !== undefined) assert(Number.isInteger(citation.month) && citation.month >= 1 && citation.month <= 12, `Invalid citation month: ${paper.id}`);
+            if (citation.firstPage !== undefined || citation.lastPage !== undefined) assert(Number.isInteger(citation.firstPage) && citation.firstPage > 0 && Number.isInteger(citation.lastPage) && citation.lastPage >= citation.firstPage, `Invalid citation pages: ${paper.id}`);
+            if (citation.pdfURL) validURL(citation.pdfURL);
+            if (paper.citation.type === 'inproceedings') {
+                assert(typeof citation.booktitle === 'string' && citation.booktitle.trim(), `Incomplete citation: ${paper.id}`);
+            } else if (paper.citation.type === 'article') {
+                assert(typeof paper.citation.journal === 'string' && paper.citation.journal.trim(), `Missing citation journal: ${paper.id}`);
+            } else {
+                assert(typeof paper.citation.school === 'string' && paper.citation.school.trim(), `Missing thesis school: ${paper.id}`);
+            }
+            validURL(paper.citation.source.url);
+        }
+        if (paper.content) {
+            const content = paper.content;
+            assert(/^\d{4}-\d{2}-\d{2}$/.test(content.verifiedOn), `Incomplete content: ${paper.id}`);
+            for (const source of Object.values(content.sources)) {
+                assert(source.label, `Missing source label: ${paper.id}`);
+                validURL(source.url);
+                if (source.encodingFormat !== undefined) assert.equal(source.encodingFormat, 'application/pdf', `Unsupported source format: ${paper.id}`);
+            }
+            for (const item of [content.abstract, content.summary, ...content.contributions, ...content.results, ...(content.resultNotes || []), ...(content.takeaway ? [content.takeaway] : [])]) {
+                assert(content.sources[item.source], `Unknown evidence source: ${paper.id}`);
+                if (item.page !== undefined) assert(Number.isInteger(item.page) && item.page > 0, `Invalid source page: ${paper.id}`);
+                if (item.fragment !== undefined) assert(typeof item.fragment === 'string' && item.fragment.trim(), `Invalid source fragment: ${paper.id}`);
+                assert(item.text || (item.setting && item.metric), `Missing evidence text: ${paper.id}`);
+            }
+            if (content.results.length) {
+                assert(content.resultsCaption && content.resultsNote && Array.isArray(content.resultColumns), `Missing results layout: ${paper.id}`);
+                const keys = content.resultColumns.map(column => column.key);
+                assert(keys.includes('baseline') && keys.includes('result') && new Set(keys).size === keys.length && content.resultColumns.every(column => typeof column.label === 'string' && column.label.trim()), `Invalid result columns: ${paper.id}`);
+                for (const row of content.results) {
+                    assert(keys.every(key => Number.isFinite(row[key])), `Invalid result: ${paper.id}`);
+                }
+            }
+            if (content.methodComparison) {
+                const comparison = content.methodComparison;
+                assert(content.sources[comparison.source] && comparison.locator, `Invalid comparison source: ${paper.id}`);
+                assert(Array.isArray(comparison.columns) && comparison.columns.length && comparison.columns.every(column => column.key && column.label), `Invalid comparison columns: ${paper.id}`);
+                assert(comparison.rows.length && comparison.rows.every(row => comparison.columns.every(column => typeof row[column.key] === 'string' && row[column.key].trim())), `Incomplete method comparison: ${paper.id}`);
+            }
+            if (content.relatedWork) {
+                assert.equal(paper.id, 'arxiv:2503.01785', 'Related work is reserved for Visual-RFT');
+                for (const direction of ['cited', 'citing']) {
+                    assert(Array.isArray(content.relatedWork[direction]), `Missing citation direction: ${paper.id}`);
+                    const relatedURLs = new Set();
+                    for (const item of content.relatedWork[direction]) {
+                        assert(item.title && item.relationship && item.evidence?.label, `Incomplete related paper: ${paper.id}`);
+                        assert(['paper', 'post'].includes(item.kind) && (direction !== 'cited' || item.kind === 'paper'), `Invalid related work kind: ${paper.id}`);
+                        for (const field of ['attribution', 'quote']) {
+                            if (item[field] !== undefined) assert(typeof item[field] === 'string' && item[field].trim(), `Invalid related work ${field}: ${paper.id}`);
+                        }
+                        assert(/^\d{4}-\d{2}-\d{2}$/.test(item.firstPosted) && Number.isFinite(Date.parse(item.firstPosted)) && new Date(item.firstPosted).toISOString().slice(0, 10) === item.firstPosted, `Invalid related paper date: ${paper.id}`);
+                        validURL(item.url);
+                        validURL(item.evidence.url);
+                        assert(!relatedURLs.has(item.url), `Duplicate related paper: ${paper.id}`);
+                        relatedURLs.add(item.url);
+                    }
+                }
+            }
+        }
+    }
+    assert(data.homepage.selectedPaperIds.every(id => ids.has(id)), 'Unknown homepage paper');
+    assert.equal(new Set(data.homepage.selectedPaperIds).size, data.homepage.selectedPaperIds.length, 'Duplicate homepage paper');
+    assert(Number.isInteger(data.homepage.defaultVisibleCount) && data.homepage.defaultVisibleCount > 0, 'Invalid homepage limit');
+}
+
+function renderAuthor(author) {
+    let name = escapeHTML(author.name);
+    if (author.name === 'Yuhang Zang') name = `<span class="author-highlight">${name}</span>`;
+    if (author.corresponding) name += '<span class="author-annotation corresponding"><i class="fa fa-envelope"></i></span>';
+    return name;
+}
+
+function renderLink(link, paper) {
+    const href = escapeHTML(link.url);
+    switch (link.type) {
+        case 'arxiv':
+            return `<a href="${href}" ${external} class="arxiv-btn"><i class="fa fa-file-text"></i>arXiv:${escapeHTML(paper.identifiers.arxiv)}</a>`;
+        case 'scholar':
+            return `<a href="${href}" ${external} class="citations-btn"><i class="fa fa-quote-left"></i><span class="citation-count show_paper_citations" data="${escapeHTML(paper.identifiers.googleScholar)}">0</span></a>`;
+        case 'code':
+            return `<a href="${href}" ${external} class="github-btn" data-repo="${escapeHTML(link.repository)}"><i class="fa fa-star"></i><span class="star-count">0</span></a>`;
+        case 'project':
+            return `<a href="${href}" ${external} class="homepage-btn"><i class="fa fa-home"></i>Home</a>`;
+        case 'huggingface':
+            return `<a href="${href}" ${external} class="huggingface-btn ${link.variant}"><span class="hf-emoji">🤗</span>${escapeHTML(link.label)}</a>`;
+        case 'paper':
+            return `<a href="${href}" ${external} class="arxiv-btn"><i class="fa fa-file-pdf-o"></i>${escapeHTML(link.label)}</a>`;
+    }
+}
+
+function renderCard(paper, homepage) {
+    const info = [
+        `<a class="paper-title-link" href="${paperPath(paper).slice(1)}"><papertitle>${escapeHTML(paper.title)}</papertitle></a>`,
+        `<div class="author-names">${paper.authors.map(renderAuthor).join(', ')}</div>`,
+        `<div class="paper-venue">${escapeHTML(paper.publication.citationText).replace(/\(([^()]+)\)/, '(<b>$1</b>)')}${paper.display.badges.map(badge => ` <span class="oral-spotlight-badge ${badge === 'Oral' ? 'oral' : 'spotlight'}-badge">${escapeHTML(badge)}</span>`).join('')}</div>`
+    ].join('\n');
+    const isNew = homepage ? (paper.display.homepageNew ?? paper.display.new) : paper.display.new;
+    // Preserve the existing spacing of older cards, which have no info wrapper.
+    const wrapInfo = homepage || paper.display.infoWrapper;
+    return `<div class="paper-card" data-paper-id="${escapeHTML(paper.id)}" data-year="${paper.publication.year}" data-topic="${escapeHTML(paper.topics[0])}" data-venue="${escapeHTML(paper.publication.venueGroup)}"${paper.keywords ? ` data-keywords="${escapeHTML(paper.keywords.join(' '))}"` : ''}>
+${isNew ? '<div class="new-badge">New!</div>\n' : ''}<div class="paper-content">
+${wrapInfo ? `<div class="paper-info">\n${info}\n</div>` : info}
+<div class="paper-badges">
+${paper.links.map(link => renderLink(link, paper)).join('\n')}
+</div>
+${paper.citation ? `<template class="paper-citation" data-cite-key="${escapeHTML(paper.citation.key)}">${escapeHTML(renderBibTeX(paper))}</template>` : ''}
+</div>
+</div>`;
+}
+
+export function publicationSections(data) {
+    validatePublications(data);
+    const byId = new Map(data.papers.map(paper => [paper.id, paper]));
+    return {
+        homepage: data.homepage.selectedPaperIds.map(id => renderCard(byId.get(id), true)).join('\n\n'),
+        research: data.papers.map(paper => renderCard(paper, false)).join('\n\n'),
+        homepageItems: data.homepage.selectedPaperIds.map((id, index) => ({
+            '@type': 'ListItem',
+            position: index + 1,
+            item: paperSchema(byId.get(id))
+        })),
+        items: data.papers.map((paper, index) => ({
+            '@type': 'ListItem',
+            position: index + 1,
+            item: paperSchema(paper)
+        }))
+    };
+}
+
+function replacePaperSection(html, cards) {
+    const marker = /<!-- BEGIN GENERATED PAPERS -->[\s\S]*?<!-- END GENERATED PAPERS -->/g;
+    assert.equal([...html.matchAll(marker)].length, 1, 'Expected exactly one generated paper section');
+    return html.replace(marker, () => `<!-- BEGIN GENERATED PAPERS -->\n${cards}\n<!-- END GENERATED PAPERS -->`);
+}
+
+function replaceNavigation(html, active) {
+    const navigation = /<nav class="main-nav"[^>]*>[\s\S]*?<\/nav>/g;
+    assert.equal([...html.matchAll(navigation)].length, 1, 'Expected exactly one main navigation');
+    return html.replace(navigation, () => renderSiteNavigation('./', active));
+}
+
+export async function renderPublicationPages(root = new URL('../', import.meta.url)) {
+    const data = JSON.parse(await readFile(new URL('data/publications.json', root), 'utf8'));
+    const sections = publicationSections(data);
+    const [home, research] = await Promise.all(['index.html', 'research.html'].map(name => readFile(new URL(name, root), 'utf8')));
+    const limitPattern = /(<div id="papers-container" data-limit=")\d+("[^>]*>)/;
+    assert(limitPattern.test(home), 'Missing homepage paper limit');
+    const homeSchemaPattern = /<script id="selected-publications-schema" type="application\/ld\+json">[\s\S]*?<\/script>/g;
+    assert.equal([...home.matchAll(homeSchemaPattern)].length, 1, 'Expected exactly one selected publications schema');
+    const homeSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        '@id': `${siteURL}/#selected-publications`,
+        name: 'Selected publications',
+        numberOfItems: sections.homepageItems.length,
+        itemListElement: sections.homepageItems
+    };
+    const homeOutput = replacePaperSection(replaceNavigation(home, 'home'), sections.homepage).replace(limitPattern,
+        (_, opening, closing) => `${opening}${data.homepage.defaultVisibleCount}${closing}`)
+        .replace(homeSchemaPattern, () => `<script id="selected-publications-schema" type="application/ld+json">\n${structuredJSON(homeSchema)}\n</script>`);
+    const schemaPattern = /<script id="publications-schema" type="application\/ld\+json">([\s\S]*?)<\/script>/g;
+    const schemaMatches = [...research.matchAll(schemaPattern)];
+    assert.equal(schemaMatches.length, 1, 'Expected exactly one publications schema');
+    const schema = JSON.parse(schemaMatches[0][1]);
+    schema.mainEntity = { '@type': 'ItemList', itemListElement: sections.items };
+    // Escape '<' so a title cannot terminate the embedded JSON-LD script.
+    const researchOutput = replacePaperSection(replaceNavigation(research, 'publications'), sections.research).replace(schemaPattern,
+        () => `<script id="publications-schema" type="application/ld+json">\n${structuredJSON(schema)}\n</script>`);
+    const pages = data.papers.map(paper => ({ path: paperPath(paper).slice(1), html: renderPaper(paper) }));
+    for (const paper of data.papers.filter(paper => paper.citation)) {
+        pages.push({ path: bibtexPath(paper).slice(1), html: renderBibTeX(paper) });
+    }
+    const urls = [`${siteURL}/`, `${siteURL}/research.html`, ...data.papers.map(paperURL)];
+    const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(url => `  <url><loc>${escapeHTML(url)}</loc></url>`).join('\n')}\n</urlset>\n`;
+    await mkdir(new URL('papers/', root), { recursive: true });
+    for (const page of pages) await writeFile(new URL(page.path, root), page.html);
+    await writeFile(new URL('index.html', root), homeOutput);
+    await writeFile(new URL('research.html', root), researchOutput);
+    await writeFile(new URL('sitemap.xml', root), sitemap);
+}

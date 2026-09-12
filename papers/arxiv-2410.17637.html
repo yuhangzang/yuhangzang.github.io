@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<!-- Generated from data/publications.json. Edit the shared data and rebuild. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MIA-DPO: Multi-Image Augmented Direct Preference Optimization For Large Vision-Language Models | Yuhang Zang</title>
+<meta name="description" content="MIA-DPO creates multi-image preference-training pairs from single-image data and attention signals, reducing the need for new human annotations or external judge models.">
+<link rel="canonical" href="https://yuhangzang.github.io/papers/arxiv-2410.17637.html">
+<meta name="citation_title" content="MIA-DPO: Multi-Image Augmented Direct Preference Optimization For Large Vision-Language Models">
+<meta name="citation_author" content="Ziyu Liu">
+<meta name="citation_author" content="Yuhang Zang">
+<meta name="citation_author" content="Xiaoyi Dong">
+<meta name="citation_author" content="Pan Zhang">
+<meta name="citation_author" content="Yuhang Cao">
+<meta name="citation_author" content="Haodong Duan">
+<meta name="citation_author" content="Conghui He">
+<meta name="citation_author" content="Yuanjun Xiong">
+<meta name="citation_author" content="Dahua Lin">
+<meta name="citation_author" content="Jiaqi Wang">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_arxiv_id" content="2410.17637">
+
+<meta name="citation_pdf_url" content="https://proceedings.iclr.cc/paper_files/paper/2025/file/557a20663907ed637c2807f608d5bec2-Paper-Conference.pdf">
+<meta name="citation_conference_title" content="International Conference on Learning Representations">
+<meta name="citation_firstpage" content="34583">
+<meta name="citation_lastpage" content="34610">
+<meta name="citation_volume" content="2025">
+
+<link rel="alternate" type="application/x-bibtex" href="arxiv-2410.17637.bib">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MIA-DPO: Multi-Image Augmented Direct Preference Optimization For Large Vision-Language Models">
+<meta property="og:description" content="MIA-DPO creates multi-image preference-training pairs from single-image data and attention signals, reducing the need for new human annotations or external judge models.">
+<meta property="og:url" content="https://yuhangzang.github.io/papers/arxiv-2410.17637.html">
+<link rel="icon" type="image/svg+xml" href="../imgs/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"></noscript>
+<script>
+try {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+} catch {}
+</script>
+<link rel="stylesheet" href="../main.min.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","@id":"https://yuhangzang.github.io/papers/arxiv-2410.17637.html#paper","name":"MIA-DPO: Multi-Image Augmented Direct Preference Optimization For Large Vision-Language Models","author":[{"@type":"Person","name":"Ziyu Liu"},{"@type":"Person","name":"Yuhang Zang"},{"@type":"Person","name":"Xiaoyi Dong"},{"@type":"Person","name":"Pan Zhang"},{"@type":"Person","name":"Yuhang Cao"},{"@type":"Person","name":"Haodong Duan"},{"@type":"Person","name":"Conghui He"},{"@type":"Person","name":"Yuanjun Xiong"},{"@type":"Person","name":"Dahua Lin"},{"@type":"Person","name":"Jiaqi Wang"}],"datePublished":"2025","url":"https://yuhangzang.github.io/papers/arxiv-2410.17637.html","sameAs":["https://proceedings.iclr.cc/paper_files/paper/2025/hash/557a20663907ed637c2807f608d5bec2-Abstract-Conference.html","https://arxiv.org/abs/2410.17637"],"identifier":{"@type":"PropertyValue","propertyID":"arXiv","value":"2410.17637"},"encoding":{"@type":"MediaObject","name":"Paper · arXiv v1","contentUrl":"https://arxiv.org/pdf/2410.17637v1","encodingFormat":"application/pdf"},"isPartOf":{"@type":"PublicationVolume","name":"International Conference on Learning Representations","volumeNumber":"2025","isPartOf":{"@type":"CreativeWork","name":"International Conference on Learning Representations"}},"pageStart":34583,"pageEnd":34610,"keywords":["MIA-DPO","Multi-image alignment","Direct preference optimization","Attention-aware selection","Preference data construction","Visual instruction tuning","Distractor images","Vision-language models"],"abstract":"Visual preference alignment involves training Large Vision-Language Models (LVLMs) to predict human preferences between visual inputs. This is typically achieved by using labeled datasets of chosen/rejected pairs and employing optimization algorithms like direct preference optimization (DPO). Existing visual alignment methods, primarily designed for single-image scenarios, struggle to effectively handle the complexity of multi-image tasks due to the scarcity of diverse training data and the high cost of annotating chosen/rejected pairs. We present Multi-Image Augmented Direct Preference Optimization (MIA-DPO), a visual preference alignment approach that effectively handles multi-image inputs. MIA-DPO mitigates the scarcity of diverse multi-image training data by extending single-image data with unrelated images arranged in grid collages or pic-in-pic formats, significantly reducing the costs associated with multi-image data annotations. Our observation reveals that attention values of LVLMs vary considerably across different images. We use attention values to identify and filter out rejected responses the model may have mistakenly focused on. Our attention-aware selection for constructing the chosen/rejected pairs without relying on (i) human annotation, (ii) extra data, and (iii) external models or APIs. MIA-DPO is compatible with various architectures and outperforms existing methods on five multi-image benchmarks, achieving an average performance boost of 3.0% on LLaVA-v1.5 and 4.3% on the recent InternLM-XC2.5. Moreover, MIA-DPO has a minimal effect on the model's ability to understand single images.","description":"MIA-DPO creates multi-image preference-training pairs from single-image data and attention signals, reducing the need for new human annotations or external judge models."}</script>
+<script src="../assets/main.min.js" defer></script>
+</head>
+<body class="paper-page">
+<nav class="main-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="../index.html" class="brand-link">Yuhang Zang</a>
+      </div>
+      <button class="mobile-menu-toggle" type="button" aria-label="Toggle navigation menu" aria-controls="nav-menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <div class="nav-menu" id="nav-menu" aria-hidden="true">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../research.html" class="nav-link active" aria-current="location">Publications</a>
+        <a href="../index.html#services" class="nav-link">Services</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" title="Toggle dark mode" aria-label="Toggle dark mode" aria-pressed="false">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+<main class="paper-detail">
+  <article class="papers-section">
+    <p class="paper-detail-kicker">ICLR · 2025</p>
+    <h1 class="section-heading">MIA-DPO: Multi-Image Augmented Direct Preference Optimization For Large Vision-Language Models</h1>
+    <p class="paper-detail-authors author-names">Ziyu Liu, <strong class="author-highlight">Yuhang Zang</strong><span class="paper-corresponding author-annotation corresponding" role="img" aria-label="Corresponding author" title="Corresponding author"><svg class="paper-envelope" viewBox="0 0 16 12" aria-hidden="true"><path fill="currentColor" d="M1 0h14a1 1 0 0 1 1 1v1L8 7 0 2V1a1 1 0 0 1 1-1ZM0 4l8 5 8-5v7a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1Z"/></svg><span class="paper-sr-only">(corresponding author)</span></span>, Xiaoyi Dong, Pan Zhang, Yuhang Cao, Haodong Duan, Conghui He, Yuanjun Xiong, Dahua Lin, Jiaqi Wang<span class="paper-corresponding author-annotation corresponding" role="img" aria-label="Corresponding author" title="Corresponding author"><svg class="paper-envelope" viewBox="0 0 16 12" aria-hidden="true"><path fill="currentColor" d="M1 0h14a1 1 0 0 1 1 1v1L8 7 0 2V1a1 1 0 0 1 1-1ZM0 4l8 5 8-5v7a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1Z"/></svg><span class="paper-sr-only">(corresponding author)</span></span></p>
+    <p class="paper-detail-note paper-author-legend"><svg class="paper-envelope" viewBox="0 0 16 12" aria-hidden="true"><path fill="currentColor" d="M1 0h14a1 1 0 0 1 1 1v1L8 7 0 2V1a1 1 0 0 1 1-1ZM0 4l8 5 8-5v7a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1Z"/></svg> Corresponding author</p>
+    <section class="paper-takeaway" aria-labelledby="takeaway-heading">
+      <h2 id="takeaway-heading">Key takeaway</h2>
+      <p>MIA-DPO creates multi-image preference-training pairs from single-image data and attention signals, reducing the need for new human annotations or external judge models. <a href="https://arxiv.org/abs/2410.17637v1">arXiv abstract · v1</a></p>
+    </section>
+    <section aria-labelledby="abstract-heading">
+      <h2 id="abstract-heading">Abstract</h2>
+      <p>Visual preference alignment involves training Large Vision-Language Models (LVLMs) to predict human preferences between visual inputs. This is typically achieved by using labeled datasets of chosen/rejected pairs and employing optimization algorithms like direct preference optimization (DPO). Existing visual alignment methods, primarily designed for single-image scenarios, struggle to effectively handle the complexity of multi-image tasks due to the scarcity of diverse training data and the high cost of annotating chosen/rejected pairs. We present Multi-Image Augmented Direct Preference Optimization (MIA-DPO), a visual preference alignment approach that effectively handles multi-image inputs. MIA-DPO mitigates the scarcity of diverse multi-image training data by extending single-image data with unrelated images arranged in grid collages or pic-in-pic formats, significantly reducing the costs associated with multi-image data annotations. Our observation reveals that attention values of LVLMs vary considerably across different images. We use attention values to identify and filter out rejected responses the model may have mistakenly focused on. Our attention-aware selection for constructing the chosen/rejected pairs without relying on (i) human annotation, (ii) extra data, and (iii) external models or APIs. MIA-DPO is compatible with various architectures and outperforms existing methods on five multi-image benchmarks, achieving an average performance boost of 3.0% on LLaVA-v1.5 and 4.3% on the recent InternLM-XC2.5. Moreover, MIA-DPO has a minimal effect on the model&#39;s ability to understand single images.</p>
+      <p class="paper-detail-note">Author abstract · <a href="https://arxiv.org/abs/2410.17637v1">arXiv abstract · v1</a></p>
+    </section>
+    <section aria-labelledby="publication-heading">
+      <h2 id="publication-heading">Publication</h2>
+      <p>International Conference on Learning Representations (ICLR), 2025</p>
+
+    </section>
+    <section aria-labelledby="resources-heading">
+      <h2 id="resources-heading">Paper and resources</h2>
+      <ul class="paper-detail-resources">
+        <li><a href="https://arxiv.org/pdf/2410.17637v1">Paper · arXiv v1 (PDF)</a></li>
+        <li><a href="https://arxiv.org/abs/2410.17637">arXiv:2410.17637</a></li>
+        <li><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=hW23VKIAAAAJ&amp;citation_for_view=hW23VKIAAAAJ:9ZlFYXVOiuMC">Google Scholar</a></li>
+        <li><a href="https://github.com/Liuziyu77/MIA-DPO">Code · Liuziyu77/MIA-DPO</a></li>
+        <li><a href="https://liuziyu77.github.io/MIA-DPO">Project website</a></li>
+      </ul>
+    </section>
+    <section aria-labelledby="topics-heading">
+      <h2 id="topics-heading">Research topics</h2>
+      <p class="paper-keywords">MIA-DPO · Multi-image alignment · Direct preference optimization · Attention-aware selection · Preference data construction · Visual instruction tuning · Distractor images · Vision-language models</p>
+    </section>
+    <section aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Research problem and approach</h2>
+      <p>Multi-image preference alignment is constrained by scarce preference pairs. MIA-DPO inserts unrelated images into collages or picture-in-picture inputs and uses attention to identify responses influenced by the wrong visual evidence. <a href="https://arxiv.org/abs/2410.17637v1">arXiv abstract · v1</a></p>
+    </section>
+    <section aria-labelledby="contributions-heading">
+      <h2 id="contributions-heading">Main contributions</h2>
+      <ul class="paper-detail-resources"><li>Augments single-image training examples into multi-image preference tasks. <a href="https://arxiv.org/abs/2410.17637v1">arXiv abstract · v1</a></li>
+<li>Constructs chosen/rejected pairs through attention-aware response selection without external model calls. <a href="https://arxiv.org/abs/2410.17637v1">arXiv abstract · v1</a></li></ul>
+    </section>
+    <section aria-labelledby="method-comparison-heading">
+      <h2 id="method-comparison-heading">Method comparison</h2>
+      <div class="paper-results-scroll" role="region" aria-label="Method comparison table" tabindex="0">
+        <table class="paper-methods paper-methods-compact">
+          <thead><tr><th scope="col">Approach</th><th scope="col">Key difference</th></tr></thead>
+          <tbody><tr><th scope="row">Single-image preference alignment</th><td>Does not directly address the complexity and training-data scarcity of multi-image tasks.</td></tr>
+<tr><th scope="row">MIA-DPO</th><td>Adds distractor images and uses attention-aware selection to build multi-image preference pairs from existing data.</td></tr></tbody>
+        </table>
+      </div>
+      <p class="paper-detail-note"><a href="https://arxiv.org/abs/2410.17637v1">arXiv abstract · v1</a></p>
+    </section>
+    <section aria-labelledby="results-heading">
+      <h2 id="results-heading">Selected results</h2>
+      <ul class="paper-detail-resources"><li>MIA-DPO raises the five-benchmark average from 40.4 to 43.4 for LLaVA-v1.5-7B and from 53.6 to 57.9 for InternLM-XComposer2.5-7B. On the latter backbone, Mantis rises from 49.3 to 60.4. <a href="https://arxiv.org/html/2410.17637v1#S4.T1">Table 1 · multi-image evaluation · arXiv v1</a></li>
+<li>For LLaVA-v1.5, post-selection raises the multi-image average from 42.3 to 43.4, versus a 40.4 baseline. BLINK improves from 38.7 without post-selection to 42.9 with it. <a href="https://arxiv.org/html/2410.17637v1#S4.T3.fig1">Table 3 · attention-based post-selection · arXiv v1</a></li></ul>
+    </section>
+
+    <section aria-labelledby="citation-heading">
+      <h2 id="citation-heading">Cite this paper</h2>
+      <p>Ziyu Liu, Yuhang Zang, Xiaoyi Dong, Pan Zhang, Yuhang Cao, Haodong Duan, Conghui He, Yuanjun Xiong, Dahua Lin, Jiaqi Wang. MIA-DPO: Multi-Image Augmented Direct Preference Optimization For Large Vision-Language Models. International Conference on Learning Representations, 2025, 2025, pp. 34583–34610.</p>
+
+
+      <div class="paper-citation-actions">
+        <button class="paper-copy-button" type="button" data-copy-target="paper-bibtex-content" aria-describedby="bibtex-copy-status" hidden>Copy to clipboard</button>
+        <a href="arxiv-2410.17637.bib" download>Download BibTeX</a>
+        <a href="https://proceedings.iclr.cc/paper_files/paper/2025/hash/557a20663907ed637c2807f608d5bec2-Abstract-Conference.html">ICLR 2025 proceedings record</a>
+      </div>
+      <p id="bibtex-copy-status" class="paper-detail-note" role="status" aria-live="polite"></p>
+      <pre class="paper-bibtex"><code id="paper-bibtex-content">@inproceedings{arxiv241017637,
+  title     = {{MIA-DPO: Multi-Image Augmented Direct Preference Optimization For Large Vision-Language Models}},
+  author    = {Ziyu Liu and Yuhang Zang and Xiaoyi Dong and Pan Zhang and Yuhang Cao and Haodong Duan and Conghui He and Yuanjun Xiong and Dahua Lin and Jiaqi Wang},
+  booktitle = {International Conference on Learning Representations},
+  year      = {2025},
+  volume    = {2025},
+  pages     = {34583--34610},
+  url       = {https://proceedings.iclr.cc/paper_files/paper/2025/hash/557a20663907ed637c2807f608d5bec2-Abstract-Conference.html}
+}
+</code></pre>
+    </section>
+  <footer class="paper-detail-footer"><a href="../research.html">← All publications</a></footer>
+  </article>
+</main>
+</body>
+</html>

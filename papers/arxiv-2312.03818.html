@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<!-- Generated from data/publications.json. Edit the shared data and rebuild. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alpha-CLIP: A CLIP Model Focusing on Wherever You Want | Yuhang Zang</title>
+<meta name="description" content="Alpha-CLIP adds an alpha channel to focus CLIP on a selected image region while retaining whole-image recognition and supporting region-aware understanding and generation.">
+<link rel="canonical" href="https://yuhangzang.github.io/papers/arxiv-2312.03818.html">
+<meta name="citation_title" content="Alpha-CLIP: A CLIP Model Focusing on Wherever You Want">
+<meta name="citation_author" content="Zeyi Sun">
+<meta name="citation_author" content="Ye Fang">
+<meta name="citation_author" content="Tong Wu">
+<meta name="citation_author" content="Pan Zhang">
+<meta name="citation_author" content="Yuhang Zang">
+<meta name="citation_author" content="Shu Kong">
+<meta name="citation_author" content="Yuanjun Xiong">
+<meta name="citation_author" content="Dahua Lin">
+<meta name="citation_author" content="Jiaqi Wang">
+<meta name="citation_publication_date" content="2024">
+<meta name="citation_arxiv_id" content="2312.03818">
+
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/CVPR2024/papers/Sun_Alpha-CLIP_A_CLIP_Model_Focusing_on_Wherever_You_Want_CVPR_2024_paper.pdf">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)">
+<meta name="citation_firstpage" content="13019">
+<meta name="citation_lastpage" content="13029">
+
+
+<link rel="alternate" type="application/x-bibtex" href="arxiv-2312.03818.bib">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Alpha-CLIP: A CLIP Model Focusing on Wherever You Want">
+<meta property="og:description" content="Alpha-CLIP adds an alpha channel to focus CLIP on a selected image region while retaining whole-image recognition and supporting region-aware understanding and generation.">
+<meta property="og:url" content="https://yuhangzang.github.io/papers/arxiv-2312.03818.html">
+<link rel="icon" type="image/svg+xml" href="../imgs/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"></noscript>
+<script>
+try {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+} catch {}
+</script>
+<link rel="stylesheet" href="../main.min.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","@id":"https://yuhangzang.github.io/papers/arxiv-2312.03818.html#paper","name":"Alpha-CLIP: A CLIP Model Focusing on Wherever You Want","author":[{"@type":"Person","name":"Zeyi Sun"},{"@type":"Person","name":"Ye Fang"},{"@type":"Person","name":"Tong Wu"},{"@type":"Person","name":"Pan Zhang"},{"@type":"Person","name":"Yuhang Zang"},{"@type":"Person","name":"Shu Kong"},{"@type":"Person","name":"Yuanjun Xiong"},{"@type":"Person","name":"Dahua Lin"},{"@type":"Person","name":"Jiaqi Wang"}],"datePublished":"2024","url":"https://yuhangzang.github.io/papers/arxiv-2312.03818.html","sameAs":["https://openaccess.thecvf.com/content/CVPR2024/html/Sun_Alpha-CLIP_A_CLIP_Model_Focusing_on_Wherever_You_Want_CVPR_2024_paper.html","https://arxiv.org/abs/2312.03818"],"identifier":{"@type":"PropertyValue","propertyID":"arXiv","value":"2312.03818"},"encoding":{"@type":"MediaObject","name":"Paper · arXiv v2","contentUrl":"https://arxiv.org/pdf/2312.03818v2","encodingFormat":"application/pdf"},"isPartOf":{"@type":"CreativeWork","name":"Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)"},"pageStart":13019,"pageEnd":13029,"keywords":["Alpha-CLIP","Region-aware CLIP","Alpha channel","Region-text alignment","Visual prompting","Open-world recognition","Controllable generation","Multimodal representations"],"abstract":"Contrastive Language-Image Pre-training (CLIP) plays an essential role in extracting valuable content information from images across diverse tasks. It aligns textual and visual modalities to comprehend the entire image, including all the details, even those irrelevant to specific tasks. However, for a finer understanding and controlled editing of images, it becomes crucial to focus on specific regions of interest, which can be indicated as points, masks, or boxes by humans or perception models. To fulfill the requirements, we introduce Alpha-CLIP, an enhanced version of CLIP with an auxiliary alpha channel to suggest attentive regions and fine-tuned with constructed millions of RGBA region-text pairs. Alpha-CLIP not only preserves the visual recognition ability of CLIP but also enables precise control over the emphasis of image contents. It demonstrates effectiveness in various tasks, including but not limited to open-world recognition, multimodal large language models, and conditional 2D / 3D generation. It has a strong potential to serve as a versatile tool for image-related tasks.","description":"Alpha-CLIP adds an alpha channel to focus CLIP on a selected image region while retaining whole-image recognition and supporting region-aware understanding and generation."}</script>
+<script src="../assets/main.min.js" defer></script>
+</head>
+<body class="paper-page">
+<nav class="main-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="../index.html" class="brand-link">Yuhang Zang</a>
+      </div>
+      <button class="mobile-menu-toggle" type="button" aria-label="Toggle navigation menu" aria-controls="nav-menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <div class="nav-menu" id="nav-menu" aria-hidden="true">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../research.html" class="nav-link active" aria-current="location">Publications</a>
+        <a href="../index.html#services" class="nav-link">Services</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" title="Toggle dark mode" aria-label="Toggle dark mode" aria-pressed="false">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+<main class="paper-detail">
+  <article class="papers-section">
+    <p class="paper-detail-kicker">CVPR · 2024</p>
+    <h1 class="section-heading">Alpha-CLIP: A CLIP Model Focusing on Wherever You Want</h1>
+    <p class="paper-detail-authors author-names">Zeyi Sun, Ye Fang, Tong Wu, Pan Zhang, <strong class="author-highlight">Yuhang Zang</strong>, Shu Kong, Yuanjun Xiong, Dahua Lin, Jiaqi Wang</p>
+
+    <section class="paper-takeaway" aria-labelledby="takeaway-heading">
+      <h2 id="takeaway-heading">Key takeaway</h2>
+      <p>Alpha-CLIP adds an alpha channel to focus CLIP on a selected image region while retaining whole-image recognition and supporting region-aware understanding and generation. <a href="https://arxiv.org/abs/2312.03818v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="abstract-heading">
+      <h2 id="abstract-heading">Abstract</h2>
+      <p>Contrastive Language-Image Pre-training (CLIP) plays an essential role in extracting valuable content information from images across diverse tasks. It aligns textual and visual modalities to comprehend the entire image, including all the details, even those irrelevant to specific tasks. However, for a finer understanding and controlled editing of images, it becomes crucial to focus on specific regions of interest, which can be indicated as points, masks, or boxes by humans or perception models. To fulfill the requirements, we introduce Alpha-CLIP, an enhanced version of CLIP with an auxiliary alpha channel to suggest attentive regions and fine-tuned with constructed millions of RGBA region-text pairs. Alpha-CLIP not only preserves the visual recognition ability of CLIP but also enables precise control over the emphasis of image contents. It demonstrates effectiveness in various tasks, including but not limited to open-world recognition, multimodal large language models, and conditional 2D / 3D generation. It has a strong potential to serve as a versatile tool for image-related tasks.</p>
+      <p class="paper-detail-note">Author abstract · <a href="https://arxiv.org/abs/2312.03818v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="publication-heading">
+      <h2 id="publication-heading">Publication</h2>
+      <p>IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2024</p>
+
+    </section>
+    <section aria-labelledby="resources-heading">
+      <h2 id="resources-heading">Paper and resources</h2>
+      <ul class="paper-detail-resources">
+        <li><a href="https://arxiv.org/pdf/2312.03818v2">Paper · arXiv v2 (PDF)</a></li>
+        <li><a href="https://arxiv.org/abs/2312.03818">arXiv:2312.03818</a></li>
+        <li><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=hW23VKIAAAAJ&amp;citation_for_view=hW23VKIAAAAJ:WF5omc3nYNoC">Google Scholar</a></li>
+        <li><a href="https://github.com/SunzeY/AlphaCLIP">Code · SunzeY/AlphaCLIP</a></li>
+        <li><a href="https://aleafy.github.io/alpha-clip/">Project website</a></li>
+        <li><a href="https://huggingface.co/spaces/Zery/Alpha_CLIP_ImgVar">Hugging Face · Space</a></li>
+      </ul>
+    </section>
+    <section aria-labelledby="topics-heading">
+      <h2 id="topics-heading">Research topics</h2>
+      <p class="paper-keywords">Alpha-CLIP · Region-aware CLIP · Alpha channel · Region-text alignment · Visual prompting · Open-world recognition · Controllable generation · Multimodal representations</p>
+    </section>
+    <section aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Research problem and approach</h2>
+      <p>Whole-image embeddings can include details irrelevant to a user&#39;s intended region. Alpha-CLIP accepts region indications from points, masks or boxes and learns region-text alignment from millions of RGBA examples. <a href="https://arxiv.org/abs/2312.03818v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="contributions-heading">
+      <h2 id="contributions-heading">Main contributions</h2>
+      <ul class="paper-detail-resources"><li>Extends CLIP&#39;s visual input with an auxiliary alpha channel for controllable regional attention. <a href="https://arxiv.org/abs/2312.03818v2">arXiv abstract · v2</a></li>
+<li>Constructs region-text training pairs and studies transfer to recognition, multimodal language models and 2D/3D generation. <a href="https://arxiv.org/abs/2312.03818v2">arXiv abstract · v2</a></li></ul>
+    </section>
+    <section aria-labelledby="method-comparison-heading">
+      <h2 id="method-comparison-heading">Method comparison</h2>
+      <div class="paper-results-scroll" role="region" aria-label="Method comparison table" tabindex="0">
+        <table class="paper-methods paper-methods-compact">
+          <thead><tr><th scope="col">Approach</th><th scope="col">Key difference</th></tr></thead>
+          <tbody><tr><th scope="row">Whole-image CLIP</th><td>Represents the complete image, including details outside a task&#39;s region of interest.</td></tr>
+<tr><th scope="row">Alpha-CLIP</th><td>Adds an alpha channel and region-text training so the representation can emphasize a specified region.</td></tr></tbody>
+        </table>
+      </div>
+      <p class="paper-detail-note"><a href="https://arxiv.org/abs/2312.03818v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="results-heading">
+      <h2 id="results-heading">Selected results</h2>
+      <ul class="paper-detail-resources"><li>With ViT-L/14 on ImageNet-S, Alpha-CLIP with a foreground alpha mask achieves 77.41% top-1 accuracy versus original CLIP’s 73.48%. Top-5 accuracy rises from 91.60% to 94.45%. <a href="https://arxiv.org/html/2312.03818v2#S4.T2">Table 2 · region-aware zero-shot classification · arXiv v2</a></li>
+<li>Alpha-CLIP obtains 73.37% top-1 accuracy with a whole-image alpha map, 75.62% with a rectangular box and 77.41% with a foreground mask. The graded comparison isolates the value of increasingly precise region input. <a href="https://arxiv.org/html/2312.03818v2#S4.T3">Table 3 · alpha-input ablation · arXiv v2</a></li></ul>
+    </section>
+
+    <section aria-labelledby="citation-heading">
+      <h2 id="citation-heading">Cite this paper</h2>
+      <p>Zeyi Sun, Ye Fang, Tong Wu, Pan Zhang, Yuhang Zang, Shu Kong, Yuanjun Xiong, Dahua Lin, Jiaqi Wang. Alpha-CLIP: A CLIP Model Focusing on Wherever You Want. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2024, pp. 13019–13029.</p>
+
+
+      <div class="paper-citation-actions">
+        <button class="paper-copy-button" type="button" data-copy-target="paper-bibtex-content" aria-describedby="bibtex-copy-status" hidden>Copy to clipboard</button>
+        <a href="arxiv-2312.03818.bib" download>Download BibTeX</a>
+        <a href="https://openaccess.thecvf.com/content/CVPR2024/html/Sun_Alpha-CLIP_A_CLIP_Model_Focusing_on_Wherever_You_Want_CVPR_2024_paper.html">CVPR 2024 proceedings record</a>
+      </div>
+      <p id="bibtex-copy-status" class="paper-detail-note" role="status" aria-live="polite"></p>
+      <pre class="paper-bibtex"><code id="paper-bibtex-content">@inproceedings{arxiv231203818,
+  title     = {{Alpha-CLIP: A CLIP Model Focusing on Wherever You Want}},
+  author    = {Zeyi Sun and Ye Fang and Tong Wu and Pan Zhang and Yuhang Zang and Shu Kong and Yuanjun Xiong and Dahua Lin and Jiaqi Wang},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  month     = {June},
+  year      = {2024},
+  pages     = {13019--13029},
+  url       = {https://openaccess.thecvf.com/content/CVPR2024/html/Sun_Alpha-CLIP_A_CLIP_Model_Focusing_on_Wherever_You_Want_CVPR_2024_paper.html}
+}
+</code></pre>
+    </section>
+  <footer class="paper-detail-footer"><a href="../research.html">← All publications</a></footer>
+  </article>
+</main>
+</body>
+</html>

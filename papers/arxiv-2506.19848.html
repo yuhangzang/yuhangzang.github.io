@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!-- Generated from data/publications.json. Edit the shared data and rebuild. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ScaleCap: Inference-Time Scalable Image Captioning via Dual-Modality Debiasing | Yuhang Zang</title>
+<meta name="description" content="ScaleCap turns additional inference budget into richer, better-grounded image captions by iteratively adding missing visual details and removing hallucinated descriptions.">
+<link rel="canonical" href="https://yuhangzang.github.io/papers/arxiv-2506.19848.html">
+<meta name="citation_title" content="ScaleCap: Scalable Image Captioning via Dual-Modality Debiasing">
+<meta name="citation_author" content="Long Xing">
+<meta name="citation_author" content="Qidong Huang">
+<meta name="citation_author" content="Xiaoyi Dong">
+<meta name="citation_author" content="Pan Zhang">
+<meta name="citation_author" content="Yuhang Zang">
+<meta name="citation_author" content="Yuhang Cao">
+<meta name="citation_author" content="Jinsong Li">
+<meta name="citation_author" content="Shuangrui Ding">
+<meta name="citation_author" content="Weiming Zhang">
+<meta name="citation_author" content="Nenghai Yu">
+<meta name="citation_author" content="Jiaqi Wang">
+<meta name="citation_author" content="Feng Wu">
+<meta name="citation_author" content="Dahua Lin">
+<meta name="citation_publication_date" content="2026">
+<meta name="citation_arxiv_id" content="2506.19848">
+
+<meta name="citation_pdf_url" content="https://proceedings.iclr.cc/paper_files/paper/2026/file/37050ebbbd7096719ab96cec19a4c69f-Paper-Conference.pdf">
+<meta name="citation_conference_title" content="International Conference on Learning Representations">
+<meta name="citation_firstpage" content="32266">
+<meta name="citation_lastpage" content="32285">
+<meta name="citation_volume" content="2026">
+
+<link rel="alternate" type="application/x-bibtex" href="arxiv-2506.19848.bib">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ScaleCap: Inference-Time Scalable Image Captioning via Dual-Modality Debiasing">
+<meta property="og:description" content="ScaleCap turns additional inference budget into richer, better-grounded image captions by iteratively adding missing visual details and removing hallucinated descriptions.">
+<meta property="og:url" content="https://yuhangzang.github.io/papers/arxiv-2506.19848.html">
+<link rel="icon" type="image/svg+xml" href="../imgs/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"></noscript>
+<script>
+try {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+} catch {}
+</script>
+<link rel="stylesheet" href="../main.min.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","@id":"https://yuhangzang.github.io/papers/arxiv-2506.19848.html#paper","name":"ScaleCap: Scalable Image Captioning via Dual-Modality Debiasing","alternateName":"ScaleCap: Inference-Time Scalable Image Captioning via Dual-Modality Debiasing","author":[{"@type":"Person","name":"Long Xing"},{"@type":"Person","name":"Qidong Huang"},{"@type":"Person","name":"Xiaoyi Dong"},{"@type":"Person","name":"Pan Zhang"},{"@type":"Person","name":"Yuhang Zang"},{"@type":"Person","name":"Yuhang Cao"},{"@type":"Person","name":"Jinsong Li"},{"@type":"Person","name":"Shuangrui Ding"},{"@type":"Person","name":"Weiming Zhang"},{"@type":"Person","name":"Nenghai Yu"},{"@type":"Person","name":"Jiaqi Wang"},{"@type":"Person","name":"Feng Wu"},{"@type":"Person","name":"Dahua Lin"}],"datePublished":"2026","url":"https://yuhangzang.github.io/papers/arxiv-2506.19848.html","sameAs":["https://proceedings.iclr.cc/paper_files/paper/2026/hash/37050ebbbd7096719ab96cec19a4c69f-Abstract-Conference.html","https://arxiv.org/abs/2506.19848"],"identifier":{"@type":"PropertyValue","propertyID":"arXiv","value":"2506.19848"},"encoding":{"@type":"MediaObject","name":"Paper · arXiv v1","contentUrl":"https://arxiv.org/pdf/2506.19848v1","encodingFormat":"application/pdf"},"isPartOf":{"@type":"PublicationVolume","name":"International Conference on Learning Representations","volumeNumber":"2026","isPartOf":{"@type":"CreativeWork","name":"International Conference on Learning Representations"}},"pageStart":32266,"pageEnd":32285,"keywords":["ScaleCap","Dense image captioning","Inference-time scaling","Dual-modality debiasing","Hallucination reduction","Contrastive sentence rating","Visual question answering","Caption quality"],"abstract":"This paper presents ScaleCap, an inference-time scalable image captioning strategy that generates comprehensive and detailed image captions. The key challenges of high-quality image captioning lie in the inherent biases of LVLMs: multimodal bias resulting in imbalanced descriptive granularity, offering detailed accounts of some elements while merely skimming over others; linguistic bias leading to hallucinated descriptions of non-existent objects. To address these issues, we propose a scalable debiased captioning strategy, which continuously enriches and calibrates the caption with increased inference budget. Specifically, we propose two novel components: heuristic question answering and contrastive sentence rating. The former generates content-specific questions based on the image and answers them to progressively inject relevant information into the caption. The latter employs sentence-level offline contrastive decoding to effectively identify and eliminate hallucinations caused by linguistic biases. With increased inference cost, more heuristic questions are raised by ScaleCap to progressively capture additional visual details, generating captions that are more accurate, balanced, and informative. Extensive modality alignment experiments demonstrate the effectiveness of ScaleCap. Annotating 450K images with ScaleCap and using them for LVLM pretraining leads to consistent performance gains across 11 widely used benchmarks. Furthermore, ScaleCap showcases superb richness and fidelity of generated captions with two additional tasks: replacing images with captions in VQA task, and reconstructing images from captions to assess semantic coverage. Code is available at https://github.com/Cooperx521/ScaleCap.","description":"ScaleCap turns additional inference budget into richer, better-grounded image captions by iteratively adding missing visual details and removing hallucinated descriptions."}</script>
+<script src="../assets/main.min.js" defer></script>
+</head>
+<body class="paper-page">
+<nav class="main-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="../index.html" class="brand-link">Yuhang Zang</a>
+      </div>
+      <button class="mobile-menu-toggle" type="button" aria-label="Toggle navigation menu" aria-controls="nav-menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <div class="nav-menu" id="nav-menu" aria-hidden="true">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../research.html" class="nav-link active" aria-current="location">Publications</a>
+        <a href="../index.html#services" class="nav-link">Services</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" title="Toggle dark mode" aria-label="Toggle dark mode" aria-pressed="false">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+<main class="paper-detail">
+  <article class="papers-section">
+    <p class="paper-detail-kicker">ICLR · 2026</p>
+    <h1 class="section-heading">ScaleCap: Inference-Time Scalable Image Captioning via Dual-Modality Debiasing</h1>
+    <p class="paper-detail-authors author-names">Long Xing, Qidong Huang, Xiaoyi Dong, Pan Zhang, <strong class="author-highlight">Yuhang Zang</strong>, Yuhang Cao, Jinsong Li, Shuangrui Ding, Weiming Zhang, Nenghai Yu, Jiaqi Wang, Feng Wu, Dahua Lin</p>
+
+    <section class="paper-takeaway" aria-labelledby="takeaway-heading">
+      <h2 id="takeaway-heading">Key takeaway</h2>
+      <p>ScaleCap turns additional inference budget into richer, better-grounded image captions by iteratively adding missing visual details and removing hallucinated descriptions. <a href="https://arxiv.org/abs/2506.19848v1">arXiv abstract · v1</a></p>
+    </section>
+    <section aria-labelledby="abstract-heading">
+      <h2 id="abstract-heading">Abstract</h2>
+      <p>This paper presents ScaleCap, an inference-time scalable image captioning strategy that generates comprehensive and detailed image captions. The key challenges of high-quality image captioning lie in the inherent biases of LVLMs: multimodal bias resulting in imbalanced descriptive granularity, offering detailed accounts of some elements while merely skimming over others; linguistic bias leading to hallucinated descriptions of non-existent objects. To address these issues, we propose a scalable debiased captioning strategy, which continuously enriches and calibrates the caption with increased inference budget. Specifically, we propose two novel components: heuristic question answering and contrastive sentence rating. The former generates content-specific questions based on the image and answers them to progressively inject relevant information into the caption. The latter employs sentence-level offline contrastive decoding to effectively identify and eliminate hallucinations caused by linguistic biases. With increased inference cost, more heuristic questions are raised by ScaleCap to progressively capture additional visual details, generating captions that are more accurate, balanced, and informative. Extensive modality alignment experiments demonstrate the effectiveness of ScaleCap. Annotating 450K images with ScaleCap and using them for LVLM pretraining leads to consistent performance gains across 11 widely used benchmarks. Furthermore, ScaleCap showcases superb richness and fidelity of generated captions with two additional tasks: replacing images with captions in VQA task, and reconstructing images from captions to assess semantic coverage. Code is available at https://github.com/Cooperx521/ScaleCap.</p>
+      <p class="paper-detail-note">Author abstract · <a href="https://arxiv.org/abs/2506.19848v1">arXiv abstract · v1</a></p>
+    </section>
+    <section aria-labelledby="publication-heading">
+      <h2 id="publication-heading">Publication</h2>
+      <p>International Conference on Learning Representations (ICLR), 2026</p>
+
+    </section>
+    <section aria-labelledby="resources-heading">
+      <h2 id="resources-heading">Paper and resources</h2>
+      <ul class="paper-detail-resources">
+        <li><a href="https://arxiv.org/pdf/2506.19848v1">Paper · arXiv v1 (PDF)</a></li>
+        <li><a href="https://arxiv.org/abs/2506.19848">arXiv:2506.19848</a></li>
+        <li><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=hW23VKIAAAAJ&amp;citation_for_view=hW23VKIAAAAJ:a0OBvERweLwC">Google Scholar</a></li>
+        <li><a href="https://github.com/Cooperx521/ScaleCap">Code · Cooperx521/ScaleCap</a></li>
+      </ul>
+    </section>
+    <section aria-labelledby="topics-heading">
+      <h2 id="topics-heading">Research topics</h2>
+      <p class="paper-keywords">ScaleCap · Dense image captioning · Inference-time scaling · Dual-modality debiasing · Hallucination reduction · Contrastive sentence rating · Visual question answering · Caption quality</p>
+    </section>
+    <section aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Research problem and approach</h2>
+      <p>Captioners can describe some image elements in detail while omitting others or inventing content. ScaleCap addresses this imbalance with heuristic questions and sentence-level contrastive checks. <a href="https://arxiv.org/abs/2506.19848v1">arXiv abstract · v1</a></p>
+    </section>
+    <section aria-labelledby="contributions-heading">
+      <h2 id="contributions-heading">Main contributions</h2>
+      <ul class="paper-detail-resources"><li>Uses image-specific question answering to progressively enrich caption coverage. <a href="https://arxiv.org/abs/2506.19848v1">arXiv abstract · v1</a></li>
+<li>Rates sentences with offline contrastive decoding to reduce language-driven hallucinations. <a href="https://arxiv.org/abs/2506.19848v1">arXiv abstract · v1</a></li></ul>
+    </section>
+    <section aria-labelledby="method-comparison-heading">
+      <h2 id="method-comparison-heading">Method comparison</h2>
+      <div class="paper-results-scroll" role="region" aria-label="Method comparison table" tabindex="0">
+        <table class="paper-methods paper-methods-compact">
+          <thead><tr><th scope="col">Approach</th><th scope="col">Key difference</th></tr></thead>
+          <tbody><tr><th scope="row">Single-pass dense captioning</th><td>May overdescribe some image elements while omitting others or hallucinating details.</td></tr>
+<tr><th scope="row">ScaleCap</th><td>Adds missing information with targeted questions and checks sentences with contrastive rating as inference budget grows.</td></tr></tbody>
+        </table>
+      </div>
+      <p class="paper-detail-note"><a href="https://arxiv.org/abs/2506.19848v1">arXiv abstract · v1</a></p>
+    </section>
+    <section aria-labelledby="results-heading">
+      <h2 id="results-heading">Selected results</h2>
+      <ul class="paper-detail-resources"><li>For Qwen2.5-7B with Qwen2.5-ViT, ScaleCap-450k raises the 11-benchmark average to 64.7, versus 61.6 for vanilla data, 62.4 for ShareGPT4V-450k and 63.0 for DenseFusion-450k. The dataset-size-matched comparison isolates caption quality. <a href="https://arxiv.org/html/2506.19848v1#S3.T1">Table 1 · matched 450k-caption pretraining · arXiv v1</a></li>
+<li>With a Qwen2-72B summarizer, increasing the vision-language captioner from 7B to 72B changes the four-benchmark average from 58.5 to 58.7. Keeping the 7B captioner but shrinking the summarizer to 7B lowers it to 46.5. <a href="https://arxiv.org/html/2506.19848v1#S4.T7">Table 6 · captioner and summarizer scale · arXiv v1</a></li></ul>
+    </section>
+
+    <section aria-labelledby="citation-heading">
+      <h2 id="citation-heading">Cite this paper</h2>
+      <p>Long Xing, Qidong Huang, Xiaoyi Dong, Pan Zhang, Yuhang Zang, Yuhang Cao, Jinsong Li, Shuangrui Ding, Weiming Zhang, Nenghai Yu, Jiaqi Wang, Feng Wu, Dahua Lin. ScaleCap: Scalable Image Captioning via Dual-Modality Debiasing. International Conference on Learning Representations, 2026, 2026, pp. 32266–32285.</p>
+
+
+      <div class="paper-citation-actions">
+        <button class="paper-copy-button" type="button" data-copy-target="paper-bibtex-content" aria-describedby="bibtex-copy-status" hidden>Copy to clipboard</button>
+        <a href="arxiv-2506.19848.bib" download>Download BibTeX</a>
+        <a href="https://proceedings.iclr.cc/paper_files/paper/2026/hash/37050ebbbd7096719ab96cec19a4c69f-Abstract-Conference.html">ICLR 2026 proceedings record</a>
+      </div>
+      <p id="bibtex-copy-status" class="paper-detail-note" role="status" aria-live="polite"></p>
+      <pre class="paper-bibtex"><code id="paper-bibtex-content">@inproceedings{arxiv250619848,
+  title     = {{ScaleCap: Scalable Image Captioning via Dual-Modality Debiasing}},
+  author    = {Long Xing and Qidong Huang and Xiaoyi Dong and Pan Zhang and Yuhang Zang and Yuhang Cao and Jinsong Li and Shuangrui Ding and Weiming Zhang and Nenghai Yu and Jiaqi Wang and Feng Wu and Dahua Lin},
+  booktitle = {International Conference on Learning Representations},
+  year      = {2026},
+  volume    = {2026},
+  pages     = {32266--32285},
+  url       = {https://proceedings.iclr.cc/paper_files/paper/2026/hash/37050ebbbd7096719ab96cec19a4c69f-Abstract-Conference.html}
+}
+</code></pre>
+    </section>
+  <footer class="paper-detail-footer"><a href="../research.html">← All publications</a></footer>
+  </article>
+</main>
+</body>
+</html>

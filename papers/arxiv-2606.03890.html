@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<!-- Generated from data/publications.json. Edit the shared data and rebuild. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OVO-S-Bench: A Hierarchical Benchmark for Streaming Spatial Intelligence in Multimodal LLMs | Yuhang Zang</title>
+<meta name="description" content="OVO-S-Bench shows that streaming spatial reasoning remains difficult even for strong multimodal models, with allocentric mapping a major bottleneck under prefix-only video access.">
+<link rel="canonical" href="https://yuhangzang.github.io/papers/arxiv-2606.03890.html">
+<meta name="citation_title" content="OVO-S-Bench: A Hierarchical Benchmark for Streaming Spatial Intelligence in Multimodal LLMs">
+<meta name="citation_author" content="Yifei Li">
+<meta name="citation_author" content="Pengyiang Liu">
+<meta name="citation_author" content="Yuhang Zang">
+<meta name="citation_author" content="Zhongyue Shi">
+<meta name="citation_author" content="Qi Fu">
+<meta name="citation_author" content="Hongye Hao">
+<meta name="citation_author" content="Jiwen Lu">
+<meta name="citation_publication_date" content="2026">
+<meta name="citation_arxiv_id" content="2606.03890">
+
+<meta name="citation_pdf_url" content="https://arxiv.org/pdf/2606.03890v2">
+<meta name="citation_journal_title" content="arXiv preprint arXiv:2606.03890">
+
+
+
+<link rel="alternate" type="application/x-bibtex" href="arxiv-2606.03890.bib">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OVO-S-Bench: A Hierarchical Benchmark for Streaming Spatial Intelligence in Multimodal LLMs">
+<meta property="og:description" content="OVO-S-Bench shows that streaming spatial reasoning remains difficult even for strong multimodal models, with allocentric mapping a major bottleneck under prefix-only video access.">
+<meta property="og:url" content="https://yuhangzang.github.io/papers/arxiv-2606.03890.html">
+<link rel="icon" type="image/svg+xml" href="../imgs/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"></noscript>
+<script>
+try {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+} catch {}
+</script>
+<link rel="stylesheet" href="../main.min.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","@id":"https://yuhangzang.github.io/papers/arxiv-2606.03890.html#paper","name":"OVO-S-Bench: A Hierarchical Benchmark for Streaming Spatial Intelligence in Multimodal LLMs","author":[{"@type":"Person","name":"Yifei Li"},{"@type":"Person","name":"Pengyiang Liu"},{"@type":"Person","name":"Yuhang Zang"},{"@type":"Person","name":"Zhongyue Shi"},{"@type":"Person","name":"Qi Fu"},{"@type":"Person","name":"Hongye Hao"},{"@type":"Person","name":"Jiwen Lu"}],"datePublished":"2026","url":"https://yuhangzang.github.io/papers/arxiv-2606.03890.html","sameAs":["https://arxiv.org/abs/2606.03890"],"identifier":{"@type":"PropertyValue","propertyID":"arXiv","value":"2606.03890"},"encoding":{"@type":"MediaObject","name":"Paper · arXiv v2","contentUrl":"https://arxiv.org/pdf/2606.03890v2","encodingFormat":"application/pdf"},"isPartOf":{"@type":"CreativeWork","name":"arXiv preprint arXiv:2606.03890"},"keywords":["OVO-S-Bench","Streaming video understanding","Spatial intelligence","Egocentric video","Allocentric mapping","Prefix-only evaluation","Spatiotemporal reasoning","Multimodal benchmarks"],"abstract":"Multimodal agents in robotics, AR, and autonomous driving must reason about places and layouts from continuous egocentric streams, often using evidence outside the current view. Existing benchmarks either evaluate offline over full videos or target events rather than spatial structure. We introduce OVO-S-Bench, a fully human-annotated benchmark for streaming spatial intelligence, comprising 1,680 questions over 348 source videos. Annotation involves 12 trained annotators (each also serving as a blind cross-reviewer) across roughly 804 person-hours of multi-round quality assurance. Each question carries a query timestamp and an evidence interval, and at evaluation, the model sees only the prefix preceding the query. Questions span four levels of increasing abstraction: instantaneous egocentric perception, spatiotemporal context tracking, generative spatial reasoning, and allocentric spatial mapping. Across 38 proprietary and open-source MLLMs, Gemini-3.1-Pro trails human experts evaluated under the same prefix-access protocol by 33 points (59.2 vs. 92.2), with allocentric spatial mapping as the dominant bottleneck. Notably, streaming and spatially fine-tuned MLLMs underperform their own backbones. We further find that chain-of-thought reasoning amplifies spatial errors when ungrounded in the stream. By exposing these limitations, OVO-S-Bench establishes a demanding testbed for next-generation streaming spatial MLLMs.","description":"OVO-S-Bench shows that streaming spatial reasoning remains difficult even for strong multimodal models, with allocentric mapping a major bottleneck under prefix-only video access."}</script>
+<script src="../assets/main.min.js" defer></script>
+</head>
+<body class="paper-page">
+<nav class="main-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="../index.html" class="brand-link">Yuhang Zang</a>
+      </div>
+      <button class="mobile-menu-toggle" type="button" aria-label="Toggle navigation menu" aria-controls="nav-menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <div class="nav-menu" id="nav-menu" aria-hidden="true">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../research.html" class="nav-link active" aria-current="location">Publications</a>
+        <a href="../index.html#services" class="nav-link">Services</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" title="Toggle dark mode" aria-label="Toggle dark mode" aria-pressed="false">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+<main class="paper-detail">
+  <article class="papers-section">
+    <p class="paper-detail-kicker">EMNLP · 2026</p>
+    <h1 class="section-heading">OVO-S-Bench: A Hierarchical Benchmark for Streaming Spatial Intelligence in Multimodal LLMs</h1>
+    <p class="paper-detail-authors author-names">Yifei Li, Pengyiang Liu, <strong class="author-highlight">Yuhang Zang</strong>, Zhongyue Shi, Qi Fu, Hongye Hao, Jiwen Lu</p>
+
+    <section class="paper-takeaway" aria-labelledby="takeaway-heading">
+      <h2 id="takeaway-heading">Key takeaway</h2>
+      <p>OVO-S-Bench shows that streaming spatial reasoning remains difficult even for strong multimodal models, with allocentric mapping a major bottleneck under prefix-only video access. <a href="https://arxiv.org/abs/2606.03890v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="abstract-heading">
+      <h2 id="abstract-heading">Abstract</h2>
+      <p>Multimodal agents in robotics, AR, and autonomous driving must reason about places and layouts from continuous egocentric streams, often using evidence outside the current view. Existing benchmarks either evaluate offline over full videos or target events rather than spatial structure. We introduce OVO-S-Bench, a fully human-annotated benchmark for streaming spatial intelligence, comprising 1,680 questions over 348 source videos. Annotation involves 12 trained annotators (each also serving as a blind cross-reviewer) across roughly 804 person-hours of multi-round quality assurance. Each question carries a query timestamp and an evidence interval, and at evaluation, the model sees only the prefix preceding the query. Questions span four levels of increasing abstraction: instantaneous egocentric perception, spatiotemporal context tracking, generative spatial reasoning, and allocentric spatial mapping. Across 38 proprietary and open-source MLLMs, Gemini-3.1-Pro trails human experts evaluated under the same prefix-access protocol by 33 points (59.2 vs. 92.2), with allocentric spatial mapping as the dominant bottleneck. Notably, streaming and spatially fine-tuned MLLMs underperform their own backbones. We further find that chain-of-thought reasoning amplifies spatial errors when ungrounded in the stream. By exposing these limitations, OVO-S-Bench establishes a demanding testbed for next-generation streaming spatial MLLMs.</p>
+      <p class="paper-detail-note">Author abstract · <a href="https://arxiv.org/abs/2606.03890v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="publication-heading">
+      <h2 id="publication-heading">Publication</h2>
+      <p>Empirical Methods in Natural Language Processing (EMNLP), 2026</p>
+
+    </section>
+    <section aria-labelledby="resources-heading">
+      <h2 id="resources-heading">Paper and resources</h2>
+      <ul class="paper-detail-resources">
+        <li><a href="https://arxiv.org/pdf/2606.03890v2">Paper · arXiv v2 (PDF)</a></li>
+        <li><a href="https://arxiv.org/abs/2606.03890">arXiv:2606.03890</a></li>
+        <li><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=hW23VKIAAAAJ&amp;citation_for_view=hW23VKIAAAAJ:XD-gHx7UXLsC">Google Scholar</a></li>
+        <li><a href="https://github.com/InternLM/OVO-S-Bench">Code · InternLM/OVO-S-Bench</a></li>
+      </ul>
+    </section>
+    <section aria-labelledby="topics-heading">
+      <h2 id="topics-heading">Research topics</h2>
+      <p class="paper-keywords">OVO-S-Bench · Streaming video understanding · Spatial intelligence · Egocentric video · Allocentric mapping · Prefix-only evaluation · Spatiotemporal reasoning · Multimodal benchmarks</p>
+    </section>
+    <section aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Research problem and approach</h2>
+      <p>Offline video evaluation can expose evidence unavailable when a real-time query arrives. OVO-S-Bench evaluates spatial questions using only the video prefix preceding each query timestamp. <a href="https://arxiv.org/abs/2606.03890v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="contributions-heading">
+      <h2 id="contributions-heading">Main contributions</h2>
+      <ul class="paper-detail-resources"><li>Provides 1,680 human-annotated questions over 348 videos, with query timestamps and evidence intervals. <a href="https://arxiv.org/abs/2606.03890v2">arXiv abstract · v2</a></li>
+<li>Organizes questions into perception, context tracking, generative spatial reasoning and allocentric mapping. <a href="https://arxiv.org/abs/2606.03890v2">arXiv abstract · v2</a></li></ul>
+    </section>
+    <section aria-labelledby="method-comparison-heading">
+      <h2 id="method-comparison-heading">Method comparison</h2>
+      <div class="paper-results-scroll" role="region" aria-label="Method comparison table" tabindex="0">
+        <table class="paper-methods paper-methods-compact">
+          <thead><tr><th scope="col">Approach</th><th scope="col">Key difference</th></tr></thead>
+          <tbody><tr><th scope="row">Offline spatial video evaluation</th><td>Can provide video evidence that would not yet exist at the time of a real-time query.</td></tr>
+<tr><th scope="row">OVO-S-Bench</th><td>Restricts every query to its preceding video prefix and tests four spatial capability levels.</td></tr></tbody>
+        </table>
+      </div>
+      <p class="paper-detail-note"><a href="https://arxiv.org/abs/2606.03890v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="results-heading">
+      <h2 id="results-heading">Selected results</h2>
+      <ul class="paper-detail-resources"><li>Gemini-3.1-Pro reaches 59.19 overall, compared with 92.20 for humans with prefix access and 86.61 for humans under streaming observation. These human protocols provide distinct reference points and should not be conflated. <a href="https://arxiv.org/html/2606.03890v2#S4.T2">Table 2 · spatial understanding benchmark · arXiv v2</a></li>
+<li>On the L4 allocentric category, Gemini-3.1-Pro scores 54.90 and GPT-5.4 40.53; their overall scores are 59.19 and 50.89. The category-level results expose a world-centered reasoning gap beyond aggregate performance. <a href="https://arxiv.org/html/2606.03890v2#S4.T2">Table 2 · allocentric spatial reasoning · arXiv v2</a></li></ul>
+    </section>
+
+    <section aria-labelledby="citation-heading">
+      <h2 id="citation-heading">Cite this paper</h2>
+      <p>Yifei Li, Pengyiang Liu, Yuhang Zang, Zhongyue Shi, Qi Fu, Hongye Hao, Jiwen Lu. OVO-S-Bench: A Hierarchical Benchmark for Streaming Spatial Intelligence in Multimodal LLMs. arXiv preprint arXiv:2606.03890, 2026.</p>
+
+
+      <div class="paper-citation-actions">
+        <button class="paper-copy-button" type="button" data-copy-target="paper-bibtex-content" aria-describedby="bibtex-copy-status" hidden>Copy to clipboard</button>
+        <a href="arxiv-2606.03890.bib" download>Download BibTeX</a>
+        <a href="https://arxiv.org/abs/2606.03890">arXiv citation record</a>
+      </div>
+      <p id="bibtex-copy-status" class="paper-detail-note" role="status" aria-live="polite"></p>
+      <pre class="paper-bibtex"><code id="paper-bibtex-content">@article{arxiv260603890,
+  title     = {{OVO-S-Bench: A Hierarchical Benchmark for Streaming Spatial Intelligence in Multimodal LLMs}},
+  author    = {Yifei Li and Pengyiang Liu and Yuhang Zang and Zhongyue Shi and Qi Fu and Hongye Hao and Jiwen Lu},
+  journal   = {arXiv preprint arXiv:2606.03890},
+  year      = {2026},
+  url       = {https://arxiv.org/abs/2606.03890}
+}
+</code></pre>
+    </section>
+  <footer class="paper-detail-footer"><a href="../research.html">← All publications</a></footer>
+  </article>
+</main>
+</body>
+</html>

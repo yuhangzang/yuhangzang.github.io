@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!-- Generated from data/publications.json. Edit the shared data and rebuild. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>X-Prompt: Towards Universal In-Context Image Generation in Auto-Regressive Vision Language Foundation Models | Yuhang Zang</title>
+<meta name="description" content="X-Prompt extends autoregressive vision-language modeling to in-context image generation, allowing example prompts to specify both familiar and previously unseen generation tasks.">
+<link rel="canonical" href="https://yuhangzang.github.io/papers/arxiv-2412.01824.html">
+<meta name="citation_title" content="X-Prompt: Generalizable Auto-Regressive Visual Learning with In-Context Prompting">
+<meta name="citation_author" content="Zeyi Sun">
+<meta name="citation_author" content="Ziyang Chu">
+<meta name="citation_author" content="Pan Zhang">
+<meta name="citation_author" content="Tong Wu">
+<meta name="citation_author" content="Yuhang Zang">
+<meta name="citation_author" content="Xiaoyi Dong">
+<meta name="citation_author" content="Yuanjun Xiong">
+<meta name="citation_author" content="Dahua Lin">
+<meta name="citation_author" content="Jiaqi Wang">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_arxiv_id" content="2412.01824">
+
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/ICCV2025/papers/Sun_X-Prompt_Generalizable_Auto-Regressive_Visual_Learning_with_In-Context_Prompting_ICCV_2025_paper.pdf">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)">
+<meta name="citation_firstpage" content="17268">
+<meta name="citation_lastpage" content="17280">
+
+
+<link rel="alternate" type="application/x-bibtex" href="arxiv-2412.01824.bib">
+<meta property="og:type" content="article">
+<meta property="og:title" content="X-Prompt: Towards Universal In-Context Image Generation in Auto-Regressive Vision Language Foundation Models">
+<meta property="og:description" content="X-Prompt extends autoregressive vision-language modeling to in-context image generation, allowing example prompts to specify both familiar and previously unseen generation tasks.">
+<meta property="og:url" content="https://yuhangzang.github.io/papers/arxiv-2412.01824.html">
+<link rel="icon" type="image/svg+xml" href="../imgs/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"></noscript>
+<script>
+try {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+} catch {}
+</script>
+<link rel="stylesheet" href="../main.min.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","@id":"https://yuhangzang.github.io/papers/arxiv-2412.01824.html#paper","name":"X-Prompt: Generalizable Auto-Regressive Visual Learning with In-Context Prompting","alternateName":"X-Prompt: Towards Universal In-Context Image Generation in Auto-Regressive Vision Language Foundation Models","author":[{"@type":"Person","name":"Zeyi Sun"},{"@type":"Person","name":"Ziyang Chu"},{"@type":"Person","name":"Pan Zhang"},{"@type":"Person","name":"Tong Wu"},{"@type":"Person","name":"Yuhang Zang"},{"@type":"Person","name":"Xiaoyi Dong"},{"@type":"Person","name":"Yuanjun Xiong"},{"@type":"Person","name":"Dahua Lin"},{"@type":"Person","name":"Jiaqi Wang"}],"datePublished":"2025","url":"https://yuhangzang.github.io/papers/arxiv-2412.01824.html","sameAs":["https://openaccess.thecvf.com/content/ICCV2025/html/Sun_X-Prompt_Generalizable_Auto-Regressive_Visual_Learning_with_In-Context_Prompting_ICCV_2025_paper.html","https://arxiv.org/pdf/2412.01824"],"identifier":{"@type":"PropertyValue","propertyID":"arXiv","value":"2412.01824"},"encoding":{"@type":"MediaObject","name":"Paper · arXiv v2","contentUrl":"https://arxiv.org/pdf/2412.01824v2","encodingFormat":"application/pdf"},"isPartOf":{"@type":"CreativeWork","name":"Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)"},"pageStart":17268,"pageEnd":17280,"keywords":["X-Prompt","In-context image generation","Autoregressive vision-language models","Visual prompting","Task generalization","Context compression","Text-image prediction","Few-shot generation"],"abstract":"In-context generation is a key component of large language models' (LLMs) open-task generalization capability. By leveraging a few examples as context, LLMs can perform both in-domain and out-of-domain tasks. Recent advancements in auto-regressive vision-language models (VLMs) built upon LLMs have showcased impressive performance in text-to-image generation. However, the potential of in-context learning for general image generation tasks remains largely unexplored. To address this, we introduce X-Prompt, a purely auto-regressive large-vision language model designed to deliver competitive performance across a wide range of both seen and unseen image generation tasks, all within a unified in-context learning framework. X-Prompt incorporates a specialized design that efficiently compresses valuable features from in-context examples, supporting longer in-context token sequences and improving its ability to generalize to unseen tasks. A unified training task for both text and image prediction enables X-Prompt to handle general image generation with enhanced task awareness from in-context examples. Extensive experiments validate the model's performance across diverse seen image generation tasks and its capacity to generalize to previously unseen tasks.","description":"X-Prompt extends autoregressive vision-language modeling to in-context image generation, allowing example prompts to specify both familiar and previously unseen generation tasks."}</script>
+<script src="../assets/main.min.js" defer></script>
+</head>
+<body class="paper-page">
+<nav class="main-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="../index.html" class="brand-link">Yuhang Zang</a>
+      </div>
+      <button class="mobile-menu-toggle" type="button" aria-label="Toggle navigation menu" aria-controls="nav-menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <div class="nav-menu" id="nav-menu" aria-hidden="true">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../research.html" class="nav-link active" aria-current="location">Publications</a>
+        <a href="../index.html#services" class="nav-link">Services</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" title="Toggle dark mode" aria-label="Toggle dark mode" aria-pressed="false">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+<main class="paper-detail">
+  <article class="papers-section">
+    <p class="paper-detail-kicker">ICCV · 2025</p>
+    <h1 class="section-heading">X-Prompt: Towards Universal In-Context Image Generation in Auto-Regressive Vision Language Foundation Models</h1>
+    <p class="paper-detail-authors author-names">Zeyi Sun, Ziyang Chu, Pan Zhang, Tong Wu, Xiaoyi Dong, <strong class="author-highlight">Yuhang Zang</strong>, Yuanjun Xiong, Dahua Lin, Jiaqi Wang</p>
+
+    <section class="paper-takeaway" aria-labelledby="takeaway-heading">
+      <h2 id="takeaway-heading">Key takeaway</h2>
+      <p>X-Prompt extends autoregressive vision-language modeling to in-context image generation, allowing example prompts to specify both familiar and previously unseen generation tasks. <a href="https://arxiv.org/abs/2412.01824v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="abstract-heading">
+      <h2 id="abstract-heading">Abstract</h2>
+      <p>In-context generation is a key component of large language models&#39; (LLMs) open-task generalization capability. By leveraging a few examples as context, LLMs can perform both in-domain and out-of-domain tasks. Recent advancements in auto-regressive vision-language models (VLMs) built upon LLMs have showcased impressive performance in text-to-image generation. However, the potential of in-context learning for general image generation tasks remains largely unexplored. To address this, we introduce X-Prompt, a purely auto-regressive large-vision language model designed to deliver competitive performance across a wide range of both seen and unseen image generation tasks, all within a unified in-context learning framework. X-Prompt incorporates a specialized design that efficiently compresses valuable features from in-context examples, supporting longer in-context token sequences and improving its ability to generalize to unseen tasks. A unified training task for both text and image prediction enables X-Prompt to handle general image generation with enhanced task awareness from in-context examples. Extensive experiments validate the model&#39;s performance across diverse seen image generation tasks and its capacity to generalize to previously unseen tasks.</p>
+      <p class="paper-detail-note">Author abstract · <a href="https://arxiv.org/abs/2412.01824v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="publication-heading">
+      <h2 id="publication-heading">Publication</h2>
+      <p>IEEE International Conference on Computer Vision (ICCV), 2025</p>
+
+    </section>
+    <section aria-labelledby="resources-heading">
+      <h2 id="resources-heading">Paper and resources</h2>
+      <ul class="paper-detail-resources">
+        <li><a href="https://arxiv.org/pdf/2412.01824v2">Paper · arXiv v2 (PDF)</a></li>
+        <li><a href="https://arxiv.org/pdf/2412.01824">arXiv:2412.01824</a></li>
+        <li><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=hW23VKIAAAAJ&amp;citation_for_view=hW23VKIAAAAJ:7PzlFSSx8tAC">Google Scholar</a></li>
+        <li><a href="https://github.com/SunzeY/X-Prompt">Code · SunzeY/X-Prompt</a></li>
+      </ul>
+    </section>
+    <section aria-labelledby="topics-heading">
+      <h2 id="topics-heading">Research topics</h2>
+      <p class="paper-keywords">X-Prompt · In-context image generation · Autoregressive vision-language models · Visual prompting · Task generalization · Context compression · Text-image prediction · Few-shot generation</p>
+    </section>
+    <section aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Research problem and approach</h2>
+      <p>Strong text-to-image generation does not by itself provide general in-context visual learning. X-Prompt uses example context to infer generation tasks within a unified autoregressive framework. <a href="https://arxiv.org/abs/2412.01824v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="contributions-heading">
+      <h2 id="contributions-heading">Main contributions</h2>
+      <ul class="paper-detail-resources"><li>Compresses useful example features to support longer in-context sequences. <a href="https://arxiv.org/abs/2412.01824v2">arXiv abstract · v2</a></li>
+<li>Trains text and image prediction jointly to improve task awareness from examples. <a href="https://arxiv.org/abs/2412.01824v2">arXiv abstract · v2</a></li></ul>
+    </section>
+    <section aria-labelledby="method-comparison-heading">
+      <h2 id="method-comparison-heading">Method comparison</h2>
+      <div class="paper-results-scroll" role="region" aria-label="Method comparison table" tabindex="0">
+        <table class="paper-methods paper-methods-compact">
+          <thead><tr><th scope="col">Approach</th><th scope="col">Key difference</th></tr></thead>
+          <tbody><tr><th scope="row">Text-to-image generation alone</th><td>Provides generation capability without necessarily learning new visual tasks from contextual examples.</td></tr>
+<tr><th scope="row">X-Prompt</th><td>Jointly predicts text and images while compressing useful example context for in-context task inference.</td></tr></tbody>
+        </table>
+      </div>
+      <p class="paper-detail-note"><a href="https://arxiv.org/abs/2412.01824v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="results-heading">
+      <h2 id="results-heading">Selected results</h2>
+      <ul class="paper-detail-resources"><li>In novel-task in-context evaluation, adding X-Prompt tokens improves NYU-v2 depth RMSE from 0.390 to 0.352 and Rain100H deraining PSNR from 18.10 to 18.91 dB, compared with in-context prompting without those tokens. <a href="https://arxiv.org/html/2412.01824v2#S4.T4">Table 4 · tasks held out from training · arXiv v2</a></li>
+<li>Adding text prediction to the image-generation training objective raises GenEval overall performance from 0.49 to 0.57. Position and color scores rise from 0.14 to 0.26 and from 0.71 to 0.85, respectively. <a href="https://arxiv.org/html/2412.01824v2#S3.T1">Table 1 · joint text-prediction ablation · arXiv v2</a></li></ul>
+    </section>
+
+    <section aria-labelledby="citation-heading">
+      <h2 id="citation-heading">Cite this paper</h2>
+      <p>Zeyi Sun, Ziyang Chu, Pan Zhang, Tong Wu, Yuhang Zang, Xiaoyi Dong, Yuanjun Xiong, Dahua Lin, Jiaqi Wang. X-Prompt: Generalizable Auto-Regressive Visual Learning with In-Context Prompting. Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV), 2025, pp. 17268–17280.</p>
+      <p class="paper-detail-note">This citation uses the author list of the published version.</p>
+
+      <div class="paper-citation-actions">
+        <button class="paper-copy-button" type="button" data-copy-target="paper-bibtex-content" aria-describedby="bibtex-copy-status" hidden>Copy to clipboard</button>
+        <a href="arxiv-2412.01824.bib" download>Download BibTeX</a>
+        <a href="https://openaccess.thecvf.com/content/ICCV2025/html/Sun_X-Prompt_Generalizable_Auto-Regressive_Visual_Learning_with_In-Context_Prompting_ICCV_2025_paper.html">ICCV 2025 proceedings record</a>
+      </div>
+      <p id="bibtex-copy-status" class="paper-detail-note" role="status" aria-live="polite"></p>
+      <pre class="paper-bibtex"><code id="paper-bibtex-content">@inproceedings{arxiv241201824,
+  title     = {{X-Prompt: Generalizable Auto-Regressive Visual Learning with In-Context Prompting}},
+  author    = {Zeyi Sun and Ziyang Chu and Pan Zhang and Tong Wu and Yuhang Zang and Xiaoyi Dong and Yuanjun Xiong and Dahua Lin and Jiaqi Wang},
+  booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+  month     = {October},
+  year      = {2025},
+  pages     = {17268--17280},
+  url       = {https://openaccess.thecvf.com/content/ICCV2025/html/Sun_X-Prompt_Generalizable_Auto-Regressive_Visual_Learning_with_In-Context_Prompting_ICCV_2025_paper.html}
+}
+</code></pre>
+    </section>
+  <footer class="paper-detail-footer"><a href="../research.html">← All publications</a></footer>
+  </article>
+</main>
+</body>
+</html>

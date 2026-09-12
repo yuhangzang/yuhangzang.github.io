@@ -1,3 +1,5 @@
+import { copyText } from './clipboard.js';
+
 // Shared citation export. Paper sorting preserves the existing card nodes.
 export function initBibTeX(container) {
     const venueMap = {
@@ -36,6 +38,8 @@ export function initBibTeX(container) {
     }
 
     function generateBibTeX(paperCard) {
+        const verified = paperCard.querySelector('template.paper-citation');
+        if (verified) return { bibtex: verified.content.textContent, citeKey: verified.dataset.citeKey };
         const title = paperCard.querySelector('papertitle')?.textContent?.trim() || '';
         const authorsEl = paperCard.querySelector('.author-names');
         const authors = authorsEl ? cleanAuthors(authorsEl.innerHTML) : '';
@@ -125,7 +129,7 @@ export function initBibTeX(container) {
 
     copyBtn.addEventListener('click', async () => {
         try {
-            await navigator.clipboard.writeText(currentBibTeX);
+            await copyText(currentBibTeX);
             copyBtn.innerHTML = '<i class="fa fa-check"></i> Copied!';
             copyBtn.classList.add('copied');
             setTimeout(() => {
@@ -133,15 +137,8 @@ export function initBibTeX(container) {
                 copyBtn.classList.remove('copied');
             }, 2000);
         } catch (err) {
-            // Fallback for older browsers
-            const textarea = document.createElement('textarea');
-            textarea.value = currentBibTeX;
-            document.body.appendChild(textarea);
-            textarea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textarea);
-            copyBtn.innerHTML = '<i class="fa fa-check"></i> Copied!';
-            copyBtn.classList.add('copied');
+            copyBtn.textContent = 'Copy failed — use Download';
+            copyBtn.classList.remove('copied');
         }
     });
 

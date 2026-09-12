@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!-- Generated from data/publications.json. Edit the shared data and rebuild. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OVO-Bench: How Far is Your Video-LLMs from Real-World Online Video Understanding? | Yuhang Zang</title>
+<meta name="description" content="OVO-Bench evaluates whether video models respond appropriately at a specified moment, distinguishing backward tracing, real-time understanding and waiting for future evidence.">
+<link rel="canonical" href="https://yuhangzang.github.io/papers/arxiv-2501.05510.html">
+<meta name="citation_title" content="OVO-Bench: How Far is Your Video-LLMs from Real-World Online Video Understanding?">
+<meta name="citation_author" content="Junbo Niu">
+<meta name="citation_author" content="Yifei Li">
+<meta name="citation_author" content="Ziyang Miao">
+<meta name="citation_author" content="Chunjiang Ge">
+<meta name="citation_author" content="Yuanhang Zhou">
+<meta name="citation_author" content="Qihao He">
+<meta name="citation_author" content="Xiaoyi Dong">
+<meta name="citation_author" content="Haodong Duan">
+<meta name="citation_author" content="Shuangrui Ding">
+<meta name="citation_author" content="Rui Qian">
+<meta name="citation_author" content="Pan Zhang">
+<meta name="citation_author" content="Yuhang Zang">
+<meta name="citation_author" content="Yuhang Cao">
+<meta name="citation_author" content="Conghui He">
+<meta name="citation_author" content="Jiaqi Wang">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_arxiv_id" content="2501.05510">
+
+<meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/CVPR2025/papers/Niu_OVO-Bench_How_Far_is_Your_Video-LLMs_from_Real-World_Online_Video_CVPR_2025_paper.pdf">
+<meta name="citation_conference_title" content="Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)">
+<meta name="citation_firstpage" content="18902">
+<meta name="citation_lastpage" content="18913">
+
+
+<link rel="alternate" type="application/x-bibtex" href="arxiv-2501.05510.bib">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OVO-Bench: How Far is Your Video-LLMs from Real-World Online Video Understanding?">
+<meta property="og:description" content="OVO-Bench evaluates whether video models respond appropriately at a specified moment, distinguishing backward tracing, real-time understanding and waiting for future evidence.">
+<meta property="og:url" content="https://yuhangzang.github.io/papers/arxiv-2501.05510.html">
+<link rel="icon" type="image/svg+xml" href="../imgs/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"></noscript>
+<script>
+try {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+} catch {}
+</script>
+<link rel="stylesheet" href="../main.min.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","@id":"https://yuhangzang.github.io/papers/arxiv-2501.05510.html#paper","name":"OVO-Bench: How Far is Your Video-LLMs from Real-World Online Video Understanding?","author":[{"@type":"Person","name":"Junbo Niu"},{"@type":"Person","name":"Yifei Li"},{"@type":"Person","name":"Ziyang Miao"},{"@type":"Person","name":"Chunjiang Ge"},{"@type":"Person","name":"Yuanhang Zhou"},{"@type":"Person","name":"Qihao He"},{"@type":"Person","name":"Xiaoyi Dong"},{"@type":"Person","name":"Haodong Duan"},{"@type":"Person","name":"Shuangrui Ding"},{"@type":"Person","name":"Rui Qian"},{"@type":"Person","name":"Pan Zhang"},{"@type":"Person","name":"Yuhang Zang"},{"@type":"Person","name":"Yuhang Cao"},{"@type":"Person","name":"Conghui He"},{"@type":"Person","name":"Jiaqi Wang"}],"datePublished":"2025","url":"https://yuhangzang.github.io/papers/arxiv-2501.05510.html","sameAs":["https://openaccess.thecvf.com/content/CVPR2025/html/Niu_OVO-Bench_How_Far_is_Your_Video-LLMs_from_Real-World_Online_Video_CVPR_2025_paper.html","https://arxiv.org/abs/2501.05510"],"identifier":{"@type":"PropertyValue","propertyID":"arXiv","value":"2501.05510"},"encoding":{"@type":"MediaObject","name":"Paper · arXiv v2","contentUrl":"https://arxiv.org/pdf/2501.05510v2","encodingFormat":"application/pdf"},"isPartOf":{"@type":"CreativeWork","name":"Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)"},"pageStart":18902,"pageEnd":18913,"keywords":["OVO-Bench","Online video understanding","Temporal awareness","Streaming video evaluation","Backward tracing","Real-time understanding","Forward active responding","Video language models"],"abstract":"Temporal Awareness, the ability to reason dynamically based on the timestamp when a question is raised, is the key distinction between offline and online video LLMs. Unlike offline models, which rely on complete videos for static, post hoc analysis, online models process video streams incrementally and dynamically adapt their responses based on the timestamp at which the question is posed. Despite its significance, temporal awareness has not been adequately evaluated in existing benchmarks. To fill this gap, we present OVO-Bench (Online-VideO-Benchmark), a novel video benchmark that emphasizes the importance of timestamps for advanced online video understanding capability benchmarking. OVO-Bench evaluates the ability of video LLMs to reason and respond to events occurring at specific timestamps under three distinct scenarios: (1) Backward tracing: trace back to past events to answer the question. (2) Real-time understanding: understand and respond to events as they unfold at the current timestamp. (3) Forward active responding: delay the response until sufficient future information becomes available to answer the question accurately. OVO-Bench comprises 12 tasks, featuring 644 unique videos and approximately human-curated 2,800 fine-grained meta-annotations with precise timestamps. We combine automated generation pipelines with human curation. With these high-quality samples, we further developed an evaluation pipeline to systematically query video LLMs along the video timeline. Evaluations of nine Video-LLMs reveal that, despite advancements on traditional benchmarks, current models struggle with online video understanding, showing a significant gap compared to human agents. We hope OVO-Bench will drive progress in video LLMs and inspire future research in online video reasoning. Our benchmark and code can be accessed at https://github.com/JoeLeelyf/OVO-Bench.","description":"OVO-Bench evaluates whether video models respond appropriately at a specified moment, distinguishing backward tracing, real-time understanding and waiting for future evidence."}</script>
+<script src="../assets/main.min.js" defer></script>
+</head>
+<body class="paper-page">
+<nav class="main-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="../index.html" class="brand-link">Yuhang Zang</a>
+      </div>
+      <button class="mobile-menu-toggle" type="button" aria-label="Toggle navigation menu" aria-controls="nav-menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <div class="nav-menu" id="nav-menu" aria-hidden="true">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../research.html" class="nav-link active" aria-current="location">Publications</a>
+        <a href="../index.html#services" class="nav-link">Services</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" title="Toggle dark mode" aria-label="Toggle dark mode" aria-pressed="false">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+<main class="paper-detail">
+  <article class="papers-section">
+    <p class="paper-detail-kicker">CVPR · 2025</p>
+    <h1 class="section-heading">OVO-Bench: How Far is Your Video-LLMs from Real-World Online Video Understanding?</h1>
+    <p class="paper-detail-authors author-names">Yifei Li, Junbo Niu, Ziyang Miao, Chunjiang Ge, Yuanhang Zhou, Qihao He, Xiaoyi Dong, Haodong Duan, Shuangrui Ding, Rui Qian, Pan Zhang, <strong class="author-highlight">Yuhang Zang</strong>, Yuhang Cao, Conghui He, Jiaqi Wang</p>
+
+    <section class="paper-takeaway" aria-labelledby="takeaway-heading">
+      <h2 id="takeaway-heading">Key takeaway</h2>
+      <p>OVO-Bench evaluates whether video models respond appropriately at a specified moment, distinguishing backward tracing, real-time understanding and waiting for future evidence. <a href="https://arxiv.org/abs/2501.05510v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="abstract-heading">
+      <h2 id="abstract-heading">Abstract</h2>
+      <p>Temporal Awareness, the ability to reason dynamically based on the timestamp when a question is raised, is the key distinction between offline and online video LLMs. Unlike offline models, which rely on complete videos for static, post hoc analysis, online models process video streams incrementally and dynamically adapt their responses based on the timestamp at which the question is posed. Despite its significance, temporal awareness has not been adequately evaluated in existing benchmarks. To fill this gap, we present OVO-Bench (Online-VideO-Benchmark), a novel video benchmark that emphasizes the importance of timestamps for advanced online video understanding capability benchmarking. OVO-Bench evaluates the ability of video LLMs to reason and respond to events occurring at specific timestamps under three distinct scenarios: (1) Backward tracing: trace back to past events to answer the question. (2) Real-time understanding: understand and respond to events as they unfold at the current timestamp. (3) Forward active responding: delay the response until sufficient future information becomes available to answer the question accurately. OVO-Bench comprises 12 tasks, featuring 644 unique videos and approximately human-curated 2,800 fine-grained meta-annotations with precise timestamps. We combine automated generation pipelines with human curation. With these high-quality samples, we further developed an evaluation pipeline to systematically query video LLMs along the video timeline. Evaluations of nine Video-LLMs reveal that, despite advancements on traditional benchmarks, current models struggle with online video understanding, showing a significant gap compared to human agents. We hope OVO-Bench will drive progress in video LLMs and inspire future research in online video reasoning. Our benchmark and code can be accessed at https://github.com/JoeLeelyf/OVO-Bench.</p>
+      <p class="paper-detail-note">Author abstract · <a href="https://arxiv.org/abs/2501.05510v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="publication-heading">
+      <h2 id="publication-heading">Publication</h2>
+      <p>IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2025</p>
+
+    </section>
+    <section aria-labelledby="resources-heading">
+      <h2 id="resources-heading">Paper and resources</h2>
+      <ul class="paper-detail-resources">
+        <li><a href="https://arxiv.org/pdf/2501.05510v2">Paper · arXiv v2 (PDF)</a></li>
+        <li><a href="https://arxiv.org/abs/2501.05510">arXiv:2501.05510</a></li>
+        <li><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=hW23VKIAAAAJ&amp;citation_for_view=hW23VKIAAAAJ:iH-uZ7U-co4C">Google Scholar</a></li>
+        <li><a href="https://github.com/JoeLeelyf/OVO-Bench">Code · JoeLeelyf/OVO-Bench</a></li>
+      </ul>
+    </section>
+    <section aria-labelledby="topics-heading">
+      <h2 id="topics-heading">Research topics</h2>
+      <p class="paper-keywords">OVO-Bench · Online video understanding · Temporal awareness · Streaming video evaluation · Backward tracing · Real-time understanding · Forward active responding · Video language models</p>
+    </section>
+    <section aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Research problem and approach</h2>
+      <p>Offline video evaluation does not test the temporal awareness needed for streaming interaction. OVO-Bench queries models along a timeline and assesses how answers should change with the information available at each timestamp. <a href="https://arxiv.org/abs/2501.05510v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="contributions-heading">
+      <h2 id="contributions-heading">Main contributions</h2>
+      <ul class="paper-detail-resources"><li>Defines three temporal response scenarios spanning 12 online video tasks. <a href="https://arxiv.org/abs/2501.05510v2">arXiv abstract · v2</a></li>
+<li>Provides 644 videos and approximately 2,800 human-curated, timestamped meta-annotations with an evaluation pipeline. <a href="https://arxiv.org/abs/2501.05510v2">arXiv abstract · v2</a></li></ul>
+    </section>
+    <section aria-labelledby="method-comparison-heading">
+      <h2 id="method-comparison-heading">Method comparison</h2>
+      <div class="paper-results-scroll" role="region" aria-label="Method comparison table" tabindex="0">
+        <table class="paper-methods paper-methods-compact">
+          <thead><tr><th scope="col">Approach</th><th scope="col">Key difference</th></tr></thead>
+          <tbody><tr><th scope="row">Offline video evaluation</th><td>Permits complete-video analysis after events have occurred.</td></tr>
+<tr><th scope="row">OVO-Bench</th><td>Queries along the timeline and distinguishes past-event retrieval, present understanding and waiting for future evidence.</td></tr></tbody>
+        </table>
+      </div>
+      <p class="paper-detail-note"><a href="https://arxiv.org/abs/2501.05510v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="results-heading">
+      <h2 id="results-heading">Selected results</h2>
+      <ul class="paper-detail-resources"><li>OVO-Bench reports an overall average of 63.00 for Gemini-1.5-Pro with 1-fps input and 59.54 for GPT-4o with 64 frames, versus 92.81 for humans. The table places EPM and ASI queries at the video’s end to increase the gap from supporting clues. <a href="https://arxiv.org/html/2501.05510v2#S3.T1">Table 1 · online video understanding · arXiv v2</a></li>
+<li>Gemini-1.5-Pro scores 69.32 on real-time perception, 62.54 on backward tracing and 57.15 on forward active responding. This table uses accuracy-based forward-response metrics; its aggregate scores do not measure response timing alone. <a href="https://arxiv.org/html/2501.05510v2#S3.T1">Table 1 · capability breakdown · arXiv v2</a></li></ul>
+    </section>
+
+    <section aria-labelledby="citation-heading">
+      <h2 id="citation-heading">Cite this paper</h2>
+      <p>Junbo Niu, Yifei Li, Ziyang Miao, Chunjiang Ge, Yuanhang Zhou, Qihao He, Xiaoyi Dong, Haodong Duan, Shuangrui Ding, Rui Qian, Pan Zhang, Yuhang Zang, Yuhang Cao, Conghui He, Jiaqi Wang. OVO-Bench: How Far is Your Video-LLMs from Real-World Online Video Understanding?. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2025, pp. 18902–18913.</p>
+      <p class="paper-detail-note">This citation uses the author list of the published version.</p>
+
+      <div class="paper-citation-actions">
+        <button class="paper-copy-button" type="button" data-copy-target="paper-bibtex-content" aria-describedby="bibtex-copy-status" hidden>Copy to clipboard</button>
+        <a href="arxiv-2501.05510.bib" download>Download BibTeX</a>
+        <a href="https://openaccess.thecvf.com/content/CVPR2025/html/Niu_OVO-Bench_How_Far_is_Your_Video-LLMs_from_Real-World_Online_Video_CVPR_2025_paper.html">CVPR 2025 proceedings record</a>
+      </div>
+      <p id="bibtex-copy-status" class="paper-detail-note" role="status" aria-live="polite"></p>
+      <pre class="paper-bibtex"><code id="paper-bibtex-content">@inproceedings{arxiv250105510,
+  title     = {{OVO-Bench: How Far is Your Video-LLMs from Real-World Online Video Understanding?}},
+  author    = {Junbo Niu and Yifei Li and Ziyang Miao and Chunjiang Ge and Yuanhang Zhou and Qihao He and Xiaoyi Dong and Haodong Duan and Shuangrui Ding and Rui Qian and Pan Zhang and Yuhang Zang and Yuhang Cao and Conghui He and Jiaqi Wang},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  month     = {June},
+  year      = {2025},
+  pages     = {18902--18913},
+  url       = {https://openaccess.thecvf.com/content/CVPR2025/html/Niu_OVO-Bench_How_Far_is_Your_Video-LLMs_from_Real-World_Online_Video_CVPR_2025_paper.html}
+}
+</code></pre>
+    </section>
+  <footer class="paper-detail-footer"><a href="../research.html">← All publications</a></footer>
+  </article>
+</main>
+</body>
+</html>

@@ -1,4 +1,9 @@
 import { build } from 'esbuild';
+import { renderPublicationPages } from './render-publications.mjs';
+
+// Publication content is maintained only in data/publications.json.
+// Render it into static HTML before bundling so crawlers never need JavaScript.
+await renderPublicationPages();
 
 // Generated files are committed so GitHub Pages can serve this repository directly.
 // Keep the two entry points separate: the error page only needs the site UI.

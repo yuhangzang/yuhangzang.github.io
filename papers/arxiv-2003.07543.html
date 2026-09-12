@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!-- Generated from data/publications.json. Edit the shared data and rebuild. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KPNet: Towards Minimal Face Detector | Yuhang Zang</title>
+<meta name="description" content="KPNet builds a compact face detector by predicting facial keypoints first and deriving bounding boxes from them, avoiding complex anchor and detection-head designs.">
+<link rel="canonical" href="https://yuhangzang.github.io/papers/arxiv-2003.07543.html">
+<meta name="citation_title" content="KPNet: Towards Minimal Face Detector">
+<meta name="citation_author" content="Guanglu Song">
+<meta name="citation_author" content="Yu Liu">
+<meta name="citation_author" content="Yuhang Zang">
+<meta name="citation_author" content="Xiaogang Wang">
+<meta name="citation_author" content="Biao Leng">
+<meta name="citation_author" content="Qingsheng Yuan">
+<meta name="citation_publication_date" content="2020">
+<meta name="citation_arxiv_id" content="2003.07543">
+<meta name="citation_doi" content="10.1609/aaai.v34i07.6878">
+<meta name="citation_pdf_url" content="https://ojs.aaai.org/index.php/AAAI/article/download/6878/6732">
+<meta name="citation_journal_title" content="Proceedings of the AAAI Conference on Artificial Intelligence">
+<meta name="citation_firstpage" content="12015">
+<meta name="citation_lastpage" content="12022">
+<meta name="citation_volume" content="34">
+<meta name="citation_issue" content="07">
+<link rel="alternate" type="application/x-bibtex" href="arxiv-2003.07543.bib">
+<meta property="og:type" content="article">
+<meta property="og:title" content="KPNet: Towards Minimal Face Detector">
+<meta property="og:description" content="KPNet builds a compact face detector by predicting facial keypoints first and deriving bounding boxes from them, avoiding complex anchor and detection-head designs.">
+<meta property="og:url" content="https://yuhangzang.github.io/papers/arxiv-2003.07543.html">
+<link rel="icon" type="image/svg+xml" href="../imgs/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"></noscript>
+<script>
+try {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+} catch {}
+</script>
+<link rel="stylesheet" href="../main.min.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","@id":"https://yuhangzang.github.io/papers/arxiv-2003.07543.html#paper","name":"KPNet: Towards Minimal Face Detector","author":[{"@type":"Person","name":"Guanglu Song"},{"@type":"Person","name":"Yu Liu"},{"@type":"Person","name":"Yuhang Zang"},{"@type":"Person","name":"Xiaogang Wang"},{"@type":"Person","name":"Biao Leng"},{"@type":"Person","name":"Qingsheng Yuan"}],"datePublished":"2020","url":"https://yuhangzang.github.io/papers/arxiv-2003.07543.html","sameAs":["https://doi.org/10.1609/aaai.v34i07.6878","https://arxiv.org/abs/2003.07543"],"identifier":[{"@type":"PropertyValue","propertyID":"arXiv","value":"2003.07543"},{"@type":"PropertyValue","propertyID":"DOI","value":"10.1609/aaai.v34i07.6878"}],"encoding":{"@type":"MediaObject","name":"Paper · arXiv v1","contentUrl":"https://arxiv.org/pdf/2003.07543v1","encodingFormat":"application/pdf"},"isPartOf":{"@type":"PublicationIssue","name":"Proceedings of the AAAI Conference on Artificial Intelligence","issueNumber":"07","isPartOf":{"@type":"PublicationVolume","name":"Proceedings of the AAAI Conference on Artificial Intelligence","volumeNumber":"34","isPartOf":{"@type":"Periodical","name":"Proceedings of the AAAI Conference on Artificial Intelligence"}}},"pageStart":12015,"pageEnd":12022,"keywords":["KPNet","Lightweight face detection","Facial landmark detection","Bottom-up detection","Scale-adaptive soft-argmax","Compact neural networks","Face alignment","Real-time vision"],"abstract":"The small receptive field and capacity of minimal neural networks limit their performance when using them to be the backbone of detectors. In this work, we find that the appearance feature of a generic face is discriminative enough for a tiny and shallow neural network to verify from the background. And the essential barriers behind us are 1) the vague definition of the face bounding box and 2) tricky design of anchor-boxes or receptive field. Unlike most top-down methods for joint face detection and alignment, the proposed KPNet detects small facial keypoints instead of the whole face by in a bottom-up manner. It first predicts the facial landmarks from a low-resolution image via the well-designed fine-grained scale approximation and scale adaptive soft-argmax operator. Finally, the precise face bounding boxes, no matter how we define it, can be inferred from the keypoints. Without any complex head architecture or meticulous network designing, the KPNet achieves state-of-the-art accuracy on generic face detection and alignment benchmarks with only ≈1M parameters, which runs at 1000fps on GPU and is easy to perform real-time on most modern front-end chips.","description":"KPNet builds a compact face detector by predicting facial keypoints first and deriving bounding boxes from them, avoiding complex anchor and detection-head designs."}</script>
+<script src="../assets/main.min.js" defer></script>
+</head>
+<body class="paper-page">
+<nav class="main-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="../index.html" class="brand-link">Yuhang Zang</a>
+      </div>
+      <button class="mobile-menu-toggle" type="button" aria-label="Toggle navigation menu" aria-controls="nav-menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <div class="nav-menu" id="nav-menu" aria-hidden="true">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../research.html" class="nav-link active" aria-current="location">Publications</a>
+        <a href="../index.html#services" class="nav-link">Services</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" title="Toggle dark mode" aria-label="Toggle dark mode" aria-pressed="false">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+<main class="paper-detail">
+  <article class="papers-section">
+    <p class="paper-detail-kicker">AAAI · 2020</p>
+    <h1 class="section-heading">KPNet: Towards Minimal Face Detector</h1>
+    <p class="paper-detail-authors author-names">Guanglu Song, Yu Liu, <strong class="author-highlight">Yuhang Zang</strong>, Xiaogang Wang, Biao Leng, Qingsheng Yuan</p>
+
+    <section class="paper-takeaway" aria-labelledby="takeaway-heading">
+      <h2 id="takeaway-heading">Key takeaway</h2>
+      <p>KPNet builds a compact face detector by predicting facial keypoints first and deriving bounding boxes from them, avoiding complex anchor and detection-head designs. <a href="https://arxiv.org/abs/2003.07543v1">arXiv abstract · v1</a></p>
+    </section>
+    <section aria-labelledby="abstract-heading">
+      <h2 id="abstract-heading">Abstract</h2>
+      <p>The small receptive field and capacity of minimal neural networks limit their performance when using them to be the backbone of detectors. In this work, we find that the appearance feature of a generic face is discriminative enough for a tiny and shallow neural network to verify from the background. And the essential barriers behind us are 1) the vague definition of the face bounding box and 2) tricky design of anchor-boxes or receptive field. Unlike most top-down methods for joint face detection and alignment, the proposed KPNet detects small facial keypoints instead of the whole face by in a bottom-up manner. It first predicts the facial landmarks from a low-resolution image via the well-designed fine-grained scale approximation and scale adaptive soft-argmax operator. Finally, the precise face bounding boxes, no matter how we define it, can be inferred from the keypoints. Without any complex head architecture or meticulous network designing, the KPNet achieves state-of-the-art accuracy on generic face detection and alignment benchmarks with only ≈1M parameters, which runs at 1000fps on GPU and is easy to perform real-time on most modern front-end chips.</p>
+      <p class="paper-detail-note">Author abstract · <a href="https://arxiv.org/abs/2003.07543v1">arXiv abstract · v1</a></p>
+    </section>
+    <section aria-labelledby="publication-heading">
+      <h2 id="publication-heading">Publication</h2>
+      <p>AAAI Conference on Artificial Intelligence (AAAI), 2020</p>
+
+    </section>
+    <section aria-labelledby="resources-heading">
+      <h2 id="resources-heading">Paper and resources</h2>
+      <ul class="paper-detail-resources">
+        <li><a href="https://arxiv.org/pdf/2003.07543v1">Paper · arXiv v1 (PDF)</a></li>
+        <li><a href="https://arxiv.org/abs/2003.07543">arXiv:2003.07543</a></li>
+        <li><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=hW23VKIAAAAJ&amp;citation_for_view=hW23VKIAAAAJ:d1gkVwhDpl0C">Google Scholar</a></li>
+      </ul>
+    </section>
+    <section aria-labelledby="topics-heading">
+      <h2 id="topics-heading">Research topics</h2>
+      <p class="paper-keywords">KPNet · Lightweight face detection · Facial landmark detection · Bottom-up detection · Scale-adaptive soft-argmax · Compact neural networks · Face alignment · Real-time vision</p>
+    </section>
+    <section aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Research problem and approach</h2>
+      <p>Tiny detector backbones have limited receptive fields and capacity. KPNet exploits discriminative facial landmarks with fine-grained scale approximation and a scale-adaptive soft-argmax, then reconstructs face boxes in a bottom-up manner. <a href="https://arxiv.org/abs/2003.07543v1">arXiv abstract · v1</a></p>
+    </section>
+    <section aria-labelledby="contributions-heading">
+      <h2 id="contributions-heading">Main contributions</h2>
+      <ul class="paper-detail-resources"><li>Unifies face localization and alignment through keypoint-first prediction. <a href="https://arxiv.org/abs/2003.07543v1">arXiv abstract · v1</a></li>
+<li>Uses scale-aware landmark decoding to support a small, shallow network. <a href="https://arxiv.org/abs/2003.07543v1">arXiv abstract · v1</a></li></ul>
+    </section>
+    <section aria-labelledby="method-comparison-heading">
+      <h2 id="method-comparison-heading">Method comparison</h2>
+      <div class="paper-results-scroll" role="region" aria-label="Method comparison table" tabindex="0">
+        <table class="paper-methods paper-methods-compact">
+          <thead><tr><th scope="col">Approach</th><th scope="col">Key difference</th></tr></thead>
+          <tbody><tr><th scope="row">Top-down face detection and alignment</th><td>Detects face boxes with designs sensitive to box definitions, anchors and receptive fields.</td></tr>
+<tr><th scope="row">KPNet</th><td>Predicts landmarks first with scale-aware decoding and derives bounding boxes from those keypoints.</td></tr></tbody>
+        </table>
+      </div>
+      <p class="paper-detail-note"><a href="https://arxiv.org/abs/2003.07543v1">arXiv abstract · v1</a></p>
+    </section>
+    <section aria-labelledby="results-heading">
+      <h2 id="results-heading">Selected results</h2>
+      <ul class="paper-detail-resources"><li>At 50 false positives, scale-adaptive soft-argmax gives 69.32% recall on FDDB rotated −90° and 69.97% at +90°, versus 50.65% and 49.9% for argmax decoding. On unrotated FDDB the corresponding recalls are 91.6% and 88.98%. <a href="https://arxiv.org/html/2003.07543v1#Sx4.T2">Table 2 · rotation robustness, DRNet backbone · arXiv v1</a></li>
+<li>For DRNet, adding scale-adaptive soft-argmax raises FDDB recall at one false positive from 47.3% to 81.1%; recall at 50 false positives changes from 90.7% to 91.6%. The stricter operating point highlights the reduction in localization errors. <a href="https://arxiv.org/html/2003.07543v1#Sx4.T3">Table 3 · localization-error ablation · arXiv v1</a></li></ul>
+    </section>
+
+    <section aria-labelledby="citation-heading">
+      <h2 id="citation-heading">Cite this paper</h2>
+      <p>Guanglu Song, Yu Liu, Yuhang Zang, Xiaogang Wang, Biao Leng, Qingsheng Yuan. KPNet: Towards Minimal Face Detector. Proceedings of the AAAI Conference on Artificial Intelligence, 34(07), 2020, pp. 12015–12022.</p>
+
+
+      <div class="paper-citation-actions">
+        <button class="paper-copy-button" type="button" data-copy-target="paper-bibtex-content" aria-describedby="bibtex-copy-status" hidden>Copy to clipboard</button>
+        <a href="arxiv-2003.07543.bib" download>Download BibTeX</a>
+        <a href="https://doi.org/10.1609/aaai.v34i07.6878">AAAI publisher record</a>
+      </div>
+      <p id="bibtex-copy-status" class="paper-detail-note" role="status" aria-live="polite"></p>
+      <pre class="paper-bibtex"><code id="paper-bibtex-content">@article{arxiv200307543,
+  title     = {{KPNet: Towards Minimal Face Detector}},
+  author    = {Guanglu Song and Yu Liu and Yuhang Zang and Xiaogang Wang and Biao Leng and Qingsheng Yuan},
+  journal   = {Proceedings of the AAAI Conference on Artificial Intelligence},
+  month     = {April},
+  year      = {2020},
+  volume    = {34},
+  number    = {07},
+  publisher = {Association for the Advancement of Artificial Intelligence (AAAI)},
+  pages     = {12015--12022},
+  doi       = {10.1609/aaai.v34i07.6878},
+  url       = {https://doi.org/10.1609/aaai.v34i07.6878}
+}
+</code></pre>
+    </section>
+  <footer class="paper-detail-footer"><a href="../research.html">← All publications</a></footer>
+  </article>
+</main>
+</body>
+</html>

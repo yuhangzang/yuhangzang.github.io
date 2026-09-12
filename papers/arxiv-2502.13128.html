@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!-- Generated from data/publications.json. Edit the shared data and rebuild. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SongGen: A Single Stage Auto-regressive Transformer for Text-to-Song Generation | Yuhang Zang</title>
+<meta name="description" content="SongGen generates controllable vocals and accompaniment in a single autoregressive stage, with either mixed audio output or separate vocal and accompaniment tracks.">
+<link rel="canonical" href="https://yuhangzang.github.io/papers/arxiv-2502.13128.html">
+<meta name="citation_title" content="SongGen: A Single Stage Auto-regressive Transformer for Text-to-Song Generation">
+<meta name="citation_author" content="Zihan Liu">
+<meta name="citation_author" content="Shuangrui Ding">
+<meta name="citation_author" content="Zhixiong Zhang">
+<meta name="citation_author" content="Xiaoyi Dong">
+<meta name="citation_author" content="Pan Zhang">
+<meta name="citation_author" content="Yuhang Zang">
+<meta name="citation_author" content="Yuhang Cao">
+<meta name="citation_author" content="Dahua Lin">
+<meta name="citation_author" content="Jiaqi Wang">
+<meta name="citation_publication_date" content="2025">
+<meta name="citation_arxiv_id" content="2502.13128">
+
+<meta name="citation_pdf_url" content="https://raw.githubusercontent.com/mlresearch/v267/main/assets/liu25m/liu25m.pdf">
+<meta name="citation_conference_title" content="Proceedings of the 42nd International Conference on Machine Learning">
+<meta name="citation_firstpage" content="38351">
+<meta name="citation_lastpage" content="38364">
+<meta name="citation_volume" content="267">
+
+<link rel="alternate" type="application/x-bibtex" href="arxiv-2502.13128.bib">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SongGen: A Single Stage Auto-regressive Transformer for Text-to-Song Generation">
+<meta property="og:description" content="SongGen generates controllable vocals and accompaniment in a single autoregressive stage, with either mixed audio output or separate vocal and accompaniment tracks.">
+<meta property="og:url" content="https://yuhangzang.github.io/papers/arxiv-2502.13128.html">
+<link rel="icon" type="image/svg+xml" href="../imgs/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"></noscript>
+<script>
+try {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+} catch {}
+</script>
+<link rel="stylesheet" href="../main.min.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","@id":"https://yuhangzang.github.io/papers/arxiv-2502.13128.html#paper","name":"SongGen: A Single Stage Auto-regressive Transformer for Text-to-Song Generation","author":[{"@type":"Person","name":"Zihan Liu"},{"@type":"Person","name":"Shuangrui Ding"},{"@type":"Person","name":"Zhixiong Zhang"},{"@type":"Person","name":"Xiaoyi Dong"},{"@type":"Person","name":"Pan Zhang"},{"@type":"Person","name":"Yuhang Zang"},{"@type":"Person","name":"Yuhang Cao"},{"@type":"Person","name":"Dahua Lin"},{"@type":"Person","name":"Jiaqi Wang"}],"datePublished":"2025","url":"https://yuhangzang.github.io/papers/arxiv-2502.13128.html","sameAs":["https://proceedings.mlr.press/v267/liu25m.html","https://arxiv.org/abs/2502.13128"],"identifier":{"@type":"PropertyValue","propertyID":"arXiv","value":"2502.13128"},"encoding":{"@type":"MediaObject","name":"Paper · arXiv v2","contentUrl":"https://arxiv.org/pdf/2502.13128v2","encodingFormat":"application/pdf"},"isPartOf":{"@type":"PublicationVolume","name":"Proceedings of the 42nd International Conference on Machine Learning","volumeNumber":"267","isPartOf":{"@type":"CreativeWork","name":"Proceedings of the 42nd International Conference on Machine Learning"}},"pageStart":38351,"pageEnd":38364,"keywords":["SongGen","Text-to-song generation","Autoregressive audio generation","Controllable music generation","Voice cloning","Vocal synthesis","Dual-track generation","Audio tokenization"],"abstract":"Text-to-song generation, the task of creating vocals and accompaniment from textual inputs, poses significant challenges due to domain complexity and data scarcity. Existing approaches often employ multi-stage generation procedures, leading to cumbersome training and inference pipelines, as well as suboptimal overall generation quality due to error accumulation across stages. In this paper, we propose SongGen, a fully open-source, single-stage auto-regressive transformer designed for controllable song generation. The proposed model facilitates fine-grained control over diverse musical attributes, including lyrics and textual descriptions of instrumentation, genre, mood, and timbre, while also offering an optional three-second reference clip for voice cloning. Within a unified auto-regressive framework, SongGen supports two output modes: mixed mode, which generates a mixture of vocals and accompaniment directly, and dual-track mode, which synthesizes them separately for greater flexibility in downstream applications. We explore diverse token pattern strategies for each mode, leading to notable improvements and valuable insights. Furthermore, we design an automated data preprocessing pipeline with effective quality control. To foster community engagement and future research, we will release our model weights, training code, annotated data, and preprocessing pipeline. The code is available at https://github.com/LiuZH-19/SongGen.","description":"SongGen generates controllable vocals and accompaniment in a single autoregressive stage, with either mixed audio output or separate vocal and accompaniment tracks."}</script>
+<script src="../assets/main.min.js" defer></script>
+</head>
+<body class="paper-page">
+<nav class="main-nav" aria-label="Main navigation">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a href="../index.html" class="brand-link">Yuhang Zang</a>
+      </div>
+      <button class="mobile-menu-toggle" type="button" aria-label="Toggle navigation menu" aria-controls="nav-menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <div class="nav-menu" id="nav-menu" aria-hidden="true">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../research.html" class="nav-link active" aria-current="location">Publications</a>
+        <a href="../index.html#services" class="nav-link">Services</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" title="Toggle dark mode" aria-label="Toggle dark mode" aria-pressed="false">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+<main class="paper-detail">
+  <article class="papers-section">
+    <p class="paper-detail-kicker">ICML · 2025</p>
+    <h1 class="section-heading">SongGen: A Single Stage Auto-regressive Transformer for Text-to-Song Generation</h1>
+    <p class="paper-detail-authors author-names">Zihan Liu, Shuangrui Ding, Zhixiong Zhang, Xiaoyi Dong, Pan Zhang, <strong class="author-highlight">Yuhang Zang</strong>, Yuhang Cao, Dahua Lin, Jiaqi Wang</p>
+
+    <section class="paper-takeaway" aria-labelledby="takeaway-heading">
+      <h2 id="takeaway-heading">Key takeaway</h2>
+      <p>SongGen generates controllable vocals and accompaniment in a single autoregressive stage, with either mixed audio output or separate vocal and accompaniment tracks. <a href="https://arxiv.org/abs/2502.13128v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="abstract-heading">
+      <h2 id="abstract-heading">Abstract</h2>
+      <p>Text-to-song generation, the task of creating vocals and accompaniment from textual inputs, poses significant challenges due to domain complexity and data scarcity. Existing approaches often employ multi-stage generation procedures, leading to cumbersome training and inference pipelines, as well as suboptimal overall generation quality due to error accumulation across stages. In this paper, we propose SongGen, a fully open-source, single-stage auto-regressive transformer designed for controllable song generation. The proposed model facilitates fine-grained control over diverse musical attributes, including lyrics and textual descriptions of instrumentation, genre, mood, and timbre, while also offering an optional three-second reference clip for voice cloning. Within a unified auto-regressive framework, SongGen supports two output modes: mixed mode, which generates a mixture of vocals and accompaniment directly, and dual-track mode, which synthesizes them separately for greater flexibility in downstream applications. We explore diverse token pattern strategies for each mode, leading to notable improvements and valuable insights. Furthermore, we design an automated data preprocessing pipeline with effective quality control. To foster community engagement and future research, we will release our model weights, training code, annotated data, and preprocessing pipeline. The code is available at https://github.com/LiuZH-19/SongGen.</p>
+      <p class="paper-detail-note">Author abstract · <a href="https://arxiv.org/abs/2502.13128v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="publication-heading">
+      <h2 id="publication-heading">Publication</h2>
+      <p>International Conference on Machine Learning (ICML), 2025</p>
+
+    </section>
+    <section aria-labelledby="resources-heading">
+      <h2 id="resources-heading">Paper and resources</h2>
+      <ul class="paper-detail-resources">
+        <li><a href="https://arxiv.org/pdf/2502.13128v2">Paper · arXiv v2 (PDF)</a></li>
+        <li><a href="https://arxiv.org/abs/2502.13128">arXiv:2502.13128</a></li>
+        <li><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=hW23VKIAAAAJ&amp;citation_for_view=hW23VKIAAAAJ:blknAaTinKkC">Google Scholar</a></li>
+        <li><a href="https://github.com/LiuZH-19/SongGen">Code · LiuZH-19/SongGen</a></li>
+      </ul>
+    </section>
+    <section aria-labelledby="topics-heading">
+      <h2 id="topics-heading">Research topics</h2>
+      <p class="paper-keywords">SongGen · Text-to-song generation · Autoregressive audio generation · Controllable music generation · Voice cloning · Vocal synthesis · Dual-track generation · Audio tokenization</p>
+    </section>
+    <section aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Research problem and approach</h2>
+      <p>Multi-stage song generation introduces pipeline complexity and can accumulate errors. SongGen unifies generation in one transformer while supporting lyrics, musical descriptions and an optional three-second reference for voice cloning. <a href="https://arxiv.org/abs/2502.13128v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="contributions-heading">
+      <h2 id="contributions-heading">Main contributions</h2>
+      <ul class="paper-detail-resources"><li>Supports mixed and dual-track generation within a unified autoregressive framework. <a href="https://arxiv.org/abs/2502.13128v2">arXiv abstract · v2</a></li>
+<li>Studies audio token patterns and develops an automated, quality-controlled preprocessing pipeline. <a href="https://arxiv.org/abs/2502.13128v2">arXiv abstract · v2</a></li></ul>
+    </section>
+    <section aria-labelledby="method-comparison-heading">
+      <h2 id="method-comparison-heading">Method comparison</h2>
+      <div class="paper-results-scroll" role="region" aria-label="Method comparison table" tabindex="0">
+        <table class="paper-methods paper-methods-compact">
+          <thead><tr><th scope="col">Approach</th><th scope="col">Key difference</th></tr></thead>
+          <tbody><tr><th scope="row">Multi-stage song generation</th><td>Separates generation stages, increasing pipeline complexity and the potential for error accumulation.</td></tr>
+<tr><th scope="row">SongGen</th><td>Generates mixed audio or separate vocal and accompaniment tracks in a single autoregressive stage.</td></tr></tbody>
+        </table>
+      </div>
+      <p class="paper-detail-note"><a href="https://arxiv.org/abs/2502.13128v2">arXiv abstract · v2</a></p>
+    </section>
+    <section aria-labelledby="results-heading">
+      <h2 id="results-heading">Selected results</h2>
+      <ul class="paper-detail-resources"><li>SongGen’s Mixed-pro configuration obtains FAD 1.71 versus 2.18 for the multi-stage baseline, with CLAP 0.35 versus 0.29. Its phoneme error rate is 40.58 versus 38.80, so improved audio-distribution and text-alignment scores do not imply better lyric accuracy in every comparison. <a href="https://arxiv.org/html/2502.13128v2#S4.T1">Table 1 · song-generation comparison · arXiv v2</a></li>
+<li>Removing curriculum learning increases FAD from 1.71 to 2.35 and phoneme error rate from 40.58 to 55.71. Removing high-quality fine-tuning gives FAD 2.01 and phoneme error rate 43.68. <a href="https://arxiv.org/html/2502.13128v2#S4.T4">Table 4 · training-scheme ablation · arXiv v2</a></li></ul>
+    </section>
+
+    <section aria-labelledby="citation-heading">
+      <h2 id="citation-heading">Cite this paper</h2>
+      <p>Zihan Liu, Shuangrui Ding, Zhixiong Zhang, Xiaoyi Dong, Pan Zhang, Yuhang Zang, Yuhang Cao, Dahua Lin, Jiaqi Wang. SongGen: A Single Stage Auto-regressive Transformer for Text-to-Song Generation. Proceedings of the 42nd International Conference on Machine Learning, 267, 2025, pp. 38351–38364.</p>
+
+
+      <div class="paper-citation-actions">
+        <button class="paper-copy-button" type="button" data-copy-target="paper-bibtex-content" aria-describedby="bibtex-copy-status" hidden>Copy to clipboard</button>
+        <a href="arxiv-2502.13128.bib" download>Download BibTeX</a>
+        <a href="https://proceedings.mlr.press/v267/liu25m.html">ICML 2025 proceedings record</a>
+      </div>
+      <p id="bibtex-copy-status" class="paper-detail-note" role="status" aria-live="polite"></p>
+      <pre class="paper-bibtex"><code id="paper-bibtex-content">@inproceedings{arxiv250213128,
+  title     = {{SongGen: A Single Stage Auto-regressive Transformer for Text-to-Song Generation}},
+  author    = {Zihan Liu and Shuangrui Ding and Zhixiong Zhang and Xiaoyi Dong and Pan Zhang and Yuhang Zang and Yuhang Cao and Dahua Lin and Jiaqi Wang},
+  booktitle = {Proceedings of the 42nd International Conference on Machine Learning},
+  year      = {2025},
+  volume    = {267},
+  publisher = {PMLR},
+  pages     = {38351--38364},
+  url       = {https://proceedings.mlr.press/v267/liu25m.html}
+}
+</code></pre>
+    </section>
+  <footer class="paper-detail-footer"><a href="../research.html">← All publications</a></footer>
+  </article>
+</main>
+</body>
+</html>
