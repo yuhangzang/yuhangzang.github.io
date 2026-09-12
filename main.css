@@ -429,6 +429,25 @@ main {
   box-shadow: none !important;
 }
 
+.profile-links {
+  margin: 10px 0 0;
+  text-align: center;
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.profile-links a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 2px;
+}
+
+.profile-links a:hover {
+  color: var(--primary-color);
+}
+
 /* Enable positioned tooltip inside WeChat tile */
 .social-link.wechat { position: relative; }
 

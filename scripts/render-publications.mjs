@@ -1,12 +1,21 @@
 import assert from 'node:assert/strict';
 import { renderSiteNavigation } from './render-site.mjs';
+import { renderLLMsIndex, renderLLMsFull, renderBibliography } from './render-llms.mjs';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
-import { escapeHTML, paperPath, paperURL, paperSchema, renderPaper, renderBibTeX, bibtexPath, siteURL, structuredJSON, citationRecord } from './render-paper.mjs';
+import { escapeHTML, paperPath, paperURL, paperSchema, renderPaper, renderBibTeX, bibtexPath, siteURL, structuredJSON, citationRecord, personSchema, personID, authorName, authorProfiles } from './render-paper.mjs';
 const external = 'target="_blank" rel="noopener noreferrer"';
+const isDate = value => /^\d{4}-\d{2}-\d{2}$/.test(value) && new Date(value).toISOString().slice(0, 10) === value;
 
 export function validatePublications(data) {
     assert.equal(data.schemaVersion, 1, 'Unsupported publication schema');
     assert(data.papers.length, 'Publication data is empty');
+    const author = data.author;
+    assert(author && author.name === authorName && author.givenName && author.familyName && author.description && author.jobTitle, 'Incomplete author profile');
+    assert(Array.isArray(author.alternateName) && Array.isArray(author.knowsAbout) && author.knowsAbout.length && Array.isArray(author.alumniOf), 'Incomplete author profile');
+    assert(author.affiliation?.name && author.affiliation.url, 'Missing author affiliation');
+    assert(/^\d{4}-\d{4}-\d{4}-\d{3}[\dX]$/.test(author.identifiers?.orcid), 'Invalid ORCID');
+    for (const profile of authorProfiles(author)) assert.equal(new URL(profile.url).protocol, 'https:', `Invalid profile URL: ${profile.label}`);
+    for (const url of [author.image, author.affiliation.url, ...author.alumniOf.map(school => school.url)]) assert(['http:', 'https:'].includes(new URL(url).protocol), `Invalid author URL: ${url}`);
     const ids = new Set();
     const paths = new Set();
     for (const paper of data.papers) {
@@ -19,6 +28,13 @@ export function validatePublications(data) {
         assert(paper.authors.every(author => author.name && !/et al\./i.test(author.name)), `Incomplete authors: ${paper.id}`);
         assert(Number.isInteger(paper.publication.year) && paper.publication.citationText && paper.publication.venueGroup, `Missing publication information: ${paper.id}`);
         assert(paper.topics.length, `Missing topic: ${paper.id}`);
+        if (paper.dates) {
+            assert(paper.identifiers.arxiv, `Dates without an arXiv record: ${paper.id}`);
+            assert(isDate(paper.dates.arxivFirstPosted) && isDate(paper.dates.arxivLastUpdated), `Invalid arXiv dates: ${paper.id}`);
+            assert(paper.dates.arxivFirstPosted <= paper.dates.arxivLastUpdated, `arXiv dates out of order: ${paper.id}`);
+        } else {
+            assert(!paper.identifiers.arxiv, `Missing arXiv dates: ${paper.id}`);
+        }
         if (paper.keywords) {
             assert(Array.isArray(paper.keywords) && paper.keywords.length && paper.keywords.every(term => typeof term === 'string' && term.trim()), `Invalid keywords: ${paper.id}`);
             assert.equal(new Set(paper.keywords.map(term => term.toLowerCase())).size, paper.keywords.length, `Duplicate keywords: ${paper.id}`);
@@ -106,7 +122,7 @@ export function validatePublications(data) {
 
 function renderAuthor(author) {
     let name = escapeHTML(author.name);
-    if (author.name === 'Yuhang Zang') name = `<span class="author-highlight">${name}</span>`;
+    if (author.name === authorName) name = `<span class="author-highlight">${name}</span>`;
     if (author.corresponding) name += '<span class="author-annotation corresponding"><i class="fa fa-envelope"></i></span>';
     return name;
 }
@@ -174,6 +190,20 @@ function replacePaperSection(html, cards) {
     return html.replace(marker, () => `<!-- BEGIN GENERATED PAPERS -->\n${cards}\n<!-- END GENERATED PAPERS -->`);
 }
 
+// Scholarly profile links are visible page text, not only JSON-LD, so readers that skip <head> still see them.
+function renderProfileLinks(author) {
+    const scholarly = ['ORCID', 'Google Scholar', 'DBLP', 'OpenAlex', 'Semantic Scholar'];
+    const links = authorProfiles(author).filter(profile => scholarly.includes(profile.label))
+        .map(profile => `<a href="${escapeHTML(profile.url)}" target="_blank" rel="me noopener noreferrer">${escapeHTML(profile.label)}</a>`);
+    return `<p class="profile-links">Profiles: ${links.join(' · ')}</p>`;
+}
+
+function replaceProfileLinks(html, author) {
+    const marker = /<!-- BEGIN GENERATED PROFILES -->[\s\S]*?<!-- END GENERATED PROFILES -->/g;
+    assert.equal([...html.matchAll(marker)].length, 1, 'Expected exactly one generated profile section');
+    return html.replace(marker, () => `<!-- BEGIN GENERATED PROFILES -->\n                  ${renderProfileLinks(author)}\n                  <!-- END GENERATED PROFILES -->`);
+}
+
 function replaceNavigation(html, active) {
     const navigation = /<nav class="main-nav"[^>]*>[\s\S]*?<\/nav>/g;
     assert.equal([...html.matchAll(navigation)].length, 1, 'Expected exactly one main navigation');
@@ -196,26 +226,36 @@ export async function renderPublicationPages(root = new URL('../', import.meta.u
         numberOfItems: sections.homepageItems.length,
         itemListElement: sections.homepageItems
     };
-    const homeOutput = replacePaperSection(replaceNavigation(home, 'home'), sections.homepage).replace(limitPattern,
+    const personPattern = /<script id="person-schema" type="application\/ld\+json">[\s\S]*?<\/script>/g;
+    assert.equal([...home.matchAll(personPattern)].length, 1, 'Expected exactly one person schema');
+    const homeOutput = replacePaperSection(replaceProfileLinks(replaceNavigation(home, 'home'), data.author), sections.homepage).replace(limitPattern,
         (_, opening, closing) => `${opening}${data.homepage.defaultVisibleCount}${closing}`)
+        .replace(personPattern, () => `<script id="person-schema" type="application/ld+json">\n${structuredJSON({ '@context': 'https://schema.org', ...personSchema(data.author) })}\n</script>`)
         .replace(homeSchemaPattern, () => `<script id="selected-publications-schema" type="application/ld+json">\n${structuredJSON(homeSchema)}\n</script>`);
     const schemaPattern = /<script id="publications-schema" type="application\/ld\+json">([\s\S]*?)<\/script>/g;
     const schemaMatches = [...research.matchAll(schemaPattern)];
     assert.equal(schemaMatches.length, 1, 'Expected exactly one publications schema');
     const schema = JSON.parse(schemaMatches[0][1]);
+    schema.author = { '@type': 'Person', '@id': personID, name: data.author.name, url: `${siteURL}/` };
     schema.mainEntity = { '@type': 'ItemList', itemListElement: sections.items };
     // Escape '<' so a title cannot terminate the embedded JSON-LD script.
     const researchOutput = replacePaperSection(replaceNavigation(research, 'publications'), sections.research).replace(schemaPattern,
         () => `<script id="publications-schema" type="application/ld+json">\n${structuredJSON(schema)}\n</script>`);
-    const pages = data.papers.map(paper => ({ path: paperPath(paper).slice(1), html: renderPaper(paper) }));
+    const pages = data.papers.map(paper => ({ path: paperPath(paper).slice(1), html: renderPaper(paper, { author: data.author }) }));
     for (const paper of data.papers.filter(paper => paper.citation)) {
         pages.push({ path: bibtexPath(paper).slice(1), html: renderBibTeX(paper) });
     }
-    const urls = [`${siteURL}/`, `${siteURL}/research.html`, ...data.papers.map(paperURL)];
-    const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(url => `  <url><loc>${escapeHTML(url)}</loc></url>`).join('\n')}\n</urlset>\n`;
+    // Sitemap dates follow the content verification date, so a rebuild without data changes is byte-identical.
+    const lastmod = paper => paper.content?.verifiedOn;
+    const latest = data.papers.map(lastmod).filter(Boolean).sort().at(-1);
+    const entries = [[`${siteURL}/`, latest], [`${siteURL}/research.html`, latest], ...data.papers.map(paper => [paperURL(paper), lastmod(paper)])];
+    const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${entries.map(([url, date]) => `  <url><loc>${escapeHTML(url)}</loc>${date ? `<lastmod>${date}</lastmod>` : ''}</url>`).join('\n')}\n</urlset>\n`;
     await mkdir(new URL('papers/', root), { recursive: true });
     for (const page of pages) await writeFile(new URL(page.path, root), page.html);
     await writeFile(new URL('index.html', root), homeOutput);
     await writeFile(new URL('research.html', root), researchOutput);
     await writeFile(new URL('sitemap.xml', root), sitemap);
+    await writeFile(new URL('llms.txt', root), renderLLMsIndex(data));
+    await writeFile(new URL('llms-full.txt', root), renderLLMsFull(data));
+    await writeFile(new URL('publications.bib', root), renderBibliography(data));
 }

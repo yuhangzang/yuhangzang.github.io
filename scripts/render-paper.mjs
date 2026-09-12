@@ -1,6 +1,50 @@
 import { renderSiteNavigation } from './render-site.mjs';
 
 export const siteURL = 'https://yuhangzang.github.io';
+// One stable node for the site author so every paper's author entry resolves to the same Person.
+export const personID = `${siteURL}/#person`;
+export const authorName = 'Yuhang Zang';
+
+// Profile URLs derived from the identifiers in data/publications.json.
+export function authorProfiles(author) {
+    const ids = author.identifiers;
+    return [
+        ['ORCID', ids.orcid, `https://orcid.org/${ids.orcid}`],
+        ['Google Scholar', ids.googleScholar, `https://scholar.google.com/citations?user=${ids.googleScholar}`],
+        ['DBLP', ids.dblp, `https://dblp.org/pid/${ids.dblp}`],
+        ['OpenAlex', ids.openalex, `https://openalex.org/${ids.openalex}`],
+        ['Semantic Scholar', ids.semanticScholar, `https://www.semanticscholar.org/author/${ids.semanticScholar}`],
+        ['GitHub', ids.github, `https://github.com/${ids.github}`],
+        ['Hugging Face', ids.huggingface, `https://huggingface.co/${ids.huggingface}`],
+        ['X (Twitter)', ids.twitter, `https://twitter.com/${ids.twitter}`],
+        ['LinkedIn', ids.linkedin, `https://www.linkedin.com/in/${ids.linkedin}/`]
+    ].filter(([, value]) => value).map(([label, value, url]) => ({ label, value, url }));
+}
+
+export function personSchema(author) {
+    const profiles = authorProfiles(author);
+    const registry = { ORCID: 'ORCID', DBLP: 'DBLP', OpenAlex: 'OpenAlex', 'Semantic Scholar': 'Semantic Scholar', 'Google Scholar': 'Google Scholar' };
+    return {
+        '@type': 'Person',
+        '@id': personID,
+        name: author.name,
+        givenName: author.givenName,
+        familyName: author.familyName,
+        alternateName: author.alternateName,
+        jobTitle: author.jobTitle,
+        description: author.description,
+        url: `${siteURL}/`,
+        image: author.image,
+        affiliation: { '@type': 'Organization', name: author.affiliation.name, url: author.affiliation.url },
+        alumniOf: author.alumniOf.map(school => ({ '@type': 'EducationalOrganization', name: school.name, ...(school.alternateName ? { alternateName: school.alternateName } : {}), url: school.url })),
+        identifier: profiles.filter(profile => registry[profile.label]).map(profile => ({ '@type': 'PropertyValue', propertyID: registry[profile.label], value: profile.label === 'ORCID' ? profile.url : profile.value, url: profile.url })),
+        sameAs: profiles.map(profile => profile.url),
+        knowsAbout: author.knowsAbout,
+        mainEntityOfPage: `${siteURL}/`
+    };
+}
+
+const authorEntity = author => ({ '@type': 'Person', ...(author.name === authorName ? { '@id': personID } : {}), name: author.name });
 
 export const escapeHTML = value => String(value).replace(/[&<>"']/g, character => ({
     '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
@@ -43,8 +87,10 @@ export function paperSchema(paper, includeContent = false) {
         '@id': `${paperURL(paper)}#paper`,
         name: citation.title,
         ...(citation.title !== paper.title ? { alternateName: paper.title } : {}),
-        author: citation.authors.map(author => ({ '@type': 'Person', name: author.name })),
-        datePublished: String(citationYear(paper)),
+        author: citation.authors.map(authorEntity),
+        // A preprint is dated by its first arXiv posting; a published record keeps the venue year.
+        datePublished: citation.status === 'preprint' && paper.dates ? paper.dates.arxivFirstPosted : String(citationYear(paper)),
+        ...(paper.dates ? { dateCreated: paper.dates.arxivFirstPosted, dateModified: paper.dates.arxivLastUpdated } : {}),
         url: paperURL(paper),
         ...identity,
         ...(fullText?.encodingFormat === 'application/pdf' ? {
@@ -172,15 +218,21 @@ function renderEvidence(content) {
     </section>` : ''}`;
 }
 
-function renderCitation(paper) {
+// Plain-text reference in the form shown under "Cite this paper".
+export function formatCitation(paper) {
     if (!paper.citation) return '';
-    const venue = citationVenue(paper);
     const citation = citationRecord(paper);
     const pages = citation.firstPage ? `, pp. ${citation.firstPage}–${citation.lastPage}` : '';
     const volume = citation.volume ? `, ${citation.volume}${citation.number ? `(${citation.number})` : ''}` : '';
+    return `${citation.authors.map(author => author.name).join(', ')}. ${citation.title}. ${citationVenue(paper)}${volume}, ${citationYear(paper)}${pages}.`;
+}
+
+function renderCitation(paper) {
+    if (!paper.citation) return '';
+    const citation = citationRecord(paper);
     return `<section aria-labelledby="citation-heading">
       <h2 id="citation-heading">Cite this paper</h2>
-      <p>${escapeHTML(citation.authors.map(author => author.name).join(', '))}. ${escapeHTML(citation.title)}. ${escapeHTML(venue)}${escapeHTML(volume)}, ${citationYear(paper)}${pages}.</p>
+      <p>${escapeHTML(formatCitation(paper))}</p>
       ${paper.citation.authors ? '<p class="paper-detail-note">This citation uses the author list of the published version.</p>' : ''}
       ${citation.type === 'inproceedings' && citation.year !== paper.publication.year ? `<p class="paper-detail-note">The conference took place in ${paper.publication.year}; the proceedings volume was published in ${citation.year}.</p>` : ''}
       <div class="paper-citation-actions">
@@ -204,10 +256,11 @@ function resourceLabel(link, paper) {
     }
 }
 
-export function renderPaper(paper) {
+export function renderPaper(paper, options = {}) {
     const title = escapeHTML(paper.title);
     const citation = citationRecord(paper);
     const meta = (name, content) => `<meta name="${name}" content="${escapeHTML(content)}">`;
+    const orcid = options.author?.identifiers?.orcid;
     const description = paper.content?.takeaway?.text || paper.content?.summary.text || `${paper.title}. ${paper.publication.citationText}. Authors, publication details, and research resources.`;
     const corresponding = paper.authors.some(author => author.corresponding);
     const envelope = '<svg class="paper-envelope" viewBox="0 0 16 12" aria-hidden="true"><path fill="currentColor" d="M1 0h14a1 1 0 0 1 1 1v1L8 7 0 2V1a1 1 0 0 1 1-1ZM0 4l8 5 8-5v7a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1Z"/></svg>';
@@ -221,8 +274,9 @@ export function renderPaper(paper) {
 ${meta('description', description)}
 <link rel="canonical" href="${paperURL(paper)}">
 ${meta('citation_title', citation.title)}
-${citation.authors.map(author => meta('citation_author', author.name)).join('\n')}
+${citation.authors.map(author => meta('citation_author', author.name) + (orcid && author.name === authorName ? `\n${meta('citation_author_orcid', `https://orcid.org/${orcid}`)}` : '')).join('\n')}
 ${meta('citation_publication_date', citationYear(paper))}
+${paper.dates ? meta('citation_online_date', paper.dates.arxivFirstPosted.replaceAll('-', '/')) : ''}
 ${paper.identifiers.arxiv ? meta('citation_arxiv_id', paper.identifiers.arxiv) : ''}
 ${paper.identifiers.doi ? meta('citation_doi', paper.identifiers.doi) : ''}
 ${citation.pdfURL ? meta('citation_pdf_url', citation.pdfURL) : paper.content?.sources.paper?.encodingFormat === 'application/pdf' ? meta('citation_pdf_url', paper.content.sources.paper.url) : ''}
@@ -231,6 +285,7 @@ ${citation.firstPage ? `${meta('citation_firstpage', citation.firstPage)}\n${met
 ${citation.volume ? meta('citation_volume', citation.volume) : ''}
 ${citation.number ? meta('citation_issue', citation.number) : ''}
 ${paper.citation ? `<link rel="alternate" type="application/x-bibtex" href="${bibtexFile(paper)}">` : ''}
+<link rel="alternate" type="application/json" href="../data/publications.json" title="All publications (JSON)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="${title}">
 <meta property="og:description" content="${escapeHTML(description)}">

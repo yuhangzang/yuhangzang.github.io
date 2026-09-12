@@ -14,6 +14,52 @@
     "citationPolicy": "Prefer verified proceedings or journal records. Citation titles and author lists follow the published version when they differ from the expanded preprint. Conference display years identify the event; BibTeX years follow the publisher. Retain preprint citations when no formal record was verified.",
     "evidencePolicy": "Selected results are checked against the linked full-text revision, with explicit experimental conditions and table, section or PDF-page locators."
   },
+  "author": {
+    "name": "Yuhang Zang",
+    "givenName": "Yuhang",
+    "familyName": "Zang",
+    "alternateName": [
+      "臧宇航",
+      "Zang Yuhang"
+    ],
+    "jobTitle": "Researcher",
+    "description": "Young researcher at Shanghai AI Laboratory focusing on post-training for multimodal LLMs and vision-language pre-training. Area Chair for NeurIPS, ICLR, CVPR, AAAI, and COLM.",
+    "image": "https://yuhangzang.github.io/imgs/yuhang_zang.jpg",
+    "affiliation": {
+      "name": "Shanghai AI Laboratory",
+      "url": "https://www.shlab.org.cn/"
+    },
+    "alumniOf": [
+      {
+        "name": "Nanyang Technological University",
+        "url": "https://www.ntu.edu.sg/"
+      },
+      {
+        "name": "University of Electronic Science and Technology of China",
+        "alternateName": "UESTC",
+        "url": "https://en.uestc.edu.cn/"
+      }
+    ],
+    "identifiers": {
+      "orcid": "0000-0003-1110-5062",
+      "googleScholar": "hW23VKIAAAAJ",
+      "dblp": "230/4433",
+      "openalex": "A5005200501",
+      "semanticScholar": "12862495",
+      "github": "yuhangzang",
+      "huggingface": "yuhangzang",
+      "twitter": "yuhangzang",
+      "linkedin": "yuhang-zang"
+    },
+    "knowsAbout": [
+      "Multimodal Large Language Models",
+      "Vision-Language Models",
+      "Reinforcement Learning from Human Feedback",
+      "Machine Learning",
+      "Computer Vision",
+      "Artificial Intelligence"
+    ]
+  },
   "homepage": {
     "defaultVisibleCount": 5,
     "selectedPaperIds": [
@@ -66,6 +112,10 @@
         "year": 2026,
         "venueGroup": "EMNLP",
         "citationText": "Empirical Methods in Natural Language Processing (EMNLP), 2026"
+      },
+      "dates": {
+        "arxivFirstPosted": "2026-06-17",
+        "arxivLastUpdated": "2026-06-17"
       },
       "topics": [
         "Multimodal Large Language Models"
@@ -238,6 +288,10 @@
         "year": 2026,
         "venueGroup": "EMNLP",
         "citationText": "Empirical Methods in Natural Language Processing (EMNLP), 2026"
+      },
+      "dates": {
+        "arxivFirstPosted": "2026-06-02",
+        "arxivLastUpdated": "2026-08-26"
       },
       "topics": [
         "Multimodal Large Language Models"
@@ -418,6 +472,10 @@
         "venueGroup": "EMNLP",
         "citationText": "Findings of Empirical Methods in Natural Language Processing (Findings of EMNLP), 2026"
       },
+      "dates": {
+        "arxivFirstPosted": "2026-02-09",
+        "arxivLastUpdated": "2026-02-09"
+      },
       "topics": [
         "Multimodal Large Language Models"
       ],
@@ -579,6 +637,10 @@
         "year": 2026,
         "venueGroup": "EMNLP",
         "citationText": "Findings of Empirical Methods in Natural Language Processing (Findings of EMNLP), 2026"
+      },
+      "dates": {
+        "arxivFirstPosted": "2026-05-27",
+        "arxivLastUpdated": "2026-08-31"
       },
       "topics": [
         "Multimodal Large Language Models"
@@ -752,6 +814,10 @@
         "venueGroup": "EMNLP",
         "citationText": "Findings of Empirical Methods in Natural Language Processing (Findings of EMNLP), 2026"
       },
+      "dates": {
+        "arxivFirstPosted": "2026-01-23",
+        "arxivLastUpdated": "2026-08-31"
+      },
       "topics": [
         "Multimodal Large Language Models"
       ],
@@ -916,6 +982,10 @@
         "year": 2026,
         "venueGroup": "TMLR",
         "citationText": "Transactions on Machine Learning Research (TMLR), 2026"
+      },
+      "dates": {
+        "arxivFirstPosted": "2025-05-20",
+        "arxivLastUpdated": "2025-10-26"
       },
       "topics": [
         "Multimodal Large Language Models"
@@ -1096,6 +1166,10 @@
         "year": 2026,
         "venueGroup": "ECCV",
         "citationText": "European Conference on Computer Vision (ECCV), 2026"
+      },
+      "dates": {
+        "arxivFirstPosted": "2026-03-12",
+        "arxivLastUpdated": "2026-06-18"
       },
       "topics": [
         "AIGC"
@@ -1287,8 +1361,8 @@
           {
             "setting": "Task-specific training · Maze, scale 32",
             "metric": "Accuracy (%)",
-            "baseline": 65.0,
-            "result": 90.0,
+            "baseline": 65,
+            "result": 90,
             "source": "html",
             "fragment": "S5.T1",
             "locator": "Table 1"
@@ -1296,8 +1370,8 @@
           {
             "setting": "Task-specific training · Sudoku, scale 35",
             "metric": "Accuracy (%)",
-            "baseline": 55.0,
-            "result": 95.0,
+            "baseline": 55,
+            "result": 95,
             "source": "html",
             "fragment": "S5.T1",
             "locator": "Table 1"
@@ -1347,6 +1421,10 @@
         "year": 2026,
         "venueGroup": "ECCV",
         "citationText": "European Conference on Computer Vision (ECCV), 2026"
+      },
+      "dates": {
+        "arxivFirstPosted": "2026-03-13",
+        "arxivLastUpdated": "2026-03-13"
       },
       "topics": [
         "AIGC"
@@ -1675,6 +1753,10 @@
         "year": 2026,
         "venueGroup": "ACL",
         "citationText": "Association for Computational Linguistics (ACL), Industry Track, 2026"
+      },
+      "dates": {
+        "arxivFirstPosted": "2025-09-26",
+        "arxivLastUpdated": "2025-09-29"
       },
       "topics": [
         "Multimodal Large Language Models"
@@ -2037,6 +2119,10 @@
         "venueGroup": "ICML",
         "citationText": "International Conference on Machine Learning (ICML), 2026"
       },
+      "dates": {
+        "arxivFirstPosted": "2025-08-06",
+        "arxivLastUpdated": "2025-08-12"
+      },
       "topics": [
         "Multimodal Large Language Models"
       ],
@@ -2229,6 +2315,10 @@
         "venueGroup": "CVPR",
         "citationText": "IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2026"
       },
+      "dates": {
+        "arxivFirstPosted": "2025-12-04",
+        "arxivLastUpdated": "2025-12-04"
+      },
       "topics": [
         "Multimodal Large Language Models"
       ],
@@ -2405,6 +2495,10 @@
         "year": 2026,
         "venueGroup": "CVPR",
         "citationText": "IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2026"
+      },
+      "dates": {
+        "arxivFirstPosted": "2025-11-19",
+        "arxivLastUpdated": "2025-11-26"
       },
       "topics": [
         "Multimodal Large Language Models"
@@ -2589,6 +2683,10 @@
         "venueGroup": "CVPR",
         "citationText": "IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2026"
       },
+      "dates": {
+        "arxivFirstPosted": "2025-10-02",
+        "arxivLastUpdated": "2025-11-22"
+      },
       "topics": [
         "AIGC"
       ],
@@ -2771,6 +2869,10 @@
         "year": 2026,
         "venueGroup": "CVPR",
         "citationText": "IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2026"
+      },
+      "dates": {
+        "arxivFirstPosted": "2025-10-31",
+        "arxivLastUpdated": "2025-11-25"
       },
       "topics": [
         "Multimodal Large Language Models"
@@ -2974,6 +3076,10 @@
         "venueGroup": "CVPR",
         "citationText": "IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2026"
       },
+      "dates": {
+        "arxivFirstPosted": "2025-12-01",
+        "arxivLastUpdated": "2026-03-24"
+      },
       "topics": [
         "Multimodal Large Language Models"
       ],
@@ -3145,6 +3251,10 @@
         "year": 2026,
         "venueGroup": "ICLR",
         "citationText": "International Conference on Learning Representations (ICLR), 2026"
+      },
+      "dates": {
+        "arxivFirstPosted": "2025-08-01",
+        "arxivLastUpdated": "2025-08-18"
       },
       "topics": [
         "AIGC"
@@ -3320,6 +3430,10 @@
         "year": 2026,
         "venueGroup": "ICLR",
         "citationText": "International Conference on Learning Representations (ICLR), 2026"
+      },
+      "dates": {
+        "arxivFirstPosted": "2025-08-24",
+        "arxivLastUpdated": "2025-10-02"
       },
       "topics": [
         "AIGC"
@@ -3505,6 +3619,10 @@
         "venueGroup": "ICLR",
         "citationText": "International Conference on Learning Representations (ICLR), 2026"
       },
+      "dates": {
+        "arxivFirstPosted": "2025-07-21",
+        "arxivLastUpdated": "2026-02-28"
+      },
       "topics": [
         "Image Understanding"
       ],
@@ -3684,6 +3802,10 @@
         "year": 2026,
         "venueGroup": "ICLR",
         "citationText": "International Conference on Learning Representations (ICLR), 2026"
+      },
+      "dates": {
+        "arxivFirstPosted": "2025-09-24",
+        "arxivLastUpdated": "2025-09-25"
       },
       "topics": [
         "Multimodal Large Language Models"
@@ -3877,6 +3999,10 @@
         "year": 2026,
         "venueGroup": "ICLR",
         "citationText": "International Conference on Learning Representations (ICLR), 2026"
+      },
+      "dates": {
+        "arxivFirstPosted": "2025-06-24",
+        "arxivLastUpdated": "2025-06-24"
       },
       "topics": [
         "Multimodal Large Language Models"
@@ -4074,6 +4200,10 @@
         "venueGroup": "ICLR",
         "citationText": "International Conference on Learning Representations (ICLR), 2026"
       },
+      "dates": {
+        "arxivFirstPosted": "2025-10-28",
+        "arxivLastUpdated": "2025-11-28"
+      },
       "topics": [
         "Multimodal Large Language Models"
       ],
@@ -4245,6 +4375,10 @@
         "year": 2026,
         "venueGroup": "ICLR",
         "citationText": "International Conference on Learning Representations (ICLR), 2026"
+      },
+      "dates": {
+        "arxivFirstPosted": "2026-02-18",
+        "arxivLastUpdated": "2026-02-18"
       },
       "topics": [
         "Image Understanding"
@@ -4420,6 +4554,10 @@
         "year": 2026,
         "venueGroup": "ICLR",
         "citationText": "International Conference on Learning Representations (ICLR), 2026"
+      },
+      "dates": {
+        "arxivFirstPosted": "2025-09-26",
+        "arxivLastUpdated": "2025-09-26"
       },
       "topics": [
         "Multimodal Large Language Models"
@@ -4604,6 +4742,10 @@
         "venueGroup": "TIP",
         "citationText": "IEEE Transactions on Image Processing (TIP), 2026"
       },
+      "dates": {
+        "arxivFirstPosted": "2024-03-20",
+        "arxivLastUpdated": "2026-05-15"
+      },
       "topics": [
         "Multimodal Large Language Models"
       ],
@@ -4787,6 +4929,10 @@
         "year": 2025,
         "venueGroup": "NeurIPS",
         "citationText": "Neural Information Processing Systems (NeurIPS), 2025"
+      },
+      "dates": {
+        "arxivFirstPosted": "2025-05-06",
+        "arxivLastUpdated": "2025-10-29"
       },
       "topics": [
         "Reinforcement Learning from Human Feedback"
@@ -4985,6 +5131,10 @@
         "venueGroup": "NeurIPS",
         "citationText": "Neural Information Processing Systems (NeurIPS), 2025"
       },
+      "dates": {
+        "arxivFirstPosted": "2025-04-08",
+        "arxivLastUpdated": "2025-05-16"
+      },
       "topics": [
         "AIGC"
       ],
@@ -5166,6 +5316,10 @@
         "year": 2025,
         "venueGroup": "ICCV",
         "citationText": "IEEE International Conference on Computer Vision (ICCV), 2025"
+      },
+      "dates": {
+        "arxivFirstPosted": "2025-03-03",
+        "arxivLastUpdated": "2025-03-03"
       },
       "topics": [
         "Reinforcement Learning from Human Feedback"
@@ -5496,6 +5650,10 @@
         "venueGroup": "ICCV",
         "citationText": "IEEE International Conference on Computer Vision (ICCV), 2025"
       },
+      "dates": {
+        "arxivFirstPosted": "2025-04-10",
+        "arxivLastUpdated": "2025-04-27"
+      },
       "topics": [
         "Multimodal Large Language Models"
       ],
@@ -5682,6 +5840,10 @@
         "year": 2025,
         "venueGroup": "ICCV",
         "citationText": "IEEE International Conference on Computer Vision (ICCV), 2025"
+      },
+      "dates": {
+        "arxivFirstPosted": "2024-12-02",
+        "arxivLastUpdated": "2025-08-27"
       },
       "topics": [
         "AIGC"
@@ -5891,6 +6053,10 @@
         "venueGroup": "ICCV",
         "citationText": "IEEE International Conference on Computer Vision (ICCV), 2025"
       },
+      "dates": {
+        "arxivFirstPosted": "2024-05-31",
+        "arxivLastUpdated": "2024-10-03"
+      },
       "topics": [
         "AIGC"
       ],
@@ -6059,6 +6225,10 @@
         "year": 2025,
         "venueGroup": "ICCV",
         "citationText": "IEEE International Conference on Computer Vision (ICCV), 2025"
+      },
+      "dates": {
+        "arxivFirstPosted": "2025-07-03",
+        "arxivLastUpdated": "2025-07-03"
       },
       "topics": [
         "Multimodal Large Language Models"
@@ -6255,6 +6425,10 @@
         "venueGroup": "ICCV",
         "citationText": "IEEE International Conference on Computer Vision (ICCV), 2025"
       },
+      "dates": {
+        "arxivFirstPosted": "2025-02-12",
+        "arxivLastUpdated": "2025-03-12"
+      },
       "topics": [
         "AIGC"
       ],
@@ -6435,6 +6609,10 @@
         "year": 2025,
         "venueGroup": "ICCV",
         "citationText": "IEEE International Conference on Computer Vision (ICCV), 2025"
+      },
+      "dates": {
+        "arxivFirstPosted": "2024-10-09",
+        "arxivLastUpdated": "2024-10-16"
       },
       "topics": [
         "Multimodal Large Language Models"
@@ -6644,6 +6822,10 @@
         "venueGroup": "ICCV",
         "citationText": "IEEE International Conference on Computer Vision (ICCV), 2025"
       },
+      "dates": {
+        "arxivFirstPosted": "2024-10-21",
+        "arxivLastUpdated": "2025-07-29"
+      },
       "topics": [
         "Image Understanding"
       ],
@@ -6836,6 +7018,10 @@
         "year": 2025,
         "venueGroup": "ACL",
         "citationText": "Findings of the Association for Computational Linguistics (ACL), 2025"
+      },
+      "dates": {
+        "arxivFirstPosted": "2025-01-21",
+        "arxivLastUpdated": "2025-05-20"
       },
       "topics": [
         "Reinforcement Learning from Human Feedback"
@@ -7044,6 +7230,10 @@
         "venueGroup": "ACL",
         "citationText": "Findings of the Association for Computational Linguistics (ACL), 2025"
       },
+      "dates": {
+        "arxivFirstPosted": "2025-06-05",
+        "arxivLastUpdated": "2025-06-05"
+      },
       "topics": [
         "Multimodal Large Language Models"
       ],
@@ -7234,6 +7424,10 @@
         "venueGroup": "ICML",
         "citationText": "International Conference on Machine Learning (ICML), 2025"
       },
+      "dates": {
+        "arxivFirstPosted": "2025-02-07",
+        "arxivLastUpdated": "2025-05-30"
+      },
       "topics": [
         "Multimodal Large Language Models"
       ],
@@ -7419,6 +7613,10 @@
         "venueGroup": "ICML",
         "citationText": "International Conference on Machine Learning (ICML), 2025"
       },
+      "dates": {
+        "arxivFirstPosted": "2025-02-18",
+        "arxivLastUpdated": "2025-05-30"
+      },
       "topics": [
         "AIGC"
       ],
@@ -7600,6 +7798,10 @@
         "year": 2025,
         "venueGroup": "CVPR",
         "citationText": "IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2025"
+      },
+      "dates": {
+        "arxivFirstPosted": "2024-10-08",
+        "arxivLastUpdated": "2025-02-27"
       },
       "topics": [
         "AIGC"
@@ -7799,6 +8001,10 @@
         "year": 2025,
         "venueGroup": "CVPR",
         "citationText": "IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2025"
+      },
+      "dates": {
+        "arxivFirstPosted": "2025-01-09",
+        "arxivLastUpdated": "2025-03-27"
       },
       "topics": [
         "Multimodal Large Language Models"
@@ -8025,6 +8231,10 @@
         "venueGroup": "CVPR",
         "citationText": "IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2025"
       },
+      "dates": {
+        "arxivFirstPosted": "2025-01-06",
+        "arxivLastUpdated": "2025-01-06"
+      },
       "topics": [
         "Multimodal Large Language Models"
       ],
@@ -8212,6 +8422,10 @@
         "venueGroup": "CVPR",
         "citationText": "IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2025"
       },
+      "dates": {
+        "arxivFirstPosted": "2024-10-22",
+        "arxivLastUpdated": "2025-02-27"
+      },
       "topics": [
         "Multimodal Large Language Models"
       ],
@@ -8390,6 +8604,10 @@
         "year": 2025,
         "venueGroup": "CVPR",
         "citationText": "IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2025"
+      },
+      "dates": {
+        "arxivFirstPosted": "2024-07-02",
+        "arxivLastUpdated": "2025-03-12"
       },
       "topics": [
         "AIGC"
@@ -8577,6 +8795,10 @@
         "venueGroup": "ICLR",
         "citationText": "International Conference on Learning Representations (ICLR), 2025"
       },
+      "dates": {
+        "arxivFirstPosted": "2024-10-23",
+        "arxivLastUpdated": "2024-10-23"
+      },
       "topics": [
         "Reinforcement Learning from Human Feedback"
       ],
@@ -8761,6 +8983,10 @@
         "year": 2025,
         "venueGroup": "ICLR",
         "citationText": "International Conference on Learning Representations (ICLR), 2025"
+      },
+      "dates": {
+        "arxivFirstPosted": "2024-06-08",
+        "arxivLastUpdated": "2024-10-22"
       },
       "topics": [
         "AIGC"
@@ -9052,6 +9278,10 @@
         "venueGroup": "ACM MM",
         "citationText": "ACM Multimedia (ACM MM), 2024 (Open Source Software Competition)"
       },
+      "dates": {
+        "arxivFirstPosted": "2024-07-16",
+        "arxivLastUpdated": "2026-07-06"
+      },
       "topics": [
         "Multimodal Large Language Models"
       ],
@@ -9297,6 +9527,10 @@
         "venueGroup": "NeurIPS",
         "citationText": "Neural Information Processing Systems (NeurIPS), 2024 (Datasets and Benchmarks Track)"
       },
+      "dates": {
+        "arxivFirstPosted": "2024-07-01",
+        "arxivLastUpdated": "2024-11-12"
+      },
       "topics": [
         "Multimodal Large Language Models"
       ],
@@ -9501,6 +9735,10 @@
         "year": 2024,
         "venueGroup": "NeurIPS",
         "citationText": "Neural Information Processing Systems (NeurIPS), 2024 (Datasets and Benchmarks Track)"
+      },
+      "dates": {
+        "arxivFirstPosted": "2024-06-17",
+        "arxivLastUpdated": "2024-10-29"
       },
       "topics": [
         "Multimodal Large Language Models"
@@ -9713,6 +9951,10 @@
         "venueGroup": "NeurIPS",
         "citationText": "Neural Information Processing Systems (NeurIPS), 2024 (Datasets and Benchmarks Track)"
       },
+      "dates": {
+        "arxivFirstPosted": "2024-06-06",
+        "arxivLastUpdated": "2024-06-06"
+      },
       "topics": [
         "Multimodal Large Language Models"
       ],
@@ -9900,6 +10142,10 @@
         "venueGroup": "NeurIPS",
         "citationText": "Neural Information Processing Systems (NeurIPS), 2024"
       },
+      "dates": {
+        "arxivFirstPosted": "2024-05-25",
+        "arxivLastUpdated": "2024-05-25"
+      },
       "topics": [
         "Multimodal Large Language Models"
       ],
@@ -10083,6 +10329,10 @@
         "year": 2024,
         "venueGroup": "NeurIPS",
         "citationText": "Neural Information Processing Systems (NeurIPS), 2024"
+      },
+      "dates": {
+        "arxivFirstPosted": "2024-03-29",
+        "arxivLastUpdated": "2024-04-09"
       },
       "topics": [
         "Multimodal Large Language Models"
@@ -10316,6 +10566,10 @@
         "venueGroup": "NeurIPS",
         "citationText": "Neural Information Processing Systems (NeurIPS), 2024"
       },
+      "dates": {
+        "arxivFirstPosted": "2024-04-09",
+        "arxivLastUpdated": "2024-04-09"
+      },
       "topics": [
         "Multimodal Large Language Models"
       ],
@@ -10500,6 +10754,10 @@
         "venueGroup": "ECCV",
         "citationText": "European Conference on Computer Vision (ECCV), 2024"
       },
+      "dates": {
+        "arxivFirstPosted": "2024-05-20",
+        "arxivLastUpdated": "2024-07-15"
+      },
       "topics": [
         "AIGC"
       ],
@@ -10673,6 +10931,10 @@
         "year": 2024,
         "venueGroup": "ECCV",
         "citationText": "European Conference on Computer Vision (ECCV), 2024"
+      },
+      "dates": {
+        "arxivFirstPosted": "2024-03-22",
+        "arxivLastUpdated": "2024-07-22"
       },
       "topics": [
         "Vision-Language Models"
@@ -10856,6 +11118,10 @@
         "venueGroup": "CVPR",
         "citationText": "IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2024"
       },
+      "dates": {
+        "arxivFirstPosted": "2023-12-06",
+        "arxivLastUpdated": "2023-12-13"
+      },
       "topics": [
         "Vision-Language Models"
       ],
@@ -11031,6 +11297,10 @@
         "year": 2024,
         "venueGroup": "ICLR",
         "citationText": "International Conference on Learning Representations (ICLR), 2024"
+      },
+      "dates": {
+        "arxivFirstPosted": "2024-01-29",
+        "arxivLastUpdated": "2024-04-16"
       },
       "topics": [
         "Vision-Language Models"
@@ -11210,6 +11480,10 @@
         "year": 2025,
         "venueGroup": "IJCV",
         "citationText": "International Journal of Computer Vision (IJCV), 2025"
+      },
+      "dates": {
+        "arxivFirstPosted": "2023-05-29",
+        "arxivLastUpdated": "2024-08-12"
       },
       "topics": [
         "Multimodal Large Language Models"
@@ -11546,6 +11820,10 @@
         "venueGroup": "arXiv",
         "citationText": "arXiv 2022"
       },
+      "dates": {
+        "arxivFirstPosted": "2022-10-13",
+        "arxivLastUpdated": "2022-10-13"
+      },
       "topics": [
         "Vision-Language Models"
       ],
@@ -11712,6 +11990,10 @@
         "year": 2023,
         "venueGroup": "IJCV",
         "citationText": "International Journal of Computer Vision (IJCV), 2023"
+      },
+      "dates": {
+        "arxivFirstPosted": "2023-05-24",
+        "arxivLastUpdated": "2023-05-24"
       },
       "topics": [
         "Image Understanding"
@@ -11881,6 +12163,10 @@
         "year": 2022,
         "venueGroup": "ECCV",
         "citationText": "European Conference on Computer Vision (ECCV), 2022"
+      },
+      "dates": {
+        "arxivFirstPosted": "2022-03-22",
+        "arxivLastUpdated": "2022-11-30"
       },
       "topics": [
         "Image Understanding"
@@ -12052,6 +12338,10 @@
         "year": 2021,
         "venueGroup": "ICCV",
         "citationText": "IEEE International Conference on Computer Vision (ICCV), 2021"
+      },
+      "dates": {
+        "arxivFirstPosted": "2021-02-25",
+        "arxivLastUpdated": "2021-09-30"
       },
       "topics": [
         "Image Understanding"
@@ -12242,6 +12532,10 @@
         "venueGroup": "CVPR",
         "citationText": "IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2021"
       },
+      "dates": {
+        "arxivFirstPosted": "2020-08-23",
+        "arxivLastUpdated": "2021-06-17"
+      },
       "topics": [
         "Image Understanding"
       ],
@@ -12413,6 +12707,10 @@
         "year": 2020,
         "venueGroup": "AAAI",
         "citationText": "AAAI Conference on Artificial Intelligence (AAAI), 2020"
+      },
+      "dates": {
+        "arxivFirstPosted": "2020-03-17",
+        "arxivLastUpdated": "2020-03-17"
       },
       "topics": [
         "Image Understanding"
@@ -12591,6 +12889,10 @@
         "venueGroup": "ICCV",
         "citationText": "IEEE International Conference on Computer Vision (ICCV), 2019"
       },
+      "dates": {
+        "arxivFirstPosted": "2019-08-16",
+        "arxivLastUpdated": "2020-08-02"
+      },
       "topics": [
         "Image Understanding"
       ],
@@ -12763,6 +13065,10 @@
         "year": 2019,
         "venueGroup": "AAAI",
         "citationText": "AAAI Conference on Artificial Intelligence (AAAI), 2019"
+      },
+      "dates": {
+        "arxivFirstPosted": "2018-11-21",
+        "arxivLastUpdated": "2018-11-21"
       },
       "topics": [
         "Image Understanding"

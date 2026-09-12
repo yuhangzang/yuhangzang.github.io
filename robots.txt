@@ -1,7 +1,14 @@
 # robots.txt for yuhangzang.github.io
+# All pages are open to search engines and AI crawlers.
 
 User-agent: *
 Allow: /
 
 # Sitemap location
 Sitemap: https://yuhangzang.github.io/sitemap.xml
+
+# Machine-readable entry points (not directives, listed for discovery):
+#   https://yuhangzang.github.io/llms.txt              site summary and index of all papers
+#   https://yuhangzang.github.io/llms-full.txt         full text of every paper page
+#   https://yuhangzang.github.io/data/publications.json all publication records
+#   https://yuhangzang.github.io/publications.bib      all citations in BibTeX

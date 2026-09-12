@@ -5,7 +5,8 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { publicationSections, validatePublications, renderPublicationPages } from '../scripts/render-publications.mjs';
-import { escapeHTML, paperPath, paperURL, renderPaper, renderBibTeX, bibtexPath, citationRecord } from '../scripts/render-paper.mjs';
+import { escapeHTML, paperPath, paperURL, renderPaper, renderBibTeX, bibtexPath, citationRecord, personSchema, personID, authorProfiles, formatCitation, siteURL } from '../scripts/render-paper.mjs';
+import { renderLLMsIndex, renderLLMsFull, renderBibliography } from '../scripts/render-llms.mjs';
 
 const data = JSON.parse(await readFile(new URL('../data/publications.json', import.meta.url), 'utf8'));
 
@@ -234,7 +235,8 @@ test('all 66 papers provide sourced content and citations; only Visual-RFT has r
         assert.equal(schema.citation !== undefined, paper.id === 'arxiv:2503.01785');
         const year = paper.citation.year ?? paper.publication.year;
         assert(page.includes(`<meta name="citation_publication_date" content="${year}">`));
-        assert.equal(schema.datePublished, String(year));
+        assert.equal(schema.datePublished, paper.citation.status === 'preprint' ? paper.dates.arxivFirstPosted : String(year));
+        assert(schema.datePublished.startsWith(String(year)));
         assert(renderBibTeX(paper).includes(`year      = {${year}}`));
         if (content.resultNotes) {
             assert(!page.includes('class="paper-results"'));
@@ -351,9 +353,27 @@ test('one data change propagates to static pages and JSON-LD; rebuilds are deter
         assert.equal(detailSchema.name, paper.title);
         const sitemap = await readFile(new URL('sitemap.xml', root), 'utf8');
         for (const record of data.papers) {
-            assert(sitemap.includes(`<loc>${paperURL(record)}</loc>`));
+            assert(sitemap.includes(`<loc>${paperURL(record)}</loc><lastmod>${record.content.verifiedOn}</lastmod>`));
         }
         assert.equal((sitemap.match(/<loc>/g) || []).length, data.papers.length + 2);
+        assert.equal((sitemap.match(/<lastmod>/g) || []).length, data.papers.length + 2);
+        const person = JSON.parse(home.match(/<script id="person-schema" type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+        assert.equal(person['@id'], personID);
+        assert.equal(person['@context'], 'https://schema.org');
+        assert.equal(schema.author['@id'], personID);
+        for (const label of ['ORCID', 'Google Scholar', 'DBLP', 'OpenAlex', 'Semantic Scholar']) {
+            const profile = authorProfiles(data.author).find(item => item.label === label);
+            assert(home.includes(`<a href="${profile.url}" target="_blank" rel="me noopener noreferrer">${label}</a>`), label);
+        }
+        assert.equal((home.match(/class="profile-links"/g) || []).length, 1);
+        assert(detail.includes(`<meta name="citation_author_orcid" content="https://orcid.org/${data.author.identifiers.orcid}">`));
+        const llms = await readFile(join(dir, 'llms.txt'), 'utf8');
+        assert(llms.includes(`[${paper.title}](${paperURL(paper)})`));
+        assert.equal(llms, renderLLMsIndex(changed));
+        const full = await readFile(join(dir, 'llms-full.txt'), 'utf8');
+        assert(full.includes(`# ${paper.title}`) && full.includes('Test Author'));
+        assert.equal(full, renderLLMsFull(changed));
+        assert.equal(await readFile(join(dir, 'publications.bib'), 'utf8'), renderBibliography(changed));
         for (const record of changed.papers.filter(record => record.citation)) {
             assert.equal(await readFile(new URL(bibtexPath(record).slice(1), root), 'utf8'), renderBibTeX(record));
         }
@@ -362,7 +382,82 @@ test('one data change propagates to static pages and JSON-LD; rebuilds are deter
         assert.equal(await readFile(join(dir, 'research.html'), 'utf8'), research);
         assert.equal(await readFile(new URL(paperPath(paper).slice(1), root), 'utf8'), detail);
         assert.equal(await readFile(new URL('sitemap.xml', root), 'utf8'), sitemap);
+        assert.equal(await readFile(join(dir, 'llms.txt'), 'utf8'), llms);
+        assert.equal(await readFile(join(dir, 'llms-full.txt'), 'utf8'), full);
     } finally {
         await rm(dir, { recursive: true, force: true });
     }
 });
+
+test('the author is one Person node shared by the profile, list pages and every paper', () => {
+    const author = data.author;
+    const person = personSchema(author);
+    assert.equal(person['@id'], personID);
+    assert.equal(person.name, 'Yuhang Zang');
+    const profiles = authorProfiles(author);
+    assert.deepEqual(person.sameAs, profiles.map(profile => profile.url));
+    for (const label of ['ORCID', 'Google Scholar', 'DBLP', 'OpenAlex', 'Semantic Scholar', 'GitHub', 'Hugging Face']) {
+        assert(profiles.some(profile => profile.label === label), `missing profile: ${label}`);
+    }
+    assert(person.sameAs.includes(`https://orcid.org/${author.identifiers.orcid}`));
+    assert(person.identifier.some(item => item.propertyID === 'ORCID' && item.value === `https://orcid.org/${author.identifiers.orcid}`));
+    assert(person.alternateName.includes('臧宇航'));
+    for (const paper of data.papers) {
+        const page = renderPaper(paper, { author });
+        const schema = JSON.parse(page.match(/<script type="application\/ld\+json">(.*?)<\/script>/)[1]);
+        const self = schema.author.filter(entry => entry.name === 'Yuhang Zang');
+        const listed = citationRecord(paper).authors.some(entry => entry.name === 'Yuhang Zang');
+        assert.equal(self.length, listed ? 1 : 0, paper.id);
+        if (listed) {
+            assert.equal(self[0]['@id'], personID);
+            assert(page.includes('<meta name="citation_author" content="Yuhang Zang">\n<meta name="citation_author_orcid" content="https://orcid.org/' + author.identifiers.orcid + '">'));
+        }
+        assert(schema.author.filter(entry => entry.name !== 'Yuhang Zang').every(entry => entry['@id'] === undefined));
+        assert(!renderPaper(paper).includes('citation_author_orcid'));
+        if (paper.dates) {
+            assert(page.includes(`<meta name="citation_online_date" content="${paper.dates.arxivFirstPosted.replaceAll('-', '/')}">`));
+            assert.equal(schema.dateCreated, paper.dates.arxivFirstPosted);
+            assert.equal(schema.dateModified, paper.dates.arxivLastUpdated);
+            assert(paper.dates.arxivFirstPosted <= paper.dates.arxivLastUpdated);
+        } else {
+            assert.equal(paper.identifiers.arxiv, undefined);
+            assert(!page.includes('citation_online_date'));
+        }
+        assert(page.includes('<link rel="alternate" type="application/json" href="../data/publications.json"'));
+    }
+    const missingDates = structuredClone(data);
+    delete missingDates.papers.find(paper => paper.dates).dates;
+    assert.throws(() => validatePublications(missingDates), /Missing arXiv dates/);
+    const badOrder = structuredClone(data);
+    badOrder.papers.find(paper => paper.dates).dates.arxivLastUpdated = '2000-01-01';
+    assert.throws(() => validatePublications(badOrder), /out of order/);
+    const badOrcid = structuredClone(data);
+    badOrcid.author.identifiers.orcid = '1234';
+    assert.throws(() => validatePublications(badOrcid), /Invalid ORCID/);
+});
+
+test('llms.txt, llms-full.txt and publications.bib cover every paper with its evidence and citation', () => {
+    const index = renderLLMsIndex(data);
+    assert(index.startsWith('# Yuhang Zang\n\n> '));
+    assert(index.includes(`${siteURL}/data/publications.json`));
+    const full = renderLLMsFull(data);
+    const bibliography = renderBibliography(data);
+    for (const paper of data.papers) {
+        assert(index.includes(`[${paper.title}](${paperURL(paper)})`), paper.id);
+        assert(index.includes(paper.content.takeaway.text), paper.id);
+        assert(full.includes(`# ${paper.title}\n\n- Page: ${paperURL(paper)}`), paper.id);
+        assert(full.includes(paper.content.abstract.text), paper.id);
+        assert(full.includes(formatCitation(paper)), paper.id);
+        for (const item of [...paper.content.contributions, ...(paper.content.resultNotes || [])]) {
+            assert(full.includes(item.text), paper.id);
+            assert(full.includes(paper.content.sources[item.source].url), paper.id);
+        }
+        assert(bibliography.includes(renderBibTeX(paper)), paper.id);
+        assert(full.includes(renderBibTeX(paper).trimEnd()), paper.id);
+    }
+    assert.equal((bibliography.match(/^@/gm) || []).length, data.papers.filter(paper => paper.citation).length);
+    assert.equal((full.match(/^# /gm) || []).length, data.papers.length + 1);
+    for (const profile of authorProfiles(data.author)) assert(index.includes(profile.url) && full.includes(profile.url));
+    assert(!index.includes('undefined') && !full.includes('undefined') && !bibliography.includes('undefined'));
+});
+
