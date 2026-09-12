@@ -8,9 +8,6 @@
 <title>404 - Page Not Found | Yuhang Zang</title>
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="./imgs/favicon.svg">
-<link rel="apple-touch-icon" href="./imgs/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="./imgs/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="./imgs/favicon-16x16.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <script>
@@ -26,7 +23,8 @@
     }
 })();
 </script>
-<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"></noscript>
 <link id="theme-style" rel="stylesheet" href="./main.min.css">
 <style>
 .error-page {
@@ -154,8 +152,6 @@
         <a href="./index.html" class="nav-link">Home</a>
         <a href="./research.html" class="nav-link">Publications</a>
         <a href="./index.html#services" class="nav-link">Services</a>
-        <a href="./index.html#awards" class="nav-link">Awards</a>
-        <a href="./posts/index.html" class="nav-link">Blog</a>
         <button id="theme-toggle" class="theme-toggle" type="button" title="Toggle dark mode" aria-pressed="false">
           <span class="theme-icon">&#127769;</span>
         </button>
@@ -185,8 +181,6 @@
         <div class="error-links-title">Quick Links</div>
         <div class="error-links-list">
           <a href="./research.html">Publications</a>
-          <a href="./team.html">Team</a>
-          <a href="./posts/index.html">Blog</a>
         </div>
       </div>
     </div>

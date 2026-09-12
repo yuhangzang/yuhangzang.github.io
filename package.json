@@ -1,0 +1,14 @@
+{
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "esbuild": "0.28.2"
+  },
+  "name": "yuhangzang-academic-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "npm run build && playwright test",
+    "test:unit": "node --test tests/*.test.js"
+  }
+}
