@@ -80,73 +80,24 @@
   <main>
 
         <div class="papers-section">
-            <h1 class="section-heading">Publications <a href="./index.html#papers-container" class="full-list-link"><i class="fa fa-star"></i> Selected List</a> <a href="https://scholar.google.com/citations?user=hW23VKIAAAAJ&hl=en" class="scholar-link" target="_blank" rel="noopener noreferrer"><i class="fa fa-graduation-cap"></i> Scholar</a></h1>
+            <h1 class="section-heading">Publications <a href="https://scholar.google.com/citations?user=hW23VKIAAAAJ&hl=en" class="scholar-link" target="_blank" rel="noopener noreferrer"><i class="fa fa-graduation-cap"></i> Scholar</a></h1>
             
-            <div class="sort-controls">
-              <button class="sort-btn active" type="button" data-sort-type="date">Show by Date</button>
-              <button class="sort-btn" type="button" data-sort-type="topic">Show by Topic</button>
-              <button class="sort-btn" type="button" data-sort-type="venue">Show by Venue</button>
+            <div class="list-controls">
+              <div class="scope-switch" role="group" aria-label="Which publications to show">
+                <button class="scope-btn active" type="button" data-scope="selected" aria-pressed="true" title="Papers where Yuhang Zang is first or last author">Selected</button>
+                <button class="scope-btn" type="button" data-scope="full" aria-pressed="false" title="All publications">Full</button>
+              </div>
+              <div class="sort-controls" role="group" aria-label="Sort order">
+                <span class="sort-label" aria-hidden="true">Sort by</span>
+                <button class="sort-btn active" type="button" data-sort-type="date">Date</button>
+                <button class="sort-btn" type="button" data-sort-type="topic">Topic</button>
+                <button class="sort-btn" type="button" data-sort-type="venue">Venue</button>
+              </div>
             </div>
 
-            <div class="search-container">
-              <i class="fa fa-search search-icon"></i>
-              <input type="text" id="paper-search" class="search-input" placeholder="Search publications by title, author, or venue..." aria-label="Search publications">
-              <button type="button" id="clear-search" class="clear-search-btn" aria-label="Clear search" style="display: none;">
-                <i class="fa fa-times"></i>
-              </button>
-              <span id="search-results-count" class="search-results-count"></span>
-            </div>
- 
-            <div class="navigation-compact">
-              <div class="nav-line">
-                <span class="nav-label">Dates:</span>
-                <a href="#" class="date-link" data-year="2026">2026</a>,
-                <a href="#" class="date-link" data-year="2025">2025</a>,
-                <a href="#" class="date-link" data-year="2024">2024</a>,
-                <a href="#" class="date-link" data-year="2023">2023</a>,
-                <a href="#" class="date-link" data-year="2022">2022</a>,
-                <a href="#" class="date-link" data-year="2021">2021</a>,
-                <a href="#" class="date-link" data-year="2020">2020</a>,
-                <a href="#" class="date-link" data-year="2019">2019</a>
-              </div>
-              <div class="nav-line">
-                <span class="nav-label">Topics:</span>
-                <a href="#" class="topic-link" data-topic="Reinforcement Learning from Human Feedback">Reinforcement Learning from Human Feedback</a>,
-                <a href="#" class="topic-link" data-topic="Multimodal Large Language Models">Multimodal Large Language Models</a>,
-                <a href="#" class="topic-link" data-topic="Vision-Language Models">Vision-Language Models</a>,
-                <a href="#" class="topic-link" data-topic="Image Understanding">Image Understanding</a>,
-                <a href="#" class="topic-link" data-topic="AIGC">AIGC</a>
-              </div>
-              <div class="nav-line">
-                <span class="nav-label">Venues:</span>
-                <a href="#" class="venue-link" data-venue="ICML">ICML</a>,
-                <a href="#" class="venue-link" data-venue="NeurIPS">NeurIPS</a>,
-                <a href="#" class="venue-link" data-venue="ICLR">ICLR</a>,
-                <a href="#" class="venue-link" data-venue="ACL">ACL</a>,
-                <a href="#" class="venue-link" data-venue="EMNLP">EMNLP</a>,
-                <a href="#" class="venue-link" data-venue="IJCV">IJCV</a>,
-                <a href="#" class="venue-link" data-venue="TIP">TIP</a>,
-                <a href="#" class="venue-link" data-venue="TMLR">TMLR</a>,
-                <a href="#" class="venue-link" data-venue="CVPR">CVPR</a>,
-                <a href="#" class="venue-link" data-venue="ICCV">ICCV</a>,
-                <a href="#" class="venue-link" data-venue="ECCV">ECCV</a>,
-                <a href="#" class="venue-link" data-venue="AAAI">AAAI</a>,
-                <a href="#" class="venue-link" data-venue="ACM MM">ACM MM</a>,
-                <a href="#" class="venue-link" data-venue="arXiv">arXiv</a>,
-                <a href="#" class="venue-link" data-venue="Thesis">Thesis</a>
-              </div>
-              
-              <div class="author-legend">
-                <div class="legend-item">
-                  <span class="legend-symbol corresponding"><i class="fa fa-envelope"></i></span>
-                  <span class="legend-description">Corresponding author</span>
-                </div>
-              </div>
-            </div>
-            
           <div id="papers-container">
 <!-- BEGIN GENERATED PAPERS -->
-<div class="paper-card" data-paper-id="arxiv:2606.19338" data-year="2026" data-topic="Multimodal Large Language Models" data-venue="EMNLP" data-keywords="RNG-Bench Non-Markov games Multimodal agents Visual memory Hidden-state reconstruction Memory Gap Closed-loop interaction Spatial mapping Long-context evaluation">
+<div class="paper-card" data-paper-id="arxiv:2606.19338" data-year="2026" data-topic="Multimodal Large Language Models" data-venue="EMNLP" data-selected="true">
 <div class="new-badge">New!</div>
 <div class="paper-content">
 <div class="paper-info">
@@ -170,7 +121,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2606.03890" data-year="2026" data-topic="Multimodal Large Language Models" data-venue="EMNLP" data-keywords="OVO-S-Bench Streaming video understanding Spatial intelligence Egocentric video Allocentric mapping Prefix-only evaluation Spatiotemporal reasoning Multimodal benchmarks">
+<div class="paper-card" data-paper-id="arxiv:2606.03890" data-year="2026" data-topic="Multimodal Large Language Models" data-venue="EMNLP">
 <div class="new-badge">New!</div>
 <div class="paper-content">
 <div class="paper-info">
@@ -194,7 +145,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2602.08439" data-year="2026" data-topic="Multimodal Large Language Models" data-venue="EMNLP" data-keywords="Demo-ICL Video in-context learning Procedural knowledge Instructional videos Demonstration learning Video question answering Direct preference optimization Multimodal adaptation">
+<div class="paper-card" data-paper-id="arxiv:2602.08439" data-year="2026" data-topic="Multimodal Large Language Models" data-venue="EMNLP">
 <div class="new-badge">New!</div>
 <div class="paper-content">
 <div class="paper-info">
@@ -218,7 +169,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2605.27955" data-year="2026" data-topic="Multimodal Large Language Models" data-venue="EMNLP" data-keywords="Skill-as-Pseudocode LLM agents Agent skill libraries Typed contracts Pseudocode Action templates ALFWorld Token efficiency Procedural knowledge">
+<div class="paper-card" data-paper-id="arxiv:2605.27955" data-year="2026" data-topic="Multimodal Large Language Models" data-venue="EMNLP">
 <div class="new-badge">New!</div>
 <div class="paper-content">
 <div class="paper-info">
@@ -242,7 +193,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2601.16690" data-year="2026" data-topic="Multimodal Large Language Models" data-venue="EMNLP" data-keywords="EMemBench Episodic memory Interactive evaluation VLM agents Long-term memory Memory induction Trajectory-grounded questions Spatial memory">
+<div class="paper-card" data-paper-id="arxiv:2601.16690" data-year="2026" data-topic="Multimodal Large Language Models" data-venue="EMNLP">
 <div class="new-badge">New!</div>
 <div class="paper-content">
 <div class="paper-info">
@@ -266,7 +217,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2505.14677" data-year="2026" data-topic="Multimodal Large Language Models" data-venue="TMLR" data-keywords="Visionary-R1 Visual reasoning Shortcut learning Reinforcement learning GRPO Caption–reason–answer CoT-free supervision Out-of-distribution generalization">
+<div class="paper-card" data-paper-id="arxiv:2505.14677" data-year="2026" data-topic="Multimodal Large Language Models" data-venue="TMLR">
 <div class="paper-content">
 <div class="paper-info">
 <a class="paper-title-link" href="papers/arxiv-2505.14677.html"><papertitle>Visionary-R1: Mitigating Shortcuts in Visual Reasoning with Reinforcement Learning</papertitle></a>
@@ -289,7 +240,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2603.12252" data-year="2026" data-topic="AIGC" data-venue="ECCV" data-keywords="Endogenous chain-of-thought Latent reasoning Diffusion models Diffusion Transformers (DiT) Multimodal large language models Visual reasoning Spatial planning Iterative thought guidance Terminal thought grounding Progressive training Test-time scaling Image-to-image generation">
+<div class="paper-card" data-paper-id="arxiv:2603.12252" data-year="2026" data-topic="AIGC" data-venue="ECCV" data-selected="true">
 <div class="paper-content">
 <div class="paper-info">
 <a class="paper-title-link" href="papers/arxiv-2603.12252.html"><papertitle>EndoCoT: Scaling Endogenous Chain-of-Thought Reasoning in Diffusion Models</papertitle></a>
@@ -313,7 +264,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2603.12648" data-year="2026" data-topic="AIGC" data-venue="ECCV" data-keywords="MV-GRPO Multi-view reward Flow models Preference alignment Condition augmentation Advantage estimation Text-to-image generation Group Relative Policy Optimization">
+<div class="paper-card" data-paper-id="arxiv:2603.12648" data-year="2026" data-topic="AIGC" data-venue="ECCV">
 <div class="paper-content">
 <div class="paper-info">
 <a class="paper-title-link" href="papers/arxiv-2603.12648.html"><papertitle>From Sparse to Dense: Multi-View GRPO for Flow Models via Augmented Condition Space</papertitle></a>
@@ -335,7 +286,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2509.22186" data-year="2026" data-topic="Multimodal Large Language Models" data-venue="ACL" data-keywords="MinerU2.5 Document parsing Layout analysis High-resolution documents OCR Formula recognition Table recognition Coarse-to-fine inference Vision-language models">
+<div class="paper-card" data-paper-id="arxiv:2509.22186" data-year="2026" data-topic="Multimodal Large Language Models" data-venue="ACL">
 <div class="paper-content">
 <div class="paper-info">
 <a class="paper-title-link" href="papers/arxiv-2509.22186.html"><papertitle>MinerU2.5: A Decoupled Vision-Language Model for Efficient High-Resolution Document Parsing</papertitle></a>
@@ -362,7 +313,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2508.04700" data-year="2026" data-topic="Multimodal Large Language Models" data-venue="ICML" data-keywords="SEAgent Computer-use agents Autonomous learning Experiential learning World State Model Curriculum generation GRPO Specialist-to-generalist transfer OS-World">
+<div class="paper-card" data-paper-id="arxiv:2508.04700" data-year="2026" data-topic="Multimodal Large Language Models" data-venue="ICML">
 <div class="paper-content">
 <div class="paper-info">
 <a class="paper-title-link" href="papers/arxiv-2508.04700.html"><papertitle>SEAgent: Self-Evolving Computer Use Agent with Autonomous Learning from Experience</papertitle></a>
@@ -385,7 +336,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2512.05111" data-year="2026" data-topic="Multimodal Large Language Models" data-venue="CVPR" data-keywords="ARM-Thinker Agentic reward models Tool use Visual grounding Document retrieval Multimodal verification Reinforcement learning ARMBench-VL">
+<div class="paper-card" data-paper-id="arxiv:2512.05111" data-year="2026" data-topic="Multimodal Large Language Models" data-venue="CVPR">
 <div class="paper-content">
 <div class="paper-info">
 <a class="paper-title-link" href="papers/arxiv-2512.05111.html"><papertitle>ARM-Thinker: Reinforcing Multimodal Generative Reward Models with Agentic Tool Use and Visual Reasoning</papertitle></a>
@@ -410,7 +361,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2511.15703" data-year="2026" data-topic="Multimodal Large Language Models" data-venue="CVPR" data-keywords="ARC-VL ARC-AGI Abstract reasoning Visual abstraction Symbolic rule execution Vision-language synergy Modality-switch self-correction Few-shot reasoning">
+<div class="paper-card" data-paper-id="arxiv:2511.15703" data-year="2026" data-topic="Multimodal Large Language Models" data-venue="CVPR">
 <div class="paper-content">
 <div class="paper-info">
 <a class="paper-title-link" href="papers/arxiv-2511.15703.html"><papertitle>Think Visually, Reason Textually: Vision-Language Synergy in ARC</papertitle></a>
@@ -435,7 +386,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2510.01982" data-year="2026" data-topic="AIGC" data-venue="CVPR" data-keywords="G²RPO Granular-GRPO Flow models Preference alignment Credit assignment Stochastic sampling Multi-granularity advantages Diffusion reinforcement learning">
+<div class="paper-card" data-paper-id="arxiv:2510.01982" data-year="2026" data-topic="AIGC" data-venue="CVPR">
 <div class="paper-content">
 <div class="paper-info">
 <a class="paper-title-link" href="papers/arxiv-2510.01982.html"><papertitle>Fine-Grained GRPO for Precise Preference Alignment in Flow Models</papertitle></a>
@@ -460,7 +411,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2510.27606" data-year="2026" data-topic="Multimodal Large Language Models" data-venue="CVPR" data-keywords="Spatial-SSRL Spatial understanding Self-supervised reinforcement learning Verifiable rewards RGB-D images Relative depth 3D position prediction Spatial pretext tasks">
+<div class="paper-card" data-paper-id="arxiv:2510.27606" data-year="2026" data-topic="Multimodal Large Language Models" data-venue="CVPR">
 <div class="paper-content">
 <div class="paper-info">
 <a class="paper-title-link" href="papers/arxiv-2510.27606.html"><papertitle>Spatial-SSRL: Enhancing Spatial Understanding via Self-Supervised Reinforcement Learning</papertitle></a>
@@ -485,7 +436,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2512.01248" data-year="2026" data-topic="Multimodal Large Language Models" data-venue="CVPR" data-keywords="TRivia Table recognition Document parsing Self-supervised fine-tuning Unlabeled table images Question-answering rewards GRPO Structured document extraction">
+<div class="paper-card" data-paper-id="arxiv:2512.01248" data-year="2026" data-topic="Multimodal Large Language Models" data-venue="CVPR">
 <div class="paper-content">
 <div class="paper-info">
 <a class="paper-title-link" href="papers/arxiv-2512.01248.html"><papertitle>TRivia: Self-supervised Fine-tuning of Vision-Language Models for Table Recognition</papertitle></a>
@@ -510,7 +461,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2508.00819" data-year="2026" data-topic="AIGC" data-venue="ICLR" data-keywords="DAEDAL Diffusion language models Variable-length generation Adaptive denoising Mask-token insertion Training-free inference Generation efficiency Dynamic length expansion">
+<div class="paper-card" data-paper-id="arxiv:2508.00819" data-year="2026" data-topic="AIGC" data-venue="ICLR">
 <div class="paper-content">
 <div class="paper-info">
 <a class="paper-title-link" href="papers/arxiv-2508.00819.html"><papertitle>Beyond Fixed: Training-Free Variable-Length Denoising for Diffusion Large Language Models</papertitle></a>
@@ -535,7 +486,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2508.17356" data-year="2026" data-topic="AIGC" data-venue="ICLR" data-keywords="DiCache Diffusion acceleration Adaptive caching Online feature probes Cache trajectory alignment Training-free inference Video generation Image generation">
+<div class="paper-card" data-paper-id="arxiv:2508.17356" data-year="2026" data-topic="AIGC" data-venue="ICLR">
 <div class="paper-content">
 <div class="paper-info">
 <a class="paper-title-link" href="papers/arxiv-2508.17356.html"><papertitle>DiCache: Let Diffusion Model Determine Its Own Cache</papertitle></a>
@@ -560,7 +511,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2507.15852" data-year="2026" data-topic="Image Understanding" data-venue="ICLR" data-keywords="SeC Segment Concept Video object segmentation Object-centric representations Concept construction Scene transitions SeCVOS Semantic tracking">
+<div class="paper-card" data-paper-id="arxiv:2507.15852" data-year="2026" data-topic="Image Understanding" data-venue="ICLR">
 <div class="paper-content">
 <div class="paper-info">
 <a class="paper-title-link" href="papers/arxiv-2507.15852.html"><papertitle>Advancing Complex Video Object Segmentation via Progressive Concept Construction</papertitle></a>
@@ -585,7 +536,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2509.20317" data-year="2026" data-topic="Multimodal Large Language Models" data-venue="ICLR" data-keywords="SIM-CoT Implicit chain-of-thought Latent reasoning Step-level supervision Training stability Reasoning interpretability Token efficiency Auxiliary decoder">
+<div class="paper-card" data-paper-id="arxiv:2509.20317" data-year="2026" data-topic="Multimodal Large Language Models" data-venue="ICLR">
 <div class="paper-content">
 <div class="paper-info">
 <a class="paper-title-link" href="papers/arxiv-2509.20317.html"><papertitle>SIM-CoT: Supervised Implicit Chain-of-Thought</papertitle></a>
@@ -610,7 +561,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2506.19848" data-year="2026" data-topic="Multimodal Large Language Models" data-venue="ICLR" data-keywords="ScaleCap Dense image captioning Inference-time scaling Dual-modality debiasing Hallucination reduction Contrastive sentence rating Visual question answering Caption quality">
+<div class="paper-card" data-paper-id="arxiv:2506.19848" data-year="2026" data-topic="Multimodal Large Language Models" data-venue="ICLR">
 <div class="paper-content">
 <div class="paper-info">
 <a class="paper-title-link" href="papers/arxiv-2506.19848.html"><papertitle>ScaleCap: Inference-Time Scalable Image Captioning via Dual-Modality Debiasing</papertitle></a>
@@ -635,7 +586,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2510.24693" data-year="2026" data-topic="Multimodal Large Language Models" data-venue="ICLR" data-keywords="STAR-Bench Audio 4D intelligence Spatial audio Temporal audio reasoning Acoustic perception Sound localization Audio-language models Multimodal evaluation">
+<div class="paper-card" data-paper-id="arxiv:2510.24693" data-year="2026" data-topic="Multimodal Large Language Models" data-venue="ICLR">
 <div class="paper-content">
 <div class="paper-info">
 <a class="paper-title-link" href="papers/arxiv-2510.24693.html"><papertitle>STAR-Bench: Probing Deep Spatio-Temporal Reasoning as Audio 4D Intelligence</papertitle></a>
@@ -660,7 +611,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2602.16455" data-year="2026" data-topic="Image Understanding" data-venue="ICLR" data-keywords="ChartVSR Visual Self-Refine Chart parsing Pixel-level localization Visual feedback Perceptual self-correction ChartP-Bench Structured data extraction">
+<div class="paper-card" data-paper-id="arxiv:2602.16455" data-year="2026" data-topic="Image Understanding" data-venue="ICLR">
 <div class="paper-content">
 <div class="paper-info">
 <a class="paper-title-link" href="papers/arxiv-2602.16455.html"><papertitle>Visual Self-Refine: A Pixel-Guided Paradigm for Accurate Chart Parsing</papertitle></a>
@@ -683,7 +634,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2509.22647" data-year="2026" data-topic="Multimodal Large Language Models" data-venue="ICLR" data-keywords="CapRL Dense captioning Verifiable rewards Reinforcement learning Caption utility Vision-free evaluation Multimodal pretraining CapRL-5M">
+<div class="paper-card" data-paper-id="arxiv:2509.22647" data-year="2026" data-topic="Multimodal Large Language Models" data-venue="ICLR">
 <div class="paper-content">
 <div class="paper-info">
 <a class="paper-title-link" href="papers/arxiv-2509.22647.html"><papertitle>CapRL: Stimulating Dense Image Caption Capabilities via Reinforcement Learning</papertitle></a>
@@ -708,7 +659,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2403.13805" data-year="2026" data-topic="Multimodal Large Language Models" data-venue="TIP" data-keywords="RAR Retrieval-augmented recognition Multimodal reranking Fine-grained classification CLIP Few-shot recognition Zero-shot recognition Category memory">
+<div class="paper-card" data-paper-id="arxiv:2403.13805" data-year="2026" data-topic="Multimodal Large Language Models" data-venue="TIP">
 <div class="paper-content">
 <div class="paper-info">
 <a class="paper-title-link" href="papers/arxiv-2403.13805.html"><papertitle>RAR: Retrieving And Ranking Augmented MLLMs for Visual Recognition</papertitle></a>
@@ -735,7 +686,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2505.03318" data-year="2025" data-topic="Reinforcement Learning from Human Feedback" data-venue="NeurIPS" data-keywords="UnifiedReward-Think Multimodal reward models Chain-of-thought Reinforcement fine-tuning GRPO Preference learning Visual understanding Visual generation Rejection sampling">
+<div class="paper-card" data-paper-id="arxiv:2505.03318" data-year="2025" data-topic="Reinforcement Learning from Human Feedback" data-venue="NeurIPS">
 <div class="paper-content">
 <div class="paper-info">
 <a class="paper-title-link" href="papers/arxiv-2505.03318.html"><papertitle>Unified Multimodal Chain-of-Thought Reward Model through Reinforcement Fine-Tuning</papertitle></a>
@@ -763,7 +714,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2504.06232" data-year="2025" data-topic="AIGC" data-venue="NeurIPS" data-keywords="HiFlow High-resolution image generation Flow-aligned guidance Training-free generation Flow matching Resolution extrapolation Structure preservation Text-to-image models">
+<div class="paper-card" data-paper-id="arxiv:2504.06232" data-year="2025" data-topic="AIGC" data-venue="NeurIPS">
 <div class="paper-content">
 <div class="paper-info">
 <a class="paper-title-link" href="papers/arxiv-2504.06232.html"><papertitle>HiFlow: Training-free High-Resolution Image Generation with Flow-Aligned Guidance</papertitle></a>
@@ -790,7 +741,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2503.01785" data-year="2025" data-topic="Reinforcement Learning from Human Feedback" data-venue="ICCV" data-keywords="Visual Reinforcement Fine-Tuning (Visual-RFT) Reinforcement Learning with Verifiable Rewards (RLVR) Group Relative Policy Optimization (GRPO) Large Vision-Language Models (LVLMs) Multimodal reinforcement learning Few-shot learning Fine-grained image classification Few-shot object detection Open-vocabulary object detection Reasoning grounding">
+<div class="paper-card" data-paper-id="arxiv:2503.01785" data-year="2025" data-topic="Reinforcement Learning from Human Feedback" data-venue="ICCV">
 <div class="paper-content">
 <a class="paper-title-link" href="papers/arxiv-2503.01785.html"><papertitle>Visual-RFT: Visual Reinforcement Fine-Tuning</papertitle></a>
 <div class="author-names">Ziyu Liu, Zeyi Sun, <span class="author-highlight">Yuhang Zang</span><span class="author-annotation corresponding"><i class="fa fa-envelope"></i></span>, Xiaoyi Dong, Yuhang Cao, Haodong Duan, Dahua Lin, Jiaqi Wang<span class="author-annotation corresponding"><i class="fa fa-envelope"></i></span></div>
@@ -814,7 +765,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2504.07957" data-year="2025" data-topic="Multimodal Large Language Models" data-venue="ICCV" data-keywords="MM-IFEngine Multimodal instruction following Output constraints MM-IFEval Instruction tuning Direct preference optimization Perception constraints Synthetic training data">
+<div class="paper-card" data-paper-id="arxiv:2504.07957" data-year="2025" data-topic="Multimodal Large Language Models" data-venue="ICCV">
 <div class="paper-content">
 <a class="paper-title-link" href="papers/arxiv-2504.07957.html"><papertitle>MM-IFEngine: Towards Multimodal Instruction Following</papertitle></a>
 <div class="author-names">Shengyuan Ding, Shenxi Wu, Xiangyu Zhao, <span class="author-highlight">Yuhang Zang</span><span class="author-annotation corresponding"><i class="fa fa-envelope"></i></span>, Haodong Duan, Xiaoyi Dong, Pan Zhang, Yuhang Cao, Dahua Lin, Jiaqi Wang<span class="author-annotation corresponding"><i class="fa fa-envelope"></i></span></div>
@@ -838,7 +789,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2412.01824" data-year="2025" data-topic="AIGC" data-venue="ICCV" data-keywords="X-Prompt In-context image generation Autoregressive vision-language models Visual prompting Task generalization Context compression Text-image prediction Few-shot generation">
+<div class="paper-card" data-paper-id="arxiv:2412.01824" data-year="2025" data-topic="AIGC" data-venue="ICCV">
 <div class="paper-content">
 <a class="paper-title-link" href="papers/arxiv-2412.01824.html"><papertitle>X-Prompt: Towards Universal In-Context Image Generation in Auto-Regressive Vision Language Foundation Models</papertitle></a>
 <div class="author-names">Zeyi Sun, Ziyang Chu, Pan Zhang, Tong Wu, Xiaoyi Dong, <span class="author-highlight">Yuhang Zang</span>, Yuanjun Xiong, Dahua Lin, Jiaqi Wang</div>
@@ -861,7 +812,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2406.00093" data-year="2025" data-topic="AIGC" data-venue="ICCV" data-keywords="Bootstrap3D Multi-view diffusion Synthetic 3D training data MV-LLaVA Dense captions View consistency Training Timestep Reschedule 3D content generation">
+<div class="paper-card" data-paper-id="arxiv:2406.00093" data-year="2025" data-topic="AIGC" data-venue="ICCV">
 <div class="paper-content">
 <a class="paper-title-link" href="papers/arxiv-2406.00093.html"><papertitle>Bootstrap3D: Improving Multi-view Diffusion Model with Synthetic Data</papertitle></a>
 <div class="author-names">Zeyi Sun, Tong Wu, Pan Zhang, <span class="author-highlight">Yuhang Zang</span>, Xiaoyi Dong, Yuanjun Xiong, Dahua Lin, Jiaqi Wang</div>
@@ -884,7 +835,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2507.02859" data-year="2025" data-topic="Multimodal Large Language Models" data-venue="ICCV" data-keywords="Grounded Chain-of-Thought GCoT Data-efficient adaptation Visual grounding Reasoning distillation Chart understanding Document understanding Bounding-box supervision">
+<div class="paper-card" data-paper-id="arxiv:2507.02859" data-year="2025" data-topic="Multimodal Large Language Models" data-venue="ICCV">
 <div class="paper-content">
 <a class="paper-title-link" href="papers/arxiv-2507.02859.html"><papertitle>Bootstrapping Grounded Chain-of-Thought in Multimodal LLMs for Data-Efficient Model Adaptation</papertitle></a>
 <div class="author-names">Jiaer Xia, Bingkui Tong, <span class="author-highlight">Yuhang Zang</span>, Rui Shao, Kaiyang Zhou</div>
@@ -907,7 +858,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2502.08590" data-year="2025" data-topic="AIGC" data-venue="ICCV" data-keywords="Light-A-Video Video relighting Training-free editing Temporal consistency Consistent Light Attention Progressive Light Fusion Diffusion models Illumination editing">
+<div class="paper-card" data-paper-id="arxiv:2502.08590" data-year="2025" data-topic="AIGC" data-venue="ICCV">
 <div class="paper-content">
 <a class="paper-title-link" href="papers/arxiv-2502.08590.html"><papertitle>Light-A-Video: Training-free Video Relighting via Progressive Light Fusion</papertitle></a>
 <div class="author-names">Yujie Zhou, Jiazi Bu, Pengyang Ling, Pan Zhang, Tong Wu, Qidong Huang, Jinsong Li, Xiaoyi Dong, <span class="author-highlight">Yuhang Zang</span>, Yuhang Cao, Anyi Rao, Jiaqi Wang, Li Niu</div>
@@ -930,7 +881,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2410.07167" data-year="2025" data-topic="Multimodal Large Language Models" data-venue="ICCV" data-keywords="Modality Integration Rate MIR Cross-modal alignment LVLM pretraining Distribution distance Training quality evaluation Multimodal representation Data selection">
+<div class="paper-card" data-paper-id="arxiv:2410.07167" data-year="2025" data-topic="Multimodal Large Language Models" data-venue="ICCV">
 <div class="paper-content">
 <a class="paper-title-link" href="papers/arxiv-2410.07167.html"><papertitle>Deciphering Cross-Modal Alignment in Large Vision-Language Models with Modality Integration Rate</papertitle></a>
 <div class="author-names">Qidong Huang, Xiaoyi Dong, Pan Zhang, <span class="author-highlight">Yuhang Zang</span>, Yuhang Cao, Jiaqi Wang, Dahua Lin, Weiming Zhang, Nenghai Yu</div>
@@ -953,7 +904,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2410.16268" data-year="2025" data-topic="Image Understanding" data-venue="ICCV" data-keywords="SAM2Long SAM 2 Long video segmentation Memory tree Constrained tree search Error accumulation Occlusion handling Training-free segmentation">
+<div class="paper-card" data-paper-id="arxiv:2410.16268" data-year="2025" data-topic="Image Understanding" data-venue="ICCV">
 <div class="paper-content">
 <a class="paper-title-link" href="papers/arxiv-2410.16268.html"><papertitle>SAM2Long: Enhancing SAM 2 for Long Video Segmentation with a Training-Free Memory Tree</papertitle></a>
 <div class="author-names">Shuangrui Ding, Rui Qian, Xiaoyi Dong, Pan Zhang, <span class="author-highlight">Yuhang Zang</span>, Yuhang Cao, Yuwei Guo, Dahua Lin, Jiaqi Wang</div>
@@ -976,7 +927,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2501.12368" data-year="2025" data-topic="Reinforcement Learning from Human Feedback" data-venue="ACL" data-keywords="InternLM-XComposer2.5-Reward Multimodal reward models Human preference alignment Reinforcement learning PPO Best-of-N selection Instruction data filtering Video reward modeling">
+<div class="paper-card" data-paper-id="arxiv:2501.12368" data-year="2025" data-topic="Reinforcement Learning from Human Feedback" data-venue="ACL" data-selected="true">
 <div class="paper-content">
 <a class="paper-title-link" href="papers/arxiv-2501.12368.html"><papertitle>InternLM-XComposer2.5-Reward: A Simple Yet Effective Multi-Modal Reward Model</papertitle></a>
 <div class="author-names"><span class="author-highlight">Yuhang Zang</span>, Xiaoyi Dong, Pan Zhang, Yuhang Cao, Ziyu Liu, Shengyuan Ding, Shenxi Wu, Yubo Ma, Haodong Duan, Wenwei Zhang, Kai Chen, Dahua Lin, Jiaqi Wang</div>
@@ -1003,7 +954,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2506.04997" data-year="2025" data-topic="Multimodal Large Language Models" data-venue="ACL" data-keywords="Light-ColPali Light-ColQwen2 Visual document retrieval Multi-vector retrieval Token merging Patch embeddings Storage efficiency Token pruning">
+<div class="paper-card" data-paper-id="arxiv:2506.04997" data-year="2025" data-topic="Multimodal Large Language Models" data-venue="ACL">
 <div class="paper-content">
 <a class="paper-title-link" href="papers/arxiv-2506.04997.html"><papertitle>Towards Storage-Efficient Visual Document Retrieval: An Empirical Study on Reducing Patch-Level Embeddings</papertitle></a>
 <div class="author-names">Yubo Ma, Jinsong Li, <span class="author-highlight">Yuhang Zang</span><span class="author-annotation corresponding"><i class="fa fa-envelope"></i></span>, Xiaobao Wu, Xiaoyi Dong, Pan Zhang, Yuhang Cao, Haodong Duan, Jiaqi Wang, Yixin Cao, Aixin Sun</div>
@@ -1027,7 +978,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2502.05173" data-year="2025" data-topic="Multimodal Large Language Models" data-venue="ICML" data-keywords="VideoRoPE Rotary position embedding Video language models Spatiotemporal encoding Long-video retrieval Temporal frequency allocation V-NIAH-D Position encoding">
+<div class="paper-card" data-paper-id="arxiv:2502.05173" data-year="2025" data-topic="Multimodal Large Language Models" data-venue="ICML">
 <div class="paper-content">
 <a class="paper-title-link" href="papers/arxiv-2502.05173.html"><papertitle>VideoRoPE: What Makes for Good Video Rotary Position Embedding?</papertitle></a>
 <div class="author-names">Xilin Wei, Xiaoran Liu, <span class="author-highlight">Yuhang Zang</span><span class="author-annotation corresponding"><i class="fa fa-envelope"></i></span>, Xiaoyi Dong, Pan Zhang, Yuhang Cao, Jian Tong, Haodong Duan, Qipeng Guo<span class="author-annotation corresponding"><i class="fa fa-envelope"></i></span>, Jiaqi Wang<span class="author-annotation corresponding"><i class="fa fa-envelope"></i></span>, Xipeng Qiu, Dahua Lin</div>
@@ -1051,7 +1002,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2502.13128" data-year="2025" data-topic="AIGC" data-venue="ICML" data-keywords="SongGen Text-to-song generation Autoregressive audio generation Controllable music generation Voice cloning Vocal synthesis Dual-track generation Audio tokenization">
+<div class="paper-card" data-paper-id="arxiv:2502.13128" data-year="2025" data-topic="AIGC" data-venue="ICML">
 <div class="paper-content">
 <a class="paper-title-link" href="papers/arxiv-2502.13128.html"><papertitle>SongGen: A Single Stage Auto-regressive Transformer for Text-to-Song Generation</papertitle></a>
 <div class="author-names">Zihan Liu, Shuangrui Ding, Zhixiong Zhang, Xiaoyi Dong, Pan Zhang, <span class="author-highlight">Yuhang Zang</span>, Yuhang Cao, Dahua Lin, Jiaqi Wang</div>
@@ -1075,7 +1026,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2410.06241" data-year="2025" data-topic="AIGC" data-venue="CVPR" data-keywords="ByTheWay Text-to-video generation Training-free guidance Temporal attention Temporal consistency Motion enhancement Fourier analysis Video diffusion">
+<div class="paper-card" data-paper-id="arxiv:2410.06241" data-year="2025" data-topic="AIGC" data-venue="CVPR">
 <div class="paper-content">
 <a class="paper-title-link" href="papers/arxiv-2410.06241.html"><papertitle>ByTheWay: Boost Your Text-to-Video Generation Model to Higher Quality in a Training-free Way</papertitle></a>
 <div class="author-names">Jiazi Bu, Pengyang Ling, Pan Zhang, Tong Wu, Xiaoyi Dong, <span class="author-highlight">Yuhang Zang</span>, Yuhang Cao, Dahua Lin, Jiaqi Wang</div>
@@ -1098,7 +1049,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2501.05510" data-year="2025" data-topic="Multimodal Large Language Models" data-venue="CVPR" data-keywords="OVO-Bench Online video understanding Temporal awareness Streaming video evaluation Backward tracing Real-time understanding Forward active responding Video language models">
+<div class="paper-card" data-paper-id="arxiv:2501.05510" data-year="2025" data-topic="Multimodal Large Language Models" data-venue="CVPR">
 <div class="paper-content">
 <a class="paper-title-link" href="papers/arxiv-2501.05510.html"><papertitle>OVO-Bench: How Far is Your Video-LLMs from Real-World Online Video Understanding?</papertitle></a>
 <div class="author-names">Yifei Li, Junbo Niu, Ziyang Miao, Chunjiang Ge, Yuanhang Zhou, Qihao He, Xiaoyi Dong, Haodong Duan, Shuangrui Ding, Rui Qian, Pan Zhang, <span class="author-highlight">Yuhang Zang</span>, Yuhang Cao, Conghui He, Jiaqi Wang</div>
@@ -1121,7 +1072,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2501.03218" data-year="2025" data-topic="Multimodal Large Language Models" data-venue="CVPR" data-keywords="Dispider Streaming video assistants Active real-time interaction Asynchronous inference Proactive interaction Video perception Interaction timing Video question answering">
+<div class="paper-card" data-paper-id="arxiv:2501.03218" data-year="2025" data-topic="Multimodal Large Language Models" data-venue="CVPR">
 <div class="paper-content">
 <a class="paper-title-link" href="papers/arxiv-2501.03218.html"><papertitle>Dispider: Enabling Video LLMs with Active Real-Time Interaction via Disentangled Perception, Decision, and Reaction</papertitle></a>
 <div class="author-names">Rui Qian, Shuangrui Ding, Xiaoyi Dong, Pan Zhang, <span class="author-highlight">Yuhang Zang</span>, Yuhang Cao, Dahua Lin, Jiaqi Wang</div>
@@ -1144,7 +1095,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2410.17247" data-year="2025" data-topic="Multimodal Large Language Models" data-venue="CVPR" data-keywords="PyramidDrop Visual token reduction Efficient vision-language models Training efficiency Inference acceleration Depth-dependent redundancy Token pruning High-resolution understanding">
+<div class="paper-card" data-paper-id="arxiv:2410.17247" data-year="2025" data-topic="Multimodal Large Language Models" data-venue="CVPR">
 <div class="paper-content">
 <a class="paper-title-link" href="papers/arxiv-2410.17247.html"><papertitle>PyramidDrop: Accelerating Your Large Vision-Language Models via Pyramid Visual Redundancy Reduction</papertitle></a>
 <div class="author-names">Long Xing, Qidong Huang, Xiaoyi Dong, Jiajie Lu, Pan Zhang, <span class="author-highlight">Yuhang Zang</span>, Yuhang Cao, Conghui He, Jiaqi Wang, Feng Wu, Dahua Lin</div>
@@ -1167,7 +1118,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2407.02165" data-year="2025" data-topic="AIGC" data-venue="CVPR" data-keywords="WildAvatar 3D human avatars In-the-wild reconstruction Web video datasets Human motion annotation Avatar generalization Automatic data curation Human reconstruction">
+<div class="paper-card" data-paper-id="arxiv:2407.02165" data-year="2025" data-topic="AIGC" data-venue="CVPR">
 <div class="paper-content">
 <a class="paper-title-link" href="papers/arxiv-2407.02165.html"><papertitle>WildAvatar: Learning In-the-wild 3D Avatars from the Web</papertitle></a>
 <div class="author-names">Zihao Huang, Shoukang Hu, Guangcong Wang, Tianqi Liu, <span class="author-highlight">Yuhang Zang</span>, Zhiguo Cao, Wei Li, Ziwei Liu</div>
@@ -1190,7 +1141,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2410.17637" data-year="2025" data-topic="Reinforcement Learning from Human Feedback" data-venue="ICLR" data-keywords="MIA-DPO Multi-image alignment Direct preference optimization Attention-aware selection Preference data construction Visual instruction tuning Distractor images Vision-language models">
+<div class="paper-card" data-paper-id="arxiv:2410.17637" data-year="2025" data-topic="Reinforcement Learning from Human Feedback" data-venue="ICLR">
 <div class="paper-content">
 <a class="paper-title-link" href="papers/arxiv-2410.17637.html"><papertitle>MIA-DPO: Multi-Image Augmented Direct Preference Optimization For Large Vision-Language Models</papertitle></a>
 <div class="author-names">Ziyu Liu, <span class="author-highlight">Yuhang Zang</span><span class="author-annotation corresponding"><i class="fa fa-envelope"></i></span>, Xiaoyi Dong, Pan Zhang, Yuhang Cao, Haodong Duan, Conghui He, Yuanjun Xiong, Dahua Lin, Jiaqi Wang<span class="author-annotation corresponding"><i class="fa fa-envelope"></i></span></div>
@@ -1214,7 +1165,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2406.05338" data-year="2025" data-topic="AIGC" data-venue="ICLR" data-keywords="MotionClone Motion-controlled video generation Training-free motion transfer Temporal attention Camera motion Object motion Text-to-video Image-to-video">
+<div class="paper-card" data-paper-id="arxiv:2406.05338" data-year="2025" data-topic="AIGC" data-venue="ICLR">
 <div class="paper-content">
 <a class="paper-title-link" href="papers/arxiv-2406.05338.html"><papertitle>MotionClone: Training-Free Motion Cloning for Controllable Video Generation</papertitle></a>
 <div class="author-names">Pengyang Ling, Jiazi Bu, Pan Zhang, Xiaoyi Dong, <span class="author-highlight">Yuhang Zang</span>, Tong Wu, Huaian Chen, Jiaqi Wang, Yi Jin</div>
@@ -1238,7 +1189,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2407.11691" data-year="2024" data-topic="Multimodal Large Language Models" data-venue="ACM MM" data-keywords="VLMEvalKit Multimodal evaluation Reproducible benchmarks OpenVLM Leaderboard Vision-language models Distributed inference Evaluation toolkit Cross-model comparison">
+<div class="paper-card" data-paper-id="arxiv:2407.11691" data-year="2024" data-topic="Multimodal Large Language Models" data-venue="ACM MM">
 <div class="paper-content">
 <a class="paper-title-link" href="papers/arxiv-2407.11691.html"><papertitle>VLMEvalKit: An Open-Source Toolkit for Evaluating Large Multi-Modality Models</papertitle></a>
 <div class="author-names">Haodong Duan, Xinyu Fang, Junming Yang, Xiangyu Zhao, Zerun Ma, Yuxuan Qiao, Mo Li, Tianhao Liang, Lin Zhu, Amit Agarwal, Xiaozhe Li, Shengyuan Ding, Jiazi Bu, Ziyu Liu, Zhangyang Qi, Yifei Li, <span class="author-highlight">Yuhang Zang</span>, Zhe Chen, Lin Chen, Yuan Liu, Yubo Ma, Hailong Sun, Yifan Zhang, Shiyin Lu, Tack Hwa Wong, Weiyun Wang, Peiheng Zhou, Chaoyou Fu, Junbo Cui, Jixuan Chen, Enxin Song, Song Mao, Junming Lin, Xilin Wei, Jinsong Li, Zeyi Sun, Zhaowei Wang, Zicheng Zhang, Xiaoyi Dong, Junjun He, Pan Zhang, Jiaqi Wang, Dahua Lin, Kai Chen</div>
@@ -1263,7 +1214,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2407.01523" data-year="2024" data-topic="Multimodal Large Language Models" data-venue="NeurIPS" data-keywords="MMLongBench-Doc Long-document understanding Multimodal documents Cross-page reasoning Document question answering Evidence integration Unanswerable questions Hallucination evaluation">
+<div class="paper-card" data-paper-id="arxiv:2407.01523" data-year="2024" data-topic="Multimodal Large Language Models" data-venue="NeurIPS">
 <div class="paper-content">
 <a class="paper-title-link" href="papers/arxiv-2407.01523.html"><papertitle>MMLongBench-Doc: Benchmarking Long-context Document Understanding with Visualizations</papertitle></a>
 <div class="author-names">Yubo Ma, <span class="author-highlight">Yuhang Zang</span><span class="author-annotation corresponding"><i class="fa fa-envelope"></i></span>, Liangyu Chen, Meiqi Chen, Yizhu Jiao, Xinze Li, Xinyuan Lu, Ziyu Liu, Yan Ma, Xiaoyi Dong, Pan Zhang, Liangming Pan, Yu-Gang Jiang, Jiaqi Wang, Yixin Cao<span class="author-annotation corresponding"><i class="fa fa-envelope"></i></span>, Aixin Sun</div>
@@ -1290,7 +1241,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2406.11833" data-year="2024" data-topic="Multimodal Large Language Models" data-venue="NeurIPS" data-keywords="MMDU MMDU-45k Multi-turn dialogue Multi-image understanding Conversational instruction tuning Long-context interaction Multimodal benchmarks Vision-language assistants">
+<div class="paper-card" data-paper-id="arxiv:2406.11833" data-year="2024" data-topic="Multimodal Large Language Models" data-venue="NeurIPS">
 <div class="paper-content">
 <a class="paper-title-link" href="papers/arxiv-2406.11833.html"><papertitle>MMDU: A Multi-Turn Multi-Image Dialog Understanding Benchmark and Instruction-Tuning Dataset for LVLMs</papertitle></a>
 <div class="author-names">Ziyu Liu, Tao Chu, <span class="author-highlight">Yuhang Zang</span><span class="author-annotation corresponding"><i class="fa fa-envelope"></i></span>, Xilin Wei, Xiaoyi Dong, Pan Zhang, Zijian Liang, Yuanjun Xiong, Yu Qiao, Dahua Lin, Jiaqi Wang<span class="author-annotation corresponding"><i class="fa fa-envelope"></i></span></div>
@@ -1317,7 +1268,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2406.04325" data-year="2024" data-topic="Multimodal Large Language Models" data-venue="NeurIPS" data-keywords="ShareGPT4Video Dense video captioning Differential captioning Temporal descriptions Video instruction data ShareCaptioner-Video Video understanding Video generation supervision">
+<div class="paper-card" data-paper-id="arxiv:2406.04325" data-year="2024" data-topic="Multimodal Large Language Models" data-venue="NeurIPS">
 <div class="paper-content">
 <a class="paper-title-link" href="papers/arxiv-2406.04325.html"><papertitle>ShareGPT4Video: Improving Video Understanding and Generation with Better Captions</papertitle></a>
 <div class="author-names">Lin Chen, Xilin Wei, Jinsong Li, Xiaoyi Dong, Pan Zhang, <span class="author-highlight">Yuhang Zang</span>, Zehui Chen, Haodong Duan, Bin Lin, Zhenyu Tang, Li Yuan, Yu Qiao, Dahua Lin, Feng Zhao, Jiaqi Wang</div>
@@ -1344,7 +1295,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2405.16009" data-year="2024" data-topic="Multimodal Large Language Models" data-venue="NeurIPS" data-keywords="VideoStreaming Long-video understanding Streaming encoding Memory propagation Adaptive memory selection Video question answering Efficient multimodal inference Temporal comprehension">
+<div class="paper-card" data-paper-id="arxiv:2405.16009" data-year="2024" data-topic="Multimodal Large Language Models" data-venue="NeurIPS">
 <div class="paper-content">
 <a class="paper-title-link" href="papers/arxiv-2405.16009.html"><papertitle>Streaming Long Video Understanding with Large Language Models</papertitle></a>
 <div class="author-names">Rui Qian, Xiaoyi Dong, Pan Zhang, <span class="author-highlight">Yuhang Zang</span>, Shuangrui Ding, Dahua Lin, Jiaqi Wang</div>
@@ -1368,7 +1319,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2403.20330" data-year="2024" data-topic="Multimodal Large Language Models" data-venue="NeurIPS" data-keywords="MMStar Multimodal evaluation Visual necessity Data leakage Language shortcuts Vision-language benchmarks Multimodal gain Benchmark contamination">
+<div class="paper-card" data-paper-id="arxiv:2403.20330" data-year="2024" data-topic="Multimodal Large Language Models" data-venue="NeurIPS">
 <div class="paper-content">
 <a class="paper-title-link" href="papers/arxiv-2403.20330.html"><papertitle>Are We on the Right Way for Evaluating Large Vision-Language Models?</papertitle></a>
 <div class="author-names">Lin Chen, Jinsong Li, Xiaoyi Dong, Pan Zhang, <span class="author-highlight">Yuhang Zang</span>, Zehui Chen, Haodong Duan, Jiaqi Wang, Yu Qiao, Dahua Lin, Feng Zhao</div>
@@ -1394,7 +1345,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2404.06512" data-year="2024" data-topic="Multimodal Large Language Models" data-venue="NeurIPS" data-keywords="InternLM-XComposer2-4KHD High-resolution vision-language models 4K image understanding Dynamic resolution Automatic patch configuration Fine-grained perception Aspect-ratio preservation Multimodal foundation models">
+<div class="paper-card" data-paper-id="arxiv:2404.06512" data-year="2024" data-topic="Multimodal Large Language Models" data-venue="NeurIPS">
 <div class="paper-content">
 <a class="paper-title-link" href="papers/arxiv-2404.06512.html"><papertitle>InternLM-XComposer2-4KHD: A Pioneering Large Vision-Language Model Handling Resolutions from 336 Pixels to 4K HD</papertitle></a>
 <div class="author-names">Xiaoyi Dong, Pan Zhang, <span class="author-highlight">Yuhang Zang</span>, Yuhang Cao, Bin Wang, Linke Ouyang, Songyang Zhang, Haodong Duan, Wenwei Zhang, Yining Li, Hang Yan, Yang Gao, Zhe Chen, Xinyue Zhang, Wei Li, Jingwen Li, Wenhai Wang, Kai Chen, Conghui He, Xingcheng Zhang, Jifeng Dai, Yu Qiao, Dahua Lin, Jiaqi Wang</div>
@@ -1419,7 +1370,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2405.12218" data-year="2024" data-topic="AIGC" data-venue="ECCV" data-keywords="MVSGaussian 3D Gaussian Splatting Multi-view stereo Generalizable reconstruction Novel-view synthesis Real-time rendering Geometry-aware representations Per-scene optimization">
+<div class="paper-card" data-paper-id="arxiv:2405.12218" data-year="2024" data-topic="AIGC" data-venue="ECCV">
 <div class="paper-content">
 <a class="paper-title-link" href="papers/arxiv-2405.12218.html"><papertitle>MVSGaussian: Fast Generalizable Gaussian Splatting Reconstruction from Multi-View Stereo</papertitle></a>
 <div class="author-names">Tianqi Liu, Guangcong Wang, Shoukang Hu, Liao Shen, Xinyi Ye, <span class="author-highlight">Yuhang Zang</span>, Zhiguo Cao, Wei Li, Ziwei Liu</div>
@@ -1444,7 +1395,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2403.15378" data-year="2024" data-topic="Vision-Language Models" data-venue="ECCV" data-keywords="Long-CLIP Long-text image retrieval CLIP Contrastive vision-language learning Positional embedding Efficient fine-tuning Detailed text-to-image generation Zero-shot generalization">
+<div class="paper-card" data-paper-id="arxiv:2403.15378" data-year="2024" data-topic="Vision-Language Models" data-venue="ECCV">
 <div class="paper-content">
 <a class="paper-title-link" href="papers/arxiv-2403.15378.html"><papertitle>Long-CLIP: Unlocking the Long-Text Capability of CLIP</papertitle></a>
 <div class="author-names">Beichen Zhang, Pan Zhang, Xiaoyi Dong, <span class="author-highlight">Yuhang Zang</span>, Jiaqi Wang</div>
@@ -1468,7 +1419,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2312.03818" data-year="2024" data-topic="Vision-Language Models" data-venue="CVPR" data-keywords="Alpha-CLIP Region-aware CLIP Alpha channel Region-text alignment Visual prompting Open-world recognition Controllable generation Multimodal representations">
+<div class="paper-card" data-paper-id="arxiv:2312.03818" data-year="2024" data-topic="Vision-Language Models" data-venue="CVPR">
 <div class="paper-content">
 <a class="paper-title-link" href="papers/arxiv-2312.03818.html"><papertitle>Alpha-CLIP: A CLIP Model Focusing on Wherever You Want</papertitle></a>
 <div class="author-names">Zeyi Sun, Ye Fang, Tong Wu, Pan Zhang, <span class="author-highlight">Yuhang Zang</span>, Shu Kong, Yuanjun Xiong, Dahua Lin, Jiaqi Wang</div>
@@ -1493,7 +1444,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2401.15914" data-year="2024" data-topic="Vision-Language Models" data-venue="ICLR" data-keywords="OGEN Out-of-distribution generalization Vision-language fine-tuning Unknown-class recognition Feature synthesis Adaptive self-distillation Prompt learning Open-domain recognition">
+<div class="paper-card" data-paper-id="arxiv:2401.15914" data-year="2024" data-topic="Vision-Language Models" data-venue="ICLR" data-selected="true">
 <div class="paper-content">
 <a class="paper-title-link" href="papers/arxiv-2401.15914.html"><papertitle>Overcoming the Pitfalls of Vision-Language Model Finetuning for OOD Generalization</papertitle></a>
 <div class="author-names"><span class="author-highlight">Yuhang Zang</span>, Hanlin Goh, Josh Susskind, Chen Huang</div>
@@ -1515,7 +1466,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2305.18279" data-year="2025" data-topic="Multimodal Large Language Models" data-venue="IJCV" data-keywords="ContextDET Contextual object detection Generate-then-detect Multimodal large language models Visual grounding CODE benchmark Open-vocabulary detection Human-AI interaction">
+<div class="paper-card" data-paper-id="arxiv:2305.18279" data-year="2025" data-topic="Multimodal Large Language Models" data-venue="IJCV" data-selected="true">
 <div class="paper-content">
 <a class="paper-title-link" href="papers/arxiv-2305.18279.html"><papertitle>Contextual Object Detection with Multimodal Large Language Models</papertitle></a>
 <div class="author-names"><span class="author-highlight">Yuhang Zang</span>, Wei Li, Jun Han, Kaiyang Zhou, Chen Change Loy</div>
@@ -1544,7 +1495,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="scholar:hW23VKIAAAAJ:eQOLeE2rZwMC" data-year="2023" data-topic="Image Understanding" data-venue="Thesis" data-keywords="Real-world object detection Long-tailed recognition Open-vocabulary detection Semi-supervised learning Feature augmentation Vision-language transfer Unified Prompt Tuning Contextual object detection Doctoral thesis">
+<div class="paper-card" data-paper-id="scholar:hW23VKIAAAAJ:eQOLeE2rZwMC" data-year="2023" data-topic="Image Understanding" data-venue="Thesis" data-selected="true">
 <div class="paper-content">
 <a class="paper-title-link" href="papers/scholar-hW23VKIAAAAJ-eQOLeE2rZwMC.html"><papertitle>Real-World Object Detection</papertitle></a>
 <div class="author-names"><span class="author-highlight">Yuhang Zang</span></div>
@@ -1565,7 +1516,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2210.07225" data-year="2022" data-topic="Vision-Language Models" data-venue="arXiv" data-keywords="Unified Prompt Tuning UPT Multimodal prompt learning Visual prompts Text prompts Few-shot learning Domain generalization Parameter-efficient adaptation">
+<div class="paper-card" data-paper-id="arxiv:2210.07225" data-year="2022" data-topic="Vision-Language Models" data-venue="arXiv" data-selected="true">
 <div class="paper-content">
 <a class="paper-title-link" href="papers/arxiv-2210.07225.html"><papertitle>Unified Vision and Language Prompt Learning</papertitle></a>
 <div class="author-names"><span class="author-highlight">Yuhang Zang</span>, Wei Li, Kaiyang Zhou, Chen Huang, Chen Change Loy</div>
@@ -1586,7 +1537,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2305.14813" data-year="2023" data-topic="Image Understanding" data-venue="IJCV" data-keywords="CascadeMatch Semi-supervised object detection Long-tailed detection Pseudo-labeling Adaptive confidence thresholds Confirmation bias Ensemble supervision Sparse annotations">
+<div class="paper-card" data-paper-id="arxiv:2305.14813" data-year="2023" data-topic="Image Understanding" data-venue="IJCV" data-selected="true">
 <div class="paper-content">
 <a class="paper-title-link" href="papers/arxiv-2305.14813.html"><papertitle>Semi-Supervised and Long-Tailed Object Detection with CascadeMatch</papertitle></a>
 <div class="author-names"><span class="author-highlight">Yuhang Zang</span>, Kaiyang Zhou, Chen Huang, Chen Change Loy</div>
@@ -1612,7 +1563,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2203.11876" data-year="2022" data-topic="Image Understanding" data-venue="ECCV" data-keywords="OV-DETR Open-vocabulary object detection Conditional matching DETR Vision-language transfer Exemplar-based detection CLIP embeddings Novel-category localization">
+<div class="paper-card" data-paper-id="arxiv:2203.11876" data-year="2022" data-topic="Image Understanding" data-venue="ECCV" data-selected="true">
 <div class="paper-content">
 <a class="paper-title-link" href="papers/arxiv-2203.11876.html"><papertitle>Open-Vocabulary DETR with Conditional Matching</papertitle></a>
 <div class="author-names"><span class="author-highlight">Yuhang Zang</span>, Wei Li, Kaiyang Zhou, Chen Huang, Chen Change Loy</div>
@@ -1637,7 +1588,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2102.12867" data-year="2021" data-topic="Image Understanding" data-venue="ICCV" data-keywords="FASA Long-tailed instance segmentation Feature augmentation Adaptive sampling Rare-class recognition Virtual features Class imbalance Long-tailed classification">
+<div class="paper-card" data-paper-id="arxiv:2102.12867" data-year="2021" data-topic="Image Understanding" data-venue="ICCV" data-selected="true">
 <div class="paper-content">
 <a class="paper-title-link" href="papers/arxiv-2102.12867.html"><papertitle>FASA: Feature Augmentation and Sampling Adaptation for Long-Tailed Instance Segmentation</papertitle></a>
 <div class="author-names"><span class="author-highlight">Yuhang Zang</span>, Chen Huang, Chen Change Loy</div>
@@ -1661,7 +1612,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2008.10032" data-year="2021" data-topic="Image Understanding" data-venue="CVPR" data-keywords="Seesaw Loss Long-tailed instance segmentation Gradient rebalancing Class imbalance Rare-category detection Mitigation factor Compensation factor Loss function design">
+<div class="paper-card" data-paper-id="arxiv:2008.10032" data-year="2021" data-topic="Image Understanding" data-venue="CVPR">
 <div class="paper-content">
 <a class="paper-title-link" href="papers/arxiv-2008.10032.html"><papertitle>Seesaw Loss for Long-Tailed Instance Segmentation</papertitle></a>
 <div class="author-names">Jiaqi Wang, Wenwei Zhang, <span class="author-highlight">Yuhang Zang</span>, Yuhang Cao, Jiangmiao Pang, Tao Gong, Kai Chen, Ziwei Liu, Chen Change Loy, Dahua Lin</div>
@@ -1684,7 +1635,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:2003.07543" data-year="2020" data-topic="Image Understanding" data-venue="AAAI" data-keywords="KPNet Lightweight face detection Facial landmark detection Bottom-up detection Scale-adaptive soft-argmax Compact neural networks Face alignment Real-time vision">
+<div class="paper-card" data-paper-id="arxiv:2003.07543" data-year="2020" data-topic="Image Understanding" data-venue="AAAI">
 <div class="paper-content">
 <a class="paper-title-link" href="papers/arxiv-2003.07543.html"><papertitle>KPNet: Towards Minimal Face Detector</papertitle></a>
 <div class="author-names">Guanglu Song, Yu Liu, <span class="author-highlight">Yuhang Zang</span>, Xiaogang Wang, Biao Leng, Qingsheng Yuan</div>
@@ -1710,7 +1661,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:1908.05900" data-year="2019" data-topic="Image Understanding" data-venue="ICCV" data-keywords="Pixel Aggregation Network PAN Arbitrary-shaped text detection Scene text detection Pixel aggregation Feature pyramid enhancement Real-time OCR Text instance segmentation">
+<div class="paper-card" data-paper-id="arxiv:1908.05900" data-year="2019" data-topic="Image Understanding" data-venue="ICCV">
 <div class="paper-content">
 <a class="paper-title-link" href="papers/arxiv-1908.05900.html"><papertitle>Efficient and Accurate Arbitrary-Shaped Text Detection with Pixel Aggregation Network</papertitle></a>
 <div class="author-names">Wenhai Wang, Enze Xie, Xiaoge Song, <span class="author-highlight">Yuhang Zang</span>, Wenjia Wang, Tong Lu, Gang Yu, Chunhua Shen</div>
@@ -1733,7 +1684,7 @@
 </div>
 </div>
 
-<div class="paper-card" data-paper-id="arxiv:1811.08605" data-year="2019" data-topic="Image Understanding" data-venue="AAAI" data-keywords="SPCNET Scene text detection Supervised pyramid context False-positive suppression Feature Pyramid Network Instance segmentation Semantic guidance OCR">
+<div class="paper-card" data-paper-id="arxiv:1811.08605" data-year="2019" data-topic="Image Understanding" data-venue="AAAI">
 <div class="paper-content">
 <a class="paper-title-link" href="papers/arxiv-1811.08605.html"><papertitle>Scene Text Detection with Supervised Pyramid Context Network</papertitle></a>
 <div class="author-names">Enze Xie, <span class="author-highlight">Yuhang Zang</span>, Shuai Shao, Gang Yu, Cong Yao, Guangyao Li</div>

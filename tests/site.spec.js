@@ -7,21 +7,19 @@ for (const javaScriptEnabled of [true, false]) {
         test.use({ javaScriptEnabled });
         test('publication links, styles and return navigation stay inside the project', async ({ page }) => {
             const local = path => new URL(`../${path}`, import.meta.url).href;
-            for (const entry of ['index.html', 'research.html']) {
-                await page.goto(local(entry));
-                await page.locator('[data-paper-id="arxiv:2603.12252"] .paper-title-link').click();
-                await expect(page).toHaveURL(local('papers/arxiv-2603.12252.html'));
-                await expect(page.locator('h1')).toContainText('EndoCoT');
-                await expect.poll(() => page.evaluate(() => [...document.styleSheets].some(sheet => sheet.href?.endsWith('/main.min.css')))).toBe(true);
-                if (javaScriptEnabled) {
-                    const toggle = page.getByRole('button', { name: 'Toggle dark mode' });
-                    const wasPressed = await toggle.getAttribute('aria-pressed');
-                    await toggle.click();
-                    await expect(toggle).toHaveAttribute('aria-pressed', wasPressed === 'true' ? 'false' : 'true');
-                }
-                await page.getByRole('link', { name: 'Yuhang Zang', exact: true }).click();
-                await expect(page).toHaveURL(local('index.html'));
+            await page.goto(local('research.html'));
+            await page.locator('[data-paper-id="arxiv:2603.12252"] .paper-title-link').click();
+            await expect(page).toHaveURL(local('papers/arxiv-2603.12252.html'));
+            await expect(page.locator('h1')).toContainText('EndoCoT');
+            await expect.poll(() => page.evaluate(() => [...document.styleSheets].some(sheet => sheet.href?.endsWith('/main.min.css')))).toBe(true);
+            if (javaScriptEnabled) {
+                const toggle = page.getByRole('button', { name: 'Toggle dark mode' });
+                const wasPressed = await toggle.getAttribute('aria-pressed');
+                await toggle.click();
+                await expect(toggle).toHaveAttribute('aria-pressed', wasPressed === 'true' ? 'false' : 'true');
             }
+            await page.getByRole('link', { name: 'Yuhang Zang', exact: true }).click();
+            await expect(page).toHaveURL(local('index.html'));
             await page.goto(local('papers/arxiv-2503.01785.html'));
             const download = page.getByRole('link', { name: 'Download BibTeX' });
             expect(await download.evaluate(link => link.href)).toBe(local('papers/arxiv-2503.01785.bib'));
@@ -109,18 +107,17 @@ test('paper pages reuse the theme control without fetching metrics', async ({ pa
 });
 
 for (const arxiv of ['2503.01785', '2603.12252', '2505.03318']) {
-test(`verified BibTeX ${arxiv} displays and copies identically across all three pages`, async ({ page, context }) => {
+test(`verified BibTeX ${arxiv} displays and copies identically on the list and paper pages`, async ({ page, context }) => {
     await context.grantPermissions(['clipboard-read', 'clipboard-write'], { origin: 'http://127.0.0.1:8765' });
     const response = await page.request.get(`/papers/arxiv-${arxiv}.bib`);
     expect(response.ok()).toBe(true);
     const bibtex = await response.text();
-    for (const path of ['/', '/research.html']) {
-        await page.goto(path);
-        await page.locator(`[data-paper-id="arxiv:${arxiv}"] .bibtex-btn`).click();
-        await expect(page.locator('#bibtex-content')).toHaveText(bibtex);
-        await page.locator('#bibtex-copy').click();
-        await expect.poll(() => page.evaluate(() => navigator.clipboard.readText())).toBe(bibtex);
-    }
+    await page.goto('/research.html');
+    await page.locator('[data-scope="full"]').click();
+    await page.locator(`[data-paper-id="arxiv:${arxiv}"] .bibtex-btn`).click();
+    await expect(page.locator('#bibtex-content')).toHaveText(bibtex);
+    await page.locator('#bibtex-copy').click();
+    await expect.poll(() => page.evaluate(() => navigator.clipboard.readText())).toBe(bibtex);
     await page.goto(`/papers/arxiv-${arxiv}.html`);
     await expect(page.locator('.paper-bibtex code')).toHaveText(bibtex);
     await page.getByRole('button', { name: 'Copy to clipboard' }).click();
@@ -145,21 +142,6 @@ test('clipboard failure is reported and static citation remains available', asyn
     await expect(page.locator('.paper-bibtex')).toContainText('Liu_2025_ICCV');
 });
 
-test('publication search finds the same research keywords shown on the paper page', async ({ page }) => {
-    await page.goto('/research.html');
-    await page.getByRole('textbox', { name: 'Search publications' }).fill('Group Relative Policy Optimization');
-    await expect(page.locator('.paper-card:visible')).toHaveCount(2);
-    await expect(page.locator('[data-paper-id="arxiv:2603.12648"]')).toBeVisible();
-    await page.locator('[data-paper-id="arxiv:2503.01785"] .paper-title-link').click();
-    await expect(page.locator('.paper-keywords')).toContainText('Group Relative Policy Optimization (GRPO)');
-    await page.goto('/research.html');
-    await page.getByRole('textbox', { name: 'Search publications' }).fill('Storage efficiency');
-    await expect(page.locator('.paper-card:visible')).toHaveCount(1);
-    await page.locator('.paper-card:visible .paper-title-link').click();
-    await expect(page.locator('.paper-keywords')).toContainText('Storage efficiency');
-    await expect(page.locator('.paper-takeaway')).toContainText('11.8%');
-});
-
 test.beforeEach(async ({ page }) => {
     page.on('pageerror', error => { throw error; });
     // Keep tests deterministic and independent of font/CDN/API availability.
@@ -172,44 +154,45 @@ test.beforeEach(async ({ page }) => {
     });
 });
 
-test('home keeps five selected papers and supports sorting, expansion and group navigation', async ({ page }) => {
+test('home no longer renders the selected papers card', async ({ page }) => {
     await page.goto('/');
-    const visible = page.locator('.paper-card:visible');
-    const total = await page.locator('.paper-card').count();
-    await expect(visible).toHaveCount(5);
-    await page.locator('[data-sort-type="topic"]').click();
-    await expect(visible).toHaveCount(5);
-    const topics = await visible.evaluateAll(cards => [...new Set(cards.map(card => card.dataset.topic))]);
-    await expect(page.locator('.topic-header:visible')).toHaveText(topics);
-    await page.locator('#toggle-papers').click();
-    await expect(visible).toHaveCount(total);
-    await page.locator('#toggle-papers').click();
-    await expect(visible).toHaveCount(5);
-    await page.locator('.date-link[data-year="2024"]').click();
-    await expect(visible).toHaveCount(total);
-    await expect(page.locator('#year-2024')).toBeInViewport();
-    await expect(page.locator('#toggle-papers')).toHaveAttribute('aria-expanded', 'true');
+    await expect(page.locator('.papers-section')).toHaveCount(0);
+    await expect(page.locator('.paper-card')).toHaveCount(0);
+    await expect(page.locator('#toggle-papers')).toHaveCount(0);
+    await expect(page.locator('#services')).toBeVisible();
 });
 
-test('search survives each sort and clearing restores all publications', async ({ page }) => {
+test('selected scope is the default and shows only first- or last-author papers', async ({ page }) => {
     await page.goto('/research.html');
     const total = await page.locator('.paper-card').count();
-    const input = page.locator('#paper-search');
-    await input.fill('EndoCoT');
-    await expect(page.locator('.paper-card:visible')).toHaveCount(1);
-    for (const sort of ['topic', 'venue', 'date']) {
-        await page.locator(`[data-sort-type="${sort}"]`).click();
-        await expect(page.locator('.paper-card:visible')).toHaveCount(1);
-        await expect(page.locator('.year-header:visible, .topic-header:visible, .venue-header:visible')).toHaveCount(1);
-    }
-    await input.fill('no-such-paper-xyz');
-    await expect(page.locator('.paper-card:visible')).toHaveCount(0);
-    await expect(page.locator('.year-header:visible')).toHaveCount(0);
-    await page.locator('#clear-search').click();
-    await expect(page.locator('.paper-card:visible')).toHaveCount(total);
-    await input.fill('EndoCoT');
-    await input.press('Escape');
-    await expect(page.locator('.paper-card:visible')).toHaveCount(total);
+    const selected = await page.locator('.paper-card[data-selected="true"]').count();
+    expect(selected).toBeGreaterThan(0);
+    expect(selected).toBeLessThan(total);
+    const visible = page.locator('.paper-card:visible');
+    await expect(visible).toHaveCount(selected);
+    await expect(page.locator('.paper-card:visible:not([data-selected="true"])')).toHaveCount(0);
+    // The list is grouped by year as soon as it loads, without clicking a sort button.
+    const years = await visible.evaluateAll(cards => [...new Set(cards.map(card => card.dataset.year))]);
+    expect(years).toEqual([...years].sort((a, b) => b - a));
+    await expect(page.locator('.year-header:visible')).toHaveText(years);
+    await expect(page.locator('[data-scope="selected"]')).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('[data-scope="selected"]')).toHaveText(`Selected (${selected})`);
+    await expect(page.locator('[data-scope="full"]')).toHaveText(`Full (${total})`);
+    const authorship = await visible.evaluateAll(cards => cards.map(card => {
+        const names = card.querySelector('.author-names').textContent.split(',').map(name => name.trim());
+        return names[0].startsWith('Yuhang Zang') || names.at(-1).startsWith('Yuhang Zang');
+    }));
+    expect(authorship.every(Boolean)).toBe(true);
+    await page.locator('[data-sort-type="topic"]').click();
+    await expect(visible).toHaveCount(selected);
+    const topics = await visible.evaluateAll(cards => [...new Set(cards.map(card => card.dataset.topic))]);
+    await expect(page.locator('.topic-header:visible')).toHaveText(topics);
+    await page.locator('[data-scope="full"]').click();
+    await expect(visible).toHaveCount(total);
+    await expect(page.locator('[data-scope="full"]')).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('[data-sort-type="topic"]')).toHaveClass(/active/);
+    await page.locator('[data-scope="selected"]').click();
+    await expect(visible).toHaveCount(selected);
 });
 
 test('BibTeX works after reordering without duplicate buttons and downloads the displayed content', async ({ page }) => {
@@ -217,8 +200,8 @@ test('BibTeX works after reordering without duplicate buttons and downloads the 
     await page.locator('[data-sort-type="venue"]').click();
     const total = await page.locator('.paper-card').count();
     await expect(page.locator('.bibtex-btn')).toHaveCount(total);
-    const button = page.locator('.bibtex-btn').first();
-    const title = await page.locator('.paper-card').first().locator('papertitle').textContent();
+    const button = page.locator('.paper-card:visible .bibtex-btn').first();
+    const title = await page.locator('.paper-card:visible').first().locator('papertitle').textContent();
     await button.click();
     await expect(page.getByRole('dialog')).toBeVisible();
     await expect(page.locator('#bibtex-content')).toContainText(title.trim());
@@ -249,25 +232,28 @@ test('theme and mobile menu work when browser storage is blocked', async ({ page
     await expect(page.locator('#nav-menu')).toHaveAttribute('aria-hidden', 'false');
     await page.locator('#theme-toggle').click();
     await expect(page.locator('html')).not.toHaveAttribute('data-theme');
-    await expect(page.locator('.paper-card:visible')).toHaveCount(5);
+    await expect(page.locator('#services')).toBeVisible();
 });
 
-test('metrics stay idle above the publications, then load once and reuse cache', async ({ page }) => {
+test('metrics load only near the viewport, then load once and reuse cache', async ({ page }) => {
     const requests = [];
     page.on('request', request => { if (isMetrics(request.url())) requests.push(request.url()); });
-    await page.goto('/');
-    // The old idle fallback fired after at most two seconds, even for hidden cards.
+    await page.goto('/research.html');
+    // The old idle fallback fired after at most two seconds for every card, even those far below the fold.
     await page.waitForTimeout(2400);
-    expect(requests).toHaveLength(0);
-    const star = page.locator('.paper-card:visible .github-btn').first();
+    const total = await page.locator('.github-btn[data-repo]').count();
+    const starRequests = () => requests.filter(url => url.includes('api.github.com')).length;
+    expect(starRequests()).toBeGreaterThan(0);
+    expect(starRequests()).toBeLessThan(total);
+    const star = page.locator('.paper-card:visible .github-btn').last();
     await star.scrollIntoViewIfNeeded();
     await expect(star.locator('.star-count')).toHaveText('1.2k');
     expect(requests.filter(url => url.includes('gs_data.json'))).toHaveLength(1);
     const repo = await star.getAttribute('data-repo');
     const before = requests.filter(url => url.endsWith(repo)).length;
     await page.reload();
-    await page.locator(`.github-btn[data-repo="${repo}"]`).first().scrollIntoViewIfNeeded();
-    await expect(page.locator(`.github-btn[data-repo="${repo}"] .star-count`).first()).toHaveText('1.2k');
+    await page.locator(`.paper-card:visible .github-btn[data-repo="${repo}"]`).first().scrollIntoViewIfNeeded();
+    await expect(page.locator(`.paper-card:visible .github-btn[data-repo="${repo}"] .star-count`).first()).toHaveText('1.2k');
     expect(requests.filter(url => url.endsWith(repo))).toHaveLength(before);
 });
 
@@ -277,20 +263,19 @@ test('data saver skips optional metrics while retaining interactions', async ({ 
     await page.addInitScript(() => Object.defineProperty(navigator, 'connection', { value: { saveData: true } }));
     await page.goto('/research.html');
     await page.locator('[data-sort-type="venue"]').click();
-    await page.locator('.github-btn').first().scrollIntoViewIfNeeded();
-    await expect(page.locator('.star-count').first()).toHaveText('--');
+    const star = page.locator('.paper-card:visible .github-btn').first();
+    await star.scrollIntoViewIfNeeded();
+    await expect(star.locator('.star-count')).toHaveText('--');
     expect(requests).toHaveLength(0);
 });
 
-test('API failures show unavailable counts and do not break search or BibTeX', async ({ page }) => {
+test('API failures show unavailable counts and do not break BibTeX', async ({ page }) => {
     await page.route(/api.github.com|img.shields.io|gs_data\.json/, route => route.fulfill({ status: 503, body: 'Unavailable' }));
     await page.goto('/research.html');
-    const star = page.locator('.github-btn').first();
+    const star = page.locator('.paper-card:visible .github-btn').first();
     await star.scrollIntoViewIfNeeded();
     await expect(star.locator('.star-count')).toHaveAttribute('title', 'Star count unavailable');
-    await page.locator('#paper-search').fill('EndoCoT');
-    await expect(page.locator('.paper-card:visible')).toHaveCount(1);
-    await page.locator('.paper-card:visible .bibtex-btn').click();
+    await page.locator('.paper-card:visible .bibtex-btn').first().click();
     await expect(page.getByRole('dialog')).toBeVisible();
 });
 
@@ -298,12 +283,16 @@ test('without IntersectionObserver only visible metrics are loaded', async ({ pa
     await page.addInitScript(() => { delete window.IntersectionObserver; });
     const requests = [];
     page.on('request', request => { if (isMetrics(request.url())) requests.push(request.url()); });
-    await page.goto('/');
+    await page.goto('/research.html');
     await page.waitForTimeout(300);
-    expect(requests).toHaveLength(0);
-    const star = page.locator('.paper-card:visible .github-btn').first();
+    const total = await page.locator('.github-btn[data-repo]').count();
+    const starRequests = () => requests.filter(url => url.includes('api.github.com')).length;
+    expect(starRequests()).toBeGreaterThan(0);
+    expect(starRequests()).toBeLessThan(total);
+    const star = page.locator('.paper-card:visible .github-btn').last();
     await star.scrollIntoViewIfNeeded();
     await expect(star.locator('.star-count')).toHaveText('1.2k');
+    expect(starRequests()).toBeLessThan(total);
 });
 
 test('static content and navigation remain readable without JavaScript', async ({ browser }) => {

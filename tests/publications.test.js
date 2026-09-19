@@ -4,7 +4,7 @@ import { readFile, writeFile, mkdir, mkdtemp, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
-import { publicationSections, validatePublications, renderPublicationPages } from '../scripts/render-publications.mjs';
+import { publicationSections, validatePublications, renderPublicationPages, isSelectedPaper } from '../scripts/render-publications.mjs';
 import { escapeHTML, paperPath, paperURL, renderPaper, renderBibTeX, bibtexPath, citationRecord, personSchema, personID, authorProfiles, formatCitation, siteURL } from '../scripts/render-paper.mjs';
 import { renderLLMsIndex, renderLLMsFull, renderBibliography } from '../scripts/render-llms.mjs';
 
@@ -13,17 +13,17 @@ const data = JSON.parse(await readFile(new URL('../data/publications.json', impo
 test('both lists and structured metadata use the canonical records', () => {
     const rendered = publicationSections(data);
     const paperIds = markup => [...markup.matchAll(/data-paper-id="([^"]+)"/g)].map(match => match[1]);
-    assert.deepEqual(paperIds(rendered.homepage), data.homepage.selectedPaperIds);
     assert.deepEqual(paperIds(rendered.research), data.papers.map(paper => paper.id));
     assert.equal(rendered.items.length, data.papers.length);
-    assert.deepEqual(rendered.homepageItems.map(entry => entry.item.url), data.homepage.selectedPaperIds.map(id => paperURL(data.papers.find(paper => paper.id === id))));
-    assert.deepEqual(rendered.homepageItems.map(entry => entry.position), data.homepage.selectedPaperIds.map((_, index) => index + 1));
-    for (const entry of rendered.homepageItems) {
-        assert.deepEqual(entry.item, rendered.items.find(record => record.item['@id'] === entry.item['@id']).item);
-    }
+    assert.deepEqual(rendered.items.map(entry => entry.position), data.papers.map((_, index) => index + 1));
+    assert(!('homepage' in rendered) && !('homepageItems' in rendered));
+    const selected = data.papers.filter(isSelectedPaper);
+    assert(selected.length > 0 && selected.length < data.papers.length);
+    assert(selected.every(paper => [paper.authors[0].name, paper.authors.at(-1).name].includes('Yuhang Zang')));
+    const selectedIds = [...rendered.research.matchAll(/data-paper-id="([^"]+)"[^>]*data-selected="true"/g)].map(match => match[1]);
+    assert.deepEqual(selectedIds, selected.map(paper => paper.id));
     const endocot = data.papers.find(paper => paper.id === 'arxiv:2603.12252');
     const code = endocot.links.find(link => link.type === 'code').url;
-    assert(rendered.homepage.includes(code));
     assert(rendered.research.includes(code));
     const longbench = data.papers.find(paper => paper.id === 'arxiv:2407.01523');
     const metadata = rendered.items.find(entry => entry.item.url === paperURL(longbench)).item;
@@ -51,9 +51,6 @@ test('invalid or duplicate records fail before pages are generated', () => {
     const duplicate = structuredClone(data);
     duplicate.papers.push(duplicate.papers[0]);
     assert.throws(() => validatePublications(duplicate), /Duplicate/);
-    const missing = structuredClone(data);
-    missing.homepage.selectedPaperIds.push('missing-id');
-    assert.throws(() => validatePublications(missing), /Unknown homepage/);
     const unsafe = structuredClone(data);
     unsafe.papers[0].links[0].url = 'javascript:alert(1)';
     assert.throws(() => validatePublications(unsafe), /Invalid URL/);
@@ -322,30 +319,18 @@ test('one data change propagates to static pages and JSON-LD; rebuilds are deter
             await writeFile(join(dir, name), await readFile(new URL(`../${name}`, import.meta.url)));
         }
         const changed = structuredClone(data);
-        const paper = changed.papers.find(p => p.id === changed.homepage.selectedPaperIds[0]);
+        const paper = changed.papers.find(p => p.id === 'arxiv:2603.12252');
         paper.title = 'Test <title> & $& </script>';
         paper.authors[0].name = 'Test Author';
-        changed.homepage.defaultVisibleCount = 7;
         await writeFile(join(dir, 'data/publications.json'), JSON.stringify(changed));
         await renderPublicationPages(root);
         const home = await readFile(join(dir, 'index.html'), 'utf8');
         const research = await readFile(join(dir, 'research.html'), 'utf8');
-        for (const html of [home, research]) {
-            assert(html.includes('<papertitle>Test &lt;title&gt; &amp; $&amp; &lt;/script&gt;</papertitle>'));
-            assert(html.includes('Test Author'));
-        }
-        assert(home.includes('data-limit="7"'));
+        assert(research.includes('<papertitle>Test &lt;title&gt; &amp; $&amp; &lt;/script&gt;</papertitle>'));
+        assert(research.includes('Test Author'));
+        assert(!home.includes('<papertitle>') && !home.includes('selected-publications-schema') && !home.includes('papers-container'));
         const schema = JSON.parse(research.match(/<script id="publications-schema" type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
         assert(schema.mainEntity.itemListElement.some(entry => entry.item.name === paper.title));
-        const homeSchema = JSON.parse(home.match(/<script id="selected-publications-schema" type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
-        assert.equal(homeSchema['@type'], 'ItemList');
-        assert.equal(homeSchema.numberOfItems, changed.homepage.selectedPaperIds.length);
-        assert.deepEqual(homeSchema.itemListElement.map(entry => entry.item.url), changed.homepage.selectedPaperIds.map(id => paperURL(changed.papers.find(record => record.id === id))));
-        assert.equal(homeSchema.itemListElement[0].item.name, paper.title);
-        assert.equal(homeSchema.itemListElement[0].item.author[0].name, 'Test Author');
-        for (const entry of homeSchema.itemListElement) {
-            assert.deepEqual(entry.item, schema.mainEntity.itemListElement.find(record => record.item['@id'] === entry.item['@id']).item);
-        }
         const detail = await readFile(new URL(paperPath(paper).slice(1), root), 'utf8');
         assert.equal(detail.match(/<h1\b[^>]*>(.*?)<\/h1>/)[1], 'Test &lt;title&gt; &amp; $&amp; &lt;/script&gt;');
         assert(detail.includes('<meta name="citation_author" content="Test Author">'));

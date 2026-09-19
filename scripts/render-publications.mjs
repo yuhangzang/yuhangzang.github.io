@@ -115,9 +115,6 @@ export function validatePublications(data) {
             }
         }
     }
-    assert(data.homepage.selectedPaperIds.every(id => ids.has(id)), 'Unknown homepage paper');
-    assert.equal(new Set(data.homepage.selectedPaperIds).size, data.homepage.selectedPaperIds.length, 'Duplicate homepage paper');
-    assert(Number.isInteger(data.homepage.defaultVisibleCount) && data.homepage.defaultVisibleCount > 0, 'Invalid homepage limit');
 }
 
 function renderAuthor(author) {
@@ -145,16 +142,21 @@ function renderLink(link, paper) {
     }
 }
 
-function renderCard(paper, homepage) {
+// The "Selected" scope on the publications page keeps papers where the site author is first or last author.
+export function isSelectedPaper(paper) {
+    return [paper.authors[0], paper.authors.at(-1)].some(author => author.name === authorName);
+}
+
+function renderCard(paper) {
     const info = [
         `<a class="paper-title-link" href="${paperPath(paper).slice(1)}"><papertitle>${escapeHTML(paper.title)}</papertitle></a>`,
         `<div class="author-names">${paper.authors.map(renderAuthor).join(', ')}</div>`,
         `<div class="paper-venue">${escapeHTML(paper.publication.citationText).replace(/\(([^()]+)\)/, '(<b>$1</b>)')}${paper.display.badges.map(badge => ` <span class="oral-spotlight-badge ${badge === 'Oral' ? 'oral' : 'spotlight'}-badge">${escapeHTML(badge)}</span>`).join('')}</div>`
     ].join('\n');
-    const isNew = homepage ? (paper.display.homepageNew ?? paper.display.new) : paper.display.new;
+    const isNew = paper.display.new;
     // Preserve the existing spacing of older cards, which have no info wrapper.
-    const wrapInfo = homepage || paper.display.infoWrapper;
-    return `<div class="paper-card" data-paper-id="${escapeHTML(paper.id)}" data-year="${paper.publication.year}" data-topic="${escapeHTML(paper.topics[0])}" data-venue="${escapeHTML(paper.publication.venueGroup)}"${paper.keywords ? ` data-keywords="${escapeHTML(paper.keywords.join(' '))}"` : ''}>
+    const wrapInfo = paper.display.infoWrapper;
+    return `<div class="paper-card" data-paper-id="${escapeHTML(paper.id)}" data-year="${paper.publication.year}" data-topic="${escapeHTML(paper.topics[0])}" data-venue="${escapeHTML(paper.publication.venueGroup)}"${isSelectedPaper(paper) ? ' data-selected="true"' : ''}>
 ${isNew ? '<div class="new-badge">New!</div>\n' : ''}<div class="paper-content">
 ${wrapInfo ? `<div class="paper-info">\n${info}\n</div>` : info}
 <div class="paper-badges">
@@ -167,15 +169,8 @@ ${paper.citation ? `<template class="paper-citation" data-cite-key="${escapeHTML
 
 export function publicationSections(data) {
     validatePublications(data);
-    const byId = new Map(data.papers.map(paper => [paper.id, paper]));
     return {
-        homepage: data.homepage.selectedPaperIds.map(id => renderCard(byId.get(id), true)).join('\n\n'),
-        research: data.papers.map(paper => renderCard(paper, false)).join('\n\n'),
-        homepageItems: data.homepage.selectedPaperIds.map((id, index) => ({
-            '@type': 'ListItem',
-            position: index + 1,
-            item: paperSchema(byId.get(id))
-        })),
+        research: data.papers.map(renderCard).join('\n\n'),
         items: data.papers.map((paper, index) => ({
             '@type': 'ListItem',
             position: index + 1,
@@ -214,24 +209,11 @@ export async function renderPublicationPages(root = new URL('../', import.meta.u
     const data = JSON.parse(await readFile(new URL('data/publications.json', root), 'utf8'));
     const sections = publicationSections(data);
     const [home, research] = await Promise.all(['index.html', 'research.html'].map(name => readFile(new URL(name, root), 'utf8')));
-    const limitPattern = /(<div id="papers-container" data-limit=")\d+("[^>]*>)/;
-    assert(limitPattern.test(home), 'Missing homepage paper limit');
-    const homeSchemaPattern = /<script id="selected-publications-schema" type="application\/ld\+json">[\s\S]*?<\/script>/g;
-    assert.equal([...home.matchAll(homeSchemaPattern)].length, 1, 'Expected exactly one selected publications schema');
-    const homeSchema = {
-        '@context': 'https://schema.org',
-        '@type': 'ItemList',
-        '@id': `${siteURL}/#selected-publications`,
-        name: 'Selected publications',
-        numberOfItems: sections.homepageItems.length,
-        itemListElement: sections.homepageItems
-    };
     const personPattern = /<script id="person-schema" type="application\/ld\+json">[\s\S]*?<\/script>/g;
     assert.equal([...home.matchAll(personPattern)].length, 1, 'Expected exactly one person schema');
-    const homeOutput = replacePaperSection(replaceProfileLinks(replaceNavigation(home, 'home'), data.author), sections.homepage).replace(limitPattern,
-        (_, opening, closing) => `${opening}${data.homepage.defaultVisibleCount}${closing}`)
-        .replace(personPattern, () => `<script id="person-schema" type="application/ld+json">\n${structuredJSON({ '@context': 'https://schema.org', ...personSchema(data.author) })}\n</script>`)
-        .replace(homeSchemaPattern, () => `<script id="selected-publications-schema" type="application/ld+json">\n${structuredJSON(homeSchema)}\n</script>`);
+    // The home page has no paper list; only its navigation, profile links and person schema are generated.
+    const homeOutput = replaceProfileLinks(replaceNavigation(home, 'home'), data.author)
+        .replace(personPattern, () => `<script id="person-schema" type="application/ld+json">\n${structuredJSON({ '@context': 'https://schema.org', ...personSchema(data.author) })}\n</script>`);
     const schemaPattern = /<script id="publications-schema" type="application\/ld\+json">([\s\S]*?)<\/script>/g;
     const schemaMatches = [...research.matchAll(schemaPattern)];
     assert.equal(schemaMatches.length, 1, 'Expected exactly one publications schema');

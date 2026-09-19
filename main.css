@@ -598,7 +598,6 @@ main {
 /* Content sections - Google style */
 .news-section,
 .papers-section,
-.interns-section,
 .activities-section {
   margin-bottom: calc(var(--space-6) / 2) !important;
   background: var(--background-color) !important;
@@ -680,12 +679,69 @@ main {
   justify-content: center !important;
 }
 
+/* Two distinct controls: a segmented switch for scope, light chips for sort order. */
+.list-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.list-controls .sort-controls {
+  margin-bottom: 0 !important;
+  align-items: center;
+}
+
+.scope-switch {
+  display: inline-flex;
+  padding: 3px;
+  gap: 2px;
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+}
+
+.scope-btn {
+  border: none;
+  background: transparent;
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.scope-btn:hover {
+  color: var(--text-primary);
+}
+
+.scope-btn.active {
+  background: var(--primary-color);
+  color: #fff;
+  box-shadow: var(--shadow-sm);
+}
+
+[data-theme="dark"] .scope-btn.active {
+  color: #202124;
+}
+
+.sort-label {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-right: var(--space-1);
+}
+
 .sort-btn {
   background: var(--background-color) !important;
   border: 1px solid var(--border-color) !important;
-  padding: 6px 16px !important;
+  padding: 5px 14px !important;
   border-radius: 24px !important;
-  font-size: 14px !important;
+  font-size: 13px !important;
   font-weight: 500 !important;
   color: var(--text-secondary) !important;
   cursor: pointer;
@@ -701,73 +757,15 @@ main {
 }
 
 .sort-btn.active {
-  background: var(--primary-color) !important;
-  color: white !important;
-  border-color: var(--primary-color) !important;
+  background: rgba(26, 115, 232, 0.12) !important;
+  color: var(--primary-color) !important;
+  border-color: rgba(26, 115, 232, 0.35) !important;
   transform: none !important;
 }
 
-/* Search container styles */
-.search-container {
-  position: relative;
-  max-width: 600px;
-  margin: 0 auto var(--space-3);
-  display: flex;
-  align-items: center;
-}
-
-.search-icon {
-  position: absolute;
-  left: 16px;
-  color: var(--text-secondary);
-  font-size: 14px;
-  pointer-events: none;
-}
-
-.search-input {
-  width: 100%;
-  padding: 12px 100px 12px 42px;
-  border: 1px solid var(--border-color);
-  border-radius: 24px;
-  font-size: 14px;
-  font-family: var(--font-family);
-  background: var(--background-color);
-  color: var(--text-primary);
-  transition: all var(--transition-fast);
-}
-
-.search-input:focus {
-  outline: none;
-  border-color: var(--google-blue);
-  box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.15);
-}
-
-.search-input::placeholder {
-  color: var(--text-secondary);
-}
-
-.clear-search-btn {
-  position: absolute;
-  right: 85px;
-  background: none;
-  border: none;
-  color: var(--text-secondary);
-  cursor: pointer;
-  padding: 8px;
-  font-size: 14px;
-  transition: color var(--transition-fast);
-}
-
-.clear-search-btn:hover {
-  color: var(--text-primary);
-}
-
-.search-results-count {
-  position: absolute;
-  right: 16px;
-  font-size: 12px;
-  color: var(--text-secondary);
-  white-space: nowrap;
+[data-theme="dark"] .sort-btn.active {
+  background: rgba(138, 180, 248, 0.16) !important;
+  border-color: rgba(138, 180, 248, 0.45) !important;
 }
 
 /* Keep native hidden state authoritative over component display rules. */
@@ -932,36 +930,6 @@ main {
 .bibtex-download-btn:hover {
   background: var(--background-color);
   border-color: var(--border-hover);
-}
-
-.show-more-container {
-  display: flex;
-  justify-content: center;
-  margin: var(--space-2) 0 var(--space-1) !important;
-}
-
-.show-more-btn {
-  background: var(--background-color) !important;
-  border: 1px solid var(--border-color) !important;
-  border-radius: var(--radius-full) !important;
-  padding: 8px 20px !important;
-  font-size: 14px !important;
-  font-weight: 500 !important;
-  color: var(--text-secondary) !important;
-  cursor: pointer;
-  transition: all var(--transition-fast) !important;
-}
-
-.show-more-btn:hover {
-  background: var(--surface-color) !important;
-  border-color: var(--border-hover) !important;
-  color: var(--text-primary) !important;
-}
-
-.show-more-btn.showing-all {
-  background: var(--background-color) !important;
-  border-color: var(--border-color) !important;
-  color: var(--text-secondary) !important;
 }
 
 #papers-container {
@@ -1170,139 +1138,6 @@ papertitle {
   border-radius: 0 !important;
 }
 
-/* Navigation compact */
-.navigation-compact {
-  background: var(--google-gray-50);
-  border-radius: var(--radius-lg);
-  padding: var(--space-3);
-  margin-bottom: var(--space-4);
-  border: 1px solid var(--google-gray-200);
-  box-shadow: var(--shadow-sm);
-}
-
-.nav-line {
-  margin-bottom: var(--space-2);
-  font-size: 0.875rem;
-  line-height: 1.6;
-}
-
-.nav-line:last-child {
-  margin-bottom: 0;
-}
-
-.nav-label {
-  font-weight: 600;
-  color: var(--google-gray-900);
-  margin-right: var(--space-1);
-}
-
-.date-link,
-.topic-link,
-.venue-link {
-  color: var(--google-blue);
-  text-decoration: none;
-  margin-right: var(--space-1);
-  font-weight: 500;
-  transition: color var(--transition-fast);
-}
-
-.date-link:hover,
-.topic-link:hover,
-.venue-link:hover {
-  color: var(--google-blue-hover);
-  text-decoration: none;
-}
-
-.author-legend {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-3);
-  align-items: center;
-  margin-top: var(--space-1);
-  padding: var(--space-2);
-  background: var(--google-gray-50);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--google-gray-200);
-  font-size: 0.95rem;
-}
-
-.legend-item {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-weight: 500;
-  color: var(--google-gray-700);
-}
-
-.legend-symbol {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 20px;
-  height: 20px;
-  background: transparent;
-  color: var(--google-blue);
-  border-radius: 50%;
-  font-weight: 600;
-  font-size: 11px;
-  border: 1px solid var(--google-gray-300);
-  font-family: "Font Awesome 6 Free", "Font Awesome 5 Free", "FontAwesome" !important;
-  font-weight: 900 !important;
-}
-
-.legend-symbol.corresponding {
-  background: transparent;
-  color: var(--google-gray-600);
-  border: 1px solid var(--google-gray-300);
-  font-size: 11px;
-  font-family: "Font Awesome 6 Free", "Font Awesome 5 Free", "FontAwesome" !important;
-  font-weight: 900 !important;
-}
-
-.legend-description {
-  font-size: 0.9rem;
-  color: var(--google-gray-600);
-}
-
-/* Dark mode support for legend */
-[data-theme="dark"] .author-legend {
-  background: var(--google-gray-800);
-  border-color: var(--google-gray-600);
-}
-
-[data-theme="dark"] .legend-item {
-  color: var(--google-gray-200);
-}
-
-[data-theme="dark"] .legend-description {
-  color: var(--google-gray-300);
-}
-
-[data-theme="dark"] .legend-symbol {
-  background: transparent;
-  color: var(--google-blue);
-  border-color: var(--google-gray-600);
-}
-
-[data-theme="dark"] .legend-symbol.corresponding {
-  background: transparent;
-  color: var(--google-gray-400);
-  border-color: var(--google-gray-600);
-}
-
-/* Responsive legend */
-@media (max-width: 768px) {
-  .author-legend {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-2);
-  }
-  
-  .legend-item {
-    font-size: 0.8rem;
-  }
-}
-
 /* Back to top button */
 .back-to-top-btn {
   position: fixed;
@@ -1425,21 +1260,13 @@ papertitle {
     text-transform: none;
   }
   
+  .list-controls {
+    justify-content: center;
+  }
+
   .sort-controls {
     flex-wrap: wrap;
-  }
-
-  .search-container {
-    max-width: 100%;
-  }
-
-  .search-input {
-    font-size: 14px;
-    padding: 10px 90px 10px 38px;
-  }
-
-  .search-input::placeholder {
-    font-size: 13px;
+    justify-content: center;
   }
 
   main {
@@ -1448,13 +1275,6 @@ papertitle {
 }
 
 @media (max-width: 480px) {
-  .search-input::placeholder {
-    font-size: 12px;
-  }
-
-  .search-results-count {
-    font-size: 11px;
-  }
   .nav-container {
     padding: 0 var(--space-2);
   }
@@ -1497,10 +1317,8 @@ papertitle {
   border-bottom-color: var(--google-gray-700);
 }
 
-[data-theme="dark"] .navigation-compact,
 [data-theme="dark"] .news-section,
 [data-theme="dark"] .papers-section,
-[data-theme="dark"] .interns-section,
 [data-theme="dark"] .activities-section {
   background: var(--google-gray-800);
   border-color: var(--google-gray-700);
@@ -1528,6 +1346,7 @@ papertitle {
   .theme-toggle,
   .mobile-menu-toggle,
   .back-to-top-btn,
+  .list-controls,
   .sort-controls {
     display: none;
   }
@@ -1920,7 +1739,6 @@ button:focus,
 /* Additional Google-style overrides for remaining elements */
 
 /* Links in headings */
-.full-list-link,
 .scholar-link {
   font-size: 14px !important;
   font-weight: 500 !important;
@@ -1931,16 +1749,9 @@ button:focus,
   letter-spacing: 0.025em !important;
 }
 
-.full-list-link:hover,
 .scholar-link:hover {
   text-decoration: underline !important;
   color: var(--primary-hover) !important;
-}
-
-/* Intern name styling */
-.intern-name {
-  color: var(--primary-color) !important;
-  font-weight: 500 !important;
 }
 
 /* Google Material Design Activities Section */
@@ -1994,6 +1805,50 @@ button:focus,
   flex-wrap: wrap !important;
   gap: var(--space-1) !important;
   margin-left: 28px !important; /* Align with icon + gap */
+}
+
+/* Conference service history: one conference per row, newest year first. */
+.service-conferences {
+  margin: 0 0 24px 28px;
+  font-size: 14px;
+  line-height: 28px;
+}
+
+.service-conference {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 10px;
+  padding: 5px 0;
+}
+
+.service-conference dt {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.service-conference dd {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 7px;
+  margin: 0;
+  min-width: 0;
+  color: var(--text-secondary);
+}
+
+.service-conference dd > span { white-space: nowrap; }
+.service-conference small { font-size: 12px; }
+.service-conference a { color: var(--text-secondary) !important; }
+.service-conference a:hover { color: var(--primary-color) !important; }
+.service-conference a:focus-visible { outline: 2px solid var(--primary-color); outline-offset: 3px; }
+
+@media (max-width: 768px) {
+  .service-conferences { margin-left: 24px; }
+}
+
+@media (max-width: 480px) {
+  .activities-compact { padding: var(--space-2) !important; }
+  .service-conferences { margin-left: 0; }
+  .service-conference dd > span { white-space: normal; }
 }
 
 /* Google Material Design Activity Badges */
@@ -2269,227 +2124,6 @@ a:hover {
 .fa::before {
   font-family: "Font Awesome 6 Free", "Font Awesome 5 Free", "FontAwesome" !important;
   font-weight: 900 !important;
-}
-
-/* Interns Section - Compact Google Style */
-.interns-section {
-  margin-bottom: var(--space-4) !important;
-}
-
-.intern-group {
-  margin-bottom: var(--space-3) !important;
-}
-
-.intern-group:last-child {
-  margin-bottom: 0 !important;
-}
-
-.intern-header {
-  display: flex !important;
-  align-items: center !important;
-  gap: var(--space-1) !important;
-  font-size: 16px !important;
-  font-weight: 500 !important;
-  color: var(--text-primary) !important;
-  margin-bottom: var(--space-2) !important;
-  padding-bottom: 4px !important;
-  border-bottom: 1px solid var(--border-color) !important;
-}
-
-.intern-header i {
-  color: var(--primary-color) !important;
-  font-size: 14px !important;
-}
-
-.intern-item {
-  display: flex !important;
-  gap: var(--space-2) !important;
-  padding: var(--space-2) !important;
-  background: var(--background-color) !important;
-  border: 1px solid var(--border-color) !important;
-  border-radius: var(--radius-sm) !important;
-  margin-bottom: 6px !important;
-  transition: all var(--transition-medium) !important;
-}
-
-.intern-item:hover {
-  background: var(--surface-color) !important;
-  box-shadow: var(--shadow-sm) !important;
-  border-color: var(--border-hover) !important;
-  transform: none !important;
-}
-
-.intern-item:last-child {
-  margin-bottom: 0 !important;
-}
-
-/* Cohort highlight styling */
-.intern-item.cohort-2023 {
-  border-left-color: var(--google-blue) !important;
-}
-
-[data-theme="dark"] .intern-item.cohort-2023 {
-  border-left-color: #8ab4f8 !important;
-}
-
-.intern-item.cohort-2024 {
-  border-left-color: var(--google-green) !important;
-}
-
-[data-theme="dark"] .intern-item.cohort-2024 {
-  border-left-color: #81c995 !important;
-}
-
-.intern-item.cohort-2025 {
-  border-left-color: var(--google-yellow) !important;
-}
-
-[data-theme="dark"] .intern-item.cohort-2025 {
-  border-left-color: #fdd663 !important;
-}
-
-.intern-item.cohort-2026 {
-  border-left-color: var(--accent-color) !important;
-}
-
-[data-theme="dark"] .intern-item.cohort-2026 {
-  border-left-color: #f28b82 !important;
-}
-
-.intern-summary {
-  flex: 1 !important;
-}
-
-.intern-name-line {
-  display: flex !important;
-  justify-content: flex-start !important;
-  align-items: center !important;
-  gap: 6px !important;
-  margin-bottom: 2px !important;
-}
-
-.intern-name {
-  color: var(--primary-color) !important;
-  text-decoration: none !important;
-  font-weight: 500 !important;
-  font-size: 16px !important;
-  transition: color var(--transition-fast) !important;
-}
-
-.intern-name:hover {
-  text-decoration: underline !important;
-  color: var(--primary-hover) !important;
-}
-
-.co-supervised-indicator {
-  display: inline-block !important;
-  width: 10px !important;
-  height: 10px !important;
-  border-radius: 50% !important;
-  flex-shrink: 0 !important;
-  vertical-align: middle !important;
-}
-
-.co-supervised-indicator--jiaqi {
-  background: var(--google-blue) !important;
-}
-
-.co-supervised-indicator--xiaoyi {
-  background: #f44336 !important;
-}
-
-.co-supervised-indicator--zhang {
-  background: #fbc02d !important;
-}
-
-.co-supervised-indicator--haodong {
-  background: #26c6da !important;
-}
-
-.intern-legend {
-  font-size: 15px !important;
-  color: var(--text-secondary) !important;
-  margin: 6px 0 var(--space-2) 0 !important;
-  line-height: 1.5 !important;
-}
-
-.intern-legend .legend-entry {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 6px !important;
-  margin-right: 6px !important;
-}
-
-.intern-legend .co-supervised-indicator {
-  margin-left: 0 !important;
-}
-
-.intern-legend .legend-link {
-  color: var(--text-secondary) !important;
-  text-decoration: none !important;
-  font-weight: 500 !important;
-}
-
-.intern-legend .legend-link:hover,
-.intern-legend .legend-link:focus {
-  color: var(--primary-color) !important;
-  text-decoration: underline !important;
-}
-
-.co-supervision-group {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 4px !important;
-  margin-left: 6px !important;
-}
-
-.co-supervision-group .co-supervised-indicator {
-  margin-left: 0 !important;
-}
-
-.intern-period-compact {
-  font-size: 13px !important;
-  color: var(--text-tertiary) !important;
-  font-weight: 400 !important;
-  margin-left: auto !important;
-}
-
-.intern-details-compact {
-  font-size: 14px !important;
-  color: var(--text-secondary) !important;
-  margin-bottom: 6px !important;
-  line-height: 1.3 !important;
-}
-
-@media (max-width: 768px) {
-  .intern-name {
-    font-size: 15px !important;
-  }
-
-  .intern-details-compact {
-    font-size: 13px !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .intern-name {
-    font-size: 14px !important;
-  }
-
-  .intern-details-compact {
-    font-size: 12px !important;
-  }
-}
-
-/* Alumni styling */
-.intern-item.alumni {
-  background: var(--google-gray-50) !important;
-  border-color: var(--google-gray-200) !important;
-}
-
-[data-theme="dark"] .intern-item.alumni {
-  background: var(--surface-color) !important;
-  border-color: var(--border-color) !important;
 }
 
 /* New badge styling - Google Material Design */

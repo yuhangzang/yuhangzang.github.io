@@ -41,7 +41,7 @@ function cachedRequest(key, age, task) {
     }
     return requests.get(key);
 }
-export function formatStarCount(count) {
+function formatStarCount(count) {
     return count >= 1000 ? `${(count / 1000).toFixed(1)}k` : String(count);
 }
 async function getStars(repo) {

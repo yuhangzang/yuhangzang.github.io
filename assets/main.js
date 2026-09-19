@@ -63,13 +63,6 @@ function initSiteUI() {
             delete link.dataset.domain;
         }, { once: true });
     });
-    document.querySelectorAll('.project-box').forEach(box => {
-        box.addEventListener('click', event => {
-            if (event.target.closest('a, button')) return;
-            const link = box.querySelector('.project-title');
-            if (link) window.open(link.href, link.target || '_blank', 'noopener');
-        });
-    });
 }
 
 initSiteUI();

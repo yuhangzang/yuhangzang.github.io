@@ -60,24 +60,6 @@
       "Artificial Intelligence"
     ]
   },
-  "homepage": {
-    "defaultVisibleCount": 5,
-    "selectedPaperIds": [
-      "arxiv:2603.12252",
-      "arxiv:2505.03318",
-      "arxiv:2503.01785",
-      "arxiv:2501.12368",
-      "arxiv:2502.05173",
-      "arxiv:2404.06512",
-      "arxiv:2407.01523",
-      "arxiv:2401.15914",
-      "arxiv:2305.18279",
-      "arxiv:2210.07225",
-      "arxiv:2305.14813",
-      "arxiv:2203.11876",
-      "arxiv:2102.12867"
-    ]
-  },
   "papers": [
     {
       "id": "arxiv:2606.19338",
@@ -1200,7 +1182,6 @@
       "display": {
         "new": false,
         "badges": [],
-        "homepageNew": true,
         "infoWrapper": true
       },
       "source": {
@@ -4966,7 +4947,6 @@
       "display": {
         "new": false,
         "badges": [],
-        "homepageNew": true,
         "infoWrapper": true
       },
       "source": {
@@ -5352,7 +5332,6 @@
       "display": {
         "new": false,
         "badges": [],
-        "homepageNew": true,
         "infoWrapper": false
       },
       "source": {
@@ -7061,7 +7040,6 @@
       "display": {
         "new": false,
         "badges": [],
-        "homepageNew": false,
         "infoWrapper": false
       },
       "source": {
@@ -7455,7 +7433,6 @@
         "badges": [
           "Oral"
         ],
-        "homepageNew": false,
         "infoWrapper": false
       },
       "source": {
@@ -9569,7 +9546,6 @@
         "badges": [
           "Spotlight"
         ],
-        "homepageNew": false,
         "infoWrapper": false
       },
       "source": {
@@ -10596,7 +10572,6 @@
       "display": {
         "new": false,
         "badges": [],
-        "homepageNew": false,
         "infoWrapper": false
       },
       "source": {
@@ -11322,7 +11297,6 @@
       "display": {
         "new": false,
         "badges": [],
-        "homepageNew": false,
         "infoWrapper": false
       },
       "source": {
@@ -11521,7 +11495,6 @@
       "display": {
         "new": false,
         "badges": [],
-        "homepageNew": false,
         "infoWrapper": false
       },
       "source": {
@@ -11849,7 +11822,6 @@
       "display": {
         "new": false,
         "badges": [],
-        "homepageNew": false,
         "infoWrapper": false
       },
       "source": {
@@ -12016,7 +11988,6 @@
       "display": {
         "new": false,
         "badges": [],
-        "homepageNew": false,
         "infoWrapper": false
       },
       "source": {
@@ -12200,7 +12171,6 @@
         "badges": [
           "Oral"
         ],
-        "homepageNew": false,
         "infoWrapper": false
       },
       "source": {
@@ -12372,7 +12342,6 @@
       "display": {
         "new": false,
         "badges": [],
-        "homepageNew": false,
         "infoWrapper": false
       },
       "source": {

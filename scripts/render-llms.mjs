@@ -24,7 +24,6 @@ function paperLine(paper) {
 
 export function renderLLMsIndex(data) {
     const author = data.author;
-    const byId = new Map(data.papers.map(paper => [paper.id, paper]));
     const years = [...new Set(data.papers.map(paper => paper.publication.year))].sort((a, b) => b - a);
     const topics = [...new Set(data.papers.flatMap(paper => paper.topics))];
     return `# ${author.name}
@@ -48,15 +47,11 @@ ${profileLines(author)}
 - [Sitemap](${siteURL}/sitemap.xml): all pages with last-modified dates
 - Each paper page also has a BibTeX file (\`.bib\`) at the same address as its \`.html\` page; its full record is the matching entry in the JSON file above.
 
-## Selected publications
-
-${data.homepage.selectedPaperIds.map(id => paperLine(byId.get(id))).join('\n')}
-
 ${years.map(year => `## Publications ${year}\n\n${data.papers.filter(paper => paper.publication.year === year).map(paperLine).join('\n')}`).join('\n\n')}
 
 ## Pages
 
-- [Home](${siteURL}/): biography, news and selected publications
+- [Home](${siteURL}/): biography, news and services
 - [All publications](${siteURL}/research.html): the complete list with filters by year, topic and venue
 `;
 }
