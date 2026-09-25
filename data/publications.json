@@ -62,6 +62,538 @@
   },
   "papers": [
     {
+      "id": "arxiv:2603.13224",
+      "title": "Visual-ERM: Reward Modeling for Visual Equivalence",
+      "authors": [
+        {
+          "name": "Ziyu Liu"
+        },
+        {
+          "name": "Shengyuan Ding"
+        },
+        {
+          "name": "Xinyu Fang"
+        },
+        {
+          "name": "Xuanlang Dai"
+        },
+        {
+          "name": "Penghui Yang"
+        },
+        {
+          "name": "Jiaqi Wang"
+        },
+        {
+          "name": "Kai Chen"
+        },
+        {
+          "name": "Dahua Lin"
+        },
+        {
+          "name": "Yuhang Zang",
+          "corresponding": true
+        }
+      ],
+      "publication": {
+        "year": 2026,
+        "venueGroup": "NeurIPS",
+        "citationText": "Neural Information Processing Systems (NeurIPS), 2026"
+      },
+      "dates": {
+        "arxivFirstPosted": "2026-03-13",
+        "arxivLastUpdated": "2026-05-09"
+      },
+      "topics": [
+        "Reinforcement Learning from Human Feedback"
+      ],
+      "identifiers": {
+        "arxiv": "2603.13224",
+        "googleScholar": "hW23VKIAAAAJ:W5xh706n7nkC"
+      },
+      "links": [
+        {
+          "type": "arxiv",
+          "url": "https://arxiv.org/abs/2603.13224"
+        },
+        {
+          "type": "scholar",
+          "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:W5xh706n7nkC"
+        },
+        {
+          "type": "code",
+          "url": "https://github.com/InternLM/Visual-ERM",
+          "repository": "InternLM/Visual-ERM"
+        },
+        {
+          "type": "huggingface",
+          "url": "https://huggingface.co/internlm/Visual-ERM",
+          "label": "Model",
+          "variant": "model"
+        },
+        {
+          "type": "huggingface",
+          "url": "https://huggingface.co/datasets/internlm/VC-RewardBench",
+          "label": "Dataset",
+          "variant": "dataset"
+        }
+      ],
+      "display": {
+        "new": true,
+        "badges": [],
+        "infoWrapper": true
+      },
+      "source": {
+        "file": "data/publications.json",
+        "order": 0
+      },
+      "shortName": "Visual-ERM",
+      "keywords": [
+        "Visual-ERM",
+        "VC-RewardBench",
+        "Multimodal reward models",
+        "Generative reward models",
+        "Vision-to-code",
+        "Chart-to-code",
+        "Table parsing",
+        "SVG generation",
+        "GRPO",
+        "Test-time scaling"
+      ],
+      "citation": {
+        "type": "inproceedings",
+        "key": "arxiv260313224",
+        "year": 2026,
+        "booktitle": "Advances in Neural Information Processing Systems",
+        "source": {
+          "label": "arXiv record",
+          "url": "https://arxiv.org/abs/2603.13224"
+        },
+        "status": "accepted",
+        "verifiedOn": "2026-09-25",
+        "verificationNote": "Accepted to NeurIPS 2026 as a poster. The NeurIPS version removes Jianze Liang from the arXiv v2 author list, as confirmed by the author on 2026-09-25; no proceedings record was available on that date."
+      },
+      "content": {
+        "verifiedOn": "2026-09-25",
+        "sources": {
+          "abstract": {
+            "label": "arXiv abstract · v2",
+            "url": "https://arxiv.org/abs/2603.13224v2"
+          },
+          "paper": {
+            "label": "Paper · arXiv v2",
+            "url": "https://arxiv.org/pdf/2603.13224v2",
+            "encodingFormat": "application/pdf"
+          },
+          "fullText": {
+            "label": "Full paper · arXiv v2",
+            "url": "https://arxiv.org/html/2603.13224v2"
+          }
+        },
+        "abstract": {
+          "text": "Vision-to-code tasks require models to reconstruct structured visual inputs, such as charts, tables, and SVGs, into executable or structured representations with high visual fidelity. While recent Large Vision Language Models (LVLMs) achieve strong results via supervised fine-tuning, reinforcement learning remains challenging due to misaligned reward signals. Existing rewards either rely on textual rules or coarse visual embedding similarity, both of which fail to capture fine-grained visual discrepancies and are vulnerable to reward hacking. We propose Visual Equivalence Reward Model (Visual-ERM), a multimodal generative reward model that provides fine-grained, interpretable, and task-agnostic feedback to evaluate vision-to-code quality directly in the rendered visual space. Integrated into RL, Visual-ERM improves Qwen3-VL-8B-Instruct by +8.4 on chart-to-code and yields consistent gains on table and SVG parsing (+2.7, +4.1 on average), and further strengthens test-time scaling via reflection and revision. We also introduce VisualCritic-RewardBench (VC-RewardBench), a benchmark for judging fine-grained image-to-image discrepancies on structured visual data, where Visual-ERM at 8B decisively outperforms Qwen3-VL-235B-Instruct and approaches leading closed-source models. Our results suggest that fine-grained visual reward supervision is both necessary and sufficient for vision-to-code RL, regardless of task specificity.",
+          "source": "abstract",
+          "locator": "arXiv abstract · v2"
+        },
+        "takeaway": {
+          "text": "Visual-ERM scores vision-to-code outputs by comparing rendered images with the reference, and using it as the RL reward raises Qwen3-VL-8B-Instruct from 69.6 to 78.0 on ChartMimic, above the 76.1 reached with a DINO-based reward.",
+          "source": "fullText",
+          "fragment": "S4.T1",
+          "locator": "Table 1 · arXiv v2"
+        },
+        "summary": {
+          "text": "Rewards for vision-to-code RL either compare text with rules or compare coarse visual embeddings, missing small visual errors and inviting reward hacking. Visual-ERM is an 8B generative reward model that lists localized discrepancies with severities between the reference and the rendered output; the severities become a scalar reward for GRPO, and the descriptions serve as feedback for test-time revision.",
+          "source": "fullText",
+          "fragment": "S3",
+          "locator": "Section 3 · arXiv v2"
+        },
+        "contributions": [
+          {
+            "text": "Builds discrepancy-annotated image pairs from targeted edits and natural model predictions, then fine-tunes Qwen3-VL-8B-Instruct into one reward model for charts, tables and SVGs.",
+            "source": "fullText",
+            "fragment": "S3.SS1",
+            "locator": "Section 3.1 · arXiv v2"
+          },
+          {
+            "text": "Converts summed discrepancy severities into a bounded reward, combined with a render-success term, for GRPO training.",
+            "source": "fullText",
+            "fragment": "S3.SS2",
+            "locator": "Section 3.2 · arXiv v2"
+          },
+          {
+            "text": "Reuses the discrepancy descriptions as feedback for iterative reflection and revision at inference time.",
+            "source": "fullText",
+            "fragment": "S3.SS3",
+            "locator": "Section 3.3 · arXiv v2"
+          },
+          {
+            "text": "Introduces VC-RewardBench, 1,335 expert-consolidated instances for judging fine-grained image-to-image discrepancies in structured visuals.",
+            "source": "fullText",
+            "fragment": "S3.SS4",
+            "locator": "Section 3.4 · arXiv v2"
+          }
+        ],
+        "methodComparison": {
+          "source": "fullText",
+          "fragment": "S4.SS1",
+          "locator": "Section 4.1 · arXiv v2",
+          "columns": [
+            {
+              "key": "method",
+              "label": "Reward"
+            },
+            {
+              "key": "signal",
+              "label": "What it compares"
+            },
+            {
+              "key": "limitation",
+              "label": "Observed behavior"
+            }
+          ],
+          "rows": [
+            {
+              "method": "Rule-based (TEDS)",
+              "signal": "Predicted and reference table structure as text",
+              "limitation": "Training reward rises while target metrics barely improve, consistent with reward shortcutting"
+            },
+            {
+              "method": "DINO feature similarity",
+              "signal": "Global visual embeddings of rendered images",
+              "limitation": "Under-penalizes small deviations and rendered-text errors; degrades table parsing"
+            },
+            {
+              "method": "Visual-ERM",
+              "signal": "Localized visual and textual discrepancies in the rendered output, with severities",
+              "limitation": "Improves chart, table and SVG policies and gives feedback usable for revision"
+            }
+          ]
+        },
+        "resultsCaption": "Selected results from arXiv v2, Tables 1, 2, 3 and 5. The policy or base model is named in each row.",
+        "resultsNote": "ChartMimic and table averages are the paper's aggregate scores; the UniSVG value is the aggregate Score. VC-RewardBench reports average strict-match F1 over chart, table and SVG, comparing Visual-ERM with the Qwen3-VL-8B-Instruct model it was trained from. Gains are absolute points.",
+        "resultColumns": [
+          {
+            "key": "baseline",
+            "label": "Before"
+          },
+          {
+            "key": "result",
+            "label": "With Visual-ERM"
+          }
+        ],
+        "results": [
+          {
+            "setting": "Chart-to-code · Qwen3-VL-8B-Instruct + RL",
+            "metric": "ChartMimic average",
+            "baseline": 69.6,
+            "result": 78.0,
+            "source": "fullText",
+            "fragment": "S4.T1",
+            "locator": "Table 1"
+          },
+          {
+            "setting": "Chart-to-code · VinciCoder-8B-SFT + RL",
+            "metric": "ChartMimic average",
+            "baseline": 67.4,
+            "result": 77.5,
+            "source": "fullText",
+            "fragment": "S4.T1",
+            "locator": "Table 1"
+          },
+          {
+            "setting": "Table-to-Markdown · Qwen3-VL-8B-Instruct + RL",
+            "metric": "Average over OmniDocBench and olmOCRBench",
+            "baseline": 76.8,
+            "result": 79.5,
+            "source": "fullText",
+            "fragment": "S4.T2",
+            "locator": "Table 2"
+          },
+          {
+            "setting": "SVG-to-code · VinciCoder-8B-SFT + RL",
+            "metric": "UniSVG Score",
+            "baseline": 87.9,
+            "result": 91.6,
+            "source": "fullText",
+            "fragment": "S4.T3",
+            "locator": "Table 3"
+          },
+          {
+            "setting": "Reward judging · VC-RewardBench",
+            "metric": "Average F1 (strict)",
+            "baseline": 5.3,
+            "result": 42.1,
+            "source": "fullText",
+            "fragment": "S4.T5",
+            "locator": "Table 5"
+          }
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2605.20110",
+      "title": "SetCon: Towards Open-Ended Referring Segmentation via Set-Level Concept Prediction",
+      "authors": [
+        {
+          "name": "Zhixiong Zhang"
+        },
+        {
+          "name": "Yizhuo Li"
+        },
+        {
+          "name": "Shuangrui Ding"
+        },
+        {
+          "name": "Yuhang Zang",
+          "corresponding": true
+        },
+        {
+          "name": "Shengyuan Ding"
+        },
+        {
+          "name": "Long Xing"
+        },
+        {
+          "name": "Yibin Wang"
+        },
+        {
+          "name": "Qiaosheng Zhang"
+        },
+        {
+          "name": "Jiaqi Wang",
+          "corresponding": true
+        }
+      ],
+      "publication": {
+        "year": 2026,
+        "venueGroup": "NeurIPS",
+        "citationText": "Neural Information Processing Systems (NeurIPS), 2026"
+      },
+      "dates": {
+        "arxivFirstPosted": "2026-05-19",
+        "arxivLastUpdated": "2026-05-19"
+      },
+      "topics": [
+        "Image Understanding"
+      ],
+      "identifiers": {
+        "arxiv": "2605.20110",
+        "googleScholar": "hW23VKIAAAAJ:evX43VCCuoAC"
+      },
+      "links": [
+        {
+          "type": "arxiv",
+          "url": "https://arxiv.org/abs/2605.20110"
+        },
+        {
+          "type": "scholar",
+          "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:evX43VCCuoAC"
+        },
+        {
+          "type": "code",
+          "url": "https://github.com/rookiexiong7/SetCon",
+          "repository": "rookiexiong7/SetCon"
+        },
+        {
+          "type": "huggingface",
+          "url": "https://huggingface.co/rookiexiong/SetCon-8B",
+          "label": "Model",
+          "variant": "model"
+        },
+        {
+          "type": "huggingface",
+          "url": "https://huggingface.co/datasets/rookiexiong/setcon_training_datasets",
+          "label": "Dataset",
+          "variant": "dataset"
+        }
+      ],
+      "display": {
+        "new": true,
+        "badges": [],
+        "infoWrapper": true
+      },
+      "source": {
+        "file": "data/publications.json",
+        "order": 0
+      },
+      "shortName": "SetCon",
+      "keywords": [
+        "SetCon",
+        "Referring segmentation",
+        "Open-ended segmentation",
+        "Multi-target segmentation",
+        "Set-level concept prediction",
+        "Hierarchical semantic decomposition",
+        "Referring video object segmentation",
+        "Large vision-language models",
+        "SAM 3",
+        "Hierarchical semantic annotation"
+      ],
+      "citation": {
+        "type": "inproceedings",
+        "key": "arxiv260520110",
+        "year": 2026,
+        "booktitle": "Advances in Neural Information Processing Systems",
+        "source": {
+          "label": "arXiv record",
+          "url": "https://arxiv.org/abs/2605.20110"
+        },
+        "status": "accepted",
+        "verifiedOn": "2026-09-25",
+        "verificationNote": "Accepted to NeurIPS 2026 as a poster, per the author's acceptance notification of 2026-09-25; no proceedings record was available on that date. Author list follows arXiv v1 and Google Scholar."
+      },
+      "content": {
+        "verifiedOn": "2026-09-25",
+        "sources": {
+          "abstract": {
+            "label": "arXiv abstract · v1",
+            "url": "https://arxiv.org/abs/2605.20110v1"
+          },
+          "paper": {
+            "label": "Paper · arXiv v1",
+            "url": "https://arxiv.org/pdf/2605.20110v1",
+            "encodingFormat": "application/pdf"
+          },
+          "fullText": {
+            "label": "Full paper · arXiv v1",
+            "url": "https://arxiv.org/html/2605.20110v1"
+          }
+        },
+        "abstract": {
+          "text": "Referring segmentation grounds natural-language queries to pixel-level masks, but extending it to complex scenarios with multiple instances, cross-category groups, or open-ended target sets remains challenging. Previous Large Vision Language Model (LVLM)-based methods represent referred targets with one or more special tokens sequentially, treating multiple targets as separate outputs rather than a coherent set and offering little incentive to capture set-level properties such as completeness and mutual exclusivity. We reformulate open-ended referring segmentation as explicit set-level concept prediction and propose Set-Concept Segmentation (SetCon), which uses LVLM-generated natural-language concepts, instead of segmentation-specific tokens, as semantic conditions for joint mask-set decoding. A hierarchical semantic decomposition first predicts a shared set-level concept defining the target scope and then refines it into fine-grained concept groups aligned with target subsets. To support this, a two-stage annotation pipeline augments existing reasoning segmentation datasets with hierarchical semantic supervision (236k samples, 784k concept phrases). SetCon achieves state-of-the-art results on image benchmarks (+3.3 gIoU on gRefCOCO, +12.1 gIoU on MUSE), with margins that grow as the number of referred targets increases. The concept interface also transfers to video under a detect-and-track setting, yielding new state-of-the-art results on seven referring video benchmarks, including +10.9 J&F on MeViS and +12.4 J&F on Ref-SeCVOS.",
+          "source": "abstract",
+          "locator": "arXiv abstract · v1"
+        },
+        "takeaway": {
+          "text": "SetCon replaces per-target [SEG] tokens with natural-language set-level concepts generated by the LVLM, raising MUSE val gIoU from 44.8 for the previous best method to 56.9.",
+          "source": "fullText",
+          "fragment": "S4.T1",
+          "locator": "Table 1 · arXiv v1"
+        },
+        "summary": {
+          "text": "LVLM-based referring segmentation usually emits one special token per target and decodes each mask separately, so multi-target and cross-category queries yield duplicated or missing masks. A pilot study with Sa2VA finds that these tokens cluster by spatial position rather than semantic category. SetCon instead predicts a set-level concept and its sub-category concepts as text, and uses their hidden states to condition joint mask-set decoding with SAM 3.",
+          "source": "fullText",
+          "fragment": "S3.SS1",
+          "locator": "Sections 3.1–3.2 · arXiv v1"
+        },
+        "contributions": [
+          {
+            "text": "Explicit set-level concept prediction: free-form concept phrases, each bound to a set of instances, serve as semantic conditions for decoding the whole mask set.",
+            "source": "fullText",
+            "fragment": "S3.SS2",
+            "locator": "Section 3.2 · arXiv v1"
+          },
+          {
+            "text": "Hierarchical semantic decomposition: a global concept defines the target scope and sub-category concepts, fused with it, assign fine-grained labels through mask-level Hungarian matching.",
+            "source": "fullText",
+            "fragment": "S3.SS2",
+            "locator": "Section 3.2 · arXiv v1"
+          },
+          {
+            "text": "A two-stage annotation pipeline adds hierarchical concepts to ReasonSeg and MUSE, producing 236,396 samples and 784,809 concept phrases.",
+            "source": "fullText",
+            "fragment": "S3.SS3",
+            "locator": "Section 3.3 · arXiv v1"
+          },
+          {
+            "text": "For video, the LVLM runs once per clip and its concepts condition the SAM 3 detect-and-track pipeline without video-specific changes.",
+            "source": "fullText",
+            "fragment": "S3.SS2",
+            "locator": "Section 3.2 · arXiv v1"
+          }
+        ],
+        "methodComparison": {
+          "source": "fullText",
+          "fragment": "S3.SS1",
+          "locator": "Sections 3.1–3.2 · arXiv v1",
+          "columns": [
+            {
+              "key": "method",
+              "label": "Approach"
+            },
+            {
+              "key": "signal",
+              "label": "Segmentation interface"
+            },
+            {
+              "key": "optimization",
+              "label": "Multi-target handling"
+            }
+          ],
+          "rows": [
+            {
+              "method": "[SEG]-token LVLMs (e.g. LISA, PixelLM, Sa2VA)",
+              "signal": "Hidden states of repeated special tokens, organized mainly by spatial layout",
+              "optimization": "One token per target, each mask decoded independently"
+            },
+            {
+              "method": "SetCon",
+              "signal": "Hidden states of generated natural-language concepts",
+              "optimization": "Global set concept plus sub-category concepts decode the mask set jointly"
+            }
+          ]
+        },
+        "resultsCaption": "SetCon (Qwen3-VL-8B-Instruct with SAM 3) · arXiv v1, Tables 1–3. The baseline is the best previously reported result in each table, except for the ablation row.",
+        "resultsNote": "The ablation row compares SetCon with a variant that uses the implicit-token formulation, on the MUSE test set. Gains are absolute points.",
+        "resultColumns": [
+          {
+            "key": "baseline",
+            "label": "Baseline"
+          },
+          {
+            "key": "result",
+            "label": "SetCon"
+          }
+        ],
+        "results": [
+          {
+            "setting": "MUSE val · vs. PixelLM-Llama2-13B",
+            "metric": "gIoU",
+            "baseline": 44.8,
+            "result": 56.9,
+            "source": "fullText",
+            "fragment": "S4.T1",
+            "locator": "Table 1 · arXiv v1"
+          },
+          {
+            "setting": "gRefCOCO val · vs. MLLMSeg",
+            "metric": "gIoU",
+            "baseline": 75.1,
+            "result": 78.4,
+            "source": "fullText",
+            "fragment": "S4.T1",
+            "locator": "Table 1 · arXiv v1"
+          },
+          {
+            "setting": "MeViS v1 · vs. Sa2VA",
+            "metric": "J&F",
+            "baseline": 51.5,
+            "result": 62.4,
+            "source": "fullText",
+            "fragment": "S4.T2",
+            "locator": "Table 2 · arXiv v1"
+          },
+          {
+            "setting": "Ref-SeCVOS · vs. GLUS",
+            "metric": "J&F",
+            "baseline": 59.8,
+            "result": 72.2,
+            "source": "fullText",
+            "fragment": "S4.T2",
+            "locator": "Table 2 · arXiv v1"
+          },
+          {
+            "setting": "Ablation · MUSE test · implicit-token variant",
+            "metric": "gIoU",
+            "baseline": 43.6,
+            "result": 53.2,
+            "source": "fullText",
+            "fragment": "S4.T4",
+            "locator": "Table 3 · arXiv v1"
+          }
+        ]
+      }
+    },
+    {
       "id": "arxiv:2606.19338",
       "title": "Beyond the Current Observation: Evaluating Multimodal Large Language Models in Controllable Non-Markov Games",
       "authors": [
@@ -299,7 +831,9 @@
       ],
       "display": {
         "new": true,
-        "badges": [],
+        "badges": [
+          "Oral"
+        ],
         "infoWrapper": true
       },
       "source": {

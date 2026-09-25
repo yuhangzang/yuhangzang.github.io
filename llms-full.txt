@@ -2,7 +2,160 @@
 
 > Young researcher at Shanghai AI Laboratory focusing on post-training for multimodal LLMs and vision-language pre-training. Area Chair for NeurIPS, ICLR, CVPR, AAAI, and COLM.
 
-This file contains the full content of every paper page on https://yuhangzang.github.io/ (66 papers), generated from the same data as the HTML pages. Each entry gives the author abstract, a takeaway, contributions and results with locators in the source paper, and a citation. Author identifiers: ORCID https://orcid.org/0000-0003-1110-5062; Google Scholar https://scholar.google.com/citations?user=hW23VKIAAAAJ; DBLP https://dblp.org/pid/230/4433; OpenAlex https://openalex.org/A5005200501; Semantic Scholar https://www.semanticscholar.org/author/12862495; GitHub https://github.com/yuhangzang; Hugging Face https://huggingface.co/yuhangzang; X (Twitter) https://twitter.com/yuhangzang; LinkedIn https://www.linkedin.com/in/yuhang-zang/.
+This file contains the full content of every paper page on https://yuhangzang.github.io/ (68 papers), generated from the same data as the HTML pages. Each entry gives the author abstract, a takeaway, contributions and results with locators in the source paper, and a citation. Author identifiers: ORCID https://orcid.org/0000-0003-1110-5062; Google Scholar https://scholar.google.com/citations?user=hW23VKIAAAAJ; DBLP https://dblp.org/pid/230/4433; OpenAlex https://openalex.org/A5005200501; Semantic Scholar https://www.semanticscholar.org/author/12862495; GitHub https://github.com/yuhangzang; Hugging Face https://huggingface.co/yuhangzang; X (Twitter) https://twitter.com/yuhangzang; LinkedIn https://www.linkedin.com/in/yuhang-zang/.
+
+---
+
+# Visual-ERM: Reward Modeling for Visual Equivalence
+
+- Page: https://yuhangzang.github.io/papers/arxiv-2603.13224.html
+- Authors: Ziyu Liu, Shengyuan Ding, Xinyu Fang, Xuanlang Dai, Penghui Yang, Jiaqi Wang, Kai Chen, Dahua Lin, Yuhang Zang
+- Published in: Neural Information Processing Systems (NeurIPS), 2026
+- arXiv: 2603.13224 (first posted 2026-03-13, last revised 2026-05-09)
+- Topics: Visual-ERM; VC-RewardBench; Multimodal reward models; Generative reward models; Vision-to-code; Chart-to-code; Table parsing; SVG generation; GRPO; Test-time scaling
+- arXiv: https://arxiv.org/abs/2603.13224
+- Google Scholar: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:W5xh706n7nkC
+- Code (InternLM/Visual-ERM): https://github.com/InternLM/Visual-ERM
+- Hugging Face model (Model): https://huggingface.co/internlm/Visual-ERM
+- Hugging Face dataset (Dataset): https://huggingface.co/datasets/internlm/VC-RewardBench
+- BibTeX: https://yuhangzang.github.io/papers/arxiv-2603.13224.bib
+
+## Key takeaway
+
+Visual-ERM scores vision-to-code outputs by comparing rendered images with the reference, and using it as the RL reward raises Qwen3-VL-8B-Instruct from 69.6 to 78.0 on ChartMimic, above the 76.1 reached with a DINO-based reward. (Source: Table 1 · arXiv v2 — https://arxiv.org/html/2603.13224v2#S4.T1)
+
+## Abstract
+
+Vision-to-code tasks require models to reconstruct structured visual inputs, such as charts, tables, and SVGs, into executable or structured representations with high visual fidelity. While recent Large Vision Language Models (LVLMs) achieve strong results via supervised fine-tuning, reinforcement learning remains challenging due to misaligned reward signals. Existing rewards either rely on textual rules or coarse visual embedding similarity, both of which fail to capture fine-grained visual discrepancies and are vulnerable to reward hacking. We propose Visual Equivalence Reward Model (Visual-ERM), a multimodal generative reward model that provides fine-grained, interpretable, and task-agnostic feedback to evaluate vision-to-code quality directly in the rendered visual space. Integrated into RL, Visual-ERM improves Qwen3-VL-8B-Instruct by +8.4 on chart-to-code and yields consistent gains on table and SVG parsing (+2.7, +4.1 on average), and further strengthens test-time scaling via reflection and revision. We also introduce VisualCritic-RewardBench (VC-RewardBench), a benchmark for judging fine-grained image-to-image discrepancies on structured visual data, where Visual-ERM at 8B decisively outperforms Qwen3-VL-235B-Instruct and approaches leading closed-source models. Our results suggest that fine-grained visual reward supervision is both necessary and sufficient for vision-to-code RL, regardless of task specificity. (Author abstract: arXiv abstract · v2 — https://arxiv.org/abs/2603.13224v2)
+
+## Research problem and approach
+
+Rewards for vision-to-code RL either compare text with rules or compare coarse visual embeddings, missing small visual errors and inviting reward hacking. Visual-ERM is an 8B generative reward model that lists localized discrepancies with severities between the reference and the rendered output; the severities become a scalar reward for GRPO, and the descriptions serve as feedback for test-time revision. (Source: Section 3 · arXiv v2 — https://arxiv.org/html/2603.13224v2#S3)
+
+## Main contributions
+
+- Builds discrepancy-annotated image pairs from targeted edits and natural model predictions, then fine-tunes Qwen3-VL-8B-Instruct into one reward model for charts, tables and SVGs. (Source: Section 3.1 · arXiv v2 — https://arxiv.org/html/2603.13224v2#S3.SS1)
+- Converts summed discrepancy severities into a bounded reward, combined with a render-success term, for GRPO training. (Source: Section 3.2 · arXiv v2 — https://arxiv.org/html/2603.13224v2#S3.SS2)
+- Reuses the discrepancy descriptions as feedback for iterative reflection and revision at inference time. (Source: Section 3.3 · arXiv v2 — https://arxiv.org/html/2603.13224v2#S3.SS3)
+- Introduces VC-RewardBench, 1,335 expert-consolidated instances for judging fine-grained image-to-image discrepancies in structured visuals. (Source: Section 3.4 · arXiv v2 — https://arxiv.org/html/2603.13224v2#S3.SS4)
+
+## Method comparison
+
+| Reward | What it compares | Observed behavior |
+| --- | --- | --- |
+| Rule-based (TEDS) | Predicted and reference table structure as text | Training reward rises while target metrics barely improve, consistent with reward shortcutting |
+| DINO feature similarity | Global visual embeddings of rendered images | Under-penalizes small deviations and rendered-text errors; degrades table parsing |
+| Visual-ERM | Localized visual and textual discrepancies in the rendered output, with severities | Improves chart, table and SVG policies and gives feedback usable for revision |
+
+Source: Section 4.1 · arXiv v2 — https://arxiv.org/html/2603.13224v2#S4.SS1
+
+## Selected results
+
+Selected results from arXiv v2, Tables 1, 2, 3 and 5. The policy or base model is named in each row.
+
+| Setting | Metric | Before | With Visual-ERM | Gain | Source |
+| --- | --- | --- | --- | --- | --- |
+| Chart-to-code · Qwen3-VL-8B-Instruct + RL | ChartMimic average | 69.6 | 78.0 | +8.4 | Table 1 — https://arxiv.org/html/2603.13224v2#S4.T1 |
+| Chart-to-code · VinciCoder-8B-SFT + RL | ChartMimic average | 67.4 | 77.5 | +10.1 | Table 1 — https://arxiv.org/html/2603.13224v2#S4.T1 |
+| Table-to-Markdown · Qwen3-VL-8B-Instruct + RL | Average over OmniDocBench and olmOCRBench | 76.8 | 79.5 | +2.7 | Table 2 — https://arxiv.org/html/2603.13224v2#S4.T2 |
+| SVG-to-code · VinciCoder-8B-SFT + RL | UniSVG Score | 87.9 | 91.6 | +3.7 | Table 3 — https://arxiv.org/html/2603.13224v2#S4.T3 |
+| Reward judging · VC-RewardBench | Average F1 (strict) | 5.3 | 42.1 | +36.8 | Table 5 — https://arxiv.org/html/2603.13224v2#S4.T5 |
+
+ChartMimic and table averages are the paper's aggregate scores; the UniSVG value is the aggregate Score. VC-RewardBench reports average strict-match F1 over chart, table and SVG, comparing Visual-ERM with the Qwen3-VL-8B-Instruct model it was trained from. Gains are absolute points.
+
+Content verified against the sources above on 2026-09-25.
+
+## Cite this paper
+
+Ziyu Liu, Shengyuan Ding, Xinyu Fang, Xuanlang Dai, Penghui Yang, Jiaqi Wang, Kai Chen, Dahua Lin, Yuhang Zang. Visual-ERM: Reward Modeling for Visual Equivalence. Advances in Neural Information Processing Systems, 2026.
+
+Published record: https://arxiv.org/abs/2603.13224
+
+```bibtex
+@inproceedings{arxiv260313224,
+  title     = {{Visual-ERM: Reward Modeling for Visual Equivalence}},
+  author    = {Ziyu Liu and Shengyuan Ding and Xinyu Fang and Xuanlang Dai and Penghui Yang and Jiaqi Wang and Kai Chen and Dahua Lin and Yuhang Zang},
+  booktitle = {Advances in Neural Information Processing Systems},
+  year      = {2026},
+  url       = {https://arxiv.org/abs/2603.13224}
+}
+```
+
+---
+
+# SetCon: Towards Open-Ended Referring Segmentation via Set-Level Concept Prediction
+
+- Page: https://yuhangzang.github.io/papers/arxiv-2605.20110.html
+- Authors: Zhixiong Zhang, Yizhuo Li, Shuangrui Ding, Yuhang Zang, Shengyuan Ding, Long Xing, Yibin Wang, Qiaosheng Zhang, Jiaqi Wang
+- Published in: Neural Information Processing Systems (NeurIPS), 2026
+- arXiv: 2605.20110 (first posted 2026-05-19, last revised 2026-05-19)
+- Topics: SetCon; Referring segmentation; Open-ended segmentation; Multi-target segmentation; Set-level concept prediction; Hierarchical semantic decomposition; Referring video object segmentation; Large vision-language models; SAM 3; Hierarchical semantic annotation
+- arXiv: https://arxiv.org/abs/2605.20110
+- Google Scholar: https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hW23VKIAAAAJ&citation_for_view=hW23VKIAAAAJ:evX43VCCuoAC
+- Code (rookiexiong7/SetCon): https://github.com/rookiexiong7/SetCon
+- Hugging Face model (Model): https://huggingface.co/rookiexiong/SetCon-8B
+- Hugging Face dataset (Dataset): https://huggingface.co/datasets/rookiexiong/setcon_training_datasets
+- BibTeX: https://yuhangzang.github.io/papers/arxiv-2605.20110.bib
+
+## Key takeaway
+
+SetCon replaces per-target [SEG] tokens with natural-language set-level concepts generated by the LVLM, raising MUSE val gIoU from 44.8 for the previous best method to 56.9. (Source: Table 1 · arXiv v1 — https://arxiv.org/html/2605.20110v1#S4.T1)
+
+## Abstract
+
+Referring segmentation grounds natural-language queries to pixel-level masks, but extending it to complex scenarios with multiple instances, cross-category groups, or open-ended target sets remains challenging. Previous Large Vision Language Model (LVLM)-based methods represent referred targets with one or more special tokens sequentially, treating multiple targets as separate outputs rather than a coherent set and offering little incentive to capture set-level properties such as completeness and mutual exclusivity. We reformulate open-ended referring segmentation as explicit set-level concept prediction and propose Set-Concept Segmentation (SetCon), which uses LVLM-generated natural-language concepts, instead of segmentation-specific tokens, as semantic conditions for joint mask-set decoding. A hierarchical semantic decomposition first predicts a shared set-level concept defining the target scope and then refines it into fine-grained concept groups aligned with target subsets. To support this, a two-stage annotation pipeline augments existing reasoning segmentation datasets with hierarchical semantic supervision (236k samples, 784k concept phrases). SetCon achieves state-of-the-art results on image benchmarks (+3.3 gIoU on gRefCOCO, +12.1 gIoU on MUSE), with margins that grow as the number of referred targets increases. The concept interface also transfers to video under a detect-and-track setting, yielding new state-of-the-art results on seven referring video benchmarks, including +10.9 J&F on MeViS and +12.4 J&F on Ref-SeCVOS. (Author abstract: arXiv abstract · v1 — https://arxiv.org/abs/2605.20110v1)
+
+## Research problem and approach
+
+LVLM-based referring segmentation usually emits one special token per target and decodes each mask separately, so multi-target and cross-category queries yield duplicated or missing masks. A pilot study with Sa2VA finds that these tokens cluster by spatial position rather than semantic category. SetCon instead predicts a set-level concept and its sub-category concepts as text, and uses their hidden states to condition joint mask-set decoding with SAM 3. (Source: Sections 3.1–3.2 · arXiv v1 — https://arxiv.org/html/2605.20110v1#S3.SS1)
+
+## Main contributions
+
+- Explicit set-level concept prediction: free-form concept phrases, each bound to a set of instances, serve as semantic conditions for decoding the whole mask set. (Source: Section 3.2 · arXiv v1 — https://arxiv.org/html/2605.20110v1#S3.SS2)
+- Hierarchical semantic decomposition: a global concept defines the target scope and sub-category concepts, fused with it, assign fine-grained labels through mask-level Hungarian matching. (Source: Section 3.2 · arXiv v1 — https://arxiv.org/html/2605.20110v1#S3.SS2)
+- A two-stage annotation pipeline adds hierarchical concepts to ReasonSeg and MUSE, producing 236,396 samples and 784,809 concept phrases. (Source: Section 3.3 · arXiv v1 — https://arxiv.org/html/2605.20110v1#S3.SS3)
+- For video, the LVLM runs once per clip and its concepts condition the SAM 3 detect-and-track pipeline without video-specific changes. (Source: Section 3.2 · arXiv v1 — https://arxiv.org/html/2605.20110v1#S3.SS2)
+
+## Method comparison
+
+| Approach | Segmentation interface | Multi-target handling |
+| --- | --- | --- |
+| [SEG]-token LVLMs (e.g. LISA, PixelLM, Sa2VA) | Hidden states of repeated special tokens, organized mainly by spatial layout | One token per target, each mask decoded independently |
+| SetCon | Hidden states of generated natural-language concepts | Global set concept plus sub-category concepts decode the mask set jointly |
+
+Source: Sections 3.1–3.2 · arXiv v1 — https://arxiv.org/html/2605.20110v1#S3.SS1
+
+## Selected results
+
+SetCon (Qwen3-VL-8B-Instruct with SAM 3) · arXiv v1, Tables 1–3. The baseline is the best previously reported result in each table, except for the ablation row.
+
+| Setting | Metric | Baseline | SetCon | Gain | Source |
+| --- | --- | --- | --- | --- | --- |
+| MUSE val · vs. PixelLM-Llama2-13B | gIoU | 44.8 | 56.9 | +12.1 | Table 1 · arXiv v1 — https://arxiv.org/html/2605.20110v1#S4.T1 |
+| gRefCOCO val · vs. MLLMSeg | gIoU | 75.1 | 78.4 | +3.3 | Table 1 · arXiv v1 — https://arxiv.org/html/2605.20110v1#S4.T1 |
+| MeViS v1 · vs. Sa2VA | J&F | 51.5 | 62.4 | +10.9 | Table 2 · arXiv v1 — https://arxiv.org/html/2605.20110v1#S4.T2 |
+| Ref-SeCVOS · vs. GLUS | J&F | 59.8 | 72.2 | +12.4 | Table 2 · arXiv v1 — https://arxiv.org/html/2605.20110v1#S4.T2 |
+| Ablation · MUSE test · implicit-token variant | gIoU | 43.6 | 53.2 | +9.6 | Table 3 · arXiv v1 — https://arxiv.org/html/2605.20110v1#S4.T4 |
+
+The ablation row compares SetCon with a variant that uses the implicit-token formulation, on the MUSE test set. Gains are absolute points.
+
+Content verified against the sources above on 2026-09-25.
+
+## Cite this paper
+
+Zhixiong Zhang, Yizhuo Li, Shuangrui Ding, Yuhang Zang, Shengyuan Ding, Long Xing, Yibin Wang, Qiaosheng Zhang, Jiaqi Wang. SetCon: Towards Open-Ended Referring Segmentation via Set-Level Concept Prediction. Advances in Neural Information Processing Systems, 2026.
+
+Published record: https://arxiv.org/abs/2605.20110
+
+```bibtex
+@inproceedings{arxiv260520110,
+  title     = {{SetCon: Towards Open-Ended Referring Segmentation via Set-Level Concept Prediction}},
+  author    = {Zhixiong Zhang and Yizhuo Li and Shuangrui Ding and Yuhang Zang and Shengyuan Ding and Long Xing and Yibin Wang and Qiaosheng Zhang and Jiaqi Wang},
+  booktitle = {Advances in Neural Information Processing Systems},
+  year      = {2026},
+  url       = {https://arxiv.org/abs/2605.20110}
+}
+```
 
 ---
 
@@ -73,7 +226,7 @@ Published record: https://arxiv.org/abs/2606.19338
 
 - Page: https://yuhangzang.github.io/papers/arxiv-2606.03890.html
 - Authors: Yifei Li, Pengyiang Liu, Yuhang Zang, Zhongyue Shi, Qi Fu, Hongye Hao, Jiwen Lu
-- Published in: Empirical Methods in Natural Language Processing (EMNLP), 2026
+- Published in: Empirical Methods in Natural Language Processing (EMNLP), 2026 (Oral)
 - arXiv: 2606.03890 (first posted 2026-06-02, last revised 2026-08-26)
 - Topics: OVO-S-Bench; Streaming video understanding; Spatial intelligence; Egocentric video; Allocentric mapping; Prefix-only evaluation; Spatiotemporal reasoning; Multimodal benchmarks
 - arXiv: https://arxiv.org/abs/2606.03890

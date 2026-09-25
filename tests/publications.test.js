@@ -208,8 +208,8 @@ test('EndoCoT keeps training settings, source anchors and arXiv citation distinc
     assert.throws(() => validatePublications(invalidCitation), /Missing citation journal/);
 });
 
-test('all 66 papers provide sourced content and citations; only Visual-RFT has related work', () => {
-    assert.equal(data.papers.length, 66);
+test('all 68 papers provide sourced content and citations; only Visual-RFT has related work', () => {
+    assert.equal(data.papers.length, 68);
     validatePublications(data);
     for (const paper of data.papers) {
         const content = paper.content;
@@ -245,7 +245,7 @@ test('all 66 papers provide sourced content and citations; only Visual-RFT has r
         }
     }
     const invalidEvidence = structuredClone(data);
-    invalidEvidence.papers[0].content.resultNotes[0].source = 'unknown';
+    invalidEvidence.papers.find(paper => paper.content.resultNotes?.length).content.resultNotes[0].source = 'unknown';
     assert.throws(() => validatePublications(invalidEvidence), /Unknown evidence source/);
     const unwantedSection = structuredClone(data);
     unwantedSection.papers[0].content.relatedWork = { cited: [], citing: [] };
